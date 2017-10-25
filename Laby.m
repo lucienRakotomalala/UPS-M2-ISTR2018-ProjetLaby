@@ -6,7 +6,9 @@ classdef Laby
     end
     
     methods(Abstract)
-        function evolution()
+        function evolution
+            
+        end
     end
     
 end
