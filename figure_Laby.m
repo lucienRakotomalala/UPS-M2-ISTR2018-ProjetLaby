@@ -58,22 +58,20 @@ handles.output = hObject;
 % Update handles structure
 guidata(hObject, handles);
 handles.sortie.String = 'Ma Sortie';
-handles.axes1
 
-handles.axes1.line([0,0],[0,1],'linewidth',2);           % bord gauche
+axes(handles.axes1)
+line([0,0],[0,5],'linewidth',2); % bord gauche
+line([5,0],[5,5],'linewidth',2); 
+line([5,5],[0,5],'linewidth',2); % bord droite
+line([0,5],[0,0],'linewidth',2); % bord bas
+%%%Grille
+tickValuesX = 0:1:5;
+tickValuesY = 0:1:5;
+set(gca,'XTick',tickValuesX);
+set(gca,'YTick',tickValuesY);
+grid on
 
-           
-          
-            
-%             line([MH_col,MH_col],[MV_lig, 0],'linewidth',2);% bord droit
-%             line([0,MH_col],[MV_lig,MV_lig],'linewidth',2); % bord haut
-%             line([0,MH_col],[0,0],'linewidth',2);           % bord bas
-%             %%Grille
-%             grid on
-%             tickValuesX = min(0):1:max(MH_col);
-%             tickValuesY = min(0):1:max(MV_lig);
-%             set(gca,'XTick',tickValuesX);
-%             set(gca,'YTick',tickValuesY);
+
 % UIWAIT makes figure_Laby wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 
