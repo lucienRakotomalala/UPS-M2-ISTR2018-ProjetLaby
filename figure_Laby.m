@@ -70,6 +70,35 @@ tickValuesY = 0:1:5;
 set(gca,'XTick',tickValuesX);
 set(gca,'YTick',tickValuesY);
 grid on
+    
+    %   % LM
+    taille_lab=5;
+    mh=[];
+    %Murs horizontaux
+    Mh=ones(taille_lab-1, taille_lab);
+    for i=1:taille_lab-1
+        for j=0:taille_lab-1
+            if (Mh(i, j+1)==1)
+                mh=[mh; line([j j+1],[i i])];
+            end          
+        end
+    end
+ 
+%     %Murs verticaux
+    mv=[];
+    Mv=ones(taille_lab, (taille_lab-1));
+    for i=0:taille_lab-1
+        for j=1:taille_lab-1
+            if (Mv(i+1, j)==1)
+                mv=[mv; line([j j],[i i+1])];
+            end          
+        end        
+    end
+    
+    set(mh(8,1), 'visible', 'off')
+    set(mh(3,1), 'visible', 'off')
+
+
 
 
 % UIWAIT makes figure_Laby wait for user response (see UIRESUME)
