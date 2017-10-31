@@ -160,7 +160,7 @@ function G1_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 myObj = handles.myObj;
 m = handles.m
-myObj = goGauche(handles, myObj)
+myObj = goGauche(handles, myObj, m)
 displayWall(handles,m)
 handles.myObj = myObj;
 guidata(hObject, handles)

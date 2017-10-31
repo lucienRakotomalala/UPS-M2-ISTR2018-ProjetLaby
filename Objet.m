@@ -64,9 +64,11 @@ classdef Objet
            displayObject(handles,obj)
         end
         
-        function obj = goGauche(handles, obj)
+        function obj = goGauche(handles, obj, m)
            if(obj.positionX > 1)
-                obj.positionX = obj.positionX-1;
+               if(autoriserDeplacementGauche(handles, obj, m))
+                    obj.positionX = obj.positionX-1;
+               end
            end
            displayObject(handles,obj)
         end
@@ -107,9 +109,17 @@ classdef Objet
         
          %Autoriser deplacement Droite
         function condDepDroite = autoriserDeplacementDroite(handles, obj, m)
-            if (m.MursVerticaux(obj.positionY, obj.positionX)==0)
+            if (m.MursVerticaux(obj.taille_lab-obj.positionY+1, obj.positionX)==0)
                  condDepDroite=1
             else condDepDroite=0
+            end    
+        end
+        
+        %Autoriser deplacement Gauche
+        function condDepGauche = autoriserDeplacementGauche(handles, obj, m)
+            if (m.MursVerticaux(obj.taille_lab-obj.positionY+1, obj.positionX-1)==0)
+                 condDepGauche=1
+            else condDepGauche=0
             end    
         end
         
