@@ -111,7 +111,7 @@ function D2_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 hunter = handles.hunter;
 m = handles.m;
-hunter = goDroite(handles, hunter);
+hunter = goDroite(handles, hunter, m);
 displayWall(handles,m);
 handles.hunter = hunter;
 guidata(hObject, handles);
@@ -124,7 +124,7 @@ function H2_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 hunter = handles.hunter;
 m = handles.m;
-hunter = goHaut(handles, hunter);
+hunter = goHaut(handles, hunter, m);
 displayWall(handles,m);
 handles.hunter = hunter;
 guidata(hObject, handles); %pas de ;
@@ -137,7 +137,7 @@ function G2_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 hunter = handles.hunter;
 m = handles.m;
-hunter = goGauche(handles, hunter);
+hunter = goGauche(handles, hunter, m);
 displayWall(handles,m);
 handles.hunter = hunter;
 guidata(hObject, handles);
@@ -150,7 +150,7 @@ function B2_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 hunter = handles.hunter;
 m = handles.m;
-hunter = goBas(handles, hunter);
+hunter = goBas(handles, hunter, m);
 displayWall(handles,m);
 handles.hunter = hunter;
 guidata(hObject, handles);
@@ -191,7 +191,7 @@ function G1_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-myObj = handles.myObj;
+myObj = handles.hunted;
 m = handles.m
 myObj = goGauche(handles, myObj, m)
 displayWall(handles,m)
