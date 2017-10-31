@@ -61,7 +61,7 @@ handles.sortie.String = 'Ma Sortie';
     %   % LM - Initialisation
 
 myObj = Objet(handles)    
-% Sauvegarde des murs initialisés
+% Sauvegarde des murs initialis?s
 m = Murs(handles);
 handles.m = m; % Ajoute le mur aux handles
 handles.myObj = myObj;
@@ -93,7 +93,7 @@ function initialisation_Callback(hObject, eventdata, handles)
 axes(handles.axes1)
 cla
 myObj = Objet(handles)  
-    % Sauvegarde des murs initialisés
+    % Sauvegarde des murs initialis?s
 m = Murs(handles);
 handles.m = m % Ajoute le mur aux handles
 handles.myObj = myObj
