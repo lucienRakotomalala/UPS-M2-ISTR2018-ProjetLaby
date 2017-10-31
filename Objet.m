@@ -68,6 +68,23 @@ classdef Objet
            end
            displayObject(handles,obj)
         end
+        
+        function obj = goHaut(handles, obj)
+           if(obj.positionY < obj.taille_lab)
+                obj.positionY = obj.positionY+1;
+           end
+           displayObject(handles,obj)
+        end
+        
+        function obj = goBas(handles, obj)
+           if(obj.positionY > 1)
+                obj.positionY = obj.positionY-1;
+           end
+           displayObject(handles,obj)
+        end
+        
+        %Autoriser deplacement
+        obj.Mur
     end
     
 end
