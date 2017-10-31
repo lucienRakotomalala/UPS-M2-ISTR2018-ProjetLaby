@@ -6,26 +6,26 @@ classdef Objet
         positionX;  % Position dans le labyrinthe
         positionY;
         AllPoint = [];
-        taille_lab=5;
+        taille_lab = 5;
+        color='g*';
     end
     
     methods
-        function obj = Objet(handles)
-            obj.positionX = 1;
-            obj.positionY = 1;
+        function obj = Objet(handles, color, positionX, positionY)
+            obj.positionX = positionX;
+            obj.positionY = positionY;
             x = 1:obj.taille_lab;
             y = 1:obj.taille_lab;
             k = 1;
-            axes(handles.axes1)
+            axes(handles.axes1);
             hold on 
             for i = x
                 for j = y
-                   obj.AllPoint = [obj.AllPoint; plot(i -0.5 ,j - 0.5, 'r*')]
+                   obj.AllPoint = [obj.AllPoint; plot(i -0.5 ,j - 0.5, color)];
                    if(obj.positionX == i) && (obj.positionY==j)
-                        set(obj.AllPoint(k,1),'visible','on')
-                       
+                        set(obj.AllPoint(k,1),'visible','on');
                    else
-                       set(obj.AllPoint(k,1),'visible','off')
+                       set(obj.AllPoint(k,1),'visible','off');
                    end
                    k = k+1;
                end
@@ -34,7 +34,7 @@ classdef Objet
         
         %% 
         function displayObject(handles, obj)
-           axes(handles.axes1)
+           axes(handles.axes1);
            hold on
            x = 1:obj.taille_lab;
            y = 1:obj.taille_lab;
@@ -42,9 +42,9 @@ classdef Objet
            for i = x
                for j = y
                    if((obj.positionX == i)&&(obj.positionY==j))
-                        set(obj.AllPoint(k,1),'visible','on')
+                        set(obj.AllPoint(k,1),'visible','on');
                    else
-                       set(obj.AllPoint(k,1),'visible','off')
+                       set(obj.AllPoint(k,1),'visible','off');
                    end
                    k = k+1;
                 end
@@ -61,7 +61,7 @@ classdef Objet
                     obj.positionX = obj.positionX+1;
                end
            end
-           displayObject(handles,obj)
+           displayObject(handles,obj);
         end
         
         function obj = goGauche(handles, obj, m)
@@ -70,7 +70,7 @@ classdef Objet
                     obj.positionX = obj.positionX-1;
                end
            end
-           displayObject(handles,obj)
+           displayObject(handles,obj);
         end
         
         function obj = goHaut(handles, obj, m)
@@ -79,7 +79,7 @@ classdef Objet
                     obj.positionY = obj.positionY+1;
                end
            end
-           displayObject(handles,obj)
+           displayObject(handles,obj);
         end
         
         function obj = goBas(handles, obj, m)
@@ -88,9 +88,10 @@ classdef Objet
                     obj.positionY = obj.positionY-1;
                end
            end
-           displayObject(handles,obj)
+           displayObject(handles,obj);
         end
         
+
         %Autoriser deplacement Haut
         function condDepHaut = autoriserDeplacementHaut(handles, obj, m)
             if (m.MursHorizontaux(obj.taille_lab-obj.positionY, obj.positionX)==0)
@@ -122,7 +123,7 @@ classdef Objet
             else condDepGauche=0
             end    
         end
-        
+
     end
     
 end
