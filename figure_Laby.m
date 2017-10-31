@@ -60,12 +60,14 @@ guidata(hObject, handles);
 handles.sortie.String = 'Ma Sortie';
     %   % LM - Initialisation
 
-myObj = Objet(handles)    
+hunted = Objet(handles,'b*',1,1);
+hunter = Objet(handles,'r*',5,5);
 % Sauvegarde des murs initialis?s
 m = Murs(handles);
 handles.m = m; % Ajoute le mur aux handles
-handles.myObj = myObj;
-guidata(hObject,handles);    % Sa marche !! OMFG !!!
+handles.mhunted = hunted;
+handles.mhunter = hunter;
+guidata(hObject,handles);    % Ca marche !! OMFG !!!
 
 grid on
 
@@ -92,12 +94,14 @@ function initialisation_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 axes(handles.axes1)
 cla
-myObj = Objet(handles)  
+hunted = Objet(handles,'b*',1,1); 
+hunter = Objet(handles,'r*',5,5);
     % Sauvegarde des murs initialis?s
 m = Murs(handles);
-handles.m = m % Ajoute le mur aux handles
-handles.myObj = myObj
-guidata(hObject,handles);    % Sa marche !! OMFG !!!
+handles.m = m; % Ajoute le mur aux handles
+handles.hunted = hunted;
+handles.hunter = hunter;
+guidata(hObject,handles);    % Ca marche !! OMFG !!!
 
                
 
@@ -106,6 +110,12 @@ function D2_Callback(hObject, eventdata, handles)
 % hObject    handle to D2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+hunter = handles.hunter;
+m = handles.m;
+hunter = goDroite(handles, hunter);
+displayWall(handles,m);
+handles.hunter = hunter;
+guidata(hObject, handles);
 
 
 % --- Executes on button press in H2.
@@ -113,6 +123,12 @@ function H2_Callback(hObject, eventdata, handles)
 % hObject    handle to H2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+hunter = handles.hunter;
+m = handles.m;
+hunter = goHaut(handles, hunter);
+displayWall(handles,m);
+handles.hunter = hunter;
+guidata(hObject, handles); %pas de ;
 
 
 % --- Executes on button press in G2.
@@ -120,6 +136,12 @@ function G2_Callback(hObject, eventdata, handles)
 % hObject    handle to G2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+hunter = handles.hunter;
+m = handles.m;
+hunter = goGauche(handles, hunter);
+displayWall(handles,m);
+handles.hunter = hunter;
+guidata(hObject, handles);
 
 
 % --- Executes on button press in B2.
@@ -127,6 +149,12 @@ function B2_Callback(hObject, eventdata, handles)
 % hObject    handle to B2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+hunter = handles.hunter;
+m = handles.m;
+hunter = goBas(handles, hunter);
+displayWall(handles,m);
+handles.hunter = hunter;
+guidata(hObject, handles);
 
 
 % --- Executes on button press in D1.
@@ -134,24 +162,24 @@ function D1_Callback(hObject, eventdata, handles)
 % hObject    handle to D1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-myObj = handles.myObj;
-m = handles.m
-myObj = goDroite(handles, myObj)
-displayWall(handles,m)
-handles.myObj = myObj;
-guidata(hObject, handles)
+hunted = handles.hunted;
+m = handles.m;
+hunted = goDroite(handles, hunted);
+displayWall(handles,m);
+handles.hunted = hunted;
+guidata(hObject, handles);
 
 % --- Executes on button press in H1.
 function H1_Callback(hObject, eventdata, handles)
 % hObject    handle to H1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-myObj = handles.myObj;
-m = handles.m
-myObj = goHaut(handles, myObj)
-displayWall(handles,m)
-handles.myObj = myObj;
-guidata(hObject, handles)
+hunted = handles.hunted;
+m = handles.m;
+hunted = goHaut(handles, hunted);
+displayWall(handles,m);
+handles.hunted = hunted;
+guidata(hObject, handles);
 
 
 % --- Executes on button press in G1.
@@ -159,24 +187,24 @@ function G1_Callback(hObject, eventdata, handles)
 % hObject    handle to G1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-myObj = handles.myObj;
-m = handles.m
-myObj = goGauche(handles, myObj)
-displayWall(handles,m)
-handles.myObj = myObj;
-guidata(hObject, handles)
+hunted = handles.hunted;
+m = handles.m;
+hunted = goGauche(handles, hunted);
+displayWall(handles,m);
+handles.hunted = hunted;
+guidata(hObject, handles);
 
 % --- Executes on button press in B1.
 function B1_Callback(hObject, eventdata, handles)
 % hObject    handle to B1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-myObj = handles.myObj;
-m = handles.m
-myObj = goBas(handles, myObj)
-displayWall(handles,m)
-handles.myObj = myObj;
-guidata(hObject, handles)
+hunted = handles.hunted;
+m = handles.m;
+hunted = goBas(handles, hunted);
+displayWall(handles,m);
+handles.hunted = hunted;
+guidata(hObject, handles);
 
 % --- Executes on button press in wallDown.
 function wallDown_Callback(hObject, eventdata, handles)
@@ -184,8 +212,8 @@ function wallDown_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 m = handles.m;
-m = set_MursVerticaux(m)
-displayWall(handles,m)
+m = set_MursVerticaux(m);
+displayWall(handles,m);
 handles.m = m; % Ajoute le mur aux handles
 guidata(hObject,handles);    % Sa marche !! OMFG !!!
 %m.MursVerticaux
@@ -196,8 +224,8 @@ function wallRight_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 m = handles.m;
-m = set_MursHorizontaux(m)
-displayWall(handles,m)
+m = set_MursHorizontaux(m);
+displayWall(handles,m);
 handles.m = m; % Ajoute le mur aux handles
 guidata(hObject,handles);    % Sa marche !! OMFG !!!
 %m.MursHorizontaux

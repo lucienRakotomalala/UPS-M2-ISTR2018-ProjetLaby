@@ -24,7 +24,7 @@ classdef Murs
             %   Sortie : objet Murs  passer entre le guidata de la figure.
             
             % Valeurs initiales des murs :
-            obj.MursVerticaux    = [1 0 1 0; 1 0 1 0; 1 0 1 0; 1 0 1 0; 1 0 1 0];
+            obj.MursVerticaux    = [1 0 0 0; 1 0 1 0; 1 0 0 0; 1 0 1 0; 1 0 1 0];
             obj.MursHorizontaux  = [ 1 0 1 0 1; 1 0 1 0 1; 1 0 1 0 1; 0 1 0 1 0]; 
             obj.mv = [];
             obj.mh = [];
@@ -79,7 +79,7 @@ classdef Murs
            % Méthode d'affichage sur le mur 
            % Entrée : handles de la figure
            %            objet mur
-           axes(handles.axes1)  % Placement de l'axe sur l'axes1
+           axes(handles.axes1);  % Placement de l'axe sur l'axes1
            k = 1;
            for i=1:myWall.taille_lab-1    % Murs Horizontaux
                 for j=0:myWall.taille_lab-1
