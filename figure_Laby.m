@@ -98,6 +98,7 @@ m = Murs(handles);
 handles.m = m % Ajoute le mur aux handles
 handles.myObj = myObj
 guidata(hObject,handles);    % Sa marche !! OMFG !!!
+
                
 
 % --- Executes on button press in D2.
@@ -145,6 +146,12 @@ function H1_Callback(hObject, eventdata, handles)
 % hObject    handle to H1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+myObj = handles.myObj;
+m = handles.m
+myObj = goHaut(handles, myObj)
+displayWall(handles,m)
+handles.myObj = myObj;
+guidata(hObject, handles)
 
 
 % --- Executes on button press in G1.
@@ -164,7 +171,12 @@ function B1_Callback(hObject, eventdata, handles)
 % hObject    handle to B1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-display('B1');
+myObj = handles.myObj;
+m = handles.m
+myObj = goBas(handles, myObj)
+displayWall(handles,m)
+handles.myObj = myObj;
+guidata(hObject, handles)
 
 % --- Executes on button press in wallDown.
 function wallDown_Callback(hObject, eventdata, handles)
@@ -172,10 +184,11 @@ function wallDown_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 m = handles.m;
-m = set_MursHorizontaux(m)
+m = set_MursVerticaux(m)
 displayWall(handles,m)
 handles.m = m; % Ajoute le mur aux handles
 guidata(hObject,handles);    % Sa marche !! OMFG !!!
+%m.MursVerticaux
 
 % --- Executes on button press in wallRight.
 function wallRight_Callback(hObject, eventdata, handles)
@@ -183,7 +196,9 @@ function wallRight_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 m = handles.m;
-m = set_MursVerticaux(m)
+m = set_MursHorizontaux(m)
 displayWall(handles,m)
 handles.m = m; % Ajoute le mur aux handles
 guidata(hObject,handles);    % Sa marche !! OMFG !!!
+%m.MursHorizontaux
+

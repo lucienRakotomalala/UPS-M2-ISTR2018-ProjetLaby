@@ -24,8 +24,8 @@ classdef Murs
             %   Sortie : objet Murs  passer entre le guidata de la figure.
             
             % Valeurs initiales des murs :
-            obj.MursVerticaux    = [1 0 1 0; 1 1 1 1; 0 1 0 1; 1 1 1 1; 0 0 0 0];
-            obj.MursHorizontaux  = [ 1 1 1 1 1; 0 0 0 0 0; 1 1 1 1 1; 0 0 0 0 0]; 
+            obj.MursVerticaux    = [1 0 1 0; 1 0 1 0; 1 0 1 0; 1 0 1 0; 1 0 1 0];
+            obj.MursHorizontaux  = [ 1 0 1 0 1; 1 0 1 0 1; 1 0 1 0 1; 0 1 0 1 0]; 
             obj.mv = [];
             obj.mh = [];
             %Murs extérieurs
@@ -106,30 +106,32 @@ classdef Murs
             grid on
         end
         
-        %% Fonction pour bouger les murs Verticaux vers la droite.
+        %% Fonction pour bouger les murs Verticaux vers le bas.
         % Entrée : Objet Mur
         % Sortie : Objet Mur
         function obj = set_MursVerticaux(obj)
-                [~,c]=size(obj.MursVerticaux);
+                [c,~]=size(obj.MursVerticaux);
                 Memoire=obj.MursVerticaux;
-                NewMurs(:,c)= Memoire(:,1);
-                for i=1:c-1
-                    NewMurs(:,i) = Memoire(:,i+1);
-                end
-                obj.MursVerticaux = NewMurs;
-            end
-        %% Fonction pour bouger les murs Horizontaux vers la bas.
-        % Entrée : Objet Mur
-        % Sortie : Objet Mur   
-            function obj = set_MursHorizontaux(obj)
-                [c,~]=size(obj.MursHorizontaux);
-                Memoire=obj.MursHorizontaux;
                 NewMurs(c,:)= Memoire(1,:);
                 for i=1:c-1
                     NewMurs(i,:) = Memoire(i+1,:);
                 end
-                obj.MursHorizontaux = NewMurs;
+                obj.MursVerticaux = NewMurs;
             end
+        %% Fonction pour bouger les murs Horizontaux vers la droite.
+        % Entrée : Objet Mur
+        % Sortie : Objet Mur   
+      function obj = set_MursHorizontaux(obj)
+                    [~,c]=size(obj.MursHorizontaux);
+                    Memoire=obj.MursHorizontaux;
+                    NewMurs(:,c)= Memoire(:,1);
+                    for i=1:c-1
+                        NewMurs(:,i) = Memoire(:,i+1);
+                    end
+                    obj.MursHorizontaux = NewMurs;
+              end
+            
+  
         end
 end
     
