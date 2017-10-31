@@ -17,6 +17,7 @@ classdef Objet
             y = 1:obj.taille_lab;
             k = 1;
             axes(handles.axes1)
+            hold on 
             for i = x
                 for j = y
                    obj.AllPoint = [obj.AllPoint; plot(i -0.5 ,j - 0.5, 'r*')]
@@ -31,11 +32,9 @@ classdef Objet
            end
         end
         
-        
         %% 
         function displayObject(handles, obj)
            axes(handles.axes1)
-           
            hold on
            x = 1:obj.taille_lab;
            y = 1:obj.taille_lab;
@@ -49,11 +48,12 @@ classdef Objet
                    end
                    k = k+1;
                 end
-            end
+           end
+            
           end
         
         
-        %% Déplacement de l'objet
+        %% D?placement de l'objet
         
         function obj = goDroite(handles, obj)
            if(obj.positionX < obj.taille_lab)
@@ -88,4 +88,3 @@ classdef Objet
     end
     
 end
-
