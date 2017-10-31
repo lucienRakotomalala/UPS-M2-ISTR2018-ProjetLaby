@@ -58,47 +58,16 @@ handles.output = hObject;
 % Update handles structure
 guidata(hObject, handles);
 handles.sortie.String = 'Ma Sortie';
+    %   % LM - Initialisation
 
-axes(handles.axes1)
-line([0,0],[0,5],'linewidth',2); % bord gauche
-line([5,0],[5,5],'linewidth',2); 
-line([5,5],[0,5],'linewidth',2); % bord droite
-line([0,5],[0,0],'linewidth',2); % bord bas
-%%%Grille
-tickValuesX = 0:1:5;
-tickValuesY = 0:1:5;
-set(gca,'XTick',tickValuesX);
-set(gca,'YTick',tickValuesY);
+myObj = Objet(handles)    
+% Sauvegarde des murs initialisés
+m = Murs(handles);
+handles.m = m; % Ajoute le mur aux handles
+handles.myObj = myObj;
+guidata(hObject,handles);    % Sa marche !! OMFG !!!
+
 grid on
-    
-    %   % LM
-    taille_lab=5;
-    mh=[];
-    %Murs horizontaux
-    Mh=ones(taille_lab-1, taille_lab);
-    for i=1:taille_lab-1
-        for j=0:taille_lab-1
-            if (Mh(i, j+1)==1)
-                mh=[mh; line([j j+1],[i i])];
-            end          
-        end
-    end
- 
-%     %Murs verticaux
-    mv=[];
-    Mv=ones(taille_lab, (taille_lab-1));
-    for i=0:taille_lab-1
-        for j=1:taille_lab-1
-            if (Mv(i+1, j)==1)
-                mv=[mv; line([j j],[i i+1])];
-            end          
-        end        
-    end
-    
-    set(mh(8,1), 'visible', 'off')
-    set(mh(3,1), 'visible', 'off')
-
-
 
 
 % UIWAIT makes figure_Laby wait for user response (see UIRESUME)
@@ -121,7 +90,15 @@ function initialisation_Callback(hObject, eventdata, handles)
 % hObject    handle to initialisation (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+axes(handles.axes1)
+cla
+myObj = Objet(handles)  
+    % Sauvegarde des murs initialisés
+m = Murs(handles);
+handles.m = m % Ajoute le mur aux handles
+handles.myObj = myObj
+guidata(hObject,handles);    % Sa marche !! OMFG !!!
+               
 
 % --- Executes on button press in D2.
 function D2_Callback(hObject, eventdata, handles)
@@ -156,7 +133,12 @@ function D1_Callback(hObject, eventdata, handles)
 % hObject    handle to D1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+myObj = handles.myObj;
+m = handles.m
+myObj = goDroite(handles, myObj)
+displayWall(handles,m)
+handles.myObj = myObj;
+guidata(hObject, handles)
 
 % --- Executes on button press in H1.
 function H1_Callback(hObject, eventdata, handles)
@@ -170,7 +152,12 @@ function G1_Callback(hObject, eventdata, handles)
 % hObject    handle to G1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+myObj = handles.myObj;
+m = handles.m
+myObj = goGauche(handles, myObj)
+displayWall(handles,m)
+handles.myObj = myObj;
+guidata(hObject, handles)
 
 % --- Executes on button press in B1.
 function B1_Callback(hObject, eventdata, handles)
@@ -184,10 +171,19 @@ function wallDown_Callback(hObject, eventdata, handles)
 % hObject    handle to wallDown (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+m = handles.m;
+m = set_MursHorizontaux(m)
+displayWall(handles,m)
+handles.m = m; % Ajoute le mur aux handles
+guidata(hObject,handles);    % Sa marche !! OMFG !!!
 
 % --- Executes on button press in wallRight.
 function wallRight_Callback(hObject, eventdata, handles)
 % hObject    handle to wallRight (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+m = handles.m;
+m = set_MursVerticaux(m)
+displayWall(handles,m)
+handles.m = m; % Ajoute le mur aux handles
+guidata(hObject,handles);    % Sa marche !! OMFG !!!
