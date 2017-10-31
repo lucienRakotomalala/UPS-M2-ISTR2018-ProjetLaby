@@ -58,7 +58,6 @@ handles.output = hObject;
 % Update handles structure
 guidata(hObject, handles);
 handles.sortie.String = 'Ma Sortie';
-    %   % LM - Initialisation
 
 hunted = Objet(handles,'b*',1,1);
 hunter = Objet(handles,'r*',5,5);
@@ -162,24 +161,28 @@ function D1_Callback(hObject, eventdata, handles)
 % hObject    handle to D1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-hunted = handles.hunted;
-m = handles.m;
-hunted = goDroite(handles, hunted);
-displayWall(handles,m);
-handles.hunted = hunted;
-guidata(hObject, handles);
+
+myObj = handles.myObj;
+m = handles.m
+myObj = goDroite(handles, myObj, m)
+displayWall(handles,m)
+handles.myObj = myObj;
+guidata(hObject, handles)
+
 
 % --- Executes on button press in H1.
 function H1_Callback(hObject, eventdata, handles)
 % hObject    handle to H1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-hunted = handles.hunted;
-m = handles.m;
-hunted = goHaut(handles, hunted);
-displayWall(handles,m);
-handles.hunted = hunted;
-guidata(hObject, handles);
+
+myObj = handles.myObj;
+m = handles.m
+myObj = goHaut(handles, myObj, m)
+displayWall(handles,m)
+handles.myObj = myObj;
+guidata(hObject, handles)
+
 
 
 % --- Executes on button press in G1.
@@ -187,24 +190,28 @@ function G1_Callback(hObject, eventdata, handles)
 % hObject    handle to G1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-hunted = handles.hunted;
-m = handles.m;
-hunted = goGauche(handles, hunted);
-displayWall(handles,m);
-handles.hunted = hunted;
-guidata(hObject, handles);
+
+myObj = handles.myObj;
+m = handles.m
+myObj = goGauche(handles, myObj, m)
+displayWall(handles,m)
+handles.myObj = myObj;
+guidata(hObject, handles)
+
 
 % --- Executes on button press in B1.
 function B1_Callback(hObject, eventdata, handles)
 % hObject    handle to B1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-hunted = handles.hunted;
-m = handles.m;
-hunted = goBas(handles, hunted);
-displayWall(handles,m);
-handles.hunted = hunted;
-guidata(hObject, handles);
+
+myObj = handles.myObj;
+m = handles.m
+myObj = goBas(handles, myObj, m)
+displayWall(handles,m)
+handles.myObj = myObj;
+guidata(hObject, handles)
+
 
 % --- Executes on button press in wallDown.
 function wallDown_Callback(hObject, eventdata, handles)
@@ -216,7 +223,7 @@ m = set_MursVerticaux(m);
 displayWall(handles,m);
 handles.m = m; % Ajoute le mur aux handles
 guidata(hObject,handles);    % Sa marche !! OMFG !!!
-%m.MursVerticaux
+m.MursVerticaux
 
 % --- Executes on button press in wallRight.
 function wallRight_Callback(hObject, eventdata, handles)
@@ -228,5 +235,5 @@ m = set_MursHorizontaux(m);
 displayWall(handles,m);
 handles.m = m; % Ajoute le mur aux handles
 guidata(hObject,handles);    % Sa marche !! OMFG !!!
-%m.MursHorizontaux
+m.MursHorizontaux
 
