@@ -58,7 +58,6 @@ handles.output = hObject;
 % Update handles structure
 guidata(hObject, handles);
 handles.sortie.String = 'Ma Sortie';
-    %   % LM - Initialisation
 
 myObj = Objet(handles)    
 % Sauvegarde des murs initialis?s
@@ -136,7 +135,7 @@ function D1_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 myObj = handles.myObj;
 m = handles.m
-myObj = goDroite(handles, myObj)
+myObj = goDroite(handles, myObj, m)
 displayWall(handles,m)
 handles.myObj = myObj;
 guidata(hObject, handles)
@@ -148,7 +147,7 @@ function H1_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 myObj = handles.myObj;
 m = handles.m
-myObj = goHaut(handles, myObj)
+myObj = goHaut(handles, myObj, m)
 displayWall(handles,m)
 handles.myObj = myObj;
 guidata(hObject, handles)
@@ -173,7 +172,7 @@ function B1_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 myObj = handles.myObj;
 m = handles.m
-myObj = goBas(handles, myObj)
+myObj = goBas(handles, myObj, m)
 displayWall(handles,m)
 handles.myObj = myObj;
 guidata(hObject, handles)
@@ -188,7 +187,7 @@ m = set_MursVerticaux(m)
 displayWall(handles,m)
 handles.m = m; % Ajoute le mur aux handles
 guidata(hObject,handles);    % Sa marche !! OMFG !!!
-%m.MursVerticaux
+m.MursVerticaux
 
 % --- Executes on button press in wallRight.
 function wallRight_Callback(hObject, eventdata, handles)
@@ -200,5 +199,5 @@ m = set_MursHorizontaux(m)
 displayWall(handles,m)
 handles.m = m; % Ajoute le mur aux handles
 guidata(hObject,handles);    % Sa marche !! OMFG !!!
-%m.MursHorizontaux
+m.MursHorizontaux
 

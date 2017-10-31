@@ -55,9 +55,11 @@ classdef Objet
         
         %% D?placement de l'objet
         
-        function obj = goDroite(handles, obj)
+        function obj = goDroite(handles, obj, m)
            if(obj.positionX < obj.taille_lab)
-                obj.positionX = obj.positionX+1;
+               if(autoriserDeplacementDroite(handles, obj, m))
+                    obj.positionX = obj.positionX+1;
+               end
            end
            displayObject(handles,obj)
         end
@@ -69,22 +71,48 @@ classdef Objet
            displayObject(handles,obj)
         end
         
-        function obj = goHaut(handles, obj)
+        function obj = goHaut(handles, obj, m)
            if(obj.positionY < obj.taille_lab)
-                obj.positionY = obj.positionY+1;
+               if(autoriserDeplacementHaut(handles, obj, m))
+                    obj.positionY = obj.positionY+1;
+               end
            end
            displayObject(handles,obj)
         end
         
-        function obj = goBas(handles, obj)
+        function obj = goBas(handles, obj, m)
            if(obj.positionY > 1)
-                obj.positionY = obj.positionY-1;
+               if(autoriserDeplacementBas(handles, obj, m))
+                    obj.positionY = obj.positionY-1;
+               end
            end
            displayObject(handles,obj)
         end
         
-        %Autoriser deplacement
-        obj.Mur
+        %Autoriser deplacement Haut
+        function condDepHaut = autoriserDeplacementHaut(handles, obj, m)
+            if (m.MursHorizontaux(obj.taille_lab-obj.positionY, obj.positionX)==0)
+                 condDepHaut=1
+            else condDepHaut=0
+            end    
+        end
+        
+        %Autoriser deplacement Bas
+        function condDepBas = autoriserDeplacementBas(handles, obj, m)
+            if (m.MursHorizontaux(obj.taille_lab-obj.positionY+1, obj.positionX)==0)
+                 condDepBas=1
+            else condDepBas=0
+            end    
+        end
+        
+         %Autoriser deplacement Droite
+        function condDepDroite = autoriserDeplacementDroite(handles, obj, m)
+            if (m.MursVerticaux(obj.positionY, obj.positionX)==0)
+                 condDepDroite=1
+            else condDepDroite=0
+            end    
+        end
+        
     end
     
 end
