@@ -41,7 +41,7 @@ if nargout
 else
     gui_mainfcn(gui_State, varargin{:});
 end
-% End initialization code - DO NOT EDIT
+% Endialization code - DO NOT EDIT
 
 
 % --- Executes just before figure_Laby is made visible.
@@ -54,10 +54,10 @@ function figure_Laby_OpeningFcn(hObject, eventdata, handles, varargin)
 
 % Choose default command line output for figure_Laby
 handles.output = hObject;
-
 % Update handles structure
 guidata(hObject, handles);
 handles.sortie.String = 'Ma Sortie';
+handles.sortie=Sortie(handles,'r',5,4);
 % For the exit
 
 gost = Objet(handles,'b*',1,1);
@@ -102,6 +102,8 @@ handles.m = m; % Ajoute le mur aux handles
 handles.gost = gost;
 handles.pacman = pacman;
 guidata(hObject,handles);    % Ca marche !! OMFG !!!
+handles.sortie=Sortie(handles,'r',2,3);
+
 
                
 
