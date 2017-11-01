@@ -58,6 +58,7 @@ handles.output = hObject;
 % Update handles structure
 guidata(hObject, handles);
 handles.sortie.String = 'Ma Sortie';
+% For the exit
 
 hunted = Objet(handles,'b*',1,1);
 hunter = Objet(handles,'r*',5,5);
@@ -237,3 +238,30 @@ handles.m = m; % Ajoute le mur aux handles
 guidata(hObject,handles);    % Sa marche !! OMFG !!!
 m.MursHorizontaux
 
+
+
+% --- Executes when GostWall is resized.
+function GostWall_SizeChangedFcn(hObject, eventdata, handles)
+% hObject    handle to GostWall (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on key press with focus on H1 and none of its controls.
+
+% hObject    handle to H1 (see GCBO)
+% eventdata  structure with the following fields (see MATLAB.UI.CONTROL.UICONTROL)
+%	Key: name of the key that was pressed, in lower case
+%	Character: character interpretation of the key(s) that was pressed
+%	Modifier: name(s) of the modifier key(s) (i.e., control, shift) pressed
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on key press with focus on H1 and none of its controls.
+function H1_KeyPressFcn(hObject, eventdata, handles)
+% hObject    handle to H1 (see GCBO)
+% eventdata  structure with the following fields (see MATLAB.UI.CONTROL.UICONTROL)
+%	Key: name of the key that was pressed, in lower case
+%	Character: character interpretation of the key(s) that was pressed
+%	Modifier: name(s) of the modifier key(s) (i.e., control, shift) pressed
+% handles    structure with handles and user data (see GUIDATA)
