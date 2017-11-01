@@ -22,7 +22,7 @@ function varargout = figure_Laby(varargin)
 
 % Edit the above text to modify the response to help figure_Laby
 
-% Last Modified by GUIDE v2.5 26-Oct-2017 13:09:43
+% Last Modified by GUIDE v2.5 01-Nov-2017 16:05:15
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -60,11 +60,16 @@ guidata(hObject, handles);
 handles.sortie.String = 'Ma Sortie';
 % For the exit
 
-gost = Objet(handles,'b*',1,1);
-pacman = Objet(handles,'r*',5,5);
+gost = Objet(handles,'y*',1,1);
+pacman = Objet(handles,'g*',5,5);
+
 % Sauvegarde des murs initialis?s
 m = Murs(handles);
+%Creationd e la visualisation
+%visu = Visualisation(pacman,gost, m);
+
 handles.m = m; % Ajoute le mur aux handles
+handles.visu = visu; %Ajoute visu aux handles
 handles.gost = gost;
 handles.pacman = pacman;
 guidata(hObject,handles);    % Ca marche !! OMFG !!!
@@ -94,14 +99,15 @@ function initialisation_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 axes(handles.axes1)
 cla
-gost = Objet(handles,'b*',1,1); 
-pacman = Objet(handles,'r*',5,5);
+gost = Objet(handles,'y*',1,1); 
+pacman = Objet(handles,'g*',5,5);
     % Sauvegarde des murs initialis?s
 m = Murs(handles);
 handles.m = m; % Ajoute le mur aux handles
 handles.gost = gost;
 handles.pacman = pacman;
 guidata(hObject,handles);    % Ca marche !! OMFG !!!
+
 
                
 
@@ -116,6 +122,7 @@ gost = goDroite(handles, gost, m);
 displayWall(handles,m);
 handles.gost = gost;
 guidata(hObject, handles);
+
 
 
 % --- Executes on button press in H2.
