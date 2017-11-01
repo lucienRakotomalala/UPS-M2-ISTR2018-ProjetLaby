@@ -24,7 +24,7 @@ classdef Murs
             %   Sortie : objet Murs  passer entre le guidata de la figure.
             
 
-            obj.MursVerticaux    = [1 0 0 0; 1 0 1 0; 1 0 0 0; 1 0 1 0; 1 0 1 0];
+            obj.MursVerticaux    = [1 0 0 0; 0 0 1 0; 1 0 0 0; 1 0 1 0; 0 0 1 0];
      obj.MursHorizontaux  = [ 1 0 1 0 1; 1 0 1 0 1; 1 0 1 0 1; 0 1 0 1 0]; 
             obj.mv = [];
             obj.mh = [];
