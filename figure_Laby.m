@@ -58,6 +58,7 @@ handles.output = hObject;
 % Update handles structure
 guidata(hObject, handles);
 handles.sortie.String = 'Ma Sortie';
+% For the exit
 
 myObj = Objet(handles)    
 % Sauvegarde des murs initialis?s
