@@ -3,18 +3,19 @@ classdef Visualisation
     %   Detailed explanation goes here
     
     properties
-        Object pacman;
-        Object gost;
-        Murs murs;
-   
+        pacman;
+        ghost;
+        murs;
+        
+        mange = 0;
     end
     
     methods
         
         %constructeur
-        function obj=Visualisation(pacman,gost,murs)
+        function obj=Visualisation(pacman,ghost,murs)
             obj.pacman = pacman;
-            obj.gost=gost;
+            obj.ghost=ghost;
             obj.murs=murs;
         end
         
@@ -43,6 +44,10 @@ classdef Visualisation
             else
                 set(handles.PacmanRight,'BackgroundColor',[0.8 0.8 0.8]);
             end
+        end
+        
+        function detection_manger(obj,chat,souris)
+            
         end
     end
 end
