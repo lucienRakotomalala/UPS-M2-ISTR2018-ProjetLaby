@@ -57,7 +57,7 @@ classdef Objet
         
         function obj = goDroite(handles, obj, m)
            if(obj.positionX < obj.taille_lab)
-               if(deplacementDroitePossible(handles, obj, m))
+               if(deplacementDroitePossible( obj, m))
                     obj.positionX = obj.positionX+1;
                end
            end
@@ -66,7 +66,7 @@ classdef Objet
         
         function obj = goGauche(handles, obj, m)
            if(obj.positionX > 1)
-               if(deplacementGauchePossible(handles, obj, m))
+               if(deplacementGauchePossible( obj, m))
                     obj.positionX = obj.positionX-1;
                end
            end
@@ -75,7 +75,7 @@ classdef Objet
         
         function obj = goHaut(handles, obj, m)
            if(obj.positionY < obj.taille_lab)
-               if(deplacementHautPossible(handles, obj, m))
+               if(deplacementHautPossible( obj, m))
                     obj.positionY = obj.positionY+1;
                end
            end
@@ -84,16 +84,16 @@ classdef Objet
         
         function obj = goBas(handles, obj, m)
            if(obj.positionY > 1)
-               if(deplacementBasPossible(handles, obj, m))
+               if(deplacementBasPossible( obj, m))
                     obj.positionY = obj.positionY-1;
                end
            end
            displayObject(handles,obj);
         end
         
-
-        %Autoriser deplacement Haut
-        function condDepHaut = deplacementHautPossible(handles, obj, m)
+        
+        %%Autoriser deplacement Haut
+        function condDepHaut = deplacementHautPossible(obj, m)
             if (m.MursHorizontaux(obj.taille_lab-obj.positionY, obj.positionX)==0)
                  condDepHaut=1
             else condDepHaut=0
@@ -101,7 +101,7 @@ classdef Objet
         end
         
         %Autoriser deplacement Bas
-        function condDepBas = deplacementBasPossible(handles, obj, m)
+        function condDepBas = deplacementBasPossible( obj, m)
             if (m.MursHorizontaux(obj.taille_lab-obj.positionY+1, obj.positionX)==0)
                  condDepBas=1
             else condDepBas=0
@@ -109,7 +109,7 @@ classdef Objet
         end
         
          %Autoriser deplacement Droite
-        function condDepDroite = deplacementDroitePossible(handles, obj, m)
+        function condDepDroite = deplacementDroitePossible( obj, m)
             if (m.MursVerticaux(obj.taille_lab-obj.positionY+1, obj.positionX)==0)
                  condDepDroite=1
             else condDepDroite=0
@@ -117,7 +117,7 @@ classdef Objet
         end
         
         %Autoriser deplacement Gauche
-        function condDepGauche = deplacementGauchePossible(handles, obj, m)
+        function condDepGauche = deplacementGauchePossible( obj, m)
             if (m.MursVerticaux(obj.taille_lab-obj.positionY+1, obj.positionX-1)==0)
                  condDepGauche=1
             else condDepGauche=0

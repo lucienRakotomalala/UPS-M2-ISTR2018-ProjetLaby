@@ -46,8 +46,20 @@ classdef Visualisation
             end
         end
         
-        function detection_manger(obj,chat,souris)
-            
+        function obj = detection_manger(obj,chat,souris, mur)
+            % Test sur la position en X
+            if (souris.positionX == chat.positionX+1)
+                % Test si le chat peutr aller vers la souris
+                if(chat.deplacementDroitePossible(chat, mur))
+                   obj.mange = obj.mange+1; 
+                end
+            end
+            if (souris.positionX == chat.positionX-1)
+                % Test si le chat peutr aller vers la souris
+                if(chat.deplacementGauchePossible(chat, mur))
+                   obj.mange = obj.mange+1; 
+                end
+            end            
         end
     end
 end
