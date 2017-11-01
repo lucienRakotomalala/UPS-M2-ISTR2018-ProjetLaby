@@ -60,17 +60,17 @@ guidata(hObject, handles);
 handles.sortie.String = 'Ma Sortie';
 % For the exit
 
-gost = Objet(handles,'y*',1,1);
+ghost = Objet(handles,'y*',1,1);
 pacman = Objet(handles,'g*',5,5);
 
 % Sauvegarde des murs initialis?s
 m = Murs(handles);
 %Creationd e la visualisation
-%visu = Visualisation(pacman,gost, m);
+visu = Visualisation(handles,pacman,ghost, m);
 
-%handles.visu = visu; %Ajoute visu aux handles
+handles.visu = visu; %Ajoute visu aux handles
 handles.m = m; % Ajoute le mur aux handles
-handles.gost = gost;
+handles.ghost = ghost;
 handles.pacman = pacman;
 guidata(hObject,handles);    % Ca marche !! OMFG !!!
 
@@ -99,14 +99,21 @@ function initialisation_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 axes(handles.axes1)
 cla
-gost = Objet(handles,'y*',1,1); 
+ghost = Objet(handles,'y*',1,1); 
 pacman = Objet(handles,'g*',5,5);
     % Sauvegarde des murs initialis?s
 m = Murs(handles);
+visu = Visualisation(handles, pacman, ghost, m);
+
+handles.visu = visu; %Ajoute visu aux handles
 handles.m = m; % Ajoute le mur aux handles
-handles.gost = gost;
+handles.ghost = ghost;
 handles.pacman = pacman;
-guidata(hObject,handles);    % Ca marche !! OMFG !!!
+
+vue_pacman(handles,visu);
+
+guidata(hObject,handles);
+
 
 
                
@@ -116,12 +123,16 @@ function D2_Callback(hObject, eventdata, handles)
 % hObject    handle to D2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-gost = handles.gost;
+ghost = handles.ghost;
 m = handles.m;
-gost = goDroite(handles, gost, m);
+visu = handles.visu;
+ghost = goDroite(handles, ghost, m);
 displayWall(handles,m);
-handles.gost = gost;
+handles.ghost = ghost;
+vue_pacman(handles,visu);
 guidata(hObject, handles);
+
+
 
 
 
@@ -130,12 +141,14 @@ function H2_Callback(hObject, eventdata, handles)
 % hObject    handle to H2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-gost = handles.gost;
+
+ghost = handles.ghost;
 m = handles.m;
-gost = goHaut(handles, gost, m);
+ghost = goHaut(handles, ghost, m);
 displayWall(handles,m);
-handles.gost = gost;
-guidata(hObject, handles); %pas de ;
+handles.ghost = ghost;
+guidata(hObject, handles);
+
 
 
 % --- Executes on button press in G2.
@@ -143,11 +156,11 @@ function G2_Callback(hObject, eventdata, handles)
 % hObject    handle to G2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-gost = handles.gost;
+ghost = handles.ghost;
 m = handles.m;
-gost = goGauche(handles, gost, m);
+ghost = goGauche(handles, ghost, m);
 displayWall(handles,m);
-handles.gost = gost;
+handles.ghost = ghost;
 guidata(hObject, handles);
 
 
@@ -156,11 +169,11 @@ function B2_Callback(hObject, eventdata, handles)
 % hObject    handle to B2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-gost = handles.gost;
+ghost = handles.ghost;
 m = handles.m;
-gost = goBas(handles, gost, m);
+ghost = goBas(handles, ghost, m);
 displayWall(handles,m);
-handles.gost = gost;
+handles.ghost = ghost;
 guidata(hObject, handles);
 
 
