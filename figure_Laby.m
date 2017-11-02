@@ -271,6 +271,7 @@ m = set_MursHorizontaux(m);
 displayWall(handles,m);
 handles.m = m; % Ajoute le mur aux handles
 guidata(hObject,handles);    % Sa marche !! OMFG !!!
+<<<<<<< Updated upstream
 m.MursHorizontaux
 
 
