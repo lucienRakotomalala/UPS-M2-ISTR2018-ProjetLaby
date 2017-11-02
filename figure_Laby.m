@@ -22,7 +22,7 @@ function varargout = figure_Laby(varargin)
 
 % Edit the above text to modify the response to help figure_Laby
 
-% Last Modified by GUIDE v2.5 02-Nov-2017 10:50:39
+% Last Modified by GUIDE v2.5 02-Nov-2017 15:58:20
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -259,7 +259,6 @@ m = set_MursVerticaux(m);
 displayWall(handles,m);
 handles.m = m; % Ajoute le mur aux handles
 guidata(hObject,handles);    % Sa marche !! OMFG !!!
-m.MursVerticaux
 
 % --- Executes on button press in wallRight.
 function wallRight_Callback(hObject, eventdata, handles)
@@ -271,7 +270,3 @@ m = set_MursHorizontaux(m);
 displayWall(handles,m);
 handles.m = m; % Ajoute le mur aux handles
 guidata(hObject,handles);    % Sa marche !! OMFG !!!
-<<<<<<< Updated upstream
-m.MursHorizontaux
-
-
