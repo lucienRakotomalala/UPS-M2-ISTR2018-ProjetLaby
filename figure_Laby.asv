@@ -66,13 +66,12 @@ pacman = Objet(handles,'g*',5,5);
 % Sauvegarde des murs initialis?s
 m = Murs(handles);
 %Creationd e la visualisation
-visu = Visualisation(pacman,ghost, m);
+visu = Visualisation(handles,pacman,ghost, m);
 
 handles.visu = visu; %Ajoute visu aux handles
 handles.m = m; % Ajoute le mur aux handles
 handles.ghost = ghost;
 handles.pacman = pacman;
-handles.visu = visu;
 guidata(hObject,handles);    % Ca marche !! OMFG !!!
 
 grid on
@@ -120,15 +119,11 @@ function D2_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 ghost = handles.ghost;
 m = handles.m;
+
 ghost = goDroite(handles, ghost, m);
 displayWall(handles,m);
-% Test de la detection mang� :
-visu = handles.visu
-visu = detection_manger(visu, ghost, handles.pacman, m);
-MANGER = visu.mange
-handles.visu = visu;
-
 handles.ghost = ghost;
+
 guidata(hObject, handles);
 
 
@@ -145,14 +140,9 @@ ghost = handles.ghost;
 m = handles.m;
 ghost = goHaut(handles, ghost, m);
 displayWall(handles,m);
-% Test de la detection mang� :
-visu = handles.visu
-visu = detection_manger(visu, ghost, handles.pacman, m);
-MANGER = visu.mange
-handles.visu = visu;
-
 handles.ghost = ghost;
-guidata(hObject, handles); %pas de ;
+%vue_pacman(handles,visu);
+guidata(hObject, handles);
 
 
 
@@ -166,13 +156,8 @@ ghost = handles.ghost;
 m = handles.m;
 ghost = goGauche(handles, ghost, m);
 displayWall(handles,m);
-% Test de la detection mang� :
-visu = handles.visu
-visu = detection_manger(visu, ghost, handles.pacman, m);
-MANGE = visu.mange
-handles.visu = visu;
-
 handles.ghost = ghost;
+%vue_pacman(handles,visu);
 guidata(hObject, handles);
 
 
@@ -186,13 +171,8 @@ ghost = handles.ghost;
 m = handles.m;
 ghost = goBas(handles, ghost, m);
 displayWall(handles,m);
-% Test de la detection mang� :
-visu = handles.visu
-visu = detection_manger(visu, ghost, handles.pacman, m);
-MANGE = visu.mange
-handles.visu = visu;
-
 handles.ghost = ghost;
+%vue_pacman(handles,visu);
 guidata(hObject, handles);
 
 
@@ -284,3 +264,29 @@ guidata(hObject,handles);    % Sa marche !! OMFG !!!
 m.MursHorizontaux
 
 
+
+% --- Executes when GostWall is resized.
+function GostWall_SizeChangedFcn(hObject, eventdata, handles)
+% hObject    handle to GostWall (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on key press with focus on H1 and none of its controls.
+
+% hObject    handle to H1 (see GCBO)
+% eventdata  structure with the following fields (see MATLAB.UI.CONTROL.UICONTROL)
+%	Key: name of the key that was pressed, in lower case
+%	Character: character interpretation of the key(s) that was pressed
+%	Modifier: name(s) of the modifier key(s) (i.e., control, shift) pressed
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on key press with focus on H1 and none of its controls.
+function H1_KeyPressFcn(hObject, eventdata, handles)
+% hObject    handle to H1 (see GCBO)
+% eventdata  structure with the following fields (see MATLAB.UI.CONTROL.UICONTROL)
+%	Key: name of the key that was pressed, in lower case
+%	Character: character interpretation of the key(s) that was pressed
+%	Modifier: name(s) of the modifier key(s) (i.e., control, shift) pressed
+% handles    structure with handles and user data (see GUIDATA)

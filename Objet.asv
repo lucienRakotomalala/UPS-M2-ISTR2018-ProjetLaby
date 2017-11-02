@@ -114,7 +114,7 @@ classdef Objet
         
         %Autoriser deplacement Droite
         function condDepDroite = deplacementDroitePossible(obj, m)
-            if(obj.positionX<5)
+            if(obj.PositionX<5)
                 if (m.MursVerticaux(obj.taille_lab-obj.positionY+1, obj.positionX)==0)
                     condDepDroite=1;
                 else condDepDroite=0;
@@ -124,7 +124,7 @@ classdef Objet
         
         %Autoriser deplacement Gauche
         function condDepGauche = deplacementGauchePossible(obj, m)
-            if(obj.positionX>1)
+            if(obj.PositionX>1)
                 if (m.MursVerticaux(obj.taille_lab-obj.positionY+1, obj.positionX-1)==0)
                     condDepGauche=1;
                 else condDepGauche=0;
