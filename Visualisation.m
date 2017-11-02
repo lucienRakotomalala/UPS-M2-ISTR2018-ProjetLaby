@@ -20,9 +20,15 @@ classdef Visualisation
             obj.mange = 0;
         end
         
+        function obj = actuVisu(newPacman,newGhost, newMur)
         %fonction qui affiche les murs que pacman voit
+            obj.pacman =new;
+            obj.ghost=newGhost;
+            obj.murs=murs;
+        end
+        
         function  vue_pacman(handles,obj)
-            
+                
             if(deplacementHautPossible(obj.pacman, obj.murs) == 0) %il y a un mur
                 set(handles.PacmanUp,'BackgroundColor','b');
             else
