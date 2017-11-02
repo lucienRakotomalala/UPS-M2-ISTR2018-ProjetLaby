@@ -100,8 +100,8 @@ m = Murs(handles);
 handles.m = m; % Ajoute le mur aux handles
 handles.gost = gost;
 handles.pacman = pacman;
-guidata(hObject,handles);    % Ca marche !! OMFG !!!
 handles.sortie=Sortie(handles,'r',4,3);
+guidata(hObject,handles);    % Ca marche !! OMFG !!!
 
 
                
@@ -168,12 +168,7 @@ pacman = handles.pacman;
 m = handles.m;
 pacman = goDroite(handles, pacman, m);
 displayWall(handles,m);
-% laSortie = handles.sortie;
-% if(isEscaped(laSortie,pacman,handles)==0) 
-%     'SORTIEEEE'
-% else
-%     'pasSortie'
-% end
+isEscaped(handles.sortie,pacman,handles);
     
 handles.pacman = pacman;
 guidata(hObject, handles)
@@ -189,6 +184,7 @@ pacman = handles.pacman;
 m = handles.m
 pacman = goHaut(handles, pacman, m)
 displayWall(handles,m)
+isEscaped(handles.sortie,pacman,handles);
 handles.pacman = pacman;
 guidata(hObject, handles)
 
@@ -204,6 +200,7 @@ pacman = handles.pacman;
 m = handles.m
 pacman = goGauche(handles, pacman, m)
 displayWall(handles,m)
+isEscaped(handles.sortie,pacman,handles);
 handles.pacman = pacman;
 guidata(hObject, handles)
 
@@ -218,6 +215,7 @@ pacman = handles.pacman;
 m = handles.m
 pacman = goBas(handles, pacman, m)
 displayWall(handles,m)
+isEscaped(handles.sortie,pacman,handles);
 handles.pacman = pacman;
 guidata(hObject, handles)
 

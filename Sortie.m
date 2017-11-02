@@ -16,6 +16,8 @@ classdef Sortie
             obj.positionX = xPosition;
             obj.positionY = yPosition;
             axes(handles.axes1);
+            set(handles.Sortie,'BackgroundColor',[.8 .8 .8]);
+            set(handles.Sortie,'String','Escaped Pacman :');
             hold on
             % x  bas drte
             rectangle('Position',[xPosition-1+.2 , yPosition-1+.2, .6 , .6 ],...
@@ -25,15 +27,17 @@ classdef Sortie
             hold off
         end
         
-%         function escaped = isEscaped(obj,pacman,handles)
-%             if ( obj.positionX == pacman.positionX && obj.positionY == pacman.positionY)
-%                 escaped = 1; % pacman is on the escape position
-%                 set(handles.Sortie,'BackgroundColor','r');
-%                 
-%             else
-%                 escaped = 0;% pacman isn't on the escape position
-%             end
-%         end
+        function escaped = isEscaped(obj,pacman,handles)
+            if ( (obj.positionX == pacman.positionX) && (obj.positionY == pacman.positionY) )
+                escaped = 1; % pacman is on the escape position
+                set(handles.Sortie,'BackgroundColor','r');
+                set(handles.Sortie,'String','Escaped Pacman : Yes');
+            else
+                escaped = 0;% pacman isn't on the escape position
+                set(handles.Sortie,'BackgroundColor',[.8 .8 .8]);
+                
+            end
+        end
     end
 end
 
