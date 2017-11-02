@@ -243,11 +243,3 @@ displayWall(handles,m);
 handles.m = m; % Ajoute le mur aux handles
 guidata(hObject,handles);    % Sa marche !! OMFG !!!
 m.MursHorizontaux
-
-
-
-% --- Executes when GhostWall is resized.
-function GhostWall_SizeChangedFcn(hObject, eventdata, handles)
-% hObject    handle to GhostWall (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
