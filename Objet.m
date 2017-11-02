@@ -94,44 +94,52 @@ classdef Objet
         
         %Autoriser deplacement Haut
         function condDepHaut = deplacementHautPossible(obj, m)
+            condDepHaut = 0;
             if(obj.positionY<obj.taille_lab)
                 if (m.MursHorizontaux(obj.taille_lab-obj.positionY, obj.positionX)==0)
                     condDepHaut=1;
-                else condDepHaut=0;
                 end
             end
         end
         
         %Autoriser deplacement Bas
         function condDepBas = deplacementBasPossible(obj, m)
+            
+            condDepBas=0;
             if(obj.positionY>1)
+                                ' pas tout en bas'
+
                 if (m.MursHorizontaux(obj.taille_lab-obj.positionY+1, obj.positionX)==0)
+                    ' pas de mur en dessous'
                     condDepBas=1;
-                else condDepBas=0;
                 end
             end
         end
         
         %Autoriser deplacement Droite
         function condDepDroite = deplacementDroitePossible(obj, m)
-            if(obj.positionX<5)
-                if (m.MursVerticaux(obj.taille_lab-obj.positionY+1, obj.positionX)==0)
+            condDepDroite=0;
+            if(obj.positionX<5) % pas tout a droite
+                ' pas tout a droite'
+                if (m.MursVerticaux(obj.taille_lab-obj.positionY+1, obj.positionX)==0) % pas de mur a droite
+                    ' pas de mur a droite'
                     condDepDroite=1;
-                else condDepDroite=0;
+                
                 end
             end
         end
         
         %Autoriser deplacement Gauche
         function condDepGauche = deplacementGauchePossible(obj, m)
+            condDepGauche=0;
             if(obj.positionX>1)
                 if (m.MursVerticaux(obj.taille_lab-obj.positionY+1, obj.positionX-1)==0)
                     condDepGauche=1;
-                else condDepGauche=0;
+                
                 end
             end
         end
-
+        
     end
     
 end
