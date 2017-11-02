@@ -72,6 +72,7 @@ visu = Visualisation(pacman,ghost, m);
 handles.m = m; % Ajoute le mur aux handles
 handles.ghost = ghost;
 handles.pacman = pacman;
+handles.visu = visu;
 guidata(hObject,handles);    % Ca marche !! OMFG !!!
 
 grid on
@@ -120,6 +121,12 @@ ghost = handles.ghost;
 m = handles.m;
 ghost = goDroite(handles, ghost, m);
 displayWall(handles,m);
+% Test de la detection mangé :
+visu = handles.visu
+visu = detection_manger(visu, ghost, handles.pacman, m);
+MANGER = visu.mange
+handles.visu = visu;
+
 handles.ghost = ghost;
 guidata(hObject, handles);
 
@@ -134,6 +141,12 @@ ghost = handles.ghost;
 m = handles.m;
 ghost = goHaut(handles, ghost, m);
 displayWall(handles,m);
+% Test de la detection mangé :
+visu = handles.visu
+visu = detection_manger(visu, ghost, handles.pacman, m);
+MANGER = visu.mange
+handles.visu = visu;
+
 handles.ghost = ghost;
 guidata(hObject, handles); %pas de ;
 
@@ -147,6 +160,12 @@ ghost = handles.ghost;
 m = handles.m;
 ghost = goGauche(handles, ghost, m);
 displayWall(handles,m);
+% Test de la detection mangé :
+visu = handles.visu
+visu = detection_manger(visu, ghost, handles.pacman, m);
+MANGE = visu.mange
+handles.visu = visu;
+
 handles.ghost = ghost;
 guidata(hObject, handles);
 
@@ -160,6 +179,12 @@ ghost = handles.ghost;
 m = handles.m;
 ghost = goBas(handles, ghost, m);
 displayWall(handles,m);
+% Test de la detection mangé :
+visu = handles.visu
+visu = detection_manger(visu, ghost, handles.pacman, m);
+MANGE = visu.mange
+handles.visu = visu;
+
 handles.ghost = ghost;
 guidata(hObject, handles);
 

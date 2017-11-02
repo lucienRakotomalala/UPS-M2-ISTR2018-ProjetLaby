@@ -7,7 +7,7 @@ classdef Visualisation
         ghost;
         murs;
         
-        mange = 0;
+        mange;
     end
     
     methods
@@ -17,6 +17,7 @@ classdef Visualisation
             obj.pacman = pacman;
             obj.ghost=ghost;
             obj.murs=murs;
+            obj.mange = 0;
         end
         
         %fonction qui affiche les murs que pacman voit
@@ -45,32 +46,37 @@ classdef Visualisation
                 set(handles.PacmanRight,'BackgroundColor',[0.8 0.8 0.8]);
             end
         end
-        
+        %%
         function obj = detection_manger(obj,chat,souris, mur)
+
             % Test sur la position en X
-            if (souris.positionX == chat.positionX+1)
+            if ((souris.positionX == chat.positionX+1)&&(souris.positionY == chat.positionY))
                 % Test si le chat peutr aller vers la souris
-                if(chat.deplacementDroitePossible(chat, mur))
-                   obj.mange = obj.mange+1; 
+                if(deplacementDroitePossible(chat, mur))
+                    obj.mange = obj.mange+1; 
+                    display('souris a droite')
                 end
             end
-            if (souris.positionX == chat.positionX-1)
+            if ((souris.positionX == chat.positionX-1)&&(souris.positionY == chat.positionY))
                 % Test si le chat peutr aller vers la souris
-                if(chat.deplacementGauchePossible(chat, mur))
+                if(deplacementGauchePossible(chat, mur))
+                   display('souris a gauche')
                    obj.mange = obj.mange+1; 
                 end
             end
             % Test sur la position en Y
-            if (souris.positionY == chat.positionY+1)
+            if ((souris.positionY == chat.positionY+1)&&(souris.positionX == chat.positionX))
                 % Test si le chat peutr aller vers la souris
-                if(chat.deplacementHautPossible(chat, mur))
+                if(deplacementHautPossible(chat, mur))
                    obj.mange = obj.mange+1; 
+                    display('souris en haut')
                 end
             end
-            if (souris.positionY == chat.positionY-1)
+            if ((souris.positionY == chat.positionY-1)&&(souris.positionX == chat.positionX))
                 % Test si le chat peutr aller vers la souris
-                if(chat.deplacementBasPossible(chat, mur))
+                if(deplacementBasPossible(chat, mur))
                    obj.mange = obj.mange+1; 
+                   display('souris en bas')
                 end
             end
         end
