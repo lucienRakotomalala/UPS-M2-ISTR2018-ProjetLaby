@@ -1,4 +1,4 @@
-function varargout = figure_Laby(varargin)
+function varargout = figure_Laby(varargin) 
 % FIGURE_LABY MATLAB code for figure_Laby.fig
 %      FIGURE_LABY, by itself, creates a new FIGURE_LABY or raises the existing
 %      singleton*.
@@ -59,8 +59,8 @@ guidata(hObject, handles);
 handles.sortie.String = 'Ma Sortie';
 % For the exit
 
-gost = Objet(handles,'b*',1,1);
-pacman = Objet(handles,'r*',5,5);
+gost = Objet(handles,'y*',1,1);
+pacman = Objet(handles,'g*',5,5);
 % Sauvegarde des murs initialis?s
 m = Murs(handles);
 handles.m = m; % Ajoute le mur aux handles
@@ -70,11 +70,6 @@ guidata(hObject,handles);    % Ca marche !! OMFG !!!
 
 grid on
 
-%%
-% [murs, visu] = getElement(handles,'murs','visu');
-% handles = setElement(murs,pacman)
-
-%%
 % UIWAIT makes figure_Laby wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 
@@ -108,23 +103,30 @@ handles.ghost = ghost;
 handles.pacman = pacman;
 handles.sortie=Sortie(handles,'r',4,3);
 guidata(hObject,handles);    % Ca marche !! OMFG !!!
-
+%{
+function ghostMoves()
+    %% TODO 
+end
+function pacmanMoves()
+    %% TODO 
+end
+%}
 % --- Executes on button press in D2.
 function D2_Callback(hObject, eventdata, handles)
 % hObject    handle to D2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-visu = handles.visu;
-ghost = handles.ghost;
-m = handles.m;
+%visu = handles.visu;
+[visu,ghost,m] = getElement(handles,'visu','ghost','murs');
 ghost = goDroite(handles, ghost, m);
 displayWall(handles,m);
 % Test de la detection mang� :
 visu = detection_manger(visu, ghost, handles.pacman, m);
-MANGER = visu.mange
-handles.visu = visu;
+MANGER = visu.mange;
 
+handles.visu = visu;
 handles.ghost = ghost;
+
 guidata(hObject, handles);
 
 
@@ -136,9 +138,8 @@ function H2_Callback(hObject, eventdata, handles)
 % hObject    handle to H2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-visu = handles.visu;
-ghost = handles.ghost;
-m = handles.m;
+[visu,ghost,m] = getElement(handles,'visu','ghost','murs');
+
 ghost = goHaut(handles, ghost, m);
 displayWall(handles,m);
 % Test de la detection mang� :
@@ -156,9 +157,8 @@ function G2_Callback(hObject, eventdata, handles)
 % hObject    handle to G2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-visu = handles.visu;
-ghost = handles.ghost;
-m = handles.m;
+[visu,ghost,m] = getElement(handles,'visu','ghost','murs');
+
 ghost = goGauche(handles, ghost, m);
 displayWall(handles,m);
 % Test de la detection mang� :
@@ -175,9 +175,8 @@ function B2_Callback(hObject, eventdata, handles)
 % hObject    handle to B2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-visu = handles.visu;
-ghost = handles.ghost;
-m = handles.m;
+[visu,ghost,m] = getElement(handles,'visu','ghost','murs');
+
 ghost = goBas(handles, ghost, m);
 displayWall(handles,m);
 % Test de la detection mang� :
@@ -194,15 +193,13 @@ function D1_Callback(hObject, eventdata, handles)
 % hObject    handle to D1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-visu = handles.visu;
-pacman = handles.pacman;
-m = handles.m;
+[pacman,m] = getElement(handles,'pacman','murs');
+
 pacman = goDroite(handles, pacman, m);
 displayWall(handles,m);
 isEscaped(handles.sortie,pacman,handles);
     
 handles.pacman = pacman;
-handles.visu =visu;
 guidata(hObject, handles)
 
 
@@ -211,9 +208,8 @@ function H1_Callback(hObject, eventdata, handles)
 % hObject    handle to H1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-visu = handles.visu;
-pacman = handles.pacman;
-m = handles.m
+[pacman,m] = getElement(handles,'pacman','murs');
+
 pacman = goHaut(handles, pacman, m)
 
 displayWall(handles,m)
@@ -229,8 +225,7 @@ function G1_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-m = handles.m
-pacman = handles.pacman;
+[pacman,m] = getElement(handles,'pacman','murs');
 pacman = goGauche(handles, pacman, m);
 displayWall(handles,m)
 isEscaped(handles.sortie,pacman,handles);
@@ -244,8 +239,8 @@ function B1_Callback(hObject, eventdata, handles)
 % hObject    handle to B1 (see GCBO)
 % eventdata  reserved  - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-pacman = handles.pacman;
-m = handles.m
+[pacman,m] = getElement(handles,'pacman','murs');
+
 pacman = goBas(handles, pacman, m)
 displayWall(handles,m)
 isEscaped(handles.sortie,pacman,handles);
@@ -259,7 +254,7 @@ function wallDown_Callback(hObject, eventdata, handles)
 % hObject    handle to wallDown (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-m = handles.m;
+m = getElement(handles,'murs');
 m = set_MursVerticaux(m);
 displayWall(handles,m);
 handles.m = m; % Ajoute le mur aux handles
@@ -270,7 +265,7 @@ function wallRight_Callback(hObject, eventdata, handles)
 % hObject    handle to wallRight (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-m = handles.m;
+[m] = getElement(handles,'murs');
 m = set_MursHorizontaux(m);
 displayWall(handles,m);
 handles.m = m; % Ajoute le mur aux handles
