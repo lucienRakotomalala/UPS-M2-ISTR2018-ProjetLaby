@@ -22,7 +22,7 @@ function varargout = figure_Laby(varargin)
 
 % Edit the above text to modify the response to help figure_Laby
 
-% Last Modified by GUIDE v2.5 26-Oct-2017 13:09:43
+% Last Modified by GUIDE v2.5 02-Nov-2017 09:22:22
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -239,31 +239,3 @@ displayWall(handles,m);
 handles.m = m; % Ajoute le mur aux handles
 guidata(hObject,handles);    % Sa marche !! OMFG !!!
 m.MursHorizontaux
-
-
-
-% --- Executes when GostWall is resized.
-function GostWall_SizeChangedFcn(hObject, eventdata, handles)
-% hObject    handle to GostWall (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-
-% --- Executes on key press with focus on H1 and none of its controls.
-
-% hObject    handle to H1 (see GCBO)
-% eventdata  structure with the following fields (see MATLAB.UI.CONTROL.UICONTROL)
-%	Key: name of the key that was pressed, in lower case
-%	Character: character interpretation of the key(s) that was pressed
-%	Modifier: name(s) of the modifier key(s) (i.e., control, shift) pressed
-% handles    structure with handles and user data (see GUIDATA)
-
-
-% --- Executes on key press with focus on H1 and none of its controls.
-function H1_KeyPressFcn(hObject, eventdata, handles)
-% hObject    handle to H1 (see GCBO)
-% eventdata  structure with the following fields (see MATLAB.UI.CONTROL.UICONTROL)
-%	Key: name of the key that was pressed, in lower case
-%	Character: character interpretation of the key(s) that was pressed
-%	Modifier: name(s) of the modifier key(s) (i.e., control, shift) pressed
-% handles    structure with handles and user data (see GUIDATA)

@@ -18,10 +18,9 @@ classdef Sortie
             axes(handles.axes1);
             hold on
                                 % x  bas drte
-            rectangle('Position',[xPosition-1+.2 , yPosition-1+.2, .6 , .6 ],...
-                'Curvature',.1, 'EdgeColor',color,'FaceColor',color);
-            text(xPosition-.799 , yPosition-.5,  'Escape',...
-                'Color','w',    'FontSize',8   , 'FontWeight','bold');
+            rectangle('Position',[xPosition-.75 , yPosition-.75 , .5 , .5 ],...
+                'Curvature',.1, 'EdgeColor',color,'FaceColor',color );
+            annotation(
             hold off
         end
     end
