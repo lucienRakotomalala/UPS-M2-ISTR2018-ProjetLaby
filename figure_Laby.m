@@ -22,7 +22,7 @@ function varargout = figure_Laby(varargin)
 
 % Edit the above text to modify the response to help figure_Laby
 
-% Last Modified by GUIDE v2.5 02-Nov-2017 10:50:39
+% Last Modified by GUIDE v2.5 02-Nov-2017 15:58:20
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -224,6 +224,7 @@ function G1_Callback(hObject, eventdata, handles)
 % hObject    handle to G1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
 m = handles.m
 pacman = handles.pacman;
 pacman = goGauche(handles, pacman, m);
