@@ -168,12 +168,12 @@ pacman = handles.pacman;
 m = handles.m;
 pacman = goDroite(handles, pacman, m);
 displayWall(handles,m);
-% laSortie = handles.sortie;
-% if(isEscaped(laSortie,pacman,handles)==0) 
-%     'SORTIEEEE'
-% else
-%     'pasSortie'
-% end
+
+if(handles.isEscaped(handles.sortie,pacman,handles)==0) 
+    'SORTIEEEE'
+else
+    'pasSortie'
+end
     
 handles.pacman = pacman;
 guidata(hObject, handles)
