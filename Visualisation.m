@@ -59,7 +59,20 @@ classdef Visualisation
                 if(chat.deplacementGauchePossible(chat, mur))
                    obj.mange = obj.mange+1; 
                 end
-            end            
+            end
+            % Test sur la position en Y
+            if (souris.positionY == chat.positionY+1)
+                % Test si le chat peutr aller vers la souris
+                if(chat.deplacementHautPossible(chat, mur))
+                   obj.mange = obj.mange+1; 
+                end
+            end
+            if (souris.positionY == chat.positionY-1)
+                % Test si le chat peutr aller vers la souris
+                if(chat.deplacementBasPossible(chat, mur))
+                   obj.mange = obj.mange+1; 
+                end
+            end
         end
     end
 end
