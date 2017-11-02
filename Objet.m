@@ -57,7 +57,7 @@ classdef Objet
         
         function obj = goDroite(handles, obj, m)
            if(obj.positionX < obj.taille_lab)
-               if(autoriserDeplacementDroite(handles, obj, m))
+               if(deplacementDroitePossible( obj, m))
                     obj.positionX = obj.positionX+1;
                end
            end
@@ -66,7 +66,7 @@ classdef Objet
         
         function obj = goGauche(handles, obj, m)
            if(obj.positionX > 1)
-               if(autoriserDeplacementGauche(handles, obj, m))
+               if(deplacementGauchePossible( obj, m))
                     obj.positionX = obj.positionX-1;
                end
            end
@@ -75,7 +75,7 @@ classdef Objet
         
         function obj = goHaut(handles, obj, m)
            if(obj.positionY < obj.taille_lab)
-               if(autoriserDeplacementHaut(handles, obj, m))
+               if(deplacementHautPossible( obj, m))
                     obj.positionY = obj.positionY+1;
                end
            end
@@ -84,7 +84,7 @@ classdef Objet
         
         function obj = goBas(handles, obj, m)
            if(obj.positionY > 1)
-               if(autoriserDeplacementBas(handles, obj, m))
+               if(deplacementBasPossible(obj, m))
                     obj.positionY = obj.positionY-1;
                end
            end

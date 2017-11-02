@@ -71,8 +71,10 @@ guidata(hObject,handles);    % Ca marche !! OMFG !!!
 grid on
 
 %%
-% [murs, visu] = getElement(handles,'murs','visu');
-% handles = setElement(murs,pacman)
+
+[murs, visu] = getElement(handles,'murs','visu');
+
+handles = setElement(murs,pacman)
 
 %%
 % UIWAIT makes figure_Laby wait for user response (see UIRESUME)
