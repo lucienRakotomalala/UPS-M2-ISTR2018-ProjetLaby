@@ -22,7 +22,7 @@ function varargout = figure_Laby(varargin)
 
 % Edit the above text to modify the response to help figure_Laby
 
-% Last Modified by GUIDE v2.5 02-Nov-2017 15:58:20
+% Last Modified by GUIDE v2.5 03-Nov-2017 16:55:36
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -56,19 +56,16 @@ function figure_Laby_OpeningFcn(hObject, eventdata, handles, varargin)
 handles.output = hObject;
 % Update handles structure
 guidata(hObject, handles);
-handles.sortie.String = 'Ma Sortie';
 % For the exit
 
-gost = Objet(handles,'y*',1,1);
-pacman = Objet(handles,'g*',5,5);
-% Sauvegarde des murs initialis?s
-m = Murs(handles);
-handles.m = m; % Ajoute le mur aux handles
-handles.gost = gost;
-handles.pacman = pacman;
-guidata(hObject,handles);    % Ca marche !! OMFG !!!
 
+% Sauvegarde des walls initialis?s
+
+handles.w       = Walls(handles); % create and add walls into handles 
+handles.ghost   = Objet(handles,'y*',1,1); % create and add ghost into handles 
+handles.pacman  = Objet(handles,'g*',5,5);% create and add pacman into handles 
 grid on
+guidata(hObject,handles);    % OMFG !!!
 
 % UIWAIT makes figure_Laby wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
@@ -85,26 +82,26 @@ function varargout = figure_Laby_OutputFcn(hObject, eventdata, handles)
 varargout{1} = handles.output;
 
 
-% --- Executes on button press in initialisation.
-function initialisation_Callback(hObject, eventdata, handles)
-% hObject    handle to initialisation (see GCBO)
+% --- Executes on button press in initialization.
+function initialization_Callback(hObject, eventdata, handles)
+% hObject    handle to initialization (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 axes(handles.axes1)
-cla
+cla                     %% TODO
 ghost = Objet(handles,'y*',1,1); 
 pacman = Objet(handles,'g*',5,5);
-    % Sauvegarde des murs initialis?s
-m = Murs(handles);
-visu = Visualisation( pacman, ghost, m);
+    % Sauvegarde des walls initialis?s
+w = Walls(handles);
+visu = Visualization();
 handles.visu = visu; %Ajoute visu aux handles
-handles.m = m; % Ajoute le mur aux handles
+handles.w = w; % Ajoute le mur aux handles
 handles.ghost = ghost;
 handles.pacman = pacman;
 visu.localWallsViewer(handles, 'ghost',ghost);
 visu.localWallsViewer(handles, 'pacman',pacman);
 
-handles.sortie=Sortie(handles,'r',4,3);
+handles.escape=Escape(handles,'r',4,3);
 guidata(hObject,handles);    % Ca marche !! OMFG !!!
 
 %% ************************************************************************
@@ -113,58 +110,58 @@ guidata(hObject,handles);    % Ca marche !! OMFG !!!
             
                      
 % --- Common actions between all the ghost move.            
-function handles = ghostMoves(handles,m,visu,ghost)
-    displayWall(handles,m);
-    % Test de la detection mange:
-    visu = detection_manger(visu, ghost, handles.pacman, m);
-    visu.localWallsViewer(handles, 'ghost',ghost)
+function handles = ghostMoves(handles,w,visu,ghost)
+    displayWall(handles,w);
+    % Test de la detection Caught:
+    visu = caughtDetection(visu, ghost, handles.pacman, w);
+    visu.localWallsViewer(handles, 'ghost',ghost);
 
     handles.visu = visu;
     handles.ghost = ghost;
  
 
-% --- Executes on button press in D2.
-function D2_Callback(hObject, eventdata, handles)
-    % hObject    handle to D2 (see GCBO)
+% --- Executes on button press in ghostRightBut.
+function ghostRightBut_Callback(hObject, eventdata, handles)
+    % hObject    handle to ghostRightBut (see GCBO)
     % eventdata  reserved - to be defined in a future version of MATLAB
     % handles    structure with handles and user data (see GUIDATA)
     %visu = handles.visu;
-    [visu,ghost,m] = getElement(handles,'visu','ghost','murs');
-    ghost = goDroite(handles, ghost, m);
-    handles = ghostMoves(handles,m,visu,ghost)
+    [visu,ghost,w] = getElement(handles,'visu','ghost','walls');
+    ghost = goRight(handles, ghost, w);
+    handles = ghostMoves(handles,w,visu,ghost);
     guidata(hObject, handles);
 
 
-% --- Executes on button press in H2.
-function H2_Callback(hObject, eventdata, handles)
-    % hObject    handle to H2 (see GCBO)
+% --- Executes on button press in ghostUpBut.
+function ghostUpBut_Callback(hObject, eventdata, handles)
+    % hObject    handle to ghostUpBut (see GCBO)
     % eventdata  reserved - to be defined in a future version of MATLAB
     % handles    structure with handles and user data (see GUIDATA)
-    [visu,ghost,m] = getElement(handles,'visu','ghost','murs');
-    ghost = goHaut(handles, ghost, m);
-    handles = ghostMoves(handles,m,visu,ghost);
-    guidata(hObject, handles); %pas de ;
+    [visu,ghost,w] = getElement(handles,'visu','ghost','walls');
+    ghost = goUp(handles, ghost, w);
+    handles = ghostMoves(handles,w,visu,ghost);
+    guidata(hObject, handles);  
 
 
-% --- Executes on button press in G2.
-function G2_Callback(hObject, eventdata, handles)
-    % hObject    handle to G2 (see GCBO)
+% --- Executes on button press in ghostLeftBut.
+function ghostLeftBut_Callback(hObject, eventdata, handles)
+    % hObject    handle to ghostLeftBut (see GCBO)
     % eventdata  reserved - to be defined in a future version of MATLAB
     % handles    structure with handles and user data (see GUIDATA)
-    [visu,ghost,m] = getElement(handles,'visu','ghost','murs');
-    ghost = goGauche(handles, ghost, m);
-    handles = ghostMoves(handles,m,visu,ghost)
+    [visu,ghost,w] = getElement(handles,'visu','ghost','walls');
+    ghost = goLeft(handles, ghost, w);
+    handles = ghostMoves(handles,w,visu,ghost);
     guidata(hObject, handles);
 
 
-% --- Executes on button press in B2.
-function B2_Callback(hObject, eventdata, handles)
-    % hObject    handle to B2 (see GCBO)
+% --- Executes on button press in ghostDownBut.
+function ghostDownBut_Callback(hObject, eventdata, handles)
+    % hObject    handle to ghostDownBut (see GCBO)
     % eventdata  reserved - to be defined in a future version of MATLAB
     % handles    structure with handles and user data (see GUIDATA)
-    [visu,ghost,m] = getElement(handles,'visu','ghost','murs');
-    ghost = goBas(handles, ghost, m);
-    handles = ghostMoves(handles,m,visu,ghost)
+    [visu,ghost,w] = getElement(handles,'visu','ghost','walls');
+    ghost = goDown(handles, ghost, w);
+    handles = ghostMoves(handles,w,visu,ghost);
     guidata(hObject, handles);
 
 %% ************************************************************************    
@@ -173,67 +170,67 @@ function B2_Callback(hObject, eventdata, handles)
                 %% %%%%%%% Pacman %%%%%%%
     
     
-function handles = pacmanMoves(handles,m,pacman)
-    displayWall(handles,m);
-    % Test de detection de sortie de pacman
-    isEscaped(handles.sortie,pacman,handles);
-    handles.visu.localWallsViewer(handles, 'pacman',pacman)
+function handles = pacmanMoves(handles,w,pacman)
+    displayWall(handles,w);
+    % Test de detection de escape de pacman
+    isEscaped(handles.escape,pacman,handles);
+    handles.visu.localWallsViewer(handles, 'pacman',pacman);
 
     handles.pacman = pacman;
  
     
-% --- Executes on button press in D1.
-function D1_Callback(hObject, eventdata, handles)
-    % hObject    handle to D1 (see GCBO)
+% --- Executes on button press in pacmanRightBut.
+function pacmanRightBut_Callback(hObject, eventdata, handles)
+    % hObject    handle to pacmanRightBut (see GCBO)
     % eventdata  reserved - to be defined in a future version of MATLAB
     % handles    structure with handles and user data (see GUIDATA)
-    [pacman,m] = getElement(handles,'pacman','murs');
-    pacman = goDroite(handles, pacman, m);
-    handles = pacmanMoves(handles,m,pacman)
+    [pacman,w] = getElement(handles,'pacman','walls');
+    pacman = goRight(handles, pacman, w);
+    handles = pacmanMoves(handles,w,pacman);
     guidata(hObject, handles)
 
 
-% --- Executes on button press in H1.
-function H1_Callback(hObject, eventdata, handles)
-    % hObject    handle to H1 (see GCBO)
+% --- Executes on button press in pacmanUpBut.
+function pacmanUpBut_Callback(hObject, eventdata, handles)
+    % hObject    handle to pacmanUpBut (see GCBO)
     % eventdata  reserved - to be defined in a future version of MATLAB
     % handles    structure with handles and user data (see GUIDATA)
-    [pacman,m] = getElement(handles,'pacman','murs');
-    pacman = goHaut(handles, pacman, m)
-    handles = pacmanMoves(handles,m,pacman)
+    [pacman,w] = getElement(handles,'pacman','walls');
+    pacman = goUp(handles, pacman, w);
+    handles = pacmanMoves(handles,w,pacman);
     guidata(hObject, handles)
 
 
-% --- Executes on button press in G1.
-function G1_Callback(hObject, eventdata, handles)
-    % hObject    handle to G1 (see GCBO)
+% --- Executes on button press in pacmanLeftBut.
+function pacmanLeftBut_Callback(hObject, eventdata, handles)
+    % hObject    handle to pacmanLeftBut (see GCBO)
     % eventdata  reserved - to be defined in a future version of MATLAB
     % handles    structure with handles and user data (see GUIDATA)
-    [pacman,m] = getElement(handles,'pacman','murs');
-    pacman = goGauche(handles, pacman, m);
-    handles = pacmanMoves(handles,m,pacman)
-    guidata(hObject, handles)
+    [pacman,w] = getElement(handles,'pacman','walls');
+    pacman = goLeft(handles, pacman, w);
+    handles = pacmanMoves(handles,w,pacman);
+    guidata(hObject, handles);
 
 
-% --- Executes on button press in B1.
-function B1_Callback(hObject, eventdata, handles)
-    % hObject    handle to B1 (see GCBO)
+% --- Executes on button press in pacmanDownBut.
+function pacmanDownBut_Callback(hObject, eventdata, handles)
+    % hObject    handle to pacmanDownBut (see GCBO)
     % eventdata  reserved  - to be defined in a future version of MATLAB
     % handles    structure with handles and user data (see GUIDATA)
-    [pacman,m] = getElement(handles,'pacman','murs');
-    pacman = goBas(handles, pacman, m)
-    handles = pacmanMoves(handles,m,pacman)
-    guidata(hObject, handles)
+    [pacman,w] = getElement(handles,'pacman','walls');
+    pacman = goDown(handles, pacman, w);
+    handles = pacmanMoves(handles,w,pacman);
+    guidata(hObject, handles);
     
 %% ************************************************************************
 
                 %% %%%%%%% Walls %%%%%%%
 
 
-    function handles = wallMoves(handles,m)
-        displayWall(handles,m);
-        handles.visu.localWallsViewer(handles, 'murs',m)
-        handles.m = m; % Ajoute le mur aux handles
+    function handles = wallMoves(handles,w)
+        displayWall(handles,w);
+        handles.visu.localWallsViewer(handles, 'walls',w);
+        handles.w = w; % Ajoute le mur aux handles
    
         
 % --- Executes on button press in wallDown.
@@ -241,10 +238,10 @@ function wallDown_Callback(hObject, eventdata, handles)
     % hObject    handle to wallDown (see GCBO)
     % eventdata  reserved - to be defined in a future version of MATLAB
     % handles    structure with handles and user data (see GUIDATA)
-    m = getElement(handles,'murs');
-    m = set_MursVerticaux(m);
-    handles = wallMoves(handles,m);
-    guidata(hObject,handles);    % Sa marche !! OMFG !!!
+    w = getElement(handles,'walls');
+    w = setVerticalWalls(w);
+    handles = wallMoves(handles,w);
+    guidata(hObject,handles);    % ça marche !! OMFG !!!
 
     
 % --- Executes on button press in wallRight.
@@ -252,7 +249,7 @@ function wallRight_Callback(hObject, eventdata, handles)
 % hObject    handle to wallRight (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-[m] = getElement(handles,'murs');
-m = set_MursHorizontaux(m);
-handles = wallMoves(handles,m); 
+[w] = getElement(handles,'walls');
+w = setHorizontalWalls(w);
+handles = wallMoves(handles,w); 
 guidata(hObject,handles);    % Sa marche !! OMFG !!!
