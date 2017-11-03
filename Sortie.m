@@ -7,7 +7,6 @@ classdef Sortie
         positionY;
         AllPoint = [];
         taille_lab = 5;
-        color='g*';
     end
     
     methods
