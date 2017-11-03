@@ -101,6 +101,9 @@ handles.visu = visu; %Ajoute visu aux handles
 handles.m = m; % Ajoute le mur aux handles
 handles.ghost = ghost;
 handles.pacman = pacman;
+visu.localWallsViewer(handles, 'ghost',ghost);
+visu.localWallsViewer(handles, 'pacman',pacman);
+
 handles.sortie=Sortie(handles,'r',4,3);
 guidata(hObject,handles);    % Ca marche !! OMFG !!!
 
@@ -114,6 +117,8 @@ function handles = ghostMoves(handles,m,visu,ghost)
     displayWall(handles,m);
     % Test de la detection mange:
     visu = detection_manger(visu, ghost, handles.pacman, m);
+    visu.localWallsViewer(handles, 'ghost',ghost)
+
     handles.visu = visu;
     handles.ghost = ghost;
  
@@ -172,6 +177,8 @@ function handles = pacmanMoves(handles,m,pacman)
     displayWall(handles,m);
     % Test de detection de sortie de pacman
     isEscaped(handles.sortie,pacman,handles);
+    handles.visu.localWallsViewer(handles, 'pacman',pacman)
+
     handles.pacman = pacman;
  
     
@@ -225,6 +232,7 @@ function B1_Callback(hObject, eventdata, handles)
 
     function handles = wallMoves(handles,m)
         displayWall(handles,m);
+        handles.visu.localWallsViewer(handles, 'murs',m)
         handles.m = m; % Ajoute le mur aux handles
    
         
