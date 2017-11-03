@@ -1,4 +1,4 @@
-classdef Sortie
+classdef Escape
     %UNTITLED4 Summary of this class goes here
     %   Detailed explanation goes here
     
@@ -6,17 +6,17 @@ classdef Sortie
         positionX;  % Position dans le labyrinthe
         positionY;
         AllPoint = [];
-        taille_lab = 5;
+        labSize = 5;
     end
     
     methods
         % Constructor
-        function obj=Sortie(handles, color, xPosition, yPosition)
+        function obj=Escape(handles, color, xPosition, yPosition)
             obj.positionX = xPosition;
             obj.positionY = yPosition;
             axes(handles.axes1);
-            set(handles.Sortie,'BackgroundColor',[.8 .8 .8]);
-            set(handles.Sortie,'String','Escaped Pacman :');
+            set(handles.Escape,'BackgroundColor',[.8 .8 .8]);
+            set(handles.Escape,'String','Escaped Pacman :');
             hold on
             % x  bas drte
             rectangle('Position',[xPosition-1+.2 , yPosition-1+.2, .6 , .6 ],...
@@ -29,11 +29,11 @@ classdef Sortie
         function escaped = isEscaped(obj,pacman,handles)
             if ( (obj.positionX == pacman.positionX) && (obj.positionY == pacman.positionY) )
                 escaped = 1; % pacman is on the escape position
-                set(handles.Sortie,'BackgroundColor','r');
-                set(handles.Sortie,'String','Escaped Pacman : Yes');
+                set(handles.Escape,'BackgroundColor','r');
+                set(handles.Escape,'String','Escaped Pacman : Yes');
             else
                 escaped = 0;% pacman isn't on the escape position
-                set(handles.Sortie,'BackgroundColor',[.8 .8 .8]);
+                set(handles.Escape,'BackgroundColor',[.8 .8 .8]);
                 
             end
         end

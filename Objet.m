@@ -6,7 +6,7 @@ classdef Objet
         positionX;  % Position dans le labyrinthe
         positionY;
         AllPoint = [];
-        taille_lab = 5;
+        sizeTab = 5;
         color='g*';
     end
     
@@ -14,8 +14,8 @@ classdef Objet
         function obj = Objet(handles, color, positionX, positionY)
             obj.positionX = positionX;
             obj.positionY = positionY;
-            x = 1:obj.taille_lab;
-            y = 1:obj.taille_lab;
+            x = 1:obj.sizeTab;
+            y = 1:obj.sizeTab;
             k = 1;
             axes(handles.axes1);
             hold on 
@@ -36,8 +36,8 @@ classdef Objet
         function displayObject(handles, obj)
            axes(handles.axes1);
            hold on
-           x = 1:obj.taille_lab;
-           y = 1:obj.taille_lab;
+           x = 1:obj.sizeTab;
+           y = 1:obj.sizeTab;
            k = 1;
            for i = x
                for j = y
@@ -55,36 +55,36 @@ classdef Objet
         
         %% D?placement de l'objet
         
-        function obj = goDroite(handles, obj, m)
-           if(obj.positionX < obj.taille_lab)
-               if(deplacementDroitePossible( obj, m))
+        function obj = goRight(handles, obj, w)
+           if(obj.positionX < obj.sizeTab)
+               if(canGoRight( obj, w))
                     obj.positionX = obj.positionX+1;
                end
            end
            displayObject(handles,obj);
         end
         
-        function obj = goGauche(handles, obj, m)
+        function obj = goLeft(handles, obj, w)
            if(obj.positionX > 1)
-               if(deplacementGauchePossible( obj, m))
+               if(canGoLeft( obj, w))
                     obj.positionX = obj.positionX-1;
                end
            end
            displayObject(handles,obj);
         end
         
-        function obj = goHaut(handles, obj, m)
-           if(obj.positionY < obj.taille_lab)
-               if(deplacementHautPossible( obj, m))
+        function obj = goUp(handles, obj, w)
+           if(obj.positionY < obj.sizeTab)
+               if(canGoUp( obj, w))
                     obj.positionY = obj.positionY+1;
                end
            end
            displayObject(handles,obj);
         end
         
-        function obj = goBas(handles, obj, m)
+        function obj = goDown(handles, obj, w)
            if(obj.positionY > 1)
-               if(deplacementBasPossible(obj, m))
+               if(canGoDown(obj, w))
                     obj.positionY = obj.positionY-1;
                end
            end
@@ -93,44 +93,42 @@ classdef Objet
         
 
         %Autoriser deplacement Haut
-        function condDepHaut = deplacementHautPossible(obj, m)
-            condDepHaut=0;
-            if(obj.positionY<obj.taille_lab)
-                if (m.MursHorizontaux(obj.taille_lab-obj.positionY, obj.positionX)==0)
-                    condDepHaut=1;
+        function can = canGoUp(obj, w)
+            can=0;
+            if(obj.positionY<obj.sizeTab)
+                if (w.horizontalWalls(obj.sizeTab-obj.positionY, obj.positionX)==0)
+                    can=1;
                 end
             end
         end
         
         %Autoriser deplacement Bas
-        function condDepBas = deplacementBasPossible(obj, m)
-            condDepBas=0;
+        function can = canGoDown(obj, w)
+            can=0;
             if(obj.positionY>1)
-                                ' pas tout en bas'
 
-                if (m.MursHorizontaux(obj.taille_lab-obj.positionY+1, obj.positionX)==0)
-                    ' pas de mur en dessous'
-                    condDepBas=1;
+                if (w.horizontalWalls(obj.sizeTab-obj.positionY+1, obj.positionX)==0)
+                    can=1;
                 end
             end
         end
         
         %Autoriser deplacement Droite
-        function condDepDroite = deplacementDroitePossible(obj, m)
-            condDepDroite=0;
+        function can = canGoRight(obj, w)
+            can=0;
             if(obj.positionX<5)
-                if (m.MursVerticaux(obj.taille_lab-obj.positionY+1, obj.positionX)==0)
-                    condDepDroite=1;
+                if (w.verticalWalls(obj.sizeTab-obj.positionY+1, obj.positionX)==0)
+                    can=1;
                 end
             end
         end
         
         %Autoriser deplacement Gauche
-        function condDepGauche = deplacementGauchePossible(obj, m)
-            condDepGauche=0;
+        function can = canGoLeft(obj, w)
+            can=0;
             if(obj.positionX>1)
-                if (m.MursVerticaux(obj.taille_lab-obj.positionY+1, obj.positionX-1)==0)
-                    condDepGauche=1;
+                if (w.verticalWalls(obj.sizeTab-obj.positionY+1, obj.positionX-1)==0)
+                    can=1;
                 end
             end
         end
