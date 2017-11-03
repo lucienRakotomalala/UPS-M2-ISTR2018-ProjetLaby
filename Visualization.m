@@ -13,8 +13,32 @@ classdef Visualization
         function obj=Visualization()
             obj.caught = 0;
         end
+        % --- 
+        function seen = isSeenRight(obj,pacman,ghost,walls)
+        % if( pacman is on the same line and at the right of ghost and
+        %     without walls between them)
+        %     seen = 1;
+        % else 
+        %     seen = 0;
+        % end
+        seen = 0;
+            if ( ( pacman.positionY ==ghost.positionY )  && (pacman.positionX >ghost.positionX ) )
+                if( ) % TODO : no walls between them   
+                    seen= 1;
+                end
+                
+            end
         
-       
+        end
+        
+        function seen = isSeenLeft(obj,pacman,ghost,walls)
+        end
+
+        function seen = isSeenDown(obj,pacman,ghost,walls)
+        end
+        function seen = isSeenUp(obj,pacman,ghost,walls)
+        end
+
         
         function updateWallView(obj,elementToSet,boolCondition)
             if(boolCondition == 0) %il y a un mur
