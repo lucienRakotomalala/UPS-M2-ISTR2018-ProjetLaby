@@ -97,6 +97,7 @@ pacman = Objet(handles,'g*',5,5);
     % Sauvegarde des murs initialis?s
 m = Murs(handles);
 visu = Visualisation( pacman, ghost, m);
+
 handles.visu = visu; %Ajoute visu aux handles
 handles.m = m; % Ajoute le mur aux handles
 handles.ghost = ghost;
@@ -193,12 +194,13 @@ function D1_Callback(hObject, eventdata, handles)
 % hObject    handle to D1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-[pacman,m] = getElement(handles,'pacman','murs');
-
+[pacman,m, visu] = getElement(handles,'pacman','murs','visu');
+visu
 pacman = goDroite(handles, pacman, m);
 displayWall(handles,m);
 isEscaped(handles.sortie,pacman,handles);
-    
+visu.vue_pacman(handles,pacman);
+handles.visu = visu;
 handles.pacman = pacman;
 guidata(hObject, handles)
 

@@ -6,7 +6,6 @@ classdef Visualisation
         pacman;
         ghost;
         murs;
-        
         mange;
     end
     
@@ -20,38 +19,54 @@ classdef Visualisation
             obj.mange = 0;
         end
         
-        function obj = actuVisu(newPacman,newGhost, newMur)
+        function obj = actuVisu(newPacman,newGhost, newMurs)
         %fonction qui affiche les murs que pacman voit
-            obj.pacman =new;
+            obj.pacman =newPacman;
             obj.ghost=newGhost;
-            obj.murs=murs;
+            obj.murs=newMurs;
         end
         
-        function  vue_pacman(handles,obj)
-                
-            if(deplacementHautPossible(obj.pacman, obj.murs) == 0) %il y a un mur
+        %%  Vue des murs de l'objet :
+        % Fonction :    Actualise la figure avec les murs affichées
+        %               Actualise l'objet appelé dans la classe
+        %               Visualisation.
+        % Entrées : handles de la figure
+        %           objet de visualisation
+        %           string pour indiquer quel objet 
+        % Sortie :  Aucune
+        function  vue_pacman(obj,handles, myObj)
+            
+           [myVisu, myWall, myGhost] = getElement(handles, 'visu', 'murs','ghost');
+            if(deplacementHautPossible(myObj, myWall) == 0) %il y a un mur
+                display('Mur Haut')
                 set(handles.PacmanUp,'BackgroundColor','b');
             else
                 set(handles.PacmanUp,'BackgroundColor',[0.8 0.8 0.8]);
             end
             
-            if(deplacementBasPossible(obj.pacman, obj.murs)==0)
+            if(deplacementBasPossible(myObj, myWall)==0)
                 set(handles.PacmanDown,'BackgroundColor','b');
+                display('Mur Bas')
             else
                 set(handles.PacmanDown,'BackgroundColor',[0.8 0.8 0.8]);
             end
             
-            if(deplacementGauchePossible(obj.pacman, obj.murs)==0)
+            if(deplacementGauchePossible(myObj, myWall)==0)
+                display('Mur Gauche')
                 set(handles.PacmanLeft,'BackgroundColor','b');
             else
                 set(handles.PacmanLeft,'BackgroundColor',[0.8 0.8 0.8]);
             end
             
-            if(deplacementDroitePossible(obj.pacman, obj.murs)==0)
+            if(deplacementDroitePossible(myObj, myWall)==0)
+                display('Mur Droite')
                 set(handles.PacmanRight,'BackgroundColor','b');
             else
                 set(handles.PacmanRight,'BackgroundColor',[0.8 0.8 0.8]);
             end
+            myVisu.pacman = myObj;
+            myVisu.ghost = myGhost;
+            visu = myVisu;
         end
         %%
         function obj = detection_manger(obj,chat,souris, mur)
