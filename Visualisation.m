@@ -27,9 +27,16 @@ classdef Visualisation
             obj.murs=murs;
         end
         
-        function  vue_pacman(handles,obj)
-                
-            if(deplacementHautPossible(obj.pacman, obj.murs) == 0) %il y a un mur
+        %%  Vue des murs de l'objet :
+        % Fonction :    Actualise la figure avec les murs affich�es        %               Actualise l'objet appel� dans la classe        %               Visualisation.
+        % Entr�es : handles de la figure        %           objet de visualisation
+        %           string pour indiquer quel objet 
+        % Sortie :  Aucune
+        function  vue_pacman(obj,handles, myObj)
+            
+           [myVisu, myWall, myGhost] = getElement(handles, 'visu', 'murs','ghost');
+            if(deplacementHautPossible(myObj, myWall) == 0) %il y a un mur
+                display('Mur Haut')
                 set(handles.PacmanUp,'BackgroundColor','b');
             else
                 set(handles.PacmanUp,'BackgroundColor',[0.8 0.8 0.8]);
