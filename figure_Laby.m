@@ -223,7 +223,7 @@ function B1_Callback(hObject, eventdata, handles)
                 %% %%%%%%% Walls %%%%%%%
 
 
-    function wallMoves(handles,m)
+    function handles = wallMoves(handles,m)
         displayWall(handles,m);
         handles.m = m; % Ajoute le mur aux handles
    
@@ -235,7 +235,7 @@ function wallDown_Callback(hObject, eventdata, handles)
     % handles    structure with handles and user data (see GUIDATA)
     m = getElement(handles,'murs');
     m = set_MursVerticaux(m);
-    wallMoves(handles,m)
+    handles = wallMoves(handles,m);
     guidata(hObject,handles);    % Sa marche !! OMFG !!!
 
     
@@ -246,5 +246,5 @@ function wallRight_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 [m] = getElement(handles,'murs');
 m = set_MursHorizontaux(m);
-wallMoves(handles,m)
+handles = wallMoves(handles,m); 
 guidata(hObject,handles);    % Sa marche !! OMFG !!!
