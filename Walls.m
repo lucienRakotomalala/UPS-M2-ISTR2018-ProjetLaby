@@ -94,7 +94,7 @@ classdef Walls
                k = 1;
             for i=0:myWall.labSize-1    %Walls Verticaux
                 for j=1:myWall.labSize-1
-                    myWall.verticalWalls(i+1, j)
+                    myWall.verticalWalls(i+1, j) ;
                     if (myWall.verticalWalls(i+1, j)==1)
                         set(myWall.allVerticalWalls(k, 1), 'visible', 'on'); 
                     else
