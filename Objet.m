@@ -51,6 +51,50 @@ classdef Objet
            end
             
           end
+        %% Retourne 1 si le nextMove de l'objet ne l'amène pas sur un autre objet.
+        function out = isObjectNext(obj,handles, nextMove)
+            % design for 2 objects : pacman and ghost
+            out = 1;
+            switch nextMove
+                case 'right'
+                    if(obj.positionY == handles.ghost.positionY)
+                        if(obj.positionX == handles.ghost.positionX-1)
+                            out = 0;
+                        end
+                        if(obj.positionX == handles.pacman.positionX-1)
+                            out = 0;
+                        end
+                    end
+                case 'left'
+                    if(obj.positionY == handles.ghost.positionY)
+                        if(obj.positionX == handles.ghost.positionX+1)
+                            out = 0;
+                        end
+                        if(obj.positionX == handles.pacman.positionX+1)
+                            out = 0;
+                        end
+                    end
+                case 'up'
+                    if(obj.positionX == handles.ghost.positionX)
+                        if(obj.positionY == handles.ghost.positionY-1)
+                            out = 0;
+                        end
+                        if(obj.positionY == handles.pacman.positionY-1)
+                            out = 0;
+                        end
+                    end
+                case 'down'
+                    if(obj.positionX == handles.ghost.positionX)
+                        if(obj.positionY == handles.ghost.positionY+1)
+                            out = 0;
+                        end
+                        if(obj.positionY == handles.pacman.positionY+1)
+                            out = 0;
+                        end 
+                    end
+            end
+        end
+        
         
         
         %% D?placement de l'objet
@@ -58,7 +102,9 @@ classdef Objet
         function obj = goRight(handles, obj, w)
            if(obj.positionX < obj.sizeTab)
                if(canGoRight( obj, w))
-                    obj.positionX = obj.positionX+1;
+                   if(obj.isObjectNext(handles,'right'))
+                        obj.positionX = obj.positionX+1;
+                   end
                end
            end
            displayObject(handles,obj);
@@ -67,7 +113,9 @@ classdef Objet
         function obj = goLeft(handles, obj, w)
            if(obj.positionX > 1)
                if(canGoLeft( obj, w))
-                    obj.positionX = obj.positionX-1;
+                   if(obj.isObjectNext(handles,'left'))
+                        obj.positionX = obj.positionX-1;
+                   end
                end
            end
            displayObject(handles,obj);
@@ -76,7 +124,9 @@ classdef Objet
         function obj = goUp(handles, obj, w)
            if(obj.positionY < obj.sizeTab)
                if(canGoUp( obj, w))
-                    obj.positionY = obj.positionY+1;
+                   if(obj.isObjectNext(handles,'up'))
+                        obj.positionY = obj.positionY+1;
+                   end
                end
            end
            displayObject(handles,obj);
@@ -85,7 +135,9 @@ classdef Objet
         function obj = goDown(handles, obj, w)
            if(obj.positionY > 1)
                if(canGoDown(obj, w))
-                    obj.positionY = obj.positionY-1;
+                   if(obj.isObjectNext(handles,'down'))
+                        obj.positionY = obj.positionY-1;
+                   end
                end
            end
            displayObject(handles,obj);
