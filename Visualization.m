@@ -104,16 +104,16 @@ classdef Visualization
         % Sortie :  Aucune
         function  localWallsViewer(obj,handles, strObject,modifObj)
             
-            % 1 : Identifier l'object qui a changé  (strObject : 'pacman', 'ghost', 'walls')
+            % 1 : Identifier l'object qui a changï¿½  (strObject : 'pacman', 'ghost', 'walls')
             % 2 : appliquer les modifs de la visualisation ( modifObj : pacman, ghost, walls)
             
-            % 1 : cas pacman a bougé
+            % 1 : cas pacman a bougï¿½
             if(strcmp('pacman',strObject)) % if is a pacman or a wall
                 [myWall] = getElement(handles, 'walls');
                 
                 pacmanWallsView(obj,handles,modifObj,myWall);
             end
-            % 2 : cas ghost a bougé
+            % 2 : cas ghost a bougï¿½
             if(strcmp('ghost',strObject)) % if is a pacman or a wall
                 [myWall] = getElement(handles, 'walls');
                 
