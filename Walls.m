@@ -24,8 +24,16 @@ classdef Walls
             %   Sortie : objet Walls  passer entre le guidata de la figure.
             
 
-            obj.verticalWalls = [1 0 0 0; 0 0 1 0; 1 0 0 0; 1 0 1 0; 0 0 1 0];
-            obj.horizontalWalls = [ 1 0 1 0 1; 1 0 1 0 1; 1 0 1 0 1; 0 1 0 1 0]; 
+            obj.verticalWalls   = [1 0 0 0;
+                                   0 0 1 0; 
+                                   1 0 0 0; 
+                                   1 0 1 0; 
+                                   0 0 1 0];
+                             
+            obj.horizontalWalls = [1 0 1 0 1; 
+                                   1 0 1 0 1; 
+                                   1 0 1 0 1; 
+                                   0 1 0 1 0]; 
             obj.allVerticalWalls = [];
             obj.allHorizontalWalls = [];
             %Walls extérieurs
@@ -94,7 +102,7 @@ classdef Walls
                k = 1;
             for i=0:myWall.labSize-1    %Walls Verticaux
                 for j=1:myWall.labSize-1
-                    myWall.verticalWalls(i+1, j)
+                    myWall.verticalWalls(i+1, j) ;
                     if (myWall.verticalWalls(i+1, j)==1)
                         set(myWall.allVerticalWalls(k, 1), 'visible', 'on'); 
                     else
