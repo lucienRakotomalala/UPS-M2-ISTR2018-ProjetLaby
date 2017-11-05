@@ -82,7 +82,7 @@ classdef Visualization
         
         %% This function show when Ghost see pacman
         function ghostSeePacman(obj,handles)
-            clc
+            
             obj.updatePresenceDetectorDisplay(handles.SeeRight  , ~isSeenRight(  obj,handles.pacman,handles.ghost,handles.w));
             obj.updatePresenceDetectorDisplay(handles.SeeLeft   , ~isSeenLeft(   obj,handles.pacman,handles.ghost,handles.w));
             obj.updatePresenceDetectorDisplay(handles.SeeUp     , ~isSeenUp(     obj,handles.pacman,handles.ghost,handles.w));
@@ -142,21 +142,22 @@ classdef Visualization
             obj.updatePresenceDetectorDisplay(handles.GhostRight,canGoRight(objct, walls))
         end
         %% This function count and show when ghost caught pacman
-        function obj = caughtDetection(obj,ghost,pacman, walls)
-            
+        function obj = caughtDetection(obj,handles,ghost,pacman, walls)
+            newStr = handles.Caught.String(1:end-1);
+            newClr = [.8 .8 .8];
             % Test sur la position en X
             if ((pacman.positionX == ghost.positionX+1)&&(pacman.positionY == ghost.positionY))
                 % Test si le chat peutr aller vers la souris
                 if(canGoRight(ghost, walls))
                     obj.caught = obj.caught+1;
-                    display('souris a droite')
+                     newClr = 'r';
                 end
             end
             if ((pacman.positionX == ghost.positionX-1)&&(pacman.positionY == ghost.positionY))
                 % Test si le chat peutr aller vers la souris
                 if(canGoLeft(ghost, walls))
-                    display('souris a gauche')
                     obj.caught = obj.caught+1;
+                    newClr = 'r';
                 end
             end
             % Test sur la position en Y
@@ -164,16 +165,18 @@ classdef Visualization
                 % Test si le chat peutr aller vers la souris
                 if(canGoUp(ghost, walls))
                     obj.caught = obj.caught+1;
-                    display('souris en haut')
+                    newClr = 'r';
                 end
             end
             if ((pacman.positionY == ghost.positionY-1)&&(pacman.positionX == ghost.positionX))
                 % Test si le chat peutr aller vers la souris
                 if(canGoDown(ghost, walls))
                     obj.caught = obj.caught+1;
-                    display('souris en bas')
+                    newClr = 'r';
                 end
             end
+            set(handles.Caught,'BackgroundColor',newClr);
+            set(handles.Caught,'String',strcat(newStr,int2str(obj.caught)));
         end
     end
 end
