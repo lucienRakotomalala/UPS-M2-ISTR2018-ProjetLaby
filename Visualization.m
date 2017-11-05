@@ -13,83 +13,69 @@ classdef Visualization
         function obj=Visualization()
             obj.caught = 0;
         end
-        %% ---
-        function noSeen = isSeenRight(obj,pacman,ghost,walls)
+        %% Returns 1 if ghost sees pacman on his right, else return 0.
+        function seen = isSeenRight(obj,pacman,ghost,walls)
             % if( pacman is on the same line and at the right of ghost and
             %     without walls between them)
-            %     noSeen = 0;
+            %     seen = 1;
             % else
-            %     noSeen = 1;
+            %     seen = 0;
             % end
-            noSeen = 1;
-            %disp(fprintf('Same line %d \n',pacman.positionY ==ghost.positionY));
-            
-            %disp(fprintf('Pacman is on the left ghost %d\n',pacman.positionX >ghost.positionX ));
-            %disp(fprintf('x : %d , y : (%d:%d)  \n',walls.labSize-ghost.positionY+1,ghost.positionX , pacman.positionX-1 ));
-            
-            if ( ( pacman.positionY ==ghost.positionY )  && (pacman.positionX >ghost.positionX ) )
-                if(sum(walls.verticalWalls(walls.labSize-ghost.positionY+1, ghost.positionX : pacman.positionX-1  ) )==0 ) % TODO : no walls between them
-                    %disp(fprintf('x : %d , y : (%d:%d)  \n',walls.labSize-ghost.positionY+1,ghost.positionX , pacman.positionX-1 ));
-                    %disp(fprintf('walls %d\n',sum(walls.verticalWalls(walls.labSize-ghost.positionY+1, ghost.positionX : pacman.positionX-1  ) )==0 ));
-                    
-                    noSeen= 0;
+            seen = 0;
+            if ( ( pacman.positionY == ghost.positionY )  && (pacman.positionX > ghost.positionX ) )
+                if(sum(walls.verticalWalls(walls.labSize-ghost.positionY+1, ghost.positionX : pacman.positionX-1  ) )==0 ) % TODO : no walls between them                    
+                    seen= 1;
                 end
             end
         end
-        %%
-        function noSeen = isSeenLeft(obj,pacman,ghost,walls)
+        %% Return 1 if ghost sees pacman on his left, else return 0.
+        function seen = isSeenLeft(obj,pacman,ghost,walls)
             % if( pacman is on the same line and at the left of ghost and
             %     without walls between them)
-            %     noSeen = 0;
+            %     seen = 1;
             % else
-            %     noSeen = 1;
+            %     seen = 0;
             % end
-            noSeen = 1;
-            if ( ( pacman.positionY ==ghost.positionY )  && (pacman.positionX <ghost.positionX ) )
+            seen = 0;
+            if ( ( pacman.positionY == ghost.positionY )  && (pacman.positionX < ghost.positionX ) )
                 if(sum(walls.verticalWalls(walls.labSize-ghost.positionY+1, pacman.positionX : ghost.positionX-1  ) )==0 ) % TODO : no walls between them
-                    noSeen= 0;
+                    seen= 1;
                 end
             end
         end
-        %%
-        function noSeen = isSeenDown(obj,pacman,ghost,walls)
+        %% Return 1 if ghost sees pacman below him, else return 0.
+        function seen = isSeenDown(obj,pacman,ghost,walls)
             % if( pacman is on the same colonn and below the ghost and
             %     without walls between them)
-            %     noSeen = 0;
+            %     seen = 1;
             % else
-            %     noSeen = 1;
+            %     seen = 0;
             % end
-            noSeen = 1;
-            disp(fprintf('Same colonn %d ',pacman.positionX ==ghost.positionX ));
-            disp(fprintf('Pacman is below %d',pacman.positionY > ghost.positionY ));
-            disp(fprintf('x : (%d:%d) , y : %d  ',ghost.positionY , pacman.positionY-1,ghost.positionX));            walls.horizontalWalls(ghost.positionY : pacman.positionY-1, ghost.positionX)
-            if ( ( pacman.positionX ==ghost.positionX )  && (pacman.positionY > ghost.positionY ) )
-                if(sum(walls.horizontalWalls(ghost.positionY : pacman.positionY-1, ghost.positionX) )==0 ) % TODO : no walls between them
-                    noSeen= 0;
-                    disp('isDown')
-                end
+            seen = 0;
+            
+            yGhost  = walls.labSize- ghost.positionY +1;
+            yPacman = walls.labSize- pacman.positionY +1;
+            
+             if ( ( pacman.positionX == ghost.positionX )  && (yPacman > yGhost) )
+                if(sum(walls.horizontalWalls( yGhost : yPacman-1 , ghost.positionX) )==0 ) % TODO : no walls between them
+                    seen= 1;
+                 end
             end
         end
-        %%
-        function noSeen = isSeenUp(obj,pacman,ghost,walls)
-            
+        %% Return 1 if ghost sees pacman on top of him, else return 0. 
+        function seen = isSeenUp(obj,pacman,ghost,walls)
             % if( pacman is on the same colonn and above the ghost and
             %     without walls between them)
-            %     noSeen = 0;
+            %     seen = 1;
             % else
-            %     noSeen = 1;
+            %     seen = 0;
             % end
-            noSeen = 1;
-            disp(fprintf('Same colonn %d ',pacman.positionX ==ghost.positionX ));
-            disp(fprintf('Pacman is below %d',pacman.positionY < ghost.positionY  ));
-            disp(fprintf('x : (%d:%d) , y : %d ',pacman.positionY , ghost.positionY-1, ghost.positionX));
-            disp('up')
-            walls.horizontalWalls(pacman.positionY : ghost.positionY-1, ghost.positionX)
-            if ( ( pacman.positionX ==ghost.positionX )  && (pacman.positionY < ghost.positionY ) )
-                if(sum(walls.horizontalWalls(pacman.positionY : ghost.positionY-1, ghost.positionX) )==0 ) % TODO : no walls between them
-                    noSeen= 0;
-                    disp('isUp')
-                    
+            seen = 0;
+             yGhost  = walls.labSize- ghost.positionY +1;
+            yPacman = walls.labSize- pacman.positionY +1;
+            if ( ( pacman.positionX ==ghost.positionX )  && (yPacman < yGhost) )
+                if(sum(walls.horizontalWalls( yPacman : yGhost-1  , ghost.positionX) )==0 ) % TODO : no walls between them
+                    seen= 1;                    
                 end
             end
         end
@@ -97,10 +83,10 @@ classdef Visualization
         %% This function show when Ghost see pacman
         function ghostSeePacman(obj,handles)
             clc
-            obj.updatePresenceDetectorDisplay(handles.SeeRight  , isSeenRight(  obj,handles.pacman,handles.ghost,handles.w));
-            obj.updatePresenceDetectorDisplay(handles.SeeLeft   , isSeenLeft(   obj,handles.pacman,handles.ghost,handles.w));
-            obj.updatePresenceDetectorDisplay(handles.SeeUp     , isSeenUp(     obj,handles.pacman,handles.ghost,handles.w));
-            obj.updatePresenceDetectorDisplay(handles.SeeDown   , isSeenDown(   obj,handles.pacman,handles.ghost,handles.w));
+            obj.updatePresenceDetectorDisplay(handles.SeeRight  , ~isSeenRight(  obj,handles.pacman,handles.ghost,handles.w));
+            obj.updatePresenceDetectorDisplay(handles.SeeLeft   , ~isSeenLeft(   obj,handles.pacman,handles.ghost,handles.w));
+            obj.updatePresenceDetectorDisplay(handles.SeeUp     , ~isSeenUp(     obj,handles.pacman,handles.ghost,handles.w));
+            obj.updatePresenceDetectorDisplay(handles.SeeDown   , ~isSeenDown(   obj,handles.pacman,handles.ghost,handles.w));
         end
         %% This function update the color of a UI element
         function updatePresenceDetectorDisplay(obj,elementToSet,boolCondition)

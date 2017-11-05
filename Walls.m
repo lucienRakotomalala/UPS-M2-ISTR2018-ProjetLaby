@@ -24,8 +24,16 @@ classdef Walls
             %   Sortie : objet Walls  passer entre le guidata de la figure.
             
 
-            obj.verticalWalls = [1 0 0 0; 0 0 1 0; 1 0 0 0; 1 0 1 0; 0 0 1 0];
-            obj.horizontalWalls = [ 1 0 1 0 1; 1 0 1 0 1; 1 0 1 0 1; 0 1 0 1 0]; 
+            obj.verticalWalls   = [1 0 0 0;
+                                   0 0 1 0; 
+                                   1 0 0 0; 
+                                   1 0 1 0; 
+                                   0 0 1 0];
+                             
+            obj.horizontalWalls = [1 0 1 0 1; 
+                                   1 0 1 0 1; 
+                                   1 0 1 0 1; 
+                                   0 1 0 1 0]; 
             obj.allVerticalWalls = [];
             obj.allHorizontalWalls = [];
             %Walls extérieurs

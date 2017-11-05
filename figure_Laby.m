@@ -102,6 +102,8 @@ visu.localWallsViewer(handles, 'ghost',ghost);
 visu.localWallsViewer(handles, 'pacman',pacman);
 
 handles.escape=Escape(handles,'r',4,3);
+handles.visu.ghostSeePacman(handles);
+
 guidata(hObject,handles);    % Ca marche !! OMFG !!!
 
 %% ************************************************************************
