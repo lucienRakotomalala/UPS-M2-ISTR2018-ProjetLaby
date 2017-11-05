@@ -102,6 +102,8 @@ visu.localWallsViewer(handles, 'ghost',ghost);
 visu.localWallsViewer(handles, 'pacman',pacman);
 
 handles.escape=Escape(handles,'r',4,3);
+isEscaped(handles.escape,handles.pacman,handles);
+handles.visu = handles.visu.caughtDetection(handles,handles.ghost,handles.pacman, handles.w);
 handles.visu.ghostSeePacman(handles);
 
 guidata(hObject,handles);    % Ca marche !! OMFG !!!
@@ -115,12 +117,13 @@ guidata(hObject,handles);    % Ca marche !! OMFG !!!
 function handles = ghostMoves(handles,w,visu,ghost)
     displayWall(handles,w);
     % Test de la detection Caught:
-    visu = caughtDetection(visu, ghost, handles.pacman, w);
     visu.localWallsViewer(handles, 'ghost',ghost);
 
     handles.visu = visu;
     handles.ghost = ghost;
     handles.visu.ghostSeePacman(handles);
+    'ghost'
+    handles.visu = handles.visu.caughtDetection(handles,handles.ghost,handles.pacman, handles.w);
  
 
 % --- Executes on button press in ghostRightBut.
@@ -180,7 +183,8 @@ function handles = pacmanMoves(handles,w,pacman)
      handles.visu.localWallsViewer(handles, 'pacman',pacman);
      handles.pacman = pacman;
      handles.visu.ghostSeePacman(handles);
-
+     'pacman'
+     handles.visu = handles.visu.caughtDetection(handles,handles.ghost,handles.pacman, handles.w);
     
 % --- Executes on button press in pacmanRightBut.
 function pacmanRightBut_Callback(hObject, eventdata, handles)
@@ -235,7 +239,8 @@ function pacmanDownBut_Callback(hObject, eventdata, handles)
         handles.visu.localWallsViewer(handles, 'walls',w);
         handles.w = w; % Ajoute le mur aux handles
         handles.visu.ghostSeePacman(handles);
-
+        'walls'
+        handles.visu = handles.visu.caughtDetection(handles,handles.ghost,handles.pacman, handles.w);
         
 % --- Executes on button press in wallDown.
 function wallDown_Callback(hObject, eventdata, handles)
