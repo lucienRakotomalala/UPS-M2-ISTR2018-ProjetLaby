@@ -64,7 +64,7 @@ guidata(hObject, handles);
 handles.w       = Walls(handles); % create and add walls into handles 
 handles.ghost   = Objet(handles,'y*',1,1); % create and add ghost into handles 
 handles.pacman  = Objet(handles,'g*',5,5);% create and add pacman into handles 
-grid on
+grid on ;
 guidata(hObject,handles);    % OMFG !!!
 
 % UIWAIT makes figure_Laby wait for user response (see UIRESUME)
@@ -87,8 +87,8 @@ function initialization_Callback(hObject, eventdata, handles)
 % hObject    handle to initialization (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-axes(handles.axes1)
-cla                     %% TODO
+axes(handles.axes1) ;
+cla                   ;  %% TODO
 ghost = Objet(handles,'y*',1,1); 
 pacman = Objet(handles,'g*',5,5);
     % Sauvegarde des walls initialis?s
@@ -118,6 +118,7 @@ function handles = ghostMoves(handles,w,visu,ghost)
 
     handles.visu = visu;
     handles.ghost = ghost;
+    handles.visu.ghostSeePacman(handles);
  
 
 % --- Executes on button press in ghostRightBut.
@@ -171,13 +172,13 @@ function ghostDownBut_Callback(hObject, eventdata, handles)
     
     
 function handles = pacmanMoves(handles,w,pacman)
-    displayWall(handles,w);
-    % Test de detection de escape de pacman
+     displayWall(handles,w);
+     % Test de detection de escape de pacman
     isEscaped(handles.escape,pacman,handles);
-    handles.visu.localWallsViewer(handles, 'pacman',pacman);
+     handles.visu.localWallsViewer(handles, 'pacman',pacman);
+     handles.pacman = pacman;
+     handles.visu.ghostSeePacman(handles);
 
-    handles.pacman = pacman;
- 
     
 % --- Executes on button press in pacmanRightBut.
 function pacmanRightBut_Callback(hObject, eventdata, handles)
@@ -187,7 +188,7 @@ function pacmanRightBut_Callback(hObject, eventdata, handles)
     [pacman,w] = getElement(handles,'pacman','walls');
     pacman = goRight(handles, pacman, w);
     handles = pacmanMoves(handles,w,pacman);
-    guidata(hObject, handles)
+    guidata(hObject, handles) ;
 
 
 % --- Executes on button press in pacmanUpBut.
@@ -198,7 +199,7 @@ function pacmanUpBut_Callback(hObject, eventdata, handles)
     [pacman,w] = getElement(handles,'pacman','walls');
     pacman = goUp(handles, pacman, w);
     handles = pacmanMoves(handles,w,pacman);
-    guidata(hObject, handles)
+    guidata(hObject, handles) ;
 
 
 % --- Executes on button press in pacmanLeftBut.
@@ -231,7 +232,8 @@ function pacmanDownBut_Callback(hObject, eventdata, handles)
         displayWall(handles,w);
         handles.visu.localWallsViewer(handles, 'walls',w);
         handles.w = w; % Ajoute le mur aux handles
-   
+        handles.visu.ghostSeePacman(handles);
+
         
 % --- Executes on button press in wallDown.
 function wallDown_Callback(hObject, eventdata, handles)
