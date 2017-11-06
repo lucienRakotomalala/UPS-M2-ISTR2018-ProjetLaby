@@ -11,6 +11,10 @@ classdef Objet
     end
     
     methods
+        %% Constructor method
+        %   Set the position of the object desired
+        %   
+        %   Plot every position possible on the LAB 
         function obj = Objet(handles, color, positionX, positionY)
             obj.positionX = positionX;
             obj.positionY = positionY;
@@ -32,7 +36,7 @@ classdef Objet
            end
         end
         
-        %% 
+        %% This funcion update the figure with a last version of the object
         function displayObject(handles, obj)
            axes(handles.axes1);
            hold on
@@ -54,10 +58,14 @@ classdef Objet
         %% Retourne 1 si le nextMove de l'objet ne l'amène pas sur un autre objet.
         function out = isObjectNext(obj,handles, nextMove)
             % design for 2 objects : pacman and ghost
+            % switch : the next move of the object
+            %       --> if pacman or ghost is on the next position desired by object
+            %           return 0
+            %           else return 1.
             out = 1;
             switch nextMove
                 case 'right'
-                    if(obj.positionY == handles.ghost.positionY)
+                    if(handles.pacman.positionY == handles.ghost.positionY)
                         if(obj.positionX == handles.ghost.positionX-1)
                             out = 0;
                         end
@@ -66,7 +74,7 @@ classdef Objet
                         end
                     end
                 case 'left'
-                    if(obj.positionY == handles.ghost.positionY)
+                    if(handles.pacman.positionY == handles.ghost.positionY)
                         if(obj.positionX == handles.ghost.positionX+1)
                             out = 0;
                         end
@@ -75,7 +83,7 @@ classdef Objet
                         end
                     end
                 case 'up'
-                    if(obj.positionX == handles.ghost.positionX)
+                    if(handles.pacman.positionX == handles.ghost.positionX)
                         if(obj.positionY == handles.ghost.positionY-1)
                             out = 0;
                         end
@@ -84,7 +92,7 @@ classdef Objet
                         end
                     end
                 case 'down'
-                    if(obj.positionX == handles.ghost.positionX)
+                    if(handles.pacman.positionX == handles.ghost.positionX)
                         if(obj.positionY == handles.ghost.positionY+1)
                             out = 0;
                         end
@@ -97,53 +105,55 @@ classdef Objet
         
         
         
-        %% D?placement de l'objet
-        
-        function obj = goRight(handles, obj, w)
-           if(obj.positionX < obj.sizeTab)
-               if(canGoRight( obj, w))
-                   if(obj.isObjectNext(handles,'right'))
-                        obj.positionX = obj.positionX+1;
-                   end
+        %% Those functions move the position of the object and update the figure
+        %   If the next Move is possible 
+        %        AND there are no ghost or pacman on the case desire
+        %   THEN    Move the object
+           
+        % Right Move
+        function obj = goRight(handles, obj, myWalls)
+            if(obj.canGoRight(myWalls))
+                if(obj.isObjectNext(handles,'right'))
+                    obj.positionX = obj.positionX+1;
                end
            end
            displayObject(handles,obj);
         end
         
-        function obj = goLeft(handles, obj, w)
-           if(obj.positionX > 1)
-               if(canGoLeft( obj, w))
+        % Left Move
+        function obj = goLeft(handles, obj, myWalls)
+               if(obj.canGoLeft(myWalls))
                    if(obj.isObjectNext(handles,'left'))
                         obj.positionX = obj.positionX-1;
                    end
                end
-           end
            displayObject(handles,obj);
         end
         
-        function obj = goUp(handles, obj, w)
-           if(obj.positionY < obj.sizeTab)
-               if(canGoUp( obj, w))
-                   if(obj.isObjectNext(handles,'up'))
-                        obj.positionY = obj.positionY+1;
-                   end
-               end
-           end
-           displayObject(handles,obj);
+        % Up Move
+        function obj = goUp(handles, obj, myWalls)
+            if(obj.canGoUp(myWalls))
+                if(obj.isObjectNext(handles,'up'))
+                    obj.positionY = obj.positionY+1;
+                end
+            end
+            displayObject(handles,obj);
         end
         
-        function obj = goDown(handles, obj, w)
-           if(obj.positionY > 1)
-               if(canGoDown(obj, w))
-                   if(obj.isObjectNext(handles,'down'))
-                        obj.positionY = obj.positionY-1;
-                   end
-               end
-           end
-           displayObject(handles,obj);
+        % Down Move
+        function obj = goDown(handles, obj, myWalls)
+            if(obj.canGoDown(obj, myWalls))
+                if(obj.isObjectNext(handles,'down'))
+                    obj.positionY = obj.positionY-1;
+                end
+            end
+            displayObject(handles,obj);
         end
         
-
+        %% Those functions look if the next move desire is possible
+        % Return 1 if the move desire is in the lab's size AND if there are
+        %                                       no wall 
+        
         %Autoriser deplacement Haut
         function can = canGoUp(obj, w)
             can=0;
