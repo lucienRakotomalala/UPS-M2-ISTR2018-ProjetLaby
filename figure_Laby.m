@@ -179,7 +179,7 @@ function ghostDownBut_Callback(hObject, eventdata, handles)
 function handles = pacmanMoves(handles,w,pacman)
      displayWall(handles,w);
      % Test de detection de escape de pacman
-    isEscaped(handles.escape,pacman,handles);
+     isEscaped(handles.escape,pacman,handles);
      handles.visu.localWallsViewer(handles, 'pacman',pacman);
      handles.pacman = pacman;
      handles.visu.ghostSeePacman(handles);
@@ -250,8 +250,7 @@ function wallDown_Callback(hObject, eventdata, handles)
     w = getElement(handles,'walls');
     w = setVerticalWalls(w);
     handles = wallMoves(handles,w);
-    guidata(hObject,handles);    % ça marche !! OMFG !!!
-
+    guidata(hObject,handles);    % ï¿½a marche !! OMFG !!
     
 % --- Executes on button press in wallRight.
 function wallRight_Callback(hObject, eventdata, handles)
