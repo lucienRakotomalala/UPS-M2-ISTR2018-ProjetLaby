@@ -142,7 +142,7 @@ classdef Objet
         
         % Down Move
         function obj = goDown(handles, obj, myWalls)
-            if(obj.canGoDown(obj, myWalls))
+            if(obj.canGoDown(myWalls))
                 if(obj.isObjectNext(handles,'down'))
                     obj.positionY = obj.positionY-1;
                 end
