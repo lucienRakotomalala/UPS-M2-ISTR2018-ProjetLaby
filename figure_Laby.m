@@ -52,19 +52,24 @@ function figure_Laby_OpeningFcn(hObject, eventdata, handles, varargin)
 % handles    structure with handles and user data (see GUIDATA)
 % varargin   command line arguments to figure_Laby (see VARARGIN)
 
+% Creer 
+%       inst of wrapper into handles 
+%       state with inside a inst
+%                   pacman
+%                   ghost
+%                   walls
+%                   escape
 % Choose default command line output for figure_Laby
 handles.output = hObject;
 % Update handles structure
 guidata(hObject, handles);
-% For the exit
 
+handles.wrapper = Wrapper(15, 3);
+handles.state.pacman =  Objet(handles,'g*',5,5);% create and add pacman into handles 
+handles.state.ghost  =  Objet(handles,'y*',1,1);% create and add pacman into handles 
+handles.state.walls  =  Walls(handles); % create and add walls into handles 
+grid on;
 
-% Sauvegarde des walls initialis?s
-
-handles.w       = Walls(handles); % create and add walls into handles 
-handles.ghost   = Objet(handles,'y*',1,1); % create and add ghost into handles 
-handles.pacman  = Objet(handles,'g*',5,5);% create and add pacman into handles 
-grid on ;
 guidata(hObject,handles);    % OMFG !!!
 
 % UIWAIT makes figure_Laby wait for user response (see UIRESUME)
@@ -81,13 +86,37 @@ function varargout = figure_Laby_OutputFcn(hObject, eventdata, handles)
 % Get default command line output from handles structure
 varargout{1} = handles.output;
 
+%-- 
+function ui_Callback(hObject, eventdata, handles)
+%{  
+    hObject.UserData  can take value
+    1  : initialization
+    2  : wallDown
+    3  : wallRight
+    4  : pacmanLeftBut
+    5  : pacmanUpBut
+    6  : pacmanRightBut
+    7  : pacmanDownBut
+    8  : ghostLeftBut
+    9  : ghostUpBut
+    10 : ghostRightBut
+    11 : ghostDownBut
+   #12 : connectWalls
+   #13 : connectGhost
+   #14 : connectPacman
+   #15 : step
+%}
+% In the input vector, only one element can be equal to 1 (1 of n).
+    e = zeros(11,1);
+    e(hObject.UserData) =1 ;
+    
+    
+    
+% end function UI_Callback(hObject, eventdata, handles)
 
 % --- Executes on button press in initialization.
 function initialization_Callback(hObject, eventdata, handles)
-% hObject    handle to initialization (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-axes(handles.axes1) ;
+            axes(handles.axes1) ;
 cla                   ;  %% TODO
 ghost = Objet(handles,'y*',1,1); 
 pacman = Objet(handles,'g*',5,5);
@@ -95,7 +124,7 @@ pacman = Objet(handles,'g*',5,5);
     %% test 
     handles.etat.pacman = pacman;
     handles.etat.ghost = ghost;
-    handles.etat.escape = 
+    %handles.etat.escape = 
     %% fin test
 w = Walls(handles);
 visu = Visualization();
@@ -114,6 +143,10 @@ handles.visu = handles.visu.caughtDetection(handles,handles.ghost,handles.pacman
 handles.visu.ghostSeePacman(handles);
 
 guidata(hObject,handles);    % Ca marche !! OMFG !!!
+
+% hObject    handle to initialization (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
 
 %% ************************************************************************
 

@@ -1,4 +1,4 @@
-classdef (Abstract) ModelSED %peut-être héritage de handle pour set/get
+classdef (Abstract) ModelSED < handle %peut-être héritage de handle pour set/get
     %MODELSED Summary of this class goes here
     %   Detailed explanation goes here
     

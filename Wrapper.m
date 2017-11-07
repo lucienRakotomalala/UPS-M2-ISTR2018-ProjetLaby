@@ -4,11 +4,11 @@ classdef Wrapper
     %   all the models (walls, labyrinth, ghost, pacman, escape)
     
     properties
-        wallsBit     % Boolean connection for the walls.
-        pacmanBit    % Boolean connection for the pacman.
-        ghostBit     % Boolean connection for the ghost.
+        wallsBit    = 0;     % Boolean connection for the walls.
+        pacmanBit   = 0;    % Boolean connection for the pacman.
+        ghostBit    = 0;  % Boolean connection for the ghost.
         
-        in          % A integer vector who contain the state of input, 
+        in           % A integer vector who contain the state of input, 
                     % incremented by the callback or some action.
         
         out         % A integer vector who contain the state of output, 
@@ -16,16 +16,23 @@ classdef Wrapper
     end
     
     methods
-        function sequencing()
-            whoPlay = 0;
+        % -- Constructor of the class
+        function obj = Wrapper(inSize, outSize)
+           obj.in = zeros(1,inSize);
+           obj.out = zeros(1,outSize);
+            
+            
+            
+        end
+        function orderer(input)
             % This function manage all the evolution
 
             while(ifFinish())
                writeOutput()
                 if (whoPlay == 0) 
-                    murs.f()
-                    murs.m()
-                    murs.g() 
+                    walls.f()
+                    walls.m()
+                    walls.g() 
                 end
                 if (whoPlay == 1) 
                     pacman.f()
