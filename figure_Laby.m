@@ -122,7 +122,6 @@ function handles = ghostMoves(handles,w,visu,ghost)
     handles.visu = visu;
     handles.ghost = ghost;
     handles.visu.ghostSeePacman(handles);
-    'ghost'
     handles.visu = handles.visu.caughtDetection(handles,handles.ghost,handles.pacman, handles.w);
  
 
@@ -183,7 +182,6 @@ function handles = pacmanMoves(handles,w,pacman)
      handles.visu.localWallsViewer(handles, 'pacman',pacman);
      handles.pacman = pacman;
      handles.visu.ghostSeePacman(handles);
-     'pacman'
      handles.visu = handles.visu.caughtDetection(handles,handles.ghost,handles.pacman, handles.w);
     
 % --- Executes on button press in pacmanRightBut.
@@ -206,6 +204,7 @@ function pacmanUpBut_Callback(hObject, eventdata, handles)
     pacman = goUp(handles, pacman, w);
     handles = pacmanMoves(handles,w,pacman);
     guidata(hObject, handles) ;
+    eventdata.Source
 
 
 % --- Executes on button press in pacmanLeftBut.
