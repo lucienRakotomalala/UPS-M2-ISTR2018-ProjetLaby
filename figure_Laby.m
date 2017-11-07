@@ -68,6 +68,9 @@ handles.wrapper = Wrapper(15, 3);
 handles.state.pacman =  Objet(handles,'g*',5,5);% create and add pacman into handles 
 handles.state.ghost  =  Objet(handles,'y*',1,1);% create and add pacman into handles 
 handles.state.walls  =  Walls(handles); % create and add walls into handles 
+
+handles.modelLaby = ModelLaby(handles.state)
+
 grid on;
 
 guidata(hObject,handles);    % OMFG !!!
@@ -107,11 +110,13 @@ function ui_Callback(hObject, eventdata, handles)
    #15 : step
 %}
 % In the input vector, only one element can be equal to 1 (1 of n).
-    e = zeros(11,1);
-    e(hObject.UserData) =1 ;
-    
-    
-    
+    e = zeros(15,1);
+    e(hObject.UserData) =1;
+    etatSuivant = handles.modelLaby.f(e)
+    handles.modelLaby.m(etatSuivant,0)
+    out = handles.modelLaby.g(e)
+    displayWall(handles, out);
+    guidata(hObject, handles);
 % end function UI_Callback(hObject, eventdata, handles)
 
 % --- Executes on button press in initialization.

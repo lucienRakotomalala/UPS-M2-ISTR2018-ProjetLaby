@@ -121,13 +121,8 @@ classdef Objet
         end
         
         % Left Move
-        function obj = goLeft(handles, obj, myWalls)
-               if(obj.canGoLeft(myWalls))
-                   if(obj.isObjectNext(handles,'left'))
-                        obj.positionX = obj.positionX-1;
-                   end
-               end
-           displayObject(handles,obj);
+        function obj = goLeft(obj)
+            obj.positionX = obj.positionX-1;
         end
         
         % Up Move
@@ -186,14 +181,7 @@ classdef Objet
         end
         
         %Autoriser deplacement Gauche
-        function can = canGoLeft(obj, w)
-            can=0;
-            if(obj.positionX>1)
-                if (w.verticalWalls(obj.sizeTab-obj.positionY+1, obj.positionX-1)==0)
-                    can=1;
-                end
-            end
-        end
+        
 
     end
     

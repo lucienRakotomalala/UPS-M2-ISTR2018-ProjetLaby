@@ -8,7 +8,7 @@ classdef ModelLaby < ModelSED
     
     methods
         function obj = ModelLaby(state)
-            obj.presentState = state
+            obj.presentState = state;
         end
         
         % --- Evolution of the labyrinth 
@@ -19,19 +19,34 @@ classdef ModelLaby < ModelSED
             if(in(3) == 1) % Walls Horizontal
                 nextState.walls = obj.presentState.walls.moveHorizontalWalls();
             end
-%             if(in(4) == 1) % Pacman left
-%                 nextState.pacman = obj.presentState.pacman.goLeft();
-%             end
+             if(in(4) == 1) % Pacman left
+                 if(obj.canGoLeft(obj.presentState.pacman,obj.presentState.walls))
+                     if(obj.presentState.pacman.isObjectNext(obj.presentState,'left'))
+                             nextState.pacman = obj.presentState.pacman.goLeft();
+                     end
+                 end
+             end
         end
         % --- Memory 
         function m(obj,nextState, init)
-            obj.presentState = nextState;
+            obj.presentState.pacman = nextState.pacman;
+            obj.presentState.walls = nextSt
         end
         % -- Generation of the output 
         function  out = g(obj, in)
             out = obj.presentState.walls;
+            %out.pacman = obj.presentState.pacman;
         end
-    end
     
+    
+        function can = canGoLeft(obj,myObj, w)
+                can=0;
+                if(myObj.positionX>1)
+                    if (w.verticalWalls(myObj.sizeTab-myObj.positionY+1, myObj.positionX-1)==0)
+                        can=1;
+                    end
+                end
+            end
+    end
 end
 
