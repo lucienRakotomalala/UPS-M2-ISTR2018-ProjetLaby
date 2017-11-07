@@ -64,10 +64,11 @@ handles.output = hObject;
 % Update handles structure
 guidata(hObject, handles);
 
-handles.wrapper = Wrapper(15, 3);
-handles.state.pacman =  Objet(handles,'g*',5,5);% create and add pacman into handles 
-handles.state.ghost  =  Objet(handles,'y*',1,1);% create and add pacman into handles 
-handles.state.walls  =  Walls(handles); % create and add walls into handles 
+handles.wrapper = Wrapper(12, 3);
+handles.state.pacman =  Objet(handles,'g*',5,5);% Create and add pacman into state
+handles.state.ghost  =  Objet(handles,'y*',1,1);% Create and add pacman into state
+handles.state.walls  =  Walls(handles);         % Create and add walls into state
+handles.state.escape =  Escape(handles,'r',4,3);% Create and add escape into state
 grid on;
 
 guidata(hObject,handles);    % OMFG !!!
@@ -86,7 +87,7 @@ function varargout = figure_Laby_OutputFcn(hObject, eventdata, handles)
 % Get default command line output from handles structure
 varargout{1} = handles.output;
 
-%-- 
+%-- callback for all the action buttons
 function ui_Callback(hObject, eventdata, handles)
 %{  
     hObject.UserData  can take value
@@ -100,19 +101,29 @@ function ui_Callback(hObject, eventdata, handles)
     8  : ghostLeftBut
     9  : ghostUpBut
     10 : ghostRightBut
-    11 : ghostDownBut
-   #12 : connectWalls
-   #13 : connectGhost
-   #14 : connectPacman
-   #15 : step
+    11 : ghostDownBut   
+    12 : step
+    100 : connectWalls
+    101 : connectGhost
+    102 : connectPacman
 %}
 % In the input vector, only one element can be equal to 1 (1 of n).
-    e = zeros(11,1);
-    e(hObject.UserData) =1 ;
-    
-    
+    handles.wrapper.in(hObject.UserData) =1 ;
+    handles.wrapper.orderer(handles);
+    guidata(hObject,handles); 
     
 % end function UI_Callback(hObject, eventdata, handles)
+
+
+function connect_Callback(hObject, eventdata, handles)
+    Wbit = handles.wrapper.wallsBit;
+    
+    switch hObject.UserData
+        case 100
+            bitModif = 1;
+handles.wrapper.updateConnexion(bitModif);
+    guidata(hObject,handles); 
+
 
 % --- Executes on button press in initialization.
 function initialization_Callback(hObject, eventdata, handles)
