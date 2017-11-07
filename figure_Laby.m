@@ -92,17 +92,24 @@ cla                   ;  %% TODO
 ghost = Objet(handles,'y*',1,1); 
 pacman = Objet(handles,'g*',5,5);
     % Sauvegarde des walls initialis?s
+    %% test 
+    handles.etat.pacman = pacman;
+    handles.etat.ghost = ghost;
+    handles.etat.escape = 
+    %% fin test
 w = Walls(handles);
 visu = Visualization();
 handles.visu = visu; %Ajoute visu aux handles
 handles.w = w; % Ajoute le mur aux handles
 handles.ghost = ghost;
 handles.pacman = pacman;
+
 visu.localWallsViewer(handles, 'ghost',ghost);
 visu.localWallsViewer(handles, 'pacman',pacman);
 
 handles.escape=Escape(handles,'r',4,3);
 isEscaped(handles.escape,handles.pacman,handles);
+
 handles.visu = handles.visu.caughtDetection(handles,handles.ghost,handles.pacman, handles.w);
 handles.visu.ghostSeePacman(handles);
 

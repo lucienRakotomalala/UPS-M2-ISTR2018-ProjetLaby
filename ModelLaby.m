@@ -3,9 +3,13 @@ classdef ModelLaby < ModelSED
     %   Detailed explanation goes here
     
     properties
+        presentState;
     end
     
     methods
+        
+        
+        
         % --- Evolution of the labyrinth 
         function nextState = f(presentState,in)
             ...
