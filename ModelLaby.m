@@ -13,19 +13,20 @@ classdef ModelLaby < ModelSED
         
         % --- Evolution of the labyrinth 
         function nextState = f(obj, in)
+            nextState = obj.presentState;
+            if(in(1) == 1) % Initial
+                
+            end
             if(in(2) == 1) % Walls Vertical
-                nextState.walls = obj.presentState.walls.moveVerticalWalls();
-                nextState.pacman = obj.presentState.pacman;
+                nextState.walls = obj.presentState.walls.moveVerticalWalls();                
             end
             if(in(3) == 1) % Walls Horizontal
                 nextState.walls = obj.presentState.walls.moveHorizontalWalls();
-                nextState.pacman = obj.presentState.pacman;
             end
             if(in(4) == 1) % Pacman left
                  if(obj.canGoLeft(obj.presentState.pacman, obj.presentState.walls))
                      if(obj.presentState.pacman.isObjectNext(obj.presentState,'left'))
                         nextState.pacman = obj.presentState.pacman.goLeft();
-                        nextState.walls = obj.presentState.walls;
                      end
                  end
             end
@@ -33,7 +34,6 @@ classdef ModelLaby < ModelSED
                  if(obj.canGoUp(obj.presentState.pacman,obj.presentState.walls))
                      if(obj.presentState.pacman.isObjectNext(obj.presentState,'up'))
                         nextState.pacman = obj.presentState.pacman.goUp();
-                        nextState.walls = obj.presentState.walls;
                      end
                  end
              end
@@ -41,7 +41,6 @@ classdef ModelLaby < ModelSED
                  if(obj.canGoRight(obj.presentState.pacman,obj.presentState.walls))
                      if(obj.presentState.pacman.isObjectNext(obj.presentState,'right'))
                         nextState.pacman = obj.presentState.pacman.goRight();
-                        nextState.walls = obj.presentState.walls;
                      end
                  end
              end
@@ -49,7 +48,6 @@ classdef ModelLaby < ModelSED
                  if(obj.canGoDown(obj.presentState.pacman,obj.presentState.walls))
                      if(obj.presentState.pacman.isObjectNext(obj.presentState,'down'))
                         nextState.pacman = obj.presentState.pacman.goDown();
-                        nextState.walls = obj.presentState.walls;
                      end
                  end
              end

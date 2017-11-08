@@ -69,7 +69,7 @@ handles.state.pacman =  Objet(handles,'g*',5,5);% create and add pacman into han
 handles.state.ghost  =  Objet(handles,'y*',1,1);% create and add pacman into handles 
 handles.state.walls  =  Walls(handles); % create and add walls into handles 
 
-handles.modelLaby = ModelLaby(handles.state)
+handles.modelLaby = ModelLaby(handles.state);
 
 grid on;
 
@@ -111,9 +111,9 @@ function ui_Callback(hObject, eventdata, handles)
 %}
 % In the input vector, only one element can be equal to 1 (1 of n).
     e = zeros(15,1);
-    e(hObject.UserData) =1
-    etatSuivant = handles.modelLaby.f(e)
-    handles.modelLaby.m(etatSuivant,0)
+    e(hObject.UserData) =1;
+    etatSuivant = handles.modelLaby.f(e);
+    handles.modelLaby.m(etatSuivant,0);
     out = handles.modelLaby.g(e)
     displayWall(handles, out.walls);
     displayObject(handles, out.pacman);
