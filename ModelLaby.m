@@ -91,10 +91,18 @@ classdef ModelLaby < ModelSED
         end
         %% --- Memory 
         function m(obj,nextState, init)
-            obj.presentState = nextState;
+            
+            if(init == 1)
+                obj.presentState.wallsV =  [1 0 0 0; 0 0 1 0; 1 0 0 0; 1 0 1 0; 0 0 1 0];
+                obj.presentState.wallsH =  [1 0 1 0 1; 1 0 1 0 1; 1 0 1 0 1; 0 1 0 1 0]; 
+                obj.presentState.pacman = [1 1];
+                obj.presentState.ghost  = [5 5];
+            else
+                obj.presentState = nextState;
+            end
         end
         %% -- Generation of the output 
-        function  out = g(obj, in)
+        function  out = g(obj)
             out.walls = obj.presentState.walls;
             out.pacman = obj.presentState.pacman;
             out.ghost = obj.presentState.ghost;
