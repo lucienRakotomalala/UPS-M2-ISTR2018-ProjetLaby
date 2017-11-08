@@ -117,7 +117,7 @@ classdef Walls
         %% Fonction pour bouger les murs Verticaux vers le bas.
         % Entrée : Objet Mur
         % Sortie : Objet Mur
-        function obj = setVerticalWalls(obj)
+        function obj = moveVerticalWalls(obj)
                 [c,~]=size(obj.verticalWalls);
                 Memory=obj.verticalWalls;
                 NewWalls(c,:)= Memory(1,:);
@@ -129,7 +129,7 @@ classdef Walls
         %% Fonction pour bouger les murs Horizontaux vers la droite.
         % Entrée : Objet Mur
         % Sortie : Objet Mur   
-      function obj = setHorizontalWalls(obj)
+      function obj = moveHorizontalWalls(obj)
                     [~,c]=size(obj.horizontalWalls);
                     Memory=obj.horizontalWalls;
                     NewWalls(:,c)= Memory(:,1);
