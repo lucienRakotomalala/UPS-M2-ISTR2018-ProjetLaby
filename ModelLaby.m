@@ -59,8 +59,7 @@ classdef ModelLaby < ModelSED
         end
         %% --- Memory 
         function m(obj,nextState, init)
-            obj.presentState.pacman = nextState.pacman;
-            obj.presentState.walls = nextState.walls;
+            obj.presentState = nextState;
         end
         %% -- Generation of the output 
         function  out = g(obj, in)
