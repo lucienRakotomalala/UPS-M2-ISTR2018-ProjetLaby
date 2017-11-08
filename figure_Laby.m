@@ -117,6 +117,8 @@ function ui_Callback(hObject, eventdata, handles)
     out = handles.modelLaby.g(e)
     displayWall(handles, out.walls);
     displayObject(handles, out.pacman);
+    
+    displayObject(handles, out.ghost);
     guidata(hObject, handles);
 % end function UI_Callback(hObject, eventdata, handles)
 

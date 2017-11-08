@@ -23,31 +23,63 @@ classdef ModelLaby < ModelSED
             if(in(3) == 1) % Walls Horizontal
                 nextState.walls = obj.presentState.walls.moveHorizontalWalls();
             end
-            if(in(4) == 1) % Pacman left
+            if(in(4) == 1) % Pacman get left
                  if(obj.canGoLeft(obj.presentState.pacman, obj.presentState.walls))
                      if(obj.presentState.pacman.isObjectNext(obj.presentState,'left'))
                         nextState.pacman = obj.presentState.pacman.goLeft();
                      end
                  end
             end
-             if(in(5) == 1) % Pacman Up
+             if(in(5) == 1) % Pacman get Up
                  if(obj.canGoUp(obj.presentState.pacman,obj.presentState.walls))
                      if(obj.presentState.pacman.isObjectNext(obj.presentState,'up'))
                         nextState.pacman = obj.presentState.pacman.goUp();
                      end
                  end
              end
-             if(in(6) == 1) % Pacman right
+             if(in(6) == 1) % Pacman get right
                  if(obj.canGoRight(obj.presentState.pacman,obj.presentState.walls))
                      if(obj.presentState.pacman.isObjectNext(obj.presentState,'right'))
                         nextState.pacman = obj.presentState.pacman.goRight();
                      end
                  end
              end
-             if(in(7) == 1) % Pacman Down
+             if(in(7) == 1) % Pacman get Down
                  if(obj.canGoDown(obj.presentState.pacman,obj.presentState.walls))
                      if(obj.presentState.pacman.isObjectNext(obj.presentState,'down'))
                         nextState.pacman = obj.presentState.pacman.goDown();
+                     end
+                 end
+             end
+             
+             if(in(8) == 1) %Ghost get Left
+                 if(obj.CanGoDown(obj.presentState.ghost,obj.presentState.walls))
+                     if(obj.presentState.ghost.isObjectNext(obj.presentState, 'left'))
+                         nextState.pacman = obj.presentState.ghost.goDown();
+                     end
+                 end
+             end
+             
+             if(in(9) == 1) % Ghost get Up
+                 if(obj.canGoUp(obj.presentState.ghost,obj.presentState.walls))
+                     if(obj.presentState.ghost.isObjectNext(obj.presentState,'up'))
+                         nextState.ghost = obj.presentState.ghost.goUp();
+                     end
+                 end
+             end
+             
+             if(in(10) == 1) % Ghost get Right
+                 if(obj.canGoRight(obj.presentState.ghost,obj.presentState.walls))
+                     if(obj.presentState.ghost.isObjectNext(obj.presentState,'right'))
+                         nextState.ghost = obj.presentState.ghost.goRight();
+                     end
+                 end
+             end
+             
+             if(in(11) == 1) % Ghost get Down
+                 if(obj.canGoDown(obj.presentState.ghost,obj.presentState.walls))
+                     if(obj.presentState.ghost.isObjectNext(obj.presentState,'down'))
+                         nextState.ghost = obj.presentState.ghost.goDown();
                      end
                  end
              end
@@ -65,6 +97,7 @@ classdef ModelLaby < ModelSED
         function  out = g(obj, in)
             out.walls = obj.presentState.walls;
             out.pacman = obj.presentState.pacman;
+            out.ghost = obj.presentState.ghost;
         end
     
         %%
