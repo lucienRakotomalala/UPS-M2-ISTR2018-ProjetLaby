@@ -7,9 +7,7 @@ classdef ModelLaby < ModelSED
     end
     
     methods
-        function obj = ModelLaby(state)
-            obj.presentState = state;
-        end
+
         
         % --- Evolution of the labyrinth 
         function nextState = f(obj, in)
