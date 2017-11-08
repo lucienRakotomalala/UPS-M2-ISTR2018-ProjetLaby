@@ -7,7 +7,7 @@ classdef Wrapper
         wallsBit    = 0;     % Boolean connection for the walls.
         pacmanBit   = 0;    % Boolean connection for the pacman.
         ghostBit    = 0;  % Boolean connection for the ghost.
-        
+        whoPlay
         in           % A integer vector who contain the state of input, 
                     % incremented by the callback or some action.
         
@@ -20,38 +20,50 @@ classdef Wrapper
         function obj = Wrapper(inSize, outSize)
            obj.in = zeros(1,inSize);
            obj.out = zeros(1,outSize);
-            
-            
-            
+           obj.whoPlay =0;  
         end
-        function orderer(input)
+        
+        function updateConnexion(obj,indBit)
+            switch indBit
+                case 1
+                        obj.wallsBit  = wBit;
+                case 2
+                        obj.pacmanBit = pBit;
+                case 3
+                        obj.ghostBit  = gBit;
+                otherwise 
+                    error('Wrong connexion index.s');
+            end
+        end
+        
+        function orderer(handles)
             % This function manage all the evolution
 
-            while(ifFinish())
+%             while(ifFinish())
                writeOutput()
                 if (whoPlay == 0) 
-                    walls.f()
-                    walls.m()
-                    walls.g() 
+                    handles.state.walls.f()
+                    handles.state.walls.m()
+                    handles.state.walls.g() 
                 end
                 if (whoPlay == 1) 
-                    pacman.f()
-                    pacman.m()
-                    pacman.g() 
+                    handles.state.pacman.f()
+                    handles.state.pacman.m()
+                    handles.state.pacman.g() 
                 end
                 if (whoPlay == 2) 
-                    ghost.f()
-                    ghost.m()
-                    ghost.g() 
+                    handles.state.ghost.f()
+                    handles.state.ghost.m()
+                    handles.state.ghost.g() 
                 end
                readInput()
                % laby
-               laby.f()
-               laby.m()
-               laby.g()
+               handles.laby.f()
+               handles.laby.m()
+               handles.laby.g()
                
                whoPlay = mod(whoPlay+1,3); % cyclical counter
-           end
+%            end
 
         end
     end
