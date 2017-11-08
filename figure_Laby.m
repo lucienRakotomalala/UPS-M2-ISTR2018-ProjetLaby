@@ -111,11 +111,12 @@ function ui_Callback(hObject, eventdata, handles)
 %}
 % In the input vector, only one element can be equal to 1 (1 of n).
     e = zeros(15,1);
-    e(hObject.UserData) =1;
+    e(hObject.UserData) =1
     etatSuivant = handles.modelLaby.f(e)
     handles.modelLaby.m(etatSuivant,0)
     out = handles.modelLaby.g(e)
-    displayWall(handles, out);
+    displayWall(handles, out.walls);
+    displayObject(handles, out.pacman);
     guidata(hObject, handles);
 % end function UI_Callback(hObject, eventdata, handles)
 

@@ -111,13 +111,8 @@ classdef Objet
         %   THEN    Move the object
            
         % Right Move
-        function obj = goRight(handles, obj, myWalls)
-            if(obj.canGoRight(myWalls))
-                if(obj.isObjectNext(handles,'right'))
-                    obj.positionX = obj.positionX+1;
-               end
-           end
-           displayObject(handles,obj);
+        function obj = goRight(obj)
+            obj.positionX = obj.positionX+1;
         end
         
         % Left Move
@@ -126,60 +121,23 @@ classdef Objet
         end
         
         % Up Move
-        function obj = goUp(handles, obj, myWalls)
-            if(obj.canGoUp(myWalls))
-                if(obj.isObjectNext(handles,'up'))
-                    obj.positionY = obj.positionY+1;
-                end
-            end
-            displayObject(handles,obj);
+        function obj = goUp(obj)
+            obj.positionY = obj.positionY+1;
         end
         
         % Down Move
-        function obj = goDown(handles, obj, myWalls)
-            if(obj.canGoDown(myWalls))
-                if(obj.isObjectNext(handles,'down'))
-                    obj.positionY = obj.positionY-1;
-                end
-            end
-            displayObject(handles,obj);
+        function obj = goDown(obj)
+            obj.positionY = obj.positionY-1;
         end
         
         %% Those functions look if the next move desire is possible
         % Return 1 if the move desire is in the lab's size AND if there are
         %                                       no wall 
         
-        %Autoriser deplacement Haut
-        function can = canGoUp(obj, w)
-            can=0;
-            if(obj.positionY<obj.sizeTab)
-                if (w.horizontalWalls(obj.sizeTab-obj.positionY, obj.positionX)==0)
-                    can=1;
-                end
-            end
-        end
-        
-        %Autoriser deplacement Bas
-        function can = canGoDown(obj, w)
-            can=0;
-            if(obj.positionY>1)
 
-                if (w.horizontalWalls(obj.sizeTab-obj.positionY+1, obj.positionX)==0)
-                    can=1;
-                end
-            end
-        end
         
-        %Autoriser deplacement Droite
-        function can = canGoRight(obj, w)
-            can=0;
-            if(obj.positionX<5)
-                if (w.verticalWalls(obj.sizeTab-obj.positionY+1, obj.positionX)==0)
-                    can=1;
-                end
-            end
-        end
-        
+    
+    
         %Autoriser deplacement Gauche
         
 
