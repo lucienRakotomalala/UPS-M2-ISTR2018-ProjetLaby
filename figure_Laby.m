@@ -64,11 +64,11 @@ handles.output = hObject;
 % Update handles structure
 guidata(hObject, handles);
 
-handles.wrapper = Wrapper(12, 3);
-handles.state.pacman =  Objet(handles,'g*',5,5);% Create and add pacman into state
-handles.state.ghost  =  Objet(handles,'y*',1,1);% Create and add pacman into state
-handles.state.walls  =  Walls(handles);         % Create and add walls into state
-handles.state.escape =  Escape(handles,'r',4,3);% Create and add escape into state
+handles.wrapper = Wrapper(11, 9);
+handles.pacman =  Objet(handles,'g*',5,5);% Create and add pacman into state
+handles.ghost  =  Objet(handles,'y*',1,1);% Create and add pacman into state
+handles.walls  =  Walls(handles);         % Create and add walls into state
+handles.escape =  Escape(handles,'r',4,3);% Create and add escape into state
 grid on;
 
 guidata(hObject,handles);    % OMFG !!!
@@ -102,11 +102,13 @@ function ui_Callback(hObject, eventdata, handles)
     9  : ghostUpBut
     10 : ghostRightBut
     11 : ghostDownBut   
-    12 : step(not in in)
+    #12 : step(not in in)
     
 %}
 % In the input vector, only one element can be equal to 1 (1 of n).
+if(hObject.UserData~=12)     
     handles.wrapper.in(hObject.UserData) =1 ;
+end
     handles.wrapper.orderer(handles);
     guidata(hObject,handles); 
     

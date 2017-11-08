@@ -8,20 +8,33 @@ classdef Wrapper
         pacmanBit   = 0;    % Boolean connection for the pacman.
         ghostBit    = 0;  % Boolean connection for the ghost.
         whoPlay
+        modelLaby     % contain the instance of the model of labyrinth 
+        
         in           % A integer vector who contain the state of input, 
                     % incremented by the callback or some action.
         
-        out         % A integer vector who contain the state of output, 
+        out         % A cell who contain the state of output, 
                     % incremented by the callback or some action.
     end
     
     methods
         % -- Constructor of the class
         function obj = Wrapper(inSize, outSize)
-           obj.in = zeros(1,inSize);
-           obj.out = zeros(1,outSize);
+            
+           obj.in = zeros(1,inSize); % set size of input vector
+           obj.out = cell(1,outSize); %  set size of output cell
+           
+           obj.modelLaby = ModelLaby(); % model of labyrinth
+            % TODO model of pacman
+            % TODO model of ghost
+            % TODO 
+            % definition output
+           obj.out{1} = zeros(1,2); % pacman
+           obj.out{2} = zeros(1,2); % ghost
+           obj.out{3} = zeros(1,2); % 
            obj.whoPlay =0;  
         end
+        % -- 
         
         function updateConnexion(obj,indBit)
             switch indBit
