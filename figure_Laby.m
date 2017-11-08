@@ -103,9 +103,7 @@ function ui_Callback(hObject, eventdata, handles)
     10 : ghostRightBut
     11 : ghostDownBut   
     12 : step
-    100 : connectWalls
-    101 : connectGhost
-    102 : connectPacman
+    
 %}
 % In the input vector, only one element can be equal to 1 (1 of n).
     handles.wrapper.in(hObject.UserData) =1 ;
@@ -116,11 +114,13 @@ function ui_Callback(hObject, eventdata, handles)
 
 
 function connect_Callback(hObject, eventdata, handles)
-    Wbit = handles.wrapper.wallsBit;
-    
-    switch hObject.UserData
-        case 100
-            bitModif = 1;
+%{
+    100 : connectWalls
+    101 : connectGhost
+    102 : connectPacman
+%}
+    handles.wrapper.updateConnexion(hObject.UserData-99);
+            
 handles.wrapper.updateConnexion(bitModif);
     guidata(hObject,handles); 
 

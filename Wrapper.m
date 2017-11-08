@@ -23,10 +23,17 @@ classdef Wrapper
            obj.whoPlay =0;  
         end
         
-        function updateConnexion(obj,wBit,pBit,gBit)
-            obj.wallsBit  = wBit;
-            obj.pacmanBit = pBit;
-            obj.ghostBit  = gBit;
+        function updateConnexion(obj,indBit)
+            switch indBit
+                case 1
+                        obj.wallsBit  = wBit;
+                case 2
+                        obj.pacmanBit = pBit;
+                case 3
+                        obj.ghostBit  = gBit;
+                otherwise 
+                    error('Wrong connexion index.s');
+            end
         end
         
         function orderer(handles)
