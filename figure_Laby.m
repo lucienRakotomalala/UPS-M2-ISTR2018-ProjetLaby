@@ -102,7 +102,7 @@ function ui_Callback(hObject, eventdata, handles)
     9  : ghostUpBut
     10 : ghostRightBut
     11 : ghostDownBut   
-    12 : step
+    12 : step(not in in)
     
 %}
 % In the input vector, only one element can be equal to 1 (1 of n).
