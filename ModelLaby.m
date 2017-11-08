@@ -7,7 +7,7 @@ classdef ModelLaby < ModelSED
     end
     
     methods
-        function obj = ModelLaby(state)
+        function obj = ModelLaby()
             obj.presentState = state;
         end
         

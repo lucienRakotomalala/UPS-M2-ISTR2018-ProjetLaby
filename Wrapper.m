@@ -8,6 +8,7 @@ classdef Wrapper
         pacmanBit   = 0;    % Boolean connection for the pacman.
         ghostBit    = 0;  % Boolean connection for the ghost.
         whoPlay
+        
         modelLaby     % contain the instance of the model of labyrinth 
         
         in           % A integer vector who contain the state of input, 
@@ -26,7 +27,6 @@ classdef Wrapper
            obj.modelLaby = ModelLaby(); % model of labyrinth
             % TODO model of pacman
             % TODO model of ghost
-            % TODO 
             
             % Output definition
            obj.out = cell(1,outSize); %  set size of output cell
@@ -39,6 +39,8 @@ classdef Wrapper
            obj.out{7} = zeros(1,4); % Walls around pacman [Up Down Left Right]
            obj.out{8} = zeros(1,4); % Walls around ghost  [Up Down Left Right]
            obj.out{9} = zeros(1,4); % Ghost sees pacman   [Up Down Left Right]
+           
+           
            obj.whoPlay =0;  
         end
         % -- 
