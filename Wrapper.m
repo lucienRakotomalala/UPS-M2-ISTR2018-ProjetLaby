@@ -19,7 +19,7 @@ classdef Wrapper
     end
     
     methods
-        % -- Constructor of the class
+        % --- Constructor of the class
         function obj = Wrapper(inSize, outSize)
             
            obj.in = zeros(1,inSize); % set size of input vector
@@ -44,25 +44,33 @@ classdef Wrapper
            
            obj.whoPlay =0;  
         end
-        % -- 
         
-        function updateConnexion(obj,indBit)
+        
+        % --- Update the connection bit for connect automatic mode for
+        % pacman, ghost and/or the walls.
+        function updateConnexion(obj,indBit,value)
             switch indBit
                 case 1
-                        obj.wallsBit  = wBit;
+                        obj.wallsBit  = value;
                 case 2
-                        obj.pacmanBit = pBit;
+                        obj.pacmanBit = value;
                 case 3
-                        obj.ghostBit  = gBit;
+                        obj.ghostBit  = value;
                 otherwise 
                     error('Wrong connexion index.s');
             end
         end
         
-        function orderer(obj)
+        
+        % --- Ordonate the global execution.
+        function obj = orderer(obj)
+            nextStateLaby = obj.modelLaby.f(obj.in);
+            obj.modelLaby.m(nextStateLaby,obj.in(1));
+            obj.out = obj.modelLaby.g();
             % This function manage all the evolution
 
-%             while(ifFinish())
+%{
+             while(ifFinish())
                writeOutput()
                 if (whoPlay == 0) 
                     handles.state.walls.f()
@@ -79,6 +87,7 @@ classdef Wrapper
                     handles.state.ghost.m()
                     handles.state.ghost.g() 
                 end
+
                readInput()
                % laby
                handles.laby.f()
@@ -87,7 +96,7 @@ classdef Wrapper
                
                whoPlay = mod(whoPlay+1,3); % cyclical counter
 %            end
-
+%}
         end
     end
     
