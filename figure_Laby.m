@@ -1,4 +1,4 @@
-function varargout = figure_Laby(varargin) 
+function varargout = figure_Laby(varargin)
 % FIGURE_LABY MATLAB code for figure_Laby.fig
 %      FIGURE_LABY, by itself, creates a new FIGURE_LABY or raises the existing
 %      singleton*.
@@ -27,11 +27,11 @@ function varargout = figure_Laby(varargin)
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
-                   'gui_Singleton',  gui_Singleton, ...
-                   'gui_OpeningFcn', @figure_Laby_OpeningFcn, ...
-                   'gui_OutputFcn',  @figure_Laby_OutputFcn, ...
-                   'gui_LayoutFcn',  [] , ...
-                   'gui_Callback',   []);
+    'gui_Singleton',  gui_Singleton, ...
+    'gui_OpeningFcn', @figure_Laby_OpeningFcn, ...
+    'gui_OutputFcn',  @figure_Laby_OutputFcn, ...
+    'gui_LayoutFcn',  [] , ...
+    'gui_Callback',   []);
 if nargin && ischar(varargin{1})
     gui_State.gui_Callback = str2func(varargin{1});
 end
@@ -42,8 +42,7 @@ else
     gui_mainfcn(gui_State, varargin{:});
 end
 % Endialization code - DO NOT EDIT
-
-
+end
 % --- Executes just before figure_Laby is made visible.
 function figure_Laby_OpeningFcn(hObject, eventdata, handles, varargin)
 % This function has no output args, see OutputFcn.
@@ -52,8 +51,8 @@ function figure_Laby_OpeningFcn(hObject, eventdata, handles, varargin)
 % handles    structure with handles and user data (see GUIDATA)
 % varargin   command line arguments to figure_Laby (see VARARGIN)
 
-% Creer 
-%       inst of wrapper into handles 
+% Creer
+%       inst of wrapper into handles
 %       state with inside a inst
 %                   pacman
 %                   ghost
@@ -75,10 +74,10 @@ guidata(hObject,handles);    % OMFG !!!
 
 % UIWAIT makes figure_Laby wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
-
+end
 
 % --- Outputs from this function are returned to the command line.
-function varargout = figure_Laby_OutputFcn(hObject, eventdata, handles) 
+function varargout = figure_Laby_OutputFcn(hObject, eventdata, handles)
 % varargout  cell array for returning output args (see VARARGOUT);
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -86,10 +85,10 @@ function varargout = figure_Laby_OutputFcn(hObject, eventdata, handles)
 
 % Get default command line output from handles structure
 varargout{1} = handles.output;
-
+end
 %-- callback for all the action buttons
 function ui_Callback(hObject, eventdata, handles)
-%{  
+%{
     hObject.UserData  can take value
     1  : initialization
     2  : wallDown
@@ -101,70 +100,83 @@ function ui_Callback(hObject, eventdata, handles)
     8  : ghostLeftBut
     9  : ghostUpBut
     10 : ghostRightBut
-    11 : ghostDownBut   
+    11 : ghostDownBut
     #12 : step(not in in)
     
 %}
 % In the input vector, only one element can be equal to 1 (1 of n).
-if(hObject.UserData~=12)     
+if(hObject.UserData~=12)
     handles.wrapper.in(hObject.UserData) =1 ;
 end
-    handles.wrapper.orderer(handles);
-    handles = updateUI( handles.wrapper.out);
-    guidata(hObject,handles); 
-    
+handles.wrapper.orderer();
+handles = updateUI( handles.wrapper.out);
+guidata(hObject,handles);
+
 % end function UI_Callback(hObject, eventdata, handles)
 
-
+end
 function connect_Callback(hObject, eventdata, handles)
 %{
     100 : connectWalls
     101 : connectGhost
     102 : connectPacman
 %}
-    handles.wrapper.updateConnexion(hObject.UserData-99);
-            
+handles.wrapper.updateConnexion(hObject.UserData-99);
+
 handles.wrapper.updateConnexion(bitModif);
-    guidata(hObject,handles); 
+guidata(hObject,handles);
+end
+% --- Create a graphical element for the two players : ghost and pacman
+function handles = CreateUIGhost(handles)
 
-    
-    
-    
-    function handles = updateUI(out)
-        % handles = updateUIPlayer( elementToSet,position)  (1,2)
-        % handles = updateUIWalls( wallsUI , wallsMat) (3,4)
-        % handles = updateUICaught(elementToSet,caughtInt) (5)
-        % handles = updateUIEscape(elementToSet,boolState) (6)
-        % handles = updateUIGhost(handles,WallsAroundGhost) (7)
-        % handles = updateUIPacman(handles,WallsAroundPacman)(8)
-        % handles = updateUIGhostSeesPacman(handles,GhostSeesPacman)(9)
-        
-        % pour (5)
-        % clr = gris
-        % strD = ''
-        %   if out{5}>0
-        %       clr = 'r'
-        %       strD = int2str(out{5});
-        %   end
-        %   set(clr)
-        %   set(strD)
-    
-    
-    
-    
-    
+end
 
+function CreateUIPlayer( elementToSet,position)
+
+end
+
+function handles = updateUI(out)
+% handles = updateUIPlayer( elementToSet,position)  (1,2)
+% handles = updateUIWalls( wallsUI , wallsMat) (3,4)
+% handles = updateUICaught(elementToSet,caughtInt) (5)
+% handles = updateUIEscape(elementToSet,boolState) (6)
+% handles = updateUIGhost(handles,WallsAroundGhost) (7)
+% handles = updateUIPacman(handles,WallsAroundPacman)(8)
+% handles = updateUIGhostSeesPacman(handles,GhostSeesPacman)(9)
+
+% pour (5)
+% clr = gris
+% strD = ''
+%   if out{5}>0
+%       clr = 'r'
+%       strD = int2str(out{5});
+%   end
+%   set(clr)
+%   set(strD)
+end
+function updatePresenceDetectorDisplay(elementToSet,boolCondition)
+if(boolCondition == 1)
+    set(elementToSet,'BackgroundColor',clr);
+else
+    set(elementToSet,'BackgroundColor',[0.8 0.8 0.8]);
+end
+end
+
+
+
+
+%{
 % --- Executes on button press in initialization.
 function initialization_Callback(hObject, eventdata, handles)
             axes(handles.axes1) ;
 cla                   ;  %% TODO
-ghost = Objet(handles,'y*',1,1); 
+ghost = Objet(handles,'y*',1,1);
 pacman = Objet(handles,'g*',5,5);
     % Sauvegarde des walls initialis?s
-    %% test 
+    %% test
     handles.etat.pacman = pacman;
     handles.etat.ghost  = ghost;
-    %handles.etat.escape = 
+    %handles.etat.escape =
     %% fin test
 w = Walls(handles);
 visu = Visualization();
@@ -193,7 +205,7 @@ guidata(hObject,handles);    % Ca marche !! OMFG !!!
             %% %%%%%%% Ghost %%%%%%%
             
                      
-% --- Common actions between all the ghost move.            
+% --- Common actions between all the ghost move.
 function handles = ghostMoves(handles,w,visu,ghost)
     displayWall(handles,w);
     % Test de la detection Caught:
@@ -225,7 +237,7 @@ function ghostUpBut_Callback(hObject, eventdata, handles)
     [visu,ghost,w] = getElement(handles,'visu','ghost','walls');
     ghost = goUp(handles, ghost, w);
     handles = ghostMoves(handles,w,visu,ghost);
-    guidata(hObject, handles);  
+    guidata(hObject, handles);
 
 
 % --- Executes on button press in ghostLeftBut.
@@ -249,7 +261,7 @@ function ghostDownBut_Callback(hObject, eventdata, handles)
     handles = ghostMoves(handles,w,visu,ghost);
     guidata(hObject, handles);
 
-%% ************************************************************************    
+%% ************************************************************************
     
     
                 %% %%%%%%% Pacman %%%%%%%
@@ -313,7 +325,7 @@ function pacmanDownBut_Callback(hObject, eventdata, handles)
                 %% %%%%%%% Walls %%%%%%%
 
 
-    function handles = wallMoves(handles,w)
+function handles = wallMoves(handles,w)
         displayWall(handles,w);
         handles.visu.localWallsViewer(handles, 'walls',w);
         handles.w = w; % Ajoute le mur aux handles
@@ -338,5 +350,6 @@ function wallRight_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 [w] = getElement(handles,'walls');
 w = setHorizontalWalls(w);
-handles = wallMoves(handles,w); 
+handles = wallMoves(handles,w);
 guidata(hObject,handles);    % Sa marche !! OMFG !!!
+%}
