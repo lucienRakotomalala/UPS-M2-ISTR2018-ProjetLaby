@@ -8,9 +8,18 @@ classdef ModelLaby < ModelSED
     
     methods
 
+        % Entrée du model labyrinthe : in
+        % Cette entrée correspond aux sorties des commandes de obj1 (pacman),
+        % obj2(ghost) et des murs. Les commandes vont écrire sur le m^me vecteur : in,
+        % en mettant la valeur de commande choisit à 1.
         
-        % --- Evolution of the labyrinth 
+        
+        % Librairie des commandes, vecteur in : Voir le Callback de
+        % figure_Laby
+
+        %% --- Evolution of the labyrinth 
         function nextState = f(obj, in)
+            
             nextState = obj.presentState;
             if(in(1) == 1) % Initial
                 
@@ -93,17 +102,31 @@ classdef ModelLaby < ModelSED
             if(init == 1)
                 obj.presentState.wallsV =  [1 0 0 0; 0 0 1 0; 1 0 0 0; 1 0 1 0; 0 0 1 0];
                 obj.presentState.wallsH =  [1 0 1 0 1; 1 0 1 0 1; 1 0 1 0 1; 0 1 0 1 0]; 
-                obj.presentState.pacman = [1 1];
+                obj.presentState.pacman = [2 2];
                 obj.presentState.ghost  = [5 5];
+                obj.presentState.escape = 0;
+                obj.presentState.caught = 0;
             else
                 obj.presentState = nextState;
             end
         end
         %% -- Generation of the output 
         function  out = g(obj)
-            out.walls = obj.presentState.walls;
-            out.pacman = obj.presentState.pacman;
-            out.ghost = obj.presentState.ghost;
+            % walls Around pacman
+            Wup_pacman = [1; obj.presentState.wallsH(1:obj.presentState.pacman(1)-1, obj.presentState.pacman(2))];
+            Wdown_pacman = [obj.presentState.wallsH(obj.presentState.pacman(1):size(obj.presentState.wallsH,1), obj.presentState.pacman(2)); 1];
+            WLeft_pacman = [1 obj.presentState.wallsV(obj.presentState.pacman(1), 1:obj.presentState.pacman(2)-1)];
+            WRight_pacman = [obj.presentState.wallsV(obj.presentState.pacman(1), obj.presentState.pacman(2):size(obj.presentState.wallsV,2)) 1];
+
+            wallsAroundPacman = [Wup_pacman(end) Wdown_pacman(1) WLeft_pacman(end) WRight_pacman(1)]; % Walls Up, Down, Left and Right around the pacman
+            
+            % Sortie lue par les autres commandes (elles doievent le
+            % considérer comme une entrée)
+            out = {obj.presentState.pacman, obj.presentState.ghost, ...
+                    obj.presentState.wallsV, obj.presentState.wallsH, ...
+                    obj.presentState.caught, obj.presentState.escap, ...
+                    wallsAroundPacman 
+                  };        
         end
     
         %%
@@ -148,4 +171,16 @@ classdef ModelLaby < ModelSED
   
     end
 end
+
+%% Princpe de la commande : 
+% Lire les sories de model Laby communiqué avec le wrapper. (Est ce que le
+% wrapper ne donne à la commande uniquement les sorties qu'il
+% l'intéresse ??? )
+% Aparir de ces sortie faire évoluer l'état : étatsSuivant = ...
+% Dans cet état, pour un objet, on y trouve toutes les informaions que l'on
+% souhaite enregistré.Sapeut etre sa position, ou bien le nombre de fois
+% qu'il a pu avancer... Sa dépend de la construction de l'utomate ou MAE
+% faite avant.
+% Actionner la commande sur les entrées de model Laby, communiqué par le
+% wrapper.
 
