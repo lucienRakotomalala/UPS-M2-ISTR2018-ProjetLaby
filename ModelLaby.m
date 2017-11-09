@@ -8,10 +8,10 @@ classdef ModelLaby < ModelSED
     
     methods
 
-        % Entrée du model labyrinthe : in
-        % Cette entrée correspond aux sorties des commandes de obj1 (pacman),
-        % obj2(ghost) et des murs. Les commandes vont écrire sur le m^me vecteur : in,
-        % en mettant la valeur de commande choisit à 1.
+        % Entrï¿½e du model labyrinthe : in
+        % Cette entrï¿½e correspond aux sorties des commandes de obj1 (pacman),
+        % obj2(ghost) et des murs. Les commandes vont ï¿½crire sur le m^me vecteur : in,
+        % en mettant la valeur de commande choisit ï¿½ 1.
         
         
         % Librairie des commandes, vecteur in : Voir le Callback de
@@ -116,7 +116,7 @@ classdef ModelLaby < ModelSED
             
             
             % Sortie lue par les autres commandes (elles doievent le
-            % considérer comme une entrée)
+            % considï¿½rer comme une entrï¿½e)
             out = {obj.presentState.pacman, obj.presentState.ghost, ...
                     obj.presentState.wallsV, obj.presentState.wallsH, ...
                     obj.presentState.caught, obj.presentState.escape{2}, ...
@@ -168,14 +168,14 @@ classdef ModelLaby < ModelSED
 end
 
 %% Princpe de la commande : 
-% Lire les sories de model Laby communiqué avec le wrapper. (Est ce que le
-% wrapper ne donne à la commande uniquement les sorties qu'il
-% l'intéresse ??? )
-% Aparir de ces sortie faire évoluer l'état : étatsSuivant = ...
-% Dans cet état, pour un objet, on y trouve toutes les informaions que l'on
-% souhaite enregistré.Sapeut etre sa position, ou bien le nombre de fois
-% qu'il a pu avancer... Sa dépend de la construction de l'utomate ou MAE
+% Lire les sories de model Laby communiquï¿½ avec le wrapper. (Est ce que le
+% wrapper ne donne ï¿½ la commande uniquement les sorties qu'il
+% l'intï¿½resse ??? )
+% Aparir de ces sortie faire ï¿½voluer l'ï¿½tat : ï¿½tatsSuivant = ...
+% Dans cet ï¿½tat, pour un objet, on y trouve toutes les informaions que l'on
+% souhaite enregistrï¿½.Sapeut etre sa position, ou bien le nombre de fois
+% qu'il a pu avancer... Sa dï¿½pend de la construction de l'utomate ou MAE
 % faite avant.
-% Actionner la commande sur les entrées de model Laby, communiqué par le
+% Actionner la commande sur les entrï¿½es de model Laby, communiquï¿½ par le
 % wrapper.
 

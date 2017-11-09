@@ -8,6 +8,7 @@ classdef Wrapper
         pacmanBit   = 0;    % Boolean connection for the pacman.
         ghostBit    = 0;  % Boolean connection for the ghost.
         whoPlay
+        
         modelLaby     % contain the instance of the model of labyrinth 
         
         in           % A integer vector who contain the state of input, 
@@ -22,16 +23,25 @@ classdef Wrapper
         function obj = Wrapper(inSize, outSize)
             
            obj.in = zeros(1,inSize); % set size of input vector
-           obj.out = cell(1,outSize); %  set size of output cell
            
            obj.modelLaby = ModelLaby(); % model of labyrinth
             % TODO model of pacman
             % TODO model of ghost
-            % TODO 
-            % definition output
-           obj.out{1} = zeros(1,2); % pacman
-           obj.out{2} = zeros(1,2); % ghost
-           obj.out{3} = zeros(1,2); % 
+            
+            % Output definition
+           obj.out = cell(1,outSize); %  set size of output cell
+           
+           obj.out{1} = zeros(1,2); % pacman [x y]
+           obj.out{2} = zeros(1,2); % ghost  [x y]
+           %obj.out{3} = zeros(size(obj.modelLaby.presentState.wallsV)); %  Vertical Walls
+           %obj.out{4} = zeros(size(obj.modelLaby.presentState.wallsH)); %  Horrizontal Walls
+           obj.out{5} = 0 ;         % caught
+           obj.out{6} = 0 ;         % escape
+           obj.out{7} = zeros(1,4); % Walls around pacman [Up Down Left Right]
+           obj.out{8} = zeros(1,4); % Walls around ghost  [Up Down Left Right]
+           obj.out{9} = zeros(1,4); % Ghost sees pacman   [Up Down Left Right]
+           
+           
            obj.whoPlay =0;  
         end
         % -- 
@@ -49,7 +59,7 @@ classdef Wrapper
             end
         end
         
-        function orderer(handles)
+        function orderer(obj)
             % This function manage all the evolution
 
 %             while(ifFinish())
