@@ -69,6 +69,7 @@ classdef ModelLaby < ModelSED
                         wallDown = [obj.presentState.wallsH(obj.presentState.ghost(2):size(obj.presentState.wallsH,1), obj.presentState.ghost(1)); 1];
                         nextState.ghost(2) = obj.presentState.ghost(2) + 1 - wallDown(1);
              end
+             nextState.caught = obj.presentState.caught;
              %Default case
              if(in(:) == 0)
                  'Error'
@@ -82,11 +83,16 @@ classdef ModelLaby < ModelSED
                 obj.presentState.wallsV =  [1 0 0 0; 0 0 1 0; 1 0 0 0; 1 0 1 0; 0 0 1 0];
                 obj.presentState.wallsH =  [1 0 1 0 1; 1 0 1 0 1; 1 0 1 0 1; 0 1 0 1 0]; 
                 obj.presentState.pacman = [3 2];
-                obj.presentState.ghost  = [5 5];
-                obj.presentState.escape = 0;
+                obj.presentState.ghost  = [3 3];
+                obj.presentState.escape = {[4 4], 0};
                 obj.presentState.caught = 0;
             else
                 obj.presentState = nextState;
+                obj.presentState.caught = nextState.caught + ...
+                            logical(not(nextState.pacman(1) - nextState.ghost(1) +1))*logical(not(nextState.pacman(2) - nextState.ghost(2)))*not(nextState.wallsV(nextState.pacman(1)-1, nextState.pacman(2))) + ...
+                            logical(not(nextState.pacman(1) - nextState.ghost(1) -1))*logical(not(nextState.pacman(2) - nextState.ghost(2)))*not(nextState.wallsV(nextState.pacman(1)+1, nextState.pacman(2))) + ...
+                            logical(not(nextState.pacman(1) - nextState.ghost(1)))*logical(not(nextState.pacman(2) - nextState.ghost(2)-1))*not(nextState.wallsH(nextState.pacman(1), nextState.pacman(2)-1)) + ...
+                            logical(not(nextState.pacman(1) - nextState.ghost(1)))*logical(not(nextState.pacman(2) - nextState.ghost(2)+1))*not(nextState.wallsV(nextState.pacman(1), nextState.pacman(2)+1));
             end
         end
         %% -- Generation of the output 
@@ -106,11 +112,14 @@ classdef ModelLaby < ModelSED
 
             wallsAroundGhost = [Wup_ghost(end) Wdown_ghost(1) WLeft_ghost(end) WRight_ghost(1)] % Walls Up, Down, Left and Right around the pacman
             
+            obj.presentState.escape{2} = logical(not(obj.presentState.escape{1}(1) - obj.presentState.pacman(1)))*logical(not(obj.presentState.escape{1}(2) - obj.presentState.pacman(2)));
+            
+            
             % Sortie lue par les autres commandes (elles doievent le
             % considérer comme une entrée)
             out = {obj.presentState.pacman, obj.presentState.ghost, ...
                     obj.presentState.wallsV, obj.presentState.wallsH, ...
-                    obj.presentState.caught, obj.presentState.escape, ...
+                    obj.presentState.caught, obj.presentState.escape{2}, ...
                     wallsAroundPacman , wallsAroundGhost
                   };        
         end
