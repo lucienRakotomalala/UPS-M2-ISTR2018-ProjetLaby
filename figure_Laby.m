@@ -65,7 +65,7 @@ handles.wrapper = Wrapper(11, 9);
 handles = createUIGhost(handles);
 handles = createUIPacman(handles);
 handles = createUIWalls(handles);
-grid on;
+handles = createUIEscape(handles);
 guidata(hObject,handles);    % OMFG !!!
 
 % UIWAIT makes figure_Laby wait for user response (see UIRESUME)
@@ -104,15 +104,17 @@ function ui_Callback(hObject, eventdata, handles)
 
 % In the input vector, only one element can be equal to 1 (1 of n).
 if(hObject.UserData~=12)
-    handles.wrapper.in(hObject.UserData) =1 ;
+    handles.wrapper.in = zeros(1,length(handles.wrapper.in)) ;
+    handles.wrapper.in(hObject.UserData) = 1;
 end
 handles.wrapper.orderer();
-handles = updateUI( handles.wrapper.out);
+updateUI(handles, handles.wrapper.out);
 guidata(hObject,handles);
 
 % end function UI_Callback(hObject, eventdata, handles)
 
 end
+
 % --- Callback for all connection
 function connect_Callback(hObject, eventdata, handles)
 %{
@@ -127,7 +129,7 @@ guidata(hObject,handles);
 end
 % ===============================================================
 
-%% Creation of Pacman Ghost, Walls, Escape
+%% Creation of Pacman Ghost, Walls and the Escape
 
 
 % --- Create a graphical element for ghost
@@ -174,7 +176,7 @@ set(gca,'XTick',tickValuesX);
 set(gca,'YTick',tickValuesY);
 grid on
 h.walls.color = 'b'; % blue
-h.walls.size =  max(size(h.wrapper.modelLaby.wallsV));
+h.walls.size =5;%  max(size(h.wrapper.modelLaby.wallsV));
 axis([0 h.walls.size 0 h.walls.size]);
 % Borders
 h.walls.border =  rectangle( 'Position',[0 0 h.walls.size h.walls.size],...
@@ -197,34 +199,46 @@ y = 0:h.walls.size-1;
  end
 hold off;
 end
+
+% --- Create a graphical element for the escape
+function h = createUIEscape(handles)
+hold on;
+
+h= handles;
+axes(h.axes1);
+% set(h.Escape,'BackgroundColor',[.8 .8 .8]);
+% set(h.Escape,'String','Escaped Pacman :');
+ h.escape.position = h.wrapper.modelLaby.presentState.escape{1}; % need to take the good one into h.wrapper.modelLaby. ... 
+ h.escape.color = 'r';
+ h.escape.rect =  rectangle('Position',[ h.escape.position(1)-1+.2 ,  h.escape.position(2)-1+.2, .6 , .6 ],...
+                            'Curvature',.1, 'EdgeColor',h.escape.color,'FaceColor',h.escape.color);
+ h.escape.text =  text( h.escape.position(1)-.799 ,  h.escape.position(2)-.5,  'Escape',...
+                       'Color','w',...
+                       'FontSize', 8,...
+                       'FontWeight','bold');
+
+hold off;
+end
+
 % ===============================================================
 
 %% Update UI 
 
 
 % --- Update all UI elements
-function handles = updateUI(out)
-% handles = updateUIPlayer( elementToSet,position)  (1,2)
-% handles = updateUIWalls( wallsUI , wallsMat) (3,4)
-% handles = updateUICaught(elementToSet,caughtInt) (5)
-% handles = updateUIEscape(elementToSet,boolState) (6)
-% handles = updateUIGhost(handles,WallsAroundGhost) (7)
-% handles = updateUIPacman(handles,WallsAroundPacman)(8)
-% handles = updateUIGhostSeesPacman(handles,GhostSeesPacman)(9)
+function updateUI(handles,out)
+ %updateUIPlayer( elementToSet,strPlayer position);      %(1,2)
+ %updateUIWalls( wallsUI , wallsMat);           %(3,4)
+ updateUICaught(handles.Caught ,out{5});        %(5)
+ updateUIEscape(handles.Escape,out{6});          %(6)
+ updateUIWallsAround(handles,'Pacman',out{7}); %(7) for pacman
+ updateUIWallsAround(handles,'Ghost',out{8});  %(8) for ghost
+ updateUIWallsAround(handles,'See',out{9});    %(9) for ghost see pacman
 
-% pour (5)
-% clr = gris
-% strD = ''
-%   if out{5}>0
-%       clr = 'r'
-%       strD = int2str(out{5});
-%   end
-%   set(clr)
-%   set(strD)
 end
 
-% ----create graphical element for caught----
-function handles = updateUICaught(elementToSet,caughtInt)
+% ----update graphical element for caught----
+function updateUICaught(elementToSet,caughtInt)
 
 clr = [.8 .8 .8];
 strD = '';
@@ -236,9 +250,8 @@ set(elementToSet,'BackgroubndColor',clr)
 set(elementToSet,'String',strcat(elementToSet.UserData,strD))
 end
 
-
-% ----create graphical element for escape----
-function handles = updateUIEscape(elementToSet,boolSate)
+% ----update graphical element for escape----
+function updateUIEscape(elementToSet,boolSate)
 
 clr = [.8 .8 .8];
 strD = get(elementToSet,'String');
@@ -250,10 +263,17 @@ set (elementToSet,'BackgroundColor',clr)
 set (elementToSet,strD);
 end
 
-    
+% --- update up down left and right walls around a element (pacman, ghost,
+% ghost sees pacman)
+function updateUIWallsAround(handles,strElement,wallsAround); %(7,8,9)    
+updatePresenceDetectorDisplay(handles.( strcat(strElement,'Up'))   , wallsAround(1));
+updatePresenceDetectorDisplay(handles.( strcat(strElement,'Down')) , wallsAround(2));
+updatePresenceDetectorDisplay(handles.( strcat(strElement,'Left')) , wallsAround(3));
+updatePresenceDetectorDisplay(handles.( strcat(strElement,'Right')), wallsAround(4));
+end
 
 function updatePresenceDetectorDisplay(elementToSet,boolCondition)
-if(boolCondition == 1)
+if(boolCondition > 0)
     set(elementToSet,'BackgroundColor',clr);
 else
     set(elementToSet,'BackgroundColor',[0.8 0.8 0.8]);
