@@ -8,7 +8,7 @@ classdef ModelLaby < ModelSED
     
     methods
         function obj = ModelLaby()
-            obj.presentState = state;
+        %    obj.presentState = state;
         end
         
         % --- Evolution of the labyrinth 

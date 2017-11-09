@@ -110,6 +110,7 @@ if(hObject.UserData~=12)
     handles.wrapper.in(hObject.UserData) =1 ;
 end
     handles.wrapper.orderer(handles);
+    handles = updateUI( handles.wrapper.out);
     guidata(hObject,handles); 
     
 % end function UI_Callback(hObject, eventdata, handles)
@@ -126,6 +127,32 @@ function connect_Callback(hObject, eventdata, handles)
 handles.wrapper.updateConnexion(bitModif);
     guidata(hObject,handles); 
 
+    
+    
+    
+    function handles = updateUI(out)
+        % handles = updateUIPlayer( elementToSet,position)  (1,2)
+        % handles = updateUIWalls( wallsUI , wallsMat) (3,4)
+        % handles = updateUICaught(elementToSet,caughtInt) (5)
+        % handles = updateUIEscape(elementToSet,boolState) (6)
+        % handles = updateUIGhost(handles,WallsAroundGhost) (7)
+        % handles = updateUIPacman(handles,WallsAroundPacman)(8)
+        % handles = updateUIGhostSeesPacman(handles,GhostSeesPacman)(9)
+        
+        % pour (5)
+        % clr = gris
+        % strD = ''
+        %   if out{5}>0
+        %       clr = 'r'
+        %       strD = int2str(out{5});
+        %   end
+        %   set(clr)
+        %   set(strD)
+    
+    
+    
+    
+    
 
 % --- Executes on button press in initialization.
 function initialization_Callback(hObject, eventdata, handles)
@@ -136,7 +163,7 @@ pacman = Objet(handles,'g*',5,5);
     % Sauvegarde des walls initialis?s
     %% test 
     handles.etat.pacman = pacman;
-    handles.etat.ghost = ghost;
+    handles.etat.ghost  = ghost;
     %handles.etat.escape = 
     %% fin test
 w = Walls(handles);
