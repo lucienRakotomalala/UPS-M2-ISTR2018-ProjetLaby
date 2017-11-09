@@ -22,7 +22,7 @@ function varargout = figure_Laby(varargin)
 
 % Edit the above text to modify the response to help figure_Laby
 
-% Last Modified by GUIDE v2.5 03-Nov-2017 16:55:36
+% Last Modified by GUIDE v2.5 09-Nov-2017 18:52:35
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -82,6 +82,10 @@ function varargout = figure_Laby_OutputFcn(hObject, eventdata, handles)
 % Get default command line output from handles structure
 varargout{1} = handles.output;
 end
+% ===============================================================
+
+%%          Callbacks
+
 
 %-- Callback for all the action's buttons
 function ui_Callback(hObject, eventdata, handles)
@@ -103,11 +107,14 @@ function ui_Callback(hObject, eventdata, handles)
 %}
 
 % In the input vector, only one element can be equal to 1 (1 of n).
+
 if(hObject.UserData~=12)
     handles.wrapper.in = zeros(1,length(handles.wrapper.in)) ;
     handles.wrapper.in(hObject.UserData) = 1;
 end
-handles.wrapper.orderer();
+
+
+handles.wrapper = handles.wrapper.orderer();
 updateUI(handles, handles.wrapper.out);
 guidata(hObject,handles);
 
@@ -118,18 +125,19 @@ end
 % --- Callback for all connection
 function connect_Callback(hObject, eventdata, handles)
 %{
-    100 : connectWalls
-    101 : connectGhost
-    102 : connectPacman
+        hObject.UserData :
+            100 : connectWalls
+            101 : connectGhost
+            102 : connectPacman
 %}
-handles.wrapper.updateConnexion(hObject.UserData-99);
+handles.wrapper.updateConnexion(hObject.UserData-99,hObject.Value);
 
-handles.wrapper.updateConnexion(bitModif);
+%handles.wrapper.updateConnexion(bitModif);
 guidata(hObject,handles);
 end
 % ===============================================================
 
-%% Creation of Pacman Ghost, Walls and the Escape
+%%          Creation of Pacman Ghost, Walls and the Escape
 
 
 % --- Create a graphical element for ghost
@@ -167,16 +175,17 @@ end
 % --- Create a graphical element for walls
 function h = createUIWalls(handles)
 h=handles;
+h.walls.size =  max(size(h.wrapper.modelLaby.presentState.wallsV));
+
 hold on;
 axes(h.axes1);
 % grid 
-tickValuesX = 0:1:5;
-tickValuesY = 0:1:5;
+tickValuesX = 0:1:h.walls.size ;
+tickValuesY = 0:1:h.walls.size ;
 set(gca,'XTick',tickValuesX);
 set(gca,'YTick',tickValuesY);
 grid on
 h.walls.color = 'b'; % blue
-h.walls.size =5;%  max(size(h.wrapper.modelLaby.wallsV));
 axis([0 h.walls.size 0 h.walls.size]);
 % Borders
 h.walls.border =  rectangle( 'Position',[0 0 h.walls.size h.walls.size],...
@@ -187,16 +196,18 @@ h.walls.horizontals = []; % horizontals walls
 h.walls.verticals = []; % verticals walls
 y = 0:h.walls.size-1;
  for k = 1 : h.walls.size -1
-    h.walls.horizontals = [h.walls.horizontals , line(  [k k],[y' y'+1],...
+    h.walls.verticals = [h.walls.verticals , line(  [k k],[y' y'+1],...
                                                         'linewidth',2,...
                                                         'visible', 'off',...
                                                         'Color',h.walls.color)];
                                                     
-    h.walls.verticals   = [h.walls.verticals   , line(  [y' y'+1],[k k],...
+    h.walls.horizontals   = [h.walls.horizontals   ; line(  [y' y'+1],[k k],...
                                                         'linewidth',2,...
                                                         'visible', 'off',...
-                                                        'Color',h.walls.color)];
+                                                        'Color',h.walls.color)' ];
  end
+h.walls.verticals = flipud(h.walls.verticals);
+h.walls.horizontals = flipud(h.walls.horizontals);
 hold off;
 end
 
@@ -222,22 +233,30 @@ end
 
 % ===============================================================
 
-%% Update UI 
+%%          Update UI 
 
 
 % --- Update all UI elements
 function updateUI(handles,out)
- %updateUIPlayer( elementToSet,strPlayer position);      %(1,2)
- %updateUIWalls( wallsUI , wallsMat);           %(3,4)
+ updateUIPlayer( handles,'pacman', out{1});      %(1,2)
+ updateUIPlayer( handles,'ghost', out{2});
+ updateUIWalls( handles.walls , out{3},out{4});           %(3,4)
  updateUICaught(handles.Caught ,out{5});        %(5)
  updateUIEscape(handles.Escape,out{6});          %(6)
  updateUIWallsAround(handles,'Pacman',out{7}); %(7) for pacman
  updateUIWallsAround(handles,'Ghost',out{8});  %(8) for ghost
  updateUIWallsAround(handles,'See',out{9});    %(9) for ghost see pacman
-
 end
 
-% ----update graphical element for caught----
+% --- Update graphical place of a player (ghost or pacman)
+function updateUIPlayer( handles,strPlayer, position)
+y = handles.walls.size - position(2)+1; % not sure !! problème de repère et de base xy !!! 
+
+position
+set(handles.(strPlayer),'XData',position(1)+.5,'YData',y+.5);
+
+end
+% ----Update graphical element for caught----
 function updateUICaught(elementToSet,caughtInt)
 
 clr = [.8 .8 .8];
@@ -246,12 +265,12 @@ if (caughtInt>0)
     clr = 'r';
     strD = int2str(caughtInt);
 end
-set(elementToSet,'BackgroubndColor',clr)
+set(elementToSet,'BackgroundColor',clr)
 set(elementToSet,'String',strcat(elementToSet.UserData,strD))
 end
 
 % ----update graphical element for escape----
-function updateUIEscape(elementToSet,boolSate)
+function updateUIEscape(elementToSet,boolState)
 
 clr = [.8 .8 .8];
 strD = get(elementToSet,'String');
@@ -260,21 +279,41 @@ if (boolState == 1)
     strD = strcat(strD,' YES');
 end
 set (elementToSet,'BackgroundColor',clr)
-set (elementToSet,strD);
+set (elementToSet,'String',strD);
 end
 
 % --- update up down left and right walls around a element (pacman, ghost,
 % ghost sees pacman)
-function updateUIWallsAround(handles,strElement,wallsAround); %(7,8,9)    
+function updateUIWallsAround(handles,strElement,wallsAround) %(7,8,9)    
 updatePresenceDetectorDisplay(handles.( strcat(strElement,'Up'))   , wallsAround(1));
 updatePresenceDetectorDisplay(handles.( strcat(strElement,'Down')) , wallsAround(2));
 updatePresenceDetectorDisplay(handles.( strcat(strElement,'Left')) , wallsAround(3));
 updatePresenceDetectorDisplay(handles.( strcat(strElement,'Right')), wallsAround(4));
 end
 
+
+% --- Update graphicals elements for the walls
+function updateUIWalls( wallsUI , vertWalls,horizWalls)
+for h = 1:wallsUI.size-1
+    for k = 1:wallsUI.size
+        
+        set(wallsUI.horizontals(h , k)  , 'Visible' , isOne(horizWalls( h , k)));
+        set(wallsUI.verticals(  k , h)  , 'Visible' , isOne(vertWalls(  k ,  h)));
+    end
+end
+
+end
+
+function strOnOff = isOne(boolCond)
+strOnOff = 'off';
+if (boolCond == 1)
+    strOnOff = 'on';
+end
+end
+
 function updatePresenceDetectorDisplay(elementToSet,boolCondition)
 if(boolCondition > 0)
-    set(elementToSet,'BackgroundColor',clr);
+    set(elementToSet,'BackgroundColor','b');
 else
     set(elementToSet,'BackgroundColor',[0.8 0.8 0.8]);
 end

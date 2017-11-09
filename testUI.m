@@ -12,3 +12,10 @@ h.pacman = plot(h.pacmanX,h.pacmanY,'Color',h.pacmanColor,'Marker','*');
  e = 'pacman';
  h.(e)
  
+ 
+ %%
+ a = magic(4)
+ a(2,3)
+ 
+ 
+ 
