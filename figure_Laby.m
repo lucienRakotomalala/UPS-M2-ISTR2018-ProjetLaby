@@ -50,7 +50,6 @@ function figure_Laby_OpeningFcn(hObject, eventdata, handles, varargin)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 % varargin   command line arguments to figure_Laby (see VARARGIN)
-
 % Creer
 %       inst of wrapper into handles
 %       state with inside a inst
@@ -62,14 +61,11 @@ function figure_Laby_OpeningFcn(hObject, eventdata, handles, varargin)
 handles.output = hObject;
 % Update handles structure
 guidata(hObject, handles);
-
 handles.wrapper = Wrapper(11, 9);
-handles.pacman =  Objet(handles,'g*',5,5);% Create and add pacman into state
-handles.ghost  =  Objet(handles,'y*',1,1);% Create and add pacman into state
-handles.walls  =  Walls(handles);         % Create and add walls into state
-handles.escape =  Escape(handles,'r',4,3);% Create and add escape into state
+handles = createUIGhost(handles);
+handles = createUIPacman(handles);
+handles = createUIWalls(handles);
 grid on;
-
 guidata(hObject,handles);    % OMFG !!!
 
 % UIWAIT makes figure_Laby wait for user response (see UIRESUME)
@@ -86,24 +82,26 @@ function varargout = figure_Laby_OutputFcn(hObject, eventdata, handles)
 % Get default command line output from handles structure
 varargout{1} = handles.output;
 end
-%-- callback for all the action buttons
+
+%-- Callback for all the action's buttons
 function ui_Callback(hObject, eventdata, handles)
 %{
-    hObject.UserData  can take value
-    1  : initialization
-    2  : wallDown
-    3  : wallRight
-    4  : pacmanLeftBut
-    5  : pacmanUpBut
-    6  : pacmanRightBut
-    7  : pacmanDownBut
-    8  : ghostLeftBut
-    9  : ghostUpBut
-    10 : ghostRightBut
-    11 : ghostDownBut
-    #12 : step(not in in)
-    
+        hObject.UserData  can take value
+        1  : initialization
+        2  : wallDown
+        3  : wallRight
+        4  : pacmanLeftBut
+        5  : pacmanUpBut
+        6  : pacmanRightBut
+        7  : pacmanDownBut
+        8  : ghostLeftBut
+        9  : ghostUpBut
+        10 : ghostRightBut
+        11 : ghostDownBut
+        #12 : step(not in in)
+
 %}
+
 % In the input vector, only one element can be equal to 1 (1 of n).
 if(hObject.UserData~=12)
     handles.wrapper.in(hObject.UserData) =1 ;
@@ -115,6 +113,7 @@ guidata(hObject,handles);
 % end function UI_Callback(hObject, eventdata, handles)
 
 end
+% --- Callback for all connection
 function connect_Callback(hObject, eventdata, handles)
 %{
     100 : connectWalls
@@ -126,15 +125,84 @@ handles.wrapper.updateConnexion(hObject.UserData-99);
 handles.wrapper.updateConnexion(bitModif);
 guidata(hObject,handles);
 end
-% --- Create a graphical element for the two players : ghost and pacman
-function handles = CreateUIGhost(handles)
+% ===============================================================
+
+%% Creation of Pacman Ghost, Walls, Escape
+
+
+% --- Create a graphical element for ghost
+function h = createUIPacman(handles)
+hold on;
+h = handles;
+axes(h.axes1);
+h.pacmanPositionInit  = [1 2];
+
+h.pacmanColor         = [0 .5 0] ; % dark green
+h.pacman   = plot( h.pacmanPositionInit(1)-.5,...
+                   h.pacmanPositionInit(2)-.5,...
+                   'Color',h.pacmanColor,...
+                   'Marker','*' );
+hold off;
+end
+
+% --- Create a graphical element for pacman
+function h = createUIGhost(handles)
+hold on;
+h = handles;
+
+axes(h.axes1);
+
+h.ghostPositionInit  = [2 1];
+h.ghostColor         = [0.83 .33 0.1] ; % strange orange
+h.ghost   = plot( h.ghostPositionInit(1)-.5,...
+                  h.ghostPositionInit(2)-.5,...
+                  'Color',h.ghostColor,...
+                  'Marker','*'   );
+hold off;
 
 end
 
-function CreateUIPlayer( elementToSet,position)
-
+% --- Create a graphical element for walls
+function h = createUIWalls(handles)
+h=handles;
+hold on;
+axes(h.axes1);
+% grid 
+tickValuesX = 0:1:5;
+tickValuesY = 0:1:5;
+set(gca,'XTick',tickValuesX);
+set(gca,'YTick',tickValuesY);
+grid on
+h.walls.color = 'b'; % blue
+h.walls.size =  max(size(h.wrapper.modelLaby.wallsV));
+axis([0 h.walls.size 0 h.walls.size]);
+% Borders
+h.walls.border =  rectangle( 'Position',[0 0 h.walls.size h.walls.size],...
+                             'EdgeColor',h.walls.color,...
+                             'LineWidth',2);
+% internal walls
+h.walls.horizontals = []; % horizontals walls
+h.walls.verticals = []; % verticals walls
+y = 0:h.walls.size-1;
+ for k = 1 : h.walls.size -1
+    h.walls.horizontals = [h.walls.horizontals , line(  [k k],[y' y'+1],...
+                                                        'linewidth',2,...
+                                                        'visible', 'off',...
+                                                        'Color',h.walls.color)];
+                                                    
+    h.walls.verticals   = [h.walls.verticals   , line(  [y' y'+1],[k k],...
+                                                        'linewidth',2,...
+                                                        'visible', 'off',...
+                                                        'Color',h.walls.color)];
+ end
+hold off;
 end
+% ===============================================================
 
+%% Update UI 
+
+
+% --- Update all UI elements
 function handles = updateUI(out)
 % handles = updateUIPlayer( elementToSet,position)  (1,2)
 % handles = updateUIWalls( wallsUI , wallsMat) (3,4)
@@ -154,6 +222,9 @@ function handles = updateUI(out)
 %   set(clr)
 %   set(strD)
 end
+
+
+% --- Update all 
 function updatePresenceDetectorDisplay(elementToSet,boolCondition)
 if(boolCondition == 1)
     set(elementToSet,'BackgroundColor',clr);
