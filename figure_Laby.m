@@ -223,8 +223,35 @@ function handles = updateUI(out)
 %   set(strD)
 end
 
+% ----create graphical element for caught----
+function handles = updateUICaught(elementToSet,caughtInt)
 
-% --- Update all 
+clr = [.8 .8 .8];
+strD = '';
+if (caughtInt>0)
+    clr = 'r';
+    strD = int2str(caughtInt);
+end
+set(elementToSet,'BackgroubndColor',clr)
+set(elementToSet,'String',strcat(elementToSet.UserData,strD))
+end
+
+
+% ----create graphical element for escape----
+function handles = updateUIEscape(elementToSet,boolSate)
+
+clr = [.8 .8 .8];
+strD = get(elementToSet,'String');
+if (boolState == 1)
+    clr = 'r';
+    strD = strcat(strD,' YES');
+end
+set (elementToSet,'BackgroundColor',clr)
+set (elementToSet,strD);
+end
+
+    
+
 function updatePresenceDetectorDisplay(elementToSet,boolCondition)
 if(boolCondition == 1)
     set(elementToSet,'BackgroundColor',clr);
