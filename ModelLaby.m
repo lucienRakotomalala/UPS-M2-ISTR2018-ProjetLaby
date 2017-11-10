@@ -21,13 +21,22 @@ classdef ModelLaby < ModelSED
         end
 
         %% --- Evolution of the labyrinth 
+        %   This function countains all evolution possible of laby.
+        %
+        %   1 part : All the walls move allowed
+        %   2 part : All Pacman Move
+        %   3 part : All Ghost Move
+        %   4 part : Evolution of caught
         function nextState = f(obj, in)
             
             nextState = obj.presentState;
             if(in(1) == 1) % Initial
                 
             end
-            % Walls Evolution 
+            %% Walls Evolution 
+            %
+            %   next Walls become an offset matrix of Walls 
+            %
             if(in(2) == 1) % Walls Vertical moves to the right
                         nextState.wallsV = [obj.presentState.wallsV(:,size(obj.presentState.wallsV,2)) obj.presentState.wallsV(:,1:size(obj.presentState.wallsV,2)-1)];       
             end
@@ -35,7 +44,9 @@ classdef ModelLaby < ModelSED
                         nextState.wallsH = [obj.presentState.wallsH(size(obj.presentState.wallsH,1),:); obj.presentState.wallsH(1:size(obj.presentState.wallsH,1)-1,:)];
             end
             
-            % Object Evolution
+            %% Object Evolution
+            % Creation of a upper wall matrix modelling the walls and all
+            % contours of the laby
             theWallsAroundV =  myWallsAround(obj.presentState.wallsV);
             theWallsAroundH =  myWallsAround(obj.presentState.wallsH);
             
@@ -99,25 +110,47 @@ classdef ModelLaby < ModelSED
              end
         end
         %% --- Memory 
+        % Déroulement de la fonction :
+        % If initialisation required : 
+        %   Then : do it with initial value declared here
+        %   
+        %   Else : calculate the new State with implementation of nxtState 
+           %        calculate caught 
         function m(obj,nextState, init)
             
             if(init == 1)
                 obj.presentState.wallsV =  [1 0 0 0; 0 0 0 0; 1 0 0 0; 1 0 1 0; 0 0 1 0];
                 obj.presentState.wallsH =  [1 0 1 0 1; 1 0 1 0 1; 1 0 1 0 1; 0 1 0 1 0]; 
-                obj.presentState.pacman = [1 1];
+                obj.presentState.pacman = [3 3];
                 obj.presentState.ghost  = [2 2];
                 obj.presentState.escape = {[4 4], 0};
                 obj.presentState.caught = 0;
             else
+
                 obj.presentState = nextState;
+                
+                
+                theWallsAroundV =  myWallsAround(obj.presentState.wallsV);
+                theWallsAroundH =  myWallsAround(obj.presentState.wallsH);
                 obj.presentState.caught = nextState.caught + ...
-                            logical(not(nextState.pacman(1) - nextState.ghost(1) +1))*logical(not(nextState.pacman(2) - nextState.ghost(2)))*not(nextState.wallsV(nextState.pacman(1)-1, nextState.pacman(2))) + ...
-                            logical(not(nextState.pacman(1) - nextState.ghost(1) -1))*logical(not(nextState.pacman(2) - nextState.ghost(2)))*not(nextState.wallsV(nextState.pacman(1)+1, nextState.pacman(2))) + ...
-                            logical(not(nextState.pacman(1) - nextState.ghost(1)))*logical(not(nextState.pacman(2) - nextState.ghost(2)-1))*not(nextState.wallsH(nextState.pacman(1), nextState.pacman(2)-1)) + ...
-                            logical(not(nextState.pacman(1) - nextState.ghost(1)))*logical(not(nextState.pacman(2) - nextState.ghost(2)+1))*not(nextState.wallsV(nextState.pacman(1), nextState.pacman(2)+1));
+                            logical(not(nextState.pacman(1) - nextState.ghost(1) +1))*logical(not(nextState.pacman(2) - nextState.ghost(2)))*not(theWallsAroundV(nextState.pacman(1)+1, nextState.pacman(2)+1)) + ...
+                            logical(not(nextState.pacman(1) - nextState.ghost(1) -1))*logical(not(nextState.pacman(2) - nextState.ghost(2)))*not(theWallsAroundV(nextState.pacman(1), nextState.pacman(2)+1)) + ...
+                            logical(not(nextState.pacman(1) - nextState.ghost(1)))*logical(not(nextState.pacman(2) - nextState.ghost(2)-1))*not(theWallsAroundH(nextState.pacman(1)+1, nextState.pacman(2))) + ...
+                            logical(not(nextState.pacman(1) - nextState.ghost(1)))*logical(not(nextState.pacman(2) - nextState.ghost(2)+1))*not(theWallsAroundH(nextState.pacman(1)+1, nextState.pacman(2)+1));
             end
         end
         %% -- Generation of the output 
+        % Creation of a output vctor contains :
+        %       pacman position (X,Y)
+        %       Ghost  position (X,Y)
+        %       WallsV matrix
+        %       WallsH matrix
+        %       Counter of caught
+        %       Boolean of escape
+        %       Vector with wallsAroundPacman
+        %       Vector with wallsAroundGhost
+        %       Vector with ghostSeesPacman
+        %
         function  out = g(obj)
             % walls Around pacman
             Wup_pacman = [1; obj.presentState.wallsH(1:obj.presentState.pacman(2)-1, obj.presentState.pacman(1))];
