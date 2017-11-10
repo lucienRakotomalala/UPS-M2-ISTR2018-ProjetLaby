@@ -78,17 +78,22 @@ classdef Wrapper
         % --- Ordonate the global execution.
         function obj = orderer(obj)
         % This function manage all the evolution    
-            
+           %{ 
             if(obj.wallsBit && obj.pacmanBit && obj.ghostBit) %% mod to || si gestion de commande partielle
                 % f m g walls
-                nextStateWalls = obj.modelLaby.f(obj.in);
-                obj.modelLaby.m(nextStateLaby,obj.in(1));
-                obj.out = obj.modelLaby.g(); 
+                nextStateWalls = obj.commandWalls.f(obj.in);
+                obj.commandWalls.m(nextStateWalls,obj.in(1));
+                obj.out = obj.commandWalls.g(); 
                 % f m g pacman
-                
+                nextStatePacman = obj.commandPacman.f(obj.in);
+                obj.commandPacman.m(nextStatePacman,obj.in(1));
+                obj.out = obj.commandPacman.g(); 
                 % f m g ghost
-        
+                nextStateGhost = obj.commandGhost.f(obj.in);
+                obj.commandGhost.m(nextStateGhost,obj.in(1));
+                obj.out = obj.commandGhost.g(); 
             end
+        %}
             % f m g modelLAby 
             nextStateLaby = obj.modelLaby.f(obj.in);
             obj.modelLaby.m(nextStateLaby,obj.in(1));
