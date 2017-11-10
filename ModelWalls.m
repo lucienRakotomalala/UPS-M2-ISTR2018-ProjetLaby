@@ -7,13 +7,18 @@ classdef ModelWalls < ModelSED
     end
     
     methods
+        % --- Constructor
+        function obj = ModelWalls(obj)
+            obj.m(0,1);
+        end
         % --- Evolution of the walls 
         function nextState = f(obj,in)
+            
         end
         
         % --- Memory test
         function m(obj,nextState, init)
-
+        
         end
         
         % --- Create the outputs

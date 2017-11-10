@@ -4,12 +4,14 @@ classdef Wrapper
     %   all the models (walls, labyrinth, ghost, pacman, escape)
     
     properties
-        wallsBit    = 0;     % Boolean connection for the walls.
-        pacmanBit   = 0;    % Boolean connection for the pacman.
-        ghostBit    = 0;  % Boolean connection for the ghost.
-        whoPlay
+        wallsBit        % Boolean connection for the walls.
+        pacmanBit      % Boolean connection for the pacman.
+        ghostBit     % Boolean connection for the ghost.
         
         modelLaby     % contain the instance of the model of labyrinth 
+        commandWalls
+        commandGhost
+        commandPacman
         
         in           % A integer vector who contain the state of input, 
                     % incremented by the callback or some action.
@@ -21,20 +23,24 @@ classdef Wrapper
     methods
         % --- Constructor of the class
         function obj = Wrapper(inSize, outSize)
+            %% OBjects (modelLaby, pacman, walls, ghost) 
+           obj.modelLaby      = ModelLaby(); % model of labyrinth
+           %obj.commandWalls   = ModelWalls();
+           %obj.commandPacman  = ModelPacman();
+           %obj.commandGhost   = ModelGhost();
             
+            
+            %% Inputs
            obj.in = zeros(1,inSize); % set size of input vector
            
-           obj.modelLaby = ModelLaby(); % model of labyrinth
-            % TODO model of pacman
-            % TODO model of ghost
-            
-            % Output definition
+           
+            %% Output definition
            obj.out = cell(1,outSize); %  set size of output cell
            
            obj.out{1} = zeros(1,2); % pacman [x y]
            obj.out{2} = zeros(1,2); % ghost  [x y]
-           %obj.out{3} = zeros(size(obj.modelLaby.presentState.wallsV)); %  Vertical Walls
-           %obj.out{4} = zeros(size(obj.modelLaby.presentState.wallsH)); %  Horrizontal Walls
+           obj.out{3} = zeros(size(obj.modelLaby.presentState.wallsV)); %  Vertical Walls
+           obj.out{4} = zeros(size(obj.modelLaby.presentState.wallsH)); %  Horrizontal Walls
            obj.out{5} = 0 ;         % caught
            obj.out{6} = 0 ;         % escape
            obj.out{7} = zeros(1,4); % Walls around pacman [Up Down Left Right]
@@ -42,20 +48,27 @@ classdef Wrapper
            obj.out{9} = zeros(1,4); % Ghost sees pacman   [Up Down Left Right]
            
            
-           obj.whoPlay =0;  
+           
+           
+            
+           
+           %% Connections
+           obj.wallsBit = 0;
+           obj.pacmanBit = 0;
+           obj.ghostBit = 0;
         end
         
         
         % --- Update the connection bit for connect automatic mode for
         % pacman, ghost and/or the walls.
-        function updateConnexion(obj,indBit,value)
+        function obj = updateConnexion(obj,indBit,value)
             switch indBit
                 case 1
                         obj.wallsBit  = value;
                 case 2
                         obj.pacmanBit = value;
                 case 3
-                        obj.ghostBit  = value;
+                        obj.ghostBit  = value ;  
                 otherwise 
                     error('Wrong connexion index.s');
             end
@@ -64,10 +77,48 @@ classdef Wrapper
         
         % --- Ordonate the global execution.
         function obj = orderer(obj)
+        % This function manage all the evolution    
+            
+            if(obj.wallsBit && obj.pacmanBit && obj.ghostBit) %% mod to || si gestion de commande partielle
+                % f m g walls
+                nextStateWalls = obj.modelLaby.f(obj.in);
+                obj.modelLaby.m(nextStateLaby,obj.in(1));
+                obj.out = obj.modelLaby.g(); 
+                % f m g pacman
+                
+                % f m g ghost
+        
+            end
+            % f m g modelLAby 
             nextStateLaby = obj.modelLaby.f(obj.in);
             obj.modelLaby.m(nextStateLaby,obj.in(1));
             obj.out = obj.modelLaby.g();
-            % This function manage all the evolution
+            
+            
+            % ordre exec 
+            
+            % murs :
+            %   -in  : type de
+            %   -out :
+            %   -etat : 
+            
+            % murs > Laby > pacman > Laby > ghost > laby 
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
 
 %{
              while(ifFinish())
