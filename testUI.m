@@ -10,7 +10,7 @@ h.pacmanColor = 'r';
 h.pacman = plot(h.pacmanX,h.pacmanY,'Color',h.pacmanColor,'Marker','*');
 
  e = 'pacman';
- h.(e)
+ h.(e) %  equivalent à h.pacman 
  
  
  %%

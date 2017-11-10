@@ -9,13 +9,13 @@ classdef Wrapper
         ghostBit    = 0;  % Boolean connection for the ghost.
         whoPlay
         
-        modelLaby     % contain the instance of the model of labyrinth 
+        modelLaby    % contain the instance of the model of labyrinth 
         
         in           % A integer vector who contain the state of input, 
-                    % incremented by the callback or some action.
+                     % incremented by the callback or some action.
         
-        out         % A cell who contain the state of output, 
-                    % incremented by the callback or some action.
+        out          % A cell who contain the state of output, 
+                     % incremented by the callback or some action.
     end
     
     methods
@@ -33,8 +33,8 @@ classdef Wrapper
            
            obj.out{1} = zeros(1,2); % pacman [x y]
            obj.out{2} = zeros(1,2); % ghost  [x y]
-           %obj.out{3} = zeros(size(obj.modelLaby.presentState.wallsV)); %  Vertical Walls
-           %obj.out{4} = zeros(size(obj.modelLaby.presentState.wallsH)); %  Horrizontal Walls
+           obj.out{3} = zeros(size(obj.modelLaby.presentState.wallsV)); %  Vertical Walls
+           obj.out{4} = zeros(size(obj.modelLaby.presentState.wallsH)); %  Horrizontal Walls
            obj.out{5} = 0 ;         % caught
            obj.out{6} = 0 ;         % escape
            obj.out{7} = zeros(1,4); % Walls around pacman [Up Down Left Right]

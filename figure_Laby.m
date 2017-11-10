@@ -70,7 +70,7 @@ handles = createUIPacman(handles);
 handles = createUIWalls(handles);
 handles = createUIEscape(handles);
 guidata(hObject,handles);    % OMFG !!!
-
+%assignin ('base','handles',handles);
 % UIWAIT makes figure_Laby wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 end
@@ -121,8 +121,6 @@ handles.wrapper = handles.wrapper.orderer();
 updateUI(handles, handles.wrapper.out);
 guidata(hObject,handles);
 
-% end function UI_Callback(hObject, eventdata, handles)
-
 end
 
 % --- Callback for all connection
@@ -134,8 +132,18 @@ function connect_Callback(hObject, eventdata, handles)
             102 : connectPacman
 %}
 handles.wrapper.updateConnexion(hObject.UserData-99,hObject.Value);
+connection = '';
+switch hObject.UserData
+    case 100
+        connection = 'wallsPanel';
+    case 101 
+        connection = 'ghostPanel';
+    case 102 
+        connection = 'pacmanPanel';
+end
 
-%handles.wrapper.updateConnexion(bitModif);
+set(handles.(connection),'Visible',isOne(~hObject.Value));
+
 guidata(hObject,handles);
 end
 % ===============================================================
@@ -187,6 +195,7 @@ tickValuesY = 0:1:h.walls.size ;
 set(gca,'XTick',tickValuesX);
 set(gca,'YTick',tickValuesY);
 grid on
+
 h.walls.color = 'b'; % blue
 axis([0 h.walls.size 0 h.walls.size]);
 % Borders
@@ -239,6 +248,7 @@ end
 
 % --- Update all UI elements
 function updateUI(handles,out)
+
  updateUIPlayer( handles,'pacman', out{1});      %(1,2)
  updateUIPlayer( handles,'ghost', out{2});
  updateUIWalls( handles.walls , out{3},out{4});           %(3,4)
@@ -252,12 +262,8 @@ end
 
 % --- Update graphical place of a player (ghost or pacman).
 function updateUIPlayer( handles,strPlayer, position)
-y = handles.walls.size - position(2)+1; % not sure !! problème de repère et de base xy !!! 
-
-fprintf('(%d %d) => (%d %d)\n',position(1),position(2),position(1),y);
-
-set(handles.(strPlayer),'XData',position(1)+.5,'YData',y+.5);
-%assignin ('base','handles',handles);
+y = handles.walls.size - position(2)+1; 
+set(handles.(strPlayer),'XData',position(1)-.5,'YData',y-.5);
 end
 
 % ----Update graphical element for caught.
@@ -299,12 +305,10 @@ end
 function updateUIWalls( wallsUI , vertWalls,horizWalls)
 for h = 1:wallsUI.size-1
     for k = 1:wallsUI.size
-        
         set(wallsUI.horizontals(h , k)  , 'Visible' , isOne(horizWalls( h , k)));
         set(wallsUI.verticals(  k , h)  , 'Visible' , isOne(vertWalls(  k ,  h)));
     end
 end
-
 end
 
 % --- Convert 1 in 'on and 0 in 'off'.
