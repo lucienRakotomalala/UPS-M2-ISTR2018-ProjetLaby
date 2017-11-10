@@ -43,6 +43,7 @@ else
 end
 % Endialization code - DO NOT EDIT
 end
+
 % --- Executes just before figure_Laby is made visible.
 function figure_Laby_OpeningFcn(hObject, eventdata, handles, varargin)
 % This function has no output args, see OutputFcn.
@@ -61,6 +62,8 @@ function figure_Laby_OpeningFcn(hObject, eventdata, handles, varargin)
 handles.output = hObject;
 % Update handles structure
 guidata(hObject, handles);
+% creation of the differents elements (wrapper, ghost, pacman, walls,
+% escape)
 handles.wrapper = Wrapper(11, 9);
 handles = createUIGhost(handles);
 handles = createUIPacman(handles);
@@ -146,7 +149,6 @@ hold on;
 h = handles;
 axes(h.axes1);
 h.pacmanPositionInit  = [1 2];
-
 h.pacmanColor         = [0 .5 0] ; % dark green
 h.pacman   = plot( h.pacmanPositionInit(1)-.5,...
                    h.pacmanPositionInit(2)-.5,...
@@ -230,7 +232,6 @@ axes(h.axes1);
 
 hold off;
 end
-
 % ===============================================================
 
 %%          Update UI 
@@ -246,17 +247,20 @@ function updateUI(handles,out)
  updateUIWallsAround(handles,'Pacman',out{7}); %(7) for pacman
  updateUIWallsAround(handles,'Ghost',out{8});  %(8) for ghost
  updateUIWallsAround(handles,'See',out{9});    %(9) for ghost see pacman
+ 
 end
 
-% --- Update graphical place of a player (ghost or pacman)
+% --- Update graphical place of a player (ghost or pacman).
 function updateUIPlayer( handles,strPlayer, position)
 y = handles.walls.size - position(2)+1; % not sure !! problème de repère et de base xy !!! 
 
-position
-set(handles.(strPlayer),'XData',position(1)+.5,'YData',y+.5);
+fprintf('(%d %d) => (%d %d)\n',position(1),position(2),position(1),y);
 
+set(handles.(strPlayer),'XData',position(1)+.5,'YData',y+.5);
+%assignin ('base','handles',handles);
 end
-% ----Update graphical element for caught----
+
+% ----Update graphical element for caught.
 function updateUICaught(elementToSet,caughtInt)
 
 clr = [.8 .8 .8];
@@ -269,7 +273,7 @@ set(elementToSet,'BackgroundColor',clr)
 set(elementToSet,'String',strcat(elementToSet.UserData,strD))
 end
 
-% ----update graphical element for escape----
+% ----Update graphical element for escape.
 function updateUIEscape(elementToSet,boolState)
 
 clr = [.8 .8 .8];
@@ -282,8 +286,8 @@ set (elementToSet,'BackgroundColor',clr)
 set (elementToSet,'String',strD);
 end
 
-% --- update up down left and right walls around a element (pacman, ghost,
-% ghost sees pacman)
+% --- Update up down left and right walls around a element (pacman, ghost,
+% ghost sees pacman).
 function updateUIWallsAround(handles,strElement,wallsAround) %(7,8,9)    
 updatePresenceDetectorDisplay(handles.( strcat(strElement,'Up'))   , wallsAround(1));
 updatePresenceDetectorDisplay(handles.( strcat(strElement,'Down')) , wallsAround(2));
@@ -291,8 +295,7 @@ updatePresenceDetectorDisplay(handles.( strcat(strElement,'Left')) , wallsAround
 updatePresenceDetectorDisplay(handles.( strcat(strElement,'Right')), wallsAround(4));
 end
 
-
-% --- Update graphicals elements for the walls
+% --- Update graphicals elements for the walls.
 function updateUIWalls( wallsUI , vertWalls,horizWalls)
 for h = 1:wallsUI.size-1
     for k = 1:wallsUI.size
@@ -304,6 +307,7 @@ end
 
 end
 
+% --- Convert 1 in 'on and 0 in 'off'.
 function strOnOff = isOne(boolCond)
 strOnOff = 'off';
 if (boolCond == 1)
@@ -311,6 +315,8 @@ if (boolCond == 1)
 end
 end
 
+% --- Change the background color of the UI Element according to the state 
+% of the binary condition.
 function updatePresenceDetectorDisplay(elementToSet,boolCondition)
 if(boolCondition > 0)
     set(elementToSet,'BackgroundColor','b');
