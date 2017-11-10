@@ -7,8 +7,8 @@ classdef (Abstract) ModelSED < handle %peut-être héritage de handle pour set/get
     end
     
     methods (Abstract)
-         nextState   = f(obj,in)
-        m(obj,nextState, init)
+         nextState   = f(obj, in)
+                       m(obj, nextState, init)
         out          = g(obj, in)
     end
     

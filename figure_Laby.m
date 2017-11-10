@@ -111,7 +111,7 @@ function ui_Callback(hObject, eventdata, handles)
 
 % In the input vector, only one element can be equal to 1 (1 of n).
 
-if(hObject.UserData~=12)
+if(hObject.UserData~=12) % if not step
     handles.wrapper.in = zeros(1,length(handles.wrapper.in)) ;
     handles.wrapper.in(hObject.UserData) = 1;
 end
@@ -131,7 +131,7 @@ function connect_Callback(hObject, eventdata, handles)
             101 : connectGhost
             102 : connectPacman
 %}
-handles.wrapper.updateConnexion(hObject.UserData-99,hObject.Value);
+handles.wrapper= handles.wrapper.updateConnexion(hObject.UserData-99,hObject.Value);
 connection = '';
 switch hObject.UserData
     case 100
@@ -143,6 +143,12 @@ switch hObject.UserData
 end
 
 set(handles.(connection),'Visible',isOne(~hObject.Value));
+if(handles.wrapper.wallsBit && handles.wrapper.pacmanBit && handles.wrapper.ghostBit) %% mod to || si gestion de commande partielle
+    set(handles.step,'Visible','on');
+else 
+    set(handles.step,'Visible','off');
+end
+
 
 guidata(hObject,handles);
 end
