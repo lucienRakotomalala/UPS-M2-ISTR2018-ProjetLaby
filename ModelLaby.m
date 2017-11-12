@@ -38,10 +38,10 @@ classdef ModelLaby < ModelSED
             %   next Walls become an offset matrix of Walls 
             %
             if(in(2) == 1) % Walls Vertical moves to the right
-                        nextState.wallsV = [obj.presentState.wallsV(size(obj.presentState.wallsV,2),:); obj.presentState.wallsV(1:size(obj.presentState.wallsV,2)-1,:)];       
+                        nextState.wallsV = [obj.presentState.wallsV(size(obj.presentState.wallsV,2),:); obj.presentState.wallsV(1:size(obj.presentState.wallsV,2),:)]      
             end
             if(in(3) == 1) % Walls Horizontal moves down
-                        nextState.wallsH = [obj.presentState.wallsH(:,size(obj.presentState.wallsH,1)) obj.presentState.wallsH(:,1:size(obj.presentState.wallsH,1)-1)];
+                        nextState.wallsH = [obj.presentState.wallsH(:,size(obj.presentState.wallsH,1)) obj.presentState.wallsH(:,1:size(obj.presentState.wallsH,1))]
             end
             
             %% Object Evolution
