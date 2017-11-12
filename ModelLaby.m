@@ -38,10 +38,10 @@ classdef ModelLaby < ModelSED
             %   next Walls become an offset matrix of Walls 
             %
             if(in(2) == 1) % Walls Vertical moves to the right
-                        nextState.wallsV = [obj.presentState.wallsV(size(obj.presentState.wallsV,2),:); obj.presentState.wallsV(1:size(obj.presentState.wallsV,2)-1,:)];       
+                        nextState.wallsV = [obj.presentState.wallsV(size(obj.presentState.wallsV,2),:); obj.presentState.wallsV(1:size(obj.presentState.wallsV,2),:)];     
             end
             if(in(3) == 1) % Walls Horizontal moves down
-                        nextState.wallsH = [obj.presentState.wallsH(:,size(obj.presentState.wallsH,1)) obj.presentState.wallsH(:,1:size(obj.presentState.wallsH,1)-1)];
+                        nextState.wallsH = [obj.presentState.wallsH(:,size(obj.presentState.wallsH,1)) obj.presentState.wallsH(:,1:size(obj.presentState.wallsH,1))];
             end
             
             %% Object Evolution
@@ -49,7 +49,7 @@ classdef ModelLaby < ModelSED
             % contours of the laby
             theWallsAroundV =  myWallsAround(obj.presentState.wallsV);
             theWallsAroundH =  myWallsAround(obj.presentState.wallsH);
-            
+            %%
             if(in(4) == 1) % Pacman get left
                         thePacmanWallsV = theWallsAroundV;
                         thePacmanWallsV(obj.presentState.ghost(2)+1,obj.presentState.ghost(1):obj.presentState.ghost(1)+1) = 1;
@@ -65,16 +65,16 @@ classdef ModelLaby < ModelSED
              if(in(6) == 1) % Pacman get right
                         thePacmanWallsV = theWallsAroundV;
                         thePacmanWallsV(obj.presentState.ghost(2)+1,obj.presentState.ghost(1):obj.presentState.ghost(1)+1) = 1;
-                        wallRight = thePacmanWallsV(obj.presentState.pacman(2)+1, obj.presentState.pacman(1)+1:size(obj.presentState.wallsV,2));
+                        wallRight = thePacmanWallsV(obj.presentState.pacman(2)+1, obj.presentState.pacman(1)+1:size(thePacmanWallsV,2));
                         nextState.pacman(1) = obj.presentState.pacman(1) + 1 - wallRight(1);
              end
              if(in(7) == 1) % Pacman get Down
                         thePacmanWallsH = theWallsAroundH;
                         thePacmanWallsH(obj.presentState.ghost(2):obj.presentState.ghost(2)+1,obj.presentState.ghost(1)+1) = 1;
-                        wallDown = thePacmanWallsH(obj.presentState.pacman(2):size(obj.presentState.wallsH,1), obj.presentState.pacman(1));
+                        wallDown = thePacmanWallsH(obj.presentState.pacman(2)+1:size(thePacmanWallsH,1), obj.presentState.pacman(1)+1);
                         nextState.pacman(2) = obj.presentState.pacman(2) + 1 - wallDown(1);
              end
-             
+             %%
              if(in(8) == 1) %Ghost get Left
                         theGhostWallsV = theWallsAroundV;
                         theGhostWallsV(obj.presentState.pacman(2)+1,obj.presentState.pacman(1):obj.presentState.pacman(1)+1) = 1;
@@ -92,14 +92,14 @@ classdef ModelLaby < ModelSED
              if(in(10) == 1) % Ghost get Right
                         theGhostWallsV = theWallsAroundV;
                         theGhostWallsV(obj.presentState.pacman(2)+1,obj.presentState.pacman(1):obj.presentState.pacman(1)+1) = 1;
-                        wallRight = theGhostWallsV(obj.presentState.ghost(2)+1, obj.presentState.ghost(1)+1:size(obj.presentState.wallsV,2));
-                        nextState.ghost(1) = obj.presentState.ghost(1) + 1 - wallRight(1);
+                        wallRight = theGhostWallsV(obj.presentState.ghost(2)+1, obj.presentState.ghost(1)+1:size(theGhostWallsV,2));
+                        nextState.ghost(1) = obj.presentState.ghost(1) + 1 - wallRight(1);  
              end
              
              if(in(11) == 1) % Ghost get Down
                         theGhostWallsH = theWallsAroundH;
                         theGhostWallsH(obj.presentState.pacman(2):obj.presentState.pacman(2)+1,obj.presentState.pacman(1)+1) = 1;
-                        wallDown = theGhostWallsH(obj.presentState.ghost(2)+1:size(obj.presentState.wallsH,1), obj.presentState.ghost(1)+1);
+                        wallDown = theGhostWallsH(obj.presentState.ghost(2)+1:size(theGhostWallsH,1), obj.presentState.ghost(1)+1);
                         nextState.ghost(2) = obj.presentState.ghost(2) + 1 - wallDown(1);
              end
              nextState.caught = obj.presentState.caught;
@@ -158,14 +158,14 @@ classdef ModelLaby < ModelSED
             WLeft_pacman = [1 obj.presentState.wallsV(obj.presentState.pacman(2), 1:obj.presentState.pacman(1)-1)];
             WRight_pacman = [obj.presentState.wallsV(obj.presentState.pacman(2), obj.presentState.pacman(1):size(obj.presentState.wallsV,2)) 1];
 
-            wallsAroundPacman = [Wup_pacman(end) Wdown_pacman(1) WLeft_pacman(end) WRight_pacman(1)] % Walls Up, Down, Left and Right around the pacman
+            wallsAroundPacman = [Wup_pacman(end) Wdown_pacman(1) WLeft_pacman(end) WRight_pacman(1)]; % Walls Up, Down, Left and Right around the pacman
             
             Wup_ghost = [1; obj.presentState.wallsH(1:obj.presentState.ghost(2)-1, obj.presentState.ghost(1))];
             Wdown_ghost = [obj.presentState.wallsH(obj.presentState.ghost(2):size(obj.presentState.wallsH,1), obj.presentState.ghost(1)); 1];
             WLeft_ghost = [1 obj.presentState.wallsV(obj.presentState.ghost(2), 1:obj.presentState.ghost(1)-1)];
             WRight_ghost = [obj.presentState.wallsV(obj.presentState.ghost(2), obj.presentState.ghost(1):size(obj.presentState.wallsV,2)) 1];
 
-            wallsAroundGhost = [Wup_ghost(end) Wdown_ghost(1) WLeft_ghost(end) WRight_ghost(1)] % Walls Up, Down, Left and Right around the pacman
+            wallsAroundGhost = [Wup_ghost(end) Wdown_ghost(1) WLeft_ghost(end) WRight_ghost(1)]; % Walls Up, Down, Left and Right around the pacman
             
             obj.presentState.escape{2} = logical(not(obj.presentState.escape{1}(1) - obj.presentState.pacman(1)))*logical(not(obj.presentState.escape{1}(2) - obj.presentState.pacman(2)));
             
