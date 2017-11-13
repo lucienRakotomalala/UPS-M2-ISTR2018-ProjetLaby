@@ -232,16 +232,20 @@ end
 % --- Create a graphical element for the escape
 function h = createUIEscape(handles)
 hold on;
-
+assignin('base','handles',handles);
 h= handles;
 axes(h.axes1);
+
 % set(h.Escape,'BackgroundColor',[.8 .8 .8]);
 % set(h.Escape,'String','Escaped Pacman :');
  h.escape.position = h.wrapper.modelLaby.presentState.escape{1}; % need to take the good one into h.wrapper.modelLaby. ... 
+ y = h.walls.size - h.escape.position(2)+1;
+ assignin('base','rec',[ y-.8 ,  h.escape.position(2)-1+.2 , .6 , .6 ]);
+
  h.escape.color = 'r';
- h.escape.rect =  rectangle('Position',[ h.escape.position(1)-1+.2 ,  h.escape.position(2)-1+.2, .6 , .6 ],...
+ h.escape.rect =  rectangle('Position',[ h.escape.position(1)-.8 ,  y-.8 , .6 , .6 ],...
                             'Curvature',.1, 'EdgeColor',h.escape.color,'FaceColor',h.escape.color);
- h.escape.text =  text( h.escape.position(1)-.799 ,  h.escape.position(2)-.5,  'Escape',...
+ h.escape.text =  text( h.escape.position(1)-.799 ,  y-.5,  'Escape',...
                        'Color','w',...
                        'FontSize', 8,...
                        'FontWeight','bold');
