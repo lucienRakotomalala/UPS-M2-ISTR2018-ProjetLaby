@@ -132,7 +132,7 @@ classdef ModelLaby < ModelSED
                 
                 theWallsAroundV =  myWallsAround(obj.presentState.wallsV);
                 theWallsAroundH =  myWallsAround(obj.presentState.wallsH);
-                obj.presentState.caught = nextState.caught + ...
+                obj.presentState.caught = nextState.caught + ...                                Maybe we should use WallsBetween function
                             logical(not(nextState.pacman(1) - nextState.ghost(1) +1))*logical(not(nextState.pacman(2) - nextState.ghost(2)))*not(theWallsAroundV(nextState.pacman(1)+1, nextState.pacman(2)+1)) + ...
                             logical(not(nextState.pacman(1) - nextState.ghost(1) -1))*logical(not(nextState.pacman(2) - nextState.ghost(2)))*not(theWallsAroundV(nextState.pacman(1), nextState.pacman(2)+1)) + ...
                             logical(not(nextState.pacman(1) - nextState.ghost(1)))*logical(not(nextState.pacman(2) - nextState.ghost(2)-1))*not(theWallsAroundH(nextState.pacman(1)+1, nextState.pacman(2))) + ...
@@ -169,15 +169,55 @@ classdef ModelLaby < ModelSED
             
             obj.presentState.escape{2} = logical(not(obj.presentState.escape{1}(1) - obj.presentState.pacman(1)))*logical(not(obj.presentState.escape{1}(2) - obj.presentState.pacman(2)));
             
+            % Ghost Sees pacman : logical equation which test two direction
+            % and two position : ghost first orpacman first
+            
+            ghostSeesPacman = [obj.sameX_position*obj.wallsHBetween(obj.presentState.ghost,obj.presentState.pacman), ...
+                                obj.sameX_position*obj.wallsHBetween(obj.presentState.pacman,obj.presentState.ghost), ...
+                                obj.sameY_position*obj.wallsVBetween(obj.presentState.ghost,obj.presentState.pacman), ...
+                                obj.sameY_position*obj.wallsVBetween(obj.presentState.pacman,obj.presentState.ghost)];  
             
             % Sortie lue par les autres commandes (elles doievent le
             % consid�rer comme une entr�e)
             out = {obj.presentState.pacman, obj.presentState.ghost, ...
                     obj.presentState.wallsV, obj.presentState.wallsH, ...
                     obj.presentState.caught, obj.presentState.escape{2}, ...
-                    wallsAroundPacman , wallsAroundGhost, [0 0 0 0]
+                    wallsAroundPacman , wallsAroundGhost, ghostSeesPacman
                   };        
         end
+        
+        %% Function that return 1 if ghots and pacman are on the same X colonn
+        function out = sameX_position(obj)
+           out = logical(not(obj.presentState.ghost(1) - obj.presentState.pacman(1)));
+        end
+        
+        %% Function that return 1 if ghots and pacman are on the same Y line
+        function out = sameY_position(obj)
+           out = logical(not(obj.presentState.ghost(2) - obj.presentState.pacman(2)));
+        end
+        
+        %% Fun
+        function outV = wallsVBetween (obj, obj1, obj2)
+
+            if(obj1(1)>obj2(1))
+                
+                outV = 0;
+            else
+                obj.presentState.wallsV(obj1(2):obj2(2),obj1(1))
+                outV = logical(not(sum(obj.presentState.wallsV(obj1(2),obj1(1):obj2(1)-1))))
+            end
+        end
+        
+                %% Fun
+        function outH = wallsHBetween (obj, obj1, obj2)
+            if(obj1(2)>obj2(2))
+                outH = 0;
+            else
+                obj.presentState.wallsH(obj1(2),obj2(1):obj2(2))
+                outH = logical(not(sum(obj.presentState.wallsH(obj1(2):obj2(2)-1,obj2(1)))))
+            end
+        end
+        
     
     end
 end
