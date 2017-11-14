@@ -130,13 +130,12 @@ classdef ModelLaby < ModelSED
                 obj.presentState = nextState;
                 
                 
-                theWallsAroundV =  myWallsAround(obj.presentState.wallsV);
-                theWallsAroundH =  myWallsAround(obj.presentState.wallsH);
+
                 obj.presentState.caught = nextState.caught + ...                                Maybe we should use WallsBetween function
-                            logical(not(nextState.pacman(1) - nextState.ghost(1) +1))*logical(not(nextState.pacman(2) - nextState.ghost(2)))*not(theWallsAroundV(nextState.pacman(1)+1, nextState.pacman(2)+1)) + ...
-                            logical(not(nextState.pacman(1) - nextState.ghost(1) -1))*logical(not(nextState.pacman(2) - nextState.ghost(2)))*not(theWallsAroundV(nextState.pacman(1), nextState.pacman(2)+1)) + ...
-                            logical(not(nextState.pacman(1) - nextState.ghost(1)))*logical(not(nextState.pacman(2) - nextState.ghost(2)-1))*not(theWallsAroundH(nextState.pacman(1)+1, nextState.pacman(2))) + ...
-                            logical(not(nextState.pacman(1) - nextState.ghost(1)))*logical(not(nextState.pacman(2) - nextState.ghost(2)+1))*not(theWallsAroundH(nextState.pacman(1)+1, nextState.pacman(2)+1));
+                           (obj.sameY_position*obj.wallsVBetweenOne(obj.presentState.pacman, obj.presentState.ghost)) + ...
+                           (obj.sameY_position*obj.wallsVBetweenOne(obj.presentState.ghost, obj.presentState.pacman)) + ...
+                           (obj.sameX_position*obj.wallsHBetweenOne(obj.presentState.ghost, obj.presentState.pacman)) + ...
+                           (obj.sameX_position*obj.wallsHBetweenOne(obj.presentState.pacman, obj.presentState.ghost));
             end
         end
         %% -- Generation of the output 
@@ -172,10 +171,10 @@ classdef ModelLaby < ModelSED
             % Ghost Sees pacman : logical equation which test two direction
             % and two position : ghost first orpacman first
             
-            ghostSeesPacman = [obj.sameX_position*obj.wallsHBetween(obj.presentState.ghost,obj.presentState.pacman), ...
-                                obj.sameX_position*obj.wallsHBetween(obj.presentState.pacman,obj.presentState.ghost), ...
-                                obj.sameY_position*obj.wallsVBetween(obj.presentState.ghost,obj.presentState.pacman), ...
-                                obj.sameY_position*obj.wallsVBetween(obj.presentState.pacman,obj.presentState.ghost)];  
+            ghostSeesPacman = [ obj.sameX_position*obj.wallsHBetween(obj.presentState.pacman,obj.presentState.ghost), ...
+                                obj.sameX_position*obj.wallsHBetween(obj.presentState.ghost,obj.presentState.pacman), ...
+                                obj.sameY_position*obj.wallsVBetween(obj.presentState.pacman,obj.presentState.ghost),...
+                                obj.sameY_position*obj.wallsVBetween(obj.presentState.ghost,obj.presentState.pacman)];  
             
             % Sortie lue par les autres commandes (elles doievent le
             % consid�rer comme une entr�e)
@@ -196,28 +195,40 @@ classdef ModelLaby < ModelSED
            out = logical(not(obj.presentState.ghost(2) - obj.presentState.pacman(2)));
         end
         
-        %% Fun
+        %% Function which return if a vertical wall is between obj1 and obj2.
         function outV = wallsVBetween (obj, obj1, obj2)
-
             if(obj1(1)>obj2(1))
-                
                 outV = 0;
             else
-                obj.presentState.wallsV(obj1(2):obj2(2),obj1(1))
-                outV = logical(not(sum(obj.presentState.wallsV(obj1(2),obj1(1):obj2(1)-1))))
+                outV = logical(not(sum(obj.presentState.wallsV(obj1(2),obj1(1):obj2(1)-1))));
             end
         end
         
-                %% Fun
+        %% Function which return if a horizontal wall is between obj1 and obj2.
         function outH = wallsHBetween (obj, obj1, obj2)
             if(obj1(2)>obj2(2))
                 outH = 0;
             else
-                obj.presentState.wallsH(obj1(2),obj2(1):obj2(2))
-                outH = logical(not(sum(obj.presentState.wallsH(obj1(2):obj2(2)-1,obj2(1)))))
+                outH = logical(not(sum(obj.presentState.wallsH(obj1(2):obj2(2)-1,obj2(1)))));
             end
         end
         
+        %%  Function which return 1 if a obj1 and obj2 
+        function outV = wallsVBetweenOne(obj, obj1, obj2)
+           if(obj1(1)+1 == obj2(1))
+               outV = obj.wallsVBetween(obj1, obj2);
+           else
+               outV = 0;
+           end
+        end
+        
+        function outH = wallsHBetweenOne(obj, obj1, obj2)
+           if(obj1(2)+1 == obj2(2))
+               outH = obj.wallsHBetween(obj1, obj2);
+           else
+               outH = 0;
+           end
+        end
     
     end
 end
