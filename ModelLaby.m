@@ -213,7 +213,8 @@ classdef ModelLaby < ModelSED
             end
         end
         
-        %%  Function which return 1 if a obj1 and obj2 
+        %%  Function which return 1 if obj1 and obj2 are near in X axis 
+        %   and there no wall between then 
         function outV = wallsVBetweenOne(obj, obj1, obj2)
            if(obj1(1)+1 == obj2(1))
                outV = obj.wallsVBetween(obj1, obj2);
@@ -222,6 +223,8 @@ classdef ModelLaby < ModelSED
            end
         end
         
+        %%  Function which return 1 if obj1 and obj2 are near in Y axis 
+        %   and there no wall between then 
         function outH = wallsHBetweenOne(obj, obj1, obj2)
            if(obj1(2)+1 == obj2(2))
                outH = obj.wallsHBetween(obj1, obj2);
