@@ -71,7 +71,7 @@ classdef Visualization
             %     seen = 0;
             % end
             seen = 0;
-             yGhost  = walls.labSize- ghost.positionY +1;
+            yGhost  = walls.labSize- ghost.positionY +1;
             yPacman = walls.labSize- pacman.positionY +1;
             if ( ( pacman.positionX ==ghost.positionX )  && (yPacman < yGhost) )
                 if(sum(walls.horizontalWalls( yPacman : yGhost-1  , ghost.positionX) )==0 ) % TODO : no walls between them
