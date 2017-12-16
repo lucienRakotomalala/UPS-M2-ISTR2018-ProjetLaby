@@ -18,6 +18,7 @@ classdef Wrapper
         
         out         % A cell who contain the state of output, 
                     % incremented by the callback or some action.
+        whoPlay
     end
     
     methods
@@ -25,10 +26,10 @@ classdef Wrapper
         function obj = Wrapper(inSize, outSize)
             %% OBjects (modelLaby, pacman, walls, ghost) 
            obj.modelLaby      = ModelLaby(); % model of labyrinth
-           %obj.commandWalls   = ModelWalls();
-           %obj.commandPacman  = ModelPacman();
-           %obj.commandGhost   = ModelGhost();
-            
+           obj.commandWalls   = ModelWalls();
+           obj.commandPacman  = ModelPacman();
+           obj.commandGhost   = ModelGhost();
+            obj.whoPlay = 0;
             
             %% Inputs
            obj.in = zeros(1,inSize); % set size of input vector
@@ -78,28 +79,35 @@ classdef Wrapper
         % --- Ordonate the global execution.
         function obj = orderer(obj)
         % This function manage all the evolution    
-           %{ 
+            %% PROBLEME ORDO A GERER : doit W > LAB > PAC > LAB > GHOS > LAB ...
             if(obj.wallsBit && obj.pacmanBit && obj.ghostBit) %% mod to || si gestion de commande partielle
-                % f m g walls
-                nextStateWalls = obj.commandWalls.f(obj.in);
-                obj.commandWalls.m(nextStateWalls,obj.in(1));
-                obj.out = obj.commandWalls.g(); 
-                % f m g pacman
-                nextStatePacman = obj.commandPacman.f(obj.in);
-                obj.commandPacman.m(nextStatePacman,obj.in(1));
-                obj.out = obj.commandPacman.g(); 
-                % f m g ghost
-                nextStateGhost = obj.commandGhost.f(obj.in);
-                obj.commandGhost.m(nextStateGhost,obj.in(1));
-                obj.out = obj.commandGhost.g(); 
+                switch obj.whoPlay
+                    case 0 
+                        % f m g walls
+                        nextStateWalls = obj.commandWalls.f(); 
+                        obj.commandWalls.m(nextStateWalls,obj.in(1)); 
+                        obj.in(2:3) = obj.commandWalls.g(); 
+                    case 1
+                        % f m g pacman
+                        nextStatePacman = obj.commandPacman.f(obj.out{7});
+                        obj.commandPacman.m(nextStatePacman,obj.in(1));
+                        obj.in(4:7) = obj.commandPacman.g(); 
+                %{
+                    case 2
+                        nextStateGhost = obj.commandGhost.f(obj.in);
+                        obj.commandGhost.m(nextStateGhost,obj.in(1));
+                        obj.out = obj.commandGhost.g(); 
+                %}
+                end
+                obj.whoPlay = mod(obj.whoPlay+1,2); % 2 doit être = 3
             end
-        %}
+            
             % f m g modelLAby 
             nextStateLaby = obj.modelLaby.f(obj.in);
             obj.modelLaby.m(nextStateLaby,obj.in(1));
             obj.out = obj.modelLaby.g();
-            
-            
+            obj.in
+            obj.in = zeros(size(obj.in));
             % ordre exec 
             
             % murs :
