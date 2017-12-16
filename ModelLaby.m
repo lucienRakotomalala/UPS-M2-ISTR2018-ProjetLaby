@@ -105,7 +105,7 @@ classdef ModelLaby < ModelSED
              nextState.caught = obj.presentState.caught;
              %Default case
              if(in(:) == 0)
-                 error('Error');
+                 %error('Error');
                  nextState = obj.presentState;
              end
         end
