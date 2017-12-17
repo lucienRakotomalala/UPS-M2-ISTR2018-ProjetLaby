@@ -96,7 +96,7 @@ classdef Wrapper
                     case 2
                         nextStateGhost = obj.commandGhost.f(obj.out{8},obj.out{9});
                         obj.commandGhost.m(nextStateGhost,obj.in(1));
-                        obj.in(7:10) = obj.commandGhost.g(); 
+                        obj.in(8:11) = obj.commandGhost.g(); 
                 end
                 obj.whoPlay = mod(obj.whoPlay+1,3); % 2 doit être = 3
             end

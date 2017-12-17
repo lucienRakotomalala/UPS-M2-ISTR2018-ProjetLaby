@@ -28,17 +28,17 @@ classdef ModelGhost < ModelSED
         function nextState = f(obj,in,in_view)
             nextState = zeros(1,4);
             
-            if(in_view(1)==1) %pacman on the right/left ?
-                nextState(1)=1; %left
+            if(in_view(1)==1) %pacman on the up ?
+                nextState(2)=1; 
                 
-            elseif(in_view(2)==1) %pacman on the right/left ?
-                nextState(3)=1; %right
+            elseif(in_view(2)==1) %pacman on the down?
+                nextState(4)=1; 
                 
-            elseif(in_view(3)==1)  %pacman on the up/down ?
-                nextState(2)=1; %up
+            elseif(in_view(3)==1)  %pacman on the left ?
+                nextState(1)=1; 
                 
-            elseif(in_view(4)==1) %pacman on the up/down ?
-                nextState(1)=1; %down
+            elseif(in_view(4)==1) %pacman on the right ?
+                nextState(3)=1;
                 
             elseif(in(4)==0) %right
                 nextState(3)=1 ;
