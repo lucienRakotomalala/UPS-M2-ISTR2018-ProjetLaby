@@ -119,7 +119,7 @@ classdef ModelLaby < ModelSED
         function m(obj,nextState, init)
             
             if(init == 1)
-                obj.presentState.wallsV =  [1 0 0 0; 0 0 0 0; 1 0 0 0; 1 0 1 0; 0 0 1 0];
+                obj.presentState.wallsV =  [1 0 0 0; 1 0 1 1; 1 0 0 0; 1 0 1 0; 0 0 1 0];
                 obj.presentState.wallsH =  [1 0 1 0 1; 1 0 1 0 1; 1 0 1 0 1; 0 1 0 1 0]; 
                 obj.presentState.pacman = [3 3];
                 obj.presentState.ghost  = [2 2];
