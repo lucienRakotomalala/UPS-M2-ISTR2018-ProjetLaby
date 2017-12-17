@@ -28,6 +28,9 @@ classdef ModelGhost < ModelSED
         function nextState = f(obj,in,in_view)
             nextState = zeros(1,4);
             
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                %%%% COMMANDE 1 %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             if(in_view(1)==1) %pacman on the up ?
                 nextState(2)=1; 
                 
@@ -52,7 +55,15 @@ classdef ModelGhost < ModelSED
             elseif(in(3)==0) %left
                 nextState(1)=1;
             end
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                %%%% COMMANDE 2 %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
         end
+
+
+
         
         % --- Memory test
         function obj = m(obj,nextState, init)
