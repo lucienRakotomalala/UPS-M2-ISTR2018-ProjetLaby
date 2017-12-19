@@ -92,14 +92,13 @@ classdef Wrapper
                         nextStatePacman = obj.commandPacman.f(obj.out{7});
                         obj.commandPacman.m(nextStatePacman,obj.in(1));
                         obj.in(4:7) = obj.commandPacman.g(); 
-                %{
+                
                     case 2
-                        nextStateGhost = obj.commandGhost.f(obj.in);
+                        nextStateGhost = obj.commandGhost.f(obj.out{8},obj.out{9});
                         obj.commandGhost.m(nextStateGhost,obj.in(1));
-                        obj.out = obj.commandGhost.g(); 
-                %}
+                        obj.in(8:11) = obj.commandGhost.g(); 
                 end
-                obj.whoPlay = mod(obj.whoPlay+1,2); % 2 doit être = 3
+                obj.whoPlay = mod(obj.whoPlay+1,3); % 2 doit être = 3
             end
             
             % f m g modelLAby 
