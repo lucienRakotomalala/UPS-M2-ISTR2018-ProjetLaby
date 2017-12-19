@@ -1,11 +1,13 @@
 classdef ModelWalls < ModelSED
     %MODELWALLS Model of walls command
     % Input :  nop
-    % Output : [UPwalls , RIGHTwalls]
+    % Output : [UPwalls , RIGHTwalls, 0]
     % state : contain the last move ( 0 = up ; 1 = right) 
     % This command do 
     properties
         presentState;
+        i=0;
+        val=0;
     end
     
     methods
@@ -16,7 +18,16 @@ classdef ModelWalls < ModelSED
         
         % --- Evolution of the walls 
         function nextState = f(obj)
-            nextState = ~ obj.presentState;
+            if(obj.i>2)
+                obj.i=0;          
+                nextState = obj.val;
+                obj.val=~obj.val;
+            else
+                nextState = 2;
+                
+                obj.i=obj.i+1;
+            end
+            obj.i
         end
         
         % --- Memory test
@@ -30,8 +41,10 @@ classdef ModelWalls < ModelSED
         
         % --- Create the outputs
         function out = g(obj)
-           out = zeros(1,2); 
-           out(obj.presentState+1) = 1;
+           out = zeros(1,2);
+           if(obj.presentState~=2)
+            out(obj.presentState+1) = 1;
+           end
         end
     end
     
