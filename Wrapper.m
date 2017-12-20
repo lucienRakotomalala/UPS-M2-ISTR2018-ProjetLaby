@@ -106,7 +106,7 @@ classdef Wrapper
             obj.modelLaby.m(nextStateLaby,obj.in(1));
             obj.out = obj.modelLaby.g();
             obj.in
-            obj.in = zeros(size(obj.in));
+            obj.in = zeros(swize(obj.in));
             % ordre exec 
             
             % murs :
