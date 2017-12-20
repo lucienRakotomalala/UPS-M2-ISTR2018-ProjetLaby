@@ -144,7 +144,7 @@ switch hObject.UserData
 end
 
 set(handles.(connection),'Visible',isOne(~hObject.Value));
-if(handles.wrapper.wallsBit && handles.wrapper.pacmanBit && handles.wrapper.ghostBit) %% mod to || si gestion de commande partielle
+if(handles.wrapper.wallsBit || handles.wrapper.pacmanBit || handles.wrapper.ghostBit) %% mod to || si gestion de commande partielle
     set(handles.step,'Visible','on');
 else 
     set(handles.step,'Visible','off');
@@ -259,7 +259,7 @@ end
 
 % --- Update all UI elements
 function updateUI(handles,out)
-
+ updateUIActiveCammand(handles);
  updateUIPlayer( handles,'pacman', out{1});      %(1,2)
  updateUIPlayer( handles,'ghost', out{2});
  updateUIWalls( handles.walls , out{3},out{4});           %(3,4)
@@ -270,6 +270,63 @@ function updateUI(handles,out)
  updateUIWallsAround(handles,'See',out{9});    %(9) for ghost see pacman
  
 end
+
+% --- Update visibility of command panel for only see the possibles
+% commands on the good time
+function updateUIActiveCammand(handles)
+%% the plan !
+% if XX commanded && it's him time to play 
+    % show him panel
+ % else 
+    % unshow him panel
+ % end
+ 
+ % A REVOIR 
+ %% pacman 
+ 
+ if(handles.wrapper.whoPlay == 1 )% si a son tour
+     set(handles.connectPacman,'Visible','on');
+     if(handles.wrapper.pacmanBit == 1) % si connecté
+         set(handles.pacmanPanel,'Visible','off');
+     else % si pas connecté
+         set(handles.pacmanPanel,'Visible','on');
+     end
+ else
+     set(handles.connectPacman,'Visible','off');
+     set(handles.pacmanPanel,'Visible','off');
+ end
+ 
+ %% ghost 
+ 
+ if(handles.wrapper.whoPlay == 1 )% si a son tour
+     set(handles.connectPacman,'Visible','on');
+     if(handles.wrapper.pacmanBit == 1) % si connecté
+         set(handles.pacmanPanel,'Visible','off');
+     else % si pas connecté
+         set(handles.pacmanPanel,'Visible','on');
+     end
+ else
+     set(handles.connectPacman,'Visible','off');
+     set(handles.pacmanPanel,'Visible','off');
+ end
+ 
+ 
+ %% walls
+  if(handles.wrapper.whoPlay == 1 )% si a son tour
+     set(handles.connectPacman,'Visible','on');
+     if(handles.wrapper.pacmanBit == 1) % si connecté
+         set(handles.pacmanPanel,'Visible','off');
+     else % si pas connecté
+         set(handles.pacmanPanel,'Visible','on');
+     end
+ else
+     set(handles.connectPacman,'Visible','off');
+     set(handles.pacmanPanel,'Visible','off');
+ end
+ 
+ 
+end
+
 
 % --- Update graphical place of a player (ghost or pacman).
 function updateUIPlayer( handles,strPlayer, position)
