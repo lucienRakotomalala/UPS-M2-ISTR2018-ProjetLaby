@@ -233,7 +233,7 @@ end
 function h = createUIEscape(handles)
 hold on;
 assignin('base','handles',handles);
-h= handles;
+h= handles
 axes(h.axes1);
 
 % set(h.Escape,'BackgroundColor',[.8 .8 .8]);
