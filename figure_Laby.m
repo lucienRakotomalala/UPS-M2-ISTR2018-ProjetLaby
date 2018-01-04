@@ -184,7 +184,7 @@ h.ghostColor         = [0.83 .33 0.1] ; % strange orange
 h.ghost   = plot( h.ghostPositionInit(1)-.5,...
                   h.ghostPositionInit(2)-.5,...
                   'Color',h.ghostColor,...
-                  'Marker','*'   );
+                  'Marker','*');
 hold off;
 
 end
@@ -290,38 +290,43 @@ function updateUIActiveCammand(handles)
          set(handles.pacmanPanel,'Visible','off');
      else % si pas connecté
          set(handles.pacmanPanel,'Visible','on');
+              set(handles.step,'Visible','off');
      end
  else
      set(handles.connectPacman,'Visible','off');
      set(handles.pacmanPanel,'Visible','off');
+
  end
  
  %% ghost 
  
- if(handles.wrapper.whoPlay == 1 )% si a son tour
-     set(handles.connectPacman,'Visible','on');
-     if(handles.wrapper.pacmanBit == 1) % si connecté
-         set(handles.pacmanPanel,'Visible','off');
+ if(handles.wrapper.whoPlay == 2 )% si a son tour
+     set(handles.connectGhost,'Visible','on');
+     if(handles.wrapper.ghostBit == 1) % si connecté
+         set(handles.ghostPanel,'Visible','off');
      else % si pas connecté
-         set(handles.pacmanPanel,'Visible','on');
+         set(handles.ghostPanel,'Visible','on');
+              set(handles.step,'Visible','off');
      end
  else
-     set(handles.connectPacman,'Visible','off');
-     set(handles.pacmanPanel,'Visible','off');
- end
- 
+     set(handles.connectGhost,'Visible','off');
+     set(handles.ghostPanel,'Visible','off');
+
+ end 
  
  %% walls
-  if(handles.wrapper.whoPlay == 1 )% si a son tour
-     set(handles.connectPacman,'Visible','on');
-     if(handles.wrapper.pacmanBit == 1) % si connecté
-         set(handles.pacmanPanel,'Visible','off');
+  if(handles.wrapper.whoPlay == 0 )% si a son tour
+     set(handles.connectWalls,'Visible','on');
+     if(handles.wrapper.wallsBit == 1) % si connecté
+         set(handles.wallsPanel,'Visible','off');
      else % si pas connecté
-         set(handles.pacmanPanel,'Visible','on');
+         set(handles.wallsPanel,'Visible','on');
+              set(handles.step,'Visible','off');
      end
  else
-     set(handles.connectPacman,'Visible','off');
-     set(handles.pacmanPanel,'Visible','off');
+     set(handles.connectWalls,'Visible','off');
+     set(handles.wallsPanel,'Visible','off');
+
  end
  
  
@@ -379,7 +384,7 @@ for h = 1:wallsUI.size-1
 end
 end
 
-% --- Convert 1 in 'on and 0 in 'off'.
+% --- Convert 1 in 'on' and 0 in 'off'.
 function strOnOff = isOne(boolCond)
 strOnOff = 'off';
 if (boolCond == 1)
@@ -401,21 +406,21 @@ end
 function h = resetUIConnection(handles)
 h = handles;
 % Show all actions panel (ghost, pacman, walls).
-set(h.wallsPanel,'Visible','on');
+set(h.wallsPanel, 'Visible','on');
 set(h.pacmanPanel,'Visible','on');
-set(h.ghostPanel,'Visible','on');
+set(h.ghostPanel, 'Visible','on');
 
 % Set off all connection buttons.
-set(h.connectWalls,'Value',0);
+set(h.connectWalls, 'Value',0);
 set(h.connectPacman,'Value',0);
-set(h.connectGhost,'Value',0);
+set(h.connectGhost, 'Value',0);
 
 % Set unvisible step button
 set(h.step,'Visible','off');
 
 % Set all connection bit to 0 into wrapper
-h.wrapper.wallsBit = 0;
+h.wrapper.wallsBit  = 0;
 h.wrapper.pacmanBit = 0;
-h.wrapper.ghostBit = 0;
+h.wrapper.ghostBit  = 0;
 
 end

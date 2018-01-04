@@ -71,5 +71,5 @@ end
 %figure(1)
 
 %sprintf('(%d,%d)=>(%d,%d)\n',ymv,xmv,yav,xav)
-name = strcat('./CollectedData/', datestr(now,'yyyy-mm-dd_HH-MM'))
+name = strcat('./CollectedData/', datestr(now,'yyyy-mm-dd_HH-MM'));
 save(name,'Aff');

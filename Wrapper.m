@@ -79,7 +79,7 @@ classdef Wrapper
         % --- Ordonate the global execution.
         function obj = orderer(obj)
         % This function manage all the evolution    
-            %% PROBLEME ORDO A GERER : doit W > LAB > PAC > LAB > GHOS > LAB ...
+            %% PROBLEME ORDO A GERER : doit W > LAB > PAC > LAB > GHOS > LAB > ...
             if(obj.wallsBit || obj.pacmanBit || obj.ghostBit) %% mod to || si gestion de commande partielle
                 switch obj.whoPlay
                     case 0 % walls
@@ -88,8 +88,6 @@ classdef Wrapper
                             nextStateWalls = obj.commandWalls.f(); 
                             obj.commandWalls.m(nextStateWalls,obj.in(1)); 
                             obj.in(2:3) = obj.commandWalls.g();
-                        else
-                            obj.whoPlay=obj.whoPlay+1;
                         end
                     case 1 % pacman
                         if(obj.pacmanBit==1)
@@ -97,8 +95,6 @@ classdef Wrapper
                             nextStatePacman = obj.commandPacman.f(obj.out{7});
                             obj.commandPacman.m(nextStatePacman,obj.in(1));
                             obj.in(4:7) = obj.commandPacman.g(); 
-                        else
-                            obj.whoPlay=obj.whoPlay+1;
                         end 
                     case 2 % ghost
                         if(obj.ghostBit==1) %% if ghost is connect
@@ -106,20 +102,27 @@ classdef Wrapper
                             nextStateGhost = obj.commandGhost.f(obj.out{8},obj.out{9});
                             obj.commandGhost.m(nextStateGhost,obj.in(1));
                             obj.in(8:11) = obj.commandGhost.g(); 
-                        else %else, try the next one
-                            obj.whoPlay=obj.whoPlay+1;
                         end
                 end
-                obj.whoPlay = mod(obj.whoPlay+1,3); % 2 doit être = 3
             end
+            
             
             % f m g modelLAby 
             nextStateLaby = obj.modelLaby.f(obj.in);
             obj.modelLaby.m(nextStateLaby,obj.in(1));
             obj.out = obj.modelLaby.g();
+            if obj.in(1) == 1  % if is a init clic 
+                obj.whoPlay = 0;
+                disp('init clic !')
+            else % else increment whoPlay
+                obj.whoPlay = mod(obj.whoPlay + 1, 3); % 2 doit être = 3
+                disp('whoPlay ++ !')
+
+            end
             obj.in
-            obj.in = zeros(swize(obj.in));
+            obj.in = zeros(size(obj.in));
             % ordre exec 
+            
             
             % murs :
             %   -in  : type de
