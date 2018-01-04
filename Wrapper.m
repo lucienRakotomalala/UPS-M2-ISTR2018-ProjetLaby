@@ -18,7 +18,7 @@ classdef Wrapper
         
         out         % A cell who contain the state of output, 
                     % incremented by the callback or some action.
-        whoPlay
+        whoPlay     % 0 = walls ; 1 = pacman ; 2 = ghost
     end
     
     methods
@@ -79,35 +79,50 @@ classdef Wrapper
         % --- Ordonate the global execution.
         function obj = orderer(obj)
         % This function manage all the evolution    
-            %% PROBLEME ORDO A GERER : doit W > LAB > PAC > LAB > GHOS > LAB ...
-            if(obj.wallsBit && obj.pacmanBit && obj.ghostBit) %% mod to || si gestion de commande partielle
+            %% PROBLEME ORDO A GERER : doit W > LAB > PAC > LAB > GHOS > LAB > ...
+            if(obj.wallsBit || obj.pacmanBit || obj.ghostBit) %% mod to || si gestion de commande partielle
                 switch obj.whoPlay
-                    case 0 
-                        % f m g walls
-                        nextStateWalls = obj.commandWalls.f(); 
-                        obj.commandWalls.m(nextStateWalls,obj.in(1)); 
-                        obj.in(2:3) = obj.commandWalls.g(); 
-                    case 1
-                        % f m g pacman
-                        nextStatePacman = obj.commandPacman.f(obj.out{7});
-                        obj.commandPacman.m(nextStatePacman,obj.in(1));
-                        obj.in(4:7) = obj.commandPacman.g(); 
-                
-                    case 2
-                        nextStateGhost = obj.commandGhost.f(obj.out{8},obj.out{9});
-                        obj.commandGhost.m(nextStateGhost,obj.in(1));
-                        obj.in(8:11) = obj.commandGhost.g(); 
+                    case 0 % walls
+                        if(obj.wallsBit==1)
+                            % f m g walls
+                            nextStateWalls = obj.commandWalls.f(); 
+                            obj.commandWalls.m(nextStateWalls,obj.in(1)); 
+                            obj.in(2:3) = obj.commandWalls.g();
+                        end
+                    case 1 % pacman
+                        if(obj.pacmanBit==1)
+                            % f m g pacman
+                            nextStatePacman = obj.commandPacman.f(obj.out{7});
+                            obj.commandPacman.m(nextStatePacman,obj.in(1));
+                            obj.in(4:7) = obj.commandPacman.g(); 
+                        end 
+                    case 2 % ghost
+                        if(obj.ghostBit==1) %% if ghost is connect
+                            % f m g ghost
+                            nextStateGhost = obj.commandGhost.f(obj.out{8},obj.out{9});
+                            obj.commandGhost.m(nextStateGhost,obj.in(1));
+                            obj.in(8:11) = obj.commandGhost.g(); 
+                        end
                 end
-                obj.whoPlay = mod(obj.whoPlay+1,3); % 2 doit être = 3
             end
+            
             
             % f m g modelLAby 
             nextStateLaby = obj.modelLaby.f(obj.in);
             obj.modelLaby.m(nextStateLaby,obj.in(1));
             obj.out = obj.modelLaby.g();
+            if obj.in(1) == 1  % if is a init clic 
+                obj.whoPlay = 0;
+                disp('init clic !')
+            else % else increment whoPlay
+                obj.whoPlay = mod(obj.whoPlay + 1, 3); % 2 doit être = 3
+                disp('whoPlay ++ !')
+
+            end
             obj.in
             obj.in = zeros(size(obj.in));
             % ordre exec 
+            
             
             % murs :
             %   -in  : type de
@@ -115,51 +130,6 @@ classdef Wrapper
             %   -etat : 
             
             % murs > Laby > pacman > Laby > ghost > laby 
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-
-%{
-             while(ifFinish())
-               writeOutput()
-                if (whoPlay == 0) 
-                    handles.state.walls.f()
-                    handles.state.walls.m()
-                    handles.state.walls.g() 
-                end
-                if (whoPlay == 1) 
-                    handles.state.pacman.f()
-                    handles.state.pacman.m()
-                    handles.state.pacman.g() 
-                end
-                if (whoPlay == 2) 
-                    handles.state.ghost.f()
-                    handles.state.ghost.m()
-                    handles.state.ghost.g() 
-                end
-
-               readInput()
-               % laby
-               handles.laby.f()
-               handles.laby.m()
-               handles.laby.g()
-               
-               whoPlay = mod(whoPlay+1,3); % cyclical counter
-%            end
-%}
         end
     end
     
