@@ -260,6 +260,7 @@ end
 % --- Update all UI elements
 function updateUI(handles,out)
  updateUIActiveCammand(handles);
+ updateUIButton(handles);
  updateUIPlayer( handles,'pacman', out{1});      %(1,2)
  updateUIPlayer( handles,'ghost', out{2});
  updateUIWalls( handles.walls , out{3},out{4});           %(3,4)
@@ -286,16 +287,17 @@ function updateUIActiveCammand(handles)
  
  if(handles.wrapper.whoPlay == 1 )% si a son tour
      set(handles.connectPacman,'Visible','on');
+   %  updateUIButton(handles,'ghost');
      if(handles.wrapper.pacmanBit == 1) % si connecté
          set(handles.pacmanPanel,'Visible','off');
+         set(handles.step,'Visible','on');
      else % si pas connecté
          set(handles.pacmanPanel,'Visible','on');
-              set(handles.step,'Visible','off');
+         set(handles.step,'Visible','off');
      end
  else
      set(handles.connectPacman,'Visible','off');
      set(handles.pacmanPanel,'Visible','off');
-
  end
  
  %% ghost 
@@ -304,34 +306,49 @@ function updateUIActiveCammand(handles)
      set(handles.connectGhost,'Visible','on');
      if(handles.wrapper.ghostBit == 1) % si connecté
          set(handles.ghostPanel,'Visible','off');
+         set(handles.step,'Visible','on');
      else % si pas connecté
          set(handles.ghostPanel,'Visible','on');
-              set(handles.step,'Visible','off');
+         set(handles.step,'Visible','off');
      end
  else
      set(handles.connectGhost,'Visible','off');
      set(handles.ghostPanel,'Visible','off');
-
  end 
  
  %% walls
   if(handles.wrapper.whoPlay == 0 )% si a son tour
      set(handles.connectWalls,'Visible','on');
+%     updateUIButton(handles,'pacman');
      if(handles.wrapper.wallsBit == 1) % si connecté
          set(handles.wallsPanel,'Visible','off');
+         set(handles.step,'Visible','on');
      else % si pas connecté
          set(handles.wallsPanel,'Visible','on');
-              set(handles.step,'Visible','off');
+         set(handles.step,'Visible','off');
      end
  else
      set(handles.connectWalls,'Visible','off');
      set(handles.wallsPanel,'Visible','off');
-
- end
- 
- 
+  end
 end
 
+
+% --- Update visibility of moving command button in function of possibles
+% moves
+function updateUIButton(handles)
+player = {'pacman','ghost'};
+possibleMoves = cell(2,4);
+for j = 1:max(size(possibleMoves,1)) 
+    possibleMoves(j,:)=cell(strcat(player(j),{'Up','Down','Left','Right'},'But'));
+end
+
+for j = 1:max(size(possibleMoves,1)) 
+    for i = 1:max(size(possibleMoves,2)) 
+        set(handles.(possibleMoves{j,i}) ,'Visible',isOne(~handles.wrapper.out{6+j}(i)));
+    end
+end
+end
 
 % --- Update graphical place of a player (ghost or pacman).
 function updateUIPlayer( handles,strPlayer, position)
