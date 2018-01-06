@@ -22,7 +22,7 @@ function varargout = figure_Laby(varargin)
 
 % Edit the above text to modify the response to help figure_Laby
 
-% Last Modified by GUIDE v2.5 09-Nov-2017 18:52:35
+% Last Modified by GUIDE v2.5 06-Jan-2018 11:34:14
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -132,8 +132,9 @@ function connect_Callback(hObject, eventdata, handles)
             101 : connectGhost
             102 : connectPacman
 %}
-handles.wrapper= handles.wrapper.updateConnexion(hObject.UserData-99,hObject.Value);
+handles.wrapper= handles.wrapper.updateConnexion(hObject.UserData-99,hObject.Value); % 1:walls ; 2:ghost ; 3:pacman
 connection = '';
+hObject.UserData
 switch hObject.UserData
     case 100
         connection = 'wallsPanel';
@@ -149,8 +150,6 @@ if(handles.wrapper.wallsBit || handles.wrapper.pacmanBit || handles.wrapper.ghos
 else 
     set(handles.step,'Visible','off');
 end
-
-
 guidata(hObject,handles);
 end
 % ===============================================================
@@ -276,18 +275,16 @@ end
 % commands on the good time
 function updateUIActiveCammand(handles)
 %% the plan !
-% if XX commanded && it's him time to play 
+% if XX commanded && him time to play 
     % show him panel
  % else 
     % unshow him panel
  % end
  
- % A REVOIR 
  %% pacman 
  
  if(handles.wrapper.whoPlay == 1 )% si a son tour
      set(handles.connectPacman,'Visible','on');
-   %  updateUIButton(handles,'ghost');
      if(handles.wrapper.pacmanBit == 1) % si connecté
          set(handles.pacmanPanel,'Visible','off');
          set(handles.step,'Visible','on');
@@ -319,7 +316,6 @@ function updateUIActiveCammand(handles)
  %% walls
   if(handles.wrapper.whoPlay == 0 )% si a son tour
      set(handles.connectWalls,'Visible','on');
-%     updateUIButton(handles,'pacman');
      if(handles.wrapper.wallsBit == 1) % si connecté
          set(handles.wallsPanel,'Visible','off');
          set(handles.step,'Visible','on');
@@ -352,6 +348,7 @@ end
 
 % --- Update graphical place of a player (ghost or pacman).
 function updateUIPlayer( handles,strPlayer, position)
+%% teleporting move
 y = handles.walls.size - position(2)+1; 
 set(handles.(strPlayer),'XData',position(1)-.5,'YData',y-.5);
 end
@@ -373,7 +370,7 @@ end
 function updateUIEscape(elementToSet,boolState)
 
 clr = [.8 .8 .8];
-strD = get(elementToSet,'String');
+strD = get(elementToSet,'UserData');
 if (boolState == 1)
     clr = 'r';
     strD = strcat(strD,' YES');
@@ -441,3 +438,4 @@ h.wrapper.pacmanBit = 0;
 h.wrapper.ghostBit  = 0;
 
 end
+    
