@@ -67,9 +67,9 @@ classdef Wrapper
                 case 1
                         obj.wallsBit  = value;
                 case 2
-                        obj.pacmanBit = value;
+                      obj.ghostBit  = value ;  
                 case 3
-                        obj.ghostBit  = value ;  
+                      obj.pacmanBit = value;
                 otherwise 
                     error('Wrong connexion index.s');
             end
@@ -113,13 +113,14 @@ classdef Wrapper
             obj.out = obj.modelLaby.g();
             if obj.in(1) == 1  % if is a init clic 
                 obj.whoPlay = 0;
-                disp('init clic !')
+                %disp('init clic !')% DEBUG
             else % else increment whoPlay
                 obj.whoPlay = mod(obj.whoPlay + 1, 3); % 2 doit être = 3
-                disp('whoPlay ++ !')
+                %disp('whoPlay ++ !')% DEBUG
 
             end
-            obj.in
+            %obj.in % DEBUG
+            %fprintf('W P G : [%d %d %d]\n',obj.wallsBit,obj.pacmanBit, obj.ghostBit);% DEBUG
             obj.in = zeros(size(obj.in));
             % ordre exec 
             
