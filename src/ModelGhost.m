@@ -16,11 +16,13 @@ classdef ModelGhost < ModelSED
     % This command   P(D) > P(B) > P(H) > P(G)
     properties
         presentState;
+        initialState;
     end
     
     methods
         % --- Constructor
-        function obj = ModelGhost()
+        function obj = ModelGhost(initialValue)
+            obj.initialState = initialValue;
             obj = obj.m(0,1);
         end
         
@@ -68,7 +70,7 @@ classdef ModelGhost < ModelSED
         % --- Memory test
         function obj = m(obj,nextState, init)
             if(init == 1)
-                obj.presentState = zeros(1,4);
+                obj.presentState = obj.initialState;
             else
                 obj.presentState = nextState;
             end

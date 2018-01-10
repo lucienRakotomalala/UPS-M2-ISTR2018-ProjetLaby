@@ -6,13 +6,15 @@ classdef ModelWalls < ModelSED
     % This command do 
     properties
         presentState;
+        initialState;
         i=0;
         val=0;
     end
     
     methods
         % --- Constructor
-        function obj = ModelWalls()
+        function obj = ModelWalls(initValue)
+            obj.initialState = initValue;
             obj = obj.m(0,1);
         end
         
@@ -33,7 +35,7 @@ classdef ModelWalls < ModelSED
         % --- Memory test
         function obj = m(obj,nextState, init)
             if(init == 1)
-                obj.presentState = 0; 
+                obj.presentState = obj.initialState; 
             else
                 obj.presentState = nextState;
             end

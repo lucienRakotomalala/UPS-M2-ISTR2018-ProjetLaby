@@ -16,12 +16,14 @@ classdef ModelPacman < ModelSED
     % This command   P(D) > P(B) > P(H) > P(G)   
     properties
         presentState;
+        initialState;
         memory;
     end
     
    methods
         % --- Constructor
-        function obj = ModelPacman()
+        function obj = ModelPacman(initialValue)
+            obj.initialState = initialValue;
             obj = obj.m(0,1);
         end
         
@@ -80,7 +82,7 @@ end
         % --- Memory test
         function obj = m(obj,nextState, init)
             if(init == 1)
-                obj.presentState = zeros(1,4); 
+                obj.presentState = obj.initialState; 
                  obj.memory=zeros(1,4);
             else
                 obj.presentState = nextState;

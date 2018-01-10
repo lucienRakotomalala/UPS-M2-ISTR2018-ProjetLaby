@@ -4,6 +4,7 @@ classdef (Abstract) ModelSED < handle %peut-être héritage de handle pour set/get
     
     properties (Abstract)
         presentState
+        initialState
     end
     
     methods (Abstract)

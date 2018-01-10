@@ -4,6 +4,7 @@ classdef ModelLaby < ModelSED
     
     properties
         presentState;
+        initialState;
     end
     
     methods
@@ -16,7 +17,14 @@ classdef ModelLaby < ModelSED
         
         % Librairie des commandes, vecteur in : Voir le Callback de
         % figure_Laby
-        function obj = ModelLaby(obj)
+        function obj = ModelLaby(wallsV_init,wallsH_init,pacman_init,ghost_init,escape_init,caught_init)
+            obj.initialState.wallsV =  wallsV_init;
+            obj.initialState.wallsH = wallsH_init; 
+            obj.initialState.pacman = pacman_init;
+            obj.initialState.ghost  = ghost_init;
+            obj.initialState.escape = escape_init;
+            obj.initialState.caught = caught_init;
+            
             obj.m(0,1);     % Pas de next State. Initialisation uniquement.
         end
 
@@ -119,12 +127,7 @@ classdef ModelLaby < ModelSED
         function m(obj,nextState, init)
             
             if(init == 1)
-                obj.presentState.wallsV =  [1 0 1 1 ; 1 0 1 1; 1 0 0 0; 1 0 0 1; 1 0 1 0];
-                obj.presentState.wallsH =  [1 0 1 1 1; 1 0 1 0 0; 1 0 1 0 0; 1 0 0 1 1]; 
-                obj.presentState.pacman = [3 3];
-                obj.presentState.ghost  = [2 2];
-                obj.presentState.escape = {[4 4], 0};
-                obj.presentState.caught = 0;
+                obj.presentState = obj.initialState;
             else
 
                 obj.presentState = nextState;

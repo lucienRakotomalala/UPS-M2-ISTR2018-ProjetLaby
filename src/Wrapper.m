@@ -24,11 +24,30 @@ classdef Wrapper
     methods
         % --- Constructor of the class
         function obj = Wrapper(inSize, outSize)
+            %% Initial laby state
+            wallsV_i =  [1 0 1 1 ; 1 0 1 1; 1 0 0 0; 1 0 0 1; 1 0 1 0];
+            wallsH_i =  [1 0 1 1 1; 1 0 1 0 0; 1 0 1 0 0; 1 0 0 1 1]; 
+            pacman_i = [3 3];
+            ghost_i  = [2 2];
+            escape_i = {[4 4], 0};
+            caught_i = 0;
+            
+            %% initial value of walls command
+            wallsCommand_i = 0; 
+            % =0 : begin with right move 
+            % =1 : begin with up move 
+            
+            %% initial value of pacman command
+            pacmanCommand_i= zeros(1,4);
+            
+            %% initial value of pacman command
+            ghostCommand_i= zeros(1,4);
+            %%
             %% OBjects (modelLaby, pacman, walls, ghost) 
-           obj.modelLaby      = ModelLaby(); % model of labyrinth
-           obj.commandWalls   = ModelWalls();
-           obj.commandPacman  = ModelPacman();
-           obj.commandGhost   = ModelGhost();
+           obj.modelLaby      = ModelLaby(wallsV_i,wallsH_i,pacman_i,ghost_i,escape_i,caught_i); % model of labyrinth
+           obj.commandWalls   = ModelWalls(wallsCommand_i);
+           obj.commandPacman  = ModelPacman(pacmanCommand_i);
+           obj.commandGhost   = ModelGhost(ghostCommand_i);
             obj.whoPlay = 0;
             
             %% Inputs
