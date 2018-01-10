@@ -43,10 +43,22 @@
 % --------------------------------------------------------------
  
 %\renewcommand{\qedsymbol}{\filledbox}
- 
-\title{TITRE}%replace X with the appropriate number
-\author{Sous-titre} 
+
+
+
+\title{GitKraken, petit guide}%replace X with the appropriate number
+\author{Explications, commandes de bases et problèmes courants} 
 \maketitle
+\section{Description}
+GitKraken est un utilitaire graphique de git, un logiciel de gestion de version de code. Il est possible de lier un code local avec un code stocké en ligne (github dans notre cas) mais ce n'est ni automatique ni obligatoire. 
+
+Afin de créer un projet, il faut initialiser un versionning.
+
+\section{Commande de base}
+Afin de créer un projet, il faut faire des "photos", des versions de l'état du projet à différents moments que l'on choisit en fonction de l'avancement. Quand, au cours du développement, on considère que l'état actuel est intéressant, que l'on pourrait avoir envie d'y retourner, avant de faire un test, ... on effectue un \textbf{commit}. Il comprend un titre et une description et le projet à l'état de la création de celui-ci. Les différents \textbf{commits} sont organisés dans des \textbf{branchs}. Celles-ci permettent d'avoir en parallèle différentes versions du code. Il est possible de mettre en ligne avec la commande \textbf{push} la version locale d'une branche. De la même façon, il est possible de récupérer l'état d'une branche depuis internet sur sa version locale avec la commande \textbf{pull}. On peut regrouper deux branches grâce à la commande \textbf{merge}. Pour cela il faut faire glisser la branche cible et la lâcher sur la branche destination. Il faut ensuite choisir \emph{Merge NomBranchCible into Merge NomBranchDestination} dans l'onglet déroulant qui apparait.
+
+L'utilisation de branches est très pratique et quasiment indispensable pour travailler à plusieurs sur un même projet. Pour cela, à partir d'un même état d'un projet, on crée une branche par fonction et sur celle-ci chaque personne qui intervient dessus crée une branche.  
+\section{Problèmes courants}
 
 
 \end{document}
