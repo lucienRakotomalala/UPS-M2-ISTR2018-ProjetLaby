@@ -40,7 +40,7 @@ end
 % % % % % %
 %%%%%%%%%%%
 N = 2*Ms+1; % taille tab total
-Aff = zeros(N,N,n)
+Aff = zeros(N,N,n);
 %%
 Aff([1 N],:,:)=1; % bords verticaux
 
