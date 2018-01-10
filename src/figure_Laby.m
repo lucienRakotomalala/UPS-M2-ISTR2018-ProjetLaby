@@ -22,7 +22,7 @@ function varargout = figure_Laby(varargin)
 
 % Edit the above text to modify the response to help figure_Laby
 
-% Last Modified by GUIDE v2.5 09-Nov-2017 18:52:35
+% Last Modified by GUIDE v2.5 06-Jan-2018 11:34:14
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -132,8 +132,9 @@ function connect_Callback(hObject, eventdata, handles)
             101 : connectGhost
             102 : connectPacman
 %}
-handles.wrapper= handles.wrapper.updateConnexion(hObject.UserData-99,hObject.Value);
+handles.wrapper= handles.wrapper.updateConnexion(hObject.UserData-99,hObject.Value); % 1:walls ; 2:ghost ; 3:pacman
 connection = '';
+hObject.UserData
 switch hObject.UserData
     case 100
         connection = 'wallsPanel';
@@ -144,13 +145,11 @@ switch hObject.UserData
 end
 
 set(handles.(connection),'Visible',isOne(~hObject.Value));
-if(handles.wrapper.wallsBit && handles.wrapper.pacmanBit && handles.wrapper.ghostBit) %% mod to || si gestion de commande partielle
+if(handles.wrapper.wallsBit || handles.wrapper.pacmanBit || handles.wrapper.ghostBit) %% mod to || si gestion de commande partielle
     set(handles.step,'Visible','on');
 else 
     set(handles.step,'Visible','off');
 end
-
-
 guidata(hObject,handles);
 end
 % ===============================================================
@@ -184,7 +183,7 @@ h.ghostColor         = [0.83 .33 0.1] ; % strange orange
 h.ghost   = plot( h.ghostPositionInit(1)-.5,...
                   h.ghostPositionInit(2)-.5,...
                   'Color',h.ghostColor,...
-                  'Marker','*'   );
+                  'Marker','*');
 hold off;
 
 end
@@ -259,7 +258,8 @@ end
 
 % --- Update all UI elements
 function updateUI(handles,out)
-
+ updateUIActiveCammand(handles);
+ updateUIButton(handles);
  updateUIPlayer( handles,'pacman', out{1});      %(1,2)
  updateUIPlayer( handles,'ghost', out{2});
  updateUIWalls( handles.walls , out{3},out{4});           %(3,4)
@@ -271,8 +271,84 @@ function updateUI(handles,out)
  
 end
 
+% --- Update visibility of command panel for only see the possibles
+% commands on the good time
+function updateUIActiveCammand(handles)
+%% the plan !
+% if XX commanded && him time to play 
+    % show him panel
+ % else 
+    % unshow him panel
+ % end
+ 
+ %% pacman 
+ 
+ if(handles.wrapper.whoPlay == 1 )% si a son tour
+     set(handles.connectPacman,'Visible','on');
+     if(handles.wrapper.pacmanBit == 1) % si connecté
+         set(handles.pacmanPanel,'Visible','off');
+         set(handles.step,'Visible','on');
+     else % si pas connecté
+         set(handles.pacmanPanel,'Visible','on');
+         set(handles.step,'Visible','off');
+     end
+ else
+     set(handles.connectPacman,'Visible','off');
+     set(handles.pacmanPanel,'Visible','off');
+ end
+ 
+ %% ghost 
+ 
+ if(handles.wrapper.whoPlay == 2 )% si a son tour
+     set(handles.connectGhost,'Visible','on');
+     if(handles.wrapper.ghostBit == 1) % si connecté
+         set(handles.ghostPanel,'Visible','off');
+         set(handles.step,'Visible','on');
+     else % si pas connecté
+         set(handles.ghostPanel,'Visible','on');
+         set(handles.step,'Visible','off');
+     end
+ else
+     set(handles.connectGhost,'Visible','off');
+     set(handles.ghostPanel,'Visible','off');
+ end 
+ 
+ %% walls
+  if(handles.wrapper.whoPlay == 0 )% si a son tour
+     set(handles.connectWalls,'Visible','on');
+     if(handles.wrapper.wallsBit == 1) % si connecté
+         set(handles.wallsPanel,'Visible','off');
+         set(handles.step,'Visible','on');
+     else % si pas connecté
+         set(handles.wallsPanel,'Visible','on');
+         set(handles.step,'Visible','off');
+     end
+ else
+     set(handles.connectWalls,'Visible','off');
+     set(handles.wallsPanel,'Visible','off');
+  end
+end
+
+
+% --- Update visibility of moving command button in function of possibles
+% moves
+function updateUIButton(handles)
+player = {'pacman','ghost'};
+possibleMoves = cell(2,4);
+for j = 1:max(size(possibleMoves,1)) 
+    possibleMoves(j,:)=cell(strcat(player(j),{'Up','Down','Left','Right'},'But'));
+end
+
+for j = 1:max(size(possibleMoves,1)) 
+    for i = 1:max(size(possibleMoves,2)) 
+        set(handles.(possibleMoves{j,i}) ,'Visible',isOne(~handles.wrapper.out{6+j}(i)));
+    end
+end
+end
+
 % --- Update graphical place of a player (ghost or pacman).
 function updateUIPlayer( handles,strPlayer, position)
+%% teleporting move
 y = handles.walls.size - position(2)+1; 
 set(handles.(strPlayer),'XData',position(1)-.5,'YData',y-.5);
 end
@@ -294,7 +370,7 @@ end
 function updateUIEscape(elementToSet,boolState)
 
 clr = [.8 .8 .8];
-strD = get(elementToSet,'String');
+strD = get(elementToSet,'UserData');
 if (boolState == 1)
     clr = 'r';
     strD = strcat(strD,' YES');
@@ -322,7 +398,7 @@ for h = 1:wallsUI.size-1
 end
 end
 
-% --- Convert 1 in 'on and 0 in 'off'.
+% --- Convert 1 in 'on' and 0 in 'off'.
 function strOnOff = isOne(boolCond)
 strOnOff = 'off';
 if (boolCond == 1)
@@ -344,21 +420,22 @@ end
 function h = resetUIConnection(handles)
 h = handles;
 % Show all actions panel (ghost, pacman, walls).
-set(h.wallsPanel,'Visible','on');
+set(h.wallsPanel, 'Visible','on');
 set(h.pacmanPanel,'Visible','on');
-set(h.ghostPanel,'Visible','on');
+set(h.ghostPanel, 'Visible','on');
 
 % Set off all connection buttons.
-set(h.connectWalls,'Value',0);
+set(h.connectWalls, 'Value',0);
 set(h.connectPacman,'Value',0);
-set(h.connectGhost,'Value',0);
+set(h.connectGhost, 'Value',0);
 
 % Set unvisible step button
 set(h.step,'Visible','off');
 
 % Set all connection bit to 0 into wrapper
-h.wrapper.wallsBit = 0;
+h.wrapper.wallsBit  = 0;
 h.wrapper.pacmanBit = 0;
-h.wrapper.ghostBit = 0;
+h.wrapper.ghostBit  = 0;
 
 end
+    
