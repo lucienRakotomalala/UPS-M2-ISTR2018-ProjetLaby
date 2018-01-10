@@ -72,3 +72,9 @@ a chaque clic il lance le bloc d'évolution
 % ajout d'un bouton : stepper 
 % un seul callback : un id int par bouton ou avec les tag
 %       => il met a jour un         
+
+
+
+% 10/01/18
+% 1 Nettoyage fichiers
+% 2 Documentation 
