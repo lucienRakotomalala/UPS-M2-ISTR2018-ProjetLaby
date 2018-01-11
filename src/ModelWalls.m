@@ -20,16 +20,23 @@ classdef ModelWalls < ModelSED
         
         % --- Evolution of the walls 
         function nextState = f(obj)
-            if(obj.i>2)
-                obj.i=0;          
-                nextState = obj.val;
-                obj.val=~obj.val;
+            %%%%%%%%%%%%%% SIMPLE COMMAND
+            if obj.presentState %%
+                nextState = 0;
             else
-                nextState = 2;
-                
-                obj.i=obj.i+1;
+                nextState = 1;
             end
-            obj.i
+            
+            %%%%%%%%%%%%%%% other one
+%             if(obj.i>2)
+%                 obj.i=0;          
+%                 nextState = obj.val;
+%                 obj.val=~obj.val;
+%             else
+%                 nextState = 2;
+%                 
+%                 obj.i=obj.i+1;
+%             end
         end
         
         % --- Memory test
@@ -43,10 +50,14 @@ classdef ModelWalls < ModelSED
         
         % --- Create the outputs
         function out = g(obj)
-           out = zeros(1,2);
-           if(obj.presentState~=2)
-            out(obj.presentState+1) = 1;
-           end
+            %%%%%%%%%%%%%% SIMPLE COMMAND
+        out=zeros(1,2);
+        out(obj.presentState+1)=1;
+            %%%%%%%%%%%%%% other command
+%            out = zeros(1,2);
+%            if(obj.presentState~=2)
+%             out(obj.presentState+1) = 1;
+%            end
         end
     end
     
