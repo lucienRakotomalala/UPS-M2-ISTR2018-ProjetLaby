@@ -118,7 +118,7 @@ classdef Wrapper
                     case 2 % ghost
                         if(obj.ghostBit==1) %% if ghost is connect
                             % f m g ghost
-                            nextStateGhost = obj.commandGhost.f(obj.out{8},obj.out{9});
+                            nextStateGhost = obj.commandGhost.f(obj.out{8},obj.out{9},obj.out{3},obj.out{4},obj.out{2});
                             obj.commandGhost.m(nextStateGhost,obj.in(1));
                             obj.in(8:11) = obj.commandGhost.g(); 
                         end

@@ -12,7 +12,12 @@ classdef ModelPacman < ModelSED
     %           
     % state :   
     %           
-    %           
+    % 
+    % in:  Walls around pacman
+    %    1 up
+    %    2 down
+    %    3 left
+    %    4 right
     % This command   P(D) > P(B) > P(H) > P(G)   
     properties
         presentState;
@@ -31,50 +36,53 @@ classdef ModelPacman < ModelSED
         
 
 function nextState = f(obj,in)
-    nextState = zeros(1,4);
-    if(obj.memory(1) ~= 1 && in(2)==0)  %not right yet
-        nextState(4)=1;
-        obj.memory(1)=1;
-    elseif(obj.memory(2)~= 1 && in(1)==0)%not down yet
-        nextState(2)=1;
-        obj.memory(2)=1;
-    elseif(obj.memory(3)~= 1 && in(4)==0)%not left yet
-        nextState(3)=1;
-        obj.memory(3)=1;
-    elseif(obj.memory(4)~= 1 && in(3)==0)%not up yet
-        nextState(1)=1;
-        obj.memory(4)=1;
-    elseif(in(4)==0)
-        nextState(3)=1 ;
-    elseif(in(2)==0)
-        nextState(4)=1;
-    elseif(in(1)==0)
-        nextState(2)=1 ;
-    elseif(in(3)==0)
-        nextState(1)=1;
-    end
-    if (obj.memory == ones(1,4))
-        obj.memory=zeros(1,4);
-    end
-    
-     
+    nextState = zeros(1,4);     
     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 %%%% COMMANDE 1 %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%             nextState = zeros(1,4);
-%             if(in(4)==0)
-%                     nextState(3)=1 ;    
-%             elseif(in(2)==0)
-%                     nextState(4)=1;    
-%             elseif(in(1)==0)
-%                     nextState(2)=1 ;    
-%             elseif(in(3)==0)
-%                     nextState(1)=1;               
-%             end
+            nextState = zeros(1,4);
+            if(in(4)==0)
+                    nextState(3)=1 ;    
+            elseif(in(2)==0)
+                    nextState(4)=1;    
+            elseif(in(1)==0)
+                    nextState(2)=1 ;    
+            elseif(in(3)==0)
+                    nextState(1)=1;               
+            end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 %%%% COMMANDE 2 %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     if(obj.memory(1) ~= 1 && in(2)==0)  %not right yet
+%         nextState(4)=1;
+%         obj.memory(1)=1;
+%     elseif(obj.memory(2)~= 1 && in(1)==0)%not down yet
+%         nextState(2)=1;
+%         obj.memory(2)=1;
+%     elseif(obj.memory(3)~= 1 && in(4)==0)%not left yet
+%         nextState(3)=1;
+%         obj.memory(3)=1;
+%     elseif(obj.memory(4)~= 1 && in(3)==0)%not up yet
+%         nextState(1)=1;
+%         obj.memory(4)=1;
+%     elseif(in(4)==0)
+%         nextState(3)=1 ;
+%     elseif(in(2)==0)
+%         nextState(4)=1;
+%     elseif(in(1)==0)
+%         nextState(2)=1 ;
+%     elseif(in(3)==0)
+%         nextState(1)=1;
+%     end
+%     if (obj.memory == ones(1,4))
+%         obj.memory=zeros(1,4);
+%     end
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                %%%% COMMANDE 3 %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 end
 
