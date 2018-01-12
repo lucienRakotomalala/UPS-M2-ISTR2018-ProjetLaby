@@ -77,4 +77,6 @@ a chaque clic il lance le bloc d'évolution
 
 % 10/01/18
 % 1 Nettoyage fichiers
-% 2 Documentation 
+% 2 Documentation
+%3 Conditions d'arrêt : Nombre max de fois où pacman est mangé / bloqué
+%entre 4 murs / sorti

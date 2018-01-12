@@ -47,8 +47,8 @@ classdef ModelLaby < ModelSED
             %% Object Evolution
             % Creation of a upper wall matrix modelling the walls and all
             % contours of the laby
-            theWallsAroundV =  myWallsAround(obj.presentState.wallsV);
-            theWallsAroundH =  myWallsAround(obj.presentState.wallsH);
+            theWallsAroundV =  wallsBorder(obj.presentState.wallsV);
+            theWallsAroundH =  wallsBorder(obj.presentState.wallsH);
             %%
             if(in(4) == 1) % Pacman get left
                         thePacmanWallsV = theWallsAroundV;
@@ -119,8 +119,8 @@ classdef ModelLaby < ModelSED
         function m(obj,nextState, init)
             
             if(init == 1)
-                obj.presentState.wallsV =  [1 0 1 1 ; 1 0 1 1; 1 0 0 0; 1 0 0 1; 1 0 1 0];
-                obj.presentState.wallsH =  [1 0 1 1 1; 1 0 1 0 0; 1 0 1 0 0; 1 0 0 1 1]; 
+                obj.presentState.wallsV =  [1 0 1 0 ; 0 0 1 1; 1 0 1 0; 0 0 0 1; 1 0 0 0];
+                obj.presentState.wallsH =  [1 0 1 0 0; 1 0 1 0 0; 0 0 1 0 1; 1 0 0 0 1]; 
                 obj.presentState.pacman = [3 3];
                 obj.presentState.ghost  = [2 2];
                 obj.presentState.escape = {[4 4], 0};

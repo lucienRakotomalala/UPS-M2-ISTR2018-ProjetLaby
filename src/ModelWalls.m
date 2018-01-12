@@ -6,7 +6,7 @@ classdef ModelWalls < ModelSED
     % This command do 
     properties
         presentState;
-        i=0;
+        i=1;
         val=0;
     end
     
@@ -18,16 +18,24 @@ classdef ModelWalls < ModelSED
         
         % --- Evolution of the walls 
         function nextState = f(obj)
-            if(obj.i>2)
-                obj.i=0;          
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            %         Commande 1        %
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            
+            %nextState = ~obj.presentState;
+            
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            %         Commande 2        %
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            
+            if(obj.i>=2)
+                obj.i=1;          
                 nextState = obj.val;
                 obj.val=~obj.val;
             else
                 nextState = 2;
-                
                 obj.i=obj.i+1;
             end
-            obj.i
         end
         
         % --- Memory test
