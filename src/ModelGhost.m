@@ -83,13 +83,13 @@ Right_nextWallsAround = zeros(1,4);
   %Look wich turn of game it is cause walls moves every second time
   %first time Veticals move, third time Horizontals move
 if(mod(obj.presentState(1,5),4)==0) 
-     nextWallsV = [wallsV(size(wallsV,1),:); wallsV(1:size(wallsV,1)-1,:)]
-     nextWallsH = wallsH
+     nextWallsV = [wallsV(size(wallsV,1),:); wallsV(1:size(wallsV,1)-1,:)];
+     nextWallsH = wallsH;
 elseif(mod(obj.presentState(1,5),4)==2)
-     nextWallsH = [wallsH(:,size(wallsH,2)) wallsH(:,1:size(wallsH,2)-1)]
-     nextWallsV = wallsV
-else nextWallsH = wallsH
-     nextWallsV = wallsV
+     nextWallsH = [wallsH(:,size(wallsH,2)) wallsH(:,1:size(wallsH,2)-1)];
+     nextWallsV = wallsV;
+else nextWallsH = wallsH;
+     nextWallsV = wallsV;
 end
     
 %Count every walls around for each boxes around Ghost
@@ -100,7 +100,7 @@ end
             Up_nextWallDown = [nextWallsH((ghost_position(2)-1):size(nextWallsH,1), ghost_position(1)); 1];
             Up_nextWallLeft = [1 nextWallsV(ghost_position(2)-1, 1:ghost_position(1)-1)];
             Up_nextWallRight = [nextWallsV(ghost_position(2)-1, ghost_position(1):size(nextWallsV,2)) 1];
-            Up_nextWallsAround = [Up_nextWallUp(end) Up_nextWallDown(1) Up_nextWallLeft(end) Up_nextWallRight(1)]
+            Up_nextWallsAround = [Up_nextWallUp(end) Up_nextWallDown(1) Up_nextWallLeft(end) Up_nextWallRight(1)];
     end  
     
 %For the box UNDER Ghost :
@@ -109,7 +109,7 @@ end
             Down_nextWallDown = [nextWallsH(ghost_position(2)+1:size(nextWallsH,1), ghost_position(1)); 1];
             Down_nextWallLeft = [1 nextWallsV(ghost_position(2)+1, 1:ghost_position(1)-1)];
             Down_nextWallRight = [nextWallsV(ghost_position(2)+1, ghost_position(1):size(nextWallsV,2)) 1];
-            Down_nextWallsAround =[Down_nextWallUp(end) Down_nextWallDown(1) Down_nextWallLeft(end) Down_nextWallRight(1)]
+            Down_nextWallsAround =[Down_nextWallUp(end) Down_nextWallDown(1) Down_nextWallLeft(end) Down_nextWallRight(1)];
     end       
     
 %For the box LEFT of Ghost :
@@ -118,7 +118,7 @@ end
             Left_nextWallDown = [nextWallsH(ghost_position(2):size(nextWallsH,1), ghost_position(1)-1); 1];
             Left_nextWallLeft = [1 nextWallsV(ghost_position(2), 1:ghost_position(1)-1-1)];
             Left_nextWallRight = [nextWallsV(ghost_position(2), ghost_position(1)-1:size(nextWallsV,2)) 1];
-            Left_nextWallsAround = [Left_nextWallUp(end) Left_nextWallDown(1) Left_nextWallLeft(end) Left_nextWallRight(1)]
+            Left_nextWallsAround = [Left_nextWallUp(end) Left_nextWallDown(1) Left_nextWallLeft(end) Left_nextWallRight(1)];
     end   
     
 %For the box RIGHT of Ghost :
@@ -127,7 +127,7 @@ end
             Right_nextWallDown = [nextWallsH(ghost_position(2):size(nextWallsH,1), ghost_position(1)+1); 1];
             Right_nextWallLeft = [1 nextWallsV(ghost_position(2), 1:ghost_position(1)-1+1)];
             Right_nextWallRight = [nextWallsV(ghost_position(2), ghost_position(1)+1:size(nextWallsV,2)) 1];
-            Right_nextWallsAround =[Right_nextWallUp(end) Right_nextWallDown(1) Right_nextWallLeft(end) Right_nextWallRight(1)]
+            Right_nextWallsAround =[Right_nextWallUp(end) Right_nextWallDown(1) Right_nextWallLeft(end) Right_nextWallRight(1)];
     end
     
 nextState(1,5)= mod(obj.presentState(1,5)+1,4);

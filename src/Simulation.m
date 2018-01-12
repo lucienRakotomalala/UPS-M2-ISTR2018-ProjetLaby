@@ -4,13 +4,13 @@
 clear
 close all
 %%%%%%%%%%%%%%%%%%%%%% PARAMETERS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Number of interation
+% Number of iterations
 n= 100; % static dimension
-% init 
+% state of laby 
 labyState=cell(n,9); % static dimension
 etat =0; % static dimension
 etatS=0; % static dimension
-numberOfPossibleCaught = 3;
+numberOfPossibleCaught = 3;% static dimension
 % Initial laby state
    wallsV_i = [1 0 1 1 ; 1 0 1 1; 1 0 0 0; 1 0 0 1; 1 0 1 0]; %  dimension can change
     wallsH_i = [1 0 1 1 1; 1 0 1 0 0; 1 0 1 0 0; 1 0 0 1 1];  %  dimension can change
@@ -30,10 +30,11 @@ numberOfPossibleCaught = 3;
     pacmanCommand_i= zeros(1,4);% dimension can change
 
     % initial value of pacman command
-    ghostCommand_i= zeros(1,4);% dimension can change
-i = 1 ; 
-SimulationStoped = 0;
+    ghostCommand_i= zeros(1,5);% dimension can change
 %%%%%%%%%%%%%%%%%%%%%%%%%%% MAIN SCRIPT %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    i = 1 ;     
+    SimulationStoped = 0;
+
     % creation of needed class
     lab = ModelLaby(wallsV_i,wallsH_i,pacman_i,ghost_i,escape_i,caught_i);
     wallCom = ModelWalls(wallsCommand_i);
@@ -61,7 +62,8 @@ while (i<=n && ~SimulationStoped)
         case 2  % ghost command
             etatS = 0;
             %'ghost'
-                nextStateGhost = ghostCom.f(out{8},out{9});
+                nextStateGhost = ghostCom.f(out{8}, out{9}, out{3}, out{4}, out{2} ); %Walls around ghost,ghost sees pacman, wallsV, wallsH, ghost_position)
+                %nextStateGhost = ghostCom.f(out{8}, out{9}); %Walls around ghost,ghost sees pacman
                 ghostCom.m(nextStateGhost,in(1));
                 in(8:11) = ghostCom.g();
     end
@@ -93,7 +95,7 @@ fprintf('End of simulation :\n');
 if(i>n) % sim finish
     fprintf('\t The simulation was not stopped (%d steps)\n',n);
 else %sim break
-    fprintf('\t the simulation have be stopped at the %d step of %d\n',i,n);
+    fprintf('\t the simulation have been stopped at the %d step on %d\n',i,n);
     if(EscapeBreak)
         fprintf('\t>Pacman escaped\n');
     end
@@ -158,7 +160,7 @@ end
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%% Rendu image %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%% Rendu image et video %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Extension de l'affichage
 % pour tout n
@@ -166,16 +168,16 @@ end
 % 2. transformer la 11x11x3 (empty,walls,ghost,pacman,escape)
 % 3. etendre la 11x11*3 avec kron
     
-resImg = 100;%resolution of image in pixel
+resImg = 100;%resolution of image in pixel size = resImg*(2*n+1)
 emptyColor=[1,1,1];
 wallsColor = [0,0,1];
 
-pacmanColor=[1,.5,0];
-ghostColor=[0,1,.5];
+ghostColor=[1,.5,0];
+pacmanColor=[0,1,.5];
 escapeColor=[1 ,0,0];
 %%
 
-imgs=zeros(resImg*N,resImg*N,3,n); % n rgb pictures with (resolutionImage x resolutionImage pixels)
+imgs=zeros(resImg*N,resImg*N,3,n); % n rgb pictures with ( x  pixels)
 rgbImg = zeros(N,N,3);
 %%
 for i = 1 : n
