@@ -1,13 +1,13 @@
 classdef ModelGhost < ModelSED
     %MODELGhost Summary of this class goes here
-    % Input :  Possible pacman's moves [Up Down Left Right]
+    % Input :  Possible ghost's moves [Up Down Left Right]
     %    0 = move not possible ; 1 = move possible
     %           ( Wout{7} )
     %
-    % Output : Pacman's moves  1 : pacmanLeftBut, ( Wout(3) )
-    %                          2 : pacmanUpBut,  ( Wout(1) )
-    %                          3 : pacmanRightBut,  ( Wout(4) )
-    %                          4 : pacmanDownBut ,  ( Wout(2) )
+    % Output : Ghost's moves  1 : ghostLeftBut, ( Wout(3) )
+    %                          2 : ghostUpBut,  ( Wout(1) )
+    %                          3 : ghostRightBut,  ( Wout(4) )
+    %                          4 : ghostDownBut ,  ( Wout(2) )
     %           ( Win( 4:7) of wrapper )
     
     % in:  Walls around ghost
@@ -38,7 +38,7 @@ classdef ModelGhost < ModelSED
             obj = obj.m(0,1);
         end
         
-        % --- Evolution of the walls
+        % --- Evolution of the ghost
         function nextState = f(obj,in,in_view, wallsV, wallsH, ghost_position)
             nextState = zeros(1,5);
             
@@ -161,16 +161,12 @@ nextState(1,5)= mod(obj.presentState(1,5)+1,4);
             
         end
 
-
-
-        
         % --- Memory test
         function obj = m(obj,nextState, init)
             if(init == 1)
                 obj.presentState = obj.initialState;
                 %the 4 fisrt elements = mouvements
                 %Last element = turn of the game (counted inside this class)
-
             else
                 obj.presentState = nextState;
             end

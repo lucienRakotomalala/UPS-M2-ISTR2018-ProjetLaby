@@ -4,5 +4,6 @@ Objet\.asv
 *.asv
 /src/DoxygenMatlab
 
+
 /src/DoxygenMatlab.zip
-\src\data
+/src/data

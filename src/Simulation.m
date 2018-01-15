@@ -12,87 +12,58 @@ labyState=cell(n,9); % static dimension
 etat =0; % static dimension
 etatS=0; % static dimension
 
-numberOfPossibleCaught = 3;
+%numberOfPossibleCaught = 3;
 noEscape = 0; % select if there is an escape or no
 % Initial laby state
-   wallsV_i =  [1 0 0 0 ; 1 0 0 1 ; 1 1 1 1 ; 1 0 0 1 ; 0 0 0 0]; %  dimension can change
-    wallsH_i =  [0 1 1 1 0; 0 0 1 0 0; 0 0 1 0 0; 0 1 1 1 0]; %  dimension can change
-    Ms = max(size(wallsH_i)); % size of lab  % static dimension
+    labyInit.wallsV_i =  [1 0 0 0 ; 1 0 0 1 ; 1 1 1 1 ; 1 0 0 1 ; 0 0 0 0]; %  dimension can change
+    labyInit.wallsH_i =  [0 1 1 1 0; 0 0 1 0 0; 0 0 1 0 0; 0 1 1 1 0]; %  dimension can change
+    Ms = max(size(labyInit.wallsH_i)); % size of lab  % static dimension
 
-    pacman_i = [3 1]; % static dimension
-    ghost_i  = [1 4]; % static dimension
-    escape_i = {[5 5], 0}; % static dimension
-    caught_i = 0; % static dimension
+    labyInit.pacman_i = [3 1]; % static dimension
+    labyInit.ghost_i  = [1 4]; % static dimension
+    labyInit.escape_i = {[5 5], 0}; % static dimension
+    labyInit.caught_i = 0; % static dimension
 
     % initial value of walls command
-    wallsCommand_i = 0; % dimension can change
+    wallsInit.wallsCommand_i = 0; % dimension can change
     % =0 : begin with right move 
     % =1 : begin with up move 
 
     % initial value of pacman command
-    pacmanCommand_i= zeros(1,4);% dimension can change
+    pacmanInit.pacmanCommand_i= zeros(1,4);% dimension can change
 
-    % initial value of pacman command
-    ghostCommand_i= zeros(1,5);% dimension can change
+    % initial value of ghost command
+    ghostInit.ghostCommand_i= zeros(1,5);% dimension can change
+    
+    % initial value of stop
+    stopInit.escape = 0;
+    stopInit.caught = 0;
+    stopInit.pacman = 0;
+    stopInit.ghost  = 0;
+    stopInit.numberOfPossibleCaught=3;
 %%%%%%%%%%%%%%%%%%%%%%%%%%% MAIN SCRIPT %%%%%%%%%%%%%%%%%%%%%%%%%%%%
     i = 1 ;     
     SimulationStoped = 0;
 
     % creation of needed class
-    lab = ModelLaby(wallsV_i,wallsH_i,pacman_i,ghost_i,escape_i,caught_i);
-    wallCom = ModelWalls(wallsCommand_i);
-    pacmanCom = ModelPacman(pacmanCommand_i);
-    ghostCom = ModelGhost(ghostCommand_i);    
-   % run 
+    wrapper = Wrapper(11, 9, labyInit, wallsInit, pacmanInit, ghostInit, stopInit);
+    % run 
 
-while (i<=n && ~SimulationStoped)
+    wrapper=wrapper.updateConnexion(1,1);
+    wrapper=wrapper.updateConnexion(2,1);
+    wrapper=wrapper.updateConnexion(3,1);
     in = zeros(1,11);
-    switch etat
-        case 0  % Walls command
-            etatS = 1;
-            %'walls'
-                nextStateWalls = wallCom.f(); 
-                wallCom.m(nextStateWalls,in(1)); 
-                in(2:3) = wallCom.g(); 
-                
-        case 1  % pacman command
-            etatS = 2;
-            %'pacman'
-                nextStatePacman = pacmanCom.f(out{7});
-                pacmanCom.m(nextStatePacman,in(1));
-                in(4:7) = pacmanCom.g() ;   
-                
-        case 2  % ghost command
-            etatS = 0;
-            %'ghost'
-                nextStateGhost = ghostCom.f(out{8}, out{9}, out{3}, out{4}, out{2} ); %Walls around ghost,ghost sees pacman, wallsV, wallsH, ghost_position)
-                %nextStateGhost = ghostCom.f(out{8}, out{9}); %Walls around ghost,ghost sees pacman
-                ghostCom.m(nextStateGhost,in(1));
-                in(8:11) = ghostCom.g();
-    end
-    % m 
-    etat=etatS;
-    % laby 
-    %'lab'
-    nextStateLaby = lab.f(in);
-    lab.m(nextStateLaby,in(1));
-    out = lab.g();
-    % keep out in a vect 
-    labyState(i,:)= out;
+    labyState(1,:)=wrapper.get_out();
+    i=i+1;
+while (i<=n && ~SimulationStoped)
+    wrapper = wrapper.orderer(in);
+    labyState(i,:)= wrapper.get_out();
+    stop=wrapper.get_stop();
     %%%%%%%%%%%%%% stop condition %%%%%%%%%%%%%%%%%%%%%%%    
-    if (noEscape == 0)
-    EscapeBreak         = out{6};
-    else
-        EscapeBreak     = 0;
-    end
-    CaughtBreak         = out{5}>numberOfPossibleCaught;
-    PacmanWallsBreak    = sum(out{7}) == 4;
-    GhostWallsBreak     = sum(out{8}) == 4;
-     if (EscapeBreak || CaughtBreak || PacmanWallsBreak || GhostWallsBreak)
+     if (sum(stop)~=0)
          SimulationStoped = 1;
-     else
-         i = i + 1;
      end
+     i = i + 1;
      %pause
     %%%%%%%%%%%%%%%%%%    
 end
@@ -103,19 +74,20 @@ if(i>n) % sim finish
     fprintf('\t The simulation was not stopped (%d steps)\n',n);
 else %sim break
     fprintf('\t the simulation have been stopped at the %d step on %d\n',i,n);
-    if(EscapeBreak)
+    if(stop(1))
         fprintf('\t>Pacman escaped\n');
     end
-    if(CaughtBreak)
+    if(stop(2))
         fprintf('\t>Ghost caught Pacman  %d times\n',numberOfPossibleCaught+1);
     end
-    if(PacmanWallsBreak)
+    if(stop(3))
         fprintf('\t>Pacman trapped\n');
     end
-    if(GhostWallsBreak)
+    if(stop(4))
         fprintf('\t>Ghost trapped\n');
     end
 end
-n = i; % now number of iteration is i-1;
+    n = i-1; % new number of iteration;
+
 %% Create picture for each iteration and Video in file data
-CreatePituresAndVideo(wallsH_i, n, escape_i, labyState);
+CreatePituresAndVideo(n,  labyInit.escape_i, labyState);

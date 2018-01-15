@@ -64,7 +64,35 @@ handles.output = hObject;
 guidata(hObject, handles);
 % creation of the differents elements (wrapper, ghost, pacman, walls,
 % escape)
-handles.wrapper = Wrapper(11, 9);
+
+% Initial laby state
+    labyInit.wallsV_i =  [1 0 0 0 ; 1 0 0 1 ; 1 1 1 1 ; 1 0 0 1 ; 0 0 0 0]; %  dimension can change
+    labyInit.wallsH_i =  [0 1 1 1 0; 0 0 1 0 0; 0 0 1 0 0; 0 1 1 1 0]; %  dimension can change
+
+    labyInit.pacman_i = [3 1]; % static dimension
+    labyInit.ghost_i  = [1 4]; % static dimension
+    labyInit.escape_i = {[5 5], 0}; % static dimension
+    labyInit.caught_i = 0; % static dimension
+
+    % initial value of walls command
+    wallsInit.wallsCommand_i = 0; % dimension can change
+    % =0 : begin with right move 
+    % =1 : begin with up move 
+
+    % initial value of pacman command
+    pacmanInit.pacmanCommand_i= zeros(1,4);% dimension can change
+
+    % initial value of pacman command
+    ghostInit.ghostCommand_i= zeros(1,5);% dimension can change
+    
+    % initial value of stop
+    stopInit.escape = 0;
+    stopInit.caught = 0;
+    stopInit.pacman = 0;
+    stopInit.ghost  = 0;
+    stopInit.numberOfPossibleCaught=3;
+    
+handles.wrapper = Wrapper(11, 9, labyInit, wallsInit, pacmanInit, ghostInit, stopInit);
 handles = createUIGhost(handles);
 handles = createUIPacman(handles);
 handles = createUIWalls(handles);
@@ -113,15 +141,16 @@ function ui_Callback(hObject, eventdata, handles)
 if(hObject.UserData==1) % if init
    handles = resetUIConnection(handles);
 end
+
+in = zeros(1,11);
 if(hObject.UserData~=12) % if not step
-    handles.wrapper.in = zeros(1,length(handles.wrapper.in)) ;
-    handles.wrapper.in(hObject.UserData) = 1;
+    in(hObject.UserData) = 1;
 end
 
-handles.wrapper = handles.wrapper.orderer();
-updateUI(handles, handles.wrapper.out);
+handles.wrapper = handles.wrapper.orderer(in);
+updateUI(handles, handles.wrapper.get_out());
 guidata(hObject,handles);
-
+%faire une fonction qui utilise stop pour arrete le laby
 end
 
 % --- Callback for all connection

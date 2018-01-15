@@ -12,43 +12,29 @@ classdef Wrapper
         commandWalls
         commandGhost
         commandPacman
+        stopCondition
         
         in           % A integer vector who contain the state of input, 
                     % incremented by the callback or some action.
         
         out         % A cell who contain the state of output, 
                     % incremented by the callback or some action.
+        stop
         whoPlay     % 0 = walls ; 1 = pacman ; 2 = ghost
     end
     
     methods
         % --- Constructor of the class
-        function obj = Wrapper(inSize, outSize)
-            %% Initial laby state
-            wallsV_i =  [1 0 0 0 ; 1 0 0 1 ; 1 1 1 1 ; 1 0 0 1 ; 0 0 0 0];
-            wallsH_i =  [0 1 1 1 0; 0 0 1 0 0; 0 0 1 0 0; 0 1 1 1 0]; 
-            pacman_i = [3 1];
-            ghost_i  = [1 4];
-            escape_i = {[5 5], 0};
-            caught_i = 0;
-            
-            %% initial value of walls command
-            wallsCommand_i = 0; 
-            % =0 : begin with right move 
-            % =1 : begin with up move 
-            
-            %% initial value of pacman command
-            pacmanCommand_i= zeros(1,4);
-            
-            %% initial value of pacman command
-            ghostCommand_i= zeros(1,5);
-            %%
-            %% OBjects (modelLaby, pacman, walls, ghost) 
-           obj.modelLaby      = ModelLaby(wallsV_i,wallsH_i,pacman_i,ghost_i,escape_i,caught_i); % model of labyrinth
-           obj.commandWalls   = ModelWalls(wallsCommand_i);
-           obj.commandPacman  = ModelPacman(pacmanCommand_i);
-           obj.commandGhost   = ModelGhost(ghostCommand_i);
-            obj.whoPlay = 0;
+                       
+        function obj = Wrapper(inSize, outSize, initLaby, initWalls, initPac, initGhost, initStop)
+          %%
+            %% OBjects (modelLaby, pacman, walls, ghost, stop) 
+           obj.modelLaby      = ModelLaby(initLaby.wallsV_i,initLaby.wallsH_i,initLaby.pacman_i,initLaby.ghost_i,initLaby.escape_i,initLaby.caught_i); % model of labyrinth
+           obj.commandWalls   = ModelWalls(initWalls.wallsCommand_i);
+           obj.commandPacman  = ModelPacman(initPac.pacmanCommand_i);
+           obj.commandGhost   = ModelGhost(initGhost.ghostCommand_i);
+           obj.stopCondition  = StopCondition(initStop);
+           obj.whoPlay = 0;
             
             %% Inputs
            obj.in = zeros(1,inSize); % set size of input vector
@@ -66,7 +52,7 @@ classdef Wrapper
            obj.out{7} = zeros(1,4); % Walls around pacman [Up Down Left Right]
            obj.out{8} = zeros(1,4); % Walls around ghost  [Up Down Left Right]
            obj.out{9} = zeros(1,4); % Ghost sees pacman   [Up Down Left Right]
-           
+           obj.out=obj.modelLaby.g();
            
            
            
@@ -96,7 +82,8 @@ classdef Wrapper
         
         
         % --- Ordonate the global execution.
-        function obj = orderer(obj)
+        function obj = orderer(obj, vectIn)
+            obj.in=vectIn;
         % This function manage all the evolution    
             %% PROBLEME ORDO A GERER : doit W > LAB > PAC > LAB > GHOS > LAB > ...
             if(obj.wallsBit || obj.pacmanBit || obj.ghostBit) %% mod to || si gestion de commande partielle
@@ -113,7 +100,8 @@ classdef Wrapper
                             % f m g pacman
                             nextStatePacman = obj.commandPacman.f(obj.out{7});
                             obj.commandPacman.m(nextStatePacman,obj.in(1));
-                            obj.in(4:7) = obj.commandPacman.g(); 
+                            obj.in(4:7) = obj.commandPacman.g();
+                            
                         end 
                     case 2 % ghost
                         if(obj.ghostBit==1) %% if ghost is connected
@@ -130,6 +118,12 @@ classdef Wrapper
             nextStateLaby = obj.modelLaby.f(obj.in);
             obj.modelLaby.m(nextStateLaby,obj.in(1));
             obj.out = obj.modelLaby.g();
+            %  f m g stop
+             % noEscape, caught, pacmanWallsBreak, ghostWallsBreak
+            nextStateStop=obj.stopCondition.f(obj.out{6}, obj.out{5}, obj.out{7}, obj.out{8});
+            obj.stopCondition.m(nextStateStop, obj.in(1));
+            obj.stop = obj.stopCondition.g();
+            
             if obj.in(1) == 1  % if is a init clic 
                 obj.whoPlay = 0;
                 %disp('init clic !')% DEBUG
@@ -150,6 +144,12 @@ classdef Wrapper
             %   -etat : 
             
             % murs > Laby > pacman > Laby > ghost > laby 
+        end
+        function stp= get_stop(obj)
+            stp = obj.stop;
+        end
+        function output= get_out(obj)
+            output = obj.out;
         end
     end
     
