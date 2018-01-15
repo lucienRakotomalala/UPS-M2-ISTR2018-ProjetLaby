@@ -25,11 +25,11 @@ classdef Wrapper
         % --- Constructor of the class
         function obj = Wrapper(inSize, outSize)
             %% Initial laby state
-            wallsV_i =  [1 0 1 1 ; 1 0 1 1; 1 0 0 0; 1 0 0 1; 1 0 1 0];
-            wallsH_i =  [1 0 1 1 1; 1 0 1 0 0; 1 0 1 0 0; 1 0 0 1 1]; 
-            pacman_i = [3 3];
-            ghost_i  = [2 2];
-            escape_i = {[4 4], 0};
+            wallsV_i =  [1 0 0 0 ; 1 0 0 1 ; 1 1 1 1 ; 1 0 0 1 ; 0 0 0 0];
+            wallsH_i =  [0 1 1 1 0; 0 0 1 0 0; 0 0 1 0 0; 0 1 1 1 0]; 
+            pacman_i = [3 1];
+            ghost_i  = [1 4];
+            escape_i = {[5 5], 0};
             caught_i = 0;
             
             %% initial value of walls command
@@ -41,7 +41,7 @@ classdef Wrapper
             pacmanCommand_i= zeros(1,4);
             
             %% initial value of pacman command
-            ghostCommand_i= zeros(1,4);
+            ghostCommand_i= zeros(1,5);
             %%
             %% OBjects (modelLaby, pacman, walls, ghost) 
            obj.modelLaby      = ModelLaby(wallsV_i,wallsH_i,pacman_i,ghost_i,escape_i,caught_i); % model of labyrinth
@@ -116,7 +116,7 @@ classdef Wrapper
                             obj.in(4:7) = obj.commandPacman.g(); 
                         end 
                     case 2 % ghost
-                        if(obj.ghostBit==1) %% if ghost is connect
+                        if(obj.ghostBit==1) %% if ghost is connected
                             % f m g ghost
                             nextStateGhost = obj.commandGhost.f(obj.out{8},obj.out{9},obj.out{3},obj.out{4},obj.out{2});
                             obj.commandGhost.m(nextStateGhost,obj.in(1));
