@@ -11,6 +11,7 @@ labyState=cell(n,9); % static dimension
 etat =0; % static dimension
 etatS=0; % static dimension
 numberOfPossibleCaught = 3;
+noEscape = 0; % select if there is an escape or no
 % Initial laby state
    wallsV_i = [1 0 1 1 ; 1 0 1 1; 1 0 0 0; 1 0 0 1; 1 0 1 0]; %  dimension can change
     wallsH_i = [1 0 1 1 1; 1 0 1 0 0; 1 0 1 0 0; 1 0 0 1 1];  %  dimension can change
@@ -75,7 +76,11 @@ while (i<=n && ~SimulationStoped)
     % keep out in a vect 
     labyState(i,:)= out;
     %%%%%%%%%%%%%% stop condition %%%%%%%%%%%%%%%%%%%%%%%    
+    if (noEscape == 0)
     EscapeBreak         = out{6};
+    else
+        EscapeBreak     = 0;
+    end
     CaughtBreak         = out{5}>numberOfPossibleCaught;
     PacmanWallsBreak    = sum(out{7}) == 4;
     GhostWallsBreak     = sum(out{8}) == 4;
@@ -119,8 +124,10 @@ N = 2*Ms+1; % taille tab total
 Visu = zeros(N,N,n);
 
 % escape (out{2} : ghost [x y]) in Visu 2 = ghost
-escapePos = escape_i{1}*[0 2; 2 0];
-Visu(escapePos(1),escapePos(2),:)=4;
+if (noEscape==0)
+    escapePos = escape_i{1}*[0 2; 2 0];
+    Visu(escapePos(1),escapePos(2),:)=4;
+end
 %
 Visu([1 N],:,:)=1; % bords verticaux
 
@@ -167,12 +174,16 @@ end
 % 3. etendre la 11x11*3 avec kron
     
 resImg = 100;%resolution of image in pixel
+%=1 : no escape
+%=0 : there is an escape place
 emptyColor=[1,1,1];
 wallsColor = [0,0,1];
 
 pacmanColor=[1,.5,0];
 ghostColor=[0,1,.5];
-escapeColor=[1 ,0,0];
+if (noEscape==0)
+    escapeColor=[1 ,0,0];
+end
 %%
 
 imgs=zeros(resImg*N,resImg*N,3,n); % n rgb pictures with (resolutionImage x resolutionImage pixels)
@@ -187,8 +198,9 @@ for i = 1 : n
     rgbImg=setColor(rgbImg,Visu(:,:,i),wallsColor,1);
     rgbImg=setColor(rgbImg,Visu(:,:,i),ghostColor,2);
     rgbImg=setColor(rgbImg,Visu(:,:,i),pacmanColor,3);
-    rgbImg=setColor(rgbImg,Visu(:,:,i),escapeColor,4);
-
+    if(noEscape==0)
+        rgbImg=setColor(rgbImg,Visu(:,:,i),escapeColor,4);
+    end
 
     %3.kron
     imgs(:,:,1,i)=kron(rgbImg(:,:,1),ones(resImg,resImg));
