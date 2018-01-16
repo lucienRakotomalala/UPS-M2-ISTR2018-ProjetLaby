@@ -94,6 +94,9 @@ classdef Wrapper
                             nextStateWalls = obj.commandWalls.f(); 
                             obj.commandWalls.m(nextStateWalls,obj.in(1)); 
                             obj.in(2:3) = obj.commandWalls.g();
+                            if(sum(obj.stop)~=0)
+                               obj.whoPlay=5; 
+                            end
                         end
                     case 1 % pacman
                         if(obj.pacmanBit==1)
@@ -101,7 +104,9 @@ classdef Wrapper
                             nextStatePacman = obj.commandPacman.f(obj.out{7});
                             obj.commandPacman.m(nextStatePacman,obj.in(1));
                             obj.in(4:7) = obj.commandPacman.g();
-                            
+                            if(sum(obj.stop)~=0)
+                               obj.whoPlay=5; 
+                            end
                         end 
                     case 2 % ghost
                         if(obj.ghostBit==1) %% if ghost is connected
@@ -109,7 +114,12 @@ classdef Wrapper
                             nextStateGhost = obj.commandGhost.f(obj.out{8},obj.out{9},obj.out{3},obj.out{4},obj.out{2});
                             obj.commandGhost.m(nextStateGhost,obj.in(1));
                             obj.in(8:11) = obj.commandGhost.g(); 
+                            if(sum(obj.stop)~=0)
+                               obj.whoPlay=5; 
+                            end
                         end
+                    case 5 %condition d'arret
+                        
                 end
             end
             
@@ -127,7 +137,9 @@ classdef Wrapper
             if obj.in(1) == 1  % if is a init clic 
                 obj.whoPlay = 0;
                 %disp('init clic !')% DEBUG
-            else % else increment whoPlay
+            elseif (obj.whoPlay==5)
+                obj.whoPlay=5;
+            else  % else increment whoPlay
                 obj.whoPlay = mod(obj.whoPlay + 1, 3); % 2 doit être = 3
                 %disp('whoPlay ++ !')% DEBUG
 

@@ -62,7 +62,7 @@ classdef StopCondition  < ModelSED
             out(2) = obj.presentState.caught;
             out(3) = obj.presentState.pacman;
             out(4) = obj.presentState.ghost;
-            out
+            
         end
         
     end
