@@ -25,20 +25,25 @@ classdef ModelWalls < ModelSED
             %         Commande 1        %
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             
-            %nextState = ~obj.presentState;
+            nextState = ~obj.presentState;
             
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             %         Commande 2        %
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             
-            if(obj.i>=2)
-                obj.i=1;          
-                nextState = obj.val;
-                obj.val=~obj.val;
-            else
-                nextState = 2;
-                obj.i=obj.i+1;
-            end
+%             if(obj.i>=2)
+%                 obj.i=1;          
+%                 nextState = obj.val;
+%                 obj.val=~obj.val;
+%             else
+%                 nextState = 2;
+%                 obj.i=obj.i+1;
+%             end
+            
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            %         Commande 3        %
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            %nextState = obj.presentState;
         end
         
         % --- Memory test
@@ -53,13 +58,15 @@ classdef ModelWalls < ModelSED
         % --- Create the outputs
         function out = g(obj)
             %%%%%%%%%%%%%% SIMPLE COMMAND
-     %   out=zeros(1,2);
-      %  out(obj.presentState+1)=1;
-            %%%%%%%%%%%%%% other command
-            out = zeros(1,2);
-            if(obj.presentState~=2)
-             out(obj.presentState+1) = 1;
-            end
+       out=zeros(1,2);
+        out(obj.presentState+1)=1;
+            %%%%%%%%%%%%%% other command 2
+            %out = zeros(1,2);
+           % if(obj.presentState~=2)
+           %  out(obj.presentState+1) = 1;
+            %end
+            %%%%%%%%%%%%%% other command 3
+             %out = zeros(1,2);
         end
     end
     

@@ -95,7 +95,7 @@ end
 
 
 %% save as pictures AND video 
-repo = strcat('./data/', datestr(now,'yyyy-mm-dd_HH-MM'));
+repo = strcat('./data/',datestr(now,'yyyy-mm-dd_HH-MM'));
 mkdir(repo);
 save(strcat(repo,'/state'),'labyState');
 video = VideoWriter(strcat(repo,'/video.avi'),'Motion JPEG AVI');

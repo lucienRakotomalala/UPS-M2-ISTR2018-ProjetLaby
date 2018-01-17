@@ -66,11 +66,10 @@ guidata(hObject, handles);
 % escape)
 
 % Initial laby state
-    labyInit.wallsV_i =  [1 0 0 0 ; 1 0 0 1 ; 1 1 1 1 ; 1 0 0 1 ; 0 0 0 0]; %  dimension can change
+    labyInit.wallsV_i =   [1 0 0 0 ;  1 0 0 1 ; 1 1 1 1 ; 1 0 0 1 ; 0 0 0 0]; %  dimension can change
     labyInit.wallsH_i =  [0 1 1 1 0; 0 0 1 0 0; 0 0 1 0 0; 0 1 1 1 0]; %  dimension can change
-
-    labyInit.pacman_i = [3 1]; % static dimension
-    labyInit.ghost_i  = [1 4]; % static dimension
+    labyInit.pacman_i = [2,3]; % static dimension
+    labyInit.ghost_i  = [5,1]; % static dimension
     labyInit.escape_i = {[5 5], 0}; % static dimension
     labyInit.caught_i = 0; % static dimension
 
@@ -292,7 +291,7 @@ function updateUI(handles,out)
  updateUIPlayer( handles,'pacman', out{1});      %(1,2)
  updateUIPlayer( handles,'ghost', out{2});
  updateUIWalls( handles.walls , out{3},out{4});           %(3,4)
- updateUICaught(handles.Caught ,out{5});        %(5)
+ updateUICaught(handles.Caught ,out{5},handles.wrapper.get_stop());        %(5)
  updateUIEscape(handles.Escape,out{6});          %(6)
  updateUIWallsAround(handles,'Pacman',out{7}); %(7) for pacman
  updateUIWallsAround(handles,'Ghost',out{8});  %(8) for ghost
@@ -383,13 +382,15 @@ set(handles.(strPlayer),'XData',position(1)-.5,'YData',y-.5);
 end
 
 % ----Update graphical element for caught.
-function updateUICaught(elementToSet,caughtInt)
+function updateUICaught(elementToSet,caughtInt,stp)
 
 clr = [.8 .8 .8];
 strD = '';
 if (caughtInt>0)
-    clr = 'r';
     strD = int2str(caughtInt);
+end
+if (stp(2))
+       clr = 'r';
 end
 set(elementToSet,'BackgroundColor',clr)
 set(elementToSet,'String',strcat(elementToSet.UserData,strD))
