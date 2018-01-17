@@ -16,10 +16,10 @@ function str = writeStates(prefix,nbrOfStates,initialIndice,markedStatesIndices)
 end
 
 
-function str = writeTransitions(nbrOfStates,datas)
+function str = writeTransitions(prefix,datas)
 % Inputs
-    % nbrOfStates   : int  = [x]         x  = number of states of the
-                                            % automaton
+    % prefix        : cell = {'w','s','l'} for walls, scheduling or labyrinth
+
     % datas : cell  = {O,D,Tr;.,.,.;}       One line : 1 transition
                                           % O  = origin state 
                                           % D  = destination state
