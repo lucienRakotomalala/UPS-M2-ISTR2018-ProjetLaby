@@ -1,4 +1,4 @@
-function errorCode = SaveDESUMAFile(transitionsString,statesString,fileName)
+function SaveDESUMAFile(transitionsString,statesString,fileName)
 % Inputs
     % prefix        : char = {'w','s','l'} for walls, scheduling or labyrinth
     % nbrOfStates   : int  = [x]         x  = number of states of the
@@ -9,8 +9,8 @@ function errorCode = SaveDESUMAFile(transitionsString,statesString,fileName)
     % errorCode           : int =        0 : if work well, 
     %                                    1 : else.
        % if errorCode == 0
-            fid = fopen ('DesumaData.txt','w');
-            fprintf(fid,'%s %s %s\n',transitionsString, statesString,fileName)
+            fid = fopen (fileName,'w');
+            fprintf(fid,'%s\n%s',statesString,transitionsString);
             fclose(fid);
        % else
        %     error ('Replay')

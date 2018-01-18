@@ -42,29 +42,30 @@ for i = 1 : numberOfStates %all states
         [~,oR]=find(R);
         %up 
         str = cell(1,max(size(oU))+max(size(oD))+max(size(oL))+max(size(oR)));
+        l=0;
         if(~ isempty(oU))
             for k = 1 : max(size(oU))
                 str{k}=sprintf('U%d',oU(k));
             end
         end
         %down
-        if(~ isempty(oD))
+        if(~ isempty(oD))                
+            l = max(size(oU));
             for k = 1 : max(size(oD))
-                l = max(size(oU));
                 str{l+k}=sprintf('D%d',oD(k));
             end
         end
         %left
         if(~ isempty(oL))
+            l = l+max(size(oD));
             for k = 1 : max(size(oL))
-                l = l+max(size(oD));
                 str{l+k}=sprintf('L%d',oL(k));
             end
         end
         % right
         if(~ isempty(oR))
+            l = l+max(size(oL));
             for k = 1 : max(size(oR))
-                l = l+max(size(oL));
                 str{l+k}=sprintf('R%d',oR(k));
             end
         end
@@ -75,14 +76,20 @@ for i = 1 : numberOfStates %all states
             transitionsDatas{j,2}=i;
             transitionsDatas{j,3}=str{h}; % maybe x/y switch
         end
+        transitionsDatas{j+1,1}=i;
+        transitionsDatas{j+1,2}=mod(i,numberOfStates)+1;
         if mod(i,2)==0
             % mv down
             Vwalls = [Vwalls(end,:); Vwalls(1:end-1,:) ];
+            transitionsDatas{j+1,3}='wD'; 
+
         else
             % mh right
             Hwalls = [Hwalls(:,end), Hwalls(:,1:end-1) ];
+            transitionsDatas{j+1,3}='wR'; % maybe x/y switch
+
         end
-        INDICE = INDICE+max(size(str));
+        INDICE = INDICE+max(size(str))+1;
 end
 
 end

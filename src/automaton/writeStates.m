@@ -15,11 +15,11 @@ function str = writeStates(prefix,nbrOfStates,initialIndice,markedStatesIndices)
                  
                            for i = 1:nbrOfStates
                                if (i == initialIndice)
-                                    str = sprintf('%ss %s%d -I \n',str,prefix,i)
+                                    str = sprintf('%ss %s%d -I \n',str,prefix,i);
                                elseif isempty(find(i == markedStatesIndices)) == 0
-                                       str = sprintf('%ss %s%d -M \n',str,prefix,i)
+                                       str = sprintf('%ss %s%d -M \n',str,prefix,i);
                                 else
-                                       str = sprintf('%ss %s%d \n',str,prefix,i)
+                                       str = sprintf('%ss %s%d \n',str,prefix,i);
                                 end
                                
                       
