@@ -1,0 +1,13 @@
+s s1 -I 
+s s2 
+
+t s1 s2 wD
+t s1 s2 wR
+t s2 s1 D1
+t s2 s1 D2
+t s2 s1 L1
+t s2 s1 L3
+t s2 s1 R2
+t s2 s1 R4
+t s2 s1 U3
+t s2 s1 U4

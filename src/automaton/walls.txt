@@ -1,0 +1,41 @@
+s w1 -I 
+s w2 
+s w3 
+s w4 
+
+t w1 w1 U3
+t w1 w1 U4
+t w1 w1 D1
+t w1 w1 D2
+t w1 w1 L1
+t w1 w1 L3
+t w1 w1 R2
+t w1 w1 R4
+t w1 w2 wR
+t w2 w2 U3
+t w2 w2 U4
+t w2 w2 D1
+t w2 w2 D2
+t w2 w2 L1
+t w2 w2 L3
+t w2 w2 R2
+t w2 w2 R4
+t w2 w3 wD
+t w3 w3 U3
+t w3 w3 U4
+t w3 w3 D1
+t w3 w3 D2
+t w3 w3 L1
+t w3 w3 L3
+t w3 w3 R2
+t w3 w3 R4
+t w3 w4 wR
+t w4 w4 U3
+t w4 w4 U4
+t w4 w4 D1
+t w4 w4 D2
+t w4 w4 L1
+t w4 w4 L3
+t w4 w4 R2
+t w4 w4 R4
+t w4 w1 wD
