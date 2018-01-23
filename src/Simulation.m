@@ -94,4 +94,4 @@ end
 repo = strcat('./data/Validation 3/', 'Test1');
 mkdir(repo);
 save(strcat(repo,'/state'),'labyState');
-%CreatePituresAndVideo(n,  labyInit.escape_i, labyState);
+CreatePituresAndVideo(n,  labyInit.escape_i, labyState);

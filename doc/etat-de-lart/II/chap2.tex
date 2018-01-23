@@ -1,0 +1,94 @@
+\chapter{System}\label{System}
+
+This part is an introduction to the concept of system in order to connect it to a labyrinth. We will find a complete definition obtained from scientist organizations and from our own meaning of system. 
+
+\section{Definition}
+
+The objective of this section is to give our definition of a system. The concept of system is explained with several primitives from multiple scientific and engineering organizations. We chose two of them :\begin{itemize}
+\item "An aggregation or assemblage of things so combined by nature or man as to form an integral or complex whole" from \underline{Encyclopedia Americana
+}.
+\item  "A combination of components that act together to perform a function not possible with any of the individual parts" from  \underline{IEEE Standard Dictionary of Electrical and Electronic Terms}
+\end{itemize} 
+
+We chose to keep both definitions for two features : association of elements and the concept of function of a system. Therefore, for our next presentation, we will define a system as a collection of components which are interrelated in an organized way, and these associations work together for the accomplishment of some logical and purposeful ends. \label{definitionSystem}
+%purposeful ?
+% \section{Example and counter-example}  % Merci David .... -Lucien
+
+\section{Modeling of System}\label{ModelingSystem}
+
+Our initial approach for system modeling will be defined in this section. First, to enable analysis and command of our system, we have to respect the concept of input/output. In that way, it will be possible to describe mathematical behavior of our system by defining the outputs in function of input. To this end, we initiate a set of \emph{input variables} and \emph{output variables} \cite{cassandras2009introduction}, respectively $u(t)$ and $y(t)$, two vectors sizable $1\times p$ and $1\times m$:
+\begin{align*}
+&u(t) = \begin{pmatrix}
+u_1(t)&...&u_p(t)
+\end{pmatrix}^T \text{for }t \in [t_0, t_f]\\
+&y(t) = \begin{pmatrix}
+y_1(t)&...&y_p(t)
+\end{pmatrix}^T \text{for }t \in [t_0, t_f]
+\end{align*}
+
+To enable a better representation of the system, we will add our modeling system the concept of state. This term consist in representing a set of variables named $x$, the present state of a system in $t\leq t_0$ and it will be used to calculate the set of outputs in $t$ and a next representation of this state, in $t + \tau$. This state vector is as defined below: 
+\begin{align*}
+&x(t) = \begin{pmatrix}
+x_1(t)&...&x_n(t)
+\end{pmatrix}^T \text{for }t \in [t_0, t_f]\\
+\end{align*}
+
+In addition, we would like to join the \emph{inputs}, \emph{outputs} and \emph{state variables} together that lead us to the concept of \emph{state space} (sections 1.2.6 of \cite{cassandras2009introduction}). Here are relationships between $u$, $y$ and $t$ if the vector of \emph{state variables} is correctly chosen. It refers to the \emph{dynamics} of the system and it can take a few possible representations, but we chose to present you this one, it seems to us to be the most complete one:
+\begin{eqnarray} \label{equationSystem_1}
+\left\lbrace
+\begin{aligned}
+&\dot{x}(t)= f(x(t), \delta, u(t), t)\\ %Mega boulette de ma part, sorry...
+&y(t) = h(x(t), \delta, u(t), t) 
+\end{aligned} 
+\right.
+\end{eqnarray}
+
+ %vérifier le sens  // C'est mieux ? -Lucien 
+The first function $f$ represents the system dynamics using a differential equation of the system state variable. The second function $g$ models the output exigences. We have modeled various parameters thanks to this equation. Here is the list : \begin{itemize}
+\item $\delta \in \Delta$ incertitude of the system, we chose not to forget the potentially unknown and instable parameters of the system.
+\item $t \in \mathbb{R}^{+}$ evolution of time of some parameters.
+\end{itemize} 
+
+These types of system modeling are called nonlinear, variant and non deterministic system with continuous time. They are not suitable for mathematical analysis (although possible) or control. Assumptions are then imposed to remove non-linearity, variability and non-determinism through computational steps so as not to stray too far from the complex model.
+
+Many methods exists to simplify this complex model; they will not be detailed here, we will see later that the theoretical assumptions on the models will enough. We just have to remember that each hypothesis added on the complex model yields: \begin{itemize}
+\item \underline{Linearization} gives a model defined by:
+\begin{eqnarray} \label{equationSystem_Linear}
+\left\lbrace
+\begin{aligned}
+&\dot{x}(t)= A(t, \delta)x(t) + B(\delta, t)u(t)\\ %Mega boulette de ma part, sorry...
+&y(t) = C(t, \delta)x(t) + D(\delta, t)u(t) 
+\end{aligned} 
+\right.
+\end{eqnarray} with the linearization of $f$ and $g$ on two linear composition $A$ and $B$ for $f$ and $C$ and $D$ for $g$.
+\item \underline{Invariant} prevents the model from being time-dependent:
+\begin{eqnarray} \label{equationSystem_Invariant}
+\left\lbrace
+\begin{aligned}
+&\dot{x}(t)= f(x(t), \delta, u(t))\\ %Mega boulette de ma part, sorry...
+&y(t) = g(x(t), \delta, u(t)) 
+\end{aligned} 
+\right.
+\end{eqnarray} Here we simplify the elements that were based on time, i.e. it could change instantly. This hypothesis means the following model is invariant.
+\item \underline{Deterministic} We associate the uncertainties within the system with some elements of the system:
+\begin{eqnarray} \label{equationSystem_Invariant}
+\left\lbrace
+\begin{aligned}
+&\dot{x}(t)= f(x(t), u(t), t)\\ %Mega boulette de ma part, sorry...
+&y(t) = g(x(t), u(t), t) 
+\end{aligned} 
+\right.
+\end{eqnarray} Uncertain parameters are now associated with reliable parameters, we have an approximation of our model: it is named deterministic.
+\end{itemize}
+
+Now we propose this assumption, let's look at the shape of the state space model. This one is described below, and called \emph{Deterministic Continuous Time Invariant Linear System}: 
+\begin{eqnarray} \label{equationSystem_DCTIL}
+\left\lbrace
+\begin{aligned}
+&\dot{x}(t)= Ax(t) + Bu(t)\\ %Mega boulette de ma part, sorry...
+&y(t) = Cx(t) + Du(t)
+\end{aligned} 
+\right.
+\end{eqnarray}
+
+In the next step, we will see a subclass of this type of systems, where continuous time is not an evolutionary variable anymore. System-class called Discrete Time System exists. The evolution is based on a sample sequence $kTe$ with $k\in \mathbb{N}$ the sample number and $Te \in \mathbb{R}$ a sample frequency and another sub-class, the Discrete Event System, where the sampling frequencies only dependent upon events which are now presented.

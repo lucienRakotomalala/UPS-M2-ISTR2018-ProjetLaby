@@ -1,0 +1,68 @@
+\chapter{Maze Definition} %this class ?
+Our subject focuses on the modeling and analysis of a labyrinth, so we first presente a formal definition of a labyrinth throughout this state of art.\\ % Lucien ajout
+We begin by using an existing definition: \textit{\textbf{"A maze is a grid-like two-dimensional area of any size, usually rectangular. A maze consists of cells. A cell is an elementary maze item, a formally bounded space, interpreted as a single site. The maze may contain different obstacles in any quantity."}} from \underline{Foundations of Learning Classifier Systems} by Larry BULL and T. KOVACS.
+\\
+
+In this definition, we can see the concept of dimension is important, it is introducing the notion of a cell. We chose to define a maze as a set of cells where the number of cells gives the dimension of a maze. This set of cell is confronting to all the obstacles that determines the possible and impossible paths. \\
+In our study we are developing a maze with dynamics walls, an object trying to escape and a second one who is trying to find the first object. Each object choose a cell, he can go to the cell above, below, on the left or on the right depending on walls around him (they cannot cross the walls). So, a cell surrounded by four walls is not reachable and if an object is on, he is trapped. 
+
+Now let us try to characterize our maze still based on paper from \underline{Anthony J. Bagnall and Zhanna V. Zatuchna } listed in the previous book.
+%% ON NE PARLE PAS DU JEU PACMAN POUR NE PAS AVOIR PARLE DES CODES DEJA OPTIMISE POUR CE JEU, ON PARLE SIMPLEMENT D'OBJETS SE DEPLACANT DANS UN LABYRINTHE
+\subparagraph{Size:}
+2D rectangular with 25 cells (5x5)
+\subparagraph{Distance from "Escape":} uncertain (short, medium, long)
+\subparagraph{Obstacles:} moving walls, enemy (one object), edges of the maze
+\subparagraph{Type of objects:} Object, Walls
+\subparagraph{Maze Dynamics:} We have dynamics walls so our maze is called as \textit{dynamic maze}. A cell is reachable if there is no wall behind. If an object is on a cell, she is not reachable anymore by an other object.\\
+
+
+% \textcolor{red}{on peut citer Dyna maze? elle à étudier les labyrinth dynamique c’est dans le livre  «Sutton R. S., Barto, A. G.: Reinforcement Learning: An Introduction. MIT (1998)» voila l’extrait «Dyna Maze. Consider the simple maze shown inset in Figure 9.5. In each of the 47 states there are four actions, up, down, right, and left, which take the agent deterministically to the corresponding neighboring states, except when movement is blocked by an obstacle or the edge of the maze, in which case the agent remains where it is. Reward is zero on all transitions, except those into the goal state, on which it is +1. After reaching the goal state (G), the agent returns to the start state (S) to begin a new episode. This is a discounted, episodic task with .» }
+
+% %
+% % 	ethimologie
+% %	
+% % 	De quel type ?
+% A maze is a path or a collection of path typically from an start (entrance) point to a goal (escape).
+% Generally, a maze can be defined in 7 classifications which are :
+% \subparagraph{Dimension:}
+% It's the dimension covered by our maze : we have a 2D Maze (5x5).
+% \subparagraph{HyperDimension:} this class refers to the dimension of the moving object in the maze, we have two moving  small objects (Pacman and ghost), called a \textbf{non-hypermaze} case.
+% \subparagraph{Topology:} this class describes the geometry of the space the maze exists in, we have a \textbf{Normal} standard maze in Euclidean space.
+% \subparagraph{Tessellation:} this class refers to the geometry of the cells composing the maze : we have a regular rectangular grid where the objects can move, that type is called \textbf{Orthogonal}.
+% \subparagraph{Routing} This class is By far, the most interissing in a maze because the main purpose of a maze is the routing, to find a successful way to the exit.
+% For our system we have an object that can be in a dead end (four walls around it), it can also be in a loop or eaten by the second object: so it will be fair to say that we are in a \textbf{Partial Braid} maze case.
+% A partial braid is a maze.
+% \subparagraph{Texture} 
+% % \textbf{symmetric:} A symmetric Maze has symmetric passages, e.g. rotationally symmetric about the middle, or reflected across the horizontal or vertical axis. A Maze may be partially or totally symmetric, and may repeat a pattern any number of times.\\
+% % \textbf{elite:} The "elitism" factor of a Maze indicates the length of the solution with respect to the size of the Maze. An elitist Maze generally has a short direct solution, while a non-elitist Maze has the solution wander throughout a good portion of the Maze's area. A well designed elitist Maze can be much harder than a non-elitist one.\\
+% % \textbf{bias:} A passage biased Maze is one with straightaways that tend to go in one direction more than the others. For example, a Maze with a high horizontal bias will have long left-right passages, and only short up-down passages connecting them. A Maze is usually more difficult to navigate "against the grain".\\
+% % \textbf{run:} The "run" factor of a Maze is how long straightaways tend to go before forced turnings present themselves. A Maze with a low run won't have straight passages for more than three or four cells, and will look very random. A Maze with a high run will have long passages going across a good percentage of the Maze, and will look similar to a microchip.\\
+% % \textbf{uniformity:} A uniform algorithm is one that generates all possible Mazes with equal probability. A Maze can be described as having a uniform texture if it looks like a typical Maze generated by a uniform algorithm. A non-uniform algorithm may still be able to potentially generate all possible Mazes within whatever space but not with equal probability, or it may take non-uniformity further in which there exists possible Mazes that the algorithm can never generate.\\
+% % \textbf{river:} The "river" characteristic means that when creating the Maze, the algorithm will look for and clear out nearby cells (or walls) to the current one being created, i.e. it will flow (hence the term "river") into uncreated portions of the Maze like water. A perfect Maze with less "river" will tend to have many short dead ends, while a Maze with more river will have fewer but longer dead ends.} 
+% We have a dynamic maze with mobile horizontal/vertical walls and a specific way of moving (walls->object1->object2) we can therefor say this is the texture of our maze.
+
+% %%%%%%%%%%Je comprends pas !%%%%%%%%%%%%%%%
+% \subparagraph{Focus:}
+% This class shows that Maze creation can be divided into two general types: walls adders, and passage carvers.  The same Maze can be often generated in both ways.
+% We  with the wall adders and added some vertical/horizontal matrices to define the states of our maze.\\
+% \\
+% Here's a little specifications on our maze environment
+
+% \subparagraph{Specification}:\\
+% 5x5 2D Maze (25 squares)\\
+% Mobile Walls (dynamic)\\
+% 1 exit
+% \subparagraph{Object Specifications:}
+% 2 object represented by a star that fit in the maze square, each object is in its own square anywhere on the maze at the initialization.
+% Autonomous command or manual for both objects.
+
+% \subparagraph{Rule}
+% Pacman (object 1) who’s trying to escape and not get eaten\\
+% Ghost (object2) who’s trying to eat Pacman\\
+% One mouvement at a time and in a specific order (walls vertical or horizontal, Object1, Object 2)\\
+% 2 object can’t be on the same square (position)
+% Pacman has 2 lives (can be eat twice)\\
+% Ghost can’t escape\\
+% either one or both objects can be blocked
+
+

@@ -1,0 +1,154 @@
+% Template latex non officiel pour rapport de TP EEA.
+% C'est un template pour thèse que j'ai adapté et 
+% auquel j'ai ajouté des éléments au fil du temps pour mes rapports de TP.
+% En cas de problèmes n'hésites pas a me contacter.
+% David Tocaven
+% david.tocaven@gmail.com
+
+
+%%% /!\ /!\ /!\ /!\ /!\ /!\
+% Se compile avec PDFLatex
+%%% /!\ /!\ /!\ /!\ /!\ /!\
+%%=================================================%%
+%%						MAIN
+%%=================================================%%
+
+
+\documentclass[a4paper]{report}
+
+%====================== PACKAGES ======================
+\usepackage{bbold}
+\usepackage{soul}				% souligner
+\usepackage{dsfont}
+\usepackage[english]{babel}		% Pour avoir le document en anglais
+\usepackage[utf8x]{inputenc}	% Encodage du document
+\usepackage{float}				% Pour gérer les positionnement d'images
+\usepackage{amsmath}
+\usepackage{mathrsfs}			% Pour les lettres calligraphiques équation
+\usepackage{url}				% Pour faire des hyperliens vers le web
+\usepackage{color}
+% pour les informations sur un document compilé en PDF et les liens externes / internes
+\usepackage{hyperref}			% Pour faire des hyperliens
+\usepackage{array}				% Pour faire des tableaux
+\usepackage{tabularx}
+\usepackage{fancybox}
+% pour utiliser 		% floatbarrier
+%\usepackage{placeins}
+%\usepackage{floatrow}
+\usepackage{setspace}			% Espacement entre les lignes
+\usepackage{abstract}			% Modifier la mise en page de l'abstract
+\usepackage[T1]{fontenc}		% Police et mise en page (marges) du document
+\usepackage{titlesec, blindtext, color}
+\definecolor{gray75}{gray}{0.75}
+\newcommand{\hsp}{\hspace{20pt}}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
+
+
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{pdfpages}			% pour inclures des pdf comme des images
+\usepackage{subfig}				% Pour les galerie d'images
+\usepackage{listings}			% pour inclure du code dans le doc
+\usepackage{soul}				% Pour surligner
+\usepackage{enumitem}
+
+\sethlcolor{grisclair}
+\definecolor{darkgreen}{RGB}{0,100,0}
+\bibliographystyle{plain}
+
+%====================== INFORMATION ET REGLES ======================
+
+%rajouter les numérotation pour les \paragraphe et \subparagraphe
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\hypersetup{							% Information sur le document
+pdfauthor = { Bakalara, Paya, Armengaud, Mery, Rakotomalala, Atto, Tocaven },				% Auteurs
+pdftitle = {M2 ISTR - Project - State of Arts},		% Titre du document
+pdfsubject = {Paul Sabatier University},		% Sujet
+pdfkeywords = {},				% Mots-clefs
+pdfstartview={FitH}}					% ajuste la page à la largueur de l'écran
+%pdfcreator = {MikTeX},% Logiciel qui a crée le document
+%pdfproducer = {}} % Société avec produit le logiciel
+
+\newcounter{cpt1}						% Compteur pour les n° de ligne dans les prog de l'annexe1
+\newcommand\increm{\arabic{cpt1}\addtocounter{cpt1}{1}}
+%initialisation de l'intégrateur de language C
+
+
+
+%======================== DEBUT DU DOCUMENT ========================
+
+\begin{document}
+
+%\lstset{
+%  language=C,                	  % choose the language of the code
+%  numbers=left,                   % where to put the line-numbers
+%  stepnumber=1,                   % the step between two line-numbers.
+%  numbersep=5pt,                  % how far the line-numbers are from the code
+%  backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+%  showspaces=false,               % show spaces adding particular underscores
+%  showstringspaces=false,         % underline spaces within strings
+%  showtabs=false,                 % show tabs within strings adding particular underscores
+%  tabsize=2,                      % sets default tabsize to 2 spaces
+%  captionpos=b,                   % sets the caption-position to bottom
+%  breaklines=true,                % sets automatic line breaking
+%  breakatwhitespace=true,         % sets if automatic breaks should only happen at whitespace
+%  title=\lstname,                 % show the filename of files included with \lstinputlisting;
+%}
+%régler l'espacement entre les lignes
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+
+%page de garde
+\input{./page_de_garde/page_de_garde.tex}	
+
+%page blanche
+\newpage
+~
+\tableofcontents
+\thispagestyle{empty}
+\setcounter{page}{0}
+%ne pas numéroter le sommaire
+
+
+%espacement entre les lignes d'un tableau
+\renewcommand{\arraystretch}{1.5}
+
+%====================== INCLUSION DES PARTIES ======================
+%
+%~
+\thispagestyle{empty}
+% Recommencer la numérotation des pages à "1"
+\setcounter{page}{0}
+
+	% 0.Introduction      
+
+\input{./I/chap1.tex} % 1.Labyrinth
+
+\input{./II/chap2.tex} % 2.System
+
+\input{./III/chap3.tex} % 3.DES
+
+\input{./IV/chap4.tex} % 4.Automaton
+
+\input{./V/chap5.tex} % 5.Vérification & validation
+
+%\input{./conclusions/conclusions.tex}
+
+%\input{./Conclusion/Conclusion.tex}
+
+%\input{./annexes/annexes.tex}
+
+\newpage
+
+%récupérer les citation avec "/footnotemark"
+\nocite{*}
+
+%%choix du style de la biblio
+%\bibliographystyle{unsrt}
+%%inclusion de la biblio
+\bibliography{bibliographie}
+%%voir wiki pour plus d'information sur la syntaxe des entrées d'une bibliographie
+
+\end{document}
+

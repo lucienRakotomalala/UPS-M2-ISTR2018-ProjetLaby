@@ -1,0 +1,31 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Maze Definition}{1}{chapter.1}
+\contentsline {subparagraph}{Size:}{1}{chapter.1}
+\contentsline {subparagraph}{Distance from "Escape":}{1}{chapter.1}
+\contentsline {subparagraph}{Obstacles:}{1}{chapter.1}
+\contentsline {subparagraph}{Type of objects:}{1}{chapter.1}
+\contentsline {subparagraph}{Maze Dynamics:}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}System}{2}{chapter.2}
+\contentsline {section}{\numberline {2.1}Definition}{2}{section.2.1}
+\contentsline {section}{\numberline {2.2}Modeling of System}{2}{section.2.2}
+\contentsline {chapter}{\numberline {3}Discrete Events Systems}{4}{chapter.3}
+\contentsline {section}{\numberline {3.1}Definition of Discrete Event systems}{4}{section.3.1}
+\contentsline {section}{\numberline {3.2}DES and finite state}{4}{section.3.2}
+\contentsline {section}{\numberline {3.3}Introduction of DES in labyrinth}{5}{section.3.3}
+\contentsline {chapter}{\numberline {4}Automaton}{6}{chapter.4}
+\contentsline {section}{\numberline {4.1}Definition and Representation of an Automaton}{6}{section.4.1}
+\contentsline {section}{\numberline {4.2}Formal representation of an deterministic automaton}{7}{section.4.2}
+\contentsline {section}{\numberline {4.3}Formal representation of a nondeterministic automaton}{7}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Language Notation and Definitions}{8}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Languages Represented by Automata}{8}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Operations}{9}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Properties}{9}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}Composition Operations}{10}{subsection.4.3.5}
+\contentsline {subsection}{\numberline {4.3.6}Modeling a system with Automata - Inspired by the Supervisory Command}{10}{subsection.4.3.6}
+\contentsline {section}{\numberline {4.4}Implementation by sequential system blocks}{11}{section.4.4}
+\contentsline {chapter}{\numberline {5}Verification and validation}{12}{chapter.5}
+\contentsline {section}{\numberline {5.1}Approach methods}{12}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Inductive Approach}{12}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Deductive Approach}{12}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Abductive Approach}{12}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}Test method}{13}{section.5.2}
