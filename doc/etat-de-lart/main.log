@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.13)  23 JAN 2018 18:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.13)  23 JAN 2018 18:48
 entering extended mode
 **./main.tex
 (main.tex
@@ -843,23 +843,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 235--237
  []
 
 [9]
-<./schema_FMG.pdf, id=248, 963.6pt x 542.025pt>
-File: ./schema_FMG.pdf Graphic file (type pdf)
-<use ./schema_FMG.pdf>
-Package pdftex.def Info: ./schema_FMG.pdf  used on input line 311.
-(pdftex.def)             Requested size: 512.1496pt x 288.09067pt.
+<./IV/schema_FMG.pdf, id=248, 856.35815pt x 124.74701pt>
+File: ./IV/schema_FMG.pdf Graphic file (type pdf)
+<use ./IV/schema_FMG.pdf>
+Package pdftex.def Info: ./IV/schema_FMG.pdf  used on input line 312.
+(pdftex.def)             Requested size: 512.1496pt x 74.60893pt.
 
-Overfull \hbox (28.45273pt too wide) in paragraph at lines 311--312
+Overfull \hbox (28.45273pt too wide) in paragraph at lines 312--313
  [] 
  []
 
 
-Overfull \hbox (12.50604pt too wide) in paragraph at lines 315--317
+Overfull \hbox (12.50604pt too wide) in paragraph at lines 316--318
 \T1/cmr/m/n/10 It's adapted to be implemented in different languages. Our proje
 ct uses the language object Matlab implementation,
  []
 
-[10]) (V/chap5.tex [11 <./schema_FMG.pdf>]
+[10]) (V/chap5.tex [11 <./IV/schema_FMG.pdf>]
 Chapter 5.
 (C:\Users\David\AppData\Roaming\MiKTeX\2.9\tex\latex\ucs\uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
@@ -890,8 +890,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 153.
  ) 
 Here is how much of TeX's memory you used:
  13237 strings out of 495229
- 194832 string characters out of 3181267
- 300913 words of memory out of 3000000
+ 195642 string characters out of 3181267
+ 301913 words of memory out of 3000000
  16211 multiletter control sequences out of 15000+200000
  21180 words of font info for 54 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
@@ -919,9 +919,9 @@ Users/David/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb>
 <C:/Users/David/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmsy1
 0.pfb><C:/Users/David/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm
 /cmsy7.pfb>
-Output written on main.pdf (17 pages, 589399 bytes).
+Output written on main.pdf (17 pages, 515632 bytes).
 PDF statistics:
- 798 PDF objects out of 1000 (max. 8388607)
+ 842 PDF objects out of 1000 (max. 8388607)
  68 named destinations out of 1000 (max. 500000)
  241 words of extra memory for PDF output out of 10000 (max. 10000000)
 

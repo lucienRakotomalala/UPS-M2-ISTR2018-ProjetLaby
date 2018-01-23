@@ -175,10 +175,10 @@ If a main sequence of choices from a start state to any accepting state if possi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Operations} 
 
-Let's consider two languages L and M.\\
+Let's consider two languages $L$ and $M$ and an alphabet $E$.\\
 \begin{description}
-\item [Union] : $L \cup M$ set of strings which are in the languages L or M
-\item [Concatenation] : the concatenation of L and M is detoned by a "dot" or nothing as $L.M$ or $LM$. LM contains each string in L concatenated with each string in M. Each string must only appear once. The empty string $\epsilon$ is the identity element : $u \epsilon = \epsilon u = u$
+\item [Union] : $L \cup M$ set of strings which are in the languages $L$ or $M$.
+\item [Concatenation] : the concatenation of L and M is detoned by a "dot" or nothing as $L.M$ or $LM$. $LM$ contains each string in $L$ concatenated with each string in $M$. Each string must only appear once. The empty string $\epsilon$ is the identity element : $u \epsilon = \epsilon u = u$
 \end{description}
 \begin{equation*}
 L,M \subseteq E^*
@@ -232,10 +232,10 @@ $P^{-1}(\{b\}) = \{c\}^*{b}{c}*$
 \subsection{Properties}
 The properties below were extracted by the operations.
 \begin{description}
-\item [Language-equivalent automata \cite{cassandras2009introduction} ] : Automata G1 and G2 are said to be language-equivalent if
+\item [Language-equivalent automata \cite{cassandras2009introduction} ] : Automata $G_1$ and $G_2$ are said to be language-equivalent if
 $\mathcal{L}(G_1) = \mathcal{L}(G_2)$ and $\mathcal{L}_m(G_1) = \mathcal{L}_m(G_2)$ \\
 
-\item [Blocking] : Automaton G is said to be blocking if $ \mathcal{L}_m(G_1) \subset\mathcal{L}(G) $
+\item [Blocking] : Automaton $G$ is said to be blocking if $ \mathcal{L}_m(G_1) \subset\mathcal{L}(G) $
 and nonblocking when $ \mathcal{L}_m(G_1) \subset \mathcal{L}(G) $
 
 \item [Accessibility] : A state is said $accessible$ a sequence/word exists from the initial state to this state. With the definition $\mathcal{L}(G)$ and $\mathcal{L}_m(G)$ explained above, we can apply them to find all existing words from the initial state to all reachable states :
@@ -248,10 +248,11 @@ A_{ac} = \{q \in Q | (\exists s \in \Sigma^∗) [\delta(q_0, s) = q]\}
 
 \vspace{0.5cm}
 
-An automaton is defined as $accessible$ if all its states are accessible : $Ac(A)=Q$.\\
+An automaton is defined as \emph{accessible} if all its states are accessible : $Ac(A)=Q$.\\
 Despite as it is explained in \cite{cassandras2009introduction} by \textit{Cassandras and Lafortune}, we will consider that an accessible state  is not necessarily marked by $\mathcal{A}$.
 
 \begin{description}
+\newpage
 \item [Coaccessibility] : A state is named $coaccessible$ a sequence/word it exists from this state to a marked state. With the definition $\mathcal{L}(G)$ and $\mathcal{L}_m(G)$ explained above we can apply them in order to find all existing words from all states to one of the marked states :
 \end{description}
 
@@ -300,7 +301,7 @@ In our context, all events are observable and controllable, so Cassandras explai
 \item \textit{ On the other hand, if the events that can be executed in G but do not appear in the transition diagram of $H_{spec}$ are absent from $H_{spec}$ because they should not happen in the admissible behavior $L_a$, then product is the right composition operation.}
 \end{itemize}
 \textit{ Equivalently, parallel composition can still be used provided the event set of $H_{spec}$ is defined carefully and includes the events that should be permanently disabled.\\
- In most cases, all the states of $H_spec$ will be marked so that marking in [the result of the operation] $H_a$ the will be solely determined by G.}
+ In most cases, all the states of $H_{spec}$ will be marked so that marking in [the result of the operation] $H_a$ the will be solely determined by G.}
  
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \section{Implementation by sequential system blocks}
@@ -308,7 +309,7 @@ In our context, all events are observable and controllable, so Cassandras explai
  %include MOOR MACHINE
  \begin{figure}[!ht]
        \begin{center}
-      \includegraphics[width = 18cm]{./schema_FMG.pdf}
+      \includegraphics[width = 18cm]{./IV/schema_FMG.pdf}
       \end{center}
   \end{figure}
   
