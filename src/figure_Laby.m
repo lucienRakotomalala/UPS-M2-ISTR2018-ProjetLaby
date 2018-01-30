@@ -198,7 +198,7 @@ rayon = 1/3;
 
 pos = pi/6:(5/3*pi)/(nbPts-1) :11/6*pi;
 x = [0,rayon*cos(pos)]     + h.pacmanPositionInit(1)-.5;
-y = [0,rayon*sin(pos)]   + h.walls.size - h.pacmanPositionInit(2)-.5;
+y = [0,rayon*sin(pos)]     + h.pacmanPositionInit(2)-.5;
 h.pacman = patch(x,y,h.pacmanColor);
 
 %%%%%%%%%
@@ -391,12 +391,12 @@ Xpts = get(handles.(strPlayer),'XData');
 initXpos = Xpts(1)+.5;
 
 Ypts = get(handles.(strPlayer),'YData');
-initYpos = Ypts(1)+.5;
+initYpos =  Ypts(1) + .5; 
 %
 for i = linspace(0,1,nMvs)
-    pause(1/nMvs);
+    pause(.1/nMvs);
     set(handles.(strPlayer),'XData', Xpts + i*(position(1)-initXpos),...
-                            'YData', Ypts - i*( position(2)- initYpos));
+                            'YData', Ypts + i*(handles.walls.size - position(2)+1- initYpos));
 end
 end
 
