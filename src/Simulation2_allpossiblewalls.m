@@ -1,9 +1,11 @@
+tic
+
 % simulation totale
 clear
 close all
 %%%%%%%%%%%%%%%%%%%%%% PARAMETERS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Number of iterations
-n= 100; % static dimension
+n= 10; % static dimension
 
 % state of laby 
 labyState=cell(n,9); % static dimension
@@ -13,7 +15,6 @@ etatS=0; % static dimension
 %numberOfPossibleCaught = 3;
 noEscape = 0; % select if there is an escape or no
 % Initial laby state
-
     labyInit.wallsV_i =   [1 0 0 0 ;  1 0 0 1 ; 1 1 1 1 ; 1 0 0 1 ; 0 0 0 0]; %  dimension can change
     labyInit.wallsH_i =  [0 1 1 1 0; 0 0 1 0 0; 0 0 1 0 0; 0 1 1 1 0]; %  dimension can change
    
@@ -21,7 +22,6 @@ noEscape = 0; % select if there is an escape or no
 
     labyInit.pacman_i = [2,3]; % static dimension
     labyInit.ghost_i  = [5,1]; % static dimension
-
     labyInit.escape_i = {[5 5], 0}; % static dimension
     labyInit.caught_i = 0; % static dimension
 
@@ -42,10 +42,19 @@ noEscape = 0; % select if there is an escape or no
     stopInit.pacman = 0;
     stopInit.ghost  = 0;
     stopInit.numberOfPossibleCaught=3;
-
+    
+    %Only works for a 5*5 maze
+    AllVerticalWalls=load('allVerticalMatrix.mat');
+    AllHorizontalWalls=load('allHorizontalMatrix.mat');
+    
+    for(k=1:50)
+        labyInit.wallsV_i = AllVerticalWalls.Vwalls{k};
+        
+        for(l=1:50)
+            labyInit.wallsH_i = AllHorizontalWalls.Hwalls{l};
 %%%%%%%%%%%%%%%%%%%%%%%%%%% MAIN SCRIPT %%%%%%%%%%%%%%%%%%%%%%%%%%%%
     i = 1 ;     
-    SimulationStopped = 0;
+    SimulationStoped = 0;
 
     % creation of needed class
     wrapper = Wrapper(11, 9, labyInit, wallsInit, pacmanInit, ghostInit, stopInit);
@@ -57,17 +66,18 @@ noEscape = 0; % select if there is an escape or no
     in = zeros(1,11);
     labyState(1,:)=wrapper.get_out();
     i=i+1;
-while (i<=n && ~SimulationStopped)
+while (i<=n && ~SimulationStoped)
     wrapper = wrapper.orderer(in);
     labyState(i,:)= wrapper.get_out();
     stop=wrapper.get_stop();
     %%%%%%%%%%%%%% stop condition %%%%%%%%%%%%%%%%%%%%%%%    
      if (sum(stop)~=0)
-         SimulationStopped = 1;
+         SimulationStoped = 1;
      end
      i = i + 1;
      %pause
     %%%%%%%%%%%%%%%%%%    
+    A=[k i l]
 end
 %% log message
 
@@ -90,8 +100,11 @@ else %sim break
     end
 end
     n = i-1; % new number of iteration;
-%% Create picture for each iteration and Video in file data
-% repo = strcat('./data/Validation 8/', 'Test1_2');
+        end
+    end
+% %% Create picture for each iteration and Video in file data
+% repo = strcat('./data/Validation 3/', 'Test1');
 % mkdir(repo);
 % save(strcat(repo,'/state'),'labyState');
-% CreatePituresAndVideo(n,  labyInit.escape_i, labyState);
+% %CreatePituresAndVideo(n,  labyInit.escape_i, labyState);
+toc
