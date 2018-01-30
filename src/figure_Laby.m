@@ -196,6 +196,8 @@ h.pacman   = plot( h.pacmanPositionInit(1)-.5,...
                    h.pacmanPositionInit(2)-.5,...
                    'Color',h.pacmanColor,...
                    'Marker','*' );
+% cercle = sin(
+% h.pacman    = 
 hold off;
 end
 
@@ -376,10 +378,21 @@ end
 
 % --- Update graphical place of a player (ghost or pacman).
 function updateUIPlayer( handles,strPlayer, position)
-%% teleporting move
+% %% teleporting move
+% y = handles.walls.size - position(2)+1; 
+% set(handles.(strPlayer),'XData',position(1)-.5,'YData',y-.5);
+%% linear move for a point
+% recup last position
+intialPosition = [get(handles.(strPlayer),'XData')',get(handles.(strPlayer),'YData')' ];
+
+
+% move until next position 
+for x =  linspace(intialPosition(1),position(1),10) 
+    for y= linspace(intialPosition(2),position(2),10) 
 y = handles.walls.size - position(2)+1; 
 set(handles.(strPlayer),'XData',position(1)-.5,'YData',y-.5);
 end
+
 
 % ----Update graphical element for caught.
 function updateUICaught(elementToSet,caughtInt,stp)
