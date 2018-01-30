@@ -15,13 +15,13 @@ etatS=0; % static dimension
 %numberOfPossibleCaught = 3;
 noEscape = 0; % select if there is an escape or no
 % Initial laby state
-   labyInit.wallsV_i =   [1 0 0 0 ;  1 0 0 1 ; 1 1 1 1 ; 1 0 0 1 ; 0 0 0 0]; %  dimension can change
-    labyInit.wallsH_i =  [0 1 1 1 0; 0 0 1 0 0; 0 0 1 0 0; 0 1 1 1 0]; %  dimension can change
+   labyInit.wallsV_i =   [0 0 1 1;0 0 0 1;0 0 0 1;1 0 0 1;0 0 0 1]; %  dimension can change
+    labyInit.wallsH_i =  [0 0 1 0 0;0 0 1 0 0 ; 0 1 0 0 0; 1 0 0 0 0]; %  dimension can change
    
     Ms = max(size(labyInit.wallsH_i)); % size of lab  % static dimension
 
-     labyInit.pacman_i = [2,3]; % static dimension
-    labyInit.ghost_i  = [5,1]; % static dimension
+     labyInit.pacman_i = [5,1]; % static dimension
+    labyInit.ghost_i  = [1,1]; % static dimension
     labyInit.escape_i = {[5 5], 0}; % static dimension
     labyInit.caught_i = 0; % static dimension
 
@@ -91,7 +91,7 @@ end
     n = i-1; % new number of iteration;
 
 %% Create picture for each iteration and Video in file data
-repo = strcat('./data/Validation 3/', 'Test1');
+repo = strcat('./data/Validation 8/', 'Test1_2');
 mkdir(repo);
 save(strcat(repo,'/state'),'labyState');
-%CreatePituresAndVideo(n,  labyInit.escape_i, labyState);
+CreatePituresAndVideo(n,  labyInit.escape_i, labyState);

@@ -66,10 +66,10 @@ guidata(hObject, handles);
 % escape)
 
 % Initial laby state
-    labyInit.wallsV_i =   [1 0 0 0 ;  1 0 0 1 ; 1 1 1 1 ; 1 0 0 1 ; 0 0 0 0]; %  dimension can change
-    labyInit.wallsH_i =  [0 1 1 1 0; 0 0 1 0 0; 0 0 1 0 0; 0 1 1 1 0]; %  dimension can change
-    labyInit.pacman_i = [2,3]; % static dimension
-    labyInit.ghost_i  = [5,1]; % static dimension
+    labyInit.wallsV_i =   [0 0 1 1;0 0 1 1;0 0 0 1;1 0 0 1;0 0 0 1]; %  dimension can change
+    labyInit.wallsH_i =  [0 0 1 0 0;0 0 1 0 0 ; 0 1 0 0 0; 1 0 0 0 0]; %  dimension can change
+    labyInit.pacman_i = [5,1]; % static dimension
+    labyInit.ghost_i  = [1,1]; % static dimension
     labyInit.escape_i = {[5 5], 0}; % static dimension
     labyInit.caught_i = 0; % static dimension
 

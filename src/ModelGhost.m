@@ -159,6 +159,10 @@ nextState(1,5)= mod(obj.presentState(1,5)+1,4);
                nextState(1)=1;  
             end
             
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                %%%% COMMANDE 3 %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%nextState = obj.presentState;
         end
 
         % --- Memory test
@@ -174,7 +178,10 @@ nextState(1,5)= mod(obj.presentState(1,5)+1,4);
         
         % --- Create the outputs
         function out = g(obj)
+         %%%Commande 1 et 2
             out= obj.presentState(1,1:4);
+        %%% Commande 3
+           %  out= zeros(1,4);
         end
     end
     
