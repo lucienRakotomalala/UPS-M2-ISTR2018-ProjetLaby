@@ -58,7 +58,7 @@ classdef ModelWalls < ModelSED
         % --- Create the outputs
         function out = g(obj)
             %%%%%%%%%%%%%% SIMPLE COMMAND
-       out=zeros(1,2);
+        out=zeros(1,2);
         out(obj.presentState+1)=1;
             %%%%%%%%%%%%%% other command 2
             %out = zeros(1,2);
