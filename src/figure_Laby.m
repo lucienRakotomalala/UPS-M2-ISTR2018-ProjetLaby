@@ -92,9 +92,9 @@ guidata(hObject, handles);
     stopInit.numberOfPossibleCaught=3;
     
 handles.wrapper = Wrapper(11, 9, labyInit, wallsInit, pacmanInit, ghostInit, stopInit);
+handles = createUIWalls(handles);
 handles = createUIGhost(handles);
 handles = createUIPacman(handles);
-handles = createUIWalls(handles);
 handles = createUIEscape(handles);
 guidata(hObject,handles);    % OMFG !!!
 %assignin ('base','handles',handles);
@@ -192,12 +192,18 @@ h = handles;
 axes(h.axes1);
 h.pacmanPositionInit  = [1 2];
 h.pacmanColor         = [0 .5 0] ; % dark green
-h.pacman   = plot( h.pacmanPositionInit(1)-.5,...
-                   h.pacmanPositionInit(2)-.5,...
-                   'Color',h.pacmanColor,...
-                   'Marker','*' );
-% cercle = sin(
-% h.pacman    = 
+nbPts = 32;
+rayon = 1/3;
+%%%%%%%%
+
+pos = pi/6:(5/3*pi)/(nbPts-1) :11/6*pi;
+x = [0,rayon*cos(pos)]     + h.pacmanPositionInit(1)-.5;
+y = [0,rayon*sin(pos)]   + h.walls.size - h.pacmanPositionInit(2)-.5;
+h.pacman = patch(x,y,h.pacmanColor);
+
+%%%%%%%%%
+
+
 hold off;
 end
 
@@ -378,19 +384,20 @@ end
 
 % --- Update graphical place of a player (ghost or pacman).
 function updateUIPlayer( handles,strPlayer, position)
-% %% teleporting move
-% y = handles.walls.size - position(2)+1; 
-% set(handles.(strPlayer),'XData',position(1)-.5,'YData',y-.5);
-%% linear move for a point
-% recup last position
-intialPosition = [get(handles.(strPlayer),'XData')',get(handles.(strPlayer),'YData')' ];
+nMvs = 10;
+%%%%%%%%%%
 
+Xpts = get(handles.(strPlayer),'XData');
+initXpos = Xpts(1)+.5;
 
-% move until next position 
-for x =  linspace(intialPosition(1),position(1),10) 
-    for y= linspace(intialPosition(2),position(2),10) 
-y = handles.walls.size - position(2)+1; 
-set(handles.(strPlayer),'XData',position(1)-.5,'YData',y-.5);
+Ypts = get(handles.(strPlayer),'YData');
+initYpos = Ypts(1)+.5;
+%
+for i = linspace(0,1,nMvs)
+    pause(1/nMvs);
+    set(handles.(strPlayer),'XData', Xpts + i*(position(1)-initXpos),...
+                            'YData', Ypts - i*( position(2)- initYpos));
+end
 end
 
 
