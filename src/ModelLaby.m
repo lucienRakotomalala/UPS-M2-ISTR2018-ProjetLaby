@@ -127,6 +127,7 @@ classdef ModelLaby < ModelSED
         function m(obj,nextState, init)
             
             if(init == 1)
+                fprintf('Init Laby\n') % TODO
                 obj.presentState = obj.initialState;
             else
 

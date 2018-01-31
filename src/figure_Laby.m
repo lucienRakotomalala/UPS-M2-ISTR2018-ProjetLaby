@@ -137,9 +137,6 @@ function ui_Callback(hObject, eventdata, handles)
 %}
 
 % In the input vector, only one element can be equal to 1 (1 of n).
-if(hObject.UserData==1) % if init
-   handles = resetUIConnection(handles);
-end
 
 in = zeros(1,11);
 if(hObject.UserData~=12) % if not step
@@ -147,8 +144,13 @@ if(hObject.UserData~=12) % if not step
 end
 
 handles.wrapper = handles.wrapper.orderer(in);
+if(hObject.UserData==1) % if init
+   handles = resetUIConnection(handles);
+end
 updateUI(handles, handles.wrapper.get_out());
-guidata(hObject,handles);
+
+
+guidata(hObject,handles)
 %faire une fonction qui utilise stop pour arrete le laby
 end
 
@@ -183,7 +185,6 @@ end
 % ===============================================================
 
 %%          Creation of Pacman Ghost, Walls and the Escape
-
 
 % --- Create a graphical element for ghost
 function h = createUIPacman(handles)
@@ -294,11 +295,17 @@ end
 
 % --- Update all UI elements
 function updateUI(handles,out)
- updateUIActiveCammand(handles);
- updateUIButton(handles);
- updateUIPlayer( handles,'pacman', out{1});      %(1,2)
+if(out{1} == [5 1])
+    fprintf('posi PAc init');
+end
+updateUIPlayer( handles,'pacman', out{1});      %(1,2)
  updateUIPlayer( handles,'ghost', out{2});
  updateUIWalls( handles.walls , out{3},out{4});           %(3,4)
+% 
+updateUIActiveCammand(handles);
+ updateUIButton(handles);
+ %
+ 
  updateUICaught(handles.Caught ,out{5},handles.wrapper.get_stop());        %(5)
  updateUIEscape(handles.Escape,out{6});          %(6)
  updateUIWallsAround(handles,'Pacman',out{7}); %(7) for pacman
