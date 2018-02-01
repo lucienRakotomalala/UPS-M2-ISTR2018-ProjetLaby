@@ -68,8 +68,8 @@ guidata(hObject, handles);
 % Initial laby state
     labyInit.wallsV_i =   [0 0 1 1;0 0 1 1;0 0 0 1;1 0 0 1;0 0 0 1]; %  dimension can change
     labyInit.wallsH_i =  [0 0 1 0 0;0 0 1 0 0 ; 0 1 0 0 0; 1 0 0 0 0]; %  dimension can change
-    labyInit.pacman_i = [5,1]; % static dimension
-    labyInit.ghost_i  = [1,1]; % static dimension
+    labyInit.pacman_i = [1,1]; % static dimension
+    labyInit.ghost_i  = [2,1]; % static dimension
     labyInit.escape_i = {[5 5], 0}; % static dimension
     labyInit.caught_i = 0; % static dimension
 
@@ -209,17 +209,32 @@ end
 
 % --- Create a graphical element for pacman
 function h = createUIGhost(handles)
-hold on;
+nbPts = 32; % Definition of object
+%%%%%
 h = handles;
-
-axes(h.axes1);
-
 h.ghostPositionInit  = [2 1];
 h.ghostColor         = [0.83 .33 0.1] ; % strange orange
-h.ghost   = plot( h.ghostPositionInit(1)-.5,...
-                  h.ghostPositionInit(2)-.5,...
-                  'Color',h.ghostColor,...
-                  'Marker','*');
+
+circle = 1/4;
+hold on;
+
+pos = linspace(0,pi,nbPts);
+
+% Ghost cape
+x_v = linspace(h.ghostPositionInit(1)-.5 - circle, h.ghostPositionInit(1)-.5 + circle, nbPts);
+y_v = h.ghostPositionInit(2)-.5-circle + circle*.1*sin(linspace(0,4*pi,length(x_v)));
+
+% All point
+x = [h.ghostPositionInit(1)-.5 [circle*cos(pos)    + h.ghostPositionInit(1)-.5] h.ghostPositionInit(1)-.5-circle ...
+    x_v ...
+    h.ghostPositionInit(1)-.5+circle h.ghostPositionInit(1)-.5+circle];
+y = [h.ghostPositionInit(2)-.5 [circle*sin(pos)     + h.ghostPositionInit(2)-.5] h.ghostPositionInit(2)-.5-circle ...
+    y_v ...
+    h.ghostPositionInit(2)-.5-circle h.ghostPositionInit(2)-.5];
+
+axes(h.axes1);
+h.ghost = patch(x,y,h.ghostColor);
+
 hold off;
 
 end
@@ -391,7 +406,7 @@ Xpts = get(handles.(strPlayer),'XData');
 initXpos = Xpts(1)+.5;
 
 Ypts = get(handles.(strPlayer),'YData');
-initYpos =  Ypts(1) + .5; 
+initYpos =  Ypts(1) + .5
 %
 for i = linspace(0,1,nMvs)
     pause(.1/nMvs);
