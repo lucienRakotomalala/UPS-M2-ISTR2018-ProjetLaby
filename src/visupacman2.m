@@ -2,7 +2,7 @@ close all
 clear 
 %% test represent graph joueur
 % creation
-nbPts = 32;
+nbPts = 10;
 rayon = 1/3;
 xPos = 1;
 yPos = 2;
@@ -31,5 +31,78 @@ initYpos = Ypts(1)+.5;
 nMvs = 10;
 for i = linspace(0,1,nMvs)
     pause(1/nMvs);
-    set(pacman,'XData',Xpts+ i*(xPos2-initXpos),'YData',Ypts + i*(yPos2-initYpos));
+    set(pacman,'XData',Xpts([0,Binf:Bsup,end-1])+ i*(xPos2-initXpos),'YData',Ypts + i*(yPos2-initYpos));
 end
+
+%%%%%%%%%%%%%%%% nonlinéar moving
+%% 
+close all 
+clear
+omega_n = 7;
+xi = .7;
+K=1;
+ft = K*tf([omega_n^2],[1 2*xi*omega_n omega_n^2]);
+%step(ft)
+
+syms p;
+
+F=K*(omega_n^2)/(1*p^2+ 2*xi*omega_n*p+ omega_n^2);
+f = ilaplace(F,p);
+
+
+%t = 0 : .01 : 1;
+t = [zeros(1,50) , ones(1,1000)];
+g=zeros(size(t));
+
+for i = 1:length(t)
+    g(i)=( 70*51^(1/2) * exp(-(49*t(i))/10) * sin((7*51^(1/2)*t(i))/10)  )/51;
+end
+abs = 1:length(t);
+plot(abs,t,abs,g)
+
+%%
+close all; clear
+t =-0.01:.001:5;
+%f  = exp(t);
+f1 = exp(-t);
+f2 = 2*exp(-t);
+f3 = exp(-2*t);
+f4 = exp(-t+2);
+f5 = exp(-t+3);
+f6 = 1./(3*exp(-t)+1);
+figure(1)
+plot(...%t,f,...
+    t,f1,...
+    t,f2,...
+    t,f3,...
+    t,f4,...
+    t,f5,...
+    t,f6);
+legend( '-t', '2*(-t)', '-2*t', '-t+2','-t+3','1/e+1')
+grid on
+%%
+close all; clear
+hold on 
+
+%%
+t =0:.01:1;
+om = 72.89105;
+cv = -11.27357;
+f6 = ((om+1)./(om*exp(cv*t)+1)-1)/om;
+figure(1)
+plot(t,f6);
+grid on
+%%
+syms x
+g6 =((om+1)./(om*exp(cv*x)+1)-1)/om; 
+G6=int(g6,x);
+
+ezplot(G6,[0 1])
+%%
+t = 0:.01:1;
+g8 = t + 0.0899199726*log(1282312912572829.0*exp(-11.27357*t) + 17592186044416.0);
+g9 = 0.0137191054*t - 0.0899199*log(17592186044416.0*exp(11.27357*t) + 1282312912572829.0) + 3.1293110498;
+g10 = -1*(0.013719105432011198959592521759756*t - 0.089919972593598234692873883126056*log(17592186044416.0*exp(11.273569999999999424744601128623*t) + 1282312912572829.0) + 3.1293110498239889985819549725548);
+
+figure(2)
+plot(t,g10)
