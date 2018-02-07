@@ -2,7 +2,7 @@ close all
 clear 
 %% test represent graph joueur
 % creation
-nbPts = 10;
+nbPts = 100;
 rayon = 1/3;
 xPos = 1;
 yPos = 2;
