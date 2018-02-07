@@ -81,6 +81,7 @@ classdef Wrapper
         
         %--- init the project7
         function obj = init(obj)
+            fprintf('Reset wrapper\n')
             % reset laby, commands and stop
            obj.modelLaby.m(0,1);
            

@@ -92,3 +92,51 @@ f6 = ((om+1)./(om*exp(cv*t)+1)-1)/om;
 figure(1)
 plot(t,f6);
 grid on
+%% Ghost
+clear ;close
+nbPts = 200; % Definition of object
+%%%%%
+
+h.ghostPositionInit  = [2 1];
+h.ghostColor         = [0.83 .33 0.1] ; % strange orange
+
+circle = 1/4;
+hold on;
+
+pos = linspace(0,pi,floor(nbPts/2));
+
+% Ghost cape
+x_v = linspace(h.ghostPositionInit(1)-.5 - circle, h.ghostPositionInit(1)-.5 + circle, ceil(nbPts/2));
+y_v = h.ghostPositionInit(2)-.5-circle + circle*.25*sin(linspace(pi, 8*pi ,length(x_v)));
+
+% All point
+x = [h.ghostPositionInit(1)-.5 [circle*cos(pos)+ h.ghostPositionInit(1)-.5] ... Head of ghost
+    h.ghostPositionInit(1)-.5 h.ghostPositionInit(1)-.5-circle ... Made a line which separate the ghost in two parts
+    h.ghostPositionInit(1)-.5-circle ...
+    x_v ...     Cape
+    h.ghostPositionInit(1)-.5+circle h.ghostPositionInit(1)-.5+circle];
+
+y = [h.ghostPositionInit(2)-.5 [circle*sin(pos)+h.ghostPositionInit(2)-.5] ...
+    h.ghostPositionInit(2)-.5 h.ghostPositionInit(2)-.5...
+    h.ghostPositionInit(2)-.5-circle ...
+    y_v ...
+    h.ghostPositionInit(2)-.5-circle h.ghostPositionInit(2)-.5];
+%x = [0: ,x]
+%y = [ ,y]
+%axes(h.axes1);
+h.ghost = patch(x,y,h.ghostColor);
+axis([0 5 0 5])
+axis square
+grid on 
+hold off;
+%%
+clear
+close
+nbPts = 50;
+ang = linspace( 0 , 2*pi , nbPts );
+
+x = [ cos(ang) , .3+.35*cos(ang) , .4*cos(ang) ];
+y = [ sin(ang) , .3+.2*sin(ang)  , .4*sin(ang) ];
+
+h = patch(x,y,'b')
+axis square

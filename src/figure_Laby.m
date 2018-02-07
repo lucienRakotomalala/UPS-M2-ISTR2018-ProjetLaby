@@ -223,7 +223,7 @@ pos = linspace(0,pi,nbPts);
 
 % Ghost cape
 x_v = linspace(h.ghostPositionInit(1)-.5 - circle, h.ghostPositionInit(1)-.5 + circle, nbPts);
-y_v = h.ghostPositionInit(2)-.5-circle + circle*.1*sin(linspace(0,4*pi,length(x_v)));
+y_v = h.ghostPositionInit(2)-.5-circle + circle*.25*sin(linspace(pi,8*pi,length(x_v)));
 
 % All point
 x = [h.ghostPositionInit(1)-.5 [circle*cos(pos)+ h.ghostPositionInit(1)-.5] ... Head of ghost
@@ -426,11 +426,13 @@ nMvs = 20;
     cv = -11.27357;
     smoothMve = ((om+1)./(om*exp(cv*t)+1)-1)/om;
     smoothMve(end)=1;
-    for i = 1: nMvs
-        pause(.1/nMvs);
-        set(handles.(strPlayer),'XData', Xpts + smoothMve(i)*(position(1)-initXpos),...
-                                'YData', Ypts + smoothMve(i)*(handles.walls.size - position(2)+1- initYpos));
-
+    if( (position(1)-initXpos)~=0  || (handles.walls.size - position(2)+1- initYpos)~=0 )
+        for i = 1: nMvs
+            pause(.1/nMvs);
+            set(handles.(strPlayer),...
+                'XData', Xpts + smoothMve(i)*(position(1)-initXpos),...
+                'YData', Ypts + smoothMve(i)*(handles.walls.size - position(2)+1- initYpos));
+        end
     end
 end
 
