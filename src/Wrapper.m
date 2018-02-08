@@ -81,7 +81,7 @@ classdef Wrapper
         
         %--- init the project
         function obj = init(obj)
-            fprintf('Reset wrapper\n')
+            %fprintf('Reset wrapper\n')
             % reset laby, commands and stop
            obj.modelLaby.m(0,1);
            
@@ -94,7 +94,6 @@ classdef Wrapper
            % reset out and stop
            obj.out = obj.modelLaby.g();
            obj.stop = obj.stopCondition.g();
-           obj.stop
            obj.whoPlay = 0;
            
            % reset bits

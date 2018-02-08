@@ -314,9 +314,7 @@ end
 
 % --- Update all UI elements
 function updateUI(handles,out)
-    if(out{1} == [5 1])
-       fprintf('posi PAc init');
-    end
+    
     updateUIPlayer( handles,'pacman', out{1});      %(1,2)
     updateUIPlayer( handles,'ghost', out{2});
     updateUIWalls( handles.walls , out{3},out{4});           %(3,4)

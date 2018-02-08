@@ -168,7 +168,7 @@ nextState(1,5)= mod(obj.presentState(1,5)+1,4);
         % --- Memory test
         function obj = m(obj,nextState, init)
             if(init == 1)
-                fprintf('Init Ghost\n') % TODO 
+              %  fprintf('Init Ghost\n') % TODO 
                 obj.presentState = obj.initialState;
                 %the 4 fisrt elements = mouvements
                 %Last element = turn of the game (counted inside this class)

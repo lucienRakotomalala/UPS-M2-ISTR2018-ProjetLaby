@@ -90,7 +90,7 @@ end
         % --- Memory test
 function obj = m(obj,nextState, init)
             if(init == 1)
-                fprintf('Init Pacman\n') % TODO
+                %fprintf('Init Pacman\n') % TODO
                 obj.presentState = obj.initialState; 
                  obj.memory=zeros(1,4);
             else
