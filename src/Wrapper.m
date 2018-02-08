@@ -95,7 +95,7 @@ classdef Wrapper
            obj.out = obj.modelLaby.g();
            obj.stop = obj.stopCondition.g();
            obj.stop
-           
+           obj.whoPlay = 0;
            
            % reset bits
            obj.ghostBit  = 0 ;
