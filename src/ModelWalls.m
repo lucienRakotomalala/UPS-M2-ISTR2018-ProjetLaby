@@ -49,6 +49,7 @@ classdef ModelWalls < ModelSED
         % --- Memory test
         function obj = m(obj,nextState, init)
             if(init == 1)
+                %fprintf('Init Walls\n') % TODO
                 obj.presentState = obj.initialState; 
             else
                 obj.presentState = nextState;
