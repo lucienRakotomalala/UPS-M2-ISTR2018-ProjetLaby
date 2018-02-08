@@ -79,7 +79,7 @@ classdef Wrapper
             end
         end
         
-        %--- init the project7
+        %--- init the project
         function obj = init(obj)
             fprintf('Reset wrapper\n')
             % reset laby, commands and stop
@@ -93,7 +93,8 @@ classdef Wrapper
            
            % reset out and stop
            obj.out = obj.modelLaby.g();
-           obj.stop =obj.stopCondition.g();
+           obj.stop = obj.stopCondition.g();
+           obj.stop
            
            
            % reset bits
@@ -110,67 +111,68 @@ classdef Wrapper
             obj.in=vectIn;
             % init case
             if(obj.in(1)==1)
-                obj.init();
-            end
-            if(sum(obj.stop)==0) % if not stopped
-            % PROBLEME ORDO A GERER : doit W > LAB > PAC > LAB > GHOS > LAB > ...
-            if(obj.wallsBit || obj.pacmanBit || obj.ghostBit) %% mod to || si gestion de commande partielle
-                switch obj.whoPlay
-                    case 0 % walls
-                        if(obj.wallsBit==1)
-                            % f m g walls
-                            nextStateWalls = obj.commandWalls.f(); 
-                            obj.commandWalls.m(nextStateWalls,obj.in(1)); 
-                            obj.in(2:3) = obj.commandWalls.g();
-                        end
-                    case 1 % pacman
-                        if(obj.pacmanBit==1)
-                            % f m g pacman
-                            nextStatePacman = obj.commandPacman.f(obj.out{7});
-                            obj.commandPacman.m(nextStatePacman,obj.in(1));
-                            obj.in(4:7) = obj.commandPacman.g();
-                        end 
-                    case 2 % ghost
-                        if(obj.ghostBit==1) %% if ghost is connected
-                            % f m g ghost
-                            nextStateGhost = obj.commandGhost.f(obj.out{8},obj.out{9},obj.out{3},obj.out{4},obj.out{2});
-                            obj.commandGhost.m(nextStateGhost,obj.in(1));
-                            obj.in(8:11) = obj.commandGhost.g(); 
-                        end
+                obj=obj.init();
+            %end
+            %if
+            elseif(sum(obj.stop)==0) % if not stopped
+                % PROBLEME ORDO A GERER : doit W > LAB > PAC > LAB > GHOS > LAB > ...
+                if(obj.wallsBit || obj.pacmanBit || obj.ghostBit) %% mod to || si gestion de commande partielle
+                    switch obj.whoPlay
+                        case 0 % walls
+                            if(obj.wallsBit==1)
+                                % f m g walls
+                                nextStateWalls = obj.commandWalls.f(); 
+                                obj.commandWalls.m(nextStateWalls,obj.in(1)); 
+                                obj.in(2:3) = obj.commandWalls.g();
+                            end
+                        case 1 % pacman
+                            if(obj.pacmanBit==1)
+                                % f m g pacman
+                                nextStatePacman = obj.commandPacman.f(obj.out{7});
+                                obj.commandPacman.m(nextStatePacman,obj.in(1));
+                                obj.in(4:7) = obj.commandPacman.g();
+                            end 
+                        case 2 % ghost
+                            if(obj.ghostBit==1) %% if ghost is connected
+                                % f m g ghost
+                                nextStateGhost = obj.commandGhost.f(obj.out{8},obj.out{9},obj.out{3},obj.out{4},obj.out{2});
+                                obj.commandGhost.m(nextStateGhost,obj.in(1));
+                                obj.in(8:11) = obj.commandGhost.g(); 
+                            end
+                    end
                 end
-            end
-            
-            
-            % f m g modelLAby 
-            nextStateLaby = obj.modelLaby.f(obj.in);
-            obj.modelLaby.m(nextStateLaby,obj.in(1));
-            obj.out = obj.modelLaby.g();
-            
-            %  f m g stop
-             % noEscape, caught, pacmanWallsBreak, ghostWallsBreak
-            nextStateStop=obj.stopCondition.f(obj.out{6}, obj.out{5}, obj.out{7}, obj.out{8});
-            obj.stopCondition.m(nextStateStop, obj.in(1));
-            obj.stop = obj.stopCondition.g();
-            
-            % increment whoplay
-            if(obj.in(1)==0)
-             obj.whoPlay = mod(obj.whoPlay + 1, 3); 
-            else
-                obj.whoPlay=0;
-            end
-                %disp('whoPlay ++ !')% DEBUG
 
-            
-            %obj.in % DEBUG
-            %fprintf('W P G : [%d %d %d]\n',obj.wallsBit,obj.pacmanBit, obj.ghostBit);% DEBUG
-            obj.in = zeros(size(obj.in));
-            % ordre exec 
-            
-            
-            % murs :
-            %   -in  : type de
-            %   -out :
-            %   -etat : 
+
+                % f m g modelLAby 
+                nextStateLaby = obj.modelLaby.f(obj.in);
+                obj.modelLaby.m(nextStateLaby,obj.in(1));
+                obj.out = obj.modelLaby.g();
+
+                %  f m g stop
+                 % noEscape, caught, pacmanWallsBreak, ghostWallsBreak
+                nextStateStop=obj.stopCondition.f(obj.out{6}, obj.out{5}, obj.out{7}, obj.out{8});
+                obj.stopCondition.m(nextStateStop, obj.in(1));
+                obj.stop = obj.stopCondition.g();
+
+                % increment whoplay
+                if(obj.in(1)==0)
+                 obj.whoPlay = mod(obj.whoPlay + 1, 3); 
+                else
+                    obj.whoPlay=0;
+                end
+                    %disp('whoPlay ++ !')% DEBUG
+
+
+                %obj.in % DEBUG
+                %fprintf('W P G : [%d %d %d]\n',obj.wallsBit,obj.pacmanBit, obj.ghostBit);% DEBUG
+                obj.in = zeros(size(obj.in));
+                % ordre exec 
+
+
+                % murs :
+                %   -in  : type de
+                %   -out :
+                %   -etat : 
             end    
             % murs > Laby > pacman > Laby > ghost > laby 
         end

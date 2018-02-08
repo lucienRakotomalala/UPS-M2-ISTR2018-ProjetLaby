@@ -97,7 +97,7 @@ clear ;close
 nbPts = 200; % Definition of object
 %%%%%
 
-h.ghostPositionInit  = [2 1];
+h.ghostPositionInit  = [1 1];
 h.ghostColor         = [0.83 .33 0.1] ; % strange orange
 
 circle = 1/4;
@@ -125,7 +125,7 @@ y = [h.ghostPositionInit(2)-.5 [circle*sin(pos)+h.ghostPositionInit(2)-.5] ...
 %y = [ ,y]
 %axes(h.axes1);
 h.ghost = patch(x,y,h.ghostColor);
-axis([0 5 0 5])
+axis([0 1 0 1])
 axis square
 grid on 
 hold off;
@@ -135,8 +135,13 @@ close
 nbPts = 50;
 ang = linspace( 0 , 2*pi , nbPts );
 
-x = [ cos(ang) , .3+.35*cos(ang) , .4*cos(ang) ];
-y = [ sin(ang) , .3+.2*sin(ang)  , .4*sin(ang) ];
-
-h = patch(x,y,'b')
+x = [ .1*cos(ang)' , .3+.35*cos(ang+3)' , .4*cos(ang)' ];
+y = [ .1*sin(ang)' , .3+.2*sin(ang-4)'  , .4*sin(ang)' ];
+col =  [1 .5 0]'; % blue
+c = [1 0 0; 
+    0 1 0;
+    0 0 1];
+h = patch(x,y,'b');
+%%
+set(h,'FaceVertexCData',c,'FaceColor','flat');
 axis square
