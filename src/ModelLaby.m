@@ -38,9 +38,7 @@ classdef ModelLaby < ModelSED
         function nextState = f(obj, in)
             
             nextState = obj.presentState;
-            if(in(1) == 1) % Initial
-                
-            end
+            
             %% Walls Evolution 
             %
             %   next Walls become an offset matrix of Walls 
@@ -127,6 +125,7 @@ classdef ModelLaby < ModelSED
         function m(obj,nextState, init)
             
             if(init == 1)
+                %fprintf('Init Laby\n') % TODO
                 obj.presentState = obj.initialState;
             else
 
