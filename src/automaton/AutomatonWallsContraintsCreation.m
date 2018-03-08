@@ -40,35 +40,76 @@ for i = 1 : numberOfStates %all states
         [~,oD]=find(D);
         [~,oL]=find(L);
         [~,oR]=find(R);
-        %up 
+        %% find the impossible moves
+        noU=find(sum(U)==0);        
+        noD=find(sum(D)==0);
+        noL=find(sum(L)==0);
+        noR=find(sum(R)==0);
+        
+        
         str = cell(1,max(size(oU))+max(size(oD))+max(size(oL))+max(size(oR)));
-        l=0;
-        if(~ isempty(oU))
+        l=0;        
+        %up 
+        if(~isempty(oU))
             for k = 1 : max(size(oU))
-                str{k}=sprintf('U%d',oU(k));
+                str{k}=sprintf('U%d ',oU(k));
+                
             end
         end
         %down
-        if(~ isempty(oD))                
+        if(~isempty(oD))                
             l = max(size(oU));
             for k = 1 : max(size(oD))
                 str{l+k}=sprintf('D%d',oD(k));
             end
         end
         %left
-        if(~ isempty(oL))
+        if(~isempty(oL))
             l = l+max(size(oD));
             for k = 1 : max(size(oL))
                 str{l+k}=sprintf('L%d',oL(k));
             end
         end
         % right
-        if(~ isempty(oR))
+        if(~isempty(oR))
             l = l+max(size(oL));
             for k = 1 : max(size(oR))
                 str{l+k}=sprintf('R%d',oR(k));
             end
         end
+        %%  impossibles moves
+        % not up 
+        if(~isempty(noU))
+            l = l+max(size(oR));
+            for k = 1 : max(size(noU))
+                str{l+k}=sprintf('nU%d ',noU(k));
+                
+            end
+        end
+        % not down
+        if(~isempty(noL))  
+            l = l+max(size(noU));
+            for k = 1 : max(size(noD))
+                str{l+k}=sprintf('nD%d',noD(k));
+            end
+        end
+        % not left
+        if(~isempty(noL))
+            l = l+max(size(noD));
+            for k = 1 : max(size(noL))
+                str{l+k}=sprintf('nL%d',noL(k));
+            end
+        end
+        % not right
+        if(~isempty(noR))
+            l = l+max(size(noL));
+            for k = 1 : max(size(noR))
+                str{l+k}=sprintf('nR%d',noR(k));
+            end
+        end
+        
+        
+        
         % write into output
         for h = 1:max(size(str))
             j = INDICE + h;

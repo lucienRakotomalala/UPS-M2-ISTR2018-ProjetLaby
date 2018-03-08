@@ -43,7 +43,7 @@ G=zeros(nb_case);
         if (x<taille_x) % si pas derniere colonne
             if  (Matrice_Verticale(y,x)==0); % et si pas de mur
                 j   =   i + 1; % on peut aller a droite
-                D(j,i)=1;
+                G(j,i)=1;
             end
         end
     end
@@ -54,7 +54,7 @@ G=zeros(nb_case);
         if (x>1) % si pas 1ere colonne
             if  (Matrice_Verticale(y,x-1)==0) % et si pas de mur
                 j=i-1; % on peut aller a droite
-                G(j,i)=1;
+                D(j,i)=1;
             end
         end
        

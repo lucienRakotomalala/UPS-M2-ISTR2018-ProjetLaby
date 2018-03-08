@@ -1,4 +1,4 @@
-s l1 
+s l1 -I 
 s l2 
 s l3 
 s l4 
@@ -6,101 +6,64 @@ s l5
 s l6 
 s l7 
 s l8 
-s l9 
-s l10 
-s l11 
-s l12 -I 
-s l13 
-s l14 
-s l15 
-s l16 
-s l17 
-s l18 
-s l19 
-s l20 
-s l21 
-s l22 
-s l23 
-s l24 
-s l25 -M 
+s l9 -M 
 
-t l6 l1 U6
-t l1 l6 D1
-t l1 l2 L1
-t l2 l1 R2
-t l7 l2 U7
-t l2 l7 D2
-t l2 l3 L2
-t l3 l2 R3
-t l8 l3 U8
-t l3 l8 D3
-t l3 l4 L3
-t l4 l3 R4
-t l9 l4 U9
-t l4 l9 D4
-t l4 l5 L4
-t l5 l4 R5
-t l10 l5 U10
-t l5 l10 D5
-t l6 l7 L6
-t l7 l6 R7
-t l11 l6 U11
-t l6 l11 D6
-t l7 l8 L7
-t l8 l7 R8
-t l12 l7 U12
-t l7 l12 D7
-t l8 l9 L8
-t l9 l8 R9
-t l13 l8 U13
-t l8 l13 D8
-t l9 l10 L9
-t l10 l9 R10
-t l14 l9 U14
-t l9 l14 D9
-t l11 l12 L11
-t l12 l11 R12
-t l15 l10 U15
-t l10 l15 D10
-t l12 l13 L12
-t l13 l12 R13
-t l16 l11 U16
-t l11 l16 D11
-t l13 l14 L13
-t l14 l13 R14
-t l17 l12 U17
-t l12 l17 D12
-t l14 l15 L14
-t l15 l14 R15
-t l18 l13 U18
-t l13 l18 D13
-t l16 l17 L16
-t l17 l16 R17
-t l19 l14 U19
-t l14 l19 D14
-t l17 l18 L17
-t l18 l17 R18
-t l20 l15 U20
-t l15 l20 D15
-t l18 l19 L18
-t l19 l18 R19
-t l21 l16 U21
-t l16 l21 D16
-t l19 l20 L19
-t l20 l19 R20
-t l22 l17 U22
-t l17 l22 D17
-t l21 l22 L21
-t l22 l21 R22
-t l23 l18 U23
-t l18 l23 D18
-t l22 l23 L22
-t l23 l22 R23
-t l24 l19 U24
-t l19 l24 D19
-t l23 l24 L23
-t l24 l23 R24
-t l25 l20 U25
-t l20 l25 D20
-t l24 l25 L24
-t l25 l24 R25
+t l4 l1 U4
+t l1 l4 D1
+t l2 l1 L2
+t l1 l2 R1
+t l5 l2 U5
+t l2 l5 D2
+t l3 l2 L3
+t l2 l3 R2
+t l6 l3 U6
+t l3 l6 D3
+t l5 l4 L5
+t l4 l5 R4
+t l7 l4 U7
+t l4 l7 D4
+t l6 l5 L6
+t l5 l6 R5
+t l8 l5 U8
+t l5 l8 D5
+t l8 l7 L8
+t l7 l8 R7
+t l9 l6 U9
+t l6 l9 D6
+t l9 l8 L9
+t l1 l1 nU1
+t l1 l1 nD1
+t l1 l1 nL1
+t l1 l1 nR1
+t l2 l2 nU2
+t l2 l2 nD2
+t l2 l2 nL2
+t l2 l2 nR2
+t l3 l3 nU3
+t l3 l3 nD3
+t l3 l3 nL3
+t l3 l3 nR3
+t l4 l4 nU4
+t l4 l4 nD4
+t l4 l4 nL4
+t l4 l4 nR4
+t l5 l5 nU5
+t l5 l5 nD5
+t l5 l5 nL5
+t l5 l5 nR5
+t l6 l6 nU6
+t l6 l6 nD6
+t l6 l6 nL6
+t l6 l6 nR6
+t l7 l7 nU7
+t l7 l7 nD7
+t l7 l7 nL7
+t l7 l7 nR7
+t l8 l8 nU8
+t l8 l8 nD8
+t l8 l8 nL8
+t l8 l8 nR8
+t l9 l9 nU9
+t l9 l9 nD9
+t l9 l9 nL9
+t l9 l9 nR9
