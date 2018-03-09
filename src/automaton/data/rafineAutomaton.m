@@ -1,15 +1,22 @@
+%% This function permits to clean the procede automata 
+%   It keep the good name of transition to do a Parallel Product with a
+%   command
+%
 clear
-%% Ouverture fichier
-myF = fopen('aOuvrir.fsm');
-
+%% Open File
+myF = fopen('procede.fsm');
+% Take all char
 data = fread(myF,'*char');
+
+% Char we will analyse
 dir = 'ULRD';
 num ='1234567890';
+
+% add of char we will delete
 bannedI = [];
 %%
 i=1;
 while i <=length(data)
-    
     
     if ~isempty(strfind(dir, data(i)))
         disp('updownluefright')
@@ -29,8 +36,8 @@ fclose(myF);
 
 %% 
 data(bannedI) = [];
-%% Ecriture fichier
-name = strcat('memo','.fsm');
+%% Write the clean file
+name = strcat('procede','.fsm');
 F = fopen(name, 'w');
 fwrite(F,data);
 fclose(F);
