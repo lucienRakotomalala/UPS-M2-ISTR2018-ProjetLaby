@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <XmlAutomaton Stochastic="false" numberOfAgents="1" hasOutput="false">
-    <state name="w1" marked="false" initial="true" opacityOk="true">
+    <state name="w1" marked="true" initial="true" opacityOk="true">
         <position x="25" y="25"/>
         <size width="0" height="0"/>
         <initialPosition x="-28" y="-28"/>
     </state>
-    <state name="w2" marked="false" opacityOk="true">
+    <state name="w2" marked="true" opacityOk="true">
         <position x="115" y="25"/>
         <size width="0" height="0"/>
     </state>
-    <state name="w3" marked="false" opacityOk="true">
+    <state name="w3" marked="true" opacityOk="true">
         <position x="205" y="25"/>
         <size width="0" height="0"/>
     </state>
-    <state name="w4" marked="false" opacityOk="true">
+    <state name="w4" marked="true" opacityOk="true">
         <position x="295" y="25"/>
         <size width="0" height="0"/>
     </state>
-    <state name="w5" marked="false" opacityOk="true">
+    <state name="w5" marked="true" opacityOk="true">
         <position x="385" y="25"/>
         <size width="0" height="0"/>
     </state>
-    <state name="w6" marked="false" opacityOk="true">
+    <state name="w6" marked="true" opacityOk="true">
         <position x="475" y="25"/>
         <size width="0" height="0"/>
     </state>
