@@ -20,6 +20,7 @@ t s2 s1 R2
 t s2 s1 R4
 t s2 s1 R5
 t s2 s1 R7
+t s2 s1 R8
 t s2 s1 U4
 t s2 s1 U5
 t s2 s1 U6

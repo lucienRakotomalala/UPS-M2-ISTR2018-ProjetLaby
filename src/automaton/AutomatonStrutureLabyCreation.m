@@ -35,7 +35,7 @@ markedStatesIndices = ( escapePosition(2) - 1 )*labySize + escapePosition(1);
 %   nTr =  (if labySize>1 :) nbOf_c*2tr + (if labySize >2 :) + nbOf_b*3tr + (if labySize >2 :) nbOf_m*4tr 
     nTr= (labySize>1)*4*2 + (labySize>2)*(labySize-2)*(4*3+(labySize-2)*4); 
     if (nTr>0)
-        transitionsDatas = cell(nTr+4*numberOfStates-1,3);
+        transitionsDatas = cell(nTr+4*numberOfStates,3);%-1
         emptyWalls = zeros(labySize,labySize-1);
         
         [U,D,L,R] = generer_lab(emptyWalls',emptyWalls);
@@ -67,9 +67,11 @@ markedStatesIndices = ( escapePosition(2) - 1 )*labySize + escapePosition(1);
             transitionsDatas{j+3,2}=yR(i);
             transitionsDatas{j+3,3}=sprintf('R%d',xR(i));
         end
+        
         addOff = nTr ;
+        
         for i = 1: numberOfStates
-            j = addOff;
+            j = addOff+1;
             transitionsDatas{j,1}=i;
             transitionsDatas{j,2}=i;
             transitionsDatas{j,3}=sprintf('nU%d',i); % maybe x/y switch

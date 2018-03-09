@@ -226,6 +226,9 @@
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U8" from="l8" to="l5" legal="true"/>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="L8" from="l8" to="l7" legal="true"/>
+    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="R8" from="l8" to="l9" legal="true">
+        <pathPoint x="720" y="25"/>
+    </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="nU8" from="l8" to="l8" legal="true">
         <pathPoint x="655" y="-5"/>
         <pathPoint x="675" y="-20"/>
@@ -335,6 +338,9 @@
         <AgentProperty observable="true" controllable="true"/>
     </event>
     <event xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlEvent" name="L9" observable="true" controllable="true">
+        <AgentProperty observable="true" controllable="true"/>
+    </event>
+    <event xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlEvent" name="R8" observable="true" controllable="true">
         <AgentProperty observable="true" controllable="true"/>
     </event>
     <event xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlEvent" name="nU1" observable="true" controllable="true">
