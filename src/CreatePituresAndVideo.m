@@ -59,33 +59,34 @@ end
 % 2. transformer la 11x11x3 (empty,walls,ghost,pacman,escape)
 % 3. etendre la 11x11*3 avec kron
     
-resImg = 100;%resolution of image in pixel size = resImg*(2*n+1)
-emptyColor=[1,1,1];
-wallsColor = [0,0,1];
+resImg      = 100;  %resolution of image in pixel size = resImg*(2*n+1)
+emptyColor  = [1,1,1];
+wallsColor  = [0,0,1];
 
-ghostColor=[1,.5,0];
-pacmanColor=[0,1,.5];
-escapeColor=[1 ,0,0];
+ghostColor  = [1,.5,0];
+pacmanColor = [0,1,.5];
+escapeColor = [1 ,0,0];
 
-imgs=zeros(resImg*N,resImg*N,3,n); % n rgb pictures with ( x  pixels)
-rgbImg = zeros(N,N,3);
+imgs        = zeros(resImg*N , resImg*N , 3 , n); % n rgb pictures with ( x  pixels)
+rgbImg      = zeros(N , N , 3);
 
 %%
 for i = 1 : n
     %1.11x11x3
     rgbImg(:,:,1)=repmat(Visu(:,:,i),[1 1 1]);
+    
     %2.color
-    rgbImg=setColor(rgbImg,Visu(:,:,i),emptyColor,0);
-    rgbImg=setColor(rgbImg,Visu(:,:,i),wallsColor,1);
-    rgbImg=setColor(rgbImg,Visu(:,:,i),ghostColor,2);
-    rgbImg=setColor(rgbImg,Visu(:,:,i),pacmanColor,3);
+    rgbImg = setColor(rgbImg,Visu(:,:,i),emptyColor,0);
+    rgbImg = setColor(rgbImg,Visu(:,:,i),wallsColor,1);
+    rgbImg = setColor(rgbImg,Visu(:,:,i),ghostColor,2);
+    rgbImg = setColor(rgbImg,Visu(:,:,i),pacmanColor,3);
     rgbImg=setColor(rgbImg,Visu(:,:,i),escapeColor,4);
 
 
     %3.kron
-    imgs(:,:,1,i)=kron(rgbImg(:,:,1),ones(resImg,resImg));
-    imgs(:,:,2,i)=kron(rgbImg(:,:,2),ones(resImg,resImg));
-    imgs(:,:,3,i)=kron(rgbImg(:,:,3),ones(resImg,resImg));
+    imgs(:,:,1,i) = kron(rgbImg(:,:,1),ones(resImg,resImg));
+    imgs(:,:,2,i) = kron(rgbImg(:,:,2),ones(resImg,resImg));
+    imgs(:,:,3,i) = kron(rgbImg(:,:,3),ones(resImg,resImg));
 end
 % %% test 
 % stepToSee = 1; % range 1 : n
@@ -103,9 +104,9 @@ open(video)
 for i = 1 : n
     name = strcat(repo,'/Simu_',int2str(i),'.jpg');
     imwrite(imgs(:,:,:,i),name,'jpg'); 
-    A = imread(name);
+    %A = imread(name);
     for j = 1 : 20
-        writeVideo(video,A);
+        writeVideo(video,imgs(:,:,:,i));
     end
 end
 close(video)
