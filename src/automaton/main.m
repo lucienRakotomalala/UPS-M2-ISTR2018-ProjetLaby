@@ -1,9 +1,9 @@
 clear 
 %% Main script for launch the generation
 %% 1. Initial parameters
- wallsV =   [1 0 0 0 ;  1 0 0 1 ; 1 1 1 1 ; 1 0 0 1 ; 0 0 0 0]; %  dimension can change
- wallsH =  [0 1 1 1 0; 0 0 1 0 0; 0 0 1 0 0; 0 1 1 1 0]; %  dimension can change
- pacman= [2,3]; % static dimension
+ wallsV =   [1 0; 0 0; 0 1]; %  dimension can change
+ wallsH =  [0 1 0; 0 0 0 ]; %  dimension can change
+ pacman= [1;1]; % static dimension
  escape = [5 5]; % static dimension
  sched = {'p','w'};
 %% 2 automaton models

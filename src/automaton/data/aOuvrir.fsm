@@ -1,0 +1,186 @@
+52
+
+l1,w1,s1	0	1
+wR	l1,w2,s2	c	o
+
+l1,w2,s2	0	1
+D1	l4,w2,s1	c	o
+
+l1,w3,s1	0	1
+wR	l1,w4,s2	c	o
+
+l1,w4,s2	0	1
+L1	l2,w4,s1	c	o
+
+l1,w5,s1	0	1
+wR	l1,w6,s2	c	o
+
+l1,w6,s2	0	2
+D1	l4,w6,s1	c	o
+L1	l2,w6,s1	c	o
+
+l2,w1,s2	0	1
+L2	l3,w1,s1	c	o
+L2	l3,w1,s1	c	o
+
+l2,w2,s1	0	1
+wD	l2,w3,s2	c	o
+
+l2,w3,s2	0	2
+R2	l1,w3,s1	c	o
+D2	l5,w3,s1	c	o
+
+l2,w4,s1	0	1
+wD	l2,w5,s2	c	o
+
+l2,w5,s2	0	3
+R2	l1,w5,s1	c	o
+D2	l5,w5,s1	c	o
+L2	l3,w5,s1	c	o
+
+l2,w6,s1	0	1
+wD	l2,w1,s2	c	o
+
+l3,w1,s1	0	1
+wR	l3,w2,s2	c	o
+
+l3,w2,s2	0	1
+R3	l2,w2,s1	c	o
+
+l3,w5,s1	0	1
+wR	l3,w6,s2	c	o
+
+l3,w6,s2	0	2
+R3	l2,w6,s1	c	o
+D3	l6,w6,s1	c	o
+
+l4,w1,s2	0	3
+U4	l1,w1,s1	c	o
+D4	l7,w1,s1	c	o
+L4	l5,w1,s1	c	o
+
+l4,w2,s1	0	1
+wD	l4,w3,s2	c	o
+
+l4,w3,s2	0	2
+U4	l1,w3,s1	c	o
+D4	l7,w3,s1	c	o
+
+l4,w4,s1	0	1
+wD	l4,w5,s2	c	o
+
+l4,w5,s2	0	2
+D4	l7,w5,s1	c	o
+L4	l5,w5,s1	c	o
+
+l4,w6,s1	0	1
+wD	l4,w1,s2	c	o
+
+l5,w1,s1	0	1
+wR	l5,w2,s2	c	o
+
+l5,w2,s2	0	4
+R5	l4,w2,s1	c	o
+D5	l8,w2,s1	c	o
+L5	l6,w2,s1	c	o
+U5	l2,w2,s1	c	o
+
+l5,w3,s1	0	1
+wR	l5,w4,s2	c	o
+
+l5,w4,s2	0	3
+D5	l8,w4,s1	c	o
+L5	l6,w4,s1	c	o
+U5	l2,w4,s1	c	o
+
+l5,w5,s1	0	1
+wR	l5,w6,s2	c	o
+
+l5,w6,s2	0	2
+R5	l4,w6,s1	c	o
+D5	l8,w6,s1	c	o
+
+l6,w1,s2	0	3
+U6	l3,w1,s1	c	o
+R6	l5,w1,s1	c	o
+D6	l9,w1,s1	c	o
+
+l6,w2,s1	0	1
+wD	l6,w3,s2	c	o
+
+l6,w3,s2	0	2
+R6	l5,w3,s1	c	o
+D6	l9,w3,s1	c	o
+
+l6,w4,s1	0	1
+wD	l6,w5,s2	c	o
+
+l6,w5,s2	0	2
+U6	l3,w5,s1	c	o
+D6	l9,w5,s1	c	o
+
+l6,w6,s1	0	1
+wD	l6,w1,s2	c	o
+
+l7,w1,s1	0	1
+wR	l7,w2,s2	c	o
+
+l7,w2,s2	0	2
+U7	l4,w2,s1	c	o
+L7	l8,w2,s1	c	o
+
+l7,w3,s1	0	1
+wR	l7,w4,s2	c	o
+
+l7,w4,s2	0	2
+U7	l4,w4,s1	c	o
+L7	l8,w4,s1	c	o
+
+l7,w5,s1	0	1
+wR	l7,w6,s2	c	o
+
+l7,w6,s2	0	1
+U7	l4,w6,s1	c	o
+
+l8,w1,s2	0	2
+U8	l5,w1,s1	c	o
+R8	l7,w1,s1	c	o
+
+l8,w2,s1	0	1
+wD	l8,w3,s2	c	o
+
+l8,w3,s2	0	3
+U8	l5,w3,s1	c	o
+L8	l9,w3,s1	c	o
+R8	l7,w3,s1	c	o
+
+l8,w4,s1	0	1
+wD	l8,w5,s2	c	o
+
+l8,w5,s2	0	2
+U8	l5,w5,s1	c	o
+L8	l9,w5,s1	c	o
+
+l8,w6,s1	0	1
+wD	l8,w1,s2	c	o
+
+l9,w1,s1	0	1
+wR	l9,w2,s2	c	o
+
+l9,w2,s2	0	1
+U9	l6,w2,s1	c	o
+
+l9,w3,s1	0	1
+wR	l9,w4,s2	c	o
+
+l9,w4,s2	0	2
+U9	l6,w4,s1	c	o
+R9	l8,w4,s1	c	o
+
+l9,w5,s1	0	1
+wR	l9,w6,s2	c	o
+
+l9,w6,s2	0	2
+U9	l6,w6,s1	c	o
+R9	l8,w6,s1	c	o
+
