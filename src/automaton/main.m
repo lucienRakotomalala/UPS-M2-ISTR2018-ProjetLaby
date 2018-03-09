@@ -1,6 +1,7 @@
 clear 
 %% Main script for launch the generation
 %% 1. Initial parameters
+<<<<<<< HEAD
  wallsV =   [1 0;
              0 0; 
              0 1]; %  dimension can change
@@ -9,6 +10,13 @@ clear
  pacman= [1,1]; % static dimension
  escape = [3 3]; % static dimension
  sched = {'p','w'};% p for player and w for walls
+=======
+ wallsV =   [1 0; 0 0; 0 1]; %  dimension can change
+ wallsH =  [0 1 0; 0 0 0 ]; %  dimension can change
+ pacman= [1;1]; % static dimension
+ escape = [5 5]; % static dimension
+ sched = {'p','w'};
+>>>>>>> lucien
 %% 2 automaton models
 % structure of the lab
 [lab.indInit,lab.mark,lab.datas, lab.nbS]...

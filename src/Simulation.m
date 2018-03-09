@@ -93,4 +93,8 @@ else %sim break
 end
     n = i-1; % new number of iteration;
 %% Create picture for each iteration and Video in file data
-CreatePituresAndVideo(n,  labyInit.escape_i, labyState);
+
+% repo = strcat('./data/Validation 8/', 'Test1_2');
+% mkdir(repo);
+% save(strcat(repo,'/state'),'labyState');
+ CreatePituresAndVideo(n,  labyInit.escape_i, labyState);
