@@ -1,0 +1,133 @@
+s e80
+s e81
+s e82
+s e83
+s e84
+s e85
+s e86
+s e87
+s e88
+s e89
+s e90
+s e91
+s e92
+s e93
+s e94
+s e95
+s e96
+s e97
+s e98
+s e99
+s e100
+s e101
+s e102
+s e103
+s e104
+s e105
+s e106
+s e107
+s e108
+s e109
+s e110
+s e111
+s e112
+s e113
+s e114
+s e115
+s e116
+s e117
+s e118
+s e119
+s e120
+
+trans e40 e80 nD
+trans e80 e81 L
+trans e81 e82 R
+trans e82 e83 D
+trans e83 e1 U
+trans e81 e84 nR
+
+trans e84 e85 D
+trans e85 e86 R
+trans e86 e87 nU
+trans e86 e1 U
+trans e87 e86 R
+trans e87 e91 nD
+trans e91 e86 D
+trans e91 e92 nD
+trans e92 e86 U
+trans e92 e39 nU
+
+trans e84 e88 nD
+trans e88 e109 U
+trans e88 e93 nU
+trans e93 e81 L
+trans e93 e39 nL
+trans e109 e110 R
+trans e109 e111 nR
+trans e110 e1 D
+trans e110 e116 nD
+trans e111 e113 nD
+trans e111 e112 D
+trans e113 e115 nL
+trans e113 e109 L
+trans e115 e39 nU
+trans e115 e109 U
+
+trans e112 e1 R
+trans e112 e114 nR
+trans e114 e112 D 
+trans e114 e119 nD
+trans e119 e112 L
+trans e119 e120 nL
+trans e120 e112 U
+trans e120 e39 nU
+
+trans e116 e117 nR
+trans e116 e110 R
+trans e117 e110 L
+trans e117 e118 nL
+trans e118 e110 U
+trans e118 e39 nU
+
+trans e85 e89 nR
+trans e89 e90 U
+trans e89 e94 nU
+trans e94 e96 nD
+trans e94 e89 D
+trans e96 e39 nL
+trans e96 e89 L
+
+trans e90 e1 R
+trans e90 e95 nR
+trans e95 e90 D
+trans e95 e97 nD
+trans e97 e98 nL
+trans e97 e90 L
+trans e98 e39 nU
+trans e98 e90 U
+
+trans e82 e99 nD
+trans e99 e100 U
+trans e99 e103 nU
+trans e103 e82 R
+trans e103 e105 nR
+trans e105 e39 nL
+trans e105 e82 L
+
+trans e100 e1 D
+trans e100 e104 nD
+trans e104 e100 R
+trans e104 e106 nR
+trans e106 e100 L
+trans e106 e108 nL
+trans e108 e100 U
+trans e108 e39 nU
+
+trans e83 e101 nU
+trans e101 e83 R
+trans e101 e102 nR
+trans e102 e83 D
+trans e102 e107 nD
+trans e107 e83 L
+trans e107 e39 nL

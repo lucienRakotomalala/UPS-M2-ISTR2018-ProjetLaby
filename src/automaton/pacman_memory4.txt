@@ -1,0 +1,138 @@
+s e257
+s e219
+s e220
+s e121
+s e122
+s e123
+s e124
+s e125
+s e126
+s e127
+s e128
+s e129
+s e130
+s e131
+s e132
+s e133
+s e134
+s e135
+s e136
+s e137
+s e138
+s e139
+s e140
+s e141
+s e142
+s e143
+s e144
+s e145
+s e146
+s e147
+s e148
+s e149
+s e150
+s e151
+s e152
+s e153
+s e154
+s e155
+s e156
+s e157
+s e158
+s e159
+s e160
+
+trans e80 e219 nL
+trans e219 e39 nU
+trans e219 e220 U
+trans e220 e121 R
+trans e121 e122 D
+trans e122 e1 L
+
+trans e220 e123 nR
+trans e123 e124 D
+trans e123 e126 nD
+trans e126 e150 L
+trans e126 e135 nL
+trans e135 e220 U
+trans e135 e39 nU
+trans e150 e151 R
+trans e150 e152 nR
+trans e152 e153 D
+trans e152 e154 nD
+trans e154 e156 nL
+trans e154 e152 L
+trans e156 e152 U
+trans e156 e39 nU
+
+trans e153 e1 R
+trans e153 e155 nR
+trans e155 e153 D
+trans e155 e157 nD
+trans e157 e153 L
+trans e157 e257 nL
+trans e257 e39 nU
+trans e257 e153 U
+
+trans e151 e1 D
+trans e151 e160 nD
+trans e160 e151 R
+trans e160 e159 nR
+trans e159 e151 L 
+trans e159 e158 nL
+trans e158 e151 U
+trans e158 e39 nU
+
+trans e124 e125 R
+trans e124 e127 nR
+trans e127 e128 L
+trans e127 e130 nL
+trans e130 e127 D
+trans e130 e132 nD
+trans e132 e127 U
+trans e132 e39 nU
+
+trans e128 e1 R
+trans e128 e131 nR
+trans e131 e128 D
+trans e131 e133 nD
+trans e133 e128 L
+trans e133 e134 nL
+trans e134 e128 U
+trans e134 e39 nU
+
+trans e125 e1 L
+trans e125 e136 nL
+trans e136 e125 R
+trans e136 e148 nR
+trans e148 e125 D
+trans e148 e149 nD
+trans e149 e125 U
+trans e149 e39 nU
+
+trans e121 e137 nD
+trans e137 e138 L
+trans e137 e146 nL
+trans e146 e121 R
+trans e146 e147 nR
+trans e147 e121 U
+trans e147 e39 nU
+
+trans e138 e1 D
+trans e138 e143 nD
+trans e143 e138 R
+trans e143 e144 nR
+trans e144 e138 L
+trans e144 e145 nL
+trans e145 e39 nU
+trans e145 e138 U
+
+trans e122 e139 nL
+trans e139 e122 R
+trans e139 e140 nR
+trans e140 e122 D
+trans e140 e141 nD
+trans e141 e142 nL
+trans e141 e122 L
+trans e142 e122 U
+trans e142 e39 nU

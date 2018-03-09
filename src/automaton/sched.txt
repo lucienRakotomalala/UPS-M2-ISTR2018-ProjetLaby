@@ -9,7 +9,6 @@ t s2 s1 D3
 t s2 s1 D4
 t s2 s1 D5
 t s2 s1 D6
-<<<<<<< HEAD
 t s2 s1 L2
 t s2 s1 L3
 t s2 s1 L5
@@ -19,23 +18,9 @@ t s2 s1 L9
 t s2 s1 R1
 t s2 s1 R2
 t s2 s1 R4
-=======
-t s2 s1 L1
-t s2 s1 L2
-t s2 s1 L4
-t s2 s1 L5
-t s2 s1 L7
-t s2 s1 L8
-t s2 s1 R2
-t s2 s1 R3
->>>>>>> lucien
 t s2 s1 R5
-t s2 s1 R6
+t s2 s1 R7
 t s2 s1 R8
-<<<<<<< HEAD
-=======
-t s2 s1 R9
->>>>>>> lucien
 t s2 s1 U4
 t s2 s1 U5
 t s2 s1 U6
