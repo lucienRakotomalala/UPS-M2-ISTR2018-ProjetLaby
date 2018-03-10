@@ -25,10 +25,10 @@ noEscape = 0; % select if there is an escape or no
     Ms = max(size(labyInit.wallsH_i)); % size of lab  % static dimension
 
     labyInit.pacman_i = [1,1]; % static dimension
-    labyInit.ghost_i  = [2,2]; % static dimension
+  % TODELETE  labyInit.ghost_i  = [2,2]; % static dimension
 
     labyInit.escape_i = {[3 3], 0}; % static dimension
-    labyInit.caught_i = 0; % static dimension
+ % TODELETE   labyInit.caught_i = 0; % static dimension
 
     % initial value of walls command
     wallsInit.wallsCommand_i = 0; % dimension can change
@@ -36,28 +36,28 @@ noEscape = 0; % select if there is an escape or no
     % =1 : begin with up move 
 
     % initial value of pacman command
-    pacmanInit.pacmanCommand_i= zeros(1,4);% dimension can change
+    pacmanInit.pacmanCommand_i= zeros(1,5);% dimension can change
 
     % initial value of ghost command
-    ghostInit.ghostCommand_i= zeros(1,5);% dimension can change
+  % TODELETE  ghostInit.ghostCommand_i= zeros(1,5);% dimension can change
     
     % initial value of stop
     stopInit.escape = 0;
-    stopInit.caught = 0;
+  % TODELETE  stopInit.caught = 0;
     stopInit.pacman = 0;
-    stopInit.ghost  = 0;
-    stopInit.numberOfPossibleCaught=3;
+% TODELETE    stopInit.ghost  = 0;
+ % TODELETE   stopInit.numberOfPossibleCaught=3;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% MAIN SCRIPT %%%%%%%%%%%%%%%%%%%%%%%%%%%%
     i = 1 ;     
     SimulationStopped = 0;
 
     % creation of needed class
-    wrapper = Wrapper(11, 9, labyInit, wallsInit, pacmanInit, ghostInit, stopInit);
+    wrapper = Wrapper(11, 9, labyInit, wallsInit, pacmanInit, stopInit);
     % run 
 
     wrapper=wrapper.updateConnexion(1,1);
-    wrapper=wrapper.updateConnexion(2,1);
+   % TODELETE wrapper=wrapper.updateConnexion(2,1);
     wrapper=wrapper.updateConnexion(3,1);
     in = zeros(1,11);
     labyState(1,:)=wrapper.get_out();
@@ -84,15 +84,15 @@ else %sim break
     if(stop(1))
         fprintf('\t>Pacman escaped\n');
     end
-    if(stop(2))
-        fprintf('\t>Ghost caught Pacman  %d times\n',stopInit.numberOfPossibleCaught+1);
-    end
+%     if(stop(2))
+% % TODELETE        fprintf('\t>Ghost caught Pacman  %d times\n',stopInit.numberOfPossibleCaught+1);
+%     end
     if(stop(3))
         fprintf('\t>Pacman trapped\n');
     end
-    if(stop(4))
-        fprintf('\t>Ghost trapped\n');
-    end
+% % TODELETE    if(stop(4))
+%         fprintf('\t>Ghost trapped\n');
+%     end
 end
     n = i-1; % new number of iteration;
 %% Create picture for each iteration and Video in file data
