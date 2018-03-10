@@ -32,26 +32,32 @@ function [ Matrice] = creationMatricetransition( nameOfFileFSM )
     NbS = 0;
     NbT = 0;
     while i <= length(C)    %% While they are cases
-        NbS = NbS+1
-        States{NbS} = C{i};
-        
-        i = i+3;
-        
-        while ~isempty(strfind(ST, C{i}(end))) 
+         if ~isempty(strfind(SP, C{i}(1)))
             
-            NbT = NbT + 1;
-            Transition = [Transition typoTransition];
-            Transition(NbT).Name = C{i};
-            i = i+1;
-            Transition(NbT).StateIn = States{NbS};
-            Transition(NbT).StateOut = C{i};
+            NbS = NbS+1;
+            States{NbS} = C{i};
+
             i = i+3;
-            if i>= length(C)
-                disp('Fin de Loop')
-                break
+
+            while ~isempty(strfind(ST, C{i}(end))) 
+
+                NbT = NbT + 1;
+                Transition = [Transition typoTransition];
+                Transition(NbT).Name = C{i};
+                i = i+1;
+                Transition(NbT).StateIn = States{NbS};
+                Transition(NbT).StateOut = C{i};
+                i = i+3;
+                if i>= length(C)
+                    disp('Fin de Loop')
+                    break
+                end
+
             end
-            
-        end
+         else
+             i = i+1
+         end
+         
     end
 end
 %% Fichier cellule fsm
