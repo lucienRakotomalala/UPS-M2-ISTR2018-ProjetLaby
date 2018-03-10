@@ -17,25 +17,41 @@ function [ Matrice] = creationMatricetransition( nameOfFileFSM )
     % StatePatern
     SP = 'l';
     % Transition Patern
-    ST = 'nUDRLw';
+    ST = 'UDRL';
     % Include the file in a struct
     C = textscan(F,'%s');
     close('all');
     % Include the struct in a vector
     C = C{1,1};
     
-    States = [];
+    States = cell(str2num(C{1}), 1);
     Transition = [];
+    typoTransition = struct('Name','','StateIn','','StateOut','');
     %% Idée en suspens : strjoin(C,'\n')
-    i = 1;
-    while i <= length(C)
-       temp = strfind(C(i),ST)
-       if ~isempty(temp{1,1})  % Obligé de regarder si la cellule est vide
-           Transition = [Transition C(i)];
-           % Jump to the transition level
-           
-       end
-       i = i+1;
+    i = 2;
+    NbS = 0;
+    NbT = 0;
+    while i <= length(C)    %% While they are cases
+        NbS = NbS+1
+        States{NbS} = C{i};
+        
+        i = i+3;
+        
+        while ~isempty(strfind(ST, C{i}(end))) 
+            
+            NbT = NbT + 1;
+            Transition = [Transition typoTransition];
+            Transition(NbT).Name = C{i};
+            i = i+1;
+            Transition(NbT).StateIn = States{NbS};
+            Transition(NbT).StateOut = C{i};
+            i = i+3;
+            if i>= length(C)
+                disp('Fin de Loop')
+                break
+            end
+            
+        end
     end
 end
 %% Fichier cellule fsm
