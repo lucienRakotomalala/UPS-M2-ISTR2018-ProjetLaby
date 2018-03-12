@@ -29,12 +29,12 @@ wD  = matriceTemp{10};%cellule 10
 
 MatricesTransition=zeros(size(U));
 
-Poids = zeros(size(U));
+Poids = ones(size(U));
 MatricesTransition(find(U==1)) = 1;
 MatricesTransition(find(D==1)) = 2;
 MatricesTransition(find(L==1)) = 3;
 MatricesTransition(find(R==1)) = 4;
-Poids(find(MatricesTransition~=0)) = 1;
+Poids(find(MatricesTransition~=0)) = 0;
 
 MatricesTransition(find(nU==1))=5;
 MatricesTransition(find(nD==1))=6;
@@ -43,16 +43,19 @@ MatricesTransition(find(nR==1))=8;
 MatricesTransition(find(wR==1))=9;
 MatricesTransition(find(wD==1))=10;
 
+MatricesTransition
 
 [Buff]=ParcourirMatricesTransitions(MatricesTransition, Poids)
 
+%%
 etat_dep=cellstr('Etat départ');
 liste_etats_dep=num2cell(Buff(1,:));
 transitions=cellstr('Transition');
 etat_arr=cellstr('Etat arrivée');
 liste_etats_arr=num2cell(Buff(4,:));
 
-for k = 2:7
+%%
+for k = 2:length(U)
     if(Buff(3,k) == 1)
         liste_transitions(k-1)=cellstr('Up');
     else if (Buff(3,k)== 2)

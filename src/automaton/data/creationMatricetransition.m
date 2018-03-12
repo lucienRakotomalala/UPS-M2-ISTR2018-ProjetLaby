@@ -20,7 +20,7 @@ function [ MatriceCell] = creationMatricetransition( nameOfFileFSM )
     ST = 'UDRL';
     % Include the file in a struct
     C = textscan(F,'%s');
-    close('all');
+    fclose('all');
     % Include the struct in a vector
     C = C{1,1};
     
@@ -32,10 +32,13 @@ function [ MatriceCell] = creationMatricetransition( nameOfFileFSM )
     NbS = 0;
     NbT = 0;
     while i <= length(C)    %% While they are cases
+
          if ~isempty(strfind(SP, C{i}(1)))% If it is a State
+
             
             NbS = NbS+1;
             States{NbS} = C{i};
+
 
             i = i+3;                % Jump 3 cases
 
@@ -49,6 +52,7 @@ function [ MatriceCell] = creationMatricetransition( nameOfFileFSM )
                 Transition(NbT).StateOut = C{i};
                 i = i+3;                            % Jump 3 cases
                 if i>= length(C)                    % Ifthe last jump end the cell
+
                     disp('Fin de Loop')
                     break
                 end
@@ -103,9 +107,13 @@ function [ MatriceCell] = creationMatricetransition( nameOfFileFSM )
         Events(i).matrice = zeros(length(States),length(States));
         for j = 1:NbT
            if strcmp(Events(i).Name ,Transition(j).Name)
+               if Transition(j).StateIn ~= Transition(j).StateOut % Add
                 Events(i).matrice(Transition(j).StateIn, Transition(j).StateOut) = 1;
+   
+               end
            end
         end
+
     end
     
     %% Mise en place dans une cellule
@@ -120,7 +128,7 @@ function [ MatriceCell] = creationMatricetransition( nameOfFileFSM )
             if strcmp(Events(j).Name, cellOrder(i))
                 break;
             end
-            j = j+1
+            j = j+1;
        end
        if j <= length(Events)
             MatriceCell{i} = Events(j).matrice;
