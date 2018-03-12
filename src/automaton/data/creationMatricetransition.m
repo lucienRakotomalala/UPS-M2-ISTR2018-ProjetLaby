@@ -6,7 +6,7 @@ function [ Matrice] = creationMatricetransition( nameOfFileFSM )
 %   transition are named with a 'w','D','L', 'R', 'U' or 'n' in first case 
 %
 %   Input : nameOfFileFSM   : the name of the file wich contains the
-%                             automata
+%                              automata
 %
 %   Output : 
 %
@@ -32,32 +32,80 @@ function [ Matrice] = creationMatricetransition( nameOfFileFSM )
     NbS = 0;
     NbT = 0;
     while i <= length(C)    %% While they are cases
-         if ~isempty(strfind(SP, C{i}(1)))
+         if ~isempty(strfind(SP, C{i}(1)))% If it is a State
             
             NbS = NbS+1;
             States{NbS} = C{i};
 
-            i = i+3;
+            i = i+3;                % Jump 3 cases
 
-            while ~isempty(strfind(ST, C{i}(end))) 
-
+            while ~isempty(strfind(ST, C{i}(end))) % While it's a description of
+                                                   % a transition
                 NbT = NbT + 1;
                 Transition = [Transition typoTransition];
                 Transition(NbT).Name = C{i};
-                i = i+1;
+                i = i+1;                            % Jump a cases
                 Transition(NbT).StateIn = States{NbS};
                 Transition(NbT).StateOut = C{i};
-                i = i+3;
-                if i>= length(C)
+                i = i+3;                            % Jump 3 cases
+                if i>= length(C)                    % Ifthe last jump end the cell
                     disp('Fin de Loop')
                     break
                 end
 
             end
          else
-             i = i+1
+             i = i+1;
          end
          
+    end
+    %% Numérotation etats
+    EtatInitial = '';
+    EtatsMarque = '';
+    
+    
+    for j = 1:length(Transition)
+        i = 1;
+        while isempty(strfind(States{i}, Transition(j).StateIn))
+            i = i+1;
+        end
+        Transition(j).StateIn = i;
+        
+    end
+    
+    for j = 1:length(Transition)
+        i = 1;
+        while isempty(strfind(States{i}, Transition(j).StateOut))
+            i = i+1;
+        end
+        Transition(j).StateOut = i;
+        
+    end
+    %% Research all Events (Ce qu'ai voulu faire est ...  inutile...
+    
+    typoEvents = struct('Name',''); 
+    Events = [];
+    NbE = 0;
+    for i = 1:NbT % For all transitions
+		isAlreadyAnEvent = 0;
+        for j = 1:NbE
+           isAlreadyAnEvent = isAlreadyAnEvent + strcmp(Events(j).Name, Transition(i).Name) ;
+        end
+        if ~isAlreadyAnEvent   % If it is not an event
+            NbE = NbE + 1;
+            Events = [Events typoEvents];
+            Events(end).Name = Transition(i).Name;
+        end
+    end
+    
+    %% Creation des matrices
+    for i = 1 :NbE
+        Events(i).matrice = zeros(length(States),length(States));
+        for j = 1:NbT
+           if strcmp(Events(i).Name ,Transition(j).Name)
+                Events(i).matrice(Transition(j).StateIn, Transition(j).StateOut) = 1;
+           end
+        end
     end
 end
 %% Fichier cellule fsm
