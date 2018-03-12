@@ -1,4 +1,6 @@
-function Video = CreatePituresAndVideo(n, escape_i, labyState )
+function Video = CreatePituresAndVideo_textured(n, escape_i, labyState )
+%%
+escape_i= labyInit.escape_i
 
 %% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -21,7 +23,7 @@ Visu(:,[1 N],:)=1; % Horizontal sides
  % Filling wall intersections
 i = find((1:N).*mod((1:N),2));
 Visu(i,i,:)=1;
-
+% 
 for i = 1:n
     %walls
     %Vertical walls
@@ -58,14 +60,26 @@ end
 % 3. etendre la 11x11*3 avec kron
     
 resImg      = 100;  %resolution of image in pixel size = resImg*(2*n+1)
-emptyColor  = [1,1,1];
-wallsColor  = [0,0,1];
-
-ghostColor  = [1,.5,0];
-pacmanColor = [0,1,.5];
-escapeColor = [1 ,0,0];
-
-imgs        = zeros(resImg*N , resImg*N , 3 , n); % n rgb pictures with ( x  pixels)
+%%
+border          = imread('texture/border.png');
+border_corner   = imread('texture/border_corner.png');
+pacman          = imread('texture/pacman.png');
+wall            = imread('texture/wall.png');
+wall_middle_full= imread('texture/wall_middle_full.png');
+wall_middle_half= imread('texture/wall_middle_half.png');
+%%
+i = 0;
+j = 0;
+while j < max
+while i< 100
+    
+    
+    
+    
+end
+%%
+% cim image :
+imgs        = zeros(resImg*Ms + Ms/2-1 , resImg*N , 3 , n); % n rgb pictures with ( x  pixels)
 rgbImg      = zeros(N , N , 3);
 
 %%
@@ -78,7 +92,7 @@ for i = 1 : n
     rgbImg = setColor(rgbImg,Visu(:,:,i),wallsColor,1);
     rgbImg = setColor(rgbImg,Visu(:,:,i),ghostColor,2);
     rgbImg = setColor(rgbImg,Visu(:,:,i),pacmanColor,3);
-    rgbImg=setColor(rgbImg,Visu(:,:,i),escapeColor,4);
+    rgbImg = setColor(rgbImg,Visu(:,:,i),escapeColor,4);
 
 
     %3.kron
