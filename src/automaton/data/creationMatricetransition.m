@@ -20,7 +20,7 @@ function [ MatriceCell] = creationMatricetransition( nameOfFileFSM )
     ST = 'UDRL';
     % Include the file in a struct
     C = textscan(F,'%s');
-    fclose('all');
+    fclose(F);
     % Include the struct in a vector
     C = C{1,1};
     
