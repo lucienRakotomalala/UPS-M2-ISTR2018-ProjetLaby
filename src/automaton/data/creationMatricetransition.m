@@ -1,4 +1,4 @@
-function [ Matrice] = creationMatricetransition( nameOfFileFSM )
+function [ MatriceCell] = creationMatricetransition( nameOfFileFSM )
 %% Edit matrice transitions of .fsm file
 %   Condition : 
 %   state are named with a 'l' in a first case
@@ -106,6 +106,27 @@ function [ Matrice] = creationMatricetransition( nameOfFileFSM )
                 Events(i).matrice(Transition(j).StateIn, Transition(j).StateOut) = 1;
            end
         end
+    end
+    
+    %% Mise en place dans une cellule
+    %   Cell contain 10 Events : U - D - L - R - nU - nD - nL - nR - wR - wD
+    % 
+    MatriceCell = cell(10,1);
+    cellOrder = {'U', 'D' 'L','R','nU','nD','nL','nR','wR','wD'};
+   for i = 1:length(cellOrder)
+       isEventExist = 0;
+       j = 1;
+       while j<= length(Events)
+            if strcmp(Events(j).Name, cellOrder(i))
+                break;
+            end
+            j = j+1
+       end
+       if j <= length(Events)
+            MatriceCell{i} = Events(j).matrice;
+       else
+           MatriceCell{i} = zeros(NbS, NbS);
+       end
     end
 end
 %% Fichier cellule fsm
