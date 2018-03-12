@@ -1,68 +1,30 @@
-function [ MatriceCell] = creationMatricetransition( nameOfFileFSM )
-%% Edit matrice transitions of .fsm file
-%   Condition : 
-%   state are named with a 'l' in a first case
+function [ MatriceCell, Alphabet] = creationMatricetransition( nameOfFileFSM )
+%% Edit matrice transitions of .fsm file and .txt file
+%   Condition : state are named with a 'l' in a first case
 %
-%   transition are named with a 'w','D','L', 'R', 'U' or 'n' in first case 
+%   transition are named with a 'w','D','L', 'R', 'U' or 'n' in first case
 %
-%   Input : nameOfFileFSM   : the name of the file wich contains the
+%   Input : nameOfFile        : the name of the file wich contains the
 %                              automata
 %
-%   Output : 
+%   Output                    : cell with All Transitions Matrix
 %
-%% Open File
-    %nameOfFileFSM = 'Commande.fsm';
-    F = fopen(nameOfFileFSM,'r');
-    
+
     % StatePatern
     SP = 'l';
     % Transition Patern
     ST = 'UDRL';
-    % Include the file in a struct
-    C = textscan(F,'%s');
-    fclose(F);
-    % Include the struct in a vector
-    C = C{1,1};
-    
-    States = cell(str2num(C{1}), 1);
-    Transition = [];
-    typoTransition = struct('Name','','StateIn','','StateOut','');
-    %% Idée en suspens : strjoin(C,'\n')
-    i = 2;
-    NbS = 0;
-    NbT = 0;
-    while i <= length(C)    %% While they are cases
-
-         if ~isempty(strfind(SP, C{i}(1)))% If it is a State
-
+%% Selection Type of File
+    if strcmp(nameOfFileFSM(end-2:end), 'fsm')
+       [States, Transition] = getStateTransitionFSM(nameOfFileFSM,ST, SP);       
+    else if strcmp(nameOfFileFSM(end-2:end), 'txt')
+           [States, Transition] = getStateTransitionTXT(nameOfFileTXT);
             
-            NbS = NbS+1;
-            States{NbS} = C{i};
-
-
-            i = i+3;                % Jump 3 cases
-
-            while ~isempty(strfind(ST, C{i}(end))) % While it's a description of
-                                                   % a transition
-                NbT = NbT + 1;
-                Transition = [Transition typoTransition];
-                Transition(NbT).Name = C{i};
-                i = i+1;                            % Jump a cases
-                Transition(NbT).StateIn = States{NbS};
-                Transition(NbT).StateOut = C{i};
-                i = i+3;                            % Jump 3 cases
-                if i>= length(C)                    % Ifthe last jump end the cell
-
-                    disp('Fin de Loop')
-                    break
-                end
-
-            end
-         else
-             i = i+1;
-         end
-         
+        else
+            error('Not a file suported')
+        end
     end
+
     %% Numérotation etats
     EtatInitial = '';
     EtatsMarque = '';
@@ -70,7 +32,7 @@ function [ MatriceCell] = creationMatricetransition( nameOfFileFSM )
     
     for j = 1:length(Transition)
         i = 1;
-        while isempty(strfind(States{i}, Transition(j).StateIn))
+        while isempty(strfind(States(i).Name, Transition(j).StateIn))
             i = i+1;
         end
         Transition(j).StateIn = i;
@@ -79,7 +41,7 @@ function [ MatriceCell] = creationMatricetransition( nameOfFileFSM )
     
     for j = 1:length(Transition)
         i = 1;
-        while isempty(strfind(States{i}, Transition(j).StateOut))
+        while isempty(strfind(States(i).Name, Transition(j).StateOut))
             i = i+1;
         end
         Transition(j).StateOut = i;
@@ -90,7 +52,7 @@ function [ MatriceCell] = creationMatricetransition( nameOfFileFSM )
     typoEvents = struct('Name',''); 
     Events = [];
     NbE = 0;
-    for i = 1:NbT % For all transitions
+    for i = 1:length(Transition) % For all transitions
 		isAlreadyAnEvent = 0;
         for j = 1:NbE
            isAlreadyAnEvent = isAlreadyAnEvent + strcmp(Events(j).Name, Transition(i).Name) ;
@@ -105,7 +67,7 @@ function [ MatriceCell] = creationMatricetransition( nameOfFileFSM )
     %% Creation des matrices
     for i = 1 :NbE
         Events(i).matrice = zeros(length(States),length(States));
-        for j = 1:NbT
+        for j = 1:length(Transition)
            if strcmp(Events(i).Name ,Transition(j).Name)
                if Transition(j).StateIn ~= Transition(j).StateOut % Add
                 Events(i).matrice(Transition(j).StateIn, Transition(j).StateOut) = 1;
@@ -116,8 +78,15 @@ function [ MatriceCell] = creationMatricetransition( nameOfFileFSM )
 
     end
     
+    %% Expression of Langage of System
+  %   e= strcat(Events.Name,{' '});
+  Alphabet = [];  
+  for i = 1:NbE
+        Alphabet = [Alphabet cellstr(Events(i).Name)];
+  end
     %% Mise en place dans une cellule
-    %   Cell contain 10 Events : U - D - L - R - nU - nD - nL - nR - wR - wD
+    %   Cell contain 10 Events : U - D - L - R - nU - nD - nL - nR - wR -
+    %   wD
     % 
     MatriceCell = cell(10,1);
     cellOrder = {'U', 'D' 'L','R','nU','nD','nL','nR','wR','wD'};
@@ -139,13 +108,9 @@ function [ MatriceCell] = creationMatricetransition( nameOfFileFSM )
 end
 %% Fichier cellule fsm
 %
-%  1 Nombre d'etat     
+%  1 Nombre d'etat
 %
 %   2 Etat i
-%       0
-%       1   
-%       Transition sortante i    
-%           Etat d'arrivée
-%           C   On suppose que toute les transitions sont observables et
-%           commandables
-%           O
+%       0 1 Transition sortante i
+%           Etat d'arrivée C   On suppose que toute les transitions sont
+%           observables et commandables O
