@@ -22,7 +22,7 @@ function [States, Transition] = getStateTransitionFSM( nameOfFileFSM, ST, SP )
     %C = C{1,1};
     
     States = [];
-    typoState = struct('Name','','Initial',0,'Marked','0');
+    typoState = struct('Name','','Initial',0,'Marked',0);
     NbS = 0;
     Transition = [];
     typoTransition = struct('Name','','StateIn','','StateOut','');
@@ -57,7 +57,6 @@ function [States, Transition] = getStateTransitionFSM( nameOfFileFSM, ST, SP )
      end
      
      if strState == 4
-         disp('State 4 transition')
           if ~isempty(str{1}) % If it os the declaration of a Transition
             NbT = NbT + 1;
             Transition = [Transition typoTransition];

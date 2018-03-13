@@ -1,4 +1,4 @@
-function [ MatriceCell, Alphabet] = creationMatricetransition( nameOfFileFSM )
+function [ MatriceCell, Alphabet, States] = creationMatricetransition( nameOfFileFSM )
 %% Edit matrice transitions of .fsm file and .txt file
 %   Condition : state are named with a 'l' in a first case
 %
@@ -89,7 +89,7 @@ function [ MatriceCell, Alphabet] = creationMatricetransition( nameOfFileFSM )
     %   wD
     % 
     MatriceCell = cell(10,1);
-    cellOrder = {'U', 'D' 'L','R','nU','nD','nL','nR','wR','wD'};
+    cellOrder = {'U', 'D' 'L','R','nU','nD','nL','nR','wR','wD','espc'};
    for i = 1:length(cellOrder)
        isEventExist = 0;
        j = 1;
