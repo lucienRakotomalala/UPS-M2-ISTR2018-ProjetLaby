@@ -1,6 +1,6 @@
 function Video = CreatePituresAndVideo_textured(n, escape_i, labyState )
 %%
-escape_i= labyInit.escape_i
+%escape_i= labyInit.escape_i
 
 %% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -73,7 +73,7 @@ for i = 1:n
   
     pacpos =  labyState{i,1}*[2 0; 0 2]; % adapt position and flip
     
-    Visu(pacpos(1),pacpos(2),i)=1;  % Pacman Position
+    Visu(pacpos(2),pacpos(1),i)=1;  % Pacman Position
     escapePos = escape_i{1}*[2 0; 0 2];
         if pacpos==escapePos
             Visu(escapePos(1),escapePos(2),:)=4;     % Pacman on Escape
@@ -84,31 +84,33 @@ for i = 1:n
 %
     
     %ghost (out{2} : ghost [x y]) in Visu 2 = ghost
-    ghostpos =  labyState{i,2}*[2 0; 0 2]; % adapt position and flip
+    ghostpos =  labyState{i,2}*[0 2; 2 0]; % adapt position and flip
     Visu(ghostpos(1),ghostpos(2),i)=2;
 end
  for i = 3:2:N-2
      for j = 3:2:N-2
- if (Visu(i,j-1,:)==16 + Visu(i,j+1,:)==16 + Visu(i-1,j,:)==14 + Visu(i+1,j,:)==14)==0
+        if (Visu(i,j-1,:)==16 + Visu(i,j+1,:)==16 + Visu(i-1,j,:)==14 + Visu(i+1,j,:)==14)==0
+            fprintf('i(%d)j(%d)\t Empty Middle Walls\n',i,j)
             Visu(i,j,:)= 17; %% Middle Wall is Empty
-        else if (Visu(i,j-1,:)==16 + Visu(i,j+1,:)==16 + Visu(i-1,j,:)==14 + Visu(i+1,j,:)==14)>3
-                Visu(i,j,:)=18; %% Middle Wall is Full
-            else if ( Visu(i-1,j,:)==14 + Visu(i,j+1,:)==16)>0
-                    Visu(i,j,:)= 19; % Wall Middle NW
-                else if (Visu(i+1,j,:)==14 + Visu(i,j+1,:)==16)>0
-                           Visu(i,j,:)= 20; % Wall Middle NE
-                    else if (Visu(i-1,j,:)==1 + Visu(i,j-1,:)==16)>0
-                            Visu(i,j,:)=21; % Wall Middle SW
-                        else if (Visu(i+1,j,:)==16 + Visu(i,j-1,:)==14)>0
-                                Visu(i,j,:)=22; % Wall Middle SE
-                            end
-                        end
-                    end
-                end
-            end
- end
+        elseif (Visu(i,j-1,:)==16 + Visu(i,j+1,:)==16 + Visu(i-1,j,:)==14 + Visu(i+1,j,:)==14)>3
+            fprintf('i(%d)j(%d)\t Full Middle Walls\n',i,j)
+        	Visu(i,j,:)=18; %% Middle Wall is Full
+        elseif ( Visu(i-1,j,:)==14 + Visu(i,j+1,:)==16)>0
+            fprintf('i(%d)j(%d)\t NW Middle Walls\n',i,j)
+        	Visu(i,j,:)= 19; % Wall Middle NW
+        elseif (Visu(i+1,j,:)==14 + Visu(i,j+1,:)==16)>0
+            fprintf('i(%d)j(%d)\t NE Middle Walls\n',i,j)
+        	Visu(i,j,:)= 20; % Wall Middle NE
+        elseif (Visu(i-1,j,:)==1 + Visu(i,j-1,:)==16)>0
+            fprintf('i(%d)j(%d)\t SW Middle Walls\n',i,j)
+            Visu(i,j,:)=21; % Wall Middle SW
+        elseif (Visu(i+1,j,:)==16 + Visu(i,j-1,:)==14)>0
+            fprintf('i(%d)j(%d)\t SE Middle Walls\n',i,j)
+        	Visu(i,j,:)=22; % Wall Middle SE
+        end
      end
  end
+ 
  
                         
                 
@@ -198,7 +200,7 @@ for a = 1:n
             %fprintf('x : %d-%d \t y : %d-%d\n',x,x+xl-1,y,y+yl-1)
            % disp(size(imgs))
             % application text canal R
-            fprintf('[%dx%d(%d)] ',xl,yl,Visu(i,j,a)+1);
+           % fprintf('[%dx%d(%d)] ',xl,yl,Visu(i,j,a)+1);
                 imgs(y:y+yl-1,x:x+xl-1,1,a) = text.img{Visu(i,j,a)+1}(:,:,1);% R
                 %sm = sm +size(text.img{Visu(i,j,a)+1}(:,:,1),2)
             % application text canal G
@@ -209,15 +211,36 @@ for a = 1:n
             x = x + xl;
             % y pareil pr la même ligne
            % fprintf('i(%d) j(%d) x(%d) y(%d) xl(%d) yl(%d)\n',i,j,x,y,xl,yl)
-           figure(1)
-           imshow(imgs) 
-           figure(2)
-                imagesc(text.img{Visu(i,j,a)+1})
-            pause(.1)
+           %figure(1)
+           %imshow(imgs(:,:,:,a)) 
+           %figure(2)
+            %    imagesc(text.img{Visu(i,j,a)+1})
+            %pause(.1)
         end
-        fprintf('\n');
+        %fprintf('\n');
         x = 1;%?
         y = y + yl;
     end
     y = 1;% ?
 end
+%% save as pictures AND video 
+repo = strcat('./data/',datestr(now,'yyyy-mm-dd_HH-MM'));
+mkdir(repo);
+save(strcat(repo,'/state'),'labyState');
+video = VideoWriter(strcat(repo,'/video.avi'),'Motion JPEG AVI');
+open(video)
+for i = 1 : n
+    name = strcat(repo,'/Simu_',int2str(i),'.jpg');
+    imwrite(imgs(:,:,:,i),name,'jpg'); 
+    %A = imread(name);
+    for j = 1 : 20
+        writeVideo(video,imgs(:,:,:,i));
+    end
+end
+close(video)
+
+
+
+end
+
+
