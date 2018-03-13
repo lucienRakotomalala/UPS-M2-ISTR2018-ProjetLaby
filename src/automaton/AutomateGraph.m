@@ -3,10 +3,17 @@ classdef AutomateGraph % Claire a choisi le titre
     %   Detailed explanation goes here
     
     properties
-        state
-        transition
+        state       % Struct of all States of the automata
+                    % Particuliar Type :
+                    % Each state contains :   -Name 
+                    %                         -Initial : 1 if it's the Only
+                    %                         One Initial State, 0 if not
+                    %                         -Marked  : 1 if it the state
+                    %                         is marked
+        transition  % 
         matrixTrans
         Langage
+        vectors
     end
     
     methods
@@ -14,9 +21,7 @@ classdef AutomateGraph % Claire a choisi le titre
             
         end
         
-        function obj = setState(st)
-           obj.state =  st;
-        end
+
     end
     
 end
