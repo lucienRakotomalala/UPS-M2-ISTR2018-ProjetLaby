@@ -22,8 +22,7 @@ classdef ModelPacman < ModelSED
     properties
         presentState;
         initialState;
-        memory;
-        i;
+        %memory;
     end
     
    methods
@@ -37,7 +36,7 @@ classdef ModelPacman < ModelSED
         
 
 function nextState = f(obj,in)
-    nextState = zeros(1,4);     
+    nextState = zeros(1,5);     
     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 %%%% COMMANDE 1 %%%%
@@ -84,29 +83,26 @@ function nextState = f(obj,in)
                 %%%% COMMANDE 3 %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %down-down-right-up-right-down
-    if obj.i==1
+    if obj.presentState(5)==0
         nextState(4)=1;
-        obj.i=obj.i+1;
-    elseif obj.i==2
+        nextState(5)=obj.presentState(5)+1;
+    elseif obj.presentState(5)==1
          nextState(4)=1;
-         obj.i=obj.i+1;
-    elseif obj.i==3
+         nextState(5)=obj.presentState(5)+1;
+    elseif obj.presentState(5)==2
          nextState(3)=1;
-            obj.i=obj.i+1;
-    elseif obj.i==4
+            nextState(5)=obj.presentState(5)+1;
+    elseif obj.presentState(5)==3
          nextState(2)=1;
-            obj.i=obj.i+1;
-    elseif obj.i==5
+            nextState(5)=obj.presentState(5)+1;
+    elseif obj.presentState(5)==4
          nextState(3)=1;
-            obj.i=obj.i+1;
-    elseif obj.i==6
+            nextState(5)=obj.presentState(5)+1;
+    elseif obj.presentState(5)==5
          nextState(4)=1;
-        obj.i=obj.i+1;
+        nextState(5)=obj.presentState(5)+1;
     else
-           nextState(1)=0;
-           nextState(2)=0;
-           nextState(3)=0;
-           nextState(4)=0;
+           nextState=obj.initialState;
     end
 end
 
@@ -117,9 +113,7 @@ function obj = m(obj,nextState, init)
                 %fprintf('Init Pacman\n') % TODO
                 obj.presentState = obj.initialState; 
                 %%Commande 2%% 
-                obj.memory=zeros(1,4);
-                %%Commande 3%%
-                obj.i=1;
+                %obj.memory=zeros(1,4);
             else
                 obj.presentState = nextState;
             end
@@ -127,7 +121,7 @@ end
         
         % --- Create the outputs
 function out = g(obj)
-            out= obj.presentState;
+            out= obj.presentState(1:4);
         end
     end
     

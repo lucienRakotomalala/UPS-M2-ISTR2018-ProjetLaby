@@ -74,9 +74,9 @@ function figure_Laby_OpeningFcn(hObject, eventdata, handles, varargin)
                             1 0 0]; %  dimension can change
                        
     labyInit.pacman_i = [1,	1]; % static dimension
-    labyInit.ghost_i  = [3,1]; % static dimension
+% TODELETE    labyInit.ghost_i  = [3,1]; % static dimension
     labyInit.escape_i = {[3 3], 0}; % static dimension
-    labyInit.caught_i = 0; % static dimension
+ % TODELETE   labyInit.caught_i = 0; % static dimension
 
     % initial value of walls command
     wallsInit.wallsCommand_i = 0; % dimension can change
@@ -84,21 +84,21 @@ function figure_Laby_OpeningFcn(hObject, eventdata, handles, varargin)
     % =1 : begin with up move 
 
     % initial value of pacman command
-    pacmanInit.pacmanCommand_i= zeros(1,4);% dimension can change
+    pacmanInit.pacmanCommand_i= zeros(1,5);% dimension can change
 
     % initial value of pacman command
-    ghostInit.ghostCommand_i= zeros(1,5);% dimension can change
+ % TODELETE   ghostInit.ghostCommand_i= zeros(1,5);% dimension can change
     
     % initial value of stop
     stopInit.escape = 0;
-    stopInit.caught = 0;
+ % TODELETE   stopInit.caught = 0;
     stopInit.pacman = 0;
-    stopInit.ghost  = 0;
-    stopInit.numberOfPossibleCaught=3;
+  % TODELETE  stopInit.ghost  = 0;
+% TODELETE    stopInit.numberOfPossibleCaught=3;
     
-    handles.wrapper = Wrapper(11, 9, labyInit, wallsInit, pacmanInit, ghostInit, stopInit);
+    handles.wrapper = Wrapper(11, 9, labyInit, wallsInit, pacmanInit, stopInit);
     handles = createUIWalls(handles);
-    handles = createUIGhost(handles);
+  % TODELETE  handles = createUIGhost(handles);
     handles = createUIPacman(handles);
     handles = createUIEscape(handles);
     guidata(hObject,handles);    % OMFG !!!
@@ -132,10 +132,10 @@ function ui_Callback(hObject, eventdata, handles)
         5  : pacmanUpBut
         6  : pacmanRightBut
         7  : pacmanDownBut
-        8  : ghostLeftBut
-        9  : ghostUpBut
-        10 : ghostRightBut
-        11 : ghostDownBut
+% TODELETE        8  : ghostLeftBut
+  % TODELETE      9  : ghostUpBut
+  % TODELETE      10 : ghostRightBut
+  % TODELETE      11 : ghostDownBut
         #12 : step(not in in)
 
 %}
@@ -160,7 +160,7 @@ function connect_Callback(hObject, eventdata, handles)
 %{
         hObject.UserData :
             100 : connectWalls
-            101 : connectGhost
+ % TODELETE           101 : connectGhost
             102 : connectPacman
 %}
     handles.wrapper= handles.wrapper.updateConnexion(hObject.UserData-99,hObject.Value); % 1:walls ; 2:ghost ; 3:pacman
@@ -169,14 +169,14 @@ function connect_Callback(hObject, eventdata, handles)
     switch hObject.UserData
         case 100
             connection = 'wallsPanel';
-        case 101 
-            connection = 'ghostPanel';
+%         case 101 
+%             connection = 'ghostPanel';
         case 102 
             connection = 'pacmanPanel';
     end
 
     set(handles.(connection),'Visible',isOne(~hObject.Value));
-    if(handles.wrapper.wallsBit || handles.wrapper.pacmanBit || handles.wrapper.ghostBit) %% mod to || si gestion de commande partielle
+    if(handles.wrapper.wallsBit || handles.wrapper.pacmanBit ) %% mod to || si gestion de commande partielle
         set(handles.step,'Visible','on');
     else 
         set(handles.step,'Visible','off');
@@ -207,39 +207,39 @@ function h = createUIPacman(handles)
 end
 
 % --- Create a graphical element for pacman
-function h = createUIGhost(handles)
-    nbPts = 32; % Definition of object
-    %%%%%
-    h = handles;
-    h.ghostPositionInit  = [2 1];
-    h.ghostColor         = [0.83 .33 0.1] ; % strange orange
-
-    circle = 1/4;
-    hold on;
-
-    pos = linspace(0,pi,nbPts);
-
-    % Ghost cape
-    x_v = linspace(h.ghostPositionInit(1)-.5 - circle, h.ghostPositionInit(1)-.5 + circle, nbPts);
-    y_v = h.ghostPositionInit(2)-.5-circle + circle*.25*sin(linspace(pi,8*pi,length(x_v)));
-
-    % All point
-    x = [h.ghostPositionInit(1)-.5 [circle*cos(pos)+ h.ghostPositionInit(1)-.5] ... Head of ghost
-        h.ghostPositionInit(1)-.5 h.ghostPositionInit(1)-.5-circle ... Made a line which separate the ghost in two parts
-        h.ghostPositionInit(1)-.5-circle ...
-        x_v ...     Cape
-        h.ghostPositionInit(1)-.5+circle h.ghostPositionInit(1)-.5+circle];
-
-    y = [h.ghostPositionInit(2)-.5 [circle*sin(pos)+h.ghostPositionInit(2)-.5] ...
-        h.ghostPositionInit(2)-.5 h.ghostPositionInit(2)-.5...
-        h.ghostPositionInit(2)-.5-circle ...
-        y_v ...
-        h.ghostPositionInit(2)-.5-circle h.ghostPositionInit(2)-.5];
-
-    axes(h.axes1);
-    h.ghost = patch(x,y,h.ghostColor);
-    hold off;
-end
+%% TODELETE function h = createUIGhost(handles)
+%     nbPts = 32; % Definition of object
+%     %%%%%
+%     h = handles;
+%     h.ghostPositionInit  = [2 1];
+%     h.ghostColor         = [0.83 .33 0.1] ; % strange orange
+% 
+%     circle = 1/4;
+%     hold on;
+% 
+%     pos = linspace(0,pi,nbPts);
+% 
+%     % Ghost cape
+%     x_v = linspace(h.ghostPositionInit(1)-.5 - circle, h.ghostPositionInit(1)-.5 + circle, nbPts);
+%     y_v = h.ghostPositionInit(2)-.5-circle + circle*.25*sin(linspace(pi,8*pi,length(x_v)));
+% 
+%     % All point
+%     x = [h.ghostPositionInit(1)-.5 [circle*cos(pos)+ h.ghostPositionInit(1)-.5] ... Head of ghost
+%         h.ghostPositionInit(1)-.5 h.ghostPositionInit(1)-.5-circle ... Made a line which separate the ghost in two parts
+%         h.ghostPositionInit(1)-.5-circle ...
+%         x_v ...     Cape
+%         h.ghostPositionInit(1)-.5+circle h.ghostPositionInit(1)-.5+circle];
+% 
+%     y = [h.ghostPositionInit(2)-.5 [circle*sin(pos)+h.ghostPositionInit(2)-.5] ...
+%         h.ghostPositionInit(2)-.5 h.ghostPositionInit(2)-.5...
+%         h.ghostPositionInit(2)-.5-circle ...
+%         y_v ...
+%         h.ghostPositionInit(2)-.5-circle h.ghostPositionInit(2)-.5];
+% 
+%     axes(h.axes1);
+%     h.ghost = patch(x,y,h.ghostColor);
+%     hold off;
+% end
 
 % --- Create a graphical element for walls
 function h = createUIWalls(handles)
@@ -312,18 +312,18 @@ end
 function updateUI(handles,out)
     
     updateUIPlayer( handles,'pacman', out{1});      %(1,2)
-    updateUIPlayer( handles,'ghost', out{2});
+  % TODELETE  updateUIPlayer( handles,'ghost', out{2});
     updateUIWalls( handles.walls , out{3},out{4});           %(3,4)
     % 
     updateUIActiveCammand(handles);
     updateUIButton(handles);
     %
 
-    updateUICaught(handles.Caught ,out{5},handles.wrapper.get_stop());        %(5)
+  % TODELETE  updateUICaught(handles.Caught ,out{5},handles.wrapper.get_stop());        %(5)
     updateUIEscape(handles.Escape,out{6});          %(6)
     updateUIWallsAround(handles,'Pacman',out{7}); %(7) for pacman
-    updateUIWallsAround(handles,'Ghost',out{8});  %(8) for ghost
-    updateUIWallsAround(handles,'See',out{9});    %(9) for ghost see pacman
+ % TODELETE   updateUIWallsAround(handles,'Ghost',out{8});  %(8) for ghost
+ % TODELETE   updateUIWallsAround(handles,'See',out{9});    %(9) for ghost see pacman
 end
 
 % --- Update visibility of command panel for only see the possibles
@@ -352,21 +352,21 @@ function updateUIActiveCammand(handles)
      set(handles.pacmanPanel,'Visible','off');
     end
 
-    %% ghost 
-
-    if(handles.wrapper.whoPlay == 2 )% si a son tour
-     set(handles.connectGhost,'Visible','on');
-     if(handles.wrapper.ghostBit == 1) % si connecté
-         set(handles.ghostPanel,'Visible','off');
-         set(handles.step,'Visible','on');
-     else % si pas connecté
-         set(handles.ghostPanel,'Visible','on');
-         set(handles.step,'Visible','off');
-     end
-    else
-     set(handles.connectGhost,'Visible','off');
-     set(handles.ghostPanel,'Visible','off');
-    end 
+%     %% ghost % TODELETE
+% 
+%     if(handles.wrapper.whoPlay == 2 )% si a son tour
+%      set(handles.connectGhost,'Visible','on');
+%      if(handles.wrapper.ghostBit == 1) % si connecté
+%          set(handles.ghostPanel,'Visible','off');
+%          set(handles.step,'Visible','on');
+%      else % si pas connecté
+%          set(handles.ghostPanel,'Visible','on');
+%          set(handles.step,'Visible','off');
+%      end
+%     else
+%      set(handles.connectGhost,'Visible','off');
+%      set(handles.ghostPanel,'Visible','off');
+%     end 
 
     %% walls
     if(handles.wrapper.whoPlay == 0 )% si a son tour
@@ -388,17 +388,15 @@ end
 % --- Update visibility of moving command button in function of possibles
 % moves
 function updateUIButton(handles)
-    player = {'pacman','ghost'};
-    possibleMoves = cell(2,4);
-    for j = 1:max(size(possibleMoves,1)) 
-        possibleMoves(j,:)=cell(strcat(player(j),{'Up','Down','Left','Right'},'But'));
-    end
+    player = {'pacman'};
+    possibleMoves = cell(1,4);
+        possibleMoves(1,:)=cell(strcat(player ,{'Up','Down','Left','Right'},'But'));
+    
 
-    for j = 1:max(size(possibleMoves,1)) 
         for i = 1:max(size(possibleMoves,2)) 
-            set(handles.(possibleMoves{j,i}) ,'Visible',isOne(~handles.wrapper.out{6+j}(i)));
+            set(handles.(possibleMoves{1,i}) ,'Visible',isOne(~handles.wrapper.out{7}(i)));
         end
-    end
+    
 end
 
 % --- Update graphical place of a player (ghost or pacman).
@@ -429,18 +427,18 @@ end
 
 
 % ----Update graphical element for caught.
-function updateUICaught(elementToSet,caughtInt,stp)
-    clr = [.8 .8 .8];
-    strD = '';
-    if (caughtInt>0)
-        strD = int2str(caughtInt);
-    end
-    if (stp(2))
-           clr = 'r';
-    end
-    set(elementToSet,'BackgroundColor',clr)
-    set(elementToSet,'String',strcat(elementToSet.UserData,strD))
-end
+% % TODELETE function updateUICaught(elementToSet,caughtInt,stp)
+%     clr = [.8 .8 .8];
+%     strD = '';
+%     if (caughtInt>0)
+%         strD = int2str(caughtInt);
+%     end
+%     if (stp(2))
+%            clr = 'r';
+%     end
+%     set(elementToSet,'BackgroundColor',clr)
+%     set(elementToSet,'String',strcat(elementToSet.UserData,strD))
+% end
 
 % ----Update graphical element for escape.
 function updateUIEscape(elementToSet,boolState)
@@ -497,12 +495,12 @@ function h = resetUIConnection(handles)
     % Show all actions panel (ghost, pacman, walls).
     set(h.wallsPanel, 'Visible','on');
     set(h.pacmanPanel,'Visible','on');
-    set(h.ghostPanel, 'Visible','on');
+    % TODELETE set(h.ghostPanel, 'Visible','on');
 
     % Set off all connection buttons.
     set(h.connectWalls, 'Value',0);
     set(h.connectPacman,'Value',0);
-    set(h.connectGhost, 'Value',0);
+    % TODELETE set(h.connectGhost, 'Value',0);
 
     % Set unvisible step button
     set(h.step,'Visible','off');
@@ -510,6 +508,6 @@ function h = resetUIConnection(handles)
     % Set all connection bit to 0 into wrapper
     h.wrapper.wallsBit  = 0;
     h.wrapper.pacmanBit = 0;
-    h.wrapper.ghostBit  = 0;
+% TODELETE    h.wrapper.ghostBit  = 0;
 end
     
