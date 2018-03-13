@@ -97,4 +97,4 @@ end
 % repo = strcat('./data/Validation 8/', 'Test1_2');
 % mkdir(repo);
 % save(strcat(repo,'/state'),'labyState');
- CreatePituresAndVideo(n,  labyInit.escape_i, labyState);
+ CreatePituresAndVideo_textured(n,  labyInit.escape_i, labyState);
