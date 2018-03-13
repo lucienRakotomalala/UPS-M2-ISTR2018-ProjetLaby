@@ -32,7 +32,7 @@ function [ MatriceCell, Alphabet] = creationMatricetransition( nameOfFileFSM )
     
     for j = 1:length(Transition)
         i = 1;
-        while isempty(strfind(States(i).Name, Transition(j).StateIn))
+        while ~strcmp(Transition(j).StateIn, States(i).Name)
             i = i+1;
         end
         Transition(j).StateIn = i;
@@ -41,7 +41,7 @@ function [ MatriceCell, Alphabet] = creationMatricetransition( nameOfFileFSM )
     
     for j = 1:length(Transition)
         i = 1;
-        while isempty(strfind(States(i).Name, Transition(j).StateOut))
+        while ~strcmp(States(i).Name, Transition(j).StateOut)
             i = i+1;
         end
         Transition(j).StateOut = i;
