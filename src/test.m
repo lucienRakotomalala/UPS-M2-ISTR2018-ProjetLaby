@@ -1,55 +1,19 @@
-function Video = CreatePituresAndVideo_textured(n, escape_i, labyState )
-%%
-escape_i= labyInit.escape_i
+clear 
+Ms = 3;
+n = 1;
 
-%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%% VISUALISATION OF THE MAZE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-% save state as one matrix
-% > in a case : 0 nothing; 1 : wall ; 2 : ghost ; 3: pacman; 4 : escape 
-
-Ms = max(size(labyState{1,3}));
 %%
 N = 2*Ms+1; % total size of maze
 
-Visu = zeros(N,N,n);
+Visu = [9   6   23  6   23  6   10;
+        5   1   15  2   15  0   7;
+        26  13  17   13  18   13  24;
+        5   0   15  0   15  0   7;
+        26  13  19   13  20   13  24;
+        5   0   15  0   15  3   7;
+        12  8   25  8   25  8   11];
 
 %% escape (out{2} : ghost [x y]) in Visu 2 = ghost
-escapePos = escape_i{1}*[0 2; 2 0];
-Visu(escapePos(1),escapePos(2),:)=4;
-%
-Visu([1 N],:,:)=1; % Vertical sides
-
-Visu(:,[1 N],:)=1; % Horizontal sides
-
- % Filling wall intersections
-i = find((1:N).*mod((1:N),2));
-Visu(i,i,:)=1;
-% 
-for i = 1:n
-    %walls
-    %Vertical walls
-    [ymv, xmv]=find(labyState{i,3});
-    yav = ymv.*2;
-    xav = xmv.*2+1;
-    %Horizontal walls
-    [ymh, xmh]=find(labyState{i,4});
-    xah = xmh.*2;
-    yah = ymh.*2+1;
-    for ee = 1:max(size(yav))
-        Visu(yav(ee),xav(ee),i) = 1;
-    end
-    for ee = 1:max(size(yah))
-        Visu(yah(ee),xah(ee),i) = 1;
-    end
-  
-    %pacman (out{1} : pacman [x y]) in Visu 3 = pacman
-    pacpos =  labyState{i,1}*[0 2; 2 0]; % adapt position and flip
-    Visu(pacpos(1),pacpos(2),i)=3;
-    %ghost (out{2} : ghost [x y]) in Visu 2 = ghost
-    ghostpos =  labyState{i,2}*[0 2; 2 0]; % adapt position and flip
-    Visu(ghostpos(1),ghostpos(2),i)=2;
-end
 
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
