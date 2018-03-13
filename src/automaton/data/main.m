@@ -25,66 +25,23 @@ nR  = matriceTemp{8};%cellule 8
 wR  = matriceTemp{9};%cellule 9
 wD  = matriceTemp{10};%cellule 10
 
-
-
-MatricesTransition=zeros(size(U));
-
-Poids = ones(size(U));
-MatricesTransition(find(U==1)) = 1;
-MatricesTransition(find(D==1)) = 2;
-MatricesTransition(find(L==1)) = 3;
-MatricesTransition(find(R==1)) = 4;
-Poids(find(MatricesTransition~=0)) = 0;
-
-MatricesTransition(find(nU==1))=5;
-MatricesTransition(find(nD==1))=6;
-MatricesTransition(find(nL==1))=7;
-MatricesTransition(find(nR==1))=8;
-MatricesTransition(find(wR==1))=9;
-MatricesTransition(find(wD==1))=10;
-
-MatricesTransition
-
-[Buff]=ParcourirMatricesTransitions(MatricesTransition, Poids)
-
-%%
-etat_dep=cellstr('Etat départ');
-liste_etats_dep=num2cell(Buff(1,:));
-transitions=cellstr('Transition');
-etat_arr=cellstr('Etat arrivée');
-liste_etats_arr=num2cell(Buff(4,:));
-
-%%
-for k = 2:length(U)
-    if(Buff(3,k) == 1)
-        liste_transitions(k-1)=cellstr('Up');
-    else if (Buff(3,k)== 2)
-            liste_transitions(k-1)=cellstr('Down');
-        else if (Buff(3,k)== 3)
-                liste_transitions(k-1)=cellstr('Left');
-            else if (Buff(3,k)== 4)
-                    liste_transitions(k-1)=cellstr('Right');
-                else if (Buff(3,k)== 5)
-                        liste_transitions(k-1)=cellstr('notUp');
-                    else if (Buff(3,k)== 6)
-                            liste_transitions(k-1)=cellstr('notDown');
-                        else if (Buff(3,k)== 7)
-                                liste_transitions(k-1)=cellstr('notLeft');
-                            else if (Buff(3,k) == 8)
-                                    liste_transitions(k-1)=cellstr('notRight');
-                                else if (Buff(3,k) == 9)
-                                        liste_transitions(k-1)=cellstr('wallsTurnRight');
-                                    else if (Buff(3,k) == 10)
-                                            liste_transitions(k-1)=cellstr('wD');
-                                        end
-                                    end
-                                end
-                            end
-                        end
-                    end
-                end
-            end
-        end
+n = length(U);  % Nbr States
+M=[U D L R nU nD nL nR wR wD];
+[s,t]=find(M~=0);
+s
+for k=1:length(t)
+    if(t(k)<=4)
+         w(k) = 1 ;
+    else w(k) = 0;
     end
 end
-out{1}=[etat_dep, liste_etats_dep(2:end); transitions, liste_transitions; etat_arr, liste_etats_arr(2:end)]
+%w=t<=4*n
+t=mod(t-1,n)+1
+G = graph(s,t,w);
+plot(G,'EdgeLabel',G.Edges.Weight)
+
+disp('Etat initial : ');
+e_init = input('');
+disp('Etat marqué : ');
+e_final = input('');
+path = shortestpath(G,e_init,e_final)

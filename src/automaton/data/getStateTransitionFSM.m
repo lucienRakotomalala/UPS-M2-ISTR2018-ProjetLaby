@@ -16,54 +16,65 @@ function [States, Transition] = getStateTransitionFSM( nameOfFileFSM, ST, SP )
     
 
     % Include the file in a struct
-    C = textscan(F,'%s');
-    fclose(F);
+    %C = textscan(F,'%s');
+    
     % Include the struct in a vector
-    C = C{1,1};
+    %C = C{1,1};
     
     States = [];
-    typoState = struct('Name','','Initial',0,'Marked','1');
+    typoState = struct('Name','','Initial',0,'Marked','0');
+    NbS = 0;
     Transition = [];
     typoTransition = struct('Name','','StateIn','','StateOut','');
-    %% Idée en suspens : strjoin(C,'\n')
-    i = 2;
-    NbS = 0;
     NbT = 0;
-    while i <= length(C)    %% While they are cases
-
-         if ~isempty(strfind(SP, C{i}(1)))% If it is a State
+    strState = 1;
+    %% 
+     while(~feof(F))
+     str = fgetl(F);
+     str = strsplit(str);
+     if strState == 1
+        strStateNext = 2; 
+     end
+     
+     if strState == 2
+        strStateNext = 3;
+     end
+     
+     if strState == 3
+        if ~isempty(strfind(str{1},'EVENTS')) % If it is a declaration of a State
+            strStateNext = 5;
+        else
+            if isempty(str{1})
+                strStarNext = 5;
+            else
+            NbS = NbS +1;
             States = [States typoState]; 
-            NbS = NbS+1;
-            % Specificity of FSM
-            if NbS == 1
-                States(NbS).Initial = 1;
+            States(NbS).Name = cellstr(str(1));
+            States(NbS).Marked = cell2mat(str(2));
+            strStateNext = 4;
             end
-            States(NbS).Name = C{i};
-            % Mared Place is the number next
-            i = i+1;
-            States(NbS).Marked = str2num(C{i});
-            i = i+2;                % Jump 2 cases
+            end 
+     end
+     
+     if strState == 4
+         disp('State 4 transition')
+          if ~isempty(str{1}) % If it os the declaration of a Transition
+            NbT = NbT + 1;
+            Transition = [Transition typoTransition];
+            Transition(NbT).Name    = cellstr(str{1});
+            Transition(NbT).StateIn = States(NbS).Name;     % State In is the previous State
+            Transition(NbT).StateOut = cellstr(str{2});     % State Out is on the line     
+          else
+             strStateNext = 3;
+          end
+     end
+        
+       
+     strState = strStateNext;   
+     end
+     
+     fclose(F);
 
-            while ~isempty(strfind(ST, C{i}(end))) % While it's a description of
-                                                   % a transition
-                NbT = NbT + 1;
-                Transition = [Transition typoTransition];
-                Transition(NbT).Name = C{i};
-                i = i+1;                            % Jump a cases
-                Transition(NbT).StateIn = States(NbS).Name;
-                Transition(NbT).StateOut = C{i};
-                i = i+3;                            % Jump 3 cases
-                if i>= length(C)                    % Ifthe last jump end the cell
-
-                    disp('Fin de Loop')
-                    break
-                end
-
-            end
-         else
-             i = i+1;
-         end
          
     end
-end
 
