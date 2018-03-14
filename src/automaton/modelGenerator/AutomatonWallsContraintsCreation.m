@@ -52,7 +52,7 @@ for i = 1 : numberOfStates %all states
         %up 
         if(~isempty(oU))
             for k = 1 : max(size(oU))
-                str{k}=sprintf('U%d ',oU(k));
+                str{k}=sprintf('U%d',oU(k));
                 
             end
         end

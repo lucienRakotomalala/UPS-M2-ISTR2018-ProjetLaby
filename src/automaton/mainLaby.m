@@ -50,4 +50,11 @@ ProcessAutomata = struct('lab',AutomateGraph,   ...
     end
     
 %% Transpose to vector Automata
+    ProcessAutomata.walls = ProcessAutomata.walls.structAutomata2vectorAutomata;
+    ProcessAutomata.sche = ProcessAutomata.sche.structAutomata2vectorAutomata;
+    ProcessAutomata.lab = ProcessAutomata.lab.structAutomata2vectorAutomata;
     
+    
+%% Product Parrallel
+    ProcessAutomata.composed = ParrallelComposition(ProcessAutomata.walls, ProcessAutomata.sche);
+    ProcessAutomata.composed = ParrallelComposition(ProcessAutomata.walls, ProcessAutomata.composed);

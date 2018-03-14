@@ -24,8 +24,26 @@ classdef AutomateGraph % Claire a choisi le titre
     end
     
     methods
+        
         function obj = AutomateGraph()
             
+        end
+        
+        
+        %% Method addWord2langage
+        function obj = addWord2Langage(obj, word)
+%             for i = 1:length(obj.langage)
+%                 if strcmp(obj.langage, word)
+%                    error('This word (char) is already in the automata"s langage') 
+%                 end
+%             end
+            obj.langage{end+1} = {word};
+            obj.langage = [obj.langage{:}];
+        end
+        
+        %% Method adaptYourLangage
+        function obj = adaptTourLangage(obj)
+            obj.langage = [obj.langage{:}];
         end
         %% Method structAutomata2vectorAutomata 
         % Return the object with an update of langage, matrix and vector of
@@ -36,22 +54,25 @@ classdef AutomateGraph % Claire a choisi le titre
         function obj = structAutomata2vectorAutomata (obj)
             
             %% Set the langage
-            obj.langage{1} = {obj.transition(1).Name};
+            obj = obj.addWord2Langage(obj.transition(1).Name);
             for i = 1:length(obj.transition)            
-                isAlreadyAWord = 0;
-                for j = 1:size(obj.langage, 1);
-                    isAlreadyAWord = isAlreadyAWord + strcmp(obj.transition(i).Name, obj.langage(j));
-                
-                end
-                if ~isAlreadyAWord
-                    obj.langage{end+1} = {obj.transition(i).Name};
+%                 isAlreadyAWord = 0;
+%                 for j = 1:size(obj.langage, 1);
+%                     isAlreadyAWord = isAlreadyAWord + strcmp(obj.transition(i).Name, obj.langage{j});
+%                 end
+%                 if ~isAlreadyAWord
+%                     obj = obj.addWord2Langage(obj.transition(i).Name);
+%                 end
+                if isempty(find(ismember(obj.transition(i).Name, obj.langage)==1))
+                    obj = obj.addWord2Langage(obj.transition(i).Name);
                 end
             end
-            
+            % Adapt it !
+            %obj = obj.adaptTourLangage();
             %% Set matrices
             for i = 1 :length(obj.langage)
                 obj.matrixTrans(i).matrice = zeros(length(obj.state),length(obj.state));
-                obj.matrixTrans(i).Name = obj.langage{i};
+                obj.matrixTrans(i).Name = obj.langage(i);
                 for j = 1:length(obj.transition)
                     if strcmp(obj.matrixTrans(i).Name ,obj.transition(j).Name)
                         %if obj.transition(j).StateIn ~=
