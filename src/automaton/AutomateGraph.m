@@ -10,17 +10,66 @@ classdef AutomateGraph % Claire a choisi le titre
                     %                         One Initial State, 0 if not
                     %                         -Marked  : 1 if it the state
                     %                         is marked
-        transition  % 
+        transition  % Struct of all Transitions of the automata
+                    % Particuliar Type :
+                    % Each transition contains :  
+                    %                         -Name 
+                    %                         -StateIn : the state number
+                    %                         of the source State
+                    %                         -StateOut : the state number
+                    %                         of the destination State
         matrixTrans
-        Langage
-        vectors
+        langage
+        vector
     end
     
     methods
         function obj = AutomateGraph()
             
         end
-        
+        %% Method structAutomata2vectorAutomata 
+        % Return the object with an update of langage, matrix and vector of
+        % the automata object.
+        %       Input   : Object with Transitions and States
+        %       Ouput   : Object with new Matrix, Vectors and Langage
+        %       according to States and Transitions
+        function obj = structAutomata2vectorAutomata (obj)
+            
+            %% Set the langage
+            obj.langage{1} = {obj.transition(1).Name};
+            for i = 1:length(obj.transition)            
+                isAlreadyAWord = 0;
+                for j = 1:size(obj.langage, 1);
+                    isAlreadyAWord = isAlreadyAWord + strcmp(obj.transition(i).Name, obj.langage(j));
+                
+                end
+                if ~isAlreadyAWord
+                    obj.langage{end+1} = {obj.transition(i).Name};
+                end
+            end
+            
+            %% Set matrices
+            for i = 1 :length(obj.langage)
+                obj.matrixTrans(i).matrice = zeros(length(obj.state),length(obj.state));
+                obj.matrixTrans(i).Name = obj.langage{i};
+                for j = 1:length(obj.transition)
+                    if strcmp(obj.matrixTrans(i).Name ,obj.transition(j).Name)
+                        %if obj.transition(j).StateIn ~=
+                        %obj.transition(j).StateOut % we keep stable
+                        %transition
+                            obj.matrixTrans(i).matrice(obj.transition(j).StateIn, obj.transition(j).StateOut) = 1;
+                       % end
+                    end
+                end
+            end
+            
+            %% Set Vectors
+            for i = 1:length(obj.langage)
+               obj.vector(i).Name  = obj.langage(i);
+               % Assignement of a value for each row
+               obj.vector(i).value = obj.matrixTrans(i).matrice*[1:length(obj.state)]';
+            end
+        end
 
     end
     

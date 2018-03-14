@@ -1,6 +1,6 @@
 %% Structural main of Automata Laby
 clear all
-%%   Generation of a laby 
+%%   Generation of a laby scenario 1
 %
 addpath('modelGenerator')
 modelGenerator
@@ -48,3 +48,6 @@ ProcessAutomata = struct('lab',AutomateGraph,   ...
         ProcessAutomata.walls.state(i).Initial = (i== walls.indInit);
         ProcessAutomata.walls.state(i).Marked = (i==walls.mark);
     end
+    
+%% Transpose to vector Automata
+    
