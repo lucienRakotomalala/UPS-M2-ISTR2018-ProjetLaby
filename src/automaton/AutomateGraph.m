@@ -36,11 +36,14 @@ classdef AutomateGraph % Claire a choisi le titre
             end
             
             for i = 1:length(obj.vector)
+                
                 % Association of Names   
                 obj.matrixTrans(end+1).Name = obj.vector(i).Name;    
-                % Association in matrix
-                obj.matrixTrans(end).matrice(i, find(obj.vector(i).value,1)) = 1;
-                
+                obj.matrixTrans(end).matrice = zeros(length(obj.vector(i).value), length(obj.vector(i).value));
+                for j  = find(obj.vector(i).value>=1)'
+                    % Association in matrix
+                    obj.matrixTrans(end).matrice(j, obj.vector(i).value(j)) = 1;
+                end
             end
         end
         %% Method addWord2langage
