@@ -29,7 +29,20 @@ classdef AutomateGraph % Claire a choisi le titre
             
         end
         
-        
+        %% Method vector2matrices
+        function obj = vector2matrices(obj)
+            if ~isa(obj.vector, 'struct')
+                error('Inout object must have a struct in "vector" parameters')
+            end
+            
+            for i = 1:length(obj.vector)
+                % Association of Names   
+                obj.matrixTrans(end+1).Name = obj.vector(i).Name;    
+                % Association in matrix
+                obj.matrixTrans(end).matrice(i, find(obj.vector(i).value,1)) = 1;
+                
+            end
+        end
         %% Method addWord2langage
         function obj = addWord2Langage(obj, word)
 %             for i = 1:length(obj.langage)
