@@ -48,6 +48,7 @@ ProcessAutomata = struct('lab',AutomateGraph,   ...
         ProcessAutomata.walls.state(i).Initial = (i== walls.indInit);
         ProcessAutomata.walls.state(i).Marked = (i==walls.mark);
     end
+% 4 escape
     
 %% Transpose to vector Automata
     ProcessAutomata.walls = ProcessAutomata.walls.structAutomata2vectorAutomata;
