@@ -88,7 +88,7 @@ for i = 1:n
     Visu(ghostpos(1),ghostpos(2),i)=2;
     for z = 3:2:N-2
         for j = 3:2:N-2
-            if (int8(Visu(z-1,j,i)==16) + int8(Visu(z+1,j,i)==16) + int8(Visu(z,j-1,i)==14) + int8(Visu(z,j+1,i)==14))<2
+            if (int8(Visu(z-1,j,i)==16) + int8(Visu(z+1,j,i)==16) + int8(Visu(z,j-1,i)==14) + int8(Visu(z,j+1,i)==14))<
                 fprintf('n(%d)z(%d)j(%d)\t Empty Middle Walls\n',i,z,j)
                 Visu(z,j,i)= 17; %% Middle Wall is Empty
 %             elseif (int8(Visu(z-1,j,i)==16) + int8(Visu(z+1,j,i)==16) + int8(Visu(z,j-1,i)==14) + int8(Visu(z,j+1,i)==14))==1
