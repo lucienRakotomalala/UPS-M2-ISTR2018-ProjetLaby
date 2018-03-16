@@ -4,7 +4,7 @@
 %
 clear
 %% Open File
-myF = fopen('procede.fsm');
+myF = fopen('procede4par4.fsm');
 % Take all char
 data = fread(myF,'*char');
 
