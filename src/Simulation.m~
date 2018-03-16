@@ -23,14 +23,13 @@ noEscape = 0; % select if there is an escape or no
              1 1 1]; %  dimension can change
  labyInit.wallsH_i = [1 0 0 1; 
                             1 0 0 0;
-                          1 1 0 1
                             ];  %  d
     Ms = max(size(labyInit.wallsH_i)); % size of lab  % static dimension
 
     labyInit.pacman_i = [1,1]; % static dimension
     labyInit.ghost_i  = [2,2]; % static dimension
 
-    labyInit.escape_i = {[4 4], 0}; % static dimension
+    labyInit.escape_i = {[3 3], 0}; % static dimension
     labyInit.caught_i = 0; % static dimension
 
     % initial value of walls command

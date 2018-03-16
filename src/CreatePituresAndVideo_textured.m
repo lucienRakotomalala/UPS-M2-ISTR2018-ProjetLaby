@@ -86,35 +86,33 @@ for i = 1:n
     %ghost (out{2} : ghost [x y]) in Visu 2 = ghost
     ghostpos =  labyState{i,2}*[0 2; 2 0]; % adapt position and flip
     Visu(ghostpos(1),ghostpos(2),i)=2;
-    for z = 3:2:N-2
-        for j = 3:2:N-2
-            if (int8(Visu(z-1,j,i)==16) + int8(Visu(z+1,j,i)==16) + int8(Visu(z,j-1,i)==14) + int8(Visu(z,j+1,i)==14))<
-                fprintf('n(%d)z(%d)j(%d)\t Empty Middle Walls\n',i,z,j)
+     for z = 3:2:N-2
+         for j = 3:2:N-2
+            if (int8(Visu(z-1,j,i)==16) + int8(Visu(z+1,j,i)==16) + int8(Visu(z,j-1,i)==14) + int8(Visu(z,j+1,i)==14))<2
+                %fprintf('n(%d)z(%d)j(%d)\t Empty Middle Walls\n',i,z,j)
                 Visu(z,j,i)= 17; %% Middle Wall is Empty
-%             elseif (int8(Visu(z-1,j,i)==16) + int8(Visu(z+1,j,i)==16) + int8(Visu(z,j-1,i)==14) + int8(Visu(z,j+1,i)==14))==1
-%                 fprintf('n(%d)z(%d)j(%d)\t Empty Middle Walls\n',i,z,j)
-%                 Visu(z,j,i)= 17; %% Middle Wall is Empty
-%             elseif (int8(Visu(z-1,j,i)==16) + int8(Visu(z+1,j,i)==16) + int8(Visu(z,j-1,i)==14) + int8(Visu(z,j+1,i)==14))==2
-%                 fprintf('n(%d)z(%d)j(%d)\t Empty Middle Walls\n',i,z,j)
-%                 Visu(z,j,i)= 17; %% Middle Wall is Empty
             elseif (int8(Visu(z-1,j,i)==16) + int8(Visu(z+1,j,i)==16) + int8(Visu(z,j-1,i)==14) + int8(Visu(z,j+1,i)==14))>=3
-                fprintf('n(%d)z(%d)j(%d)\t Full Middle Walls\n',i,z,j)
-                Visu(z,j,i)=18; %% Middle Wall is Full
+                %fprintf('n(%d)z(%d)j(%d)\t Full Middle Walls\n',i,z,j)
+               Visu(z,j,i)=18; %% Middle Wall is Full
             elseif ( int8(Visu(z,j-1,i)==14) + int8(Visu(z-1,j,i)==16))==2
-                fprintf('z(%d)j(%d)\t NW Middle Walls\n',z,j)
+                %fprintf('z(%d)j(%d)\t NW Middle Walls\n',z,j)
                 Visu(z,j,i)= 19; % Wall Middle NW
             elseif (int8(Visu(z,j+1,i)==14) + int8(Visu(z-1,j,i)==16))==2
-                fprintf('z(%d)j(%d)\t NE Middle Walls\n',z,j)
+               % fprintf('z(%d)j(%d)\t NE Middle Walls\n',z,j)
                 Visu(z,j,i)= 20; % Wall Middle NE
             elseif (int8(Visu(z+1,j,i)==16) + int8(Visu(z,j-1,i)==14))==2
-                fprintf('z(%d)j(%d)\t SW Middle Walls\n',z,j)
+                %fprintf('z(%d)j(%d)\t SW Middle Walls\n',z,j)
                 Visu(z,j,i)=21; % Wall Middle SW
             elseif (int8(Visu(z,j+1,i)==14) + int8(Visu(z+1,j,i)==16))==2
-                fprintf('z(%d)j(%d)\t SE Middle Walls\n',z,j)
+               % fprintf('z(%d)j(%d)\t SE Middle Walls\n',z,j)
                 Visu(z,j,i)=22; % Wall Middle SE
+            elseif (int8(Visu(z-1,j,i)==16) + int8(Visu(z+1,j,i)==16))==2 
+                 Visu(z,j,i)=18; %% Middle Wall is Full
+            elseif (int8(Visu(z,j-1,i)==14) + int8(Visu(z,j+1,i)==14))==2 
+                 Visu(z,j,i)=18; %% Middle Wall is Full
             end
-        end
-    end
+         end
+     end
 end
 
 
