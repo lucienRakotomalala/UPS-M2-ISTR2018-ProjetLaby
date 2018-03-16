@@ -24,7 +24,7 @@ N = 2*Ms+1; % total size of maze
 Visu = zeros(N,N,n);
 
 %pacman (out{1} : pacman [x y]) in Visu 3 = pacman
-    
+
 % escape (out{2} : ghost [x y]) in Visu 2 = ghost
 
 
@@ -44,7 +44,7 @@ Visu(N,N,:)=11;                      % Border Corner SE
 
 %Visu(:,[1 N],:)=1; % Horizontal sides
 
- % Filling wall intersections
+% Filling wall intersections
 [~,~,iWallMidd] = find((2:N-1).*mod((2:N-1),2));
 
 iCase =  2:2:N-1;
@@ -67,53 +67,60 @@ for i = 1:n
     for ee = 1:max(size(yav))
         Visu(xav(ee),yav(ee),i) = 16;
     end
-        for ee = 1:max(size(xah))
-            Visu(xah(ee),yah(ee),i) = 14;
-        end
-  
+    for ee = 1:max(size(xah))
+        Visu(xah(ee),yah(ee),i) = 14;
+    end
+    
     pacpos =  labyState{i,1}*[2 0; 0 2]; % adapt position and flip
     
     Visu(pacpos(2),pacpos(1),i)=1;  % Pacman Position
     escapePos = escape_i{1}*[2 0; 0 2];
-        if pacpos==escapePos
-            Visu(escapePos(1),escapePos(2),:)=4;     % Pacman on Escape
-        else
-             Visu(escapePos(1),escapePos(2),:)=3; % Escape Position
-        end
-       
-%
+    if pacpos==escapePos
+        Visu(escapePos(1),escapePos(2),:)=4;     % Pacman on Escape
+    else
+        Visu(escapePos(1),escapePos(2),:)=3; % Escape Position
+    end
+    
+    %
     
     %ghost (out{2} : ghost [x y]) in Visu 2 = ghost
     ghostpos =  labyState{i,2}*[0 2; 2 0]; % adapt position and flip
     Visu(ghostpos(1),ghostpos(2),i)=2;
-end
- for i = 3:2:N-2
-     for j = 3:2:N-2
-        if (Visu(i,j-1,:)==16 + Visu(i,j+1,:)==16 + Visu(i-1,j,:)==14 + Visu(i+1,j,:)==14)==0
-            fprintf('i(%d)j(%d)\t Empty Middle Walls\n',i,j)
-            Visu(i,j,:)= 17; %% Middle Wall is Empty
-        elseif (Visu(i,j-1,:)==16 + Visu(i,j+1,:)==16 + Visu(i-1,j,:)==14 + Visu(i+1,j,:)==14)>3
-            fprintf('i(%d)j(%d)\t Full Middle Walls\n',i,j)
-        	Visu(i,j,:)=18; %% Middle Wall is Full
-        elseif ( Visu(i-1,j,:)==14 + Visu(i,j+1,:)==16)>0
-            fprintf('i(%d)j(%d)\t NW Middle Walls\n',i,j)
-        	Visu(i,j,:)= 19; % Wall Middle NW
-        elseif (Visu(i+1,j,:)==14 + Visu(i,j+1,:)==16)>0
-            fprintf('i(%d)j(%d)\t NE Middle Walls\n',i,j)
-        	Visu(i,j,:)= 20; % Wall Middle NE
-        elseif (Visu(i-1,j,:)==1 + Visu(i,j-1,:)==16)>0
-            fprintf('i(%d)j(%d)\t SW Middle Walls\n',i,j)
-            Visu(i,j,:)=21; % Wall Middle SW
-        elseif (Visu(i+1,j,:)==16 + Visu(i,j-1,:)==14)>0
-            fprintf('i(%d)j(%d)\t SE Middle Walls\n',i,j)
-        	Visu(i,j,:)=22; % Wall Middle SE
+    for z = 3:2:N-2
+        for j = 3:2:N-2
+            if (int8(Visu(z-1,j,i)==16) + int8(Visu(z+1,j,i)==16) + int8(Visu(z,j-1,i)==14) + int8(Visu(z,j+1,i)==14))<
+                fprintf('n(%d)z(%d)j(%d)\t Empty Middle Walls\n',i,z,j)
+                Visu(z,j,i)= 17; %% Middle Wall is Empty
+%             elseif (int8(Visu(z-1,j,i)==16) + int8(Visu(z+1,j,i)==16) + int8(Visu(z,j-1,i)==14) + int8(Visu(z,j+1,i)==14))==1
+%                 fprintf('n(%d)z(%d)j(%d)\t Empty Middle Walls\n',i,z,j)
+%                 Visu(z,j,i)= 17; %% Middle Wall is Empty
+%             elseif (int8(Visu(z-1,j,i)==16) + int8(Visu(z+1,j,i)==16) + int8(Visu(z,j-1,i)==14) + int8(Visu(z,j+1,i)==14))==2
+%                 fprintf('n(%d)z(%d)j(%d)\t Empty Middle Walls\n',i,z,j)
+%                 Visu(z,j,i)= 17; %% Middle Wall is Empty
+            elseif (int8(Visu(z-1,j,i)==16) + int8(Visu(z+1,j,i)==16) + int8(Visu(z,j-1,i)==14) + int8(Visu(z,j+1,i)==14))>=3
+                fprintf('n(%d)z(%d)j(%d)\t Full Middle Walls\n',i,z,j)
+                Visu(z,j,i)=18; %% Middle Wall is Full
+            elseif ( int8(Visu(z,j-1,i)==14) + int8(Visu(z-1,j,i)==16))==2
+                fprintf('z(%d)j(%d)\t NW Middle Walls\n',z,j)
+                Visu(z,j,i)= 19; % Wall Middle NW
+            elseif (int8(Visu(z,j+1,i)==14) + int8(Visu(z-1,j,i)==16))==2
+                fprintf('z(%d)j(%d)\t NE Middle Walls\n',z,j)
+                Visu(z,j,i)= 20; % Wall Middle NE
+            elseif (int8(Visu(z+1,j,i)==16) + int8(Visu(z,j-1,i)==14))==2
+                fprintf('z(%d)j(%d)\t SW Middle Walls\n',z,j)
+                Visu(z,j,i)=21; % Wall Middle SW
+            elseif (int8(Visu(z,j+1,i)==14) + int8(Visu(z+1,j,i)==16))==2
+                fprintf('z(%d)j(%d)\t SE Middle Walls\n',z,j)
+                Visu(z,j,i)=22; % Wall Middle SE
+            end
         end
-     end
- end
- 
- 
-                        
-                
+    end
+end
+
+
+
+
+
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%% PICTURES AND VIDEO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -139,7 +146,8 @@ text.n = {'empty.png',...                   %1
                 'wall_middle_empty.png',... %10
                 'wall_middle_full.png',...  %11
                 'wall_middle_half.png'};    %12
-dir ='.\texture\';
+%dir ='.\texture\';
+dir ='./texture/';
 text.n = strcat(dir,text.n);            
 % all the different cases
 for i = 1 : 5
@@ -209,13 +217,13 @@ for a = 1:n
                 imgs(y:y+yl-1,x:x+xl-1,3,a) = text.img{Visu(i,j,a)+1}(:,:,3);% B
             % calcul nouveau curseur
             x = x + xl;
-            % y pareil pr la même ligne
+            % y pareil pr la m?me ligne
            % fprintf('i(%d) j(%d) x(%d) y(%d) xl(%d) yl(%d)\n',i,j,x,y,xl,yl)
-           %figure(1)
-           %imshow(imgs(:,:,:,a)) 
-           %figure(2)
-            %    imagesc(text.img{Visu(i,j,a)+1})
-            %pause(.1)
+%            figure(1)
+%            imshow(imgs(:,:,:,a)) 
+%            figure(2)
+%                imagesc(text.img{Visu(i,j,a)+1})
+%             pause(.51)
         end
         %fprintf('\n');
         x = 1;%?
