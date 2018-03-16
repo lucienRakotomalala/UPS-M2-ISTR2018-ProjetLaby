@@ -21,7 +21,7 @@ Visu(:,[1 N],:)=1; % Horizontal sides
  % Filling wall intersections
 i = find((1:N).*mod((1:N),2));
 Visu(i,i,:)=1;
-% 
+
 for i = 1:n
     %walls
     %Vertical walls
