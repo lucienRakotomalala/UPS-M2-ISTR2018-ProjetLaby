@@ -18,11 +18,22 @@ function [initialIndice,markedStatesIndices,transitionsDatas, numberOfStates] = 
                                           % Tr = event name
     % numberOfStates   : int  = [x]         x  = number of states of the
                                             % automaton    % number Of States
+                                            
+                                            
+% for now if is the pacman lab                                            
+if strcmp('P',playerName)==1
+    isPacman = 1;
+else
+    isPacman = 0;
+end
+
 numberOfStates = labySize^2;
 %initial Indice
 initialIndice = ( playerPosition(2) - 1 )*labySize + playerPosition(1);
 % marked States Indices
-markedStatesIndices = ( escapePosition(2) - 1 )*labySize + escapePosition(1);
+if isPacman
+    markedStatesIndices = ( escapePosition(2) - 1 )*labySize + escapePosition(1);
+end
 % a labyrinth                                            
 %   +-+-+-+
 %   |c|b|c|

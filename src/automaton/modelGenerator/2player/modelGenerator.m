@@ -40,10 +40,14 @@ clear
 = AutomatonSchedulingCreation (sched,lab.p.datas,lab.g.datas,'v');
 
 %% 3. creation event and tr
-%lab
-lab.str.s = writeStates('l',lab.nbS,lab.indInit,lab.mark);
-lab.str.t = writeTransitions('l',lab.datas) ;
-SaveDESUMAFile(lab.str.t,lab.str.s,'lab.txt');
+%lab pacman
+lab.p.str.s = writeStates('lP',lab.p.nbS,lab.p.indInit,lab.p.mark);
+lab.p.str.t = writeTransitions('lP',lab.p.datas) ;
+SaveDESUMAFile(lab.p.str.t,lab.p.str.s,'lab_pacman.txt');
+%lab ghost
+lab.g.str.s = writeStates('lG',lab.g.nbS,lab.g.indInit,lab.g.mark);
+lab.g.str.t = writeTransitions('lG',lab.g.datas) ;
+SaveDESUMAFile(lab.g.str.t,lab.g.str.s,'lab_ghost.txt');
 
 %walls
 walls.str.s = writeStates('w',walls.nbS,walls.indInit,walls.mark);
