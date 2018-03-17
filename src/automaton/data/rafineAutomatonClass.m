@@ -27,13 +27,14 @@ function [ rafA ] = rafineAutomatonClass( A, paternName )
     %% Initialisation
    
     rafA = AutomateGraph();
+	temp = AutomateGraph();		% For the Transition Name
     %% Clean name of vector
     for i = 1:length(A.vector)
         j = 1;
         getOut = 0;     % Variable to go out the while
         while xor(j <= length(paternName),getOut)
             if strcmp(intersect(A.vector(i).Name{:}, paternName{j},'stable'), paternName{j})
-                rafA.vector(i).Name = paternName(j);
+                temp.vector(i).Name = paternName(j);
                 if j<length(paternName)     % To don't destroy the xor effect
                     getOut = 1;
                 end
@@ -43,32 +44,34 @@ function [ rafA ] = rafineAutomatonClass( A, paternName )
     end
      
     %% Set up the langage
-    for i = 1:length(rafA.vector)
-        if ~isempty(rafA.vector(i).Name)
-            if isempty(find(ismember(rafA.vector(i).Name{:}, rafA.langage)==1))
-               rafA = rafA.addWord2Langage(rafA.vector(i).Name{:});
+    for i = 1:length(temp.vector)
+        if ~isempty(temp.vector(i).Name)
+            if isempty(find(ismember(temp.vector(i).Name{:}, rafA.langage)==1))
+               rafA = rafA.addWord2Langage(temp.vector(i).Name{:});
             end
         end
     end
     
     %% Set up vector
     for i = 1:length(rafA.langage)
-        rafA.vector(i).value = zeros(length(A.vector(1).value));
+        rafA.vector(i).value = zeros(length(A.vector(1).value),1);
         % If we recognize it in the vectorName
-        for j = 1:length(rafA.vector)
-           [l,~,v] = find(A.vector(i).value);       % l for line, v for value
-           % For stable transition
-           if ~isempty(find(l==v, 1))
-               rafA.vector(i).value(find(l==v, 1)) = find(l==v, 1);    % Have to be tested
-           end
-           % Undeterministic Test
-           for q = l'
-                if rafA.vector(i).value(q)>0
+        for j = 1:length(temp.vector)       % Optimisation possible
+			
+            if   strcmp(rafA.langage(i), temp.vector(j).Name)
+                [l,~,v] = find(A.vector(j).value);       % l for line, v for values
+                % Undeterministic Test
+                if rafA.vector(i).value(l) - A.vector(j).value(l) >0    % C'est pas sa
+                    i
+                    j
+                    rafA.langage(i)
                     error('Blabla')
                 end
-           end
-           % Add value
-           rafA.vector(i).value(l) = A.vector(i).value(l);  %% Have to be tested
-        end
+			% Add value
+			rafA.vector(i).value(l) = A.vector(j).value(l);  %% Have to be tested
+            end
+       end
     end
+    
+    %% AJOUTER LES STATES NAME 
 end
