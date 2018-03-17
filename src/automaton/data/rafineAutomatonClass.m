@@ -74,4 +74,10 @@ function [ rafA ] = rafineAutomatonClass( A, paternName )
     end
     
     %% AJOUTER LES STATES NAME 
+    if isa(A.state,'struct')
+        rafA.state = A.state;
+    else
+        disp('Can not add state to the rafine Automata because the input do not contains a struct field in is state field')
+
+    end
 end

@@ -33,7 +33,7 @@ ProcessAutomata = struct('lab',AutomateGraph,   ...
     for i = 1:sche.nbS
         ProcessAutomata.sche.state(i).Name = i;
         ProcessAutomata.sche.state(i).Initial = (i== sche.indInit);
-        ProcessAutomata.sche.state(i).Marked = (i==sche.mark);
+        ProcessAutomata.sche.state(i).Marked = 1;%(i==sche.mark);
     end
     
 % 3 walls
@@ -46,7 +46,7 @@ ProcessAutomata = struct('lab',AutomateGraph,   ...
     for i = 1:walls.nbS
         ProcessAutomata.walls.state(i).Name = i;
         ProcessAutomata.walls.state(i).Initial = (i== walls.indInit);
-        ProcessAutomata.walls.state(i).Marked = (i==walls.mark);
+        ProcessAutomata.walls.state(i).Marked = 1;%(i==walls.mark);
     end
 % 4 escape
     
@@ -58,4 +58,10 @@ ProcessAutomata = struct('lab',AutomateGraph,   ...
     
 %% Product Parrallel
     ProcessAutomata.composed = ParrallelComposition(ProcessAutomata.walls, ProcessAutomata.sche);
-    ProcessAutomata.composed = ParrallelComposition(ProcessAutomata.walls, ProcessAutomata.composed);
+    ProcessAutomata.composed = ParrallelComposition(ProcessAutomata.lab, ProcessAutomata.composed);
+    
+    
+%% Clean up of process composed
+    addpath('data')
+    ProcessAutomata.composed = rafineAutomatonClass(ProcessAutomata.composed, ...
+{'nU', 'nD', 'nR', 'nL', 'wD', 'wR', 'U', 'D', 'R', 'L'});
