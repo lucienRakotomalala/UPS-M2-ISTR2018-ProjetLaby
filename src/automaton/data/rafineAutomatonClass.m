@@ -53,31 +53,37 @@ function [ rafA ] = rafineAutomatonClass( A, paternName )
     end
     
     %% Set up vector
+    allPoint = 1:length(temp.vector);
+    
     for i = 1:length(rafA.langage)
+        memory = [];
+        % Add Transition Name
+        rafA.vector(i).Name = rafA.langage(i);
+        % Initialize the vector
         rafA.vector(i).value = zeros(length(A.vector(1).value),1);
-        % If we recognize it in the vectorName
-        for j = 1:length(temp.vector)       % Optimisation possible
+        
+        for j = allPoint      % Optimisation possible
 			
             if   strcmp(rafA.langage(i), temp.vector(j).Name)
-                [l,~,v] = find(A.vector(j).value);       % l for line, v for values
+                [l,~,~] = find(A.vector(j).value);       % l for line
                 % Undeterministic Test
-                if rafA.vector(i).value(l) - A.vector(j).value(l) >0    % C'est pas sa
-                    i
-                    j
-                    rafA.langage(i)
-                    error('Blabla')
+                if rafA.vector(i).value(l) - A.vector(j).value(l) >0  
+                    error('Undeterministic case find in the vector')
                 end
-			% Add value
-			rafA.vector(i).value(l) = A.vector(j).value(l);  %% Have to be tested
+                % Add value
+                rafA.vector(i).value(l) = A.vector(j).value(l);  %% Have to be tested
+                % Optimisation
+                memory = [memory j];
             end
-       end
+        end
+        allPoint = setdiff(allPoint, memory);
     end
+
     
     %% AJOUTER LES STATES NAME 
     if isa(A.state,'struct')
         rafA.state = A.state;
     else
         disp('Can not add state to the rafine Automata because the input do not contains a struct field in is state field')
-
     end
 end

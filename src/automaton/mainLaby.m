@@ -2,7 +2,7 @@
 clear all
 %%   Generation of a laby scenario 1
 %
-addpath('modelGenerator')
+addpath('modelGenerator', 'data')
 modelGenerator
 % Creation of a struct of the process of Laby
 ProcessAutomata = struct('lab',AutomateGraph,   ...
@@ -49,11 +49,15 @@ ProcessAutomata = struct('lab',AutomateGraph,   ...
         ProcessAutomata.walls.state(i).Marked = 1;%(i==walls.mark);
     end
 % 4 escape
+    ProcessAutomata.escape = AutomateGraph();
+    [ProcessAutomata.escape.state, ProcessAutomata.escape.transition] = ...
+        getStateTransitionFSM('escape.fsm', 0, 0);
     
 %% Transpose to vector Automata
     ProcessAutomata.walls = ProcessAutomata.walls.structAutomata2vectorAutomata;
     ProcessAutomata.sche = ProcessAutomata.sche.structAutomata2vectorAutomata;
     ProcessAutomata.lab = ProcessAutomata.lab.structAutomata2vectorAutomata;
+	ProcessAutomata.escape = ProcessAutomata.escape.structAutomata2vectorAutomata;	% TODO Test
     
     
 %% Product Parrallel
@@ -62,6 +66,8 @@ ProcessAutomata = struct('lab',AutomateGraph,   ...
     
     
 %% Clean up of process composed
-    addpath('data')
     ProcessAutomata.composed = rafineAutomatonClass(ProcessAutomata.composed, ...
-{'nU', 'nD', 'nR', 'nL', 'wD', 'wR', 'U', 'D', 'R', 'L'});
+        {'nU', 'nD', 'nR', 'nL', 'wD', 'wR', 'U', 'D', 'R', 'L'});
+    
+%%  Add escape option
+    ProcessAutomata.composed = ParrallelComposition(ProcessAutomata.escape, ProcessAutomata.composed);
