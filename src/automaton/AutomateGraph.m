@@ -43,7 +43,9 @@ classdef AutomateGraph % Claire a choisi le titre
             end
             for i = 1:length(st)
                if isa(st(i).Name ,'cell')
-                  obj.state(i).Name = str2double(st(i).Name{:});
+                   if ~isnan(str2double(st(i).Name{:}))
+                    obj.state(i).Name = str2double(st(i).Name{:});
+                   end
                end
                if isa(st(i).Marked ,'char')
                   obj.state(i).Marked = str2double(st(i).Marked);
