@@ -50,8 +50,7 @@ ProcessAutomata = struct('lab',AutomateGraph,   ...
     end
 % 4 escape
     ProcessAutomata.escape = AutomateGraph();
-    [ProcessAutomata.escape.state, ProcessAutomata.escape.transition] = ...
-        getStateTransitionFSM('escape.fsm', 0, 0);
+    ProcessAutomata.escape = ProcessAutomata.escape.FSM2Automata('escape.fsm');
     
 %% Transpose to vector Automata
     ProcessAutomata.walls = ProcessAutomata.walls.structAutomata2vectorAutomata;
