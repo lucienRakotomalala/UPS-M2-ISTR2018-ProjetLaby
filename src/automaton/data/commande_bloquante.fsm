@@ -1,0 +1,690 @@
+179
+
+e1,w1,l1,s1	0	1
+wR	e1,w2,l1,s2	c	o
+
+e1,w1,l10,s2	0	3
+U	e1,w1,l6,s1	c	o
+R	e1,w1,l11,s1	c	o
+L	e1,w1,l9,s1	c	o
+
+e1,w1,l11,s1	0	1
+wR	e1,w2,l11,s2	c	o
+
+e1,w1,l12,s2	0	2
+nL	e2,w1,l12,s2	c	o
+U	e1,w1,l8,s1	c	o
+
+e1,w1,l13,s2	0	3
+nL	e2,w1,l13,s2	c	o
+U	e1,w1,l9,s1	c	o
+R	e1,w1,l14,s1	c	o
+
+e1,w1,l14,s1	0	1
+wR	e1,w2,l14,s2	c	o
+
+e1,w1,l15,s2	0	3
+nL	e2,w1,l15,s2	c	o
+U	e1,w1,l11,s1	c	o
+R	e1,w1,l16,s1	c	o
+
+e1,w1,l16,s1	0	2
+wR	e1,w2,l16,s2	c	o
+espc	e1,w1,l16,s1	c	o
+
+e1,w1,l2,s2	0	3
+D	e1,w1,l6,s1	c	o
+nL	e2,w1,l2,s2	c	o
+R	e1,w1,l3,s1	c	o
+
+e1,w1,l3,s1	0	1
+wR	e1,w2,l3,s2	c	o
+
+e1,w1,l4,s2	0	2
+D	e1,w1,l8,s1	c	o
+L	e1,w1,l3,s1	c	o
+
+e1,w1,l5,s2	0	2
+nL	e2,w1,l5,s2	c	o
+U	e1,w1,l1,s1	c	o
+
+e1,w1,l6,s1	0	1
+wR	e1,w2,l6,s2	c	o
+
+e1,w1,l7,s2	0	3
+D	e1,w1,l11,s1	c	o
+R	e1,w1,l8,s1	c	o
+L	e1,w1,l6,s1	c	o
+
+e1,w1,l8,s1	0	1
+wR	e1,w2,l8,s2	c	o
+
+e1,w1,l9,s1	0	1
+wR	e1,w2,l9,s2	c	o
+
+e1,w2,l1,s2	0	2
+D	e1,w2,l5,s1	c	o
+nL	e2,w2,l1,s2	c	o
+
+e1,w2,l10,s1	0	1
+wD	e1,w3,l10,s2	c	o
+
+e1,w2,l11,s2	0	2
+U	e1,w2,l7,s1	c	o
+L	e1,w2,l10,s1	c	o
+
+e1,w2,l12,s1	0	1
+wD	e1,w3,l12,s2	c	o
+
+e1,w2,l13,s1	0	1
+wD	e1,w3,l13,s2	c	o
+
+e1,w2,l14,s2	0	2
+U	e1,w2,l10,s1	c	o
+L	e1,w2,l13,s1	c	o
+
+e1,w2,l15,s1	0	1
+wD	e1,w3,l15,s2	c	o
+
+e1,w2,l16,s2	0	3
+U	e1,w2,l12,s1	c	o
+L	e1,w2,l15,s1	c	o
+espc	e1,w2,l16,s2	c	o
+
+e1,w2,l2,s1	0	1
+wD	e1,w3,l2,s2	c	o
+
+e1,w2,l3,s2	0	3
+D	e1,w2,l7,s1	c	o
+R	e1,w2,l4,s1	c	o
+L	e1,w2,l2,s1	c	o
+
+e1,w2,l4,s1	0	1
+wD	e1,w3,l4,s2	c	o
+
+e1,w2,l5,s1	0	1
+wD	e1,w3,l5,s2	c	o
+
+e1,w2,l6,s2	0	3
+nL	e2,w2,l6,s2	c	o
+U	e1,w2,l2,s1	c	o
+R	e1,w2,l7,s1	c	o
+
+e1,w2,l7,s1	0	1
+wD	e1,w3,l7,s2	c	o
+
+e1,w2,l8,s2	0	2
+D	e1,w2,l12,s1	c	o
+L	e1,w2,l7,s1	c	o
+
+e1,w2,l9,s2	0	3
+nL	e2,w2,l9,s2	c	o
+U	e1,w2,l5,s1	c	o
+R	e1,w2,l10,s1	c	o
+
+e1,w3,l1,s1	0	1
+wR	e1,w4,l1,s2	c	o
+
+e1,w3,l10,s2	0	3
+D	e1,w3,l14,s1	c	o
+nL	e2,w3,l10,s2	c	o
+R	e1,w3,l11,s1	c	o
+
+e1,w3,l11,s1	0	1
+wR	e1,w4,l11,s2	c	o
+
+e1,w3,l12,s2	0	3
+D	e1,w3,l16,s1	c	o
+U	e1,w3,l8,s1	c	o
+L	e1,w3,l11,s1	c	o
+
+e1,w3,l13,s2	0	2
+nL	e2,w3,l13,s2	c	o
+R	e1,w3,l14,s1	c	o
+
+e1,w3,l14,s1	0	1
+wR	e1,w4,l14,s2	c	o
+
+e1,w3,l15,s2	0	1
+L	e1,w3,l14,s1	c	o
+
+e1,w3,l16,s1	0	2
+wR	e1,w4,l16,s2	c	o
+espc	e1,w3,l16,s1	c	o
+
+e1,w3,l2,s2	0	2
+D	e1,w3,l6,s1	c	o
+L	e1,w3,l1,s1	c	o
+
+e1,w3,l3,s1	0	1
+wR	e1,w4,l3,s2	c	o
+
+e1,w3,l4,s2	0	1
+L	e1,w3,l3,s1	c	o
+
+e1,w3,l5,s2	0	3
+D	e1,w3,l9,s1	c	o
+nL	e2,w3,l5,s2	c	o
+U	e1,w3,l1,s1	c	o
+
+e1,w3,l6,s1	0	1
+wR	e1,w4,l6,s2	c	o
+
+e1,w3,l7,s2	0	4
+D	e1,w3,l11,s1	c	o
+U	e1,w3,l3,s1	c	o
+R	e1,w3,l8,s1	c	o
+L	e1,w3,l6,s1	c	o
+
+e1,w3,l8,s1	0	1
+wR	e1,w4,l8,s2	c	o
+
+e1,w3,l9,s1	0	1
+wR	e1,w4,l9,s2	c	o
+
+e1,w4,l1,s2	0	2
+nL	e2,w4,l1,s2	c	o
+R	e1,w4,l2,s1	c	o
+
+e1,w4,l10,s1	0	1
+wD	e1,w5,l10,s2	c	o
+
+e1,w4,l11,s2	0	3
+D	e1,w4,l15,s1	c	o
+R	e1,w4,l12,s1	c	o
+L	e1,w4,l10,s1	c	o
+
+e1,w4,l12,s1	0	1
+wD	e1,w5,l12,s2	c	o
+
+e1,w4,l13,s1	0	1
+wD	e1,w5,l13,s2	c	o
+
+e1,w4,l14,s2	0	2
+R	e1,w4,l15,s1	c	o
+L	e1,w4,l13,s1	c	o
+
+e1,w4,l15,s1	0	1
+wD	e1,w5,l15,s2	c	o
+
+e1,w4,l16,s2	0	2
+nL	e2,w4,l16,s2	c	o
+espc	e1,w4,l16,s2	c	o
+
+e1,w4,l2,s1	0	1
+wD	e1,w5,l2,s2	c	o
+
+e1,w4,l3,s2	0	3
+D	e1,w4,l7,s1	c	o
+nL	e2,w4,l3,s2	c	o
+R	e1,w4,l4,s1	c	o
+
+e1,w4,l4,s1	0	1
+wD	e1,w5,l4,s2	c	o
+
+e1,w4,l5,s1	0	1
+wD	e1,w5,l5,s2	c	o
+
+e1,w4,l6,s2	0	4
+D	e1,w4,l10,s1	c	o
+nL	e2,w4,l6,s2	c	o
+U	e1,w4,l2,s1	c	o
+R	e1,w4,l7,s1	c	o
+
+e1,w4,l7,s1	0	1
+wD	e1,w5,l7,s2	c	o
+
+e1,w4,l8,s2	0	3
+D	e1,w4,l12,s1	c	o
+U	e1,w4,l4,s1	c	o
+L	e1,w4,l7,s1	c	o
+
+e1,w4,l9,s2	0	3
+D	e1,w4,l13,s1	c	o
+nL	e2,w4,l9,s2	c	o
+U	e1,w4,l5,s1	c	o
+
+e1,w5,l1,s1	0	1
+wR	e1,w6,l1,s2	c	o
+
+e1,w5,l10,s2	0	3
+nL	e2,w5,l10,s2	c	o
+U	e1,w5,l6,s1	c	o
+R	e1,w5,l11,s1	c	o
+
+e1,w5,l11,s1	0	1
+wR	e1,w6,l11,s2	c	o
+
+e1,w5,l12,s2	0	2
+U	e1,w5,l8,s1	c	o
+L	e1,w5,l11,s1	c	o
+
+e1,w5,l13,s2	0	2
+nL	e2,w5,l13,s2	c	o
+U	e1,w5,l9,s1	c	o
+
+e1,w5,l14,s1	0	1
+wR	e1,w6,l14,s2	c	o
+
+e1,w5,l15,s2	0	3
+U	e1,w5,l11,s1	c	o
+R	e1,w5,l16,s1	c	o
+L	e1,w5,l14,s1	c	o
+
+e1,w5,l16,s1	0	2
+wR	e1,w6,l16,s2	c	o
+espc	e1,w5,l16,s1	c	o
+
+e1,w5,l2,s2	0	3
+D	e1,w5,l6,s1	c	o
+R	e1,w5,l3,s1	c	o
+L	e1,w5,l1,s1	c	o
+
+e1,w5,l3,s1	0	1
+wR	e1,w6,l3,s2	c	o
+
+e1,w5,l4,s2	0	2
+D	e1,w5,l8,s1	c	o
+nL	e2,w5,l4,s2	c	o
+
+e1,w5,l5,s2	0	3
+D	e1,w5,l9,s1	c	o
+nL	e2,w5,l5,s2	c	o
+R	e1,w5,l6,s1	c	o
+
+e1,w5,l6,s1	0	1
+wR	e1,w6,l6,s2	c	o
+
+e1,w5,l7,s2	0	3
+nL	e2,w5,l7,s2	c	o
+U	e1,w5,l3,s1	c	o
+R	e1,w5,l8,s1	c	o
+
+e1,w5,l8,s1	0	1
+wR	e1,w6,l8,s2	c	o
+
+e1,w5,l9,s1	0	1
+wR	e1,w6,l9,s2	c	o
+
+e1,w6,l1,s2	0	3
+D	e1,w6,l5,s1	c	o
+nL	e2,w6,l1,s2	c	o
+R	e1,w6,l2,s1	c	o
+
+e1,w6,l10,s1	0	1
+wD	e1,w7,l10,s2	c	o
+
+e1,w6,l11,s2	0	3
+U	e1,w6,l7,s1	c	o
+R	e1,w6,l12,s1	c	o
+L	e1,w6,l10,s1	c	o
+
+e1,w6,l12,s1	0	1
+wD	e1,w7,l12,s2	c	o
+
+e1,w6,l14,s2	0	3
+nL	e2,w6,l14,s2	c	o
+U	e1,w6,l10,s1	c	o
+R	e1,w6,l15,s1	c	o
+
+e1,w6,l15,s1	0	1
+wD	e1,w7,l15,s2	c	o
+
+e1,w6,l16,s2	0	3
+U	e1,w6,l12,s1	c	o
+L	e1,w6,l15,s1	c	o
+espc	e1,w6,l16,s2	c	o
+
+e1,w6,l2,s1	0	1
+wD	e1,w7,l2,s2	c	o
+
+e1,w6,l3,s2	0	2
+D	e1,w6,l7,s1	c	o
+L	e1,w6,l2,s1	c	o
+
+e1,w6,l4,s1	0	1
+wD	e1,w7,l4,s2	c	o
+
+e1,w6,l5,s1	0	1
+wD	e1,w7,l5,s2	c	o
+
+e1,w6,l6,s2	0	2
+D	e1,w6,l10,s1	c	o
+L	e1,w6,l5,s1	c	o
+
+e1,w6,l7,s1	0	1
+wD	e1,w7,l7,s2	c	o
+
+e1,w6,l8,s2	0	2
+U	e1,w6,l4,s1	c	o
+L	e1,w6,l7,s1	c	o
+
+e1,w6,l9,s2	0	2
+nL	e2,w6,l9,s2	c	o
+U	e1,w6,l5,s1	c	o
+
+e1,w7,l1,s1	0	1
+wR	e1,w8,l1,s2	c	o
+
+e1,w7,l10,s2	0	3
+D	e1,w7,l14,s1	c	o
+U	e1,w7,l6,s1	c	o
+L	e1,w7,l9,s1	c	o
+
+e1,w7,l11,s1	0	1
+wR	e1,w8,l11,s2	c	o
+
+e1,w7,l12,s2	0	2
+D	e1,w7,l16,s1	c	o
+L	e1,w7,l11,s1	c	o
+
+e1,w7,l14,s1	0	1
+wR	e1,w8,l14,s2	c	o
+
+e1,w7,l15,s2	0	2
+R	e1,w7,l16,s1	c	o
+L	e1,w7,l14,s1	c	o
+
+e1,w7,l16,s1	0	2
+wR	e1,w8,l16,s2	c	o
+espc	e1,w7,l16,s1	c	o
+
+e1,w7,l2,s2	0	2
+nL	e2,w7,l2,s2	c	o
+R	e1,w7,l3,s1	c	o
+
+e1,w7,l3,s1	0	1
+wR	e1,w8,l3,s2	c	o
+
+e1,w7,l4,s2	0	2
+D	e1,w7,l8,s1	c	o
+L	e1,w7,l3,s1	c	o
+
+e1,w7,l5,s2	0	4
+D	e1,w7,l9,s1	c	o
+nL	e2,w7,l5,s2	c	o
+U	e1,w7,l1,s1	c	o
+R	e1,w7,l6,s1	c	o
+
+e1,w7,l6,s1	0	1
+wR	e1,w8,l6,s2	c	o
+
+e1,w7,l7,s2	0	3
+D	e1,w7,l11,s1	c	o
+U	e1,w7,l3,s1	c	o
+L	e1,w7,l6,s1	c	o
+
+e1,w7,l8,s1	0	1
+wR	e1,w8,l8,s2	c	o
+
+e1,w7,l9,s1	0	1
+wR	e1,w8,l9,s2	c	o
+
+e1,w8,l1,s2	0	2
+D	e1,w8,l5,s1	c	o
+nL	e2,w8,l1,s2	c	o
+
+e1,w8,l10,s1	0	1
+wD	e1,w1,l10,s2	c	o
+
+e1,w8,l11,s2	0	4
+D	e1,w8,l15,s1	c	o
+nL	e2,w8,l11,s2	c	o
+U	e1,w8,l7,s1	c	o
+R	e1,w8,l12,s1	c	o
+
+e1,w8,l12,s1	0	1
+wD	e1,w1,l12,s2	c	o
+
+e1,w8,l13,s1	0	1
+wD	e1,w1,l13,s2	c	o
+
+e1,w8,l14,s2	0	2
+nL	e2,w8,l14,s2	c	o
+R	e1,w8,l15,s1	c	o
+
+e1,w8,l15,s1	0	1
+wD	e1,w1,l15,s2	c	o
+
+e1,w8,l16,s2	0	2
+L	e1,w8,l15,s1	c	o
+espc	e1,w8,l16,s2	c	o
+
+e1,w8,l2,s1	0	1
+wD	e1,w1,l2,s2	c	o
+
+e1,w8,l3,s2	0	2
+R	e1,w8,l4,s1	c	o
+L	e1,w8,l2,s1	c	o
+
+e1,w8,l4,s1	0	1
+wD	e1,w1,l4,s2	c	o
+
+e1,w8,l5,s1	0	1
+wD	e1,w1,l5,s2	c	o
+
+e1,w8,l6,s2	0	4
+D	e1,w8,l10,s1	c	o
+U	e1,w8,l2,s1	c	o
+R	e1,w8,l7,s1	c	o
+L	e1,w8,l5,s1	c	o
+
+e1,w8,l7,s1	0	1
+wD	e1,w1,l7,s2	c	o
+
+e1,w8,l8,s2	0	3
+D	e1,w8,l12,s1	c	o
+nL	e2,w8,l8,s2	c	o
+U	e1,w8,l4,s1	c	o
+
+e1,w8,l9,s2	0	3
+D	e1,w8,l13,s1	c	o
+nL	e2,w8,l9,s2	c	o
+R	e1,w8,l10,s1	c	o
+
+e2,w1,l12,s2	0	2
+U	e1,w1,l8,s1	c	o
+nD	e3,w1,l12,s2	c	o
+
+e2,w1,l13,s2	0	3
+U	e1,w1,l9,s1	c	o
+R	e1,w1,l14,s1	c	o
+nD	e3,w1,l13,s2	c	o
+
+e2,w1,l15,s2	0	3
+U	e1,w1,l11,s1	c	o
+R	e1,w1,l16,s1	c	o
+nD	e3,w1,l15,s2	c	o
+
+e2,w1,l2,s2	0	2
+D	e1,w1,l6,s1	c	o
+R	e1,w1,l3,s1	c	o
+
+e2,w1,l5,s2	0	2
+U	e1,w1,l1,s1	c	o
+nD	e3,w1,l5,s2	c	o
+
+e2,w2,l1,s2	0	1
+D	e1,w2,l5,s1	c	o
+
+e2,w2,l6,s2	0	3
+U	e1,w2,l2,s1	c	o
+R	e1,w2,l7,s1	c	o
+nD	e3,w2,l6,s2	c	o
+
+e2,w2,l9,s2	0	3
+U	e1,w2,l5,s1	c	o
+R	e1,w2,l10,s1	c	o
+nD	e3,w2,l9,s2	c	o
+
+e2,w3,l10,s2	0	2
+D	e1,w3,l14,s1	c	o
+R	e1,w3,l11,s1	c	o
+
+e2,w3,l13,s2	0	2
+R	e1,w3,l14,s1	c	o
+nD	e3,w3,l13,s2	c	o
+
+e2,w3,l5,s2	0	2
+D	e1,w3,l9,s1	c	o
+U	e1,w3,l1,s1	c	o
+
+e2,w4,l1,s2	0	2
+R	e1,w4,l2,s1	c	o
+nD	e3,w4,l1,s2	c	o
+
+e2,w4,l16,s2	0	2
+nD	e3,w4,l16,s2	c	o
+espc	e2,w4,l16,s2	c	o
+
+e2,w4,l3,s2	0	2
+D	e1,w4,l7,s1	c	o
+R	e1,w4,l4,s1	c	o
+
+e2,w4,l6,s2	0	3
+D	e1,w4,l10,s1	c	o
+U	e1,w4,l2,s1	c	o
+R	e1,w4,l7,s1	c	o
+
+e2,w4,l9,s2	0	2
+D	e1,w4,l13,s1	c	o
+U	e1,w4,l5,s1	c	o
+
+e2,w5,l10,s2	0	3
+U	e1,w5,l6,s1	c	o
+R	e1,w5,l11,s1	c	o
+nD	e3,w5,l10,s2	c	o
+
+e2,w5,l13,s2	0	2
+U	e1,w5,l9,s1	c	o
+nD	e3,w5,l13,s2	c	o
+
+e2,w5,l4,s2	0	1
+D	e1,w5,l8,s1	c	o
+
+e2,w5,l5,s2	0	2
+D	e1,w5,l9,s1	c	o
+R	e1,w5,l6,s1	c	o
+
+e2,w5,l7,s2	0	3
+U	e1,w5,l3,s1	c	o
+R	e1,w5,l8,s1	c	o
+nD	e3,w5,l7,s2	c	o
+
+e2,w6,l1,s2	0	2
+D	e1,w6,l5,s1	c	o
+R	e1,w6,l2,s1	c	o
+
+e2,w6,l14,s2	0	3
+U	e1,w6,l10,s1	c	o
+R	e1,w6,l15,s1	c	o
+nD	e3,w6,l14,s2	c	o
+
+e2,w6,l9,s2	0	2
+U	e1,w6,l5,s1	c	o
+nD	e3,w6,l9,s2	c	o
+
+e2,w7,l2,s2	0	2
+R	e1,w7,l3,s1	c	o
+nD	e3,w7,l2,s2	c	o
+
+e2,w7,l5,s2	0	3
+D	e1,w7,l9,s1	c	o
+U	e1,w7,l1,s1	c	o
+R	e1,w7,l6,s1	c	o
+
+e2,w8,l1,s2	0	1
+D	e1,w8,l5,s1	c	o
+
+e2,w8,l11,s2	0	3
+D	e1,w8,l15,s1	c	o
+U	e1,w8,l7,s1	c	o
+R	e1,w8,l12,s1	c	o
+
+e2,w8,l14,s2	0	2
+R	e1,w8,l15,s1	c	o
+nD	e3,w8,l14,s2	c	o
+
+e2,w8,l8,s2	0	2
+D	e1,w8,l12,s1	c	o
+U	e1,w8,l4,s1	c	o
+
+e2,w8,l9,s2	0	2
+D	e1,w8,l13,s1	c	o
+R	e1,w8,l10,s1	c	o
+
+e3,w1,l12,s2	0	2
+U	e1,w1,l8,s1	c	o
+nR	e4,w1,l12,s2	c	o
+
+e3,w1,l13,s2	0	2
+U	e1,w1,l9,s1	c	o
+R	e1,w1,l14,s1	c	o
+
+e3,w1,l15,s2	0	2
+U	e1,w1,l11,s1	c	o
+R	e1,w1,l16,s1	c	o
+
+e3,w1,l5,s2	0	2
+U	e1,w1,l1,s1	c	o
+nR	e4,w1,l5,s2	c	o
+
+e3,w2,l6,s2	0	2
+U	e1,w2,l2,s1	c	o
+R	e1,w2,l7,s1	c	o
+
+e3,w2,l9,s2	0	2
+U	e1,w2,l5,s1	c	o
+R	e1,w2,l10,s1	c	o
+
+e3,w3,l13,s2	0	1
+R	e1,w3,l14,s1	c	o
+
+e3,w4,l1,s2	0	1
+R	e1,w4,l2,s1	c	o
+
+e3,w4,l16,s2	0	2
+nR	e4,w4,l16,s2	c	o
+espc	e3,w4,l16,s2	c	o
+
+e3,w5,l10,s2	0	2
+U	e1,w5,l6,s1	c	o
+R	e1,w5,l11,s1	c	o
+
+e3,w5,l13,s2	0	2
+U	e1,w5,l9,s1	c	o
+nR	e4,w5,l13,s2	c	o
+
+e3,w5,l7,s2	0	2
+U	e1,w5,l3,s1	c	o
+R	e1,w5,l8,s1	c	o
+
+e3,w6,l14,s2	0	2
+U	e1,w6,l10,s1	c	o
+R	e1,w6,l15,s1	c	o
+
+e3,w6,l9,s2	0	2
+U	e1,w6,l5,s1	c	o
+nR	e4,w6,l9,s2	c	o
+
+e3,w7,l2,s2	0	1
+R	e1,w7,l3,s1	c	o
+
+e3,w8,l14,s2	0	1
+R	e1,w8,l15,s1	c	o
+
+e4,w1,l12,s2	0	0
+
+e4,w1,l5,s2	0	0
+
+e4,w4,l16,s2	0	2
+espc	e4,w4,l16,s2	c	o
+nU	e5,w4,l16,s2	c	o
+
+e4,w5,l13,s2	0	0
+
+e4,w6,l9,s2	0	0
+
+e5,w4,l16,s2	1	1
+espc	e5,w4,l16,s2	c	o
+

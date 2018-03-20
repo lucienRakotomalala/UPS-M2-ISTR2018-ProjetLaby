@@ -89,7 +89,7 @@ function [ MatriceCell, Alphabet, States] = creationMatricetransition( nameOfFil
     %   wD
     % 
     MatriceCell = cell(10,1);
-    cellOrder = {'U', 'D' 'L','R','nU','nD','nL','nR','wR','wD','espc'};
+    cellOrder = {'U', 'D' 'L','R','nU','nD','nL','nR','wR','wD','escp'};
    for i = 1:length(cellOrder)
        isEventExist = 0;
        j = 1;
