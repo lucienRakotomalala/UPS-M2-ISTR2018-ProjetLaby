@@ -32,7 +32,7 @@ clear
 [walls.indInit,walls.mark,walls.datas, walls.nbS]...
 = AutomatonWallsContraintsCreation (wallsV,wallsH,'v');
 
-% scheduling contraints
+%% scheduling contraints
 % function [initialIndice,markedStatesIndices,transitionsDatas, numberOfStates] ...
 % = AutomatonSchedulingCreation (Scheduling,PacmanLabyDatas,GhostLabyDatas,FirstWallsMove)
 
@@ -54,7 +54,7 @@ walls.str.s = writeStates('w',walls.nbS,walls.indInit,walls.mark);
 walls.str.t = writeTransitions('w',walls.datas) ;
 SaveDESUMAFile(walls.str.t,walls.str.s,'walls.txt');
 
-%sched
+%% sched
 sche.str.s = writeStates('s',sche.nbS,sche.indInit,sche.mark);
 sche.str.t = writeTransitions('s',sche.datas) ;
 SaveDESUMAFile(sche.str.t,sche.str.s,'sched.txt');
