@@ -4,7 +4,7 @@
 %
 clear
 %% Open File
-myF = fopen('procede4par4.fsm');
+myF = fopen('procede_bloq_52.fsm');
 % Take all char
 data = fread(myF,'*char');
 
@@ -37,7 +37,7 @@ fclose(myF);
 %% 
 data(bannedI) = [];
 %% Write the clean file
-name = strcat('procede','.fsm');
+name = strcat('procede_bloq_52','.fsm');
 F = fopen(name, 'w');
 fwrite(F,data);
 fclose(F);

@@ -20,7 +20,7 @@ wR  = transitionsMatrix{9};%cellule 9
 wD  = transitionsMatrix{10};%cellule 10
       transitionsMatrix{10,2}='wD';
 esc= transitionsMatrix{11};%cellule 11
-      transitionsMatrix{11,2}='espc';
+      transitionsMatrix{11,2}='escp';
 n = length(U);  % Nbr States
 M=[U D L R nU nD nL nR wR wD esc];
 [s,t]=find(M~=0);
