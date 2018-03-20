@@ -160,8 +160,8 @@ classdef AutomateGraph % Claire a choisi le titre
                     s_from = ligne;
                     t_out = tr_buff(ligne);
                     if(t_out ~= s_from && t_out ~=0 ) %teste si pas tr stable et tr existante
-                        s = [s s_from];
-                        t = [t t_out];
+                        s = [s s_from]
+                        t = [t t_out]
                        tree = [tree c];
                     end
                 end
@@ -172,7 +172,7 @@ classdef AutomateGraph % Claire a choisi le titre
        
             G = digraph(s,t);
 
-            path = shortestpath(G,initialState,studiedState,'Method','positive');
+            path = shortestpath(G,initialState,studiedState,'Method','positive')
         end
 
     end

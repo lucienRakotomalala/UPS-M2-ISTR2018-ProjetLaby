@@ -69,13 +69,13 @@ ProcessAutomata = struct('lab',AutomateGraph,   ...
         {'nU', 'nD', 'nR', 'nL', 'wD', 'wR', 'U', 'D', 'R', 'L'});
     
 %%  Add escape option
-   % ProcessAutomata.composed = ParrallelComposition(ProcessAutomata.composed, ProcessAutomata.escape);
+    ProcessAutomata.composed = ParrallelComposition(ProcessAutomata.composed, ProcessAutomata.escape);
     
 %% Objective add    
     Objective = AutomateGraph();
-    Objective = Objective.FSM2Automata('commandPacmanMemory.fsm');
+    Objective = Objective.FSM2Automata('commandPacmanSimple.fsm');
     Objective = Objective.structAutomata2vectorAutomata;
 %% Product parallel with objectives
     Command = ParrallelComposition(Objective, ProcessAutomata.composed);
     %%recherche
-    %Command.PathResearche(1,9);
+    Command.PathResearche(1,4);
