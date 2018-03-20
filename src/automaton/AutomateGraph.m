@@ -145,6 +145,35 @@ classdef AutomateGraph % Claire a choisi le titre
                obj.vector(i).value = obj.matrixTrans(i).matrice*[1:length(obj.state)]';
             end
         end
+        
+        %%Recherche d'une sequence optimale et existente pour objectif
+        %%donné
+        
+        function [path, tree] = PathResearche(obj, initialState, studiedState)
+            s=[];
+            t=[];
+            tree = [];
+            for c = 1:size(obj.vector,2)
+                tr_buff = obj.vector(c).value;
+                tic
+                for ligne = 1:size(tr_buff,1)
+                    s_from = ligne;
+                    t_out = tr_buff(ligne);
+                    if(t_out ~= s_from && t_out ~=0 ) %teste si pas tr stable et tr existante
+                        s = [s s_from];
+                        t = [t t_out];
+                       tree = [tree c];
+                    end
+                end
+                toc
+                
+            end
+            
+       
+            G = digraph(s,t);
+
+            path = shortestpath(G,initialState,studiedState,'Method','positive');
+        end
 
     end
     
