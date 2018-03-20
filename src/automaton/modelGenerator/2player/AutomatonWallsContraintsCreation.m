@@ -9,7 +9,8 @@ function [initialIndice,markedStatesIndices,transitionsDatas, numberOfStates] = 
                                              % x = 'h' : the first walls
                                                  % move is horizontal
 % Output
-    % initialIndice : int  = [x]         x = indice of the initial state                                             % string to create states by 
+    % initialIndice : int  = [x]         x = indice of the initial state                                             
+                                            % string to create states by 
     % markedStatesIndices : int = [.,.,...] indice of the marked states   
     % transitionsDatas : cell  = {O,D,Tr;.,.,.;}       One line : 1 transition
                                           % O  = origin state 
