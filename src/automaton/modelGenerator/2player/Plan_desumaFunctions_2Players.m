@@ -45,7 +45,6 @@ function errorCode = SaveDESUMAFile(transitionsString,statesString,fileName)
 end
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  A refaire %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
 %% Automaton of labyrinth struture creation :
 function [initialIndice,markedStatesIndices,transitionsDatas, numberOfStates] = AutomatonStrutureLabyCreation (labySize,playerPosition,escapePosition,playerName)
 % Inputs
