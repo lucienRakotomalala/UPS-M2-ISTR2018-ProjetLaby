@@ -28,7 +28,45 @@ classdef AutomateGraph % Claire a choisi le titre
         function obj = AutomateGraph()
             
         end
-        
+        %% Method FSM2Automata
+        function obj = FSM2Automata(obj, nameFileFSM)
+            if ~exist(nameFileFSM,'file')
+                error('Name of file FSM is invalid')
+            end
+            [st, tr] = getStateTransitionFSM(nameFileFSM, 0, 0);
+            
+            if ~isa(st, 'struct')
+                error('The object do not dispose a state struct. Problem in transposition of FSM File');
+            end
+            if ~isa(tr, 'struct')
+                error('The object do not dispose a transition struct. Problem in transposition of FSM File');
+            end
+            for i = 1:length(st)
+               if isa(st(i).Name ,'cell')
+                   if ~isnan(str2double(st(i).Name{:}))
+                    obj.state(i).Name = str2double(st(i).Name{:});
+                   end
+               end
+               if isa(st(i).Marked ,'char')
+                  obj.state(i).Marked = str2double(st(i).Marked);
+               end
+               obj.state(i).Initial = st(i).Initial;
+            end
+            
+            for i = 1:length(tr)
+                if isa(tr(i).StateIn, 'cell')
+                    obj.transition(i).Name = (tr(i).Name{:});
+                end
+                if isa(tr(i).StateIn, 'cell')
+                    obj.transition(i).StateIn = str2double(tr(i).StateIn{:});
+                end
+                if isa(tr(i).StateOut, 'cell')
+                    obj.transition(i).StateOut = str2double(tr(i).StateOut{:});
+                end
+            end
+        end
+
+       
         %% Method vector2matrices
         function obj = vector2matrices(obj)
             if ~isa(obj.vector, 'struct')

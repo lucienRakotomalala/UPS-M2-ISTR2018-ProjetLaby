@@ -47,13 +47,16 @@ function [States, Transition] = getStateTransitionFSM( nameOfFileFSM, ST, SP )
             if isempty(str{1})
                 strStarNext = 5;
             else
-            NbS = NbS +1;
-            States = [States typoState]; 
-            States(NbS).Name = cellstr(str(1));
-            States(NbS).Marked = cell2mat(str(2));
-            strStateNext = 4;
+                NbS = NbS +1;
+                States = [States typoState]; 
+                if NbS == 1 
+                    States(NbS).Initial = 1;
+                end
+                States(NbS).Name = cellstr(str(1));
+                States(NbS).Marked = cell2mat(str(2));
+                strStateNext = 4;
             end
-            end 
+        end 
      end
      
      if strState == 4

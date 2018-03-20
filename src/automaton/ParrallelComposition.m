@@ -42,5 +42,19 @@ function [A] = ParrallelComposition(A1, A2)
             A.vector(end).value = kron([1:length(A1.vector(1).value)]', A2.vector(L_A2member).value);
         end
     end
+	
+%% Association of state Name, Initial and Marked Information
+	if ~(isa(A1.state,'struct')*isa(A2.state,'struct'))
+		disp('No State Information can be add because the Inputs don"t have state struct')
+	else
+		for i = 1:length(A1.state)
+			for j = 1:length(A2.state)
+				%TODO TEST
+				% A.state(j + (i-1)*length(A2.state)).Name = A1.state(i).Name * A2.state(j).Name;
+				A.state(j + (i-1)*length(A2.state)).Initial = A1.state(i).Initial * A2.state(j).Initial;
+				A.state(j + (i-1)*length(A2.state)).Marked = A1.state(i).Marked * A2.state(j).Marked;
+			end
+		end 
+	end
 end
 

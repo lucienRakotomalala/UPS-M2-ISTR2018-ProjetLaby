@@ -1,4 +1,4 @@
-%% This function permits to clean the procede automata 
+%% This function permits to clean the procede automata from a FSM file
 %   It keep the good name of transition to do a Parallel Product with a
 %   command
 %
