@@ -1,0 +1,146 @@
+s lP1 -I 
+s lP2 
+s lP3 
+s lP4 
+s lP5 
+s lP6 
+s lP7 
+s lP8 
+s lP9 
+s lP10 
+s lP11 
+s lP12 
+s lP13 
+s lP14 
+s lP15 
+s lP16 -M 
+
+t lP5 lP1 UP5
+t lP1 lP5 DP1
+t lP2 lP1 LP2
+t lP1 lP2 RP1
+t lP6 lP2 UP6
+t lP2 lP6 DP2
+t lP3 lP2 LP3
+t lP2 lP3 RP2
+t lP7 lP3 UP7
+t lP3 lP7 DP3
+t lP4 lP3 LP4
+t lP3 lP4 RP3
+t lP8 lP4 UP8
+t lP4 lP8 DP4
+t lP6 lP5 LP6
+t lP5 lP6 RP5
+t lP9 lP5 UP9
+t lP5 lP9 DP5
+t lP7 lP6 LP7
+t lP6 lP7 RP6
+t lP10 lP6 UP10
+t lP6 lP10 DP6
+t lP8 lP7 LP8
+t lP7 lP8 RP7
+t lP11 lP7 UP11
+t lP7 lP11 DP7
+t lP10 lP9 LP10
+t lP9 lP10 RP9
+t lP12 lP8 UP12
+t lP8 lP12 DP8
+t lP11 lP10 LP11
+t lP10 lP11 RP10
+t lP13 lP9 UP13
+t lP9 lP13 DP9
+t lP12 lP11 LP12
+t lP11 lP12 RP11
+t lP14 lP10 UP14
+t lP10 lP14 DP10
+t lP14 lP13 LP14
+t lP13 lP14 RP13
+t lP15 lP11 UP15
+t lP11 lP15 DP11
+t lP15 lP14 LP15
+t lP14 lP15 RP14
+t lP16 lP12 UP16
+t lP12 lP16 DP12
+t lP16 lP15 LP16
+t lP15 lP16 RP15
+t lP1 lP1 w_UP1
+t lP1 lP1 w_DP1
+t lP1 lP1 w_LP1
+t lP1 lP1 w_RP1
+t lP2 lP2 w_UP2
+t lP2 lP2 w_DP2
+t lP2 lP2 w_LP2
+t lP2 lP2 w_RP2
+t lP3 lP3 w_UP3
+t lP3 lP3 w_DP3
+t lP3 lP3 w_LP3
+t lP3 lP3 w_RP3
+t lP4 lP4 w_UP4
+t lP4 lP4 w_DP4
+t lP4 lP4 w_LP4
+t lP4 lP4 w_RP4
+t lP5 lP5 w_UP5
+t lP5 lP5 w_DP5
+t lP5 lP5 w_LP5
+t lP5 lP5 w_RP5
+t lP6 lP6 w_UP6
+t lP6 lP6 w_DP6
+t lP6 lP6 w_LP6
+t lP6 lP6 w_RP6
+t lP7 lP7 w_UP7
+t lP7 lP7 w_DP7
+t lP7 lP7 w_LP7
+t lP7 lP7 w_RP7
+t lP8 lP8 w_UP8
+t lP8 lP8 w_DP8
+t lP8 lP8 w_LP8
+t lP8 lP8 w_RP8
+t lP9 lP9 w_UP9
+t lP9 lP9 w_DP9
+t lP9 lP9 w_LP9
+t lP9 lP9 w_RP9
+t lP10 lP10 w_UP10
+t lP10 lP10 w_DP10
+t lP10 lP10 w_LP10
+t lP10 lP10 w_RP10
+t lP11 lP11 w_UP11
+t lP11 lP11 w_DP11
+t lP11 lP11 w_LP11
+t lP11 lP11 w_RP11
+t lP12 lP12 w_UP12
+t lP12 lP12 w_DP12
+t lP12 lP12 w_LP12
+t lP12 lP12 w_RP12
+t lP13 lP13 w_UP13
+t lP13 lP13 w_DP13
+t lP13 lP13 w_LP13
+t lP13 lP13 w_RP13
+t lP14 lP14 w_UP14
+t lP14 lP14 w_DP14
+t lP14 lP14 w_LP14
+t lP14 lP14 w_RP14
+t lP15 lP15 w_UP15
+t lP15 lP15 w_DP15
+t lP15 lP15 w_LP15
+t lP15 lP15 w_RP15
+t lP16 lP16 w_UP16
+t lP16 lP16 w_DP16
+t lP16 lP16 w_LP16
+t lP16 lP16 w_RP16
+t lP1 lP1 P1
+t lP2 lP2 P2
+t lP3 lP3 P3
+t lP4 lP4 P4
+t lP5 lP5 P5
+t lP6 lP6 P6
+t lP7 lP7 P7
+t lP8 lP8 P8
+t lP9 lP9 P9
+t lP10 lP10 P10
+t lP11 lP11 P11
+t lP12 lP12 P12
+t lP13 lP13 P13
+t lP14 lP14 P14
+t lP15 lP15 P15
+t lP16 lP16 P16
+t lP16 lP16 escape
