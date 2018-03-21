@@ -80,25 +80,96 @@ function nextState = f(obj,in)
 %     end
     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-                %%%% COMMANDE 3 %%%%
+                %%%% COMMANDE 3 laby 3x3 %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %down-down-right-up-right-down
+%     if obj.presentState(5)==0
+%         nextState(4)=1;
+%         nextState(5)=obj.presentState(5)+1;
+%     elseif obj.presentState(5)==1
+%          nextState(4)=1;
+%          nextState(5)=obj.presentState(5)+1;
+%     elseif obj.presentState(5)==2
+%          nextState(3)=1;
+%             nextState(5)=obj.presentState(5)+1;
+%     elseif obj.presentState(5)==3
+%          nextState(2)=1;
+%             nextState(5)=obj.presentState(5)+1;
+%     elseif obj.presentState(5)==4
+%          nextState(3)=1;
+%             nextState(5)=obj.presentState(5)+1;
+%     elseif obj.presentState(5)==5
+%          nextState(4)=1;
+%         nextState(5)=obj.presentState(5)+1;
+%     else
+%            nextState=obj.initialState;
+%     end
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                %%%% COMMANDE 4 laby 4x4 %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %D  U  R  R  D  D  D  R
+%     if obj.presentState(5)==0
+%         nextState(4)=1;
+%         nextState(5)=obj.presentState(5)+1;
+%     elseif obj.presentState(5)==1
+%          nextState(2)=1;
+%          nextState(5)=obj.presentState(5)+1;
+%     elseif obj.presentState(5)==2
+%          nextState(3)=1;
+%             nextState(5)=obj.presentState(5)+1;
+%     elseif obj.presentState(5)==3
+%          nextState(3)=1;
+%             nextState(5)=obj.presentState(5)+1;
+%     elseif obj.presentState(5)==4
+%          nextState(4)=1;
+%             nextState(5)=obj.presentState(5)+1;
+%     elseif obj.presentState(5)==5
+%          nextState(4)=1;
+%         nextState(5)=obj.presentState(5)+1;
+%         elseif obj.presentState(5)==6
+%          nextState(4)=1;
+%         nextState(5)=obj.presentState(5)+1;
+%         elseif obj.presentState(5)==7
+%          nextState(3)=1;
+%         nextState(5)=obj.presentState(5)+1;
+%     else
+%            nextState=obj.initialState;
+%     end
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                %%%% COMMANDE 5 laby 5x5 %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % R  R  R  D  U  D  D  U  D  D  D
     if obj.presentState(5)==0
-        nextState(4)=1;
+        nextState(3)=1;
         nextState(5)=obj.presentState(5)+1;
     elseif obj.presentState(5)==1
-         nextState(4)=1;
+         nextState(3)=1;
          nextState(5)=obj.presentState(5)+1;
     elseif obj.presentState(5)==2
          nextState(3)=1;
             nextState(5)=obj.presentState(5)+1;
     elseif obj.presentState(5)==3
-         nextState(2)=1;
+         nextState(4)=1;
             nextState(5)=obj.presentState(5)+1;
     elseif obj.presentState(5)==4
-         nextState(3)=1;
+         nextState(2)=1;
             nextState(5)=obj.presentState(5)+1;
     elseif obj.presentState(5)==5
+         nextState(4)=1;
+        nextState(5)=obj.presentState(5)+1;
+        elseif obj.presentState(5)==6
+         nextState(4)=1;
+        nextState(5)=obj.presentState(5)+1;
+        elseif obj.presentState(5)==7
+         nextState(2)=1;
+        nextState(5)=obj.presentState(5)+1;
+        elseif obj.presentState(5)==8
+         nextState(4)=1;
+        nextState(5)=obj.presentState(5)+1;
+        elseif obj.presentState(5)==9
+         nextState(4)=1;
+        nextState(5)=obj.presentState(5)+1;
+        elseif obj.presentState(5)==10
          nextState(4)=1;
         nextState(5)=obj.presentState(5)+1;
     else

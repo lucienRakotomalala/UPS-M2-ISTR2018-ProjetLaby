@@ -9,9 +9,6 @@
         <position x="517" y="369"/>
         <size width="46" height="46"/>
     </state>
-    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="espc" from="e1" to="e2" legal="true">
-        <labelPosition x="500" y="0"/>
-    </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="nU" from="e1" to="e1" legal="true">
         <pathPoint x="372" y="342"/>
         <pathPoint x="392" y="327"/>
@@ -72,9 +69,7 @@
         <pathPoint x="520" y="162"/>
         <labelPosition x="500" y="0"/>
     </transition>
-    <event xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlEvent" name="espc" observable="true" controllable="true">
-        <AgentProperty observable="true" controllable="true"/>
-    </event>
+    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="escp" from="e1" to="e2" legal="true"/>
     <event xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlEvent" name="nU" observable="true" controllable="true">
         <AgentProperty observable="true" controllable="true"/>
     </event>
@@ -103,6 +98,9 @@
         <AgentProperty observable="true" controllable="true"/>
     </event>
     <event xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlEvent" name="wD" observable="true" controllable="true">
+        <AgentProperty observable="true" controllable="true"/>
+    </event>
+    <event xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlEvent" name="escp" observable="true" controllable="true">
         <AgentProperty observable="true" controllable="true"/>
     </event>
     <initial>e1</initial>
