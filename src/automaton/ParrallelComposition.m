@@ -68,6 +68,6 @@ function [A] = ParrallelComposition(A1, A2)
     A = A.matrices2vector();
     
 %% Delete matrice
-    A.matrixTrans = [];
+    %A.matrixTrans = [];
 end
 

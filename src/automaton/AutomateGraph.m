@@ -139,12 +139,12 @@ classdef AutomateGraph % Claire a choisi le titre
             end
             
             % Conversing to vector
-            obj = obj.matrices2vector();
+            obj.matrices2vector();
         end
         %% Set Vectors
         function obj = matrices2vector(obj)
             for i = 1:length(obj.langage)
-               obj.vector(i).Name  = obj.langage(i)
+               obj.vector(i).Name  = obj.langage(i);
                % Assignement of a value for each row
                obj.vector(i).value = obj.matrixTrans(i).matrice*[1:length(obj.state)]';
             end
@@ -178,7 +178,34 @@ classdef AutomateGraph % Claire a choisi le titre
 
             path = shortestpath(G,initialState,studiedState,'Method','positive')
         end
-
+        %% 
+        function obj = vector2structAutomata(obj)
+            
+            %obj.matrices2vector();
+            for i = 1:length(obj.vector)
+                [l,~,v] = find(obj.vector(i).value);
+                for j = 1:length(l)
+                    obj.transition(end+1).Name = obj.vector(i).Name;
+                    obj.transition(end).StateIn = l(j);
+                    obj.transition(end).StateOut = v(j);
+                end
+            end
+        end
+        
+        %% Export To Desuma file (txt)
+        function obj = export2DESUMA(obj)
+            % You have to put aautomata with vector and state struct IN.
+            obj = obj.vector2structAutomata;
+            dataTransition = struct2cell(obj.transition);
+            dataTransition = permute(dataTransition,[3 1 2]); 
+            dataTransition = circshift(dataTransition, 2,2);
+            for i = 1:length(obj.transition)
+               dataTransition{i,3} =  dataTransition{i,3}{:};
+            end
+            stringTransition = writeTransitions('r', dataTransition);
+            stringState = writeStates('r', length(obj.state), find([obj.state.Initial]), 0);
+            SaveDESUMAFile(stringTransition, stringState, 'test.txt');
+        end
     end
     
 end

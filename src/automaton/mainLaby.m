@@ -79,4 +79,4 @@ ProcessAutomata = struct('lab',AutomateGraph,   ...
     Command = ParrallelComposition(Objective, ProcessAutomata.composed);
     %%recherche
   
-  Command.PathResearche(1,4);
+ % Command.PathResearche(1,4);
