@@ -138,16 +138,20 @@ classdef AutomateGraph % Claire a choisi le titre
                 end
             end
             
-            %% Set Vectors
+            % Conversing to vector
+            obj = obj.matrices2vector();
+        end
+        %% Set Vectors
+        function obj = matrices2vector(obj)
             for i = 1:length(obj.langage)
-               obj.vector(i).Name  = obj.langage(i);
+               obj.vector(i).Name  = obj.langage(i)
                % Assignement of a value for each row
                obj.vector(i).value = obj.matrixTrans(i).matrice*[1:length(obj.state)]';
             end
         end
         
-        %%Recherche d'une sequence optimale et existente pour objectif
-        %%donné
+        %% Recherche d'une sequence optimale et existente pour objectif
+        %donné
         
         function [path, tree] = PathResearche(obj, initialState, studiedState)
             s=[];
