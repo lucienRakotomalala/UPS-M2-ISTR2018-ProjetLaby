@@ -68,16 +68,16 @@ function figure_Laby_OpeningFcn(hObject, eventdata, handles, varargin)
     % Initial laby state
     %labyInit.wallsV_i =[1 1;0 1; 0 0];%laby 3x3
     %labyInit.wallsV_i = [1 0 0;1 0 0;0 0 1; 0 1 0];%laby 4x4 %  dimension can change
-    labyInit.wallsV_i =[1 0 1 0; 1 1 0 1; 0 0 0 0;0 1 1 1; 1 0 0 0]; %laby 5x5
-    %labyInit.wallsV_i =[1 0 0 0 0 0; 1 0 0 0 0 0; 1 1 1 0 1 0; 0 0 0 0 1 1; 0 0 0 0 0 0; 1 0 0 1 0 1;1 0 0 0 0 0]; %laby 7x7
+    %labyInit.wallsV_i =[1 0 1 0; 1 1 0 1; 0 0 0 0;0 1 1 1; 1 0 0 0]; %laby 5x5
+    labyInit.wallsV_i =[1 0 0 0 0 0; 1 0 0 0 0 0; 1 1 1 0 1 0; 0 0 0 0 1 1; 0 0 0 0 0 0; 1 0 0 1 0 1;1 0 0 0 0 0]; %laby 7x7
     %labyInit.wallsH_i =    [1 0 0; 1 0 0];%laby 3x3  
     %labyInit.wallsH_i =    [0 0 1 0;  1 0 0 0; 0 1 0 1];%laby 4x4 %  dimension can change
-    labyInit.wallsH_i=[0 0 0 1 0; 0 1 0 1 0;0 1 0 1 0;0 1 0 0 1];%laby 5x5
-    %labyInit.wallsH_i=[0 0 0 0 0 1 1; 0 0 1 0 0 1 1;0 1 0 0 0 0 0;0 0 0 0 0 1 0;0 1 1 1 0 0 1;0 0 1 1 0 1 0];%laby 7x7
+    %labyInit.wallsH_i=[0 0 0 1 0; 0 1 0 1 0;0 1 0 1 0;0 1 0 0 1];%laby 5x5
+    labyInit.wallsH_i=[0 0 0 0 0 1 1; 0 0 1 0 0 1 1;0 1 0 0 0 0 0;0 0 0 0 0 1 0;0 1 1 1 0 0 1;0 0 1 1 0 1 0];%laby 7x7
     
     labyInit.pacman_i = [2,	1]; % static dimension
 % TODELETE    labyInit.ghost_i  = [3,1]; % static dimension
-    labyInit.escape_i = {[5 5], 0}; % static dimension
+    labyInit.escape_i = {[7 7], 0}; % static dimension
  % TODELETE   labyInit.caught_i = 0; % static dimension
 
     % initial value of walls command

@@ -1,76 +1,79 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <XmlAutomaton Stochastic="false" numberOfAgents="1" hasOutput="false">
     <state name="w1" marked="true" initial="true" opacityOk="true">
-        <position x="25" y="25"/>
-        <size width="0" height="0"/>
+        <position x="41" y="350"/>
+        <size width="46" height="46"/>
         <initialPosition x="-28" y="-28"/>
     </state>
     <state name="w10" marked="true" opacityOk="true">
-        <position x="835" y="25"/>
-        <size width="0" height="0"/>
+        <position x="851" y="350"/>
+        <size width="46" height="46"/>
     </state>
     <state name="w11" marked="true" opacityOk="true">
-        <position x="925" y="25"/>
-        <size width="0" height="0"/>
+        <position x="941" y="350"/>
+        <size width="46" height="46"/>
     </state>
     <state name="w12" marked="true" opacityOk="true">
-        <position x="1015" y="25"/>
-        <size width="0" height="0"/>
+        <position x="1031" y="350"/>
+        <size width="46" height="46"/>
     </state>
     <state name="w13" marked="true" opacityOk="true">
-        <position x="1105" y="25"/>
-        <size width="0" height="0"/>
+        <position x="1121" y="350"/>
+        <size width="46" height="46"/>
     </state>
     <state name="w14" marked="true" opacityOk="true">
-        <position x="1195" y="25"/>
-        <size width="0" height="0"/>
+        <position x="1211" y="350"/>
+        <size width="46" height="46"/>
     </state>
     <state name="w2" marked="true" opacityOk="true">
-        <position x="115" y="25"/>
-        <size width="0" height="0"/>
+        <position x="131" y="350"/>
+        <size width="46" height="46"/>
     </state>
     <state name="w3" marked="true" opacityOk="true">
-        <position x="205" y="25"/>
-        <size width="0" height="0"/>
+        <position x="221" y="350"/>
+        <size width="46" height="46"/>
     </state>
     <state name="w4" marked="true" opacityOk="true">
-        <position x="295" y="25"/>
+        <position x="311" y="350"/>
         <size width="0" height="0"/>
     </state>
     <state name="w5" marked="true" opacityOk="true">
-        <position x="385" y="25"/>
-        <size width="0" height="0"/>
+        <position x="401" y="350"/>
+        <size width="46" height="46"/>
     </state>
     <state name="w6" marked="true" opacityOk="true">
-        <position x="475" y="25"/>
-        <size width="0" height="0"/>
+        <position x="491" y="350"/>
+        <size width="46" height="46"/>
     </state>
     <state name="w7" marked="true" opacityOk="true">
-        <position x="565" y="25"/>
-        <size width="0" height="0"/>
+        <position x="581" y="350"/>
+        <size width="46" height="46"/>
     </state>
     <state name="w8" marked="true" opacityOk="true">
-        <position x="655" y="25"/>
-        <size width="0" height="0"/>
+        <position x="671" y="350"/>
+        <size width="46" height="46"/>
     </state>
     <state name="w9" marked="true" opacityOk="true">
-        <position x="745" y="25"/>
-        <size width="0" height="0"/>
+        <position x="761" y="350"/>
+        <size width="46" height="46"/>
     </state>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U8" from="w1" to="w1" legal="true">
-        <pathPoint x="25" y="-5"/>
-        <pathPoint x="45" y="-20"/>
-        <pathPoint x="65" y="-5"/>
+        <pathPoint x="41" y="320"/>
+        <pathPoint x="61" y="305"/>
+        <pathPoint x="81" y="320"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U9" from="w1" to="w1" legal="true">
-        <pathPoint x="13" y="-25"/>
-        <pathPoint x="45" y="-50"/>
-        <pathPoint x="77" y="-25"/>
+        <pathPoint x="29" y="300"/>
+        <pathPoint x="61" y="275"/>
+        <pathPoint x="93" y="300"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U10" from="w1" to="w1" legal="true">
-        <pathPoint x="1" y="-45"/>
-        <pathPoint x="45" y="-80"/>
-        <pathPoint x="89" y="-45"/>
+        <pathPoint x="17" y="280"/>
+        <pathPoint x="61" y="245"/>
+        <pathPoint x="105" y="280"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U11" from="w1" to="w1" legal="true">
         <pathPoint x="-11" y="-65"/>
@@ -1037,26 +1040,32 @@
         <pathPoint x="45" y="-5870"/>
         <pathPoint x="2405" y="-3905"/>
     </transition>
-    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="wR" from="w1" to="w2" legal="true"/>
+    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="wR" from="w1" to="w2" legal="true">
+        <labelPosition x="500" y="0"/>
+    </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U8" from="w10" to="w10" legal="true">
-        <pathPoint x="835" y="-5"/>
-        <pathPoint x="855" y="-20"/>
-        <pathPoint x="875" y="-5"/>
+        <pathPoint x="851" y="320"/>
+        <pathPoint x="871" y="305"/>
+        <pathPoint x="891" y="320"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U9" from="w10" to="w10" legal="true">
-        <pathPoint x="823" y="-25"/>
-        <pathPoint x="855" y="-50"/>
-        <pathPoint x="887" y="-25"/>
+        <pathPoint x="839" y="300"/>
+        <pathPoint x="871" y="275"/>
+        <pathPoint x="903" y="300"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U10" from="w10" to="w10" legal="true">
-        <pathPoint x="811" y="-45"/>
-        <pathPoint x="855" y="-80"/>
-        <pathPoint x="899" y="-45"/>
+        <pathPoint x="827" y="280"/>
+        <pathPoint x="871" y="245"/>
+        <pathPoint x="915" y="280"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U13" from="w10" to="w10" legal="true">
-        <pathPoint x="799" y="-65"/>
-        <pathPoint x="855" y="-110"/>
-        <pathPoint x="911" y="-65"/>
+        <pathPoint x="815" y="260"/>
+        <pathPoint x="871" y="215"/>
+        <pathPoint x="927" y="260"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U14" from="w10" to="w10" legal="true">
         <pathPoint x="787" y="-85"/>
@@ -2018,26 +2027,32 @@
         <pathPoint x="855" y="-5870"/>
         <pathPoint x="3215" y="-3905"/>
     </transition>
-    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="wD" from="w10" to="w11" legal="true"/>
+    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="wD" from="w10" to="w11" legal="true">
+        <labelPosition x="500" y="0"/>
+    </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U8" from="w11" to="w11" legal="true">
-        <pathPoint x="925" y="-5"/>
-        <pathPoint x="945" y="-20"/>
-        <pathPoint x="965" y="-5"/>
+        <pathPoint x="941" y="320"/>
+        <pathPoint x="961" y="305"/>
+        <pathPoint x="981" y="320"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U9" from="w11" to="w11" legal="true">
-        <pathPoint x="913" y="-25"/>
-        <pathPoint x="945" y="-50"/>
-        <pathPoint x="977" y="-25"/>
+        <pathPoint x="929" y="300"/>
+        <pathPoint x="961" y="275"/>
+        <pathPoint x="993" y="300"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U10" from="w11" to="w11" legal="true">
-        <pathPoint x="901" y="-45"/>
-        <pathPoint x="945" y="-80"/>
-        <pathPoint x="989" y="-45"/>
+        <pathPoint x="917" y="280"/>
+        <pathPoint x="961" y="245"/>
+        <pathPoint x="1005" y="280"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U13" from="w11" to="w11" legal="true">
-        <pathPoint x="889" y="-65"/>
-        <pathPoint x="945" y="-110"/>
-        <pathPoint x="1001" y="-65"/>
+        <pathPoint x="905" y="260"/>
+        <pathPoint x="961" y="215"/>
+        <pathPoint x="1017" y="260"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U14" from="w11" to="w11" legal="true">
         <pathPoint x="877" y="-85"/>
@@ -2999,26 +3014,32 @@
         <pathPoint x="945" y="-5870"/>
         <pathPoint x="3305" y="-3905"/>
     </transition>
-    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="wR" from="w11" to="w12" legal="true"/>
+    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="wR" from="w11" to="w12" legal="true">
+        <labelPosition x="500" y="0"/>
+    </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U8" from="w12" to="w12" legal="true">
-        <pathPoint x="1015" y="-5"/>
-        <pathPoint x="1035" y="-20"/>
-        <pathPoint x="1055" y="-5"/>
+        <pathPoint x="1031" y="320"/>
+        <pathPoint x="1051" y="305"/>
+        <pathPoint x="1071" y="320"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U9" from="w12" to="w12" legal="true">
-        <pathPoint x="1003" y="-25"/>
-        <pathPoint x="1035" y="-50"/>
-        <pathPoint x="1067" y="-25"/>
+        <pathPoint x="1019" y="300"/>
+        <pathPoint x="1051" y="275"/>
+        <pathPoint x="1083" y="300"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U10" from="w12" to="w12" legal="true">
-        <pathPoint x="991" y="-45"/>
-        <pathPoint x="1035" y="-80"/>
-        <pathPoint x="1079" y="-45"/>
+        <pathPoint x="1007" y="280"/>
+        <pathPoint x="1051" y="245"/>
+        <pathPoint x="1095" y="280"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U11" from="w12" to="w12" legal="true">
-        <pathPoint x="979" y="-65"/>
-        <pathPoint x="1035" y="-110"/>
-        <pathPoint x="1091" y="-65"/>
+        <pathPoint x="995" y="260"/>
+        <pathPoint x="1051" y="215"/>
+        <pathPoint x="1107" y="260"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U14" from="w12" to="w12" legal="true">
         <pathPoint x="967" y="-85"/>
@@ -3980,26 +4001,32 @@
         <pathPoint x="1035" y="-5870"/>
         <pathPoint x="3395" y="-3905"/>
     </transition>
-    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="wD" from="w12" to="w13" legal="true"/>
+    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="wD" from="w12" to="w13" legal="true">
+        <labelPosition x="500" y="0"/>
+    </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U8" from="w13" to="w13" legal="true">
-        <pathPoint x="1105" y="-5"/>
-        <pathPoint x="1125" y="-20"/>
-        <pathPoint x="1145" y="-5"/>
+        <pathPoint x="1121" y="320"/>
+        <pathPoint x="1141" y="305"/>
+        <pathPoint x="1161" y="320"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U9" from="w13" to="w13" legal="true">
-        <pathPoint x="1093" y="-25"/>
-        <pathPoint x="1125" y="-50"/>
-        <pathPoint x="1157" y="-25"/>
+        <pathPoint x="1109" y="300"/>
+        <pathPoint x="1141" y="275"/>
+        <pathPoint x="1173" y="300"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U10" from="w13" to="w13" legal="true">
-        <pathPoint x="1081" y="-45"/>
-        <pathPoint x="1125" y="-80"/>
-        <pathPoint x="1169" y="-45"/>
+        <pathPoint x="1097" y="280"/>
+        <pathPoint x="1141" y="245"/>
+        <pathPoint x="1185" y="280"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U11" from="w13" to="w13" legal="true">
-        <pathPoint x="1069" y="-65"/>
-        <pathPoint x="1125" y="-110"/>
-        <pathPoint x="1181" y="-65"/>
+        <pathPoint x="1085" y="260"/>
+        <pathPoint x="1141" y="215"/>
+        <pathPoint x="1197" y="260"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U14" from="w13" to="w13" legal="true">
         <pathPoint x="1057" y="-85"/>
@@ -4961,26 +4988,32 @@
         <pathPoint x="1125" y="-5870"/>
         <pathPoint x="3485" y="-3905"/>
     </transition>
-    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="wR" from="w13" to="w14" legal="true"/>
+    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="wR" from="w13" to="w14" legal="true">
+        <labelPosition x="500" y="0"/>
+    </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U8" from="w14" to="w14" legal="true">
-        <pathPoint x="1195" y="-5"/>
-        <pathPoint x="1215" y="-20"/>
-        <pathPoint x="1235" y="-5"/>
+        <pathPoint x="1211" y="320"/>
+        <pathPoint x="1231" y="305"/>
+        <pathPoint x="1251" y="320"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U9" from="w14" to="w14" legal="true">
-        <pathPoint x="1183" y="-25"/>
-        <pathPoint x="1215" y="-50"/>
-        <pathPoint x="1247" y="-25"/>
+        <pathPoint x="1199" y="300"/>
+        <pathPoint x="1231" y="275"/>
+        <pathPoint x="1263" y="300"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U10" from="w14" to="w14" legal="true">
-        <pathPoint x="1171" y="-45"/>
-        <pathPoint x="1215" y="-80"/>
-        <pathPoint x="1259" y="-45"/>
+        <pathPoint x="1187" y="280"/>
+        <pathPoint x="1231" y="245"/>
+        <pathPoint x="1275" y="280"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U11" from="w14" to="w14" legal="true">
-        <pathPoint x="1159" y="-65"/>
-        <pathPoint x="1215" y="-110"/>
-        <pathPoint x="1271" y="-65"/>
+        <pathPoint x="1175" y="260"/>
+        <pathPoint x="1231" y="215"/>
+        <pathPoint x="1287" y="260"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U12" from="w14" to="w14" legal="true">
         <pathPoint x="1147" y="-85"/>
@@ -5942,26 +5975,32 @@
         <pathPoint x="1215" y="-5870"/>
         <pathPoint x="3575" y="-3905"/>
     </transition>
-    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="wD" from="w14" to="w1" legal="true"/>
+    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="wD" from="w14" to="w1" legal="true">
+        <labelPosition x="500" y="0"/>
+    </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U9" from="w2" to="w2" legal="true">
-        <pathPoint x="115" y="-5"/>
-        <pathPoint x="135" y="-20"/>
-        <pathPoint x="155" y="-5"/>
+        <pathPoint x="131" y="320"/>
+        <pathPoint x="151" y="305"/>
+        <pathPoint x="171" y="320"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U10" from="w2" to="w2" legal="true">
-        <pathPoint x="103" y="-25"/>
-        <pathPoint x="135" y="-50"/>
-        <pathPoint x="167" y="-25"/>
+        <pathPoint x="119" y="300"/>
+        <pathPoint x="151" y="275"/>
+        <pathPoint x="183" y="300"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U11" from="w2" to="w2" legal="true">
-        <pathPoint x="91" y="-45"/>
-        <pathPoint x="135" y="-80"/>
-        <pathPoint x="179" y="-45"/>
+        <pathPoint x="107" y="280"/>
+        <pathPoint x="151" y="245"/>
+        <pathPoint x="195" y="280"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U12" from="w2" to="w2" legal="true">
-        <pathPoint x="79" y="-65"/>
-        <pathPoint x="135" y="-110"/>
-        <pathPoint x="191" y="-65"/>
+        <pathPoint x="95" y="260"/>
+        <pathPoint x="151" y="215"/>
+        <pathPoint x="207" y="260"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U13" from="w2" to="w2" legal="true">
         <pathPoint x="67" y="-85"/>
@@ -6923,26 +6962,32 @@
         <pathPoint x="135" y="-5870"/>
         <pathPoint x="2495" y="-3905"/>
     </transition>
-    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="wD" from="w2" to="w3" legal="true"/>
+    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="wD" from="w2" to="w3" legal="true">
+        <labelPosition x="500" y="0"/>
+    </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U9" from="w3" to="w3" legal="true">
-        <pathPoint x="205" y="-5"/>
-        <pathPoint x="225" y="-20"/>
-        <pathPoint x="245" y="-5"/>
+        <pathPoint x="221" y="320"/>
+        <pathPoint x="241" y="305"/>
+        <pathPoint x="261" y="320"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U10" from="w3" to="w3" legal="true">
-        <pathPoint x="193" y="-25"/>
-        <pathPoint x="225" y="-50"/>
-        <pathPoint x="257" y="-25"/>
+        <pathPoint x="209" y="300"/>
+        <pathPoint x="241" y="275"/>
+        <pathPoint x="273" y="300"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U11" from="w3" to="w3" legal="true">
-        <pathPoint x="181" y="-45"/>
-        <pathPoint x="225" y="-80"/>
-        <pathPoint x="269" y="-45"/>
+        <pathPoint x="197" y="280"/>
+        <pathPoint x="241" y="245"/>
+        <pathPoint x="285" y="280"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U12" from="w3" to="w3" legal="true">
-        <pathPoint x="169" y="-65"/>
-        <pathPoint x="225" y="-110"/>
-        <pathPoint x="281" y="-65"/>
+        <pathPoint x="185" y="260"/>
+        <pathPoint x="241" y="215"/>
+        <pathPoint x="297" y="260"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U13" from="w3" to="w3" legal="true">
         <pathPoint x="157" y="-85"/>
@@ -7904,26 +7949,32 @@
         <pathPoint x="225" y="-5870"/>
         <pathPoint x="2585" y="-3905"/>
     </transition>
-    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="wR" from="w3" to="w4" legal="true"/>
+    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="wR" from="w3" to="w4" legal="true">
+        <labelPosition x="500" y="0"/>
+    </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U10" from="w4" to="w4" legal="true">
-        <pathPoint x="295" y="-5"/>
-        <pathPoint x="315" y="-20"/>
-        <pathPoint x="335" y="-5"/>
+        <pathPoint x="311" y="320"/>
+        <pathPoint x="331" y="305"/>
+        <pathPoint x="351" y="320"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U11" from="w4" to="w4" legal="true">
-        <pathPoint x="283" y="-25"/>
-        <pathPoint x="315" y="-50"/>
-        <pathPoint x="347" y="-25"/>
+        <pathPoint x="299" y="300"/>
+        <pathPoint x="331" y="275"/>
+        <pathPoint x="363" y="300"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U12" from="w4" to="w4" legal="true">
-        <pathPoint x="271" y="-45"/>
-        <pathPoint x="315" y="-80"/>
-        <pathPoint x="359" y="-45"/>
+        <pathPoint x="287" y="280"/>
+        <pathPoint x="331" y="245"/>
+        <pathPoint x="375" y="280"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U13" from="w4" to="w4" legal="true">
-        <pathPoint x="259" y="-65"/>
-        <pathPoint x="315" y="-110"/>
-        <pathPoint x="371" y="-65"/>
+        <pathPoint x="275" y="260"/>
+        <pathPoint x="331" y="215"/>
+        <pathPoint x="387" y="260"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U14" from="w4" to="w4" legal="true">
         <pathPoint x="247" y="-85"/>
@@ -8885,26 +8936,32 @@
         <pathPoint x="315" y="-5870"/>
         <pathPoint x="2675" y="-3905"/>
     </transition>
-    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="wD" from="w4" to="w5" legal="true"/>
+    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="wD" from="w4" to="w5" legal="true">
+        <labelPosition x="500" y="0"/>
+    </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U10" from="w5" to="w5" legal="true">
-        <pathPoint x="385" y="-5"/>
-        <pathPoint x="405" y="-20"/>
-        <pathPoint x="425" y="-5"/>
+        <pathPoint x="401" y="320"/>
+        <pathPoint x="421" y="305"/>
+        <pathPoint x="441" y="320"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U11" from="w5" to="w5" legal="true">
-        <pathPoint x="373" y="-25"/>
-        <pathPoint x="405" y="-50"/>
-        <pathPoint x="437" y="-25"/>
+        <pathPoint x="389" y="300"/>
+        <pathPoint x="421" y="275"/>
+        <pathPoint x="453" y="300"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U12" from="w5" to="w5" legal="true">
-        <pathPoint x="361" y="-45"/>
-        <pathPoint x="405" y="-80"/>
-        <pathPoint x="449" y="-45"/>
+        <pathPoint x="377" y="280"/>
+        <pathPoint x="421" y="245"/>
+        <pathPoint x="465" y="280"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U13" from="w5" to="w5" legal="true">
-        <pathPoint x="349" y="-65"/>
-        <pathPoint x="405" y="-110"/>
-        <pathPoint x="461" y="-65"/>
+        <pathPoint x="365" y="260"/>
+        <pathPoint x="421" y="215"/>
+        <pathPoint x="477" y="260"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U14" from="w5" to="w5" legal="true">
         <pathPoint x="337" y="-85"/>
@@ -9866,26 +9923,32 @@
         <pathPoint x="405" y="-5870"/>
         <pathPoint x="2765" y="-3905"/>
     </transition>
-    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="wR" from="w5" to="w6" legal="true"/>
+    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="wR" from="w5" to="w6" legal="true">
+        <labelPosition x="500" y="0"/>
+    </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U8" from="w6" to="w6" legal="true">
-        <pathPoint x="475" y="-5"/>
-        <pathPoint x="495" y="-20"/>
-        <pathPoint x="515" y="-5"/>
+        <pathPoint x="491" y="320"/>
+        <pathPoint x="511" y="305"/>
+        <pathPoint x="531" y="320"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U11" from="w6" to="w6" legal="true">
-        <pathPoint x="463" y="-25"/>
-        <pathPoint x="495" y="-50"/>
-        <pathPoint x="527" y="-25"/>
+        <pathPoint x="479" y="300"/>
+        <pathPoint x="511" y="275"/>
+        <pathPoint x="543" y="300"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U12" from="w6" to="w6" legal="true">
-        <pathPoint x="451" y="-45"/>
-        <pathPoint x="495" y="-80"/>
-        <pathPoint x="539" y="-45"/>
+        <pathPoint x="467" y="280"/>
+        <pathPoint x="511" y="245"/>
+        <pathPoint x="555" y="280"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U13" from="w6" to="w6" legal="true">
-        <pathPoint x="439" y="-65"/>
-        <pathPoint x="495" y="-110"/>
-        <pathPoint x="551" y="-65"/>
+        <pathPoint x="455" y="260"/>
+        <pathPoint x="511" y="215"/>
+        <pathPoint x="567" y="260"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U14" from="w6" to="w6" legal="true">
         <pathPoint x="427" y="-85"/>
@@ -10847,26 +10910,32 @@
         <pathPoint x="495" y="-5870"/>
         <pathPoint x="2855" y="-3905"/>
     </transition>
-    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="wD" from="w6" to="w7" legal="true"/>
+    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="wD" from="w6" to="w7" legal="true">
+        <labelPosition x="500" y="0"/>
+    </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U8" from="w7" to="w7" legal="true">
-        <pathPoint x="565" y="-5"/>
-        <pathPoint x="585" y="-20"/>
-        <pathPoint x="605" y="-5"/>
+        <pathPoint x="581" y="320"/>
+        <pathPoint x="601" y="305"/>
+        <pathPoint x="621" y="320"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U11" from="w7" to="w7" legal="true">
-        <pathPoint x="553" y="-25"/>
-        <pathPoint x="585" y="-50"/>
-        <pathPoint x="617" y="-25"/>
+        <pathPoint x="569" y="300"/>
+        <pathPoint x="601" y="275"/>
+        <pathPoint x="633" y="300"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U12" from="w7" to="w7" legal="true">
-        <pathPoint x="541" y="-45"/>
-        <pathPoint x="585" y="-80"/>
-        <pathPoint x="629" y="-45"/>
+        <pathPoint x="557" y="280"/>
+        <pathPoint x="601" y="245"/>
+        <pathPoint x="645" y="280"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U13" from="w7" to="w7" legal="true">
-        <pathPoint x="529" y="-65"/>
-        <pathPoint x="585" y="-110"/>
-        <pathPoint x="641" y="-65"/>
+        <pathPoint x="545" y="260"/>
+        <pathPoint x="601" y="215"/>
+        <pathPoint x="657" y="260"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U14" from="w7" to="w7" legal="true">
         <pathPoint x="517" y="-85"/>
@@ -11828,26 +11897,32 @@
         <pathPoint x="585" y="-5870"/>
         <pathPoint x="2945" y="-3905"/>
     </transition>
-    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="wR" from="w7" to="w8" legal="true"/>
+    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="wR" from="w7" to="w8" legal="true">
+        <labelPosition x="500" y="0"/>
+    </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U8" from="w8" to="w8" legal="true">
-        <pathPoint x="655" y="-5"/>
-        <pathPoint x="675" y="-20"/>
-        <pathPoint x="695" y="-5"/>
+        <pathPoint x="671" y="320"/>
+        <pathPoint x="691" y="305"/>
+        <pathPoint x="711" y="320"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U9" from="w8" to="w8" legal="true">
-        <pathPoint x="643" y="-25"/>
-        <pathPoint x="675" y="-50"/>
-        <pathPoint x="707" y="-25"/>
+        <pathPoint x="659" y="300"/>
+        <pathPoint x="691" y="275"/>
+        <pathPoint x="723" y="300"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U12" from="w8" to="w8" legal="true">
-        <pathPoint x="631" y="-45"/>
-        <pathPoint x="675" y="-80"/>
-        <pathPoint x="719" y="-45"/>
+        <pathPoint x="647" y="280"/>
+        <pathPoint x="691" y="245"/>
+        <pathPoint x="735" y="280"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U13" from="w8" to="w8" legal="true">
-        <pathPoint x="619" y="-65"/>
-        <pathPoint x="675" y="-110"/>
-        <pathPoint x="731" y="-65"/>
+        <pathPoint x="635" y="260"/>
+        <pathPoint x="691" y="215"/>
+        <pathPoint x="747" y="260"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U14" from="w8" to="w8" legal="true">
         <pathPoint x="607" y="-85"/>
@@ -12809,26 +12884,32 @@
         <pathPoint x="675" y="-5870"/>
         <pathPoint x="3035" y="-3905"/>
     </transition>
-    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="wD" from="w8" to="w9" legal="true"/>
+    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="wD" from="w8" to="w9" legal="true">
+        <labelPosition x="500" y="0"/>
+    </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U8" from="w9" to="w9" legal="true">
-        <pathPoint x="745" y="-5"/>
-        <pathPoint x="765" y="-20"/>
-        <pathPoint x="785" y="-5"/>
+        <pathPoint x="761" y="320"/>
+        <pathPoint x="781" y="305"/>
+        <pathPoint x="801" y="320"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U9" from="w9" to="w9" legal="true">
-        <pathPoint x="733" y="-25"/>
-        <pathPoint x="765" y="-50"/>
-        <pathPoint x="797" y="-25"/>
+        <pathPoint x="749" y="300"/>
+        <pathPoint x="781" y="275"/>
+        <pathPoint x="813" y="300"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U12" from="w9" to="w9" legal="true">
-        <pathPoint x="721" y="-45"/>
-        <pathPoint x="765" y="-80"/>
-        <pathPoint x="809" y="-45"/>
+        <pathPoint x="737" y="280"/>
+        <pathPoint x="781" y="245"/>
+        <pathPoint x="825" y="280"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U13" from="w9" to="w9" legal="true">
-        <pathPoint x="709" y="-65"/>
-        <pathPoint x="765" y="-110"/>
-        <pathPoint x="821" y="-65"/>
+        <pathPoint x="725" y="260"/>
+        <pathPoint x="781" y="215"/>
+        <pathPoint x="837" y="260"/>
+        <labelPosition x="500" y="0"/>
     </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U14" from="w9" to="w9" legal="true">
         <pathPoint x="697" y="-85"/>
@@ -13790,7 +13871,9 @@
         <pathPoint x="765" y="-5870"/>
         <pathPoint x="3125" y="-3905"/>
     </transition>
-    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="wR" from="w9" to="w10" legal="true"/>
+    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="wR" from="w9" to="w10" legal="true">
+        <labelPosition x="500" y="0"/>
+    </transition>
     <event xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlEvent" name="U8" observable="true" controllable="true">
         <AgentProperty observable="true" controllable="true"/>
     </event>

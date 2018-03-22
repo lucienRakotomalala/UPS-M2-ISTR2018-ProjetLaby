@@ -42,16 +42,16 @@ function nextState = f(obj,in)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 %%%% COMMANDE 1 %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%             nextState = zeros(1,4);
-%             if(in(4)==0)
-%                     nextState(3)=1 ;    
-%             elseif(in(2)==0)
-%                     nextState(4)=1;    
-%             elseif(in(1)==0)
-%                     nextState(2)=1 ;    
-%             elseif(in(3)==0)
-%                     nextState(1)=1;               
-%             end
+            nextState = zeros(1,4);
+            if(in(4)==0)
+                    nextState(3)=1 ;    
+            elseif(in(2)==0)
+                    nextState(4)=1;    
+            elseif(in(1)==0)
+                    nextState(2)=1 ;    
+            elseif(in(3)==0)
+                    nextState(1)=1;               
+            end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 %%%% COMMANDE 2 %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -84,30 +84,30 @@ function nextState = f(obj,in)
                 %%%% COMMANDE 3 %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %down-down-right-up-right-down
-    if obj.i==1
-        nextState(4)=1;
-        obj.i=obj.i+1;
-    elseif obj.i==2
-         nextState(4)=1;
-         obj.i=obj.i+1;
-    elseif obj.i==3
-         nextState(3)=1;
-            obj.i=obj.i+1;
-    elseif obj.i==4
-         nextState(2)=1;
-            obj.i=obj.i+1;
-    elseif obj.i==5
-         nextState(3)=1;
-            obj.i=obj.i+1;
-    elseif obj.i==6
-         nextState(4)=1;
-        obj.i=obj.i+1;
-    else
-           nextState(1)=0;
-           nextState(2)=0;
-           nextState(3)=0;
-           nextState(4)=0;
-    end
+%     if obj.i==1
+%         nextState(4)=1;
+%         obj.i=obj.i+1;
+%     elseif obj.i==2
+%          nextState(4)=1;
+%          obj.i=obj.i+1;
+%     elseif obj.i==3
+%          nextState(3)=1;
+%             obj.i=obj.i+1;
+%     elseif obj.i==4
+%          nextState(2)=1;
+%             obj.i=obj.i+1;
+%     elseif obj.i==5
+%          nextState(3)=1;
+%             obj.i=obj.i+1;
+%     elseif obj.i==6
+%          nextState(4)=1;
+%         obj.i=obj.i+1;
+%     else
+%            nextState(1)=0;
+%            nextState(2)=0;
+%            nextState(3)=0;
+%            nextState(4)=0;
+%     end
 end
 
         

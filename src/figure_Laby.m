@@ -66,16 +66,13 @@ function figure_Laby_OpeningFcn(hObject, eventdata, handles, varargin)
     % escape)
 
     % Initial laby state
-    labyInit.wallsV_i =   [1 1;
-             0 1; 
-             0 0]; %  dimension can change
+    labyInit.wallsV_i =   [1 0 1 0; 1 0 0 1; 0 0 0 0;0 1 1 1; 1 0 0 0]; %  dimension can change
                        
-    labyInit.wallsH_i =   [1 0 0; 
-                            1 0 0]; %  dimension can change
+    labyInit.wallsH_i =   [0 0 0 1 0; 0 1 0 1 0;0 1 0 1 0;0 1 0 0 1]; %  dimension can change
                        
-    labyInit.pacman_i = [1,	1]; % static dimension
-    labyInit.ghost_i  = [3,1]; % static dimension
-    labyInit.escape_i = {[3 3], 0}; % static dimension
+    labyInit.pacman_i = [1,	2]; % static dimension
+    labyInit.ghost_i  = [4,1]; % static dimension
+    labyInit.escape_i = {[5 5], 0}; % static dimension
     labyInit.caught_i = 0; % static dimension
 
     % initial value of walls command

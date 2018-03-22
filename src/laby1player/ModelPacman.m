@@ -139,11 +139,51 @@ function nextState = f(obj,in)
                 %%%% COMMANDE 5 laby 5x5 %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % R  R  R  D  U  D  D  U  D  D  D
+%     if obj.presentState(5)==0
+%         nextState(3)=1;
+%         nextState(5)=obj.presentState(5)+1;
+%     elseif obj.presentState(5)==1
+%          nextState(3)=1;
+%          nextState(5)=obj.presentState(5)+1;
+%     elseif obj.presentState(5)==2
+%          nextState(3)=1;
+%             nextState(5)=obj.presentState(5)+1;
+%     elseif obj.presentState(5)==3
+%          nextState(4)=1;
+%             nextState(5)=obj.presentState(5)+1;
+%     elseif obj.presentState(5)==4
+%          nextState(2)=1;
+%             nextState(5)=obj.presentState(5)+1;
+%     elseif obj.presentState(5)==5
+%          nextState(4)=1;
+%         nextState(5)=obj.presentState(5)+1;
+%         elseif obj.presentState(5)==6
+%          nextState(4)=1;
+%         nextState(5)=obj.presentState(5)+1;
+%         elseif obj.presentState(5)==7
+%          nextState(2)=1;
+%         nextState(5)=obj.presentState(5)+1;
+%         elseif obj.presentState(5)==8
+%          nextState(4)=1;
+%         nextState(5)=obj.presentState(5)+1;
+%         elseif obj.presentState(5)==9
+%          nextState(4)=1;
+%         nextState(5)=obj.presentState(5)+1;
+%         elseif obj.presentState(5)==10
+%          nextState(4)=1;
+%         nextState(5)=obj.presentState(5)+1;
+%     else
+%            nextState=obj.initialState;
+%     end
+   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                %%%% COMMANDE 6 laby 7x7 %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %  R  D  R  D  D  R  R  D  D  R  D
     if obj.presentState(5)==0
         nextState(3)=1;
         nextState(5)=obj.presentState(5)+1;
     elseif obj.presentState(5)==1
-         nextState(3)=1;
+         nextState(4)=1;
          nextState(5)=obj.presentState(5)+1;
     elseif obj.presentState(5)==2
          nextState(3)=1;
@@ -152,29 +192,30 @@ function nextState = f(obj,in)
          nextState(4)=1;
             nextState(5)=obj.presentState(5)+1;
     elseif obj.presentState(5)==4
-         nextState(2)=1;
+         nextState(4)=1;
             nextState(5)=obj.presentState(5)+1;
     elseif obj.presentState(5)==5
-         nextState(4)=1;
+         nextState(3)=1;
         nextState(5)=obj.presentState(5)+1;
         elseif obj.presentState(5)==6
-         nextState(4)=1;
+         nextState(3)=1;
         nextState(5)=obj.presentState(5)+1;
         elseif obj.presentState(5)==7
-         nextState(2)=1;
+         nextState(4)=1;
         nextState(5)=obj.presentState(5)+1;
         elseif obj.presentState(5)==8
          nextState(4)=1;
         nextState(5)=obj.presentState(5)+1;
         elseif obj.presentState(5)==9
-         nextState(4)=1;
+         nextState(3)=1;
         nextState(5)=obj.presentState(5)+1;
         elseif obj.presentState(5)==10
          nextState(4)=1;
         nextState(5)=obj.presentState(5)+1;
     else
            nextState=obj.initialState;
-    end
+    end 
+   
 end
 
         
