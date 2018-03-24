@@ -170,12 +170,12 @@ classdef AutomateGraph % Claire a choisi le titre
                     end
                 end
                 toc
-                
+                    
             end
             
        
             G = digraph(s,t);
-
+            plot(G)
             path = shortestpath(G,initialState,studiedState,'Method','positive')
         end
         %% 
