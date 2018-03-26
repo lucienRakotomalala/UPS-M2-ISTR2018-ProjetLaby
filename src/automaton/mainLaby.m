@@ -69,11 +69,34 @@ ProcessAutomata = struct('lab',AutomateGraph,   ...
         {'nU', 'nD', 'nR', 'nL', 'wD', 'wR', 'U', 'D', 'R', 'L'});
     
 %%  Add escape option
-    ProcessAutomata.composed = ParrallelComposition(ProcessAutomata.composed, ProcessAutomata.escape);
+   % ProcessAutomata.composed = ParrallelComposition(ProcessAutomata.composed, ProcessAutomata.escape);
+%% Accessibiliy 
+    ProcessAutomata.composed = ProcessAutomata.composed.accessibilityAutomate;
     
 %% Objective add    
+tic
     Objective = AutomateGraph();
-    Objective = Objective.FSM2Automata('commandPacmanMemory.fsm');
+    Objective = Objective.FSM2Automata('commandPacmanSimple.fsm');
     Objective = Objective.structAutomata2vectorAutomata;
+    toc
+    
+    
 %% Product parallel with objectives
     Command = ParrallelComposition(Objective, ProcessAutomata.composed);
+    %%recherche
+    Command = Command.accessibilityAutomate;
+    
+%% 
+    finalState = find([Command.state.Marked]);
+    if ~isempty(finalState)
+        for i = 1:length(finalState) 
+            [l,c]= Command.PathResearche(1,finalState(i));
+            % From Optimal Command
+            disp(sprintf('For the initial state %d and the final state %d :' , find([Command.state.Initial],1)  ,finalState(i)))
+            disp(strcat('  - the fatest command is :',strcat(sprintf(' %s ',strjoin([Command.vector(c).Name])))))
+            disp(sprintf('\n'))
+        end
+    else
+        disp('No way out of your labyrinth')
+    end
+    

@@ -138,14 +138,128 @@ classdef AutomateGraph % Claire a choisi le titre
                 end
             end
             
-            %% Set Vectors
+            % Conversing to vector
+            obj.matrices2vector();
+        end
+        %% Set Vectors
+        function obj = matrices2vector(obj)
             for i = 1:length(obj.langage)
                obj.vector(i).Name  = obj.langage(i);
                % Assignement of a value for each row
                obj.vector(i).value = obj.matrixTrans(i).matrice*[1:length(obj.state)]';
             end
         end
-
+        
+        %% Recherche d'une sequence optimale et existente pour objectif
+        %donné
+        
+        function [path, tree_new] = PathResearche(obj, initialState, studiedState)
+            s=[];
+            t=[];
+            tree = [];
+            for c = 1:size(obj.vector,2)
+                tr_buff = obj.vector(c).value;
+                tic
+                for ligne = 1:size(tr_buff,1)
+                    s_from = ligne;
+                    t_out = tr_buff(ligne);
+                    if(t_out ~= s_from && t_out ~=0 ) %teste si pas tr stable et tr existante
+                        s = [s s_from];
+                        t = [t t_out];
+                       tree = [tree c];
+                    end
+                end
+                toc
+                    
+            end
+            
+       
+            G = digraph(s,t);
+            plot(G)
+            path = shortestpath(G,initialState,studiedState,'Method','positive');
+            
+            cnt=1;
+            for indice = 1 : length(path)-1
+                s_path = path(indice);
+                t_path = path(indice+1);
+                
+                for tr = 1:length(s)
+                    if (s(tr) == s_path && t(tr)==t_path)
+                        tree_new(cnt) = tree(tr);
+                        cnt = cnt+1;
+                    end
+                end
+            end
+        end
+        %% 
+        function obj = vector2structAutomata(obj)
+            obj.transition = [];
+            %obj.matrices2vector();
+            for i = 1:length(obj.vector)
+                [l,~,v] = find(obj.vector(i).value);
+                for j = 1:length(l)
+                    obj.transition(end+1).Name = obj.vector(i).Name;
+                    obj.transition(end).StateIn = l(j);
+                    obj.transition(end).StateOut = v(j);
+                end
+            end
+        end
+        
+        %% Export To Desuma file (txt)
+        function obj = export2DESUMA(obj, file)
+            % You have to put aautomata with vector and state struct IN.
+            obj = obj.vector2structAutomata;
+            dataTransition = struct2cell(obj.transition);
+            dataTransition = permute(dataTransition,[3 1 2]); 
+            dataTransition = circshift(dataTransition, 2,2);
+            if isa(dataTransition{1,3},'char')
+                
+                for i = 1:length(obj.transition)
+                   dataTransition{i,3} =  dataTransition{i,3};
+                end
+            else
+               
+                for i = 1:length(obj.transition)
+                   dataTransition{i,3} =  dataTransition{i,3}{:};
+                end 
+                
+            end
+            stringTransition = writeTransitions('r', dataTransition);
+            stringState = writeStates('r', length(obj.state), find([obj.state.Initial]), 0);
+            SaveDESUMAFile(stringTransition, stringState, file);
+        end
+        
+        %% 
+        function obj = accessibilityAutomate(obj)
+            % It's easy to do it in a Automate represente by vectors.
+            if ~isa(obj.vector, 'struct')
+                obj = obj.vector2matrices;
+            end
+            allVector = [obj.vector.value];
+            accessibleState = 1; % Initial state
+            i = 1;
+            while i <= length(accessibleState)
+               [~,~, newStates] = find(allVector(accessibleState(i), :));
+               accessibleState = union(accessibleState,newStates, 'stable');
+               i = i+1;
+            end
+            % 
+            for i = 1:length(obj.vector)
+               obj.vector(i).value = obj.vector(i).value(accessibleState',:); 
+               l = find(obj.vector(i).value);
+               for j = l'
+                  obj.vector(i).value(j) = find(obj.vector(i).value(j) == accessibleState); 
+               end
+            end
+            g = obj.state;  
+            obj.state = [];
+            for i = 1:length(accessibleState)
+                obj.state(i).Name = accessibleState(i);
+                obj.state(i).Initial = [g(accessibleState(i)).Initial]';
+                obj.state(i).Marked = [g(accessibleState(i)).Marked]';
+            end
+            obj = obj.vector2structAutomata;
+        end
     end
     
 end

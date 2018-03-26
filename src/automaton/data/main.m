@@ -11,6 +11,7 @@ clc
 [transitionsMatrix,~,States] = creationMatricetransition('senario1_7.fsm');
 
 
+
 for k=1:length(States) 
     m(k)=int64(strcmp(States(k).Marked , '1'));
     %i(k)=int64(strcmp(States(k).Initial , '1'))

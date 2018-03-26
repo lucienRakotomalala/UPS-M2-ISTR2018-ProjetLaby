@@ -4,7 +4,8 @@
 %
 clear
 %% Open File
-myF = fopen('procede7par7.fsm');
+myF = fopen('laby2x2.fsm');
+
 % Take all char
 data = fread(myF,'*char');
 
@@ -37,7 +38,11 @@ fclose(myF);
 %% 
 data(bannedI) = [];
 %% Write the clean file
+<<<<<<< HEAD
 name = strcat('procede5par52','.fsm');
+=======
+name = strcat('laby2x2','.fsm');
+>>>>>>> export2DESUMA
 F = fopen(name, 'w');
 fwrite(F,data);
 fclose(F);

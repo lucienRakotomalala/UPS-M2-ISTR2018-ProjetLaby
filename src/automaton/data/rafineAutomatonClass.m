@@ -22,7 +22,7 @@ function [ rafA ] = rafineAutomatonClass( A, paternName )
         error('Input paternName must be a cell')
     end
     if ~isa(A.vector, 'struct')
-       error('No vector detected in object Input') 
+       A.matrices2vector();
     end
     %% Initialisation
    

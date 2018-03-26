@@ -17,6 +17,13 @@ function [A] = ParrallelComposition(A1, A2)
     A = AutomateGraph();
 %% Association of langage
     A.langage = union(A1.langage, A2.langage);
+%% Establish Matrix
+    if ~isa(A1.matrixTrans, 'struct')
+        A1 = A1.vector2matrices();
+    end
+    if ~isa(A2.matrixTrans, 'struct') 
+       A2 = A2.vector2matrices();
+    end
 %% Establish vectors    
     %   If L(A1 U A2)(i) is contain in L(A1)
     %       If L(A1 U A2)(i) is contain in L(A2)
@@ -30,16 +37,16 @@ function [A] = ParrallelComposition(A1, A2)
         if ~isempty(L_A1member)  % if L(A)(i) is in L(A1)
             L_A2member = find(ismember(A2.langage, A1.langage(L_A1member))==1);
             if ~isempty(L_A2member) % if L(A2)(i) is in L(A1) recognize in L(A1)
-                A.vector(end+1).Name = A1.langage(L_A1member);
-                A.vector(end).value = kron(A1.vector(L_A1member).value, A2.vector(L_A2member).value);
+                A.matrixTrans(end+1).Name = A1.langage(L_A1member);
+                A.matrixTrans(end).matrice = kron(A1.matrixTrans(L_A1member).matrice, A2.matrixTrans(L_A2member).matrice);
             else
-                A.vector(end+1).Name = A1.langage(L_A1member);
-                A.vector(end).value = kron(A1.vector(L_A1member).value, [1:length(A1.vector(1).value)]);
+                A.matrixTrans(end+1).Name = A1.langage(L_A1member);
+                A.matrixTrans(end).matrice = kron(A1.matrixTrans(L_A1member).matrice, eye(length(A2.state)));
             end
         else
             L_A2member = find(ismember(A2.langage, A.langage(i))==1);
-            A.vector(end+1).Name = A2.langage(L_A2member);
-            A.vector(end).value = kron([1:length(A1.vector(1).value)]', A2.vector(L_A2member).value);
+            A.matrixTrans(end+1).Name = A2.langage(L_A2member);
+            A.matrixTrans(end).matrice = kron(eye(length(A1.state)), A2.matrixTrans(L_A2member).matrice);
         end
     end
 	
@@ -55,6 +62,12 @@ function [A] = ParrallelComposition(A1, A2)
 				A.state(j + (i-1)*length(A2.state)).Marked = A1.state(i).Marked * A2.state(j).Marked;
 			end
 		end 
-	end
+    end
+%% Convert to vector
+    
+    A = A.matrices2vector();
+    
+%% Delete matrice
+    %A.matrixTrans = [];
 end
 
