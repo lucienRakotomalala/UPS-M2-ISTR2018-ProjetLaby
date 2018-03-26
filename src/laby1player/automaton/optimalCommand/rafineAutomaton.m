@@ -4,7 +4,7 @@
 %
 clear
 %% Open File
-myF = fopen('laby2x2.fsm');
+myF = fopen('procede5_bloq.fsm');
 
 % Take all char
 data = fread(myF,'*char');
@@ -38,11 +38,7 @@ fclose(myF);
 %% 
 data(bannedI) = [];
 %% Write the clean file
-<<<<<<< HEAD
-name = strcat('procede5par52','.fsm');
-=======
-name = strcat('laby2x2','.fsm');
->>>>>>> export2DESUMA
+name = strcat('procede5_bloq','.fsm');
 F = fopen(name, 'w');
 fwrite(F,data);
 fclose(F);

@@ -1,5 +1,5 @@
-s l1 -I 
-s l2 
+s l1 
+s l2 -I 
 s l3 
 s l4 
 s l5 
@@ -19,142 +19,91 @@ s l18
 s l19 
 s l20 
 s l21 
-s l22 -M 
+s l22 
 s l23 
 s l24 
-s l25 
-s l26 
-s l27 
-s l28 
-s l29 
-s l30 
-s l31 
-s l32 
-s l33 
-s l34 
-s l35 
-s l36 
+s l25 -M 
 
-t l7 l1 U7
-t l1 l7 D1
+t l6 l1 U6
+t l1 l6 D1
 t l2 l1 L2
 t l1 l2 R1
-t l8 l2 U8
-t l2 l8 D2
+t l7 l2 U7
+t l2 l7 D2
 t l3 l2 L3
 t l2 l3 R2
-t l9 l3 U9
-t l3 l9 D3
+t l8 l3 U8
+t l3 l8 D3
 t l4 l3 L4
 t l3 l4 R3
-t l10 l4 U10
-t l4 l10 D4
+t l9 l4 U9
+t l4 l9 D4
 t l5 l4 L5
 t l4 l5 R4
-t l11 l5 U11
-t l5 l11 D5
-t l6 l5 L6
-t l5 l6 R5
-t l12 l6 U12
-t l6 l12 D6
+t l10 l5 U10
+t l5 l10 D5
+t l7 l6 L7
+t l6 l7 R6
+t l11 l6 U11
+t l6 l11 D6
 t l8 l7 L8
 t l7 l8 R7
-t l13 l7 U13
-t l7 l13 D7
+t l12 l7 U12
+t l7 l12 D7
 t l9 l8 L9
 t l8 l9 R8
-t l14 l8 U14
-t l8 l14 D8
+t l13 l8 U13
+t l8 l13 D8
 t l10 l9 L10
 t l9 l10 R9
-t l15 l9 U15
-t l9 l15 D9
-t l11 l10 L11
-t l10 l11 R10
-t l16 l10 U16
-t l10 l16 D10
+t l14 l9 U14
+t l9 l14 D9
 t l12 l11 L12
 t l11 l12 R11
-t l17 l11 U17
-t l11 l17 D11
+t l15 l10 U15
+t l10 l15 D10
+t l13 l12 L13
+t l12 l13 R12
+t l16 l11 U16
+t l11 l16 D11
 t l14 l13 L14
 t l13 l14 R13
-t l18 l12 U18
-t l12 l18 D12
+t l17 l12 U17
+t l12 l17 D12
 t l15 l14 L15
 t l14 l15 R14
-t l19 l13 U19
-t l13 l19 D13
-t l16 l15 L16
-t l15 l16 R15
-t l20 l14 U20
-t l14 l20 D14
+t l18 l13 U18
+t l13 l18 D13
 t l17 l16 L17
 t l16 l17 R16
-t l21 l15 U21
-t l15 l21 D15
+t l19 l14 U19
+t l14 l19 D14
 t l18 l17 L18
 t l17 l18 R17
-t l22 l16 U22
-t l16 l22 D16
+t l20 l15 U20
+t l15 l20 D15
+t l19 l18 L19
+t l18 l19 R18
+t l21 l16 U21
+t l16 l21 D16
 t l20 l19 L20
 t l19 l20 R19
-t l23 l17 U23
-t l17 l23 D17
-t l21 l20 L21
-t l20 l21 R20
-t l24 l18 U24
-t l18 l24 D18
+t l22 l17 U22
+t l17 l22 D17
 t l22 l21 L22
 t l21 l22 R21
-t l25 l19 U25
-t l19 l25 D19
+t l23 l18 U23
+t l18 l23 D18
 t l23 l22 L23
 t l22 l23 R22
-t l26 l20 U26
-t l20 l26 D20
+t l24 l19 U24
+t l19 l24 D19
 t l24 l23 L24
 t l23 l24 R23
-t l27 l21 U27
-t l21 l27 D21
-t l26 l25 L26
-t l25 l26 R25
-t l28 l22 U28
-t l22 l28 D22
-t l27 l26 L27
-t l26 l27 R26
-t l29 l23 U29
-t l23 l29 D23
-t l28 l27 L28
-t l27 l28 R27
-t l30 l24 U30
-t l24 l30 D24
-t l29 l28 L29
-t l28 l29 R28
-t l31 l25 U31
-t l25 l31 D25
-t l30 l29 L30
-t l29 l30 R29
-t l32 l26 U32
-t l26 l32 D26
-t l32 l31 L32
-t l31 l32 R31
-t l33 l27 U33
-t l27 l33 D27
-t l33 l32 L33
-t l32 l33 R32
-t l34 l28 U34
-t l28 l34 D28
-t l34 l33 L34
-t l33 l34 R33
-t l35 l29 U35
-t l29 l35 D29
-t l35 l34 L35
-t l34 l35 R34
-t l36 l30 U36
-t l30 l36 D30
-t l36 l35 L36
-t l35 l36 R35
+t l25 l20 U25
+t l20 l25 D20
+t l25 l24 L25
+t l24 l25 R24
 t l1 l1 nU1
 t l1 l1 nD1
 t l1 l1 nL1
@@ -255,47 +204,3 @@ t l25 l25 nU25
 t l25 l25 nD25
 t l25 l25 nL25
 t l25 l25 nR25
-t l26 l26 nU26
-t l26 l26 nD26
-t l26 l26 nL26
-t l26 l26 nR26
-t l27 l27 nU27
-t l27 l27 nD27
-t l27 l27 nL27
-t l27 l27 nR27
-t l28 l28 nU28
-t l28 l28 nD28
-t l28 l28 nL28
-t l28 l28 nR28
-t l29 l29 nU29
-t l29 l29 nD29
-t l29 l29 nL29
-t l29 l29 nR29
-t l30 l30 nU30
-t l30 l30 nD30
-t l30 l30 nL30
-t l30 l30 nR30
-t l31 l31 nU31
-t l31 l31 nD31
-t l31 l31 nL31
-t l31 l31 nR31
-t l32 l32 nU32
-t l32 l32 nD32
-t l32 l32 nL32
-t l32 l32 nR32
-t l33 l33 nU33
-t l33 l33 nD33
-t l33 l33 nL33
-t l33 l33 nR33
-t l34 l34 nU34
-t l34 l34 nD34
-t l34 l34 nL34
-t l34 l34 nR34
-t l35 l35 nU35
-t l35 l35 nD35
-t l35 l35 nL35
-t l35 l35 nR35
-t l36 l36 nU36
-t l36 l36 nD36
-t l36 l36 nL36
-t l36 l36 nR36

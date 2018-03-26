@@ -8,7 +8,7 @@ clc
 %Output : Disp the optimal command
 
 %% Get Transitions Matrices
-[transitionsMatrix,~,States] = creationMatricetransition('senario1_5.fsm');
+[transitionsMatrix,~,States] = creationMatricetransition('senario1_5_bloq.fsm');
 
 
 
