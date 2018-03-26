@@ -1,4 +1,4 @@
-function [ MatriceCell, Alphabet, States] = creationMatricetransition( nameOfFileFSM )
+function [ MatriceCell, Alphabet, States] = creationMatricetransition( nameOfFileFSM, cellOrder )
 %% Edit matrice transitions of .fsm file and .txt file
 %   Condition : state are named with a 'l' in a first case
 %
@@ -10,13 +10,10 @@ function [ MatriceCell, Alphabet, States] = creationMatricetransition( nameOfFil
 %   Output                    : cell with All Transitions Matrix
 %
 
-    % StatePatern
-    SP = 'l';
-    % Transition Patern
-    ST = 'UDRL';
+
 %% Selection Type of File
     if strcmp(nameOfFileFSM(end-2:end), 'fsm')
-       [States, Transition] = getStateTransitionFSM(nameOfFileFSM,ST, SP);       
+       [States, Transition] = getStateTransitionFSM(nameOfFileFSM);       
     else if strcmp(nameOfFileFSM(end-2:end), 'txt')
            [States, Transition] = getStateTransitionTXT(nameOfFileTXT);
             
@@ -88,10 +85,9 @@ function [ MatriceCell, Alphabet, States] = creationMatricetransition( nameOfFil
     %   Cell contain 10 Events : U - D - L - R - nU - nD - nL - nR - wR -
     %   wD
     % 
-    MatriceCell = cell(10,1);
-    cellOrder = {'U', 'D' 'L','R','nU','nD','nL','nR','wR','wD'}%,'escp'};
+    MatriceCell = cell(10,2);
+    
    for i = 1:length(cellOrder)
-       isEventExist = 0;
        j = 1;
        while j<= length(Events)
             if strcmp(Events(j).Name, cellOrder(i))
@@ -100,9 +96,10 @@ function [ MatriceCell, Alphabet, States] = creationMatricetransition( nameOfFil
             j = j+1;
        end
        if j <= length(Events)
-            MatriceCell{i} = Events(j).matrice;
+            MatriceCell{i,1} = Events(j).matrice;
+            MatriceCell{i,2} = Events(j).Name;
        else
-           MatriceCell{i} = zeros(NbS, NbS);
+           error('Transiion in Input must have a relation with the automate')
        end
     end
 end
