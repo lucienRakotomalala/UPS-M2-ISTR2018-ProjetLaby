@@ -26,7 +26,7 @@ for i= 1:length(transitionsMatrix)
    M = [M transitionsMatrix{i,1}];
 end
 
-n = length(size(M,1));  % Nbr States
+n = size(M,1);  % Nbr States
 %M=[U D L R nU nD nL nR wR wD esc];
 [s,t]=find(M~=0);
 for k=1:length(t)
@@ -60,8 +60,8 @@ for t=1:(length(path)-1)
     end
 end
 disp(sprintf('For the initial state %d and the final state %d :' , s_init  ,s_final))
-disp(strcat('  - the fatest sequence is :',strcat(sprintf(' %s ',tree{1,:}))))
-disp(strcat('  - the fatest command is :',strcat(sprintf(' %s ',command{1,:}))))
+disp(strcat('  - the fatest sequence is :',strcat(sprintf(' %s ',strjoin([tree{1,:}])))))
+disp(strcat('  - the fatest command is :',strcat(sprintf(' %s ',strjoin([command{1,:}])))))
 disp(sprintf('\n'))
 end
 

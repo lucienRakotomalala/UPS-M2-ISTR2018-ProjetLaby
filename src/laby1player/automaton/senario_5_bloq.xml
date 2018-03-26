@@ -2548,9 +2548,6 @@
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="nL" from="e1,l7,s2,w1" to="e2,l7,s2,w1" legal="true">
         <labelPosition x="500" y="0"/>
     </transition>
-    <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="U" from="e1,l7,s2,w1" to="e1,l2,s1,w1" legal="true">
-        <labelPosition x="500" y="0"/>
-    </transition>
     <transition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="XmlTransition" name="R" from="e1,l7,s2,w3" to="e1,l8,s1,w3" legal="true">
         <labelPosition x="500" y="0"/>
     </transition>

@@ -13,7 +13,7 @@ clc
 
 %% Get Transitions Matrices
 
-transitionList = {'U', 'D' 'L','R','nU','nD','nL','nR','wR','wD','espc'};
+transitionList = {'U', 'D' 'L','R','nU','nD','nL','nR','wR','wD','escp'};
 [transitionsMatrix,~,States] = creationMatricetransition('senario1_5_bloq.fsm',transitionList );
 
 

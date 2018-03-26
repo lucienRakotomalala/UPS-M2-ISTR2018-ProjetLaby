@@ -1,0 +1,53 @@
+For the initial state 1 and the final state 343 :
+  - the fatest sequence is : wR R wD R wR R wD D wR U wD D wR D wD U wR D wD U wR nL nD nR nU
+  - the fatest command is : R R R D U D D U D U
+
+
+For the initial state 1 and the final state 344 :
+  - the fatest sequence is : wR R wD R wR R wD D wR U wD D wR D wD U wR D wD L wR L wD R wR L wD L wR R wD L wR R wD nL nD nR nU
+  - the fatest command is : R R R D U D D U D L L R L L R L R
+
+
+For the initial state 1 and the final state 345 :
+  - the fatest sequence is : wR R wD R wR R wD D wR U wD D wR D wD U wR D wD L wR L wD R wR L wD L wR R wD R wR D wD U wR nL nD nR nU
+  - the fatest command is : R R R D U D D U D L L R L L R R D U
+
+
+For the initial state 1 and the final state 346 :
+  - the fatest sequence is : wR R wD R wR R wD D wR U wD D wR D wD U wR D wD L wR R wD nL nD nR nU
+  - the fatest command is : R R R D U D D U D L R
+
+
+For the initial state 1 and the final state 347 :
+  - the fatest sequence is : wR R wD R wR R wD D wR U wD D wR D wD U wR D wD L wR L wD R wR L wD L wR R wD L wR D wD U wR L wD R wR L wD D wR D wD U wR U wD D wR nL nD nR nU
+  - the fatest command is : R R R D U D D U D L L R L L R L D U L R L D D U U D
+
+
+For the initial state 1 and the final state 348 :
+  - the fatest sequence is : wR R wD R wR R wD D wR U wD D wR D wD U wR D wD L wR L wD R wR L wD L wR R wD L wR D wD R wR U wD D wR nL nD nR nU
+  - the fatest command is : R R R D U D D U D L L R L L R L D R U D
+
+
+For the initial state 1 and the final state 349 :
+  - the fatest sequence is : wR R wD R wR R wD D wR U wD D wR D wD U wR D wD L wR D wD R wR U wD D wR nL nD nR nU
+  - the fatest command is : R R R D U D D U D L D R U D
+
+
+For the initial state 1 and the final state 350 :
+  - the fatest sequence is : wR R wD R wR R wD D wR U wD D wR D wD U wR D wD L wR L wD R wR L wD L wR R wD L wR D wD R wR D wD L wR R wD nL nD nR nU
+  - the fatest command is : R R R D U D D U D L L R L L R L D R D L R
+
+
+For the initial state 1 and the final state 351 :
+  - the fatest sequence is : wR R wD R wR R wD D wR U wD D wR D wD U wR D wD L wR D wD D wR nL nD nR nU
+  - the fatest command is : R R R D U D D U D L D D
+
+
+For the initial state 1 and the final state 353 :
+  - the fatest sequence is : wR R wD R wR R wD D wR U wD D wR D wD U wR D wD L wR L wD R wR L wD L wR R wD L wR D wD U wR L wD R wR L wD U wR nL nD nR nU
+  - the fatest command is : R R R D U D D U D L L R L L R L D U L R L U
+
+
+For the initial state 1 and the final state 354 :
+  - the fatest sequence is : wR R wD R wR R wD D wR U wD D wR D wD U wR D wD L wR L wD R wR L wD L wR R wD U wR nL nD nR nU
+  - the fatest command is : R R R D U D D U D L L R L L R U
