@@ -29,26 +29,38 @@ numberOfStates= max(size(Scheduling));
 numberOfPacmanLabyStates = max(cell2mat(PacmanLabyDatas(:,2)));
 numberOfGhostLabyStates = max(cell2mat(GhostLabyDatas(:,2)));
 initialIndice = strcmp(FirstWallsMove,'v')*1 + strcmp(FirstWallsMove,'h')*2;
-labPacevent = unique(PacmanLabyDatas(:,3));
-labPacevent = labPacevent(1:end-(4*numberOfPacmanLabyStates));
-labGhostevent = unique (GhostLabyDatas(:,3));
-labGhostevent = labGhostevent(1:end-(4*numberOfGhostLabyStates));
+labPacevent = (PacmanLabyDatas(:,3));
+labPacevent = labPacevent(1:end-17); 
+labGhostevent = (GhostLabyDatas(:,3));
+labGhostevent = labGhostevent(1:end-16); %tous w_
 wallsEvent = {'wD','wR'};
 markedStatesIndices = 0;
- PactransitionsDatas = cell( (numberOfStates-1)*(size(labPacevent,1)+size(wallsEvent,2))... moves tr
+ PactransitionsDatas = cell( (numberOfStates-2)*(size(labPacevent,1)+size(wallsEvent,2))... moves tr
                         + 4*numberOfPacmanLabyStates... not possible moves
                          ,3 );
-  GhostransitionsDatas = cell( (numberOfStates-1)*(size(labGhostevent,1)+size(wallsEvent,2))... moves tr
+  GhostransitionsDatas = cell( (numberOfStates-2)*(size(labGhostevent,1)+size(wallsEvent,2))... moves tr
                         + 4*numberOfGhostLabyStates... not possible moves
                          ,3 );
 indice= 0;
-    for h = 1: numberOfStates
+    for h = 1:numberOfStates
         if mod(h,2)==0
              for i = 1 : size(labPacevent,1)
-                PactransitionsDatas{indice+ i,1}=h;
+                 if cellfun('isempty',(strfind(labPacevent(i,1),'w')))
+                       PactransitionsDatas{indice+i,1}=h;
                 PactransitionsDatas{indice+i,2}=mod(h,numberOfStates)+1;
                 PactransitionsDatas{indice+i,3}=labPacevent{i};
+                    
+                 else
+                    PactransitionsDatas{indice+i,1}=h;
+                PactransitionsDatas{indice+i,2}=h;
+                PactransitionsDatas{indice+i,3}=labPacevent{i}; 
+                
+                    
+                 end
+                 
              end
+       
+                 
              indice = indice + size(labPacevent,1);
          else
             for i = 1 : size(wallsEvent,2)
@@ -61,21 +73,30 @@ indice= 0;
         end
     
     end
-for h = 1: numberOfStates
-        if mod(h,2)==0
+    %indice = 0;
+for h = 1:numberOfStates
+        if mod(h,3)==0
              for i = 1 : size(labGhostevent,1)
+                  if cellfun('isempty',(strfind(labGhostevent(i,1),'w')))
                 GhostransitionsDatas{indice+ i,1}=h;
                 GhostransitionsDatas{indice+i,2}=mod(h,numberOfStates)+1;
                 GhostransitionsDatas{indice+i,3}=labGhostevent{i};
+                  else
+                       GhostransitionsDatas{indice+ i,1}=h;
+                GhostransitionsDatas{indice+i,2}=h;
+                GhostransitionsDatas{indice+i,3}=labGhostevent{i};
+                  end
+                  
+                      
              end
              indice = indice + size(labGhostevent,1);
-         else
-            for i = 1 : size(wallsEvent,2)
-                GhostransitionsDatas{indice+i,1}=h;
-                GhostransitionsDatas{indice+i,2}=mod(h,numberOfStates)+1;
-                GhostransitionsDatas{indice+i,3}=wallsEvent{i};
-            end
-            indice = indice + size(wallsEvent,2);
+%          else
+%             for i = 1 : size(wallsEvent,2)
+%                 GhostransitionsDatas{indice+i,1}=h;
+%                 GhostransitionsDatas{indice+i,2}=mod(h,numberOfStates)+1;
+%                 GhostransitionsDatas{indice+i,3}=wallsEvent{i};
+%             end
+%             indice = indice + size(wallsEvent,2);
 
         end
 end
