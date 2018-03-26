@@ -1,7 +1,7 @@
 clear 
 %% Main script for launch the generation
 %% 1. Initial parameters
- wallsV =   [1 ;0 ]; %  dimension can change
+ wallsV =   [0 ;0 ]; %  dimension can change
  wallsH =  [0 0];%  dimension can change
  pacman= [1,1]; % static dimension
  escape = [2 2]; % static dimension

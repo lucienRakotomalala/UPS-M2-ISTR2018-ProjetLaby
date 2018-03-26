@@ -82,7 +82,7 @@ for i = 1 : numberOfStates %all states
         if(~isempty(noU))
             l = l+max(size(oR));
             for k = 1 : max(size(noU))
-                str{l+k}=sprintf('nU%d ',noU(k));
+                str{l+k}=sprintf('nU%d',noU(k));
                 
             end
         end

@@ -70,6 +70,8 @@ ProcessAutomata = struct('lab',AutomateGraph,   ...
     
 %%  Add escape option
 %    ProcessAutomata.composed = ParrallelComposition(ProcessAutomata.composed, ProcessAutomata.escape);
+%% Accessibiliy 
+    ProcessAutomata.composed = ProcessAutomata.composed.accessibilityAutomate;
     
 %% Objective add    
     Objective = AutomateGraph();
