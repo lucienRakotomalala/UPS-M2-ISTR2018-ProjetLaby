@@ -153,7 +153,7 @@ classdef AutomateGraph % Claire a choisi le titre
         %% Recherche d'une sequence optimale et existente pour objectif
         %donné
         
-        function [path, tree] = PathResearche(obj, initialState, studiedState)
+        function [path, tree_new] = PathResearche(obj, initialState, studiedState)
             s=[];
             t=[];
             tree = [];
@@ -164,8 +164,8 @@ classdef AutomateGraph % Claire a choisi le titre
                     s_from = ligne;
                     t_out = tr_buff(ligne);
                     if(t_out ~= s_from && t_out ~=0 ) %teste si pas tr stable et tr existante
-                        s = [s s_from]
-                        t = [t t_out]
+                        s = [s s_from];
+                        t = [t t_out];
                        tree = [tree c];
                     end
                 end
@@ -176,7 +176,20 @@ classdef AutomateGraph % Claire a choisi le titre
        
             G = digraph(s,t);
             plot(G)
-            path = shortestpath(G,initialState,studiedState,'Method','positive')
+            path = shortestpath(G,initialState,studiedState,'Method','positive');
+            
+            cnt=1;
+            for indice = 1 : length(path)-1
+                s_path = path(indice);
+                t_path = path(indice+1);
+                
+                for tr = 1:length(s)
+                    if (s(tr) == s_path && t(tr)==t_path)
+                        tree_new(cnt) = tree(tr);
+                        cnt = cnt+1;
+                    end
+                end
+            end
         end
         %% 
         function obj = vector2structAutomata(obj)

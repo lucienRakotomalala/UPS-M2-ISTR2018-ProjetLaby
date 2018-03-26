@@ -1,16 +1,160 @@
 s l1 -I 
 s l2 
 s l3 
-s l4 -M 
+s l4 
+s l5 
+s l6 
+s l7 
+s l8 
+s l9 
+s l10 
+s l11 
+s l12 
+s l13 
+s l14 
+s l15 
+s l16 
+s l17 
+s l18 
+s l19 
+s l20 
+s l21 
+s l22 -M 
+s l23 
+s l24 
+s l25 
+s l26 
+s l27 
+s l28 
+s l29 
+s l30 
+s l31 
+s l32 
+s l33 
+s l34 
+s l35 
+s l36 
 
-t l3 l1 U3
-t l1 l3 D1
+t l7 l1 U7
+t l1 l7 D1
 t l2 l1 L2
 t l1 l2 R1
-t l4 l2 U4
-t l2 l4 D2
+t l8 l2 U8
+t l2 l8 D2
+t l3 l2 L3
+t l2 l3 R2
+t l9 l3 U9
+t l3 l9 D3
 t l4 l3 L4
 t l3 l4 R3
+t l10 l4 U10
+t l4 l10 D4
+t l5 l4 L5
+t l4 l5 R4
+t l11 l5 U11
+t l5 l11 D5
+t l6 l5 L6
+t l5 l6 R5
+t l12 l6 U12
+t l6 l12 D6
+t l8 l7 L8
+t l7 l8 R7
+t l13 l7 U13
+t l7 l13 D7
+t l9 l8 L9
+t l8 l9 R8
+t l14 l8 U14
+t l8 l14 D8
+t l10 l9 L10
+t l9 l10 R9
+t l15 l9 U15
+t l9 l15 D9
+t l11 l10 L11
+t l10 l11 R10
+t l16 l10 U16
+t l10 l16 D10
+t l12 l11 L12
+t l11 l12 R11
+t l17 l11 U17
+t l11 l17 D11
+t l14 l13 L14
+t l13 l14 R13
+t l18 l12 U18
+t l12 l18 D12
+t l15 l14 L15
+t l14 l15 R14
+t l19 l13 U19
+t l13 l19 D13
+t l16 l15 L16
+t l15 l16 R15
+t l20 l14 U20
+t l14 l20 D14
+t l17 l16 L17
+t l16 l17 R16
+t l21 l15 U21
+t l15 l21 D15
+t l18 l17 L18
+t l17 l18 R17
+t l22 l16 U22
+t l16 l22 D16
+t l20 l19 L20
+t l19 l20 R19
+t l23 l17 U23
+t l17 l23 D17
+t l21 l20 L21
+t l20 l21 R20
+t l24 l18 U24
+t l18 l24 D18
+t l22 l21 L22
+t l21 l22 R21
+t l25 l19 U25
+t l19 l25 D19
+t l23 l22 L23
+t l22 l23 R22
+t l26 l20 U26
+t l20 l26 D20
+t l24 l23 L24
+t l23 l24 R23
+t l27 l21 U27
+t l21 l27 D21
+t l26 l25 L26
+t l25 l26 R25
+t l28 l22 U28
+t l22 l28 D22
+t l27 l26 L27
+t l26 l27 R26
+t l29 l23 U29
+t l23 l29 D23
+t l28 l27 L28
+t l27 l28 R27
+t l30 l24 U30
+t l24 l30 D24
+t l29 l28 L29
+t l28 l29 R28
+t l31 l25 U31
+t l25 l31 D25
+t l30 l29 L30
+t l29 l30 R29
+t l32 l26 U32
+t l26 l32 D26
+t l32 l31 L32
+t l31 l32 R31
+t l33 l27 U33
+t l27 l33 D27
+t l33 l32 L33
+t l32 l33 R32
+t l34 l28 U34
+t l28 l34 D28
+t l34 l33 L34
+t l33 l34 R33
+t l35 l29 U35
+t l29 l35 D29
+t l35 l34 L35
+t l34 l35 R34
+t l36 l30 U36
+t l30 l36 D30
+t l36 l35 L36
+t l35 l36 R35
 t l1 l1 nU1
 t l1 l1 nD1
 t l1 l1 nL1
@@ -27,3 +171,131 @@ t l4 l4 nU4
 t l4 l4 nD4
 t l4 l4 nL4
 t l4 l4 nR4
+t l5 l5 nU5
+t l5 l5 nD5
+t l5 l5 nL5
+t l5 l5 nR5
+t l6 l6 nU6
+t l6 l6 nD6
+t l6 l6 nL6
+t l6 l6 nR6
+t l7 l7 nU7
+t l7 l7 nD7
+t l7 l7 nL7
+t l7 l7 nR7
+t l8 l8 nU8
+t l8 l8 nD8
+t l8 l8 nL8
+t l8 l8 nR8
+t l9 l9 nU9
+t l9 l9 nD9
+t l9 l9 nL9
+t l9 l9 nR9
+t l10 l10 nU10
+t l10 l10 nD10
+t l10 l10 nL10
+t l10 l10 nR10
+t l11 l11 nU11
+t l11 l11 nD11
+t l11 l11 nL11
+t l11 l11 nR11
+t l12 l12 nU12
+t l12 l12 nD12
+t l12 l12 nL12
+t l12 l12 nR12
+t l13 l13 nU13
+t l13 l13 nD13
+t l13 l13 nL13
+t l13 l13 nR13
+t l14 l14 nU14
+t l14 l14 nD14
+t l14 l14 nL14
+t l14 l14 nR14
+t l15 l15 nU15
+t l15 l15 nD15
+t l15 l15 nL15
+t l15 l15 nR15
+t l16 l16 nU16
+t l16 l16 nD16
+t l16 l16 nL16
+t l16 l16 nR16
+t l17 l17 nU17
+t l17 l17 nD17
+t l17 l17 nL17
+t l17 l17 nR17
+t l18 l18 nU18
+t l18 l18 nD18
+t l18 l18 nL18
+t l18 l18 nR18
+t l19 l19 nU19
+t l19 l19 nD19
+t l19 l19 nL19
+t l19 l19 nR19
+t l20 l20 nU20
+t l20 l20 nD20
+t l20 l20 nL20
+t l20 l20 nR20
+t l21 l21 nU21
+t l21 l21 nD21
+t l21 l21 nL21
+t l21 l21 nR21
+t l22 l22 nU22
+t l22 l22 nD22
+t l22 l22 nL22
+t l22 l22 nR22
+t l23 l23 nU23
+t l23 l23 nD23
+t l23 l23 nL23
+t l23 l23 nR23
+t l24 l24 nU24
+t l24 l24 nD24
+t l24 l24 nL24
+t l24 l24 nR24
+t l25 l25 nU25
+t l25 l25 nD25
+t l25 l25 nL25
+t l25 l25 nR25
+t l26 l26 nU26
+t l26 l26 nD26
+t l26 l26 nL26
+t l26 l26 nR26
+t l27 l27 nU27
+t l27 l27 nD27
+t l27 l27 nL27
+t l27 l27 nR27
+t l28 l28 nU28
+t l28 l28 nD28
+t l28 l28 nL28
+t l28 l28 nR28
+t l29 l29 nU29
+t l29 l29 nD29
+t l29 l29 nL29
+t l29 l29 nR29
+t l30 l30 nU30
+t l30 l30 nD30
+t l30 l30 nL30
+t l30 l30 nR30
+t l31 l31 nU31
+t l31 l31 nD31
+t l31 l31 nL31
+t l31 l31 nR31
+t l32 l32 nU32
+t l32 l32 nD32
+t l32 l32 nL32
+t l32 l32 nR32
+t l33 l33 nU33
+t l33 l33 nD33
+t l33 l33 nL33
+t l33 l33 nR33
+t l34 l34 nU34
+t l34 l34 nD34
+t l34 l34 nL34
+t l34 l34 nR34
+t l35 l35 nU35
+t l35 l35 nD35
+t l35 l35 nL35
+t l35 l35 nR35
+t l36 l36 nU36
+t l36 l36 nD36
+t l36 l36 nL36
+t l36 l36 nR36
