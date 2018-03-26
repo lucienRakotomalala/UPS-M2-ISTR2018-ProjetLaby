@@ -1,4 +1,4 @@
-function [States, Transition] = getStateTransitionFSM( nameOfFileFSM, ST, SP )
+function [States, Transition] = getStateTransitionFSM( nameOfFileFSM )
 % This function return struct of States and Transitons of an automata describes
 %   in .fsm files for Desuma 
 %   Input   : 
