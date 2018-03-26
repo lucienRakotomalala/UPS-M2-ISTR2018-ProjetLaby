@@ -1,0 +1,162 @@
+s lG9 -I 
+s lG1 -M 
+s lG2 -M 
+s lG3 -M 
+s lG4 -M 
+s lG5 -M 
+s lG6 -M 
+s lG7 -M 
+s lG8 -M 
+s lG10 -M 
+s lG11 -M 
+s lG12 -M 
+s lG13 -M 
+s lG14 -M 
+s lG15 -M 
+s lG16 -M 
+s lG17 
+
+t lG5 lG1 UG5
+t lG1 lG5 DG1
+t lG2 lG1 LG2
+t lG1 lG2 RG1
+t lG6 lG2 UG6
+t lG2 lG6 DG2
+t lG3 lG2 LG3
+t lG2 lG3 RG2
+t lG7 lG3 UG7
+t lG3 lG7 DG3
+t lG4 lG3 LG4
+t lG3 lG4 RG3
+t lG8 lG4 UG8
+t lG4 lG8 DG4
+t lG6 lG5 LG6
+t lG5 lG6 RG5
+t lG9 lG5 UG9
+t lG5 lG9 DG5
+t lG7 lG6 LG7
+t lG6 lG7 RG6
+t lG10 lG6 UG10
+t lG6 lG10 DG6
+t lG8 lG7 LG8
+t lG7 lG8 RG7
+t lG11 lG7 UG11
+t lG7 lG11 DG7
+t lG10 lG9 LG10
+t lG9 lG10 RG9
+t lG12 lG8 UG12
+t lG8 lG12 DG8
+t lG11 lG10 LG11
+t lG10 lG11 RG10
+t lG13 lG9 UG13
+t lG9 lG13 DG9
+t lG12 lG11 LG12
+t lG11 lG12 RG11
+t lG14 lG10 UG14
+t lG10 lG14 DG10
+t lG14 lG13 LG14
+t lG13 lG14 RG13
+t lG15 lG11 UG15
+t lG11 lG15 DG11
+t lG15 lG14 LG15
+t lG14 lG15 RG14
+t lG16 lG12 UG16
+t lG12 lG16 DG12
+t lG16 lG15 LG16
+t lG15 lG16 RG15
+t lG1 lG1 w_UG1
+t lG1 lG1 w_DG1
+t lG1 lG1 w_LG1
+t lG1 lG1 w_RG1
+t lG1 lG1 escape
+t lG2 lG2 w_UG2
+t lG2 lG2 w_DG2
+t lG2 lG2 w_LG2
+t lG2 lG2 w_RG2
+t lG2 lG2 escape
+t lG3 lG3 w_UG3
+t lG3 lG3 w_DG3
+t lG3 lG3 w_LG3
+t lG3 lG3 w_RG3
+t lG3 lG3 escape
+t lG4 lG4 w_UG4
+t lG4 lG4 w_DG4
+t lG4 lG4 w_LG4
+t lG4 lG4 w_RG4
+t lG4 lG4 escape
+t lG5 lG5 w_UG5
+t lG5 lG5 w_DG5
+t lG5 lG5 w_LG5
+t lG5 lG5 w_RG5
+t lG5 lG5 escape
+t lG6 lG6 w_UG6
+t lG6 lG6 w_DG6
+t lG6 lG6 w_LG6
+t lG6 lG6 w_RG6
+t lG6 lG6 escape
+t lG7 lG7 w_UG7
+t lG7 lG7 w_DG7
+t lG7 lG7 w_LG7
+t lG7 lG7 w_RG7
+t lG7 lG7 escape
+t lG8 lG8 w_UG8
+t lG8 lG8 w_DG8
+t lG8 lG8 w_LG8
+t lG8 lG8 w_RG8
+t lG8 lG8 escape
+t lG9 lG9 w_UG9
+t lG9 lG9 w_DG9
+t lG9 lG9 w_LG9
+t lG9 lG9 w_RG9
+t lG9 lG9 escape
+t lG10 lG10 w_UG10
+t lG10 lG10 w_DG10
+t lG10 lG10 w_LG10
+t lG10 lG10 w_RG10
+t lG10 lG10 escape
+t lG11 lG11 w_UG11
+t lG11 lG11 w_DG11
+t lG11 lG11 w_LG11
+t lG11 lG11 w_RG11
+t lG11 lG11 escape
+t lG12 lG12 w_UG12
+t lG12 lG12 w_DG12
+t lG12 lG12 w_LG12
+t lG12 lG12 w_RG12
+t lG12 lG12 escape
+t lG13 lG13 w_UG13
+t lG13 lG13 w_DG13
+t lG13 lG13 w_LG13
+t lG13 lG13 w_RG13
+t lG13 lG13 escape
+t lG14 lG14 w_UG14
+t lG14 lG14 w_DG14
+t lG14 lG14 w_LG14
+t lG14 lG14 w_RG14
+t lG14 lG14 escape
+t lG15 lG15 w_UG15
+t lG15 lG15 w_DG15
+t lG15 lG15 w_LG15
+t lG15 lG15 w_RG15
+t lG15 lG15 escape
+t lG16 lG16 w_UG16
+t lG16 lG16 w_DG16
+t lG16 lG16 w_LG16
+t lG16 lG16 w_RG16
+t lG16 lG16 escape
+t lG1 lG17 P1
+t lG2 lG17 P2
+t lG3 lG17 P3
+t lG4 lG17 P4
+t lG5 lG17 P5
+t lG6 lG17 P6
+t lG7 lG17 P7
+t lG8 lG17 P8
+t lG9 lG17 P9
+t lG10 lG17 P10
+t lG11 lG17 P11
+t lG12 lG17 P12
+t lG13 lG17 P13
+t lG14 lG17 P14
+t lG15 lG17 P15
+t lG16 lG17 P16

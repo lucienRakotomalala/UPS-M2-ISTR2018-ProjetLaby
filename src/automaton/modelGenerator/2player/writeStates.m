@@ -12,13 +12,13 @@ function str = writeStates(prefix,nbrOfStates,initialIndice,markedStatesIndices)
                                              % reading file from DESUMA.
                                   str ='';  
                                 
-                 
+                     
+str = sprintf('%ss %s%d -I \n',str,prefix,initialIndice);
+
                            for i = 1:nbrOfStates
-                               if (i == initialIndice)
-                                    str = sprintf('%ss %s%d -I \n',str,prefix,i);
-                               elseif isempty(find(i == markedStatesIndices)) == 0
+                                if (isempty(find(i == markedStatesIndices,1)) == 0)&&(i  ~= initialIndice)
                                        str = sprintf('%ss %s%d -M \n',str,prefix,i);
-                                else
+                                elseif (i  ~= initialIndice)
                                        str = sprintf('%ss %s%d \n',str,prefix,i);
                                 end
                                

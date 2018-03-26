@@ -13,7 +13,7 @@ clear
  pacman= [1,1]; % static dimension
  ghost = [1,3];
  escape = [4 4]; % static dimension
- sched = {'p','w'};% p for player and w for walls
+ sched = {'P','G','w'};% p for player and w for walls
 
 %% 2 automaton models
 % structure of the pacman and ghost labs
@@ -22,17 +22,17 @@ clear
 % for pacman
 [lab.p.indInit,lab.p.mark,lab.p.datas, lab.p.nbS]...
 = AutomatonStrutureLabyCreation (max(size(wallsH)),pacman,escape,'P');
-% for ghost
+%% for ghost
 [lab.g.indInit,lab.g.mark,lab.g.datas, lab.g.nbS]...
 = AutomatonStrutureLabyCreation (max(size(wallsH)),ghost,escape,'G');
 
-% walls contraints
+%% walls contraints
 % function [initialIndice,markedStatesIndices,transitionsDatas, numberOfStates] ...
 % = AutomatonWallsContraintsCreation (verticalsWalls,horizontalsWalls,FirstWallsMove)
 [walls.indInit,walls.mark,walls.datas, walls.nbS]...
 = AutomatonWallsContraintsCreation (wallsV,wallsH,'v');
 
-% scheduling contraints
+%% scheduling contraints
 % function [initialIndice,markedStatesIndices,transitionsDatas, numberOfStates] ...
 % = AutomatonSchedulingCreation (Scheduling,PacmanLabyDatas,GhostLabyDatas,FirstWallsMove)
 
@@ -44,17 +44,20 @@ clear
 lab.p.str.s = writeStates('lP',lab.p.nbS,lab.p.indInit,lab.p.mark);
 lab.p.str.t = writeTransitions('lP',lab.p.datas) ;
 SaveDESUMAFile(lab.p.str.t,lab.p.str.s,'lab_pacman.txt');
-%lab ghost
+%% lab ghost
 lab.g.str.s = writeStates('lG',lab.g.nbS,lab.g.indInit,lab.g.mark);
 lab.g.str.t = writeTransitions('lG',lab.g.datas) ;
 SaveDESUMAFile(lab.g.str.t,lab.g.str.s,'lab_ghost.txt');
 
-%walls
+%% walls
 walls.str.s = writeStates('w',walls.nbS,walls.indInit,walls.mark);
 walls.str.t = writeTransitions('w',walls.datas) ;
 SaveDESUMAFile(walls.str.t,walls.str.s,'walls.txt');
 
-%sched
+%% sched
 sche.str.s = writeStates('s',sche.nbS,sche.indInit,sche.mark);
 sche.str.t = writeTransitions('s',sche.datas) ;
 SaveDESUMAFile(sche.str.t,sche.str.s,'sched.txt');
+
+
+
