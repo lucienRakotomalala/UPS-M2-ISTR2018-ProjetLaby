@@ -84,8 +84,8 @@ for i = 1:n
     %
     
     %ghost (out{2} : ghost [x y]) in Visu 2 = ghost
-    ghostpos =  labyState{i,2}*[0 2; 2 0]; % adapt position and flip
-    Visu(ghostpos(1),ghostpos(2),i)=2;
+%    ghostpos =  labyState{i,2}*[0 2; 2 0]; % adapt position and flip
+%    Visu(ghostpos(1),ghostpos(2),i)=2;
      for z = 3:2:N-2
          for j = 3:2:N-2
             if (int8(Visu(z-1,j,i)==16) + int8(Visu(z+1,j,i)==16) + int8(Visu(z,j-1,i)==14) + int8(Visu(z,j+1,i)==14))<2
