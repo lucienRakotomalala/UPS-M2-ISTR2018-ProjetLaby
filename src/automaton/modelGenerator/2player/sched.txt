@@ -1,0 +1,396 @@
+s s1 -I 
+s s2 
+s s3 
+
+t s1 s2 wD
+t s1 s2 wR
+t s2 s3 DP1
+t s2 s3 DP10
+t s2 s3 DP11
+t s2 s3 DP12
+t s2 s3 DP2
+t s2 s3 DP3
+t s2 s3 DP4
+t s2 s3 DP5
+t s2 s3 DP6
+t s2 s3 DP7
+t s2 s3 DP8
+t s2 s3 DP9
+t s2 s3 LP10
+t s2 s3 LP11
+t s2 s3 LP12
+t s2 s3 LP14
+t s2 s3 LP15
+t s2 s3 LP16
+t s2 s3 LP2
+t s2 s3 LP3
+t s2 s3 LP4
+t s2 s3 LP6
+t s2 s3 LP7
+t s2 s3 LP8
+t s2 s3 P1
+t s2 s3 P10
+t s2 s3 P11
+t s2 s3 P12
+t s2 s3 P13
+t s2 s3 P14
+t s2 s3 P15
+t s2 s3 P16
+t s2 s3 P2
+t s2 s3 P3
+t s2 s3 P4
+t s2 s3 P5
+t s2 s3 P6
+t s2 s3 P7
+t s2 s3 P8
+t s2 s3 P9
+t s2 s3 RP1
+t s2 s3 RP10
+t s2 s3 RP11
+t s2 s3 RP13
+t s2 s3 RP14
+t s2 s3 RP15
+t s2 s3 RP2
+t s2 s3 RP3
+t s2 s3 RP5
+t s2 s3 RP6
+t s2 s3 RP7
+t s2 s3 RP9
+t s2 s3 UP10
+t s2 s3 UP11
+t s2 s3 UP12
+t s2 s3 UP13
+t s2 s3 UP14
+t s2 s3 UP15
+t s2 s3 UP16
+t s2 s3 UP5
+t s2 s3 UP6
+t s2 s3 UP7
+t s2 s3 UP8
+t s2 s3 UP9
+t s2 s3 escape
+t s3 s1 wD
+t s3 s1 wR
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s2 s2 w_p1
+t s2 s2 w_p2
+t s2 s2 w_p3
+t s2 s2 w_p4
+t s2 s2 w_p5
+t s2 s2 w_p6
+t s2 s2 w_p7
+t s2 s2 w_p8
+t s2 s2 w_p9
+t s2 s2 w_p10
+t s2 s2 w_p11
+t s2 s2 w_p12
+t s2 s2 w_p13
+t s2 s2 w_p14
+t s2 s2 w_p15
+t s2 s2 w_p16
+t s2 s2 w_U1
+t s2 s2 w_U2
+t s2 s2 w_U3
+t s2 s2 w_U4
+t s2 s2 w_U5
+t s2 s2 w_U6
+t s2 s2 w_U7
+t s2 s2 w_U8
+t s2 s2 w_U9
+t s2 s2 w_U10
+t s2 s2 w_U11
+t s2 s2 w_U12
+t s2 s2 w_U13
+t s2 s2 w_U14
+t s2 s2 w_U15
+t s2 s2 w_U16
+t s2 s2 w_p1
+t s2 s2 w_p2
+t s2 s2 w_p3
+t s2 s2 w_p4
+t s2 s2 w_p5
+t s2 s2 w_p6
+t s2 s2 w_p7
+t s2 s2 w_p8
+t s2 s2 w_p9
+t s2 s2 w_p10
+t s2 s2 w_p11
+t s2 s2 w_p12
+t s2 s2 w_p13
+t s2 s2 w_p14
+t s2 s2 w_p15
+t s2 s2 w_p16
+t s2 s2 w_L1
+t s2 s2 w_L2
+t s2 s2 w_L3
+t s2 s2 w_L4
+t s2 s2 w_L5
+t s2 s2 w_L6
+t s2 s2 w_L7
+t s2 s2 w_L8
+t s2 s2 w_L9
+t s2 s2 w_L10
+t s2 s2 w_L11
+t s2 s2 w_L12
+t s2 s2 w_L13
+t s2 s2 w_L14
+t s2 s2 w_L15
+t s2 s2 w_L16
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s s 
+t s1 s2 wD
+t s1 s2 wR
+t s2 s3 DG1
+t s2 s3 DG10
+t s2 s3 DG11
+t s2 s3 DG12
+t s2 s3 DG2
+t s2 s3 DG3
+t s2 s3 DG4
+t s2 s3 DG5
+t s2 s3 DG6
+t s2 s3 DG7
+t s2 s3 DG8
+t s2 s3 DG9
+t s2 s3 LG10
+t s2 s3 LG11
+t s2 s3 LG12
+t s2 s3 LG14
+t s2 s3 LG15
+t s2 s3 LG16
+t s2 s3 LG2
+t s2 s3 LG3
+t s2 s3 LG4
+t s2 s3 LG6
+t s2 s3 LG7
+t s2 s3 LG8
+t s2 s3 P1
+t s2 s3 P10
+t s2 s3 P11
+t s2 s3 P12
+t s2 s3 P13
+t s2 s3 P14
+t s2 s3 P15
+t s2 s3 P16
+t s2 s3 P2
+t s2 s3 P3
+t s2 s3 P4
+t s2 s3 P5
+t s2 s3 P6
+t s2 s3 P7
+t s2 s3 P8
+t s2 s3 P9
+t s2 s3 RG1
+t s2 s3 RG10
+t s2 s3 RG11
+t s2 s3 RG13
+t s2 s3 RG14
+t s2 s3 RG15
+t s2 s3 RG2
+t s2 s3 RG3
+t s2 s3 RG5
+t s2 s3 RG6
+t s2 s3 RG7
+t s2 s3 RG9
+t s2 s3 UG10
+t s2 s3 UG11
+t s2 s3 UG12
+t s2 s2 w_g1
+t s2 s2 w_g2
+t s2 s2 w_g3
+t s2 s2 w_g4
+t s2 s2 w_g5
+t s2 s2 w_g6
+t s2 s2 w_g7
+t s2 s2 w_g8
+t s2 s2 w_g9
+t s2 s2 w_g10
+t s2 s2 w_g11
+t s2 s2 w_g12
+t s2 s2 w_g13
+t s2 s2 w_g14
+t s2 s2 w_g15
+t s2 s2 w_g16
+t s2 s2 w_g17
+t s2 s2 w_U1
+t s2 s2 w_U2
+t s2 s2 w_U3
+t s2 s2 w_U4
+t s2 s2 w_U5
+t s2 s2 w_U6
+t s2 s2 w_U7
+t s2 s2 w_U8
+t s2 s2 w_U9
+t s2 s2 w_U10
+t s2 s2 w_U11
+t s2 s2 w_U12
+t s2 s2 w_U13
+t s2 s2 w_U14
+t s2 s2 w_U15
+t s2 s2 w_U16
+t s2 s2 w_U17
+t s2 s2 w_g1
+t s2 s2 w_g2
+t s2 s2 w_g3
+t s2 s2 w_g4
+t s2 s2 w_g5
+t s2 s2 w_g6
+t s2 s2 w_g7
+t s2 s2 w_g8
+t s2 s2 w_g9
+t s2 s2 w_g10
+t s2 s2 w_g11
+t s2 s2 w_g12
+t s2 s2 w_g13
+t s2 s2 w_g14
+t s2 s2 w_g15
+t s2 s2 w_g16
+t s2 s2 w_g17
+t s2 s2 w_L1
+t s2 s2 w_L2
+t s2 s2 w_L3
+t s2 s2 w_L4
+t s2 s2 w_L5
+t s2 s2 w_L6
+t s2 s2 w_L7
+t s2 s2 w_L8
+t s2 s2 w_L9
+t s2 s2 w_L10
+t s2 s2 w_L11
+t s2 s2 w_L12
+t s2 s2 w_L13
+t s2 s2 w_L14
+t s2 s2 w_L15
+t s2 s2 w_L16
+t s2 s2 w_L17

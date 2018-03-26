@@ -12,7 +12,7 @@ function varargout = figure_Laby(varargin)
 %      FIGURE_LABY('Property','Value',...) creates a new FIGURE_LABY or raises the
 %      existing singleton*.  Starting from the left, property value pairs are
 %      applied to the GUI before figure_Laby_OpeningFcn gets called.  An
-%      unrecognized property name or invalid value makes property application
+%      unrecognized property name or invalid value makes propert y application
 %      stop.  All inputs are passed to figure_Laby_OpeningFcn via varargin.
 %
 %      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
@@ -22,8 +22,8 @@ function varargout = figure_Laby(varargin)
 
 % Edit the above text to modify the response to help figure_Laby
 
-% Last Modified by GUIDE v2.5 07-Feb-2018 18:58:01
-
+% Last Modified by GUIDE v2.5 22-Mar-2018 13:22:09
+    disp('figure_Laby()')
     % Begin initialization code - DO NOT EDIT
     gui_Singleton = 1;
     gui_State = struct('gui_Name',       mfilename, ...
@@ -46,6 +46,7 @@ end
 
 % --- Executes just before figure_Laby is made visible.
 function figure_Laby_OpeningFcn(hObject, eventdata, handles, varargin)
+disp('figure_Laby_OpeningFcn')
 % This function has no output args, see OutputFcn.
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -64,44 +65,7 @@ function figure_Laby_OpeningFcn(hObject, eventdata, handles, varargin)
     guidata(hObject, handles);
     % creation of the differents elements (wrapper, ghost, pacman, walls,
     % escape)
-
-    % Initial laby state
-    labyInit.wallsV_i =   [1 1;
-             0 1; 
-             0 0]; %  dimension can change
-                       
-    labyInit.wallsH_i =   [1 0 0; 
-                            1 0 0]; %  dimension can change
-                       
-    labyInit.pacman_i = [1,	1]; % static dimension
-    labyInit.ghost_i  = [3,1]; % static dimension
-    labyInit.escape_i = {[3 3], 0}; % static dimension
-    labyInit.caught_i = 0; % static dimension
-
-    % initial value of walls command
-    wallsInit.wallsCommand_i = 0; % dimension can change
-    % =0 : begin with right move 
-    % =1 : begin with up move 
-
-    % initial value of pacman command
-    pacmanInit.pacmanCommand_i= zeros(1,4);% dimension can change
-
-    % initial value of pacman command
-    ghostInit.ghostCommand_i= zeros(1,5);% dimension can change
-    
-    % initial value of stop
-    stopInit.escape = 0;
-    stopInit.caught = 0;
-    stopInit.pacman = 0;
-    stopInit.ghost  = 0;
-    stopInit.numberOfPossibleCaught=3;
-    
-    handles.wrapper = Wrapper(11, 9, labyInit, wallsInit, pacmanInit, ghostInit, stopInit);
-    handles = createUIWalls(handles);
-    handles = createUIGhost(handles);
-    handles = createUIPacman(handles);
-    handles = createUIEscape(handles);
-    guidata(hObject,handles);    % OMFG !!!
+   
     %assignin ('base','handles',handles);
     % UIWAIT makes figure_Laby wait for user response (see UIRESUME)
     % uiwait(handles.figure1);
@@ -109,6 +73,7 @@ end
 
 % --- Outputs from this function are returned to the command line.
 function varargout = figure_Laby_OutputFcn(hObject, eventdata, handles)
+disp('figure_Laby_OutputFcn')
 % varargout  cell array for returning output args (see VARARGOUT);
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -143,11 +108,16 @@ function ui_Callback(hObject, eventdata, handles)
     % In the input vector, only one element can be equal to 1 (1 of n).
 
     in = zeros(1,11);
+    if(hObject.UserData==1) % if init
+        handles = initialize_laby(handles);
+       handles = resetUIConnection(handles);
+    end
     if(hObject.UserData~=12) % if not step
         in(hObject.UserData) = 1;
     end
     handles.wrapper = handles.wrapper.orderer(in);
     if(hObject.UserData==1) % if init
+        handles = initialize_laby(handles);
        handles = resetUIConnection(handles);
     end
     updateUI(handles, handles.wrapper.get_out());
@@ -513,3 +483,195 @@ function h = resetUIConnection(handles)
     h.wrapper.ghostBit  = 0;
 end
     
+
+function handles = initialize_laby(handles)
+ handles.playMode = get(handles.PlayMode,'Value');
+    switch handles.playMode 
+        case 1
+            disp(' Easy mode load')
+            % Initial laby state
+            labyInit.wallsV_i =   [1 1;
+                     0 1; 
+                     0 0]; %  dimension can change
+
+           labyInit.wallsH_i =   [1 0 0; 
+                                    1 0 0]; %  dimension can change
+
+            labyInit.pacman_i = [1,	1]; % static dimension
+            labyInit.ghost_i  = [3,1]; % static dimension
+            labyInit.escape_i = {[3 3], 0}; % static dimension
+            labyInit.caught_i = 0; % static dimension
+
+            % initial value of walls command
+            wallsInit.wallsCommand_i = 0; % dimension can change
+            % =0 : begin with right move 
+            % =1 : begin with up move 
+
+            % initial value of pacman command
+            pacmanInit.pacmanCommand_i= zeros(1,4);% dimension can change
+
+            % initial value of pacman command
+            ghostInit.ghostCommand_i= zeros(1,5);% dimension can change
+
+            % initial value of stop
+            stopInit.escape = 0;
+            stopInit.caught = 0;
+            stopInit.pacman = 0;
+            stopInit.ghost  = 0;
+            stopInit.numberOfPossibleCaught=3;
+        case 2
+                        disp(' Medium mode load')
+
+            % Initial laby state
+            labyInit.wallsV_i =   [1 1;
+                     0 1; 
+                     0 0]; %  dimension can change
+
+           labyInit.wallsH_i =   [1 0 0; 
+                                    1 0 0]; %  dimension can change
+
+            labyInit.pacman_i = [1,	1]; % static dimension
+            labyInit.ghost_i  = [3,1]; % static dimension
+            labyInit.escape_i = {[3 3], 0}; % static dimension
+            labyInit.caught_i = 0; % static dimension
+
+            % initial value of walls command
+            wallsInit.wallsCommand_i = 0; % dimension can change
+            % =0 : begin with right move 
+            % =1 : begin with up move 
+
+            % initial value of pacman command
+            pacmanInit.pacmanCommand_i= zeros(1,4);% dimension can change
+
+            % initial value of pacman command
+            ghostInit.ghostCommand_i= zeros(1,5);% dimension can change
+
+            % initial value of stop
+            stopInit.escape = 0;
+            stopInit.caught = 0;
+            stopInit.pacman = 0;
+            stopInit.ghost  = 0;
+            stopInit.numberOfPossibleCaught=3;
+        case 3
+             disp(' Hard mode load')
+            % Initial laby state
+            labyInit.wallsV_i =   [1 1;
+                     0 1; 
+                     0 0]; %  dimension can change
+
+           labyInit.wallsH_i =   [1 0 0; 
+                                    1 0 0]; %  dimension can change
+
+            labyInit.pacman_i = [1,	1]; % static dimension
+            labyInit.ghost_i  = [3,1]; % static dimension
+            labyInit.escape_i = {[3 3], 0}; % static dimension
+            labyInit.caught_i = 0; % static dimension
+
+            % initial value of walls command
+            wallsInit.wallsCommand_i = 0; % dimension can change
+            % =0 : begin with right move 
+            % =1 : begin with up move 
+
+            % initial value of pacman command
+            pacmanInit.pacmanCommand_i= zeros(1,4);% dimension can change
+
+            % initial value of pacman command
+            ghostInit.ghostCommand_i= zeros(1,5);% dimension can change
+
+            % initial value of stop
+            stopInit.escape = 0;
+            stopInit.caught = 0;
+            stopInit.pacman = 0;
+            stopInit.ghost  = 0;
+            stopInit.numberOfPossibleCaught=3;
+        otherwise
+            disp(' default mode load')
+            % Initial laby state
+            labyInit.wallsV_i =   [1 1;
+                     0 1; 
+                     0 0]; %  dimension can change
+
+           labyInit.wallsH_i =   [1 0 0; 
+                                    1 0 0]; %  dimension can change
+
+            labyInit.pacman_i = [1,	1]; % static dimension
+            labyInit.ghost_i  = [3,1]; % static dimension
+            labyInit.escape_i = {[3 3], 0}; % static dimension
+            labyInit.caught_i = 0; % static dimension
+
+            % initial value of walls command
+            wallsInit.wallsCommand_i = 0; % dimension can change
+            % =0 : begin with right move 
+            % =1 : begin with up move 
+
+            % initial value of pacman command
+            pacmanInit.pacmanCommand_i= zeros(1,4);% dimension can change
+
+            % initial value of pacman command
+            ghostInit.ghostCommand_i= zeros(1,5);% dimension can change
+
+            % initial value of stop
+            stopInit.escape = 0;
+            stopInit.caught = 0;
+            stopInit.pacman = 0;
+            stopInit.ghost  = 0;
+            stopInit.numberOfPossibleCaught=3;
+            
+    end
+    handles.wrapper = Wrapper(11, 9, labyInit, wallsInit, pacmanInit, ghostInit, stopInit);
+    handles = createUIWalls(handles);
+    handles = createUIGhost(handles);
+    handles = createUIPacman(handles);
+    handles = createUIEscape(handles);
+    %guidata(hObject,handles);    % OMFG !!!
+
+end
+% --- Executes on selection change in PlayMode.
+function PlayMode_Callback(hObject, eventdata, handles)
+% hObject    handle to PlayMode (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: contents = cellstr(get(hObject,'String')) returns PlayMode contents as cell array
+%        contents{get(hObject,'Value')} returns selected item from PlayMode
+     guidata(hObject,handles); 
+
+    disp('PlayMode_Callback')
+    if get(hObject,'Value')==1
+        % easy case
+        handles.playMode =1;
+        set(handles.PlayMode,'Value',1);
+        disp(' Easy mode') 
+
+    elseif get(hObject,'Value')==2
+        % medium case
+        handles.playMode =2;
+                set(handles.PlayMode,'Value',2);
+
+        disp(' Medium mode')
+    elseif get(handles.PlayMode,'Value')==3
+        handles.playMode =3;
+        set(hObject,'Value',3);
+
+        % hard case
+        disp(' Hard mode')
+    end
+     guidata(hObject,handles); 
+end
+% --- Executes during object creation, after setting all properties.
+function PlayMode_CreateFcn(hObject, eventdata, handles)
+disp('PlayMode_CreateFcn')
+% hObject    handle to PlayMode (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: popupmenu controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+     guidata(hObject,handles); 
+
+    if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+        set(hObject,'BackgroundColor','white');
+    end
+  %  handles.playMode = get(hObject,'Value');
+ %guidata(hObject,handles); 
+end

@@ -26,8 +26,8 @@ function [initialIndice,markedStatesIndices,transitionsDatas, numberOfStates] ..
                                             % automaton    
 
 numberOfStates= max(size(Scheduling));
-numberOfPacmanLabyStates = PacmanLabyDatas {end,2};
-numberOfGhostLabyStates = GhostLabyDatas {end,2};
+numberOfPacmanLabyStates = max(cell2mat(PacmanLabyDatas(:,2)));
+numberOfGhostLabyStates = max(cell2mat(GhostLabyDatas(:,2)));
 initialIndice = strcmp(FirstWallsMove,'v')*1 + strcmp(FirstWallsMove,'h')*2;
 labPacevent = unique(PacmanLabyDatas(:,3));
 labPacevent = labPacevent(1:end-(4*numberOfPacmanLabyStates));

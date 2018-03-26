@@ -58,3 +58,6 @@ SaveDESUMAFile(walls.str.t,walls.str.s,'walls.txt');
 sche.str.s = writeStates('s',sche.nbS,sche.indInit,sche.mark);
 sche.str.t = writeTransitions('s',sche.datas) ;
 SaveDESUMAFile(sche.str.t,sche.str.s,'sched.txt');
+
+
+
