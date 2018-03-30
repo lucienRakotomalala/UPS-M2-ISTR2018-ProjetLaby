@@ -17,16 +17,14 @@ Inheritance diagram for Model\+Laby\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{_plan__desuma_functions_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} \hyperlink{class_model_laby_adefbf2299bfb17336cae5508d54443a8}{Model\+Laby} (in walls\+V\+\_\+init, in walls\+H\+\_\+init, in pacman\+\_\+init, in escape\+\_\+init)
-\begin{DoxyCompactList}\small\item\em Class constructor of. \end{DoxyCompactList}\item 
-\hyperlink{_plan__desuma_functions_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} \hyperlink{class_model_laby_a6f3b146c92a207e95690d08975e1e072}{f} (in obj, in in)
-\item 
-\hyperlink{_plan__desuma_functions_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} \hyperlink{class_model_laby_a3140f24c6c4b80037b7d4f521c6ae2d3}{m} (in obj, in next\+State, in init)
-\item 
-\hyperlink{_plan__desuma_functions_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} \hyperlink{class_model_laby_a07dadfabe92bf9a144b8a862720e7746}{g} (in obj)
-\item 
-virtual \hyperlink{class_model_s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098}{g} (in obj, in in)
-\end{DoxyCompactItemize}
+function \hyperlink{class_model_laby_adefbf2299bfb17336cae5508d54443a8}{Model\+Laby} (in walls\+V\+\_\+init, in walls\+H\+\_\+init, in pacman\+\_\+init, in escape\+\_\+init)
+\begin{DoxyCompactList}\small\item\em Class constructor of Instance of \hyperlink{class_model_laby}{Model\+Laby} Class. \end{DoxyCompactList}\item 
+function \hyperlink{class_model_laby_a6f3b146c92a207e95690d08975e1e072}{f} (in obj, in in)
+\begin{DoxyCompactList}\small\item\em Compute the evolution of the model. \end{DoxyCompactList}\item 
+function \hyperlink{class_model_laby_a3140f24c6c4b80037b7d4f521c6ae2d3}{m} (in obj, in next\+State, in init)
+\begin{DoxyCompactList}\small\item\em Memory method update the state of the command. \end{DoxyCompactList}\item 
+function \hyperlink{class_model_laby_a07dadfabe92bf9a144b8a862720e7746}{g} (in obj)
+\begin{DoxyCompactList}\small\item\em Create the outputs in a 1x9 cell-\/array. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -39,20 +37,22 @@ Property \hyperlink{class_model_laby_acd9263acfa96c9138afdf497e55acc24}{initial\
 \subsection{Detailed Description}
 Class which contains the \char`\"{}fmg\char`\"{} structure of the labyrinth for 1 player 
 
-Input \+: necessary information for compute the next state of the model
-
-Output \+: output\textquotesingle{}s action of the model State \+: minimal information necessary who evolute 
+Input \+: necessary information for compute the next state of the model~\newline
+~\newline
+ Output \+: output\textquotesingle{}s action of the model~\newline
+ ~\newline
+ State \+: minimal information necessary who evolute 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_model_laby_adefbf2299bfb17336cae5508d54443a8}\label{class_model_laby_adefbf2299bfb17336cae5508d54443a8}} 
 \index{Model\+Laby@{Model\+Laby}!Model\+Laby@{Model\+Laby}}
 \index{Model\+Laby@{Model\+Laby}!Model\+Laby@{Model\+Laby}}
 \subsubsection{\texorpdfstring{Model\+Laby()}{ModelLaby()}}
-{\footnotesize\ttfamily \hyperlink{_plan__desuma_functions_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} \hyperlink{class_model_laby}{Model\+Laby} (\begin{DoxyParamCaption}\item[{in}]{walls\+V\+\_\+init,  }\item[{in}]{walls\+H\+\_\+init,  }\item[{in}]{pacman\+\_\+init,  }\item[{in}]{escape\+\_\+init }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily function \hyperlink{class_model_laby}{Model\+Laby} (\begin{DoxyParamCaption}\item[{in}]{walls\+V\+\_\+init,  }\item[{in}]{walls\+H\+\_\+init,  }\item[{in}]{pacman\+\_\+init,  }\item[{in}]{escape\+\_\+init }\end{DoxyParamCaption})}
 
 
 
-Class constructor of. 
+Class constructor of Instance of \hyperlink{class_model_laby}{Model\+Laby} Class. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -62,7 +62,7 @@ Class constructor of.
 \hline
 {\em pacman\+\_\+init} & Contain a vector (x, y) of Initial Position of Pacman. \\
 \hline
-{\em escape\+\_\+init} & Contain a vector (x, y) of Escape\textquotesingle{}s Position. \\
+{\em escape\+\_\+init} & Contain a vector (x, y) of Escape \textquotesingle{}s Position. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -75,30 +75,72 @@ instance of the \hyperlink{class_model_laby}{Model\+Laby} class.
 \index{Model\+Laby@{Model\+Laby}!f@{f}}
 \index{f@{f}!Model\+Laby@{Model\+Laby}}
 \subsubsection{\texorpdfstring{f()}{f()}}
-{\footnotesize\ttfamily \hyperlink{_plan__desuma_functions_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} f (\begin{DoxyParamCaption}\item[{in}]{obj,  }\item[{in}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily function f (\begin{DoxyParamCaption}\item[{in}]{obj,  }\item[{in}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+Compute the evolution of the model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & The instance which will evolve. \\
+\hline
+{\em in} & Input needed for the computing. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Next instance of the \hyperlink{class_model_laby}{Model\+Laby} class. 
+\end{DoxyReturn}
 
 
 Reimplemented from \hyperlink{class_model_s_e_d_ac36f9451c43b120828af4380858f2024}{Model\+S\+ED}.
 
-\mbox{\Hypertarget{class_model_s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098}\label{class_model_s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098}} 
-\index{Model\+Laby@{Model\+Laby}!g@{g}}
-\index{g@{g}!Model\+Laby@{Model\+Laby}}
-\subsubsection{\texorpdfstring{g()}{g()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily virtual g (\begin{DoxyParamCaption}\item[{in}]{obj,  }\item[{in}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
-
 \mbox{\Hypertarget{class_model_laby_a07dadfabe92bf9a144b8a862720e7746}\label{class_model_laby_a07dadfabe92bf9a144b8a862720e7746}} 
 \index{Model\+Laby@{Model\+Laby}!g@{g}}
 \index{g@{g}!Model\+Laby@{Model\+Laby}}
-\subsubsection{\texorpdfstring{g()}{g()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \hyperlink{_plan__desuma_functions_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} g (\begin{DoxyParamCaption}\item[{in}]{obj }\end{DoxyParamCaption})}
+\subsubsection{\texorpdfstring{g()}{g()}}
+{\footnotesize\ttfamily function g (\begin{DoxyParamCaption}\item[{in}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Create the outputs in a 1x9 cell-\/array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & the concerned instance of the class \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em out} & Constructed output 1x9 cell-\/array of the model \\
+\hline
+\end{DoxyRetVals}
+
+
+Reimplemented from \hyperlink{class_model_s_e_d_ac6bf71081e35755d5ed9992d165afcb8}{Model\+S\+ED}.
 
 \mbox{\Hypertarget{class_model_laby_a3140f24c6c4b80037b7d4f521c6ae2d3}\label{class_model_laby_a3140f24c6c4b80037b7d4f521c6ae2d3}} 
 \index{Model\+Laby@{Model\+Laby}!m@{m}}
 \index{m@{m}!Model\+Laby@{Model\+Laby}}
 \subsubsection{\texorpdfstring{m()}{m()}}
-{\footnotesize\ttfamily \hyperlink{_plan__desuma_functions_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} m (\begin{DoxyParamCaption}\item[{in}]{obj,  }\item[{in}]{next\+State,  }\item[{in}]{init }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily function m (\begin{DoxyParamCaption}\item[{in}]{obj,  }\item[{in}]{next\+State,  }\item[{in}]{init }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+Memory method update the state of the command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & The selected instance of the class \\
+\hline
+{\em next\+State} & The value of the state need to update \\
+\hline
+{\em init} & Boolean condition for initialize or reset the command \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+instance of the class updated 
+\end{DoxyReturn}
 
 
 Reimplemented from \hyperlink{class_model_s_e_d_adb8aaccb857cf5bbec640cd00915459d}{Model\+S\+ED}.

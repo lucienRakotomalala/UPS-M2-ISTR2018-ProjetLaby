@@ -2,6 +2,11 @@
 \label{class_model_s_e_d}\index{Model\+S\+ED@{Model\+S\+ED}}
 
 
+State \+: minimal information necessary who evolute.  
+
+
+
+
 Inheritance diagram for Model\+S\+ED\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -13,19 +18,22 @@ Inheritance diagram for Model\+S\+ED\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 virtual \hyperlink{class_model_s_e_d_ac36f9451c43b120828af4380858f2024}{f} (in obj, in in)
-\item 
+\begin{DoxyCompactList}\small\item\em Compute the evolution of the model. \end{DoxyCompactList}\item 
 virtual \hyperlink{class_model_s_e_d_adb8aaccb857cf5bbec640cd00915459d}{m} (in obj, in next\+State, in init)
-\item 
-virtual \hyperlink{class_model_s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098}{g} (in obj, in in)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Memory method update the state of the command. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_model_s_e_d_ac6bf71081e35755d5ed9992d165afcb8}{g} (in obj)
+\begin{DoxyCompactList}\small\item\em Create the outputs. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 Property \hyperlink{class_model_s_e_d_a9624cc7c421a50fa5086b0ebd0cd5fe3}{present\+State}
-\item 
+\begin{DoxyCompactList}\small\item\em This is the state of the command in the present moment. \end{DoxyCompactList}\item 
 Property \hyperlink{class_model_s_e_d_acd9263acfa96c9138afdf497e55acc24}{initial\+State}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This is the state of the command in the initialization and when it\textquotesingle{}s reseted. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+State \+: minimal information necessary who evolute. 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_model_s_e_d_ac36f9451c43b120828af4380858f2024}\label{class_model_s_e_d_ac36f9451c43b120828af4380858f2024}} 
@@ -36,13 +44,47 @@ Property \hyperlink{class_model_s_e_d_acd9263acfa96c9138afdf497e55acc24}{initial
 
 
 
-Reimplemented in \hyperlink{class_model_laby_a6f3b146c92a207e95690d08975e1e072}{Model\+Laby}, and \hyperlink{class_model_pacman_a6f3b146c92a207e95690d08975e1e072}{Model\+Pacman}.
+Compute the evolution of the model. 
 
-\mbox{\Hypertarget{class_model_s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098}\label{class_model_s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098}} 
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & The instance who evolute \\
+\hline
+{\em in} & Input needed for the computing \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em next\+State} & The future state of the model \\
+\hline
+\end{DoxyRetVals}
+
+
+Reimplemented in \hyperlink{class_model_pacman_a6f3b146c92a207e95690d08975e1e072}{Model\+Pacman}, and \hyperlink{class_model_laby_a6f3b146c92a207e95690d08975e1e072}{Model\+Laby}.
+
+\mbox{\Hypertarget{class_model_s_e_d_ac6bf71081e35755d5ed9992d165afcb8}\label{class_model_s_e_d_ac6bf71081e35755d5ed9992d165afcb8}} 
 \index{Model\+S\+ED@{Model\+S\+ED}!g@{g}}
 \index{g@{g}!Model\+S\+ED@{Model\+S\+ED}}
 \subsubsection{\texorpdfstring{g()}{g()}}
-{\footnotesize\ttfamily virtual g (\begin{DoxyParamCaption}\item[{in}]{obj,  }\item[{in}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily virtual g (\begin{DoxyParamCaption}\item[{in}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Create the outputs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & the concerned instance of the class \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em out} & Constructed output of the model \\
+\hline
+\end{DoxyRetVals}
+
+
+Reimplemented in \hyperlink{class_model_pacman_a07dadfabe92bf9a144b8a862720e7746}{Model\+Pacman}, \hyperlink{class_model_laby_a07dadfabe92bf9a144b8a862720e7746}{Model\+Laby}, \hyperlink{class_model_walls_a07dadfabe92bf9a144b8a862720e7746}{Model\+Walls}, and \hyperlink{class_stop_condition_a07dadfabe92bf9a144b8a862720e7746}{Stop\+Condition}.
 
 \mbox{\Hypertarget{class_model_s_e_d_adb8aaccb857cf5bbec640cd00915459d}\label{class_model_s_e_d_adb8aaccb857cf5bbec640cd00915459d}} 
 \index{Model\+S\+ED@{Model\+S\+ED}!m@{m}}
@@ -50,6 +92,22 @@ Reimplemented in \hyperlink{class_model_laby_a6f3b146c92a207e95690d08975e1e072}{
 \subsubsection{\texorpdfstring{m()}{m()}}
 {\footnotesize\ttfamily virtual m (\begin{DoxyParamCaption}\item[{in}]{obj,  }\item[{in}]{next\+State,  }\item[{in}]{init }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+Memory method update the state of the command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & The selected instance of the class \\
+\hline
+{\em next\+State} & The value of the state need to update \\
+\hline
+{\em init} & Boolean condition for initialize or reset the command \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+instance of the class updated 
+\end{DoxyReturn}
 
 
 Reimplemented in \hyperlink{class_model_pacman_a3140f24c6c4b80037b7d4f521c6ae2d3}{Model\+Pacman}, \hyperlink{class_model_laby_a3140f24c6c4b80037b7d4f521c6ae2d3}{Model\+Laby}, \hyperlink{class_model_walls_a3140f24c6c4b80037b7d4f521c6ae2d3}{Model\+Walls}, and \hyperlink{class_stop_condition_a3140f24c6c4b80037b7d4f521c6ae2d3}{Stop\+Condition}.
@@ -63,11 +121,19 @@ Reimplemented in \hyperlink{class_model_pacman_a3140f24c6c4b80037b7d4f521c6ae2d3
 \subsubsection{\texorpdfstring{initial\+State}{initialState}}
 {\footnotesize\ttfamily Property initial\+State}
 
+
+
+This is the state of the command in the initialization and when it\textquotesingle{}s reseted. 
+
 \mbox{\Hypertarget{class_model_s_e_d_a9624cc7c421a50fa5086b0ebd0cd5fe3}\label{class_model_s_e_d_a9624cc7c421a50fa5086b0ebd0cd5fe3}} 
 \index{Model\+S\+ED@{Model\+S\+ED}!present\+State@{present\+State}}
 \index{present\+State@{present\+State}!Model\+S\+ED@{Model\+S\+ED}}
 \subsubsection{\texorpdfstring{present\+State}{presentState}}
 {\footnotesize\ttfamily Property present\+State}
+
+
+
+This is the state of the command in the present moment. 
 
 
 

@@ -1,3 +1,8 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_automate_graph.html" title="AutomateGraph" alt="" coords="5,5,119,32"/>
+<area shape="rect" id="node1" href="$classhandle.html" title="handle" alt="" coords="5,81,65,108"/>
+<area shape="rect" id="node2" href="$class_model_s_e_d.html" title="State : minimal information necessary who evolute. " alt="" coords="113,81,199,108"/>
+<area shape="rect" id="node3" href="$class_model_laby.html" title="Class which contains the &quot;fmg&quot; structure of the labyrinth for 1 player " alt="" coords="257,5,342,32"/>
+<area shape="rect" id="node4" href="$class_model_pacman.html" title="Input : Walls around Pacman &#160;&#160;1 up &#160;&#160;2 down &#160;3 left &#160;4 right This command do the sequence P(D) &gt; P(B)..." alt="" coords="247,56,352,83"/>
+<area shape="rect" id="node5" href="$class_model_walls.html" title="This command do the sequence walls Right –&gt; walls down &#160;. " alt="" coords="254,107,345,133"/>
+<area shape="rect" id="node6" href="$class_stop_condition.html" title="StopCondition" alt="" coords="247,157,351,184"/>
 </map>

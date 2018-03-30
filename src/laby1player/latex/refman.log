@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.11.13)  30 MAR 2018 14:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.11.13)  30 MAR 2018 17:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1033,27 +1033,11 @@ Package caption Info: longtable package is loaded.
 Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
 )) (./refman.aux
 
-LaTeX Warning: Label `class_model_s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098' mult
-iply defined.
-
-
-LaTeX Warning: Label `class_model_s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098' mult
-iply defined.
-
-
 LaTeX Warning: Label `class_model_s_e_d_ac36f9451c43b120828af4380858f2024' mult
 iply defined.
 
 
-LaTeX Warning: Label `class_model_s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098' mult
-iply defined.
-
-
 LaTeX Warning: Label `class_model_s_e_d_ac36f9451c43b120828af4380858f2024' mult
-iply defined.
-
-
-LaTeX Warning: Label `class_model_s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098' mult
 iply defined.
 
 )
@@ -1218,13 +1202,13 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 1.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 6.29996pt on input line 8.
+(Font)              scaled to size 6.29996pt on input line 9.
  [1
 
 ]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 65.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 65.
+(Font)              scaled to size 7.19995pt on input line 45.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 45.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
@@ -1233,12 +1217,12 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <7> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 67.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 6.29996pt on input line 67.
- [2] [3] [4] [5]
-[6] [7])
+ [2] [3] [4])
 \tf@toc=\write5
 \openout5 = `refman.toc'.
 
- [8] [9] [10
+ [5]
+[6
 
 ]
 Package hyperref Info: Option `pageanchor' set `true' on input line 138.
@@ -1265,139 +1249,190 @@ LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 
 ]
 Chapter 2.
-(./annotated.tex) [3] [4
+(./annotated.tex
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+ []  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--14
+ []  
+ []
+
+) [3] [4
 
 ]
 Chapter 3.
-(./files.tex [5]) [6]
-Chapter 4.
-(./class_automate_graph.tex
-LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 6.29996pt on input line 1.
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 3.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 3.
-LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 10.79993pt on input line 3.
-LaTeX Font Info:    Try loading font information for TS1+phv on input line 6.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
+(./files.tex
+LaTeX Font Info:    Try loading font information for TS1+phv on input line 17.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 )
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 6.
-LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 8.99994pt on input line 47.
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 57.
- [7
+(Font)              scaled to size 8.99994pt on input line 17.
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--17
+  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--17
+ []  
+ []
+
+) [5] [6
 
 ]
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 81.
- [8] [9])
-(./class_automaton.tex [10] [11]) (./classhandle.tex
-<classhandle__inherit__graph.pdf, id=1563, pagebox=cropbox, 425.59pt x 212.795p
-t>
+Chapter 4.
+(./classhandle.tex
+<classhandle__inherit__graph.pdf, id=809, pagebox=cropbox, 425.59pt x 212.795pt
+>
 File: classhandle__inherit__graph.pdf Graphic file (type pdf)
 <use classhandle__inherit__graph.pdf>
 Package pdftex.def Info: classhandle__inherit__graph.pdf  used on input line 9.
  on input line 9.
 Package pdftex.def Info: Requested size: 350.0pt x 175.00928pt on input line 9.
 
- [12])
-(./class_labyrinthe.tex [13 <./classhandle__inherit__graph.pdf>] [14])
-(./class_model_laby.tex
-<class_model_laby__inherit__graph.pdf, id=1619, pagebox=cropbox, 144.54pt x 212
-.795pt>
+) (./class_model_laby.tex
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 6.29996pt on input line 1.
+<class_model_laby__inherit__graph.pdf, id=811, pagebox=cropbox, 144.54pt x 212.
+795pt>
 File: class_model_laby__inherit__graph.pdf Graphic file (type pdf)
 <use class_model_laby__inherit__graph.pdf>
 Package pdftex.def Info: class_model_laby__inherit__graph.pdf  used on input li
 ne 14. on input line 14.
 Package pdftex.def Info: Requested size: 144.0pt x 212.01193pt on input line 14
 .
+ [7 <./classhandle__inherit__graph.pdf>]
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 17.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 10.79993pt on input line 17.
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 10.79993pt on input line 17.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 8.09995pt on input line 21.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 21.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 8.09995pt on input line 21.
- [15 <./class_model_laby__inherit__graph.pdf>]
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 34.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 21.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 6.29996pt on input line 34.
+(Font)              scaled to size 6.29996pt on input line 21.
 LaTeX Font Info:    Font shape `TS1/phv/m/it' in size <9> not available
-(Font)              Font shape `TS1/phv/m/sl' tried instead on input line 34.
+(Font)              Font shape `TS1/phv/m/sl' tried instead on input line 32.
 LaTeX Font Info:    Font shape `TS1/phv/m/sl' will be
-(Font)              scaled to size 8.09995pt on input line 34.
- [16]
+(Font)              scaled to size 8.09995pt on input line 32.
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--45
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--45
+
+ []
+
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 8.99994pt on input line 50.
+[8 <./class_model_laby__inherit__graph.pdf>]
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 51.
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 51.
+
 Underfull \hbox (badness 10000) detected at line 68
 [][][]
  []
 
-LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 7.19995pt on input line 87.
 
-LaTeX Font Warning: Font shape `T1/pcr/bc/n' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 87.
+Underfull \hbox (badness 10000) detected at line 91
+[][][]
+ []
 
-[17]) (./class_model_pacman.tex
-<class_model_pacman__inherit__graph.pdf, id=1673, pagebox=cropbox, 159.59625pt 
-x 212.795pt>
+[9]
+Underfull \hbox (badness 10000) detected at line 141
+[][][]
+ []
+
+[10]) (./class_model_pacman.tex
+<class_model_pacman__inherit__graph.pdf, id=878, pagebox=cropbox, 159.59625pt x
+ 212.795pt>
 File: class_model_pacman__inherit__graph.pdf Graphic file (type pdf)
 <use class_model_pacman__inherit__graph.pdf>
 Package pdftex.def Info: class_model_pacman__inherit__graph.pdf  used on input 
-line 9. on input line 9.
-Package pdftex.def Info: Requested size: 159.0pt x 212.0022pt on input line 9.
- [18 <./class_model_pacman__inherit__graph.pdf>]pdfTeX warning (ext4): destinat
-ion with the same identifier (name{class_model_s_e_d_a2d53b5f665cfcf64d482bbfa8
-a6eb098}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.54 ..._s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098}}
-                                                   [19])
-(./class_model_s_e_d.tex
-<class_model_s_e_d__inherit__graph.pdf, id=1718, pagebox=cropbox, 425.59pt x 21
-2.795pt>
+line 20. on input line 20.
+Package pdftex.def Info: Requested size: 159.0pt x 212.0022pt on input line 20.
+
+ [11 <./class_model_pacman__inherit__graph.pdf>]
+Underfull \hbox (badness 10000) detected at line 68
+[][][]
+ []
+
+[12] [13]
+Underfull \hbox (badness 10000) detected at line 143
+[][][]
+ []
+
+) (./class_model_s_e_d.tex
+<class_model_s_e_d__inherit__graph.pdf, id=926, pagebox=cropbox, 425.59pt x 212
+.795pt>
 File: class_model_s_e_d__inherit__graph.pdf Graphic file (type pdf)
 <use class_model_s_e_d__inherit__graph.pdf>
 Package pdftex.def Info: class_model_s_e_d__inherit__graph.pdf  used on input l
-ine 9. on input line 9.
-Package pdftex.def Info: Requested size: 350.0pt x 175.00928pt on input line 9.
+ine 14. on input line 14.
+Package pdftex.def Info: Requested size: 350.0pt x 175.00928pt on input line 14
+.
+ [14 <./class_model_s_e_d__inherit__graph.pdf>]
+[15]
+Underfull \hbox (badness 10000) detected at line 108
+[][][]
+ []
 
- [20 <./class_model_s_e_d__inherit__graph.pdf>]pdfTeX warning (ext4): destinati
-on with the same identifier (name{class_model_s_e_d_a2d53b5f665cfcf64d482bbfa8a
-6eb098}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.41 ..._s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098}}
-                                                  ) (./class_model_walls.tex
-[21]
-<class_model_walls__inherit__graph.pdf, id=1752, pagebox=cropbox, 148.555pt x 2
-12.795pt>
+[16]) (./class_model_walls.tex
+<class_model_walls__inherit__graph.pdf, id=975, pagebox=cropbox, 148.555pt x 21
+2.795pt>
 File: class_model_walls__inherit__graph.pdf Graphic file (type pdf)
 <use class_model_walls__inherit__graph.pdf>
 Package pdftex.def Info: class_model_walls__inherit__graph.pdf  used on input l
-ine 9. on input line 9.
-Package pdftex.def Info: Requested size: 148.0pt x 212.00868pt on input line 9.
+ine 15. on input line 15.
+Package pdftex.def Info: Requested size: 148.0pt x 212.00868pt on input line 15
+.
+ [17 <./class_model_walls__inherit__graph.pdf>]
+Underfull \hbox (badness 10000) detected at line 64
+[][][]
+ []
 
- [22 <./class_model_walls__inherit__graph.pdf>]pdfTeX warning (ext4): destinati
-on with the same identifier (name{class_model_s_e_d_ac36f9451c43b120828af438085
-8f2024}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{class_model_s
+_e_d_ac36f9451c43b120828af4380858f2024}) has been already used, duplicate ignor
+ed
 <to be read again> 
                    \relax 
-l.50 ..._s_e_d_ac36f9451c43b120828af4380858f2024}}
-                                                  pdfTeX warning (ext4): destin
-ation with the same identifier (name{class_model_s_e_d_a2d53b5f665cfcf64d482bbf
-a8a6eb098}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.66 ..._s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098}}
-                                                   [23])
-(./class_stop_condition.tex
-<class_stop_condition__inherit__graph.pdf, id=1800, pagebox=cropbox, 158.5925pt
+l.70 ..._s_e_d_ac36f9451c43b120828af4380858f2024}}
+                                                  
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 7.19995pt on input line 73.
+
+
+LaTeX Font Warning: Font shape `T1/pcr/bc/n' undefined
+(Font)              using `T1/pcr/m/n' instead on input line 73.
+
+
+Overfull \vbox (6.7818pt too high) has occurred while \output is active []
+
+
+[18]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19]
+Underfull \hbox (badness 10000) detected at line 145
+[][][]
+ []
+
+) (./class_stop_condition.tex
+<class_stop_condition__inherit__graph.pdf, id=1027, pagebox=cropbox, 158.5925pt
  x 212.795pt>
 File: class_stop_condition__inherit__graph.pdf Graphic file (type pdf)
 <use class_stop_condition__inherit__graph.pdf>
@@ -1405,97 +1440,63 @@ Package pdftex.def Info: class_stop_condition__inherit__graph.pdf  used on inpu
 t line 9. on input line 9.
 Package pdftex.def Info: Requested size: 158.0pt x 212.01843pt on input line 9.
 
- [24]pdfTeX warning (ext4): destination with the same identifier (name{class_mo
-del_s_e_d_ac36f9451c43b120828af4380858f2024}) has been already used, duplicate 
-ignored
+ [20] [21 <./class_stop_condition__inherit__graph.pdf>]pdfTeX warning (ext4): d
+estination with the same identifier (name{class_model_s_e_d_ac36f9451c43b120828
+af4380858f2024}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.46 ..._s_e_d_ac36f9451c43b120828af4380858f2024}}
-                                                   [25 <./class_stop_condition_
-_inherit__graph.pdf>]pdfTeX warning (ext4): destination with the same identifie
-r (name{class_model_s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098}) has been already 
-used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.62 ..._s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098}}
-                                                  ) (./class_wrapper.tex
-[26] [27] [28] [29]) [30]
+l.50 ..._s_e_d_ac36f9451c43b120828af4380858f2024}}
+                                                  
+Overfull \vbox (1.58186pt too high) has occurred while \output is active []
+
+
+[22]
+Underfull \hbox (badness 10000) detected at line 119
+[][][]
+ []
+
+) (./class_wrapper.tex [23] [24] [25]) [26]
 Chapter 5.
-(./_automate_graph_8m.tex) (./main_laby_8m.tex)
-(./_automaton_scheduling_creation_8m.tex)
-(./_automaton_struture_laby_creation_8m.tex)
-(./_automaton_walls_contraints_creation_8m.tex [31
-
-]) (./generer__lab_8m.tex)
-(./model_generator_8m.tex) (./_plan__desuma_functions_8m.tex [32])
-(./_save_d_e_s_u_m_a_file_8m.tex [33]) (./write_states_8m.tex)
-(./write_transitions_8m.tex [34]) (./creation_matricetransition_8m.tex)
-(./get_state_transition_f_s_m_8m.tex) (./get_state_transition_t_x_t_8m.tex
-[35]) (./automaton_2optimal_command_2main_8m.tex) (./main_8m.tex)
-(./optimal_command_8m.tex) (./_parcourir_matrices_transitions_8m.tex [36])
-(./rafine_automaton_8m.tex) (./rafine_automaton_class_8m.tex)
-(./_parrallel_composition_8m.tex) (./_automaton_8m.tex [37])
-(./_labyrinthe_8m.tex) (./modi__main_8m.tex)
 (./_create_pitures_and_video_8m.tex)
-(./_create_pitures_and_video__textured_8m.tex [38]) (./figure___laby_8m.tex
-[39] [40] [41]) (./_model_laby_8m.tex) (./_model_pacman_8m.tex [42])
-(./_model_s_e_d_8m.tex) (./_model_walls_8m.tex) (./set_color_8m.tex)
+(./_create_pitures_and_video__textured_8m.tex) (./figure___laby_8m.tex [27
+
+]
+[28] [29] [30]) (./main_8m.tex) (./_model_laby_8m.tex) (./_model_pacman_8m.tex
+Underfull \hbox (badness 10000) in paragraph at lines 5--14
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--14
+
+ []
+
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 31--40
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--40
+
+ []
+
+) (./_model_s_e_d_8m.tex) (./_model_walls_8m.tex [32]) (./set_color_8m.tex)
 (./_simulation_8m.tex) (./_stop_condition_8m.tex) (./test_u_i_8m.tex)
-(./_t_h_eplan_8m.tex [43]) (./visupacman_8m.tex) (./visupacman2_8m.tex)
-(./walls_border_8m.tex) (./_wrapper_8m.tex) [44] (./refman.ind
-Underfull \hbox (badness 10000) in paragraph at lines 39--41
-[]| \T1/phv/m/n/10 Creation[]Fonction[]Transition[]Ensemble[]Des[]Parties,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 52--54
-[]\T1/phv/m/n/10 automaton/model[]Generator/[]Automaton[]Scheduling[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 54--56
-[]\T1/phv/m/n/10 automaton/model[]Generator/[]Automaton[]Struture[]Laby[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 58--60
-[]\T1/phv/m/n/10 automaton/model[]Generator/[]Plan[]_[]desuma[]Functions.[]m,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 69--71
-[]\T1/phv/m/n/10 automaton/optimal[]Command/[]Parcourir[]Matrices[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--75
-[]\T1/phv/m/n/10 automaton/optimal[]Command/get[]State[]Transition[]F[]S[]M.[]m
-,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 75--77
-[]\T1/phv/m/n/10 automaton/optimal[]Command/get[]State[]Transition[]T[]X[]T.[]m
-,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 82--84
-[]\T1/phv/m/n/10 automaton/optimal[]Command/rafine[]Automaton[]Class.[]m,
- []
-
-[45
+(./_t_h_eplan_8m.tex) (./visupacman_8m.tex [33]) (./visupacman2_8m.tex)
+(./walls_border_8m.tex) (./_wrapper_8m.tex) [34] (./refman.ind [35
 
 
 
-] [46] [47] [48])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 209.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 209.
- (./refman.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 209.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 209.
+] [36])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 183.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 183.
+
+(./refman.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 183.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 183.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 31CF3040BC5A33F79D1179746A3072E6;52246.
+(rerunfilecheck)             Checksum: B1E885EB1B85BF6BA8B5C91A621CD7E2;25737.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1503,28 +1504,28 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 209.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 183.
  ) 
 Here is how much of TeX's memory you used:
- 15830 strings out of 492990
- 237781 string characters out of 6135004
- 324945 words of memory out of 5000000
- 18522 multiletter control sequences out of 15000+600000
- 63558 words of font info for 70 fonts, out of 8000000 for 9000
+ 15441 strings out of 492990
+ 224981 string characters out of 6135004
+ 318110 words of memory out of 5000000
+ 18374 multiletter control sequences out of 15000+600000
+ 67089 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 53i,16n,92p,1181b,564s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,16n,92p,945b,630s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
-w/courier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/u
-hvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (60 pages, 247664 bytes).
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
+rw/courier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/
+uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on refman.pdf (44 pages, 204160 bytes).
 PDF statistics:
- 2661 PDF objects out of 2984 (max. 8388607)
- 2553 compressed objects within 26 object streams
- 518 named destinations out of 1000 (max. 500000)
- 1935 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1519 PDF objects out of 1728 (max. 8388607)
+ 1438 compressed objects within 15 object streams
+ 320 named destinations out of 1000 (max. 500000)
+ 1095 words of extra memory for PDF output out of 10000 (max. 10000000)
 

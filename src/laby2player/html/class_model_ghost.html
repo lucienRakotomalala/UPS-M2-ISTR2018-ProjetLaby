@@ -46,12 +46,29 @@ $(function() {
 <div class="title">ModelGhost Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>MODELGhost Summary of this class goes here <br />
+ Input : Possible ghost's moves [Up Down Left Right] <br />
+ 0 = move not possible ; 1 = move possible <br />
+ ( Wout{7} ) <br />
+<br />
+ Output : Ghost's moves 1 : ghostLeftBut, ( Wout(3) )<br />
+ 2 : ghostUpBut, ( Wout(1) ) <br />
+ 3 : ghostRightBut, ( Wout(4) ) <br />
+ 4 : ghostDownBut , ( Wout(2) ) <br />
+ ( Win( 4:7) of wrapper ) <br />
+<br />
+ in: Walls around ghost<br />
+ 1 up<br />
+ 2 down<br />
+.  
+ <a href="class_model_ghost.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for ModelGhost:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_model_ghost__inherit__graph.png" border="0" usemap="#_model_ghost_inherit__map" alt="Inheritance graph"/></div>
 <map name="_model_ghost_inherit__map" id="_model_ghost_inherit__map">
-<area shape="rect" id="node2" href="class_model_s_e_d.html" title="ModelSED" alt="" coords="9,80,94,107"/>
+<area shape="rect" id="node2" href="class_model_s_e_d.html" title="State : minimal information necessary who evolute. " alt="" coords="9,80,94,107"/>
 <area shape="rect" id="node3" href="classhandle.html" title="handle" alt="" coords="21,5,81,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -59,26 +76,60 @@ Inheritance diagram for ModelGhost:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0eb9a8f9771bba8a091d35339af59343"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_plan__desuma_functions__2_players_8m.html#ac2ffb26d6f42d3bbcd7847b0873403f4">function</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_ghost.html#a0eb9a8f9771bba8a091d35339af59343">ModelGhost</a> (in initialValue)</td></tr>
+<tr class="memdesc:a0eb9a8f9771bba8a091d35339af59343"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class constructor.  <a href="#a0eb9a8f9771bba8a091d35339af59343">More...</a><br /></td></tr>
 <tr class="separator:a0eb9a8f9771bba8a091d35339af59343"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3643512eacb95c58d0678b6a76176101"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_plan__desuma_functions__2_players_8m.html#ac2ffb26d6f42d3bbcd7847b0873403f4">function</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_ghost.html#a3643512eacb95c58d0678b6a76176101">f</a> (in obj, in in, in in_view, in wallsV, in wallsH, in ghost_position)</td></tr>
+<tr class="memdesc:a3643512eacb95c58d0678b6a76176101"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the evolution of the command.  <a href="#a3643512eacb95c58d0678b6a76176101">More...</a><br /></td></tr>
 <tr class="separator:a3643512eacb95c58d0678b6a76176101"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3140f24c6c4b80037b7d4f521c6ae2d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_plan__desuma_functions__2_players_8m.html#ac2ffb26d6f42d3bbcd7847b0873403f4">function</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_ghost.html#a3140f24c6c4b80037b7d4f521c6ae2d3">m</a> (in obj, in nextState, in init)</td></tr>
+<tr class="memdesc:a3140f24c6c4b80037b7d4f521c6ae2d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory method update the state of the command.  <a href="#a3140f24c6c4b80037b7d4f521c6ae2d3">More...</a><br /></td></tr>
 <tr class="separator:a3140f24c6c4b80037b7d4f521c6ae2d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07dadfabe92bf9a144b8a862720e7746"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_plan__desuma_functions__2_players_8m.html#ac2ffb26d6f42d3bbcd7847b0873403f4">function</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_ghost.html#a07dadfabe92bf9a144b8a862720e7746">g</a> (in obj)</td></tr>
+<tr class="memdesc:a07dadfabe92bf9a144b8a862720e7746"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the outputs.  <a href="#a07dadfabe92bf9a144b8a862720e7746">More...</a><br /></td></tr>
 <tr class="separator:a07dadfabe92bf9a144b8a862720e7746"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac36f9451c43b120828af4380858f2024"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_s_e_d.html#ac36f9451c43b120828af4380858f2024">f</a> (in obj, in in)</td></tr>
+<tr class="memdesc:ac36f9451c43b120828af4380858f2024"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the evolution of the model.  <a href="#ac36f9451c43b120828af4380858f2024">More...</a><br /></td></tr>
 <tr class="separator:ac36f9451c43b120828af4380858f2024"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d53b5f665cfcf64d482bbfa8a6eb098"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_s_e_d.html#a2d53b5f665cfcf64d482bbfa8a6eb098">g</a> (in obj, in in)</td></tr>
-<tr class="separator:a2d53b5f665cfcf64d482bbfa8a6eb098"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a9624cc7c421a50fa5086b0ebd0cd5fe3"><td class="memItemLeft" align="right" valign="top">Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_ghost.html#a9624cc7c421a50fa5086b0ebd0cd5fe3">presentState</a></td></tr>
+<tr class="memdesc:a9624cc7c421a50fa5086b0ebd0cd5fe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the state of the command in the present moment.  <a href="#a9624cc7c421a50fa5086b0ebd0cd5fe3">More...</a><br /></td></tr>
 <tr class="separator:a9624cc7c421a50fa5086b0ebd0cd5fe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd9263acfa96c9138afdf497e55acc24"><td class="memItemLeft" align="right" valign="top">Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_ghost.html#acd9263acfa96c9138afdf497e55acc24">initialState</a></td></tr>
+<tr class="memdesc:acd9263acfa96c9138afdf497e55acc24"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the state of the command in the initialization and when it's reseted.  <a href="#acd9263acfa96c9138afdf497e55acc24">More...</a><br /></td></tr>
 <tr class="separator:acd9263acfa96c9138afdf497e55acc24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>MODELGhost Summary of this class goes here <br />
+ Input : Possible ghost's moves [Up Down Left Right] <br />
+ 0 = move not possible ; 1 = move possible <br />
+ ( Wout{7} ) <br />
+<br />
+ Output : Ghost's moves 1 : ghostLeftBut, ( Wout(3) )<br />
+ 2 : ghostUpBut, ( Wout(1) ) <br />
+ 3 : ghostRightBut, ( Wout(4) ) <br />
+ 4 : ghostDownBut , ( Wout(2) ) <br />
+ ( Win( 4:7) of wrapper ) <br />
+<br />
+ in: Walls around ghost<br />
+ 1 up<br />
+ 2 down<br />
+. </p>
+<p>4 right<br />
+<br />
+<br />
+ in_view: Ghost sees Pacman <br />
+ 1 Up<br />
+ 2 Down<br />
+ 3 Left<br />
+ 4 Right<br />
+ state :<br />
+<br />
+<br />
+ This command P(D) &gt; P(B) &gt; P(H) &gt; P(G)<br />
+ </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0eb9a8f9771bba8a091d35339af59343"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0eb9a8f9771bba8a091d35339af59343">&#9670;&nbsp;</a></span>ModelGhost()</h2>
 
@@ -94,6 +145,15 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Class constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">initialValue</td><td>Contain the initial state </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>instance of the <a class="el" href="class_model_ghost.html" title="MODELGhost Summary of this class goes here   Input : Possible ghost&#39;s moves [Up Down Left Right]   0 ...">ModelGhost</a> class. </dd></dl>
 
 </div>
 </div>
@@ -132,7 +192,22 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="class_model_laby.html#a6f3b146c92a207e95690d08975e1e072">ModelLaby</a>, and <a class="el" href="class_model_pacman.html#a6f3b146c92a207e95690d08975e1e072">ModelPacman</a>.</p>
+<p>Compute the evolution of the model. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The instance who evolute </td></tr>
+    <tr><td class="paramname">in</td><td>Input needed for the computing </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">nextState</td><td>The future state of the model </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="class_model_pacman.html#a6f3b146c92a207e95690d08975e1e072">ModelPacman</a>, and <a class="el" href="class_model_laby.html#a6f3b146c92a207e95690d08975e1e072">ModelLaby</a>.</p>
 
 </div>
 </div>
@@ -186,49 +261,36 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Compute the evolution of the command. </p>
+<p>It takes more inputs than <a class="el" href="class_model_s_e_d.html" title="State : minimal information necessary who evolute. ">ModelSED</a> because ghost can use more information from the laby</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The instance who evolute </td></tr>
+    <tr><td class="paramname">in</td><td>Input vector needed for the compute (walls around Ghost) </td></tr>
+    <tr><td class="paramname">in_view</td><td>Vector of Information about ghost sees Pacman </td></tr>
+    <tr><td class="paramname">wallsV</td><td>Matrix of vertical Walls </td></tr>
+    <tr><td class="paramname">wallsH</td><td>Matrix of horizontal Walls </td></tr>
+    <tr><td class="paramname">ghost_position</td><td>Cartesian vector of Ghost Position </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">nextState</td><td>The future state of the Ghost command </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="a2d53b5f665cfcf64d482bbfa8a6eb098"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d53b5f665cfcf64d482bbfa8a6eb098">&#9670;&nbsp;</a></span>g() <span class="overload">[1/2]</span></h2>
+<a id="a07dadfabe92bf9a144b8a862720e7746"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07dadfabe92bf9a144b8a862720e7746">&#9670;&nbsp;</a></span>g()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual g </td>
-          <td>(</td>
-          <td class="paramtype">in&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">in&#160;</td>
-          <td class="paramname"><em>in</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a07dadfabe92bf9a144b8a862720e7746"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07dadfabe92bf9a144b8a862720e7746">&#9670;&nbsp;</a></span>g() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="_plan__desuma_functions__2_players_8m.html#ac2ffb26d6f42d3bbcd7847b0873403f4">function</a> g </td>
@@ -238,7 +300,28 @@ Public Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+
+<p>Create the outputs. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>the concerned instance of the class </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">out</td><td>The output who is the command. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="class_model_s_e_d.html#ac6bf71081e35755d5ed9992d165afcb8">ModelSED</a>.</p>
 
 </div>
 </div>
@@ -282,6 +365,17 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Memory method update the state of the command. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The selected instance of the class </td></tr>
+    <tr><td class="paramname">nextState</td><td>The value of the state need to update </td></tr>
+    <tr><td class="paramname">init</td><td>Boolean condition for initialize or reset the command </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>instance of the class updated </dd></dl>
+
 <p>Reimplemented from <a class="el" href="class_model_s_e_d.html#adb8aaccb857cf5bbec640cd00915459d">ModelSED</a>.</p>
 
 </div>
@@ -299,6 +393,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>This is the state of the command in the initialization and when it's reseted. </p>
+
 </div>
 </div>
 <a id="a9624cc7c421a50fa5086b0ebd0cd5fe3"></a>
@@ -312,6 +408,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>This is the state of the command in the present moment. </p>
 
 </div>
 </div>

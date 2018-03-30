@@ -3,5 +3,5 @@
 doxygen Doxyfile
 cd latex/
 make all
-evince refman.pdf &
+#evince refman.pdf &
 cd ..

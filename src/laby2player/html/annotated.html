@@ -46,11 +46,32 @@ $(function() {
 <table class="directory">
 <tr id="row_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classhandle.html" target="_self">handle</a></td><td class="desc"></td></tr>
 <tr id="row_1_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_model_command.html" target="_self">ModelCommand</a></td><td class="desc"></td></tr>
-<tr id="row_2_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_model_ghost.html" target="_self">ModelGhost</a></td><td class="desc"></td></tr>
+<tr id="row_2_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_model_ghost.html" target="_self">ModelGhost</a></td><td class="desc">MODELGhost Summary of this class goes here <br />
+ Input : Possible ghost's moves [Up Down Left Right] <br />
+ 0 = move not possible ; 1 = move possible <br />
+ ( Wout{7} ) <br />
+<br />
+ Output : Ghost's moves 1 : ghostLeftBut, ( Wout(3) )<br />
+ 2 : ghostUpBut, ( Wout(1) ) <br />
+ 3 : ghostRightBut, ( Wout(4) ) <br />
+ 4 : ghostDownBut , ( Wout(2) ) <br />
+ ( Win( 4:7) of wrapper ) <br />
+<br />
+ in: Walls around ghost<br />
+ 1 up<br />
+ 2 down<br />
+</td></tr>
 <tr id="row_3_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_model_laby.html" target="_self">ModelLaby</a></td><td class="desc">Class which contains the "fmg" structure of the labyrinth for 2 players </td></tr>
-<tr id="row_4_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_model_pacman.html" target="_self">ModelPacman</a></td><td class="desc"></td></tr>
-<tr id="row_5_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_model_s_e_d.html" target="_self">ModelSED</a></td><td class="desc"></td></tr>
-<tr id="row_6_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_model_walls.html" target="_self">ModelWalls</a></td><td class="desc"></td></tr>
+<tr id="row_4_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_model_pacman.html" target="_self">ModelPacman</a></td><td class="desc">Input : Walls around Pacman <br />
+ 1 up <br />
+ 2 down<br />
+ 3 left<br />
+ 4 right<br />
+This command do the sequence P(D) &gt; P(B) &gt; P(H) &gt; P(G) <br />
+</td></tr>
+<tr id="row_5_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_model_s_e_d.html" target="_self">ModelSED</a></td><td class="desc">State : minimal information necessary who evolute </td></tr>
+<tr id="row_6_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_model_walls.html" target="_self">ModelWalls</a></td><td class="desc">This command do the sequence walls Right &ndash;&gt; walls down <br />
+</td></tr>
 <tr id="row_7_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_stop_condition.html" target="_self">StopCondition</a></td><td class="desc"></td></tr>
 <tr id="row_8_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_wrapper.html" target="_self">Wrapper</a></td><td class="desc"></td></tr>
 </table>
