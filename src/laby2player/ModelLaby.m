@@ -13,22 +13,20 @@ classdef ModelLaby < ModelSED
     %   This class contains 3 method useful : f(), m() and g() to describe the evolution of the labyrinth.
     
     properties
-		%> Data Structure of the current state of Labyrinth. \n 
-		%> It contains "wallsV", "wallsH" (2 matrix for the walls), "ghost", "pacman" and "escape" , a Cartesian position of current position of ghost, pacman and escape. \n
-		%> There is also 3 vectors : 'wallsAroundPacman', 'wallsAroundGhost' and 'ghostSeesPacman' A vector indicating the presence of a wall around the Pacman and ghost for the 4 directions Up Down Left Right
+		%> Data Structure of the current state of Labyrinth. \n It contains "wallsV", "wallsH" (2 matrix for the walls), "ghost", "pacman" and "escape" , a Cartesian position of current position of ghost, pacman and escape. \n There is also 3 vectors : 'wallsAroundPacman', 'wallsAroundGhost' and 'ghostSeesPacman' A vector indicating the presence of a wall around the Pacman and ghost for the 4 directions Up Down Left Right
         presentState;
         initialState;
     end
     
     methods
 
-        % Entrï¿½e du model labyrinthe : in
-        % Cette entrï¿½e correspond aux sorties des commandes de obj1 (pacman),
-        % obj2(ghost) et des murs. Les commandes vont ï¿½crire sur le m^me vecteur : in,
-        % en mettant la valeur de commande choisit ï¿½ 1.
+        % Labyrinth Model Input : in
+		% This input corresponds to command's outputs of obj1 (Pacman),
+        % obj2(ghost) and walls. Commands will write  on the same vector "in"  
+		% by setting the command value to 1.
         
         
-        % Librairie des commandes, vecteur in : Voir le Callback de
+        % Command library, vector in : See Callback of
         % figure_Laby
 % ======================================================================   
 %> @brief Class constructor of 
@@ -51,15 +49,21 @@ classdef ModelLaby < ModelSED
             obj.m(0,1);     % Pas de next State. Initialisation uniquement.
         end
 
+
+% ======================================================================   
+%> @brief Compute the evolution of the model.
+%> @param obj The instance which will evolve.
+%> @param in Input needed for the computing. 
+%> @retval nextState Next instance of the ModelLaby class.
+% ======================================================================
+        function nextState = f(obj, in)
         %% --- Evolution of the labyrinth 
         %   This function countains all evolution possible of laby.
         %
         %   1 part : All the walls move allowed
         %   2 part : All Pacman Move
         %   3 part : All Ghost Move
-        %   4 part : Evolution of caught
-        function nextState = f(obj, in)
-            
+        %   4 part : Evolution of caught   
             nextState = obj.presentState;
             
             %% Walls Evolution 
@@ -138,15 +142,23 @@ classdef ModelLaby < ModelSED
                  nextState = obj.presentState;
              end
         end
+% ======================================================================
+%> @brief Memory method
+%> update the state of the command.
+%> @param obj The selected instance of the class
+%> @param nextState The value of the state need to update 
+%> @param init Boolean condition for initialize or reset the command
+%> @return instance of the class updated 
+% ======================================================================           
+        function m(obj,nextState, init)
         %% --- Memory 
-        % Déroulement de la fonction :
-        % If initialisation required : 
+        % Function sequence :
+        % If initialization required : 
         %   Then : do it with initial value declared here
         %   
         %   Else : calculate the new State with implementation of nxtState 
-           %        calculate caught 
-        function m(obj,nextState, init)
-            
+        %        calculate caught 
+		% Example : you can use it with F method just like 
             if(init == 1)
                 %fprintf('Init Laby\n') % TODO
                 obj.presentState = obj.initialState;
