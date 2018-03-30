@@ -1,7 +1,0 @@
-<map id="ModelSED" name="ModelSED">
-<area shape="rect" id="node3" href="$class_model_laby.html" title="Class which contains the &quot;fmg&quot; structure of the labyrinth for 1 player " alt="" coords="5,155,91,181"/>
-<area shape="rect" id="node4" href="$class_model_pacman.html" title="Input : Walls around Pacman &#160;&#160;1 up &#160;&#160;2 down &#160;3 left &#160;4 right This command do the sequence P(D) &gt; P(B)..." alt="" coords="115,155,221,181"/>
-<area shape="rect" id="node5" href="$class_model_walls.html" title="This command do the sequence walls Right –&gt; walls down &#160;. " alt="" coords="245,155,336,181"/>
-<area shape="rect" id="node6" href="$class_stop_condition.html" title="StopCondition" alt="" coords="360,155,464,181"/>
-<area shape="rect" id="node2" href="$classhandle.html" title="handle" alt="" coords="199,5,259,32"/>
-</map>
