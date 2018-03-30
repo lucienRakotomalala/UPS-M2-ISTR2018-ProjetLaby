@@ -1,0 +1,154 @@
+\hypertarget{class_stop_condition}{}\section{Stop\+Condition Class Reference}
+\label{class_stop_condition}\index{Stop\+Condition@{Stop\+Condition}}
+
+
+Inheritance diagram for Stop\+Condition\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{class_stop_condition__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Stop\+Condition\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{class_stop_condition__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} \hyperlink{class_stop_condition_a998151731b2f85cb0f3e0cbc7d82bf96}{Stop\+Condition} (in init\+Condition)
+\item 
+\hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} \hyperlink{class_stop_condition_aee61194740a59310c4197ba5d424d3be}{f} (in obj, in no\+Escape, in caught, in pacman\+Walls\+Break, in ghost\+Walls\+Break)
+\item 
+\hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} \hyperlink{class_stop_condition_a3140f24c6c4b80037b7d4f521c6ae2d3}{m} (in obj, in next\+State, in init)
+\begin{DoxyCompactList}\small\item\em Memory method update the state of the command. \end{DoxyCompactList}\item 
+\hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} \hyperlink{class_stop_condition_a07dadfabe92bf9a144b8a862720e7746}{g} (in obj)
+\begin{DoxyCompactList}\small\item\em Create the outputs. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_model_s_e_d_ac36f9451c43b120828af4380858f2024}{f} (in obj, in in)
+\begin{DoxyCompactList}\small\item\em Compute the evolution of the model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Property \hyperlink{class_stop_condition_a9624cc7c421a50fa5086b0ebd0cd5fe3}{present\+State}
+\item 
+Property \hyperlink{class_stop_condition_acd9263acfa96c9138afdf497e55acc24}{initial\+State}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_stop_condition_a998151731b2f85cb0f3e0cbc7d82bf96}\label{class_stop_condition_a998151731b2f85cb0f3e0cbc7d82bf96}} 
+\index{Stop\+Condition@{Stop\+Condition}!Stop\+Condition@{Stop\+Condition}}
+\index{Stop\+Condition@{Stop\+Condition}!Stop\+Condition@{Stop\+Condition}}
+\subsubsection{\texorpdfstring{Stop\+Condition()}{StopCondition()}}
+{\footnotesize\ttfamily \hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} \hyperlink{class_stop_condition}{Stop\+Condition} (\begin{DoxyParamCaption}\item[{in}]{init\+Condition }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_stop_condition_aee61194740a59310c4197ba5d424d3be}\label{class_stop_condition_aee61194740a59310c4197ba5d424d3be}} 
+\index{Stop\+Condition@{Stop\+Condition}!f@{f}}
+\index{f@{f}!Stop\+Condition@{Stop\+Condition}}
+\subsubsection{\texorpdfstring{f()}{f()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} f (\begin{DoxyParamCaption}\item[{in}]{obj,  }\item[{in}]{no\+Escape,  }\item[{in}]{caught,  }\item[{in}]{pacman\+Walls\+Break,  }\item[{in}]{ghost\+Walls\+Break }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_model_s_e_d_ac36f9451c43b120828af4380858f2024}\label{class_model_s_e_d_ac36f9451c43b120828af4380858f2024}} 
+\index{Stop\+Condition@{Stop\+Condition}!f@{f}}
+\index{f@{f}!Stop\+Condition@{Stop\+Condition}}
+\subsubsection{\texorpdfstring{f()}{f()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual f (\begin{DoxyParamCaption}\item[{in}]{obj,  }\item[{in}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Compute the evolution of the model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & The instance who evolute \\
+\hline
+{\em in} & Input needed for the computing \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em next\+State} & The future state of the model \\
+\hline
+\end{DoxyRetVals}
+
+
+Reimplemented in \hyperlink{class_model_pacman_a6f3b146c92a207e95690d08975e1e072}{Model\+Pacman}, and \hyperlink{class_model_laby_a6f3b146c92a207e95690d08975e1e072}{Model\+Laby}.
+
+\mbox{\Hypertarget{class_stop_condition_a07dadfabe92bf9a144b8a862720e7746}\label{class_stop_condition_a07dadfabe92bf9a144b8a862720e7746}} 
+\index{Stop\+Condition@{Stop\+Condition}!g@{g}}
+\index{g@{g}!Stop\+Condition@{Stop\+Condition}}
+\subsubsection{\texorpdfstring{g()}{g()}}
+{\footnotesize\ttfamily \hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} g (\begin{DoxyParamCaption}\item[{in}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Create the outputs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & the concerned instance of the class \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em out} & Constructed output of the model \\
+\hline
+\end{DoxyRetVals}
+
+
+Reimplemented from \hyperlink{class_model_s_e_d_ac6bf71081e35755d5ed9992d165afcb8}{Model\+S\+ED}.
+
+\mbox{\Hypertarget{class_stop_condition_a3140f24c6c4b80037b7d4f521c6ae2d3}\label{class_stop_condition_a3140f24c6c4b80037b7d4f521c6ae2d3}} 
+\index{Stop\+Condition@{Stop\+Condition}!m@{m}}
+\index{m@{m}!Stop\+Condition@{Stop\+Condition}}
+\subsubsection{\texorpdfstring{m()}{m()}}
+{\footnotesize\ttfamily \hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} m (\begin{DoxyParamCaption}\item[{in}]{obj,  }\item[{in}]{next\+State,  }\item[{in}]{init }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Memory method update the state of the command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & The selected instance of the class \\
+\hline
+{\em next\+State} & The value of the state need to update \\
+\hline
+{\em init} & Boolean condition for initialize or reset the command \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+instance of the class updated 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_model_s_e_d_adb8aaccb857cf5bbec640cd00915459d}{Model\+S\+ED}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_stop_condition_acd9263acfa96c9138afdf497e55acc24}\label{class_stop_condition_acd9263acfa96c9138afdf497e55acc24}} 
+\index{Stop\+Condition@{Stop\+Condition}!initial\+State@{initial\+State}}
+\index{initial\+State@{initial\+State}!Stop\+Condition@{Stop\+Condition}}
+\subsubsection{\texorpdfstring{initial\+State}{initialState}}
+{\footnotesize\ttfamily Property initial\+State}
+
+\mbox{\Hypertarget{class_stop_condition_a9624cc7c421a50fa5086b0ebd0cd5fe3}\label{class_stop_condition_a9624cc7c421a50fa5086b0ebd0cd5fe3}} 
+\index{Stop\+Condition@{Stop\+Condition}!present\+State@{present\+State}}
+\index{present\+State@{present\+State}!Stop\+Condition@{Stop\+Condition}}
+\subsubsection{\texorpdfstring{present\+State}{presentState}}
+{\footnotesize\ttfamily Property present\+State}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_stop_condition_8m}{Stop\+Condition.\+m}\end{DoxyCompactItemize}

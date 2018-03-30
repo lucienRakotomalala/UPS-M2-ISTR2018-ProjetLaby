@@ -1,0 +1,4 @@
+<map id="StopCondition" name="StopCondition">
+<area shape="rect" id="node2" href="$class_model_s_e_d.html" title="Input : necessary information for compute the next state of the model &#160;&#160;Output : output&#39;s action of t..." alt="" coords="15,80,100,107"/>
+<area shape="rect" id="node3" href="$classhandle.html" title="handle" alt="" coords="27,5,87,32"/>
+</map>

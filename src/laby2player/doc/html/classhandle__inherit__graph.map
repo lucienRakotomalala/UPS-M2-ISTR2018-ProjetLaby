@@ -1,0 +1,8 @@
+<map id="handle" name="handle">
+<area shape="rect" id="node2" href="$class_model_s_e_d.html" title="State : minimal information necessary who evolute. " alt="" coords="242,80,327,107"/>
+<area shape="rect" id="node3" href="$class_model_ghost.html" title="Contain ghost movement control. " alt="" coords="5,155,97,181"/>
+<area shape="rect" id="node4" href="$class_model_laby.html" title="Class which contains the &quot;fmg&quot; structure of the labyrinth for 2 players. " alt="" coords="122,155,207,181"/>
+<area shape="rect" id="node5" href="$class_model_pacman.html" title="Input : Possible Pacman&#39;s moves [Up Down Left Right] &#160;&#160;0 = move not possible ; 1 = move possible &#160;&#160;( ..." alt="" coords="232,155,337,181"/>
+<area shape="rect" id="node6" href="$class_model_walls.html" title="Contain the wall movement command. " alt="" coords="362,155,453,181"/>
+<area shape="rect" id="node7" href="$class_stop_condition.html" title="StopCondition" alt="" coords="477,155,581,181"/>
+</map>
