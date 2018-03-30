@@ -2,10 +2,10 @@
 
 %> @briel Class which contains the "fmg" structure of the labyrinth for 1 player
 
-%> Input :  necessary information for compute the next state of the model
-%>
-%> Output : output's action of the model
-%           
+%> Input :  necessary information for compute the next state of the model\n
+%>\n
+%> Output : output's action of the model\n
+%>   \n        
 %> State :   minimal information necessary who evolute 
 % ======================================================================
 classdef ModelLaby < ModelSED
@@ -34,18 +34,16 @@ classdef ModelLaby < ModelSED
 %> @param wallsV_init Contain a matrix (N, N-1) of Initial Vertical Walls.
 %> @param wallsH_init Contain a matrix (N-1, N) of Initial Horizontal Walls.
 %> @param pacman_init Contain a vector (x, y) of Initial Position of Pacman.
-%> @param escape_init Contain a vector (x, y) of Escape's Position.
+%> @param escape_init Contain a vector (x, y) of Escape 's Position.
 %> @return instance of the ModelLaby class.
 % ======================================================================
         function obj = ModelLaby(wallsV_init,wallsH_init,pacman_init,escape_init)
             obj.initialState.wallsV =  wallsV_init;
             obj.initialState.wallsH = wallsH_init; 
             obj.initialState.pacman = pacman_init;
-       % TODELETE     obj.initialState.ghost  = ghost_init;
             obj.initialState.escape = escape_init;
-          % TODELETE  obj.initialState.caught = caught_init;
             
-            obj.m(0,1);     % Pas de next State. Initialisation uniquement.
+            obj.m(0,1);     % NO next State. Initialization only.
         end
 
 % ======================================================================   
@@ -56,7 +54,7 @@ classdef ModelLaby < ModelSED
 % ======================================================================
         function nextState = f(obj, in)
             %% --- Evolution of the labyrinth 
-			%   This function countains all evolution possible of laby.
+			%   This function contains all evolution possible of laby.
 			%
 			%   1 part : All the walls move allowed
 			%   2 part : All Pacman Move
@@ -68,15 +66,15 @@ classdef ModelLaby < ModelSED
             %
             %   next Walls become an offset matrix of Walls 
             %
-            if(in(2) == 1) % Walls Vertical moves to the right
+            if(in(2) == 1) % Walls Horizontal moves to the right
                         nextState.wallsV = [obj.presentState.wallsV(size(obj.presentState.wallsV,1),:); obj.presentState.wallsV(1:size(obj.presentState.wallsV,1)-1,:)];     
             end
-            if(in(3) == 1) % Walls Horizontal moves down
+            if(in(3) == 1) % Walls Vertical moves down
                         nextState.wallsH = [obj.presentState.wallsH(:,size(obj.presentState.wallsH,2)) obj.presentState.wallsH(:,1:size(obj.presentState.wallsH,2)-1)];
             end
             
             %% Object Evolution
-            % Creation of a upper wall matrix modelling the walls and all
+            % Creation of a upper wall matrix modeling the walls and all
             % contours of the laby
             theWallsAroundV =  wallsBorder(obj.presentState.wallsV);
             theWallsAroundH =  wallsBorder(obj.presentState.wallsH);
@@ -113,7 +111,7 @@ classdef ModelLaby < ModelSED
 %> update the state of the command.
 %> @param obj The selected instance of the class
 %> @param nextState The value of the state need to update 
-%> @param init Boolean condition for intialize or reset the command
+%> @param init Boolean condition for initialize or reset the command
 %> @return instance of the class updated 
 % ====================================================================== 
         function m(obj,nextState, init)
@@ -143,14 +141,15 @@ classdef ModelLaby < ModelSED
 % ====================================================================== 
         function  out = g(obj)
 		%% -- Generation of the output 
-        % Creation of a output vctor contains :
-        %       pacman position (X,Y)
+        % Creation of a output vector contains :
+        %       Pacman position (X,Y)
         %       WallsV matrix
         %       WallsH matrix
         %       Boolean of escape
         %       Vector with wallsAroundPacman
         %
-            % walls Around pacman
+		
+            % walls Around Pacman
             Wup_pacman = [1; obj.presentState.wallsH(1:obj.presentState.pacman(2)-1, obj.presentState.pacman(1))];
             Wdown_pacman = [obj.presentState.wallsH(obj.presentState.pacman(2):size(obj.presentState.wallsH,1), obj.presentState.pacman(1)); 1];
             WLeft_pacman = [1 obj.presentState.wallsV(obj.presentState.pacman(2), 1:obj.presentState.pacman(1)-1)];

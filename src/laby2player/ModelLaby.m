@@ -2,10 +2,10 @@
 
 %> @briel Class which contains the "fmg" structure of the labyrinth for 2 players
 
-%> Input :  necessary information for compute the next state of the model
-%>
-%> Output : output's action of the model
-%           
+%> Input :  necessary information for compute the next state of the model\n
+%>\n
+%> Output : output's action of the model\n
+%> \n          
 %> State :   minimal information necessary who evolute 
 % ======================================================================
 classdef ModelLaby < ModelSED
@@ -15,6 +15,7 @@ classdef ModelLaby < ModelSED
     properties
 		%> Data Structure of the current state of Labyrinth. \n It contains "wallsV", "wallsH" (2 matrix for the walls), "ghost", "pacman" and "escape" , a Cartesian position of current position of ghost, pacman and escape. \n There is also 3 vectors : 'wallsAroundPacman', 'wallsAroundGhost' and 'ghostSeesPacman' A vector indicating the presence of a wall around the Pacman and ghost for the 4 directions Up Down Left Right
         presentState;
+		%> Data Structure of the initial state of Labyrinth. It contains "wallsV", "wallsH" (2 matrix for the walls), "escape" and "pacman", a Cartesian position of current position of escape and pacman and 'wallsAroundPacman' A vector indicating the presence of a wall around the Pacman for the 4 directions Up Down Left Right
         initialState;
     end
     
@@ -34,7 +35,7 @@ classdef ModelLaby < ModelSED
 %> @param wallsH_init Contain a matrix (N-1, N) of Initial Horizontal Walls.
 %> @param pacman_init Contain a vector (x, y) of Initial Position of Pacman.
 %> @param pacman_init Contain a vector (x, y) of Initial Position of Ghost.
-%> @param escape_init Contain a vector (x, y) of Escape's Position.
+%> @param escape_init Contain a vector (x, y) of Escape 's Position.
 %> @param caught_init Contain a integer of the number of times the Pacman was caught by the ghost.
 %> @return instance of the ModelLaby class.
 % ======================================================================
@@ -46,7 +47,7 @@ classdef ModelLaby < ModelSED
             obj.initialState.escape = escape_init;
             obj.initialState.caught = caught_init;
             
-            obj.m(0,1);     % Pas de next State. Initialisation uniquement.
+            obj.m(0,1);     % NO next State. Initialization only.
         end
 
 
@@ -58,7 +59,7 @@ classdef ModelLaby < ModelSED
 % ======================================================================
         function nextState = f(obj, in)
         %% --- Evolution of the labyrinth 
-        %   This function countains all evolution possible of laby.
+        %   This function contains all evolution possible of laby.
         %
         %   1 part : All the walls move allowed
         %   2 part : All Pacman Move
@@ -70,15 +71,15 @@ classdef ModelLaby < ModelSED
             %
             %   next Walls become an offset matrix of Walls 
             %
-            if(in(2) == 1) % Walls Vertical moves to the right
+            if(in(2) == 1) % Walls Horizontal moves to the right
                         nextState.wallsV = [obj.presentState.wallsV(size(obj.presentState.wallsV,1),:); obj.presentState.wallsV(1:size(obj.presentState.wallsV,1)-1,:)];     
             end
-            if(in(3) == 1) % Walls Horizontal moves down
+            if(in(3) == 1) % Walls Vertical moves down
                         nextState.wallsH = [obj.presentState.wallsH(:,size(obj.presentState.wallsH,2)) obj.presentState.wallsH(:,1:size(obj.presentState.wallsH,2)-1)];
             end
             
             %% Object Evolution
-            % Creation of a upper wall matrix modelling the walls and all
+            % Creation of a upper wall matrix modeling the walls and all
             % contours of the laby
             theWallsAroundV =  wallsBorder(obj.presentState.wallsV);
             theWallsAroundH =  wallsBorder(obj.presentState.wallsH);
@@ -89,45 +90,45 @@ classdef ModelLaby < ModelSED
                         wallLeft = thePacmanWallsV(obj.presentState.pacman(2)+1, 1:obj.presentState.pacman(1));
                         nextState.pacman(1) = obj.presentState.pacman(1) - 1 + wallLeft(end);
             end
-             if(in(5) == 1) % Pacman get Up
+            if(in(5) == 1) % Pacman get Up
                         thePacmanWallsH = theWallsAroundH;
                         thePacmanWallsH(obj.presentState.ghost(2):obj.presentState.ghost(2)+1,obj.presentState.ghost(1)+1) = 1;
                         wallUp = thePacmanWallsH(1:obj.presentState.pacman(2), obj.presentState.pacman(1)+1);
                         nextState.pacman(2) = obj.presentState.pacman(2) - 1 + wallUp(end);
-             end
-             if(in(6) == 1) % Pacman get right
+            end
+            if(in(6) == 1) % Pacman get right
                         thePacmanWallsV = theWallsAroundV;
                         thePacmanWallsV(obj.presentState.ghost(2)+1,obj.presentState.ghost(1):obj.presentState.ghost(1)+1) = 1;
                         wallRight = thePacmanWallsV(obj.presentState.pacman(2)+1, obj.presentState.pacman(1)+1:size(thePacmanWallsV,2));
                         nextState.pacman(1) = obj.presentState.pacman(1) + 1 - wallRight(1);
-             end
-             if(in(7) == 1) % Pacman get Down
+			end
+			if(in(7) == 1) % Pacman get Down
                         thePacmanWallsH = theWallsAroundH;
                         thePacmanWallsH(obj.presentState.ghost(2):obj.presentState.ghost(2)+1,obj.presentState.ghost(1)+1) = 1;
                         wallDown = thePacmanWallsH(obj.presentState.pacman(2)+1:size(thePacmanWallsH,1), obj.presentState.pacman(1)+1);
                         nextState.pacman(2) = obj.presentState.pacman(2) + 1 - wallDown(1);
-             end
-             %%
-             if(in(8) == 1) %Ghost get Left
+			end
+			%%
+			if(in(8) == 1) %Ghost get Left
                         theGhostWallsV = theWallsAroundV;
                         theGhostWallsV(obj.presentState.pacman(2)+1,obj.presentState.pacman(1):obj.presentState.pacman(1)+1) = 1;
                         wallLeft = theGhostWallsV(obj.presentState.ghost(2)+1, 1:obj.presentState.ghost(1));
                         nextState.ghost(1) = obj.presentState.ghost(1) - 1 + wallLeft(end);
-             end
+            end
              
-             if(in(9) == 1) % Ghost get Up
+            if(in(9) == 1) % Ghost get Up
                         theGhostWallsH = theWallsAroundH;
                         theGhostWallsH(obj.presentState.pacman(2):obj.presentState.pacman(2)+1,obj.presentState.pacman(1)+1) = 1;
                         wallUp = theGhostWallsH(1:obj.presentState.ghost(2), obj.presentState.ghost(1)+1);
                         nextState.ghost(2) = obj.presentState.ghost(2) - 1 + wallUp(end);
-             end
+            end
              
-             if(in(10) == 1) % Ghost get Right
+            if(in(10) == 1) % Ghost get Right
                         theGhostWallsV = theWallsAroundV;
                         theGhostWallsV(obj.presentState.pacman(2)+1,obj.presentState.pacman(1):obj.presentState.pacman(1)+1) = 1;
                         wallRight = theGhostWallsV(obj.presentState.ghost(2)+1, obj.presentState.ghost(1)+1:size(theGhostWallsV,2));
                         nextState.ghost(1) = obj.presentState.ghost(1) + 1 - wallRight(1);  
-             end
+            end
              
              if(in(11) == 1) % Ghost get Down
                         theGhostWallsH = theWallsAroundH;
@@ -168,16 +169,22 @@ classdef ModelLaby < ModelSED
                 
                 
 
-                obj.presentState.caught = nextState.caught + ...                                Maybe we should use WallsBetween function
-                           (obj.sameY_position*obj.wallsVBetweenOne(obj.presentState.pacman, obj.presentState.ghost)) + ...
+                obj.presentState.caught = nextState.caught + ...                                                           (obj.sameY_position*obj.wallsVBetweenOne(obj.presentState.pacman, obj.presentState.ghost)) + ...
                            (obj.sameY_position*obj.wallsVBetweenOne(obj.presentState.ghost, obj.presentState.pacman)) + ...
                            (obj.sameX_position*obj.wallsHBetweenOne(obj.presentState.ghost, obj.presentState.pacman)) + ...
                            (obj.sameX_position*obj.wallsHBetweenOne(obj.presentState.pacman, obj.presentState.ghost));
             end
         end
-        %% -- Generation of the output 
-        % Creation of a output vctor contains :
-        %       pacman position (X,Y)
+       
+% ======================================================================        
+%> @brief Create the outputs in a 1x9 cell-array. 
+%> @param obj the concerned instance of the class
+%> @retval out Constructed output 1x9 cell-array of the model
+% ======================================================================
+        function  out = g(obj)
+		%% -- Generation of the output 
+        % Creation of a output vector contains :
+        %       Pacman position (X,Y)
         %       Ghost  position (X,Y)
         %       WallsV matrix
         %       WallsH matrix
@@ -187,8 +194,7 @@ classdef ModelLaby < ModelSED
         %       Vector with wallsAroundGhost
         %       Vector with ghostSeesPacman
         %
-        function  out = g(obj)
-            % walls Around pacman
+            % walls Around Pacman
             Wup_pacman = [1; obj.presentState.wallsH(1:obj.presentState.pacman(2)-1, obj.presentState.pacman(1))];
             Wdown_pacman = [obj.presentState.wallsH(obj.presentState.pacman(2):size(obj.presentState.wallsH,1), obj.presentState.pacman(1)); 1];
             WLeft_pacman = [1 obj.presentState.wallsV(obj.presentState.pacman(2), 1:obj.presentState.pacman(1)-1)];
@@ -205,16 +211,15 @@ classdef ModelLaby < ModelSED
             
             obj.presentState.escape{2} = logical(not(obj.presentState.escape{1}(1) - obj.presentState.pacman(1)))*logical(not(obj.presentState.escape{1}(2) - obj.presentState.pacman(2)));
             
-            % Ghost Sees pacman : logical equation which test two direction
-            % and two position : ghost first orpacman first
+            % Ghost Sees Pacman : logical equation which test two direction
+            % and two position : ghost first or Pacman first
             
-            ghostSeesPacman = [ obj.sameX_position*obj.wallsHBetween(obj.presentState.pacman,obj.presentState.ghost), ...
-                                obj.sameX_position*obj.wallsHBetween(obj.presentState.ghost,obj.presentState.pacman), ...
-                                obj.sameY_position*obj.wallsVBetween(obj.presentState.pacman,obj.presentState.ghost),...
-                                obj.sameY_position*obj.wallsVBetween(obj.presentState.ghost,obj.presentState.pacman)];  
+            ghostSeesPacman = [ obj.sameX_position*obj.wallsHBetween(obj.presentState.pacman,obj.presentState.ghost), ... Ghost below Pacman
+                                obj.sameX_position*obj.wallsHBetween(obj.presentState.ghost,obj.presentState.pacman), ... Ghost above Pacman
+                                obj.sameY_position*obj.wallsVBetween(obj.presentState.pacman,obj.presentState.ghost),... Ghost on the right of Pacman 
+                                obj.sameY_position*obj.wallsVBetween(obj.presentState.ghost,obj.presentState.pacman)]; % Ghost on the left of Pacman 
             
-            % Sortie lue par les autres commandes (elles doievent le
-            % consid�rer comme une entr�e)
+            % Outputs read by command (they have to take it in input)
             out = {obj.presentState.pacman, obj.presentState.ghost, ...
                     obj.presentState.wallsV, obj.presentState.wallsH, ...
                     obj.presentState.caught, obj.presentState.escape{2}, ...
@@ -222,18 +227,29 @@ classdef ModelLaby < ModelSED
                   };        
         end
         
-        %% Function that return 1 if ghots and pacman are on the same X colonn
+%> @brief Method to analyze Ghost and Pacman Position 
+%> @param obj Current Instance of the Labyrinth
+%> @returrn 1 if ghost and Pacman are on the same X colon   
         function out = sameX_position(obj)
+		%% Method that return 1 if ghost and Pacman are on the same X colon
            out = logical(not(obj.presentState.ghost(1) - obj.presentState.pacman(1)));
         end
         
-        %% Function that return 1 if ghots and pacman are on the same Y line
+%> @brief Method to analyze Ghost and Pacman Position 
+%> @param obj Current Instance of the Labyrinth
+%> @returrn 1 if ghost and Pacman are on the same Y line
         function out = sameY_position(obj)
+		%% Method that return 1 if ghost and Pacman are on the same Y line
            out = logical(not(obj.presentState.ghost(2) - obj.presentState.pacman(2)));
         end
         
-        %% Function which return if a vertical wall is between obj1 and obj2.
+%> @brief Method to analyze if a Vertical wall is between 2 objects
+%> @param obj Current Instance of the Labyrinth
+%> @param obj1 Cartesian position of object 1
+%> @param obj2 Cartesian position of object 2
+%> @returrn 1 if there No Vertical wall Between Object 1 and Object 2     
         function outV = wallsVBetween (obj, obj1, obj2)
+		%% Method which return if a vertical wall is between obj1 and obj2.
             if(obj1(1)>obj2(1))
                 outV = 0;
             else
@@ -241,8 +257,13 @@ classdef ModelLaby < ModelSED
             end
         end
         
-        %% Function which return if a horizontal wall is between obj1 and obj2.
+%> @brief Method to analyze if a Horizontal wall is between 2 objects
+%> @param obj Current Instance of the Labyrinth
+%> @param obj1 Cartesian position of object 1
+%> @param obj2 Cartesian position of object 2
+%> @returrn 1 if there No Horizontal wall Between Object 1 and Object 2
         function outH = wallsHBetween (obj, obj1, obj2)
+		%% Method which return if a horizontal wall is between obj1 and obj2.
             if(obj1(2)>obj2(2))
                 outH = 0;
             else
@@ -250,19 +271,28 @@ classdef ModelLaby < ModelSED
             end
         end
         
-        %%  Function which return 1 if obj1 and obj2 are near in X axis 
-        %   and there no wall between then 
+%> @brief Method to analyze if a Horizontal wall is between 2 objects side by side 
+%> @param obj Current Instance of the Labyrinth
+%> @param obj1 Cartesian position of object 1
+%> @param obj2 Cartesian position of object 2
+%> @returrn 1 if there No Horizontal wall Between Object 1 and Object 2        
         function outV = wallsVBetweenOne(obj, obj1, obj2)
+		%%  Function which return 1 if obj1 and obj2 are near in X axis 
+        %   and there no wall between then 
            if(obj1(1)+1 == obj2(1))
                outV = obj.wallsVBetween(obj1, obj2);
            else
                outV = 0;
            end
         end
-        
-        %%  Function which return 1 if obj1 and obj2 are near in Y axis 
-        %   and there no wall between then 
+%> @brief Method to analyze if a Horizontal wall is between 2 objects side by side 
+%> @param obj Current Instance of the Labyrinth
+%> @param obj1 Cartesian position of object 1
+%> @param obj2 Cartesian position of object 2
+%> @returrn 1 if there No Horizontal wall Between Object 1 and Object 2         
         function outH = wallsHBetweenOne(obj, obj1, obj2)
+		%%  Function which return 1 if obj1 and obj2 are near in Y axis 
+        %   and there no wall between then 
            if(obj1(2)+1 == obj2(2))
                outH = obj.wallsHBetween(obj1, obj2);
            else
@@ -273,15 +303,5 @@ classdef ModelLaby < ModelSED
     end
 end
 
-%% Princpe de la commande : 
-% Lire les sories de model Laby communiqu� avec le wrapper. (Est ce que le
-% wrapper ne donne � la commande uniquement les sorties qu'il
-% l'int�resse ??? )
-% Aparir de ces sortie faire �voluer l'�tat : �tatsSuivant = ...
-% Dans cet �tat, pour un objet, on y trouve toutes les informaions que l'on
-% souhaite enregistr�.Sapeut etre sa position, ou bien le nombre de fois
-% qu'il a pu avancer... Sa d�pend de la construction de l'utomate ou MAE
-% faite avant.
-% Actionner la commande sur les entr�es de model Laby, communiqu� par le
-% wrapper.
+
 
