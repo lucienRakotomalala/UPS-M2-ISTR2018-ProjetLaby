@@ -1,0 +1,8 @@
+<map id="handle" name="handle">
+<area shape="rect" id="node2" href="$class_model_s_e_d.html" title="ModelSED" alt="" coords="242,80,327,107"/>
+<area shape="rect" id="node3" href="$class_model_ghost.html" title="ModelGhost" alt="" coords="5,155,97,181"/>
+<area shape="rect" id="node4" href="$class_model_laby.html" title="Class which contains the &quot;fmg&quot; structure of the labyrinth for 2 players " alt="" coords="122,155,207,181"/>
+<area shape="rect" id="node5" href="$class_model_pacman.html" title="ModelPacman" alt="" coords="232,155,337,181"/>
+<area shape="rect" id="node6" href="$class_model_walls.html" title="ModelWalls" alt="" coords="362,155,453,181"/>
+<area shape="rect" id="node7" href="$class_stop_condition.html" title="StopCondition" alt="" coords="477,155,581,181"/>
+</map>

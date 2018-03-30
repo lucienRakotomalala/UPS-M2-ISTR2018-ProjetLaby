@@ -1,0 +1,184 @@
+\hypertarget{class_model_laby}{}\section{Model\+Laby Class Reference}
+\label{class_model_laby}\index{Model\+Laby@{Model\+Laby}}
+
+
+Class which contains the \char`\"{}fmg\char`\"{} structure of the labyrinth for 2 players  
+
+
+
+
+Inheritance diagram for Model\+Laby\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=144pt]{class_model_laby__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} \hyperlink{class_model_laby_a014d91cfa3ecf1a6fc3ca75ea4f433d4}{Model\+Laby} (in walls\+V\+\_\+init, in walls\+H\+\_\+init, in pacman\+\_\+init, in ghost\+\_\+init, in escape\+\_\+init, in caught\+\_\+init)
+\begin{DoxyCompactList}\small\item\em Class constructor of. \end{DoxyCompactList}\item 
+\hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} \hyperlink{class_model_laby_a6f3b146c92a207e95690d08975e1e072}{f} (in obj, in in)
+\item 
+\hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} \hyperlink{class_model_laby_a3140f24c6c4b80037b7d4f521c6ae2d3}{m} (in obj, in next\+State, in init)
+\item 
+\hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} \hyperlink{class_model_laby_a07dadfabe92bf9a144b8a862720e7746}{g} (in obj)
+\item 
+\hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} \hyperlink{class_model_laby_ac2632946f3f89dcc57c9f1fd31bbfb53}{same\+X\+\_\+position} (in obj)
+\item 
+\hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} \hyperlink{class_model_laby_a104c64766fa031eb4a29214f07da63d2}{same\+Y\+\_\+position} (in obj)
+\item 
+\hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} \hyperlink{class_model_laby_adf2ec45a05676923165cb7f273900569}{walls\+V\+Between} (in obj, in obj1, in obj2)
+\item 
+\hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} \hyperlink{class_model_laby_a488955f2ead0854b15302161753a0a66}{walls\+H\+Between} (in obj, in obj1, in obj2)
+\item 
+\hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} \hyperlink{class_model_laby_ab8486279acbf0a66424a84fa210d1b71}{walls\+V\+Between\+One} (in obj, in obj1, in obj2)
+\item 
+\hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} \hyperlink{class_model_laby_a450d4d89542d177b6676375984146f4c}{walls\+H\+Between\+One} (in obj, in obj1, in obj2)
+\item 
+virtual \hyperlink{class_model_s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098}{g} (in obj, in in)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Property \hyperlink{class_model_laby_a9624cc7c421a50fa5086b0ebd0cd5fe3}{present\+State}
+\begin{DoxyCompactList}\small\item\em Data Structure of the current state of Labyrinth. \end{DoxyCompactList}\item 
+Property \hyperlink{class_model_laby_acd9263acfa96c9138afdf497e55acc24}{initial\+State}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class which contains the \char`\"{}fmg\char`\"{} structure of the labyrinth for 2 players 
+
+Input \+: necessary information for compute the next state of the model
+
+Output \+: output\textquotesingle{}s action of the model State \+: minimal information necessary who evolute 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_model_laby_a014d91cfa3ecf1a6fc3ca75ea4f433d4}\label{class_model_laby_a014d91cfa3ecf1a6fc3ca75ea4f433d4}} 
+\index{Model\+Laby@{Model\+Laby}!Model\+Laby@{Model\+Laby}}
+\index{Model\+Laby@{Model\+Laby}!Model\+Laby@{Model\+Laby}}
+\subsubsection{\texorpdfstring{Model\+Laby()}{ModelLaby()}}
+{\footnotesize\ttfamily \hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} \hyperlink{class_model_laby}{Model\+Laby} (\begin{DoxyParamCaption}\item[{in}]{walls\+V\+\_\+init,  }\item[{in}]{walls\+H\+\_\+init,  }\item[{in}]{pacman\+\_\+init,  }\item[{in}]{ghost\+\_\+init,  }\item[{in}]{escape\+\_\+init,  }\item[{in}]{caught\+\_\+init }\end{DoxyParamCaption})}
+
+
+
+Class constructor of. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em walls\+V\+\_\+init} & Contain a matrix (N, N-\/1) of Initial Vertical Walls. \\
+\hline
+{\em walls\+H\+\_\+init} & Contain a matrix (N-\/1, N) of Initial Horizontal Walls. \\
+\hline
+{\em pacman\+\_\+init} & Contain a vector (x, y) of Initial Position of Pacman. \\
+\hline
+{\em pacman\+\_\+init} & Contain a vector (x, y) of Initial Position of Ghost. \\
+\hline
+{\em escape\+\_\+init} & Contain a vector (x, y) of Escape\textquotesingle{}s Position. \\
+\hline
+{\em caught\+\_\+init} & Contain a integer of the number of times the Pacman was caught by the ghost. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+instance of the \hyperlink{class_model_laby}{Model\+Laby} class. 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_model_laby_a6f3b146c92a207e95690d08975e1e072}\label{class_model_laby_a6f3b146c92a207e95690d08975e1e072}} 
+\index{Model\+Laby@{Model\+Laby}!f@{f}}
+\index{f@{f}!Model\+Laby@{Model\+Laby}}
+\subsubsection{\texorpdfstring{f()}{f()}}
+{\footnotesize\ttfamily \hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} f (\begin{DoxyParamCaption}\item[{in}]{obj,  }\item[{in}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \hyperlink{class_model_s_e_d_ac36f9451c43b120828af4380858f2024}{Model\+S\+ED}.
+
+\mbox{\Hypertarget{class_model_s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098}\label{class_model_s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098}} 
+\index{Model\+Laby@{Model\+Laby}!g@{g}}
+\index{g@{g}!Model\+Laby@{Model\+Laby}}
+\subsubsection{\texorpdfstring{g()}{g()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual g (\begin{DoxyParamCaption}\item[{in}]{obj,  }\item[{in}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{class_model_laby_a07dadfabe92bf9a144b8a862720e7746}\label{class_model_laby_a07dadfabe92bf9a144b8a862720e7746}} 
+\index{Model\+Laby@{Model\+Laby}!g@{g}}
+\index{g@{g}!Model\+Laby@{Model\+Laby}}
+\subsubsection{\texorpdfstring{g()}{g()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} g (\begin{DoxyParamCaption}\item[{in}]{obj }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_model_laby_a3140f24c6c4b80037b7d4f521c6ae2d3}\label{class_model_laby_a3140f24c6c4b80037b7d4f521c6ae2d3}} 
+\index{Model\+Laby@{Model\+Laby}!m@{m}}
+\index{m@{m}!Model\+Laby@{Model\+Laby}}
+\subsubsection{\texorpdfstring{m()}{m()}}
+{\footnotesize\ttfamily \hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} m (\begin{DoxyParamCaption}\item[{in}]{obj,  }\item[{in}]{next\+State,  }\item[{in}]{init }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \hyperlink{class_model_s_e_d_adb8aaccb857cf5bbec640cd00915459d}{Model\+S\+ED}.
+
+\mbox{\Hypertarget{class_model_laby_ac2632946f3f89dcc57c9f1fd31bbfb53}\label{class_model_laby_ac2632946f3f89dcc57c9f1fd31bbfb53}} 
+\index{Model\+Laby@{Model\+Laby}!same\+X\+\_\+position@{same\+X\+\_\+position}}
+\index{same\+X\+\_\+position@{same\+X\+\_\+position}!Model\+Laby@{Model\+Laby}}
+\subsubsection{\texorpdfstring{same\+X\+\_\+position()}{sameX\_position()}}
+{\footnotesize\ttfamily \hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} same\+X\+\_\+position (\begin{DoxyParamCaption}\item[{in}]{obj }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_model_laby_a104c64766fa031eb4a29214f07da63d2}\label{class_model_laby_a104c64766fa031eb4a29214f07da63d2}} 
+\index{Model\+Laby@{Model\+Laby}!same\+Y\+\_\+position@{same\+Y\+\_\+position}}
+\index{same\+Y\+\_\+position@{same\+Y\+\_\+position}!Model\+Laby@{Model\+Laby}}
+\subsubsection{\texorpdfstring{same\+Y\+\_\+position()}{sameY\_position()}}
+{\footnotesize\ttfamily \hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} same\+Y\+\_\+position (\begin{DoxyParamCaption}\item[{in}]{obj }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_model_laby_a488955f2ead0854b15302161753a0a66}\label{class_model_laby_a488955f2ead0854b15302161753a0a66}} 
+\index{Model\+Laby@{Model\+Laby}!walls\+H\+Between@{walls\+H\+Between}}
+\index{walls\+H\+Between@{walls\+H\+Between}!Model\+Laby@{Model\+Laby}}
+\subsubsection{\texorpdfstring{walls\+H\+Between()}{wallsHBetween()}}
+{\footnotesize\ttfamily \hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} walls\+H\+Between (\begin{DoxyParamCaption}\item[{in}]{obj,  }\item[{in}]{obj1,  }\item[{in}]{obj2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_model_laby_a450d4d89542d177b6676375984146f4c}\label{class_model_laby_a450d4d89542d177b6676375984146f4c}} 
+\index{Model\+Laby@{Model\+Laby}!walls\+H\+Between\+One@{walls\+H\+Between\+One}}
+\index{walls\+H\+Between\+One@{walls\+H\+Between\+One}!Model\+Laby@{Model\+Laby}}
+\subsubsection{\texorpdfstring{walls\+H\+Between\+One()}{wallsHBetweenOne()}}
+{\footnotesize\ttfamily \hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} walls\+H\+Between\+One (\begin{DoxyParamCaption}\item[{in}]{obj,  }\item[{in}]{obj1,  }\item[{in}]{obj2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_model_laby_adf2ec45a05676923165cb7f273900569}\label{class_model_laby_adf2ec45a05676923165cb7f273900569}} 
+\index{Model\+Laby@{Model\+Laby}!walls\+V\+Between@{walls\+V\+Between}}
+\index{walls\+V\+Between@{walls\+V\+Between}!Model\+Laby@{Model\+Laby}}
+\subsubsection{\texorpdfstring{walls\+V\+Between()}{wallsVBetween()}}
+{\footnotesize\ttfamily \hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} walls\+V\+Between (\begin{DoxyParamCaption}\item[{in}]{obj,  }\item[{in}]{obj1,  }\item[{in}]{obj2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_model_laby_ab8486279acbf0a66424a84fa210d1b71}\label{class_model_laby_ab8486279acbf0a66424a84fa210d1b71}} 
+\index{Model\+Laby@{Model\+Laby}!walls\+V\+Between\+One@{walls\+V\+Between\+One}}
+\index{walls\+V\+Between\+One@{walls\+V\+Between\+One}!Model\+Laby@{Model\+Laby}}
+\subsubsection{\texorpdfstring{walls\+V\+Between\+One()}{wallsVBetweenOne()}}
+{\footnotesize\ttfamily \hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} walls\+V\+Between\+One (\begin{DoxyParamCaption}\item[{in}]{obj,  }\item[{in}]{obj1,  }\item[{in}]{obj2 }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_model_laby_acd9263acfa96c9138afdf497e55acc24}\label{class_model_laby_acd9263acfa96c9138afdf497e55acc24}} 
+\index{Model\+Laby@{Model\+Laby}!initial\+State@{initial\+State}}
+\index{initial\+State@{initial\+State}!Model\+Laby@{Model\+Laby}}
+\subsubsection{\texorpdfstring{initial\+State}{initialState}}
+{\footnotesize\ttfamily Property initial\+State}
+
+\mbox{\Hypertarget{class_model_laby_a9624cc7c421a50fa5086b0ebd0cd5fe3}\label{class_model_laby_a9624cc7c421a50fa5086b0ebd0cd5fe3}} 
+\index{Model\+Laby@{Model\+Laby}!present\+State@{present\+State}}
+\index{present\+State@{present\+State}!Model\+Laby@{Model\+Laby}}
+\subsubsection{\texorpdfstring{present\+State}{presentState}}
+{\footnotesize\ttfamily Property present\+State}
+
+
+
+Data Structure of the current state of Labyrinth. 
+
+~\newline
+ It contains \char`\"{}walls\+V\char`\"{}, \char`\"{}walls\+H\char`\"{} (2 matrix for the walls), \char`\"{}ghost\char`\"{}, \char`\"{}pacman\char`\"{} and \char`\"{}escape\char`\"{} , a Cartesian position of current position of ghost, pacman and escape. ~\newline
+There is also 3 vectors \+: \textquotesingle{}walls\+Around\+Pacman\textquotesingle{}, \textquotesingle{}walls\+Around\+Ghost\textquotesingle{} and \textquotesingle{}ghost\+Sees\+Pacman\textquotesingle{} A vector indicating the presence of a wall around the Pacman and ghost for the 4 directions Up Down Left Right 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_model_laby_8m}{Model\+Laby.\+m}\end{DoxyCompactItemize}
