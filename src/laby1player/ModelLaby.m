@@ -1,9 +1,21 @@
+%> @file ModelLaby.m
+
+%> @briel Class which contains the "fmg" structure of the labyrinth for 1 player
+
+%> Input :  necessary information for compute the next state of the model
+%>
+%> Output : output's action of the model
+%           
+%> State :   minimal information necessary who evolute 
+% ======================================================================
 classdef ModelLaby < ModelSED
-    %MODEL Summary of this class goes here
-    %   Detailed explanation goes here
+    %ModelLaby Class which contains the "fmg" structure of the labyrinth 
+    %   This class contains 3 method useful : f(), m() and g() to describe the evolution of the labyrinth.
     
     properties
+		%> Data Structure of the current state of Labyrinth. It contains "wallsV", "wallsH" (2 matrix for the walls), "escape" and "pacman", a Cartesian position of current position of escape and pacman and 'wallsAroundPacman' A vector indicating the presence of a wall around the Pacman for the 4 directions Up Down Left Right
         presentState;
+		%> Data Structure of the initial state of Labyrinth. It contains "wallsV", "wallsH" (2 matrix for the walls), "escape" and "pacman", a Cartesian position of current position of escape and pacman and 'wallsAroundPacman' A vector indicating the presence of a wall around the Pacman for the 4 directions Up Down Left Right
         initialState;
     end
     
@@ -17,6 +29,14 @@ classdef ModelLaby < ModelSED
         
         % Librairie des commandes, vecteur in : Voir le Callback de
         % figure_Laby
+% ======================================================================   
+%> @brief Class constructor of 
+%> @param wallsV_init Contain a matrix (N, N-1) of Initial Vertical Walls.
+%> @param wallsH_init Contain a matrix (N-1, N) of Initial Horizontal Walls.
+%> @param pacman_init Contain a vector (x, y) of Initial Position of Pacman.
+%> @param escape_init Contain a vector (x, y) of Escape's Position.
+%> @return instance of the ModelLaby class.
+% ======================================================================
         function obj = ModelLaby(wallsV_init,wallsH_init,pacman_init,escape_init)
             obj.initialState.wallsV =  wallsV_init;
             obj.initialState.wallsH = wallsH_init; 
@@ -28,15 +48,15 @@ classdef ModelLaby < ModelSED
             obj.m(0,1);     % Pas de next State. Initialisation uniquement.
         end
 
-        %% --- Evolution of the labyrinth 
-        %   This function countains all evolution possible of laby.
-        %
-        %   1 part : All the walls move allowed
-        %   2 part : All Pacman Move
-        %   3 part : All Ghost Move
-        %   4 part : Evolution of caught
+
         function nextState = f(obj, in)
-            
+            %% --- Evolution of the labyrinth 
+			%   This function countains all evolution possible of laby.
+			%
+			%   1 part : All the walls move allowed
+			%   2 part : All Pacman Move
+			%   3 part : All Ghost Move
+			%   4 part : Evolution of caught
             nextState = obj.presentState;
             
             %% Walls Evolution 

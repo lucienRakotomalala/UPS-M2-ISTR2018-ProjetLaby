@@ -1,8 +1,21 @@
+%> @file ModelLaby.m
+
+%> @briel Class which contains the "fmg" structure of the labyrinth for 2 players
+
+%> Input :  necessary information for compute the next state of the model
+%>
+%> Output : output's action of the model
+%           
+%> State :   minimal information necessary who evolute 
+% ======================================================================
 classdef ModelLaby < ModelSED
-    %MODEL Summary of this class goes here
-    %   Detailed explanation goes here
+    %ModelLaby Class which contains the "fmg" structure of the labyrinth 
+    %   This class contains 3 method useful : f(), m() and g() to describe the evolution of the labyrinth.
     
     properties
+		%> Data Structure of the current state of Labyrinth. \n 
+		%> It contains "wallsV", "wallsH" (2 matrix for the walls), "ghost", "pacman" and "escape" , a Cartesian position of current position of ghost, pacman and escape. \n
+		%> There is also 3 vectors : 'wallsAroundPacman', 'wallsAroundGhost' and 'ghostSeesPacman' A vector indicating the presence of a wall around the Pacman and ghost for the 4 directions Up Down Left Right
         presentState;
         initialState;
     end
@@ -17,6 +30,16 @@ classdef ModelLaby < ModelSED
         
         % Librairie des commandes, vecteur in : Voir le Callback de
         % figure_Laby
+% ======================================================================   
+%> @brief Class constructor of 
+%> @param wallsV_init Contain a matrix (N, N-1) of Initial Vertical Walls.
+%> @param wallsH_init Contain a matrix (N-1, N) of Initial Horizontal Walls.
+%> @param pacman_init Contain a vector (x, y) of Initial Position of Pacman.
+%> @param pacman_init Contain a vector (x, y) of Initial Position of Ghost.
+%> @param escape_init Contain a vector (x, y) of Escape's Position.
+%> @param caught_init Contain a integer of the number of times the Pacman was caught by the ghost.
+%> @return instance of the ModelLaby class.
+% ======================================================================
         function obj = ModelLaby(wallsV_init,wallsH_init,pacman_init,ghost_init,escape_init,caught_init)
             obj.initialState.wallsV =  wallsV_init;
             obj.initialState.wallsH = wallsH_init; 
