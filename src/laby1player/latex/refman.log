@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.11.13)  30 MAR 2018 14:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.11.13)  30 MAR 2018 18:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1274,31 +1274,47 @@ Chapter 4.
 (./class_automate_graph.tex
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 6.29996pt on input line 1.
+<class_automate_graph__coll__graph.pdf, id=1430, pagebox=cropbox, 178.6675pt x 
+211.79124pt>
+File: class_automate_graph__coll__graph.pdf Graphic file (type pdf)
+<use class_automate_graph__coll__graph.pdf>
+Package pdftex.def Info: class_automate_graph__coll__graph.pdf  used on input l
+ine 9. on input line 9.
+Package pdftex.def Info: Requested size: 178.0pt x 211.01189pt on input line 9.
+
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 3.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 12.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 3.
+(Font)              scaled to size 10.79993pt on input line 12.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 10.79993pt on input line 3.
-LaTeX Font Info:    Try loading font information for TS1+phv on input line 6.
+(Font)              scaled to size 10.79993pt on input line 12.
+LaTeX Font Info:    Try loading font information for TS1+phv on input line 15.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 )
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 6.
-LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 8.99994pt on input line 47.
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 57.
+(Font)              scaled to size 8.99994pt on input line 15.
  [7
 
-]
+ <./class_automate_graph__coll__graph.pdf>]
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 8.99994pt on input line 56.
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 66.
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 81.
- [8] [9])
-(./class_automaton.tex [10] [11]) (./classhandle.tex
-<classhandle__inherit__graph.pdf, id=1563, pagebox=cropbox, 425.59pt x 212.795p
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 90.
+ [8] [9]) (./class_automaton.tex
+<class_automaton__coll__graph.pdf, id=1514, pagebox=cropbox, 194.7275pt x 189.7
+0876pt>
+File: class_automaton__coll__graph.pdf Graphic file (type pdf)
+<use class_automaton__coll__graph.pdf>
+Package pdftex.def Info: class_automaton__coll__graph.pdf  used on input line 9
+. on input line 9.
+Package pdftex.def Info: Requested size: 194.0pt x 189.00775pt on input line 9.
+
+ [10] [11 <./class_automaton__coll__graph.pdf>] [12]) (./classhandle.tex
+<classhandle__inherit__graph.pdf, id=1585, pagebox=cropbox, 425.59pt x 212.795p
 t>
 File: classhandle__inherit__graph.pdf Graphic file (type pdf)
 <use classhandle__inherit__graph.pdf>
@@ -1306,10 +1322,21 @@ Package pdftex.def Info: classhandle__inherit__graph.pdf  used on input line 9.
  on input line 9.
 Package pdftex.def Info: Requested size: 350.0pt x 175.00928pt on input line 9.
 
- [12])
-(./class_labyrinthe.tex [13 <./classhandle__inherit__graph.pdf>] [14])
-(./class_model_laby.tex
-<class_model_laby__inherit__graph.pdf, id=1619, pagebox=cropbox, 144.54pt x 212
+ [13])
+(./class_labyrinthe.tex
+<class_labyrinthe__coll__graph.pdf, id=1592, pagebox=cropbox, 186.6975pt x 200.
+75pt>
+File: class_labyrinthe__coll__graph.pdf Graphic file (type pdf)
+<use class_labyrinthe__coll__graph.pdf>
+Package pdftex.def Info: class_labyrinthe__coll__graph.pdf  used on input line 
+9. on input line 9.
+Package pdftex.def Info: Requested size: 186.0pt x 200.0082pt on input line 9.
+ [14 <./classhandle__inherit__graph.pdf> <./class_labyrinthe__coll__graph.pdf
+
+pdfTeX warning: pdflatex (file ./class_labyrinthe__coll__graph.pdf): PDF inclus
+ion: multiple pdfs with page group included in a single page
+>] [15]) (./class_model_laby.tex
+<class_model_laby__inherit__graph.pdf, id=1647, pagebox=cropbox, 144.54pt x 212
 .795pt>
 File: class_model_laby__inherit__graph.pdf Graphic file (type pdf)
 <use class_model_laby__inherit__graph.pdf>
@@ -1317,49 +1344,79 @@ Package pdftex.def Info: class_model_laby__inherit__graph.pdf  used on input li
 ne 14. on input line 14.
 Package pdftex.def Info: Requested size: 144.0pt x 212.01193pt on input line 14
 .
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.09995pt on input line 21.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 21.
-LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.09995pt on input line 21.
- [15 <./class_model_laby__inherit__graph.pdf>]
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 34.
-LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 6.29996pt on input line 34.
-LaTeX Font Info:    Font shape `TS1/phv/m/it' in size <9> not available
-(Font)              Font shape `TS1/phv/m/sl' tried instead on input line 34.
-LaTeX Font Info:    Font shape `TS1/phv/m/sl' will be
-(Font)              scaled to size 8.09995pt on input line 34.
  [16]
-Underfull \hbox (badness 10000) detected at line 68
+<class_model_laby__coll__graph.pdf, id=1652, pagebox=cropbox, 256.96pt x 237.88
+875pt>
+File: class_model_laby__coll__graph.pdf Graphic file (type pdf)
+<use class_model_laby__coll__graph.pdf>
+Package pdftex.def Info: class_model_laby__coll__graph.pdf  used on input line 
+23. on input line 23.
+Package pdftex.def Info: Requested size: 256.0pt x 237.01697pt on input line 23
+.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 8.09995pt on input line 30.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 30.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 8.09995pt on input line 30.
+ [17 <./class_model_laby__inherit__graph.pdf> <./class_model_laby__coll__graph.
+pdf
+
+pdfTeX warning: pdflatex (file ./class_model_laby__coll__graph.pdf): PDF inclus
+ion: multiple pdfs with page group included in a single page
+>]
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 43.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 6.29996pt on input line 43.
+LaTeX Font Info:    Font shape `TS1/phv/m/it' in size <9> not available
+(Font)              Font shape `TS1/phv/m/sl' tried instead on input line 43.
+LaTeX Font Info:    Font shape `TS1/phv/m/sl' will be
+(Font)              scaled to size 8.09995pt on input line 43.
+
+Underfull \hbox (badness 10000) detected at line 77
 [][][]
  []
 
+[18]
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 7.19995pt on input line 87.
+(Font)              scaled to size 7.19995pt on input line 96.
+
 
 LaTeX Font Warning: Font shape `T1/pcr/bc/n' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 87.
+(Font)              using `T1/pcr/m/n' instead on input line 96.
 
-[17]) (./class_model_pacman.tex
-<class_model_pacman__inherit__graph.pdf, id=1673, pagebox=cropbox, 159.59625pt 
+) (./class_model_pacman.tex
+<class_model_pacman__inherit__graph.pdf, id=1705, pagebox=cropbox, 159.59625pt 
 x 212.795pt>
 File: class_model_pacman__inherit__graph.pdf Graphic file (type pdf)
 <use class_model_pacman__inherit__graph.pdf>
 Package pdftex.def Info: class_model_pacman__inherit__graph.pdf  used on input 
 line 9. on input line 9.
 Package pdftex.def Info: Requested size: 159.0pt x 212.0022pt on input line 9.
- [18 <./class_model_pacman__inherit__graph.pdf>]pdfTeX warning (ext4): destinat
-ion with the same identifier (name{class_model_s_e_d_a2d53b5f665cfcf64d482bbfa8
-a6eb098}) has been already used, duplicate ignored
+ [19]
+<class_model_pacman__coll__graph.pdf, id=1713, pagebox=cropbox, 256.96pt x 237.
+88875pt>
+File: class_model_pacman__coll__graph.pdf Graphic file (type pdf)
+<use class_model_pacman__coll__graph.pdf>
+Package pdftex.def Info: class_model_pacman__coll__graph.pdf  used on input lin
+e 18. on input line 18.
+Package pdftex.def Info: Requested size: 256.0pt x 237.01697pt on input line 18
+.
+ [20 <./class_model_pacman__inherit__graph.pdf> <./class_model_pacman__coll__gr
+aph.pdf
+
+pdfTeX warning: pdflatex (file ./class_model_pacman__coll__graph.pdf): PDF incl
+usion: multiple pdfs with page group included in a single page
+>]pdfTeX warning (ext4): destination with the same identifier (name{class_model
+_s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098}) has been already used, duplicate ign
+ored
 <to be read again> 
                    \relax 
-l.54 ..._s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098}}
-                                                   [19])
+l.63 ..._s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098}}
+                                                   [21])
 (./class_model_s_e_d.tex
-<class_model_s_e_d__inherit__graph.pdf, id=1718, pagebox=cropbox, 425.59pt x 21
+<class_model_s_e_d__inherit__graph.pdf, id=1763, pagebox=cropbox, 425.59pt x 21
 2.795pt>
 File: class_model_s_e_d__inherit__graph.pdf Graphic file (type pdf)
 <use class_model_s_e_d__inherit__graph.pdf>
@@ -1367,15 +1424,27 @@ Package pdftex.def Info: class_model_s_e_d__inherit__graph.pdf  used on input l
 ine 9. on input line 9.
 Package pdftex.def Info: Requested size: 350.0pt x 175.00928pt on input line 9.
 
- [20 <./class_model_s_e_d__inherit__graph.pdf>]pdfTeX warning (ext4): destinati
-on with the same identifier (name{class_model_s_e_d_a2d53b5f665cfcf64d482bbfa8a
-6eb098}) has been already used, duplicate ignored
+<class_model_s_e_d__coll__graph.pdf, id=1764, pagebox=cropbox, 216.81pt x 178.6
+675pt>
+File: class_model_s_e_d__coll__graph.pdf Graphic file (type pdf)
+<use class_model_s_e_d__coll__graph.pdf>
+Package pdftex.def Info: class_model_s_e_d__coll__graph.pdf  used on input line
+ 18. on input line 18.
+Package pdftex.def Info: Requested size: 216.0pt x 178.01003pt on input line 18
+.
+ [22] [23 <./class_model_s_e_d__inherit__graph.pdf> <./class_model_s_e_d__coll_
+_graph.pdf
+
+pdfTeX warning: pdflatex (file ./class_model_s_e_d__coll__graph.pdf): PDF inclu
+sion: multiple pdfs with page group included in a single page
+>]pdfTeX warning (ext4): destination with the same identifier (name{class_model
+_s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098}) has been already used, duplicate ign
+ored
 <to be read again> 
                    \relax 
-l.41 ..._s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098}}
+l.50 ..._s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098}}
                                                   ) (./class_model_walls.tex
-[21]
-<class_model_walls__inherit__graph.pdf, id=1752, pagebox=cropbox, 148.555pt x 2
+<class_model_walls__inherit__graph.pdf, id=1802, pagebox=cropbox, 148.555pt x 2
 12.795pt>
 File: class_model_walls__inherit__graph.pdf Graphic file (type pdf)
 <use class_model_walls__inherit__graph.pdf>
@@ -1383,21 +1452,36 @@ Package pdftex.def Info: class_model_walls__inherit__graph.pdf  used on input l
 ine 9. on input line 9.
 Package pdftex.def Info: Requested size: 148.0pt x 212.00868pt on input line 9.
 
- [22 <./class_model_walls__inherit__graph.pdf>]pdfTeX warning (ext4): destinati
-on with the same identifier (name{class_model_s_e_d_ac36f9451c43b120828af438085
-8f2024}) has been already used, duplicate ignored
+
+[24]
+<class_model_walls__coll__graph.pdf, id=1809, pagebox=cropbox, 256.96pt x 259.9
+7125pt>
+File: class_model_walls__coll__graph.pdf Graphic file (type pdf)
+<use class_model_walls__coll__graph.pdf>
+Package pdftex.def Info: class_model_walls__coll__graph.pdf  used on input line
+ 18. on input line 18.
+Package pdftex.def Info: Requested size: 256.0pt x 259.01857pt on input line 18
+.
+ [25 <./class_model_walls__inherit__graph.pdf> <./class_model_walls__coll__grap
+h.pdf
+
+pdfTeX warning: pdflatex (file ./class_model_walls__coll__graph.pdf): PDF inclu
+sion: multiple pdfs with page group included in a single page
+>]pdfTeX warning (ext4): destination with the same identifier (name{class_model
+_s_e_d_ac36f9451c43b120828af4380858f2024}) has been already used, duplicate ign
+ored
 <to be read again> 
                    \relax 
-l.50 ..._s_e_d_ac36f9451c43b120828af4380858f2024}}
+l.59 ..._s_e_d_ac36f9451c43b120828af4380858f2024}}
                                                   pdfTeX warning (ext4): destin
 ation with the same identifier (name{class_model_s_e_d_a2d53b5f665cfcf64d482bbf
 a8a6eb098}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.66 ..._s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098}}
-                                                   [23])
+l.75 ..._s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098}}
+                                                   [26])
 (./class_stop_condition.tex
-<class_stop_condition__inherit__graph.pdf, id=1800, pagebox=cropbox, 158.5925pt
+<class_stop_condition__inherit__graph.pdf, id=1865, pagebox=cropbox, 158.5925pt
  x 212.795pt>
 File: class_stop_condition__inherit__graph.pdf Graphic file (type pdf)
 <use class_stop_condition__inherit__graph.pdf>
@@ -1405,44 +1489,134 @@ Package pdftex.def Info: class_stop_condition__inherit__graph.pdf  used on inpu
 t line 9. on input line 9.
 Package pdftex.def Info: Requested size: 158.0pt x 212.01843pt on input line 9.
 
- [24]pdfTeX warning (ext4): destination with the same identifier (name{class_mo
-del_s_e_d_ac36f9451c43b120828af4380858f2024}) has been already used, duplicate 
-ignored
+ [27]
+<class_stop_condition__coll__graph.pdf, id=1870, pagebox=cropbox, 256.96pt x 23
+7.88875pt>
+File: class_stop_condition__coll__graph.pdf Graphic file (type pdf)
+<use class_stop_condition__coll__graph.pdf>
+Package pdftex.def Info: class_stop_condition__coll__graph.pdf  used on input l
+ine 18. on input line 18.
+Package pdftex.def Info: Requested size: 256.0pt x 237.01697pt on input line 18
+.
+ [28 <./class_stop_condition__inherit__graph.pdf> <./class_stop_condition__coll
+__graph.pdf
+
+pdfTeX warning: pdflatex (file ./class_stop_condition__coll__graph.pdf): PDF in
+clusion: multiple pdfs with page group included in a single page
+>]pdfTeX warning (ext4): destination with the same identifier (name{class_model
+_s_e_d_ac36f9451c43b120828af4380858f2024}) has been already used, duplicate ign
+ored
 <to be read again> 
                    \relax 
-l.46 ..._s_e_d_ac36f9451c43b120828af4380858f2024}}
-                                                   [25 <./class_stop_condition_
-_inherit__graph.pdf>]pdfTeX warning (ext4): destination with the same identifie
-r (name{class_model_s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098}) has been already 
-used, duplicate ignored
+l.55 ..._s_e_d_ac36f9451c43b120828af4380858f2024}}
+                                                  pdfTeX warning (ext4): destin
+ation with the same identifier (name{class_model_s_e_d_a2d53b5f665cfcf64d482bbf
+a8a6eb098}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.62 ..._s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098}}
-                                                  ) (./class_wrapper.tex
-[26] [27] [28] [29]) [30]
+l.71 ..._s_e_d_a2d53b5f665cfcf64d482bbfa8a6eb098}}
+                                                   [29]) (./class_wrapper.tex
+<class_wrapper__coll__graph.pdf, id=1921, pagebox=cropbox, 186.6975pt x 278.038
+76pt>
+File: class_wrapper__coll__graph.pdf Graphic file (type pdf)
+<use class_wrapper__coll__graph.pdf>
+Package pdftex.def Info: class_wrapper__coll__graph.pdf  used on input line 9. 
+on input line 9.
+Package pdftex.def Info: Requested size: 186.0pt x 277.01137pt on input line 9.
+
+
+[30] [31 <./class_wrapper__coll__graph.pdf>] [32] [33]) [34]
 Chapter 5.
 (./_automate_graph_8m.tex) (./main_laby_8m.tex)
 (./_automaton_scheduling_creation_8m.tex)
 (./_automaton_struture_laby_creation_8m.tex)
-(./_automaton_walls_contraints_creation_8m.tex [31
+(./_automaton_walls_contraints_creation_8m.tex [35
 
 ]) (./generer__lab_8m.tex)
-(./model_generator_8m.tex) (./_plan__desuma_functions_8m.tex [32])
-(./_save_d_e_s_u_m_a_file_8m.tex [33]) (./write_states_8m.tex)
-(./write_transitions_8m.tex [34]) (./creation_matricetransition_8m.tex)
+(./model_generator_8m.tex) (./_plan__desuma_functions_8m.tex [36])
+(./_save_d_e_s_u_m_a_file_8m.tex [37]) (./write_states_8m.tex)
+(./write_transitions_8m.tex [38]) (./creation_matricetransition_8m.tex)
 (./get_state_transition_f_s_m_8m.tex) (./get_state_transition_t_x_t_8m.tex
-[35]) (./automaton_2optimal_command_2main_8m.tex) (./main_8m.tex)
-(./optimal_command_8m.tex) (./_parcourir_matrices_transitions_8m.tex [36])
+[39]) (./automaton_2optimal_command_2main_8m.tex) (./main_8m.tex)
+(./optimal_command_8m.tex) (./_parcourir_matrices_transitions_8m.tex [40])
 (./rafine_automaton_8m.tex) (./rafine_automaton_class_8m.tex)
-(./_parrallel_composition_8m.tex) (./_automaton_8m.tex [37])
+(./_parrallel_composition_8m.tex) (./_automaton_8m.tex [41])
 (./_labyrinthe_8m.tex) (./modi__main_8m.tex)
 (./_create_pitures_and_video_8m.tex)
-(./_create_pitures_and_video__textured_8m.tex [38]) (./figure___laby_8m.tex
-[39] [40] [41]) (./_model_laby_8m.tex) (./_model_pacman_8m.tex [42])
-(./_model_s_e_d_8m.tex) (./_model_walls_8m.tex) (./set_color_8m.tex)
-(./_simulation_8m.tex) (./_stop_condition_8m.tex) (./test_u_i_8m.tex)
-(./_t_h_eplan_8m.tex [43]) (./visupacman_8m.tex) (./visupacman2_8m.tex)
-(./walls_border_8m.tex) (./_wrapper_8m.tex) [44] (./refman.ind
+(./_create_pitures_and_video__textured_8m.tex [42]) (./figure___laby_8m.tex
+[43]
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
+
+ []
+
+<img_fig_lab.png, id=2226, 452.04884pt x 384.4764pt>
+File: img_fig_lab.png Graphic file (type png)
+<use img_fig_lab.png>
+Package pdftex.def Info: img_fig_lab.png  used on input line 58. on input line 
+58.
+Package pdftex.def Info: Requested size: 227.62204pt x 193.59291pt on input lin
+e 58.
+LaTeX Font Info:    Font shape `TS1/phv/bx/n' in size <10> not available
+(Font)              Font shape `TS1/phv/b/n' tried instead on input line 59.
+LaTeX Font Info:    Font shape `TS1/phv/b/n' will be
+(Font)              scaled to size 8.99994pt on input line 59.
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
+
+ []
+
+[44 <./img_fig_lab.png>] [45]
+Underfull \hbox (badness 10000) detected at line 86
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 104
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 124
+[][][]
+ []
+
+[46]
+Underfull \hbox (badness 10000) detected at line 142
+[][][]
+ []
+
+[47]
+Underfull \hbox (badness 10000) detected at line 185
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--211
+
+ []
+
+File: img_fig_lab.png Graphic file (type png)
+<use img_fig_lab.png>
+Package pdftex.def Info: img_fig_lab.png  used on input line 213. on input line
+ 213.
+Package pdftex.def Info: Requested size: 284.52756pt x 242.00433pt on input lin
+e 213.
+[48] [49] [50]
+<obj_dynamic.png, id=2293, 562.1pt x 421.575pt>
+File: obj_dynamic.png Graphic file (type png)
+<use obj_dynamic.png>
+Package pdftex.def Info: obj_dynamic.png  used on input line 298. on input line
+ 298.
+Package pdftex.def Info: Requested size: 227.62204pt x 170.71764pt on input lin
+e 298.
+) (./_model_laby_8m.tex [51 <./obj_dynamic.png>])
+(./_model_pacman_8m.tex) (./_model_s_e_d_8m.tex) (./_model_walls_8m.tex)
+(./set_color_8m.tex) (./_simulation_8m.tex) (./_stop_condition_8m.tex)
+(./test_u_i_8m.tex) (./_t_h_eplan_8m.tex [52]) (./visupacman_8m.tex)
+(./visupacman2_8m.tex) (./walls_border_8m.tex) (./_wrapper_8m.tex) [53]
+[54
+
+] (./refman.ind
 Underfull \hbox (badness 10000) in paragraph at lines 39--41
 []| \T1/phv/m/n/10 Creation[]Fonction[]Transition[]Ensemble[]Des[]Parties,
  []
@@ -1484,18 +1658,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--84
 []\T1/phv/m/n/10 automaton/optimal[]Command/rafine[]Automaton[]Class.[]m,
  []
 
-[45
+[55
 
 
-
-] [46] [47] [48])
+] [56] [57] [58])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 209.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 209.
  (./refman.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 209.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 209.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 31CF3040BC5A33F79D1179746A3072E6;52246.
+(rerunfilecheck)             Checksum: 4173469ACD8A5B3104C4376710F8C409;52246.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1506,25 +1679,32 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 209.
  ) 
 Here is how much of TeX's memory you used:
- 15830 strings out of 492990
- 237781 string characters out of 6135004
- 324945 words of memory out of 5000000
- 18522 multiletter control sequences out of 15000+600000
- 63558 words of font info for 70 fonts, out of 8000000 for 9000
+ 15939 strings out of 492990
+ 240418 string characters out of 6135004
+ 325208 words of memory out of 5000000
+ 18581 multiletter control sequences out of 15000+600000
+ 63870 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 53i,16n,92p,1181b,564s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,16n,92p,1181b,630s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
-w/courier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/u
-hvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (60 pages, 247664 bytes).
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/urw/helvetic/uhvb8ac.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/hel
+vetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8
+a.pfb>
+Output written on refman.pdf (70 pages, 383712 bytes).
 PDF statistics:
- 2661 PDF objects out of 2984 (max. 8388607)
- 2553 compressed objects within 26 object streams
- 518 named destinations out of 1000 (max. 500000)
- 1935 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2831 PDF objects out of 2984 (max. 8388607)
+ 2683 compressed objects within 27 object streams
+ 555 named destinations out of 1000 (max. 500000)
+ 1990 words of extra memory for PDF output out of 10000 (max. 10000000)
 

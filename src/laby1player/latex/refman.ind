@@ -7,472 +7,472 @@
   \item {add\+Word2\+Langage}
     \subitem {Automate\+Graph}, \hyperpage{8}
   \item {affichage}
-    \subitem {Labyrinthe}, \hyperpage{14}
+    \subitem {Labyrinthe}, \hyperpage{15}
   \item {Ajout\+Transition\+Stable}
-    \subitem {Automaton}, \hyperpage{11}
+    \subitem {Automaton}, \hyperpage{12}
   \item {Automate\+Accessible}
-    \subitem {Automaton}, \hyperpage{11}
+    \subitem {Automaton}, \hyperpage{12}
   \item {Automate\+Accessible\+Incertain}
-    \subitem {Automaton}, \hyperpage{11}
+    \subitem {Automaton}, \hyperpage{12}
   \item {Automate\+Graph}, \hyperpage{7}
     \subitem {accessibility\+Automate}, \hyperpage{8}
     \subitem {adapt\+Tour\+Langage}, \hyperpage{8}
     \subitem {add\+Word2\+Langage}, \hyperpage{8}
-    \subitem {Automate\+Graph}, \hyperpage{7}
+    \subitem {Automate\+Graph}, \hyperpage{8}
     \subitem {export2\+D\+E\+S\+U\+MA}, \hyperpage{8}
-    \subitem {F\+S\+M2\+Automata}, \hyperpage{8}
-    \subitem {langage}, \hyperpage{9}
-    \subitem {matrices2vector}, \hyperpage{8}
-    \subitem {matrix\+Trans}, \hyperpage{9}
-    \subitem {Path\+Researche}, \hyperpage{8}
-    \subitem {state}, \hyperpage{9}
+    \subitem {F\+S\+M2\+Automata}, \hyperpage{9}
+    \subitem {langage}, \hyperpage{10}
+    \subitem {matrices2vector}, \hyperpage{9}
+    \subitem {matrix\+Trans}, \hyperpage{10}
+    \subitem {Path\+Researche}, \hyperpage{9}
+    \subitem {state}, \hyperpage{10}
     \subitem {struct\+Automata2vector\+Automata}, \hyperpage{9}
     \subitem {transition}, \hyperpage{10}
     \subitem {vector}, \hyperpage{10}
     \subitem {vector2matrices}, \hyperpage{9}
     \subitem {vector2struct\+Automata}, \hyperpage{9}
-  \item {Automaton}, \hyperpage{10}
-    \subitem {Ajout\+Transition\+Stable}, \hyperpage{11}
-    \subitem {Automate\+Accessible}, \hyperpage{11}
-    \subitem {Automate\+Accessible\+Incertain}, \hyperpage{11}
-    \subitem {Automaton}, \hyperpage{10}
+  \item {Automaton}, \hyperpage{11}
+    \subitem {Ajout\+Transition\+Stable}, \hyperpage{12}
+    \subitem {Automate\+Accessible}, \hyperpage{12}
+    \subitem {Automate\+Accessible\+Incertain}, \hyperpage{12}
+    \subitem {Automaton}, \hyperpage{11}
     \subitem {Creation\+Fonction\+Transition\+Ensemble\+Des\+Parties}, 
-		\hyperpage{11}
-    \subitem {Ensemble2\+Etats}, \hyperpage{11}
-    \subitem {Ensembles\+Contenant\+Etat}, \hyperpage{11}
-    \subitem {Etats2\+Ensemble}, \hyperpage{12}
-    \subitem {Evolution}, \hyperpage{12}
-    \subitem {Fct}, \hyperpage{12}
-    \subitem {Matrices\+Transition}, \hyperpage{12}
-    \subitem {Noms\+Evenements}, \hyperpage{12}
-    \subitem {Path\+Researche}, \hyperpage{12}
-  \item {automaton/\+Automate\+Graph.\+m}, \hyperpage{31}
-  \item {automaton/\+Parrallel\+Composition.\+m}, \hyperpage{37}
-  \item {automaton/main\+Laby.\+m}, \hyperpage{31}
+		\hyperpage{12}
+    \subitem {Ensemble2\+Etats}, \hyperpage{12}
+    \subitem {Ensembles\+Contenant\+Etat}, \hyperpage{12}
+    \subitem {Etats2\+Ensemble}, \hyperpage{13}
+    \subitem {Evolution}, \hyperpage{13}
+    \subitem {Fct}, \hyperpage{13}
+    \subitem {Matrices\+Transition}, \hyperpage{13}
+    \subitem {Noms\+Evenements}, \hyperpage{13}
+    \subitem {Path\+Researche}, \hyperpage{13}
+  \item {automaton/\+Automate\+Graph.\+m}, \hyperpage{35}
+  \item {automaton/\+Parrallel\+Composition.\+m}, \hyperpage{41}
+  \item {automaton/main\+Laby.\+m}, \hyperpage{35}
   \item {automaton/model\+Generator/\+Automaton\+Scheduling\+Creation.\+m}, 
-		\hyperpage{31}
+		\hyperpage{35}
   \item {automaton/model\+Generator/\+Automaton\+Struture\+Laby\+Creation.\+m}, 
-		\hyperpage{31}
+		\hyperpage{35}
   \item {automaton/model\+Generator/\+Automaton\+Walls\+Contraints\+Creation.\+m}, 
-		\hyperpage{32}
+		\hyperpage{36}
   \item {automaton/model\+Generator/\+Plan\+\_\+desuma\+Functions.\+m}, 
-		\hyperpage{33}
+		\hyperpage{37}
   \item {automaton/model\+Generator/\+Save\+D\+E\+S\+U\+M\+A\+File.\+m}, 
-		\hyperpage{34}
+		\hyperpage{38}
   \item {automaton/model\+Generator/generer\+\_\+lab.\+m}, 
-		\hyperpage{32}
+		\hyperpage{36}
   \item {automaton/model\+Generator/model\+Generator.\+m}, 
-		\hyperpage{33}
-  \item {automaton/model\+Generator/write\+States.\+m}, \hyperpage{34}
+		\hyperpage{37}
+  \item {automaton/model\+Generator/write\+States.\+m}, \hyperpage{38}
   \item {automaton/model\+Generator/write\+Transitions.\+m}, 
-		\hyperpage{35}
+		\hyperpage{39}
   \item {automaton/optimal\+Command/\+Parcourir\+Matrices\+Transitions.\+m}, 
-		\hyperpage{37}
+		\hyperpage{41}
   \item {automaton/optimal\+Command/creation\+Matricetransition.\+m}, 
-		\hyperpage{35}
+		\hyperpage{39}
   \item {automaton/optimal\+Command/get\+State\+Transition\+F\+S\+M.\+m}, 
-		\hyperpage{35}
+		\hyperpage{39}
   \item {automaton/optimal\+Command/get\+State\+Transition\+T\+X\+T.\+m}, 
-		\hyperpage{36}
-  \item {automaton/optimal\+Command/main.\+m}, \hyperpage{36}
+		\hyperpage{40}
+  \item {automaton/optimal\+Command/main.\+m}, \hyperpage{40}
   \item {automaton/optimal\+Command/optimal\+Command.\+m}, 
-		\hyperpage{36}
+		\hyperpage{40}
   \item {automaton/optimal\+Command/rafine\+Automaton.\+m}, 
-		\hyperpage{37}
+		\hyperpage{41}
   \item {automaton/optimal\+Command/rafine\+Automaton\+Class.\+m}, 
-		\hyperpage{37}
-  \item {automaton\+\_\+nd/\+Automaton.\+m}, \hyperpage{38}
-  \item {automaton\+\_\+nd/\+Labyrinthe.\+m}, \hyperpage{38}
-  \item {automaton\+\_\+nd/modi\+\_\+main.\+m}, \hyperpage{38}
+		\hyperpage{41}
+  \item {automaton\+\_\+nd/\+Automaton.\+m}, \hyperpage{42}
+  \item {automaton\+\_\+nd/\+Labyrinthe.\+m}, \hyperpage{42}
+  \item {automaton\+\_\+nd/modi\+\_\+main.\+m}, \hyperpage{42}
   \item {Automaton\+Scheduling\+Creation.\+m}
-    \subitem {function}, \hyperpage{31}
+    \subitem {function}, \hyperpage{35}
   \item {Automaton\+Struture\+Laby\+Creation}
-    \subitem {Automaton\+Struture\+Laby\+Creation.\+m}, \hyperpage{32}
-    \subitem {Plan\+\_\+desuma\+Functions.\+m}, \hyperpage{33}
+    \subitem {Automaton\+Struture\+Laby\+Creation.\+m}, \hyperpage{36}
+    \subitem {Plan\+\_\+desuma\+Functions.\+m}, \hyperpage{37}
   \item {Automaton\+Struture\+Laby\+Creation.\+m}
-    \subitem {Automaton\+Struture\+Laby\+Creation}, \hyperpage{32}
+    \subitem {Automaton\+Struture\+Laby\+Creation}, \hyperpage{36}
   \item {Automaton\+Walls\+Contraints\+Creation}
     \subitem {Automaton\+Walls\+Contraints\+Creation.\+m}, 
-		\hyperpage{32}
+		\hyperpage{36}
   \item {Automaton\+Walls\+Contraints\+Creation.\+m}
-    \subitem {Automaton\+Walls\+Contraints\+Creation}, \hyperpage{32}
+    \subitem {Automaton\+Walls\+Contraints\+Creation}, \hyperpage{36}
 
   \indexspace
 
   \item {command\+Pacman}
-    \subitem {Wrapper}, \hyperpage{29}
+    \subitem {Wrapper}, \hyperpage{33}
   \item {command\+Walls}
-    \subitem {Wrapper}, \hyperpage{29}
+    \subitem {Wrapper}, \hyperpage{33}
   \item {connect\+\_\+\+Callback}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{39}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{44}
   \item {Create\+Pitures\+And\+Video}
-    \subitem {Create\+Pitures\+And\+Video.\+m}, \hyperpage{38}
-  \item {Create\+Pitures\+And\+Video.\+m}, \hyperpage{38}
-    \subitem {Create\+Pitures\+And\+Video}, \hyperpage{38}
+    \subitem {Create\+Pitures\+And\+Video.\+m}, \hyperpage{42}
+  \item {Create\+Pitures\+And\+Video.\+m}, \hyperpage{42}
+    \subitem {Create\+Pitures\+And\+Video}, \hyperpage{42}
   \item {Create\+Pitures\+And\+Video\+\_\+textured}
     \subitem {Create\+Pitures\+And\+Video\+\_\+textured.\+m}, 
-		\hyperpage{39}
-  \item {Create\+Pitures\+And\+Video\+\_\+textured.\+m}, \hyperpage{39}
+		\hyperpage{43}
+  \item {Create\+Pitures\+And\+Video\+\_\+textured.\+m}, \hyperpage{43}
     \subitem {Create\+Pitures\+And\+Video\+\_\+textured}, 
-		\hyperpage{39}
+		\hyperpage{43}
   \item {create\+U\+I\+Escape}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{40}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{44}
   \item {create\+U\+I\+Pacman}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{40}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{46}
   \item {create\+U\+I\+Walls}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{40}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{46}
   \item {Creation\+Fonction\+Transition\+Ensemble\+Des\+Parties}
-    \subitem {Automaton}, \hyperpage{11}
+    \subitem {Automaton}, \hyperpage{12}
   \item {creation\+Matricetransition}
-    \subitem {creation\+Matricetransition.\+m}, \hyperpage{35}
+    \subitem {creation\+Matricetransition.\+m}, \hyperpage{39}
   \item {creation\+Matricetransition.\+m}
-    \subitem {creation\+Matricetransition}, \hyperpage{35}
+    \subitem {creation\+Matricetransition}, \hyperpage{39}
 
   \indexspace
 
   \item {Ensemble2\+Etats}
-    \subitem {Automaton}, \hyperpage{11}
+    \subitem {Automaton}, \hyperpage{12}
   \item {Ensembles\+Contenant\+Etat}
-    \subitem {Automaton}, \hyperpage{11}
+    \subitem {Automaton}, \hyperpage{12}
   \item {Etats2\+Ensemble}
-    \subitem {Automaton}, \hyperpage{12}
+    \subitem {Automaton}, \hyperpage{13}
   \item {Etats\+\_\+\+Finaux}
-    \subitem {Labyrinthe}, \hyperpage{14}
+    \subitem {Labyrinthe}, \hyperpage{16}
   \item {Etats\+\_\+\+Initiaux}
-    \subitem {Labyrinthe}, \hyperpage{15}
+    \subitem {Labyrinthe}, \hyperpage{16}
   \item {Evolution}
-    \subitem {Automaton}, \hyperpage{12}
+    \subitem {Automaton}, \hyperpage{13}
   \item {export2\+D\+E\+S\+U\+MA}
     \subitem {Automate\+Graph}, \hyperpage{8}
 
   \indexspace
 
   \item {f}
-    \subitem {Model\+Laby}, \hyperpage{17}
-    \subitem {Model\+Pacman}, \hyperpage{19}
-    \subitem {Model\+S\+ED}, \hyperpage{21}
-    \subitem {Model\+Walls}, \hyperpage{23}
-    \subitem {Stop\+Condition}, \hyperpage{25, 26}
+    \subitem {Model\+Laby}, \hyperpage{18}
+    \subitem {Model\+Pacman}, \hyperpage{21}
+    \subitem {Model\+S\+ED}, \hyperpage{23}
+    \subitem {Model\+Walls}, \hyperpage{26}
+    \subitem {Stop\+Condition}, \hyperpage{29}
   \item {F\+S\+M2\+Automata}
-    \subitem {Automate\+Graph}, \hyperpage{8}
+    \subitem {Automate\+Graph}, \hyperpage{9}
   \item {Fct}
-    \subitem {Automaton}, \hyperpage{12}
+    \subitem {Automaton}, \hyperpage{13}
   \item {figure\+\_\+\+Laby}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{40}
-  \item {figure\+\_\+\+Laby.\+m}, \hyperpage{39}
-    \subitem {connect\+\_\+\+Callback}, \hyperpage{39}
-    \subitem {create\+U\+I\+Escape}, \hyperpage{40}
-    \subitem {create\+U\+I\+Pacman}, \hyperpage{40}
-    \subitem {create\+U\+I\+Walls}, \hyperpage{40}
-    \subitem {figure\+\_\+\+Laby}, \hyperpage{40}
-    \subitem {figure\+\_\+\+Laby\+\_\+\+Opening\+Fcn}, \hyperpage{40}
-    \subitem {figure\+\_\+\+Laby\+\_\+\+Output\+Fcn}, \hyperpage{40}
-    \subitem {is\+One}, \hyperpage{41}
-    \subitem {reset\+U\+I\+Connection}, \hyperpage{41}
-    \subitem {ui\+\_\+\+Callback}, \hyperpage{41}
-    \subitem {update\+Presence\+Detector\+Display}, \hyperpage{41}
-    \subitem {update\+U\+I\+Active\+Cammand}, \hyperpage{41}
-    \subitem {update\+U\+I\+Button}, \hyperpage{42}
-    \subitem {update\+U\+I\+Escape}, \hyperpage{42}
-    \subitem {update\+U\+I\+Player}, \hyperpage{42}
-    \subitem {update\+U\+I\+Walls}, \hyperpage{42}
-    \subitem {update\+U\+I\+Walls\+Around}, \hyperpage{42}
-    \subitem {update\+UI}, \hyperpage{41}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{46}
+  \item {figure\+\_\+\+Laby.\+m}, \hyperpage{43}
+    \subitem {connect\+\_\+\+Callback}, \hyperpage{44}
+    \subitem {create\+U\+I\+Escape}, \hyperpage{44}
+    \subitem {create\+U\+I\+Pacman}, \hyperpage{46}
+    \subitem {create\+U\+I\+Walls}, \hyperpage{46}
+    \subitem {figure\+\_\+\+Laby}, \hyperpage{46}
+    \subitem {figure\+\_\+\+Laby\+\_\+\+Opening\+Fcn}, \hyperpage{47}
+    \subitem {figure\+\_\+\+Laby\+\_\+\+Output\+Fcn}, \hyperpage{47}
+    \subitem {is\+One}, \hyperpage{48}
+    \subitem {reset\+U\+I\+Connection}, \hyperpage{48}
+    \subitem {ui\+\_\+\+Callback}, \hyperpage{48}
+    \subitem {update\+Presence\+Detector\+Display}, \hyperpage{49}
+    \subitem {update\+U\+I\+Active\+Cammand}, \hyperpage{50}
+    \subitem {update\+U\+I\+Button}, \hyperpage{50}
+    \subitem {update\+U\+I\+Escape}, \hyperpage{50}
+    \subitem {update\+U\+I\+Player}, \hyperpage{50}
+    \subitem {update\+U\+I\+Walls}, \hyperpage{51}
+    \subitem {update\+U\+I\+Walls\+Around}, \hyperpage{51}
+    \subitem {update\+UI}, \hyperpage{49}
   \item {figure\+\_\+\+Laby\+\_\+\+Opening\+Fcn}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{40}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{47}
   \item {figure\+\_\+\+Laby\+\_\+\+Output\+Fcn}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{40}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{47}
   \item {function}
-    \subitem {Automaton\+Scheduling\+Creation.\+m}, \hyperpage{31}
-    \subitem {Plan\+\_\+desuma\+Functions.\+m}, \hyperpage{33}
+    \subitem {Automaton\+Scheduling\+Creation.\+m}, \hyperpage{35}
+    \subitem {Plan\+\_\+desuma\+Functions.\+m}, \hyperpage{37}
 
   \indexspace
 
   \item {g}
-    \subitem {Model\+Laby}, \hyperpage{17}
-    \subitem {Model\+Pacman}, \hyperpage{19}
-    \subitem {Model\+S\+ED}, \hyperpage{21}
-    \subitem {Model\+Walls}, \hyperpage{23}
-    \subitem {Stop\+Condition}, \hyperpage{26}
+    \subitem {Model\+Laby}, \hyperpage{19}
+    \subitem {Model\+Pacman}, \hyperpage{21}
+    \subitem {Model\+S\+ED}, \hyperpage{24}
+    \subitem {Model\+Walls}, \hyperpage{26}
+    \subitem {Stop\+Condition}, \hyperpage{29}
   \item {generer\+\_\+lab}
-    \subitem {generer\+\_\+lab.\+m}, \hyperpage{32}
+    \subitem {generer\+\_\+lab.\+m}, \hyperpage{36}
   \item {generer\+\_\+lab.\+m}
-    \subitem {generer\+\_\+lab}, \hyperpage{32}
+    \subitem {generer\+\_\+lab}, \hyperpage{36}
   \item {get\+\_\+out}
-    \subitem {Wrapper}, \hyperpage{28}
+    \subitem {Wrapper}, \hyperpage{32}
   \item {get\+\_\+stop}
-    \subitem {Wrapper}, \hyperpage{28}
+    \subitem {Wrapper}, \hyperpage{32}
   \item {get\+State\+Transition\+F\+S\+M.\+m}
-    \subitem {get\+State\+Transition\+F\+SM}, \hyperpage{35}
+    \subitem {get\+State\+Transition\+F\+SM}, \hyperpage{39}
   \item {get\+State\+Transition\+F\+SM}
-    \subitem {get\+State\+Transition\+F\+S\+M.\+m}, \hyperpage{35}
+    \subitem {get\+State\+Transition\+F\+S\+M.\+m}, \hyperpage{39}
   \item {get\+State\+Transition\+T\+X\+T.\+m}
-    \subitem {get\+State\+Transition\+T\+XT}, \hyperpage{36}
+    \subitem {get\+State\+Transition\+T\+XT}, \hyperpage{40}
   \item {get\+State\+Transition\+T\+XT}
-    \subitem {get\+State\+Transition\+T\+X\+T.\+m}, \hyperpage{36}
+    \subitem {get\+State\+Transition\+T\+X\+T.\+m}, \hyperpage{40}
 
   \indexspace
 
-  \item {handle}, \hyperpage{13}
+  \item {handle}, \hyperpage{14}
 
   \indexspace
 
   \item {i}
-    \subitem {Model\+Walls}, \hyperpage{24}
+    \subitem {Model\+Walls}, \hyperpage{27}
   \item {in}
-    \subitem {Wrapper}, \hyperpage{29}
+    \subitem {Wrapper}, \hyperpage{33}
   \item {incertain}
-    \subitem {Labyrinthe}, \hyperpage{14}
+    \subitem {Labyrinthe}, \hyperpage{15}
   \item {init}
-    \subitem {Wrapper}, \hyperpage{28}
+    \subitem {Wrapper}, \hyperpage{32}
   \item {initial\+State}
-    \subitem {Model\+Laby}, \hyperpage{17}
-    \subitem {Model\+Pacman}, \hyperpage{20}
-    \subitem {Model\+S\+ED}, \hyperpage{21}
-    \subitem {Model\+Walls}, \hyperpage{24}
-    \subitem {Stop\+Condition}, \hyperpage{26}
+    \subitem {Model\+Laby}, \hyperpage{19}
+    \subitem {Model\+Pacman}, \hyperpage{22}
+    \subitem {Model\+S\+ED}, \hyperpage{24}
+    \subitem {Model\+Walls}, \hyperpage{27}
+    \subitem {Stop\+Condition}, \hyperpage{30}
   \item {is\+One}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{41}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{48}
 
   \indexspace
 
   \item {jusqu\+\_\+au\+\_\+mur}
-    \subitem {Labyrinthe}, \hyperpage{14}
+    \subitem {Labyrinthe}, \hyperpage{15}
 
   \indexspace
 
-  \item {Labyrinthe}, \hyperpage{13}
-    \subitem {affichage}, \hyperpage{14}
-    \subitem {Etats\+\_\+\+Finaux}, \hyperpage{14}
-    \subitem {Etats\+\_\+\+Initiaux}, \hyperpage{15}
-    \subitem {incertain}, \hyperpage{14}
-    \subitem {jusqu\+\_\+au\+\_\+mur}, \hyperpage{14}
-    \subitem {Labyrinthe}, \hyperpage{14}
-    \subitem {Murs\+Horizontaux}, \hyperpage{15}
-    \subitem {Murs\+Verticaux}, \hyperpage{15}
-    \subitem {Pas\+\_\+a\+\_\+pas}, \hyperpage{14}
+  \item {Labyrinthe}, \hyperpage{14}
+    \subitem {affichage}, \hyperpage{15}
+    \subitem {Etats\+\_\+\+Finaux}, \hyperpage{16}
+    \subitem {Etats\+\_\+\+Initiaux}, \hyperpage{16}
+    \subitem {incertain}, \hyperpage{15}
+    \subitem {jusqu\+\_\+au\+\_\+mur}, \hyperpage{15}
+    \subitem {Labyrinthe}, \hyperpage{15}
+    \subitem {Murs\+Horizontaux}, \hyperpage{16}
+    \subitem {Murs\+Verticaux}, \hyperpage{16}
+    \subitem {Pas\+\_\+a\+\_\+pas}, \hyperpage{16}
   \item {langage}
-    \subitem {Automate\+Graph}, \hyperpage{9}
+    \subitem {Automate\+Graph}, \hyperpage{10}
 
   \indexspace
 
   \item {m}
-    \subitem {Model\+Laby}, \hyperpage{17}
-    \subitem {Model\+Pacman}, \hyperpage{19}
-    \subitem {Model\+S\+ED}, \hyperpage{21}
-    \subitem {Model\+Walls}, \hyperpage{23}
-    \subitem {Stop\+Condition}, \hyperpage{26}
-  \item {main.\+m}, \hyperpage{36}
+    \subitem {Model\+Laby}, \hyperpage{19}
+    \subitem {Model\+Pacman}, \hyperpage{22}
+    \subitem {Model\+S\+ED}, \hyperpage{24}
+    \subitem {Model\+Walls}, \hyperpage{27}
+    \subitem {Stop\+Condition}, \hyperpage{30}
+  \item {main.\+m}, \hyperpage{40}
   \item {matrices2vector}
-    \subitem {Automate\+Graph}, \hyperpage{8}
-  \item {Matrices\+Transition}
-    \subitem {Automaton}, \hyperpage{12}
-  \item {matrix\+Trans}
     \subitem {Automate\+Graph}, \hyperpage{9}
-  \item {Model\+Laby}, \hyperpage{15}
-    \subitem {f}, \hyperpage{17}
-    \subitem {g}, \hyperpage{17}
-    \subitem {initial\+State}, \hyperpage{17}
-    \subitem {m}, \hyperpage{17}
-    \subitem {Model\+Laby}, \hyperpage{16}
-    \subitem {present\+State}, \hyperpage{18}
-  \item {model\+Laby}
-    \subitem {Wrapper}, \hyperpage{29}
-  \item {Model\+Laby.\+m}, \hyperpage{43}
-  \item {Model\+Pacman}, \hyperpage{18}
-    \subitem {f}, \hyperpage{19}
+  \item {Matrices\+Transition}
+    \subitem {Automaton}, \hyperpage{13}
+  \item {matrix\+Trans}
+    \subitem {Automate\+Graph}, \hyperpage{10}
+  \item {Model\+Laby}, \hyperpage{17}
+    \subitem {f}, \hyperpage{18}
     \subitem {g}, \hyperpage{19}
-    \subitem {initial\+State}, \hyperpage{20}
+    \subitem {initial\+State}, \hyperpage{19}
     \subitem {m}, \hyperpage{19}
-    \subitem {Model\+Pacman}, \hyperpage{19}
-    \subitem {present\+State}, \hyperpage{20}
-  \item {Model\+Pacman.\+m}, \hyperpage{43}
-  \item {Model\+S\+E\+D.\+m}, \hyperpage{43}
-  \item {Model\+S\+ED}, \hyperpage{20}
+    \subitem {Model\+Laby}, \hyperpage{18}
+    \subitem {present\+State}, \hyperpage{19}
+  \item {model\+Laby}
+    \subitem {Wrapper}, \hyperpage{33}
+  \item {Model\+Laby.\+m}, \hyperpage{52}
+  \item {Model\+Pacman}, \hyperpage{20}
     \subitem {f}, \hyperpage{21}
     \subitem {g}, \hyperpage{21}
-    \subitem {initial\+State}, \hyperpage{21}
-    \subitem {m}, \hyperpage{21}
+    \subitem {initial\+State}, \hyperpage{22}
+    \subitem {m}, \hyperpage{22}
+    \subitem {Model\+Pacman}, \hyperpage{21}
     \subitem {present\+State}, \hyperpage{22}
-  \item {Model\+Walls}, \hyperpage{22}
+  \item {Model\+Pacman.\+m}, \hyperpage{52}
+  \item {Model\+S\+E\+D.\+m}, \hyperpage{52}
+  \item {Model\+S\+ED}, \hyperpage{23}
     \subitem {f}, \hyperpage{23}
-    \subitem {g}, \hyperpage{23}
-    \subitem {i}, \hyperpage{24}
+    \subitem {g}, \hyperpage{24}
     \subitem {initial\+State}, \hyperpage{24}
-    \subitem {m}, \hyperpage{23}
-    \subitem {Model\+Walls}, \hyperpage{23}
+    \subitem {m}, \hyperpage{24}
     \subitem {present\+State}, \hyperpage{24}
-    \subitem {val}, \hyperpage{24}
-  \item {Model\+Walls.\+m}, \hyperpage{43}
+  \item {Model\+Walls}, \hyperpage{25}
+    \subitem {f}, \hyperpage{26}
+    \subitem {g}, \hyperpage{26}
+    \subitem {i}, \hyperpage{27}
+    \subitem {initial\+State}, \hyperpage{27}
+    \subitem {m}, \hyperpage{27}
+    \subitem {Model\+Walls}, \hyperpage{26}
+    \subitem {present\+State}, \hyperpage{27}
+    \subitem {val}, \hyperpage{27}
+  \item {Model\+Walls.\+m}, \hyperpage{52}
   \item {Murs\+Horizontaux}
-    \subitem {Labyrinthe}, \hyperpage{15}
+    \subitem {Labyrinthe}, \hyperpage{16}
   \item {Murs\+Verticaux}
-    \subitem {Labyrinthe}, \hyperpage{15}
+    \subitem {Labyrinthe}, \hyperpage{16}
 
   \indexspace
 
   \item {Noms\+Evenements}
-    \subitem {Automaton}, \hyperpage{12}
+    \subitem {Automaton}, \hyperpage{13}
 
   \indexspace
 
   \item {optimal\+Command}
-    \subitem {optimal\+Command.\+m}, \hyperpage{36}
+    \subitem {optimal\+Command.\+m}, \hyperpage{40}
   \item {optimal\+Command.\+m}
-    \subitem {optimal\+Command}, \hyperpage{36}
+    \subitem {optimal\+Command}, \hyperpage{40}
   \item {orderer}
-    \subitem {Wrapper}, \hyperpage{28}
+    \subitem {Wrapper}, \hyperpage{32}
   \item {out}
-    \subitem {Wrapper}, \hyperpage{29}
+    \subitem {Wrapper}, \hyperpage{33}
 
   \indexspace
 
   \item {pacman\+Bit}
-    \subitem {Wrapper}, \hyperpage{29}
+    \subitem {Wrapper}, \hyperpage{33}
   \item {Parcourir\+Matrices\+Transitions}
-    \subitem {Parcourir\+Matrices\+Transitions.\+m}, \hyperpage{37}
+    \subitem {Parcourir\+Matrices\+Transitions.\+m}, \hyperpage{41}
   \item {Parcourir\+Matrices\+Transitions.\+m}
-    \subitem {Parcourir\+Matrices\+Transitions}, \hyperpage{37}
+    \subitem {Parcourir\+Matrices\+Transitions}, \hyperpage{41}
   \item {Parrallel\+Composition}
-    \subitem {Parrallel\+Composition.\+m}, \hyperpage{38}
+    \subitem {Parrallel\+Composition.\+m}, \hyperpage{42}
   \item {Parrallel\+Composition.\+m}
-    \subitem {Parrallel\+Composition}, \hyperpage{38}
+    \subitem {Parrallel\+Composition}, \hyperpage{42}
   \item {Pas\+\_\+a\+\_\+pas}
-    \subitem {Labyrinthe}, \hyperpage{14}
+    \subitem {Labyrinthe}, \hyperpage{16}
   \item {Path\+Researche}
-    \subitem {Automate\+Graph}, \hyperpage{8}
-    \subitem {Automaton}, \hyperpage{12}
+    \subitem {Automate\+Graph}, \hyperpage{9}
+    \subitem {Automaton}, \hyperpage{13}
   \item {Plan\+\_\+desuma\+Functions.\+m}
-    \subitem {Automaton\+Struture\+Laby\+Creation}, \hyperpage{33}
-    \subitem {function}, \hyperpage{33}
-    \subitem {Save\+D\+E\+S\+U\+M\+A\+File}, \hyperpage{33}
-    \subitem {write\+States}, \hyperpage{33}
-    \subitem {write\+Transitions}, \hyperpage{33}
+    \subitem {Automaton\+Struture\+Laby\+Creation}, \hyperpage{37}
+    \subitem {function}, \hyperpage{37}
+    \subitem {Save\+D\+E\+S\+U\+M\+A\+File}, \hyperpage{37}
+    \subitem {write\+States}, \hyperpage{37}
+    \subitem {write\+Transitions}, \hyperpage{37}
   \item {present\+State}
-    \subitem {Model\+Laby}, \hyperpage{18}
-    \subitem {Model\+Pacman}, \hyperpage{20}
-    \subitem {Model\+S\+ED}, \hyperpage{22}
-    \subitem {Model\+Walls}, \hyperpage{24}
-    \subitem {Stop\+Condition}, \hyperpage{27}
+    \subitem {Model\+Laby}, \hyperpage{19}
+    \subitem {Model\+Pacman}, \hyperpage{22}
+    \subitem {Model\+S\+ED}, \hyperpage{24}
+    \subitem {Model\+Walls}, \hyperpage{27}
+    \subitem {Stop\+Condition}, \hyperpage{30}
 
   \indexspace
 
   \item {rafine\+Automaton\+Class}
-    \subitem {rafine\+Automaton\+Class.\+m}, \hyperpage{37}
+    \subitem {rafine\+Automaton\+Class.\+m}, \hyperpage{41}
   \item {rafine\+Automaton\+Class.\+m}
-    \subitem {rafine\+Automaton\+Class}, \hyperpage{37}
+    \subitem {rafine\+Automaton\+Class}, \hyperpage{41}
   \item {reset\+U\+I\+Connection}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{41}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{48}
 
   \indexspace
 
   \item {Save\+D\+E\+S\+U\+M\+A\+File}
-    \subitem {Plan\+\_\+desuma\+Functions.\+m}, \hyperpage{33}
-    \subitem {Save\+D\+E\+S\+U\+M\+A\+File.\+m}, \hyperpage{34}
+    \subitem {Plan\+\_\+desuma\+Functions.\+m}, \hyperpage{37}
+    \subitem {Save\+D\+E\+S\+U\+M\+A\+File.\+m}, \hyperpage{38}
   \item {Save\+D\+E\+S\+U\+M\+A\+File.\+m}
-    \subitem {Save\+D\+E\+S\+U\+M\+A\+File}, \hyperpage{34}
+    \subitem {Save\+D\+E\+S\+U\+M\+A\+File}, \hyperpage{38}
   \item {set\+Color}
-    \subitem {set\+Color.\+m}, \hyperpage{43}
-  \item {set\+Color.\+m}, \hyperpage{43}
-    \subitem {set\+Color}, \hyperpage{43}
-  \item {Simulation.\+m}, \hyperpage{44}
+    \subitem {set\+Color.\+m}, \hyperpage{52}
+  \item {set\+Color.\+m}, \hyperpage{52}
+    \subitem {set\+Color}, \hyperpage{52}
+  \item {Simulation.\+m}, \hyperpage{53}
   \item {state}
-    \subitem {Automate\+Graph}, \hyperpage{9}
+    \subitem {Automate\+Graph}, \hyperpage{10}
   \item {stop}
-    \subitem {Wrapper}, \hyperpage{29}
-  \item {Stop\+Condition}, \hyperpage{25}
-    \subitem {f}, \hyperpage{25, 26}
-    \subitem {g}, \hyperpage{26}
-    \subitem {initial\+State}, \hyperpage{26}
-    \subitem {m}, \hyperpage{26}
-    \subitem {present\+State}, \hyperpage{27}
-    \subitem {Stop\+Condition}, \hyperpage{25}
+    \subitem {Wrapper}, \hyperpage{33}
+  \item {Stop\+Condition}, \hyperpage{28}
+    \subitem {f}, \hyperpage{29}
+    \subitem {g}, \hyperpage{29}
+    \subitem {initial\+State}, \hyperpage{30}
+    \subitem {m}, \hyperpage{30}
+    \subitem {present\+State}, \hyperpage{30}
+    \subitem {Stop\+Condition}, \hyperpage{29}
   \item {stop\+Condition}
-    \subitem {Wrapper}, \hyperpage{29}
-  \item {Stop\+Condition.\+m}, \hyperpage{44}
+    \subitem {Wrapper}, \hyperpage{33}
+  \item {Stop\+Condition.\+m}, \hyperpage{53}
   \item {struct\+Automata2vector\+Automata}
     \subitem {Automate\+Graph}, \hyperpage{9}
 
   \indexspace
 
-  \item {T\+H\+Eplan.\+m}, \hyperpage{44}
-  \item {test\+U\+I.\+m}, \hyperpage{44}
+  \item {T\+H\+Eplan.\+m}, \hyperpage{53}
+  \item {test\+U\+I.\+m}, \hyperpage{53}
   \item {transition}
     \subitem {Automate\+Graph}, \hyperpage{10}
 
   \indexspace
 
   \item {ui\+\_\+\+Callback}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{41}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{48}
   \item {update\+Connexion}
-    \subitem {Wrapper}, \hyperpage{28}
+    \subitem {Wrapper}, \hyperpage{32}
   \item {update\+Presence\+Detector\+Display}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{41}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{49}
   \item {update\+U\+I\+Active\+Cammand}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{41}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{50}
   \item {update\+U\+I\+Button}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{42}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{50}
   \item {update\+U\+I\+Escape}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{42}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{50}
   \item {update\+U\+I\+Player}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{42}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{50}
   \item {update\+U\+I\+Walls}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{42}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{51}
   \item {update\+U\+I\+Walls\+Around}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{42}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{51}
   \item {update\+UI}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{41}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{49}
 
   \indexspace
 
   \item {val}
-    \subitem {Model\+Walls}, \hyperpage{24}
+    \subitem {Model\+Walls}, \hyperpage{27}
   \item {vector}
     \subitem {Automate\+Graph}, \hyperpage{10}
   \item {vector2matrices}
     \subitem {Automate\+Graph}, \hyperpage{9}
   \item {vector2struct\+Automata}
     \subitem {Automate\+Graph}, \hyperpage{9}
-  \item {visupacman.\+m}, \hyperpage{44}
-  \item {visupacman2.\+m}, \hyperpage{44}
+  \item {visupacman.\+m}, \hyperpage{53}
+  \item {visupacman2.\+m}, \hyperpage{53}
 
   \indexspace
 
   \item {walls\+Bit}
-    \subitem {Wrapper}, \hyperpage{30}
+    \subitem {Wrapper}, \hyperpage{34}
   \item {walls\+Border}
-    \subitem {walls\+Border.\+m}, \hyperpage{44}
-  \item {walls\+Border.\+m}, \hyperpage{44}
-    \subitem {walls\+Border}, \hyperpage{44}
+    \subitem {walls\+Border.\+m}, \hyperpage{53}
+  \item {walls\+Border.\+m}, \hyperpage{53}
+    \subitem {walls\+Border}, \hyperpage{53}
   \item {who\+Play}
-    \subitem {Wrapper}, \hyperpage{30}
-  \item {Wrapper}, \hyperpage{27}
-    \subitem {command\+Pacman}, \hyperpage{29}
-    \subitem {command\+Walls}, \hyperpage{29}
-    \subitem {get\+\_\+out}, \hyperpage{28}
-    \subitem {get\+\_\+stop}, \hyperpage{28}
-    \subitem {in}, \hyperpage{29}
-    \subitem {init}, \hyperpage{28}
-    \subitem {model\+Laby}, \hyperpage{29}
-    \subitem {orderer}, \hyperpage{28}
-    \subitem {out}, \hyperpage{29}
-    \subitem {pacman\+Bit}, \hyperpage{29}
-    \subitem {stop}, \hyperpage{29}
-    \subitem {stop\+Condition}, \hyperpage{29}
-    \subitem {update\+Connexion}, \hyperpage{28}
-    \subitem {walls\+Bit}, \hyperpage{30}
-    \subitem {who\+Play}, \hyperpage{30}
-    \subitem {Wrapper}, \hyperpage{27}
-  \item {Wrapper.\+m}, \hyperpage{44}
+    \subitem {Wrapper}, \hyperpage{34}
+  \item {Wrapper}, \hyperpage{31}
+    \subitem {command\+Pacman}, \hyperpage{33}
+    \subitem {command\+Walls}, \hyperpage{33}
+    \subitem {get\+\_\+out}, \hyperpage{32}
+    \subitem {get\+\_\+stop}, \hyperpage{32}
+    \subitem {in}, \hyperpage{33}
+    \subitem {init}, \hyperpage{32}
+    \subitem {model\+Laby}, \hyperpage{33}
+    \subitem {orderer}, \hyperpage{32}
+    \subitem {out}, \hyperpage{33}
+    \subitem {pacman\+Bit}, \hyperpage{33}
+    \subitem {stop}, \hyperpage{33}
+    \subitem {stop\+Condition}, \hyperpage{33}
+    \subitem {update\+Connexion}, \hyperpage{32}
+    \subitem {walls\+Bit}, \hyperpage{34}
+    \subitem {who\+Play}, \hyperpage{34}
+    \subitem {Wrapper}, \hyperpage{31}
+  \item {Wrapper.\+m}, \hyperpage{53}
   \item {write\+States}
-    \subitem {Plan\+\_\+desuma\+Functions.\+m}, \hyperpage{33}
-    \subitem {write\+States.\+m}, \hyperpage{34}
+    \subitem {Plan\+\_\+desuma\+Functions.\+m}, \hyperpage{37}
+    \subitem {write\+States.\+m}, \hyperpage{38}
   \item {write\+States.\+m}
-    \subitem {write\+States}, \hyperpage{34}
+    \subitem {write\+States}, \hyperpage{38}
   \item {write\+Transitions}
-    \subitem {Plan\+\_\+desuma\+Functions.\+m}, \hyperpage{33}
-    \subitem {write\+Transitions.\+m}, \hyperpage{35}
+    \subitem {Plan\+\_\+desuma\+Functions.\+m}, \hyperpage{37}
+    \subitem {write\+Transitions.\+m}, \hyperpage{39}
   \item {write\+Transitions.\+m}
-    \subitem {write\+Transitions}, \hyperpage{35}
+    \subitem {write\+Transitions}, \hyperpage{39}
 
 \end{theindex}

@@ -146,7 +146,7 @@ end
 %> @brief Callback for all the action's buttons (see detailed explications).
 %> in the following image, buttons marked with a black arrow lanch this Callback. \n
 %> \image html img_fig_lab.png "button's type of GUI"
-%> \image latex img_fig_lab.png "button's type of GUI"
+%> \image latex img_fig_lab.png "button's type of GUI" width=10cm
 %> This callback lanch orderer method of Wrapper class, which allows the simulation to evolve.
 %> @param hObject    handle to actived button
 %> @param eventdata  reserved - to be defined in a future version of MATLAB
@@ -190,7 +190,7 @@ end
 %> @brief Callback for all the connection's buttons (see detailed explications).
 %> in the following image, buttons marked with a red arrow lanch this Callback. \n
 %> \image html img_fig_lab.png "button's type of GUI"
-%> \image latex img_fig_lab.png "button's type of GUI"
+%> \image latex img_fig_lab.png "button's type of GUI" width=8cm
 %> This callback lanch updateConnexion method of Wrapper class, which modify what command are automatic.
 %> @param hObject    handle to actived button
 %> @param eventdata  reserved - to be defined in a future version of MATLAB
@@ -355,8 +355,9 @@ end
 % --- Update visibility of command panel for only see the possibles
 % commands on the good time
 % ===============================================================
-%> @brief Show the needed moving buttons.
-%> This function show the direction's buttons allows by the output informations of modelLaby and hide the others one.
+%> @brief Update visibility of control panel, connection and step button.
+%> This function show or hide the control's panels and the connection's buttons according whit who will move. It also show step button if a command is connected. \n
+%> Example : if is pacman time to move and command is not connected, this function hide walls and step element and show pacman one's.
 %> @param handles    structure with handles and user data (see GUIDATA)
 % ===============================================================
 function updateUIActiveCammand(handles)
@@ -383,22 +384,6 @@ function updateUIActiveCammand(handles)
      set(handles.pacmanPanel,'Visible','off');
     end
 
-%     %% ghost % TODELETE
-%
-%     if(handles.wrapper.whoPlay == 2 )% si a son tour
-%      set(handles.connectGhost,'Visible','on');
-%      if(handles.wrapper.ghostBit == 1) % si connect�
-%          set(handles.ghostPanel,'Visible','off');
-%          set(handles.step,'Visible','on');
-%      else % si pas connect�
-%          set(handles.ghostPanel,'Visible','on');
-%          set(handles.step,'Visible','off');
-%      end
-%     else
-%      set(handles.connectGhost,'Visible','off');
-%      set(handles.ghostPanel,'Visible','off');
-%     end
-
     %% walls
     if(handles.wrapper.whoPlay == 0 )% si a son tour
      set(handles.connectWalls,'Visible','on');
@@ -419,12 +404,9 @@ end
 % --- Update visibility of moving command button in function of possibles
 % moves
 % ===============================================================
-%> @brief Update visibility of moving command button in function of possibles moves
-%>
-%>
-%>
+%> @brief Show the needed moving buttons.
+%> This function show the direction's buttons allows by the output informations of modelLaby and hide the others one.
 %> @param handles    structure with handles and user data (see GUIDATA)
-%> @return h the updated structure with handles and user data (see GUIDATA)
 % ===============================================================
 function updateUIButton(handles)
     player = {'pacman'};
@@ -438,7 +420,18 @@ function updateUIButton(handles)
 
 end
 
-% --- Update graphical place of a player (ghost or pacman).
+% --- Update graphical place of a player (only pacman in this case).
+% ===============================================================
+%> @brief Update graphical place of a player (only pacman in this case).
+%> This function, with the actual position (present in the handles) and the new one as a input, move object. \n
+%> The dynamics of movement is defined by this foncion \f$ out(t) = \frac{\frac{om+1}{om*e^{cv*t}+1}-1}{om} \f$
+%> for \f$ t \in [0,1]\f$, \f$ om = 72.89105\f$ and \f$ cv = -11.27357 \f$.
+%> \image html obj_dynamic.png "Dynamics of movement"
+%> \image latex obj_dynamic.png "Dynamics of movement" width=8cm
+%> @param strPlayer String contain the exact name of the object to move.
+%> @param position new position of the object. format : [x y]
+%> @param handles    structure with handles and user data (see GUIDATA)
+% ===============================================================
 function updateUIPlayer( handles,strPlayer, position)
 %smooth movement !! see visupacman,section :'Smooth movement for parman and
 %ghost'
