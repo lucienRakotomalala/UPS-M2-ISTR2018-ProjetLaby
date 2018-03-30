@@ -1,10 +1,11 @@
 %> @file ModelWalls.m
-%> @briel Command of the walls' move
-%> Input :  No need
+%> @brief Contain wall movement command
+
+%> Input :  No need \n 
 %>\n
-%> Output : [UPwalls , RIGHTwalls]
-%  \n
-% state : contain the last move ( 0 = up ; 1 = right) 
+%> Output : [UPwalls , RIGHTwalls]\n
+%>  \n
+%> State : contain the last move ( 0 = up ; 1 = right) \n
 %> This command do the sequence walls Right --> walls down \n 
 classdef ModelWalls < ModelSED
     %MODELWALLS Model of walls command

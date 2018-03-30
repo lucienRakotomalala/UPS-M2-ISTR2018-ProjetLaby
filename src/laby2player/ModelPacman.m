@@ -1,5 +1,6 @@
 %> @file ModelPacman.m
-%> @briel Command of the Pacman's moves
+%> @brief Contain Pacman movement control 
+
 %> Input :  Possible Pacman's moves [Up Down Left Right] \n
 %>    0 = move not possible ; 1 = move possible \n
 %>           ( Wout{7} )\n

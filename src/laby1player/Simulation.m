@@ -1,8 +1,13 @@
+%> @file Simulation.m
+
+%> @brief Script to launch the labyrinth simulation.
+
+%> This script allows you to run a complete simulation of the labyrinth. It stops according to the stop conditions that are entered in the script.
 % simulation totale
 clear
 close all
 %%%%%%%%%%%%%%%%%%%%%% PARAMETERS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Number of iterations
+%> @param[in] n Number of iterations. Static dimension
 n= 100; % static dimension
 
 % state of laby 
@@ -10,10 +15,12 @@ labyState=cell(n,9); % static dimension
 etat =0; % static dimension
 etatS=0; % static dimension
 
+%> Initialization Of labyrinth
 %numberOfPossibleCaught = 3;
-noEscape = 0; % select if there is an escape or no
+%> @param noEscape Select if there is an escape or no 
+noEscape = 0; 
 % Initial laby state
-
+%> @param labyInit Structure containing all element to initialize the labyrinth. It is described as follows :"walls.V_i" for Vertical Walls, "walls.H_i" for Horizontal Walls, "pacman_i" for Pacman Initial position and "ghost_i" for ghost Initial Position. 
      labyInit.wallsV_i =   [1 0 1 0; 1 1 0 1; 0 0 0 0;0 1 1 1; 1 0 0 0];%  dimension can change
      labyInit.wallsH_i =  [0 0 0 1 0; 0 1 0 1 0;0 1 0 1 0;0 1 0 0 1]; %  dimension can change
 %    

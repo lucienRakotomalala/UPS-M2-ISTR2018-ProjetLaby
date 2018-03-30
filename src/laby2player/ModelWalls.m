@@ -1,6 +1,8 @@
 %> @file ModelWalls.m
-%> @briel Command of the walls' move
-%> Input :  No need
+
+%> @brief Contain the wall movement command 
+
+%> Input :  No need \n 
 %>\n
 %> Output : [UPwalls , RIGHTwalls]
 %  \n

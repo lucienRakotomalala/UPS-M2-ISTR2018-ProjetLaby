@@ -1,6 +1,6 @@
 %> @file ModelLaby.m
 
-%> @briel Class which contains the "fmg" structure of the labyrinth for 1 player
+%> @brief Class which contains the "fmg" structure of the labyrinth for 1 player
 
 %> Input :  necessary information for compute the next state of the model\n
 %>\n

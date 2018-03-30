@@ -1,3 +1,7 @@
+%> @file ModelGhost.m
+
+%> @brief Contain ghost movement control 
+
 %>MODELGhost Summary of this class goes here \n
 %> Input :  Possible ghost's moves [Up Down Left Right] \n
 %>    0 = move not possible ; 1 = move possible \n
