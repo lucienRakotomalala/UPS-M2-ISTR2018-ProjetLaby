@@ -2,6 +2,7 @@
 
 %> @brief Contain the wall movement command 
 
+%> You can change here the order in which the walls move \n
 %> Input :  No need \n 
 %>\n
 %> Output : [UPwalls , RIGHTwalls]
@@ -10,6 +11,7 @@
 %> This command do the sequence walls Right --> walls down \n 
 classdef ModelWalls < ModelSED
     %MODELWALLS Model of walls command
+	% You can change here the order in which the walls move
     % Input :  No 
     % Output : [UPwalls , RIGHTwalls]
     % state : contain the last move ( 0 = up ; 1 = right) 

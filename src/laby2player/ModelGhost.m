@@ -2,7 +2,7 @@
 
 %> @brief Contain ghost movement control 
 
-%>MODELGhost Summary of this class goes here \n
+%> You can change here Pacman's command.\n 
 %> Input :  Possible ghost's moves [Up Down Left Right] \n
 %>    0 = move not possible ; 1 = move possible \n
 %>           ( Wout{7} ) \n
@@ -31,7 +31,8 @@
 %> This command   P(D) > P(B) > P(H) > P(G)\n
 classdef ModelGhost < ModelSED
     %MODELGhost Summary of this class goes here 
-    % Input :  Possible ghost's moves [Up Down Left Right] 
+    % You can change here Pacman's command.
+	% Input :  Possible ghost's moves [Up Down Left Right] 
     %    0 = move not possible ; 1 = move possible 
     %           ( Wout{7} ) 
     %

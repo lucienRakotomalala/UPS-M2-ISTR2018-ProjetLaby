@@ -2,6 +2,7 @@
 
 %> @brief Class which contains the "fmg" structure of the labyrinth for 1 player
 
+%> You can change here labyrinth's dynamic : how objects and walls are evolving in the labyrinth, not the command of then.\n
 %> Input :  necessary information for compute the next state of the model\n
 %>\n
 %> Output : output's action of the model\n
@@ -9,7 +10,8 @@
 %> State :   minimal information necessary who evolute 
 % ======================================================================
 classdef ModelLaby < ModelSED
-    %ModelLaby Class which contains the "fmg" structure of the labyrinth 
+    %MODELLABY Class which contains the "fmg" structure of the labyrinth 
+	%	You can change here labyrinth's dynamic : how objects and walls are evolving in the labyrinth, not the command of then.
     %   This class contains 3 method useful : f(), m() and g() to describe the evolution of the labyrinth.
     
     properties
@@ -107,8 +109,8 @@ classdef ModelLaby < ModelSED
         end
 		
 % ======================================================================
-%> @brief Memory method
-%> update the state of the command.
+%> @brief Memory method.
+%> Update the state of the command.
 %> @param obj The selected instance of the class
 %> @param nextState The value of the state need to update 
 %> @param init Boolean condition for initialize or reset the command

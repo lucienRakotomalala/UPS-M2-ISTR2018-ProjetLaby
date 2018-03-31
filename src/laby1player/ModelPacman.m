@@ -1,6 +1,8 @@
 %> @file ModelPacman.m
+
 %> @brief Contain ghost Pacman control
 
+%> You can change here Pacman's command.\n 
 %> Input :  Possible Pacman's moves [Up Down Left Right] \n
 %>    0 = move not possible ; 1 = move possible \n
 %>           ( Wout{7} )\n
@@ -10,7 +12,7 @@
 %>                          3 : pacmanRightBut,  ( Wout(4) )\n
 %>                          4 : pacmanDownBut ,  ( Wout(2) )\n
 %>           ( Win( 4:7) of wrapper ) \n
-%>  \n
+%>\n
 %> Input :  Walls around Pacman \n
 %>    1 up \n
 %>    2 down\n
@@ -20,6 +22,7 @@
 % ======================================================================
 classdef ModelPacman < ModelSED
     %MODELPACMAN Summary of this class goes here
+	% You can change here Pacman's command.
     % Input :  Possible Pacman's moves [Up Down Left Right] 
     %    0 = move not possible ; 1 = move possible 
     %           ( Wout{7} )

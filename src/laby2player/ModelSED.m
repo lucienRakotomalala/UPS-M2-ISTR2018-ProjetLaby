@@ -1,13 +1,18 @@
 %> @file ModelSED.m
-%> @briel abstract Class who contain the structure of a "fmg" implementation
-%> Input :  necessary information for compute the next state of the model
-%>
-%> Output : output's action of the model
-%           
-%> State :   minimal information necessary who evolute 
+
+%> @brief Abstract Class who contain the structure of a "fmg" implementation 
+
+%> This class is used for give a general definition of Model Class.\n
+%> Input :  necessary information for compute the next state of the model \n
+%>\n
+%> Output : output's action of the model\n
+%   \n        
+%> State :   minimal information necessary who evolute\n 
 % ======================================================================
 classdef (Abstract) ModelSED < handle 
     %MODELSED is abstract Class who contain the structure of a "fmg" implementation
+	% This class is used for give a general definition of Model Class. 
+	% Child class : MODELLABY, MODELPACMAN, MODELGHOST, MODELWALL and STOPCONDITION.
 	% Input :  necessary information for compute the next state of the model
 	%
 	% Output : output's action of the model

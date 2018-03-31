@@ -1,8 +1,10 @@
 %> @file ModelPacman.m
+
 %> @brief Contain Pacman movement control 
 
+%> You can change here Pacman's command.\n 
 %> Input :  Possible Pacman's moves [Up Down Left Right] \n
-%>    0 = move not possible ; 1 = move possible \n
+%> -->	0 = move not possible ; 1 = move possible \n
 %>           ( Wout{7} )\n
 %>\n
 %> Output : Pacman's moves  1 : pacmanLeftBut, ( Wout(3) )\n
@@ -10,7 +12,7 @@
 %>                          3 : pacmanRightBut,  ( Wout(4) )\n
 %>                          4 : pacmanDownBut ,  ( Wout(2) )\n
 %>           ( Win( 4:7) of wrapper ) \n
-%  \n
+%>  \n
 %> Input :  Walls around Pacman \n
 %>    1 up \n
 %>    2 down\n
@@ -18,7 +20,8 @@
 %>    4 right\n
 %> This command do the sequence   P(D) > P(B) > P(H) > P(G) \n
 classdef ModelPacman < ModelSED
-    %MODELPACMAN Summary of this class goes here
+    %MODELPACMAN Contain Pacman movement control
+	% You can change here Pacman's command.
     % Input :  Possible Pacman's moves [Up Down Left Right] 
     %    0 = move not possible ; 1 = move possible 
     %           ( Wout{7} )
@@ -145,8 +148,7 @@ classdef ModelPacman < ModelSED
 	end
 
 % ======================================================================
-%> @brief Memory method
-%> update the state of the command.
+%> @brief Memory method, update the state of the command.
 %> @param obj The selected instance of the class
 %> @param nextState The value of the state need to update 
 %> @param init Boolean condition for initialize or reset the command
