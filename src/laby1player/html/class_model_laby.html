@@ -54,7 +54,7 @@ Inheritance diagram for ModelLaby:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_model_laby__inherit__graph.png" border="0" usemap="#_model_laby_inherit__map" alt="Inheritance graph"/></div>
 <map name="_model_laby_inherit__map" id="_model_laby_inherit__map">
-<area shape="rect" id="node2" href="class_model_s_e_d.html" title="Input : necessary information for compute the next state of the model &#160;&#160;Output : output&#39;s action of t..." alt="" coords="5,80,91,107"/>
+<area shape="rect" id="node2" href="class_model_s_e_d.html" title="Abstract Class who contain the structure of a &quot;fmg&quot; implementation. " alt="" coords="5,80,91,107"/>
 <area shape="rect" id="node3" href="classhandle.html" title="handle" alt="" coords="18,5,78,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -63,7 +63,7 @@ Collaboration diagram for ModelLaby:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_model_laby__coll__graph.png" border="0" usemap="#_model_laby_coll__map" alt="Collaboration graph"/></div>
 <map name="_model_laby_coll__map" id="_model_laby_coll__map">
-<area shape="rect" id="node2" href="class_model_s_e_d.html" title="Input : necessary information for compute the next state of the model &#160;&#160;Output : output&#39;s action of t..." alt="" coords="37,111,122,137"/>
+<area shape="rect" id="node2" href="class_model_s_e_d.html" title="Abstract Class who contain the structure of a &quot;fmg&quot; implementation. " alt="" coords="37,111,122,137"/>
 <area shape="rect" id="node3" href="classhandle.html" title="handle" alt="" coords="5,5,65,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -77,7 +77,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a6f3b146c92a207e95690d08975e1e072"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the evolution of the model.  <a href="#a6f3b146c92a207e95690d08975e1e072">More...</a><br /></td></tr>
 <tr class="separator:a6f3b146c92a207e95690d08975e1e072"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3140f24c6c4b80037b7d4f521c6ae2d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_plan__desuma_functions_8m.html#ac2ffb26d6f42d3bbcd7847b0873403f4">function</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_laby.html#a3140f24c6c4b80037b7d4f521c6ae2d3">m</a> (in obj, in nextState, in init)</td></tr>
-<tr class="memdesc:a3140f24c6c4b80037b7d4f521c6ae2d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory method update the state of the command.  <a href="#a3140f24c6c4b80037b7d4f521c6ae2d3">More...</a><br /></td></tr>
+<tr class="memdesc:a3140f24c6c4b80037b7d4f521c6ae2d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory method.  <a href="#a3140f24c6c4b80037b7d4f521c6ae2d3">More...</a><br /></td></tr>
 <tr class="separator:a3140f24c6c4b80037b7d4f521c6ae2d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07dadfabe92bf9a144b8a862720e7746"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_plan__desuma_functions_8m.html#ac2ffb26d6f42d3bbcd7847b0873403f4">function</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_laby.html#a07dadfabe92bf9a144b8a862720e7746">g</a> (in obj)</td></tr>
 <tr class="memdesc:a07dadfabe92bf9a144b8a862720e7746"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the outputs in a 1x9 cell-array.  <a href="#a07dadfabe92bf9a144b8a862720e7746">More...</a><br /></td></tr>
@@ -94,7 +94,8 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class which contains the "fmg" structure of the labyrinth for 1 player. </p>
-<p>Input : necessary information for compute the next state of the model<br />
+<p>You can change here labyrinth's dynamic : how objects and walls are evolving in the labyrinth, not the command of then.<br />
+ Input : necessary information for compute the next state of the model<br />
 <br />
  Output : output's action of the model<br />
  <br />
@@ -283,8 +284,8 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Memory method update the state of the command. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Memory method. </p>
+<p>Update the state of the command. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">obj</td><td>The selected instance of the class </td></tr>
     <tr><td class="paramname">nextState</td><td>The value of the state need to update </td></tr>

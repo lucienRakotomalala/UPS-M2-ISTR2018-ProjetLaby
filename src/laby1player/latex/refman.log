@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.11.13)  30 MAR 2018 18:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.11.13)  2 APR 2018 11:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1222,9 +1222,7 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 \tf@toc=\write5
 \openout5 = `refman.toc'.
 
- [8] [9] [10
-
-]
+ [8]
 Package hyperref Info: Option `pageanchor' set `true' on input line 138.
 
 Chapter 1.
@@ -1245,102 +1243,76 @@ LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 12.9599pt on input line 1.
 ) [1
 
+
 ] [2
 
 ]
 Chapter 2.
 (./annotated.tex
-LaTeX Font Info:    Try loading font information for TS1+phv on input line 24.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
-File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
-)
-LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 24.
-
-Underfull \hbox (badness 10000) in paragraph at lines 24--24
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
   
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 24--24
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
   
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 24--24
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
  []  
  []
 
+) [3] [4
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 35--35
-  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 35--35
-  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 35--35
- []  
- []
-
-[3]) [4]
+]
 Chapter 3.
-(./files.tex [5
-
-]) [6]
+(./files.tex [5]) [6]
 Chapter 4.
 (./class_automate_graph.tex
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 6.29996pt on input line 1.
-<class_automate_graph__coll__graph.pdf, id=1425, pagebox=cropbox, 178.6675pt x 
+<class_automate_graph__coll__graph.pdf, id=1419, pagebox=cropbox, 178.6675pt x 
 211.79124pt>
 File: class_automate_graph__coll__graph.pdf Graphic file (type pdf)
 <use class_automate_graph__coll__graph.pdf>
 Package pdftex.def Info: class_automate_graph__coll__graph.pdf  used on input l
-ine 10. on input line 10.
-Package pdftex.def Info: Requested size: 178.0pt x 211.01189pt on input line 10
-.
+ine 9. on input line 9.
+Package pdftex.def Info: Requested size: 178.0pt x 211.01189pt on input line 9.
+
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 13.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 12.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 13.
+(Font)              scaled to size 10.79993pt on input line 12.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 10.79993pt on input line 13.
+(Font)              scaled to size 10.79993pt on input line 12.
+LaTeX Font Info:    Try loading font information for TS1+phv on input line 15.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
+File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
+)
+LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
+(Font)              scaled to size 8.99994pt on input line 15.
  [7
 
  <./class_automate_graph__coll__graph.pdf>]
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 8.99994pt on input line 57.
+(Font)              scaled to size 8.99994pt on input line 56.
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 67.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 66.
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 91.
-
-[8] [9]) (./class_automaton.tex
-<class_automaton__coll__graph.pdf, id=1509, pagebox=cropbox, 194.7275pt x 189.7
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 90.
+ [8] [9]) (./class_automaton.tex
+<class_automaton__coll__graph.pdf, id=1503, pagebox=cropbox, 194.7275pt x 189.7
 0876pt>
 File: class_automaton__coll__graph.pdf Graphic file (type pdf)
 <use class_automaton__coll__graph.pdf>
-Package pdftex.def Info: class_automaton__coll__graph.pdf  used on input line 1
-0. on input line 10.
-Package pdftex.def Info: Requested size: 194.0pt x 189.00775pt on input line 10
-.
- [10] [11 <./class_automaton__coll__graph.pdf>]
-[12]) (./classhandle.tex
-<classhandle__inherit__graph.pdf, id=1580, pagebox=cropbox, 425.59pt x 212.795p
+Package pdftex.def Info: class_automaton__coll__graph.pdf  used on input line 9
+. on input line 9.
+Package pdftex.def Info: Requested size: 194.0pt x 189.00775pt on input line 9.
+
+ [10] [11 <./class_automaton__coll__graph.pdf>] [12]) (./classhandle.tex
+<classhandle__inherit__graph.pdf, id=1574, pagebox=cropbox, 425.59pt x 212.795p
 t>
 File: classhandle__inherit__graph.pdf Graphic file (type pdf)
 <use classhandle__inherit__graph.pdf>
@@ -1348,21 +1320,21 @@ Package pdftex.def Info: classhandle__inherit__graph.pdf  used on input line 10
 . on input line 10.
 Package pdftex.def Info: Requested size: 350.0pt x 175.00928pt on input line 10
 .
- [13]) (./class_labyrinthe.tex
-<class_labyrinthe__coll__graph.pdf, id=1587, pagebox=cropbox, 186.6975pt x 200.
+ [13])
+(./class_labyrinthe.tex
+<class_labyrinthe__coll__graph.pdf, id=1580, pagebox=cropbox, 186.6975pt x 200.
 75pt>
 File: class_labyrinthe__coll__graph.pdf Graphic file (type pdf)
 <use class_labyrinthe__coll__graph.pdf>
 Package pdftex.def Info: class_labyrinthe__coll__graph.pdf  used on input line 
-10. on input line 10.
-Package pdftex.def Info: Requested size: 186.0pt x 200.0082pt on input line 10.
-
+9. on input line 9.
+Package pdftex.def Info: Requested size: 186.0pt x 200.0082pt on input line 9.
  [14 <./classhandle__inherit__graph.pdf> <./class_labyrinthe__coll__graph.pdf
 
 pdfTeX warning: pdflatex (file ./class_labyrinthe__coll__graph.pdf): PDF inclus
 ion: multiple pdfs with page group included in a single page
 >] [15]) (./class_model_laby.tex
-<class_model_laby__inherit__graph.pdf, id=1642, pagebox=cropbox, 144.54pt x 212
+<class_model_laby__inherit__graph.pdf, id=1635, pagebox=cropbox, 144.54pt x 212
 .795pt>
 File: class_model_laby__inherit__graph.pdf Graphic file (type pdf)
 <use class_model_laby__inherit__graph.pdf>
@@ -1371,7 +1343,7 @@ ne 15. on input line 15.
 Package pdftex.def Info: Requested size: 144.0pt x 212.01193pt on input line 15
 .
  [16]
-<class_model_laby__coll__graph.pdf, id=1647, pagebox=cropbox, 256.96pt x 237.88
+<class_model_laby__coll__graph.pdf, id=1641, pagebox=cropbox, 256.96pt x 237.88
 875pt>
 File: class_model_laby__coll__graph.pdf Graphic file (type pdf)
 <use class_model_laby__coll__graph.pdf>
@@ -1400,113 +1372,120 @@ LaTeX Font Info:    Font shape `TS1/phv/m/it' in size <9> not available
 LaTeX Font Info:    Font shape `TS1/phv/m/sl' will be
 (Font)              scaled to size 8.09995pt on input line 43.
 
-Underfull \hbox (badness 10000) in paragraph at lines 51--56
+Underfull \hbox (badness 10000) in paragraph at lines 51--57
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 51--56
+Underfull \hbox (badness 10000) in paragraph at lines 51--57
 
  []
 
-[18]
-Underfull \hbox (badness 10000) detected at line 79
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18]
+Underfull \hbox (badness 10000) detected at line 80
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 102
+Underfull \hbox (badness 10000) detected at line 103
 [][][]
  []
 
 [19]
-Underfull \hbox (badness 10000) detected at line 152
+Underfull \hbox (badness 10000) detected at line 153
 [][][]
  []
 
 ) (./class_model_pacman.tex
-Underfull \hbox (badness 10000) in paragraph at lines 5--22
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5--22
-
- []
-
-[20]
-<class_model_pacman__inherit__graph.pdf, id=1718, pagebox=cropbox, 159.59625pt 
+<class_model_pacman__inherit__graph.pdf, id=1705, pagebox=cropbox, 159.59625pt 
 x 212.795pt>
 File: class_model_pacman__inherit__graph.pdf Graphic file (type pdf)
 <use class_model_pacman__inherit__graph.pdf>
 Package pdftex.def Info: class_model_pacman__inherit__graph.pdf  used on input 
-line 31. on input line 31.
-Package pdftex.def Info: Requested size: 159.0pt x 212.0022pt on input line 31.
+line 15. on input line 15.
+Package pdftex.def Info: Requested size: 159.0pt x 212.0022pt on input line 15.
 
-<class_model_pacman__coll__graph.pdf, id=1719, pagebox=cropbox, 256.96pt x 237.
+ [20]
+<class_model_pacman__coll__graph.pdf, id=1712, pagebox=cropbox, 256.96pt x 237.
 88875pt>
 File: class_model_pacman__coll__graph.pdf Graphic file (type pdf)
 <use class_model_pacman__coll__graph.pdf>
 Package pdftex.def Info: class_model_pacman__coll__graph.pdf  used on input lin
-e 41. on input line 41.
-Package pdftex.def Info: Requested size: 256.0pt x 237.01697pt on input line 41
+e 25. on input line 25.
+Package pdftex.def Info: Requested size: 256.0pt x 237.01697pt on input line 25
 .
+ [21 <./class_model_pacman__inherit__graph.pdf> <./class_model_pacman__coll__gr
+aph.pdf
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+pdfTeX warning: pdflatex (file ./class_model_pacman__coll__graph.pdf): PDF incl
+usion: multiple pdfs with page group included in a single page
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 51--68
 
- [21 <./class_model_pacman__inherit__graph.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 65--82
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--68
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--82
+Underfull \hbox (badness 10000) in paragraph at lines 51--68
 
  []
 
-[22 <./class_model_pacman__coll__graph.pdf>]
-Underfull \hbox (badness 10000) detected at line 99
+
+Overfull \vbox (3.29677pt too high) has occurred while \output is active []
+
+
+[22]
+Underfull \hbox (badness 10000) detected at line 86
 [][][]
  []
 
 [23]
-Underfull \hbox (badness 10000) detected at line 174
+Underfull \hbox (badness 10000) detected at line 161
 [][][]
  []
 
-[24]) (./class_model_s_e_d.tex
-Underfull \hbox (badness 10000) in paragraph at lines 5--9
-
- []
-
-<class_model_s_e_d__inherit__graph.pdf, id=1785, pagebox=cropbox, 425.59pt x 21
+) (./class_model_s_e_d.tex
+<class_model_s_e_d__inherit__graph.pdf, id=1773, pagebox=cropbox, 425.59pt x 21
 2.795pt>
 File: class_model_s_e_d__inherit__graph.pdf Graphic file (type pdf)
 <use class_model_s_e_d__inherit__graph.pdf>
 Package pdftex.def Info: class_model_s_e_d__inherit__graph.pdf  used on input l
-ine 18. on input line 18.
-Package pdftex.def Info: Requested size: 350.0pt x 175.00928pt on input line 18
+ine 15. on input line 15.
+Package pdftex.def Info: Requested size: 350.0pt x 175.00928pt on input line 15
 .
-<class_model_s_e_d__coll__graph.pdf, id=1786, pagebox=cropbox, 216.81pt x 178.6
+ [24]
+<class_model_s_e_d__coll__graph.pdf, id=1779, pagebox=cropbox, 216.81pt x 178.6
 675pt>
 File: class_model_s_e_d__coll__graph.pdf Graphic file (type pdf)
 <use class_model_s_e_d__coll__graph.pdf>
 Package pdftex.def Info: class_model_s_e_d__coll__graph.pdf  used on input line
- 28. on input line 28.
-Package pdftex.def Info: Requested size: 216.0pt x 178.01003pt on input line 28
+ 24. on input line 24.
+Package pdftex.def Info: Requested size: 216.0pt x 178.01003pt on input line 24
 .
-[25 <./class_model_s_e_d__inherit__graph.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 50--54
+ [25 <./class_model_s_e_d__inherit__graph.pdf> <./class_model_s_e_d__coll__grap
+h.pdf
+
+pdfTeX warning: pdflatex (file ./class_model_s_e_d__coll__graph.pdf): PDF inclu
+sion: multiple pdfs with page group included in a single page
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 48--53
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--56
+Underfull \hbox (badness 10000) in paragraph at lines 48--53
 
  []
 
-[26 <./class_model_s_e_d__coll__graph.pdf>] [27]
-Underfull \hbox (badness 10000) detected at line 128
+[26]
+Underfull \hbox (badness 10000) detected at line 125
 [][][]
  []
 
@@ -1520,7 +1499,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--12
 
  []
 
-<class_model_walls__inherit__graph.pdf, id=1842, pagebox=cropbox, 148.555pt x 2
+[27]
+<class_model_walls__inherit__graph.pdf, id=1836, pagebox=cropbox, 148.555pt x 2
 12.795pt>
 File: class_model_walls__inherit__graph.pdf Graphic file (type pdf)
 <use class_model_walls__inherit__graph.pdf>
@@ -1528,7 +1508,7 @@ Package pdftex.def Info: class_model_walls__inherit__graph.pdf  used on input l
 ine 21. on input line 21.
 Package pdftex.def Info: Requested size: 148.0pt x 212.00868pt on input line 21
 .
-<class_model_walls__coll__graph.pdf, id=1843, pagebox=cropbox, 256.96pt x 259.9
+<class_model_walls__coll__graph.pdf, id=1837, pagebox=cropbox, 256.96pt x 259.9
 7125pt>
 File: class_model_walls__coll__graph.pdf Graphic file (type pdf)
 <use class_model_walls__coll__graph.pdf>
@@ -1536,7 +1516,12 @@ Package pdftex.def Info: class_model_walls__coll__graph.pdf  used on input line
  31. on input line 31.
 Package pdftex.def Info: Requested size: 256.0pt x 259.01857pt on input line 31
 .
-[28 <./class_model_walls__inherit__graph.pdf>]
+ [28 <./class_model_walls__inherit__graph.pdf> <./class_model_walls__coll__grap
+h.pdf
+
+pdfTeX warning: pdflatex (file ./class_model_walls__coll__graph.pdf): PDF inclu
+sion: multiple pdfs with page group included in a single page
+>]
 Underfull \hbox (badness 10000) in paragraph at lines 61--68
 
  []
@@ -1546,7 +1531,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 61--68
 
  []
 
-[29 <./class_model_walls__coll__graph.pdf>]
+
 Underfull \hbox (badness 10000) detected at line 85
 [][][]
  []
@@ -1557,7 +1542,7 @@ ed
 <to be read again> 
                    \relax 
 l.91 ..._s_e_d_ac36f9451c43b120828af4380858f2024}}
-                                                  
+                                                   [29]
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 7.19995pt on input line 94.
 
@@ -1565,79 +1550,139 @@ LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 LaTeX Font Warning: Font shape `T1/pcr/bc/n' undefined
 (Font)              using `T1/pcr/m/n' instead on input line 94.
 
-[30]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [30]
 Underfull \hbox (badness 10000) detected at line 166
 [][][]
  []
 
-[31]) (./class_stop_condition.tex
-<class_stop_condition__inherit__graph.pdf, id=1915, pagebox=cropbox, 158.5925pt
+) (./class_stop_condition.tex [31]
+<class_stop_condition__inherit__graph.pdf, id=1905, pagebox=cropbox, 158.5925pt
  x 212.795pt>
 File: class_stop_condition__inherit__graph.pdf Graphic file (type pdf)
 <use class_stop_condition__inherit__graph.pdf>
 Package pdftex.def Info: class_stop_condition__inherit__graph.pdf  used on inpu
-t line 10. on input line 10.
-Package pdftex.def Info: Requested size: 158.0pt x 212.01843pt on input line 10
+t line 15. on input line 15.
+Package pdftex.def Info: Requested size: 158.0pt x 212.01843pt on input line 15
 .
-<class_stop_condition__coll__graph.pdf, id=1916, pagebox=cropbox, 256.96pt x 23
+<class_stop_condition__coll__graph.pdf, id=1906, pagebox=cropbox, 256.96pt x 23
 7.88875pt>
 File: class_stop_condition__coll__graph.pdf Graphic file (type pdf)
 <use class_stop_condition__coll__graph.pdf>
 Package pdftex.def Info: class_stop_condition__coll__graph.pdf  used on input l
-ine 20. on input line 20.
-Package pdftex.def Info: Requested size: 256.0pt x 237.01697pt on input line 20
+ine 25. on input line 25.
+Package pdftex.def Info: Requested size: 256.0pt x 237.01697pt on input line 25
 .
- [32 <./class_stop_condition__inherit__graph.pdf>] [33 <./class_stop_condition_
-_coll__graph.pdf>]pdfTeX warning (ext4): destination with the same identifier (
-name{class_model_s_e_d_ac36f9451c43b120828af4380858f2024}) has been already use
-d, duplicate ignored
-<to be read again> 
-                   \relax 
-l.61 ..._s_e_d_ac36f9451c43b120828af4380858f2024}}
-                                                  
-Overfull \vbox (1.58186pt too high) has occurred while \output is active []
+ [32 <./class_stop_condition__inherit__graph.pdf> <./class_stop_condition__coll
+__graph.pdf
+
+pdfTeX warning: pdflatex (file ./class_stop_condition__coll__graph.pdf): PDF in
+clusion: multiple pdfs with page group included in a single page
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 53--64
+
+ []
 
 
-[34]
-Underfull \hbox (badness 10000) detected at line 130
+Underfull \hbox (badness 10000) in paragraph at lines 53--64
+
+ []
+
+[33]
+Underfull \hbox (badness 10000) detected at line 82
 [][][]
  []
 
-) (./class_wrapper.tex
-<class_wrapper__coll__graph.pdf, id=1975, pagebox=cropbox, 186.6975pt x 278.038
+pdfTeX warning (ext4): destination with the same identifier (name{class_model_s
+_e_d_ac36f9451c43b120828af4380858f2024}) has been already used, duplicate ignor
+ed
+<to be read again> 
+                   \relax 
+l.88 ..._s_e_d_ac36f9451c43b120828af4380858f2024}}
+                                                  
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [34]
+Underfull \hbox (badness 10000) detected at line 131
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 177
+[][][]
+ []
+
+[35]) (./class_wrapper.tex
+<class_wrapper__coll__graph.pdf, id=1976, pagebox=cropbox, 186.6975pt x 278.038
 76pt>
 File: class_wrapper__coll__graph.pdf Graphic file (type pdf)
 <use class_wrapper__coll__graph.pdf>
-Package pdftex.def Info: class_wrapper__coll__graph.pdf  used on input line 10.
- on input line 10.
-Package pdftex.def Info: Requested size: 186.0pt x 277.01137pt on input line 10
+Package pdftex.def Info: class_wrapper__coll__graph.pdf  used on input line 14.
+ on input line 14.
+Package pdftex.def Info: Requested size: 186.0pt x 277.01137pt on input line 14
 .
- [35] [36 <./class_wrapper__coll__graph.pdf>] [37]
-[38]) [39] [40
+ [36 <./class_wrapper__coll__graph.pdf>] [37]
+Underfull \hbox (badness 10000) detected at line 88
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 109
+[][][]
+ []
+
+[38]
+Underfull \hbox (badness 10000) detected at line 127
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 145
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 163
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 164--168
+
+ []
+
+[39]
+Underfull \hbox (badness 10000) detected at line 188
+[][][]
+ []
+
+[40]) [41] [42
 
 ]
 Chapter 5.
 (./_automate_graph_8m.tex) (./main_laby_8m.tex)
 (./_automaton_scheduling_creation_8m.tex)
 (./_automaton_struture_laby_creation_8m.tex)
-(./_automaton_walls_contraints_creation_8m.tex [41]) (./generer__lab_8m.tex)
-(./model_generator_8m.tex) (./_plan__desuma_functions_8m.tex [42])
-(./_save_d_e_s_u_m_a_file_8m.tex [43]) (./write_states_8m.tex)
-(./write_transitions_8m.tex [44]) (./creation_matricetransition_8m.tex)
+(./_automaton_walls_contraints_creation_8m.tex [43]) (./generer__lab_8m.tex)
+(./model_generator_8m.tex) (./_plan__desuma_functions_8m.tex [44])
+(./_save_d_e_s_u_m_a_file_8m.tex [45]) (./write_states_8m.tex)
+(./write_transitions_8m.tex [46]) (./creation_matricetransition_8m.tex)
 (./get_state_transition_f_s_m_8m.tex) (./get_state_transition_t_x_t_8m.tex
-[45]) (./automaton_2optimal_command_2main_8m.tex) (./main_8m.tex)
-(./optimal_command_8m.tex) (./_parcourir_matrices_transitions_8m.tex [46])
+[47]) (./automaton_2optimal_command_2main_8m.tex) (./main_8m.tex)
+(./optimal_command_8m.tex) (./_parcourir_matrices_transitions_8m.tex [48])
 (./rafine_automaton_8m.tex) (./rafine_automaton_class_8m.tex)
-(./_parrallel_composition_8m.tex) (./_automaton_8m.tex [47])
+(./_parrallel_composition_8m.tex) (./_automaton_8m.tex [49])
 (./_labyrinthe_8m.tex) (./modi__main_8m.tex)
 (./_create_pitures_and_video_8m.tex)
-(./_create_pitures_and_video__textured_8m.tex [48]) (./figure___laby_8m.tex
-[49]
+(./_create_pitures_and_video__textured_8m.tex [50]) (./figure___laby_8m.tex
+[51]
 Underfull \hbox (badness 10000) in paragraph at lines 55--56
 
  []
 
-<img_fig_lab.png, id=2286, 452.04884pt x 384.4764pt>
+<img_fig_lab.png, id=2317, 452.04884pt x 384.4764pt>
 File: img_fig_lab.png Graphic file (type png)
 <use img_fig_lab.png>
 Package pdftex.def Info: img_fig_lab.png  used on input line 58. on input line 
@@ -1653,7 +1698,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 80--81
 
  []
 
-[50 <./img_fig_lab.png>] [51]
+[52 <./img_fig_lab.png>] [53]
 Underfull \hbox (badness 10000) detected at line 86
 [][][]
  []
@@ -1668,12 +1713,12 @@ Underfull \hbox (badness 10000) detected at line 124
 [][][]
  []
 
-[52]
+[54]
 Underfull \hbox (badness 10000) detected at line 142
 [][][]
  []
 
-[53]
+[55]
 Underfull \hbox (badness 10000) detected at line 185
 [][][]
  []
@@ -1689,31 +1734,16 @@ Package pdftex.def Info: img_fig_lab.png  used on input line 213. on input line
  213.
 Package pdftex.def Info: Requested size: 284.52756pt x 242.00433pt on input lin
 e 213.
-[54] [55] [56]
-<obj_dynamic.png, id=2353, 562.1pt x 421.575pt>
+[56] [57] [58]
+<obj_dynamic.png, id=2384, 562.1pt x 421.575pt>
 File: obj_dynamic.png Graphic file (type png)
 <use obj_dynamic.png>
 Package pdftex.def Info: obj_dynamic.png  used on input line 298. on input line
  298.
 Package pdftex.def Info: Requested size: 227.62204pt x 170.71764pt on input lin
 e 298.
-) (./_model_laby_8m.tex [57 <./obj_dynamic.png>])
-(./_model_pacman_8m.tex
-Underfull \hbox (badness 10000) in paragraph at lines 12--28
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--28
-
- []
-
-) (./_model_s_e_d_8m.tex
-Underfull \hbox (badness 10000) in paragraph at lines 12--15
-
- []
-
-) (./_model_walls_8m.tex [58]
+) (./_model_laby_8m.tex [59 <./obj_dynamic.png>])
+(./_model_pacman_8m.tex) (./_model_s_e_d_8m.tex) (./_model_walls_8m.tex
 Underfull \hbox (badness 10000) in paragraph at lines 12--18
 
  []
@@ -1723,9 +1753,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--18
 
  []
 
-) (./set_color_8m.tex) (./_simulation_8m.tex) (./_stop_condition_8m.tex)
-(./visupacman_8m.tex) (./visupacman2_8m.tex) (./walls_border_8m.tex [59])
-(./_wrapper_8m.tex) [60] (./refman.ind
+) (./set_color_8m.tex [60]) (./_simulation_8m.tex) (./_stop_condition_8m.tex)
+(./visupacman_8m.tex) (./visupacman2_8m.tex) (./walls_border_8m.tex)
+(./_wrapper_8m.tex) [61] [62
+
+] (./refman.ind
 Underfull \hbox (badness 10000) in paragraph at lines 39--41
 []| \T1/phv/m/n/10 Creation[]Fonction[]Transition[]Ensemble[]Des[]Parties,
  []
@@ -1767,18 +1799,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--84
 []\T1/phv/m/n/10 automaton/optimal[]Command/rafine[]Automaton[]Class.[]m,
  []
 
-[61
+[63
 
 
-
-] [62] [63] [64])
+] [64] [65] [66])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 207.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 207.
  (./refman.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 207.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 207.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 2E4D03ACF35B74D55563F5C1CED168D3;52232.
+(rerunfilecheck)             Checksum: F4FD0912746FF1E08FC08C3E30E0F33D;52225.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1789,10 +1820,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 207.
  ) 
 Here is how much of TeX's memory you used:
- 16012 strings out of 492990
- 240983 string characters out of 6135004
- 325765 words of memory out of 5000000
- 18619 multiletter control sequences out of 15000+600000
+ 16034 strings out of 492990
+ 241165 string characters out of 6135004
+ 325976 words of memory out of 5000000
+ 18631 multiletter control sequences out of 15000+600000
  67401 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  53i,16n,92p,1181b,630s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1811,10 +1842,10 @@ xmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
 /helvetic/uhvb8ac.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/u
 hvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (76 pages, 405073 bytes).
+Output written on refman.pdf (76 pages, 410027 bytes).
 PDF statistics:
- 2899 PDF objects out of 2984 (max. 8388607)
- 2743 compressed objects within 28 object streams
- 585 named destinations out of 1000 (max. 500000)
+ 2932 PDF objects out of 2984 (max. 8388607)
+ 2766 compressed objects within 28 object streams
+ 595 named destinations out of 1000 (max. 500000)
  1990 words of extra memory for PDF output out of 10000 (max. 10000000)
 

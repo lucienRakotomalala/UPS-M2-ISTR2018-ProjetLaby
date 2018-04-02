@@ -49,28 +49,9 @@ This inheritance list is sorted roughly, but not completely, alphabetically:</di
 <tr id="row_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_automate_graph.html" target="_self">AutomateGraph</a></td><td class="desc"></td></tr>
 <tr id="row_1_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_automaton.html" target="_self">Automaton</a></td><td class="desc"></td></tr>
 <tr id="row_2_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_2_" class="arrow" onclick="toggleFolder('2_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classhandle.html" target="_self">handle</a></td><td class="desc"></td></tr>
-<tr id="row_2_0_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span id="arr_2_0_" class="arrow" onclick="toggleFolder('2_0_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_model_s_e_d.html" target="_self">ModelSED</a></td><td class="desc">Input : necessary information for compute the next state of the model <br />
-<br />
-Output : output's action of the model<br />
-</td></tr>
+<tr id="row_2_0_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span id="arr_2_0_" class="arrow" onclick="toggleFolder('2_0_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_model_s_e_d.html" target="_self">ModelSED</a></td><td class="desc">Abstract Class who contain the structure of a "fmg" implementation </td></tr>
 <tr id="row_2_0_0_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_model_laby.html" target="_self">ModelLaby</a></td><td class="desc">Class which contains the "fmg" structure of the labyrinth for 1 player </td></tr>
-<tr id="row_2_0_1_"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_model_pacman.html" target="_self">ModelPacman</a></td><td class="desc">Input : Possible Pacman's moves [Up Down Left Right] <br />
- 0 = move not possible ; 1 = move possible <br />
- ( Wout{7} )<br />
-<br />
- Output : Pacman's moves 1 : pacmanLeftBut, ( Wout(3) )<br />
- 2 : pacmanUpBut, ( Wout(1) )<br />
- 3 : pacmanRightBut, ( Wout(4) )<br />
- 4 : pacmanDownBut , ( Wout(2) )<br />
- ( Win( 4:7) of wrapper ) <br />
- <br />
- Input : Walls around Pacman <br />
- 1 up <br />
- 2 down<br />
- 3 left<br />
- 4 right<br />
- This command do the sequence P(D) &gt; P(B) &gt; P(H) &gt; P(G) <br />
-</td></tr>
+<tr id="row_2_0_1_"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_model_pacman.html" target="_self">ModelPacman</a></td><td class="desc">Contain ghost Pacman control </td></tr>
 <tr id="row_2_0_2_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_model_walls.html" target="_self">ModelWalls</a></td><td class="desc">Input : No need <br />
  <br />
  Output : [UPwalls , RIGHTwalls]<br />
@@ -78,9 +59,9 @@ Output : output's action of the model<br />
  State : contain the last move ( 0 = up ; 1 = right) <br />
  This command do the sequence walls Right &ndash;&gt; walls down <br />
 </td></tr>
-<tr id="row_2_0_3_"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_stop_condition.html" target="_self">StopCondition</a></td><td class="desc"></td></tr>
+<tr id="row_2_0_3_"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_stop_condition.html" target="_self">StopCondition</a></td><td class="desc">Class used to manage shutdown conditions </td></tr>
 <tr id="row_3_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_labyrinthe.html" target="_self">Labyrinthe</a></td><td class="desc"></td></tr>
-<tr id="row_4_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_wrapper.html" target="_self">Wrapper</a></td><td class="desc"></td></tr>
+<tr id="row_4_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_wrapper.html" target="_self">Wrapper</a></td><td class="desc">WRAPPER Global organization of the project </td></tr>
 </table>
 </div><!-- directory -->
 </div><!-- contents -->

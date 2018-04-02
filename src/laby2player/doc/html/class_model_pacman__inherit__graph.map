@@ -1,4 +1,4 @@
 <map id="ModelPacman" name="ModelPacman">
-<area shape="rect" id="node2" href="$class_model_s_e_d.html" title="State : minimal information necessary who evolute. " alt="" coords="15,80,101,107"/>
+<area shape="rect" id="node2" href="$class_model_s_e_d.html" title="Abstract Class who contain the structure of a &quot;fmg&quot; implementation. " alt="" coords="15,80,101,107"/>
 <area shape="rect" id="node3" href="$classhandle.html" title="handle" alt="" coords="28,5,88,32"/>
 </map>

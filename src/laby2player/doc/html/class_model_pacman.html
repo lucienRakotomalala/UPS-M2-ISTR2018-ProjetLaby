@@ -47,23 +47,14 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Input : Possible Pacman's moves [Up Down Left Right] <br />
- 0 = move not possible ; 1 = move possible <br />
- ( Wout{7} )<br />
-<br />
- Output : Pacman's moves 1 : pacmanLeftBut, ( Wout(3) )<br />
- 2 : pacmanUpBut, ( Wout(1) )<br />
- 3 : pacmanRightBut, ( Wout(4) )<br />
- 4 : pacmanDownBut , ( Wout(2) )<br />
- ( Win( 4:7) of wrapper ) <br />
-.  
+<p>Contain Pacman movement control.  
  <a href="class_model_pacman.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for ModelPacman:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_model_pacman__inherit__graph.png" border="0" usemap="#_model_pacman_inherit__map" alt="Inheritance graph"/></div>
 <map name="_model_pacman_inherit__map" id="_model_pacman_inherit__map">
-<area shape="rect" id="node2" href="class_model_s_e_d.html" title="State : minimal information necessary who evolute. " alt="" coords="15,80,101,107"/>
+<area shape="rect" id="node2" href="class_model_s_e_d.html" title="Abstract Class who contain the structure of a &quot;fmg&quot; implementation. " alt="" coords="15,80,101,107"/>
 <area shape="rect" id="node3" href="classhandle.html" title="handle" alt="" coords="28,5,88,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -72,7 +63,7 @@ Collaboration diagram for ModelPacman:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_model_pacman__coll__graph.png" border="0" usemap="#_model_pacman_coll__map" alt="Collaboration graph"/></div>
 <map name="_model_pacman_coll__map" id="_model_pacman_coll__map">
-<area shape="rect" id="node2" href="class_model_s_e_d.html" title="State : minimal information necessary who evolute. " alt="" coords="37,125,122,152"/>
+<area shape="rect" id="node2" href="class_model_s_e_d.html" title="Abstract Class who contain the structure of a &quot;fmg&quot; implementation. " alt="" coords="37,125,122,152"/>
 <area shape="rect" id="node3" href="classhandle.html" title="handle" alt="" coords="5,5,65,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -86,7 +77,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a6f3b146c92a207e95690d08975e1e072"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the evolution of the command.  <a href="#a6f3b146c92a207e95690d08975e1e072">More...</a><br /></td></tr>
 <tr class="separator:a6f3b146c92a207e95690d08975e1e072"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3140f24c6c4b80037b7d4f521c6ae2d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_plan__desuma_functions__2_players_8m.html#ac2ffb26d6f42d3bbcd7847b0873403f4">function</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_pacman.html#a3140f24c6c4b80037b7d4f521c6ae2d3">m</a> (in obj, in nextState, in init)</td></tr>
-<tr class="memdesc:a3140f24c6c4b80037b7d4f521c6ae2d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory method update the state of the command.  <a href="#a3140f24c6c4b80037b7d4f521c6ae2d3">More...</a><br /></td></tr>
+<tr class="memdesc:a3140f24c6c4b80037b7d4f521c6ae2d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory method, update the state of the command.  <a href="#a3140f24c6c4b80037b7d4f521c6ae2d3">More...</a><br /></td></tr>
 <tr class="separator:a3140f24c6c4b80037b7d4f521c6ae2d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07dadfabe92bf9a144b8a862720e7746"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_plan__desuma_functions__2_players_8m.html#ac2ffb26d6f42d3bbcd7847b0873403f4">function</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_pacman.html#a07dadfabe92bf9a144b8a862720e7746">g</a> (in obj)</td></tr>
 <tr class="memdesc:a07dadfabe92bf9a144b8a862720e7746"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the outputs.  <a href="#a07dadfabe92bf9a144b8a862720e7746">More...</a><br /></td></tr>
@@ -107,8 +98,10 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a103c618d75e54c3a72fac6bcaa59f61f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Input : Possible Pacman's moves [Up Down Left Right] <br />
- 0 = move not possible ; 1 = move possible <br />
+<div class="textblock"><p>Contain Pacman movement control. </p>
+<p>You can change here Pacman's command.<br />
+ Input : Possible Pacman's moves [Up Down Left Right] <br />
+ &ndash;&gt; 0 = move not possible ; 1 = move possible <br />
  ( Wout{7} )<br />
 <br />
  Output : Pacman's moves 1 : pacmanLeftBut, ( Wout(3) )<br />
@@ -116,13 +109,13 @@ Public Attributes</h2></td></tr>
  3 : pacmanRightBut, ( Wout(4) )<br />
  4 : pacmanDownBut , ( Wout(2) )<br />
  ( Win( 4:7) of wrapper ) <br />
-. </p>
-<p>Input : Walls around Pacman <br />
+ <br />
+ Input : Walls around Pacman <br />
  1 up <br />
  2 down<br />
  3 left<br />
  4 right<br />
-This command do the sequence P(D) &gt; P(B) &gt; P(H) &gt; P(G) <br />
+ This command do the sequence P(D) &gt; P(B) &gt; P(H) &gt; P(G) <br />
  </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aeece945de8fe29ca408290f87392ac3d"></a>
@@ -148,7 +141,7 @@ This command do the sequence P(D) &gt; P(B) &gt; P(H) &gt; P(G) <br />
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>instance of the <a class="el" href="class_model_pacman.html" title="Input : Possible Pacman&#39;s moves [Up Down Left Right]   0 = move not possible ; 1 = move possible   ( ...">ModelPacman</a> class. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>instance of the <a class="el" href="class_model_pacman.html" title="Contain Pacman movement control. ">ModelPacman</a> class. </dd></dl>
 
 </div>
 </div>
@@ -288,7 +281,7 @@ This command do the sequence P(D) &gt; P(B) &gt; P(H) &gt; P(G) <br />
 </table>
 </div><div class="memdoc">
 
-<p>Memory method update the state of the command. </p>
+<p>Memory method, update the state of the command. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">obj</td><td>The selected instance of the class </td></tr>

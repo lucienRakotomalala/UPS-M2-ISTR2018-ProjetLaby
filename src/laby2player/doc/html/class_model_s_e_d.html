@@ -47,7 +47,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>State : minimal information necessary who evolute.  
+<p>Abstract Class who contain the structure of a "fmg" implementation.  
  <a href="class_model_s_e_d.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for ModelSED:</div>
@@ -56,9 +56,9 @@ Inheritance diagram for ModelSED:</div>
 <map name="_model_s_e_d_inherit__map" id="_model_s_e_d_inherit__map">
 <area shape="rect" id="node3" href="class_model_ghost.html" title="Contain ghost movement control. " alt="" coords="5,155,97,181"/>
 <area shape="rect" id="node4" href="class_model_laby.html" title="Class which contains the &quot;fmg&quot; structure of the labyrinth for 2 players. " alt="" coords="122,155,207,181"/>
-<area shape="rect" id="node5" href="class_model_pacman.html" title="Input : Possible Pacman&#39;s moves [Up Down Left Right] &#160;&#160;0 = move not possible ; 1 = move possible &#160;&#160;( ..." alt="" coords="232,155,337,181"/>
+<area shape="rect" id="node5" href="class_model_pacman.html" title="Contain Pacman movement control. " alt="" coords="232,155,337,181"/>
 <area shape="rect" id="node6" href="class_model_walls.html" title="Contain the wall movement command. " alt="" coords="362,155,453,181"/>
-<area shape="rect" id="node7" href="class_stop_condition.html" title="StopCondition" alt="" coords="477,155,581,181"/>
+<area shape="rect" id="node7" href="class_stop_condition.html" title="Class used to manage shutdown conditions. " alt="" coords="477,155,581,181"/>
 <area shape="rect" id="node2" href="classhandle.html" title="handle" alt="" coords="255,5,315,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -93,7 +93,13 @@ Public Attributes</h2></td></tr>
 <tr class="separator:acd9263acfa96c9138afdf497e55acc24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>State : minimal information necessary who evolute. </p>
+<div class="textblock"><p>Abstract Class who contain the structure of a "fmg" implementation. </p>
+<p>This class is used for give a general definition of Model Class.<br />
+ Input : necessary information for compute the next state of the model <br />
+<br />
+ Output : output's action of the model<br />
+ State : minimal information necessary who evolute<br />
+ </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac36f9451c43b120828af4380858f2024"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac36f9451c43b120828af4380858f2024">&#9670;&nbsp;</a></span>f()</h2>
@@ -186,7 +192,7 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="class_model_ghost.html#a07dadfabe92bf9a144b8a862720e7746">ModelGhost</a>, <a class="el" href="class_model_laby.html#a07dadfabe92bf9a144b8a862720e7746">ModelLaby</a>, <a class="el" href="class_model_pacman.html#a07dadfabe92bf9a144b8a862720e7746">ModelPacman</a>, <a class="el" href="class_model_walls.html#a07dadfabe92bf9a144b8a862720e7746">ModelWalls</a>, and <a class="el" href="class_stop_condition.html#a07dadfabe92bf9a144b8a862720e7746">StopCondition</a>.</p>
+<p>Reimplemented in <a class="el" href="class_model_ghost.html#a07dadfabe92bf9a144b8a862720e7746">ModelGhost</a>, <a class="el" href="class_model_laby.html#a07dadfabe92bf9a144b8a862720e7746">ModelLaby</a>, <a class="el" href="class_model_pacman.html#a07dadfabe92bf9a144b8a862720e7746">ModelPacman</a>, <a class="el" href="class_stop_condition.html#a07dadfabe92bf9a144b8a862720e7746">StopCondition</a>, and <a class="el" href="class_model_walls.html#a07dadfabe92bf9a144b8a862720e7746">ModelWalls</a>.</p>
 
 </div>
 </div>
@@ -241,7 +247,7 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>instance of the class updated </dd></dl>
 
-<p>Reimplemented in <a class="el" href="class_model_ghost.html#a3140f24c6c4b80037b7d4f521c6ae2d3">ModelGhost</a>, <a class="el" href="class_model_pacman.html#a3140f24c6c4b80037b7d4f521c6ae2d3">ModelPacman</a>, <a class="el" href="class_model_laby.html#a3140f24c6c4b80037b7d4f521c6ae2d3">ModelLaby</a>, <a class="el" href="class_model_walls.html#a3140f24c6c4b80037b7d4f521c6ae2d3">ModelWalls</a>, and <a class="el" href="class_stop_condition.html#a3140f24c6c4b80037b7d4f521c6ae2d3">StopCondition</a>.</p>
+<p>Reimplemented in <a class="el" href="class_model_ghost.html#a3140f24c6c4b80037b7d4f521c6ae2d3">ModelGhost</a>, <a class="el" href="class_model_pacman.html#a3140f24c6c4b80037b7d4f521c6ae2d3">ModelPacman</a>, <a class="el" href="class_model_laby.html#a3140f24c6c4b80037b7d4f521c6ae2d3">ModelLaby</a>, <a class="el" href="class_stop_condition.html#a3140f24c6c4b80037b7d4f521c6ae2d3">StopCondition</a>, and <a class="el" href="class_model_walls.html#a3140f24c6c4b80037b7d4f521c6ae2d3">ModelWalls</a>.</p>
 
 </div>
 </div>

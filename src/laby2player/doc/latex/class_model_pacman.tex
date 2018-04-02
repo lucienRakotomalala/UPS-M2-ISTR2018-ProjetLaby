@@ -2,21 +2,13 @@
 \label{class_model_pacman}\index{Model\+Pacman@{Model\+Pacman}}
 
 
-Input \+: Possible Pacman\textquotesingle{}s moves \mbox{[}Up Down Left Right\mbox{]} ~\newline
- 0 = move not possible ; 1 = move possible ~\newline
- ( Wout\{7\} )~\newline
-~\newline
- Output \+: Pacman\textquotesingle{}s moves 1 \+: pacman\+Left\+But, ( Wout(3) )~\newline
- 2 \+: pacman\+Up\+But, ( Wout(1) )~\newline
- 3 \+: pacman\+Right\+But, ( Wout(4) )~\newline
- 4 \+: pacman\+Down\+But , ( Wout(2) )~\newline
- ( Win( 4\+:7) of wrapper ) ~\newline
-.  
+Contain Pacman movement control.  
 
 
 
 
-Inheritance diagram for Model\+Pacman\+:\nopagebreak
+Inheritance diagram for Model\+Pacman\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -25,7 +17,8 @@ Inheritance diagram for Model\+Pacman\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Model\+Pacman\+:\nopagebreak
+Collaboration diagram for Model\+Pacman\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -40,7 +33,7 @@ Collaboration diagram for Model\+Pacman\+:\nopagebreak
 \hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} \hyperlink{class_model_pacman_a6f3b146c92a207e95690d08975e1e072}{f} (in obj, in in)
 \begin{DoxyCompactList}\small\item\em Compute the evolution of the command. \end{DoxyCompactList}\item 
 \hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} \hyperlink{class_model_pacman_a3140f24c6c4b80037b7d4f521c6ae2d3}{m} (in obj, in next\+State, in init)
-\begin{DoxyCompactList}\small\item\em Memory method update the state of the command. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Memory method, update the state of the command. \end{DoxyCompactList}\item 
 \hyperlink{_plan__desuma_functions__2_players_8m_ac2ffb26d6f42d3bbcd7847b0873403f4}{function} \hyperlink{class_model_pacman_a07dadfabe92bf9a144b8a862720e7746}{g} (in obj)
 \begin{DoxyCompactList}\small\item\em Create the outputs. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
@@ -57,8 +50,11 @@ Property \hyperlink{class_model_pacman_a103c618d75e54c3a72fac6bcaa59f61f}{i}
 
 
 \subsection{Detailed Description}
-Input \+: Possible Pacman\textquotesingle{}s moves \mbox{[}Up Down Left Right\mbox{]} ~\newline
- 0 = move not possible ; 1 = move possible ~\newline
+Contain Pacman movement control. 
+
+You can change here Pacman\textquotesingle{}s command.~\newline
+ Input \+: Possible Pacman\textquotesingle{}s moves \mbox{[}Up Down Left Right\mbox{]} ~\newline
+ --$>$ 0 = move not possible ; 1 = move possible ~\newline
  ( Wout\{7\} )~\newline
 ~\newline
  Output \+: Pacman\textquotesingle{}s moves 1 \+: pacman\+Left\+But, ( Wout(3) )~\newline
@@ -66,14 +62,13 @@ Input \+: Possible Pacman\textquotesingle{}s moves \mbox{[}Up Down Left Right\mb
  3 \+: pacman\+Right\+But, ( Wout(4) )~\newline
  4 \+: pacman\+Down\+But , ( Wout(2) )~\newline
  ( Win( 4\+:7) of wrapper ) ~\newline
-. 
-
-Input \+: Walls around Pacman ~\newline
+ ~\newline
+ Input \+: Walls around Pacman ~\newline
  1 up ~\newline
  2 down~\newline
  3 left~\newline
  4 right~\newline
-This command do the sequence P(\+D) $>$ P(\+B) $>$ P(\+H) $>$ P(\+G) ~\newline
+ This command do the sequence P(\+D) $>$ P(\+B) $>$ P(\+H) $>$ P(\+G) ~\newline
  
 
 \subsection{Constructor \& Destructor Documentation}
@@ -156,7 +151,7 @@ Reimplemented from \hyperlink{class_model_s_e_d_ac6bf71081e35755d5ed9992d165afcb
 
 
 
-Memory method update the state of the command. 
+Memory method, update the state of the command. 
 
 
 \begin{DoxyParams}{Parameters}
