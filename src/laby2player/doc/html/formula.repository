@@ -1,0 +1,4 @@
+\form#0:$ out(t) = \frac{\frac{om+1}{om*e^{cv*t}+1}-1}{om} $
+\form#1:$ t \in [0,1]$
+\form#2:$ om = 72.89105$
+\form#3:$ cv = -11.27357 $

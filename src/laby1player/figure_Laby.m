@@ -184,7 +184,6 @@ function ui_Callback(hObject, eventdata, handles)
     end
     updateUI(handles, handles.wrapper.get_out());
     guidata(hObject,handles)
-    %faire une fonction qui utilise stop pour arrete le laby
 end
 
 % --- Callback for all connection
@@ -231,8 +230,7 @@ end
 % --- Create a graphical element for ghost
 % ===============================================================
 %> @brief Creation of the graphical object "pacman".
-%> The pacman is created by using the patch function and store into the handle
-%> in 'pacman'.
+%> The pacman is created by using the patch function and store into the handle in 'pacman'.
 %> @param handles    structure with handles and user data (see GUIDATA)
 %> @return h the updated structure with handles and user data (see GUIDATA)
 % ===============================================================
@@ -442,7 +440,7 @@ end
 %> for \f$ t \in [0,1]\f$, \f$ om = 72.89105\f$ and \f$ cv = -11.27357 \f$.
 %> \image html obj_dynamic.png "Dynamics of movement"
 %> \image latex obj_dynamic.png "Dynamics of movement" width=8cm
-%> @param strPlayer String contain the exact name of the object to move.
+%> @param strPlayer String contain the exact name of the object to move. ('pacman')
 %> @param position new position of the object. format : [x y]
 %> @param handles    structure with handles and user data (see GUIDATA)
 % ===============================================================
@@ -493,8 +491,7 @@ function updateUIEscape(elementToSet,boolState)
     set (elementToSet,'String',strD);
 end
 
-% --- Update up down left and right walls around a element (pacman, ghost,
-% ghost sees pacman).
+% --- Update up down left and right walls around a element (pacman).
 % ===============================================================
 %> @brief Update graphical elements for walls around pacman.
 %> This function, with the output of the wrapper, update color of
