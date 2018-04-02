@@ -1,5 +1,4 @@
 %> @file Simulation.m
-
 %> @brief Script to launch the labyrinth simulation.
 
 %> This script allows you to run a complete simulation of the labyrinth. It stops according to the stop conditions that are entered in the script.
