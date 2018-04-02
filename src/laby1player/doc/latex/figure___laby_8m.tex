@@ -28,17 +28,17 @@ function \hyperlink{figure___laby_8m_a38cb193f7c7132094881ec92e1e1f1ae}{update\+
 function \hyperlink{figure___laby_8m_abe5f5974e5080c6ec025b754bd247b24}{update\+U\+I\+Player} (in handles, in str\+Player, in position)
 \begin{DoxyCompactList}\small\item\em Update graphical place of a player (only pacman in this case). \end{DoxyCompactList}\item 
 function \hyperlink{figure___laby_8m_a0bc4f0536957330137cf68c471dd7275}{update\+U\+I\+Escape} (in element\+To\+Set, in bool\+State)
-\item 
+\begin{DoxyCompactList}\small\item\em Update graphical static text block about escape status. \end{DoxyCompactList}\item 
 function \hyperlink{figure___laby_8m_a1d96d5c1168a9db6b7530ed1e117697d}{update\+U\+I\+Walls\+Around} (in handles, in str\+Element, in walls\+Around)
-\item 
+\begin{DoxyCompactList}\small\item\em Update graphical elements for walls around pacman. \end{DoxyCompactList}\item 
 function \hyperlink{figure___laby_8m_aeeec55039fa4664a85aa8407d992f621}{update\+U\+I\+Walls} (in walls\+UI, in vert\+Walls, in horiz\+Walls)
-\item 
+\begin{DoxyCompactList}\small\item\em Update graphicals elements for the walls. \end{DoxyCompactList}\item 
 function \hyperlink{figure___laby_8m_a1a18fd2ef966c79b4687a62f38657cc6}{is\+One} (in bool\+Cond)
-\item 
+\begin{DoxyCompactList}\small\item\em Return the string \textquotesingle{}on\textquotesingle{} if the input is 1 else, return the string \textquotesingle{}off\textquotesingle{}. \end{DoxyCompactList}\item 
 function \hyperlink{figure___laby_8m_ac8b43d61d9c22654239e5aee49117c0e}{update\+Presence\+Detector\+Display} (in element\+To\+Set, in bool\+Condition)
-\item 
+\begin{DoxyCompactList}\small\item\em Change the background color of the graphical Element according to the state of the binary condition. \end{DoxyCompactList}\item 
 function \hyperlink{figure___laby_8m_a1a026f7304bcc541b6cf3fcb38ef0716}{reset\+U\+I\+Connection} (in handles)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Reset all commands connections to unconnected. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
@@ -191,12 +191,36 @@ varargout cell array for returning output args (see V\+A\+R\+A\+R\+G\+O\+UT);
 \subsubsection{\texorpdfstring{is\+One()}{isOne()}}
 {\footnotesize\ttfamily function is\+One (\begin{DoxyParamCaption}\item[{in}]{bool\+Cond }\end{DoxyParamCaption})}
 
+
+
+Return the string \textquotesingle{}on\textquotesingle{} if the input is 1 else, return the string \textquotesingle{}off\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bool\+Cond} & integer to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+str\+On\+Off Returned string. Can be worth \char`\"{}on\char`\"{} or \char`\"{}off\char`\"{}. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{figure___laby_8m_a1a026f7304bcc541b6cf3fcb38ef0716}\label{figure___laby_8m_a1a026f7304bcc541b6cf3fcb38ef0716}} 
 \index{figure\+\_\+\+Laby.\+m@{figure\+\_\+\+Laby.\+m}!reset\+U\+I\+Connection@{reset\+U\+I\+Connection}}
 \index{reset\+U\+I\+Connection@{reset\+U\+I\+Connection}!figure\+\_\+\+Laby.\+m@{figure\+\_\+\+Laby.\+m}}
 \subsubsection{\texorpdfstring{reset\+U\+I\+Connection()}{resetUIConnection()}}
 {\footnotesize\ttfamily function reset\+U\+I\+Connection (\begin{DoxyParamCaption}\item[{in}]{handles }\end{DoxyParamCaption})}
 
+
+
+Reset all commands connections to unconnected. 
+
+This function reset wrapper\textquotesingle{}s property and graphical element to unconnected state. 
+\begin{DoxyParams}{Parameters}
+{\em handles} & structure with handles and user data (see G\+U\+I\+D\+A\+TA) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+h the updated structure with handles and user data (see G\+U\+I\+D\+A\+TA) 
+\end{DoxyReturn}
 \mbox{\Hypertarget{figure___laby_8m_a13e8832f06299624ef0f167e80097f4c}\label{figure___laby_8m_a13e8832f06299624ef0f167e80097f4c}} 
 \index{figure\+\_\+\+Laby.\+m@{figure\+\_\+\+Laby.\+m}!ui\+\_\+\+Callback@{ui\+\_\+\+Callback}}
 \index{ui\+\_\+\+Callback@{ui\+\_\+\+Callback}!figure\+\_\+\+Laby.\+m@{figure\+\_\+\+Laby.\+m}}
@@ -228,6 +252,18 @@ in the following image, buttons marked with a black arrow lanch this Callback. ~
 \subsubsection{\texorpdfstring{update\+Presence\+Detector\+Display()}{updatePresenceDetectorDisplay()}}
 {\footnotesize\ttfamily function update\+Presence\+Detector\+Display (\begin{DoxyParamCaption}\item[{in}]{element\+To\+Set,  }\item[{in}]{bool\+Condition }\end{DoxyParamCaption})}
 
+
+
+Change the background color of the graphical Element according to the state of the binary condition. 
+
+This function, with a boolean condition (integer) and a handle to a graphical element update the background color. ~\newline
+If the Boolean value is 1, the background color turns blue, otherwise it will be gray. 
+\begin{DoxyParams}{Parameters}
+{\em element\+To\+Set} & handle to the graphical element. \\
+\hline
+{\em bool\+Condition} & input boolean condition store in a integer. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{figure___laby_8m_a9ec6541b09e277ad9513cd8352d7f4ad}\label{figure___laby_8m_a9ec6541b09e277ad9513cd8352d7f4ad}} 
 \index{figure\+\_\+\+Laby.\+m@{figure\+\_\+\+Laby.\+m}!update\+UI@{update\+UI}}
 \index{update\+UI@{update\+UI}!figure\+\_\+\+Laby.\+m@{figure\+\_\+\+Laby.\+m}}
@@ -282,6 +318,23 @@ This function show the direction\textquotesingle{}s buttons allows by the output
 \subsubsection{\texorpdfstring{update\+U\+I\+Escape()}{updateUIEscape()}}
 {\footnotesize\ttfamily function update\+U\+I\+Escape (\begin{DoxyParamCaption}\item[{in}]{element\+To\+Set,  }\item[{in}]{bool\+State }\end{DoxyParamCaption})}
 
+
+
+Update graphical static text block about escape status. 
+
+This function, with the output of the wrapper, show \textquotesingle{}Yes\textquotesingle{} in the static text block where is write \char`\"{}\+Espcaped Pacman \+: \char`\"{} if the pacman is on the escape case. ~\newline
+In the green box in the following image. 
+\begin{DoxyImage}
+\includegraphics[width=8cm]{img_fig_lab.png}
+\doxyfigcaption{graphicals elements}
+\end{DoxyImage}
+ 
+\begin{DoxyParams}{Parameters}
+{\em element\+To\+Set} & handle to the graphical object for escape status. \\
+\hline
+{\em bool\+State} & Value of the escape output of wrapper. (1 if pacman is escaped, else 0.) \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{figure___laby_8m_abe5f5974e5080c6ec025b754bd247b24}\label{figure___laby_8m_abe5f5974e5080c6ec025b754bd247b24}} 
 \index{figure\+\_\+\+Laby.\+m@{figure\+\_\+\+Laby.\+m}!update\+U\+I\+Player@{update\+U\+I\+Player}}
 \index{update\+U\+I\+Player@{update\+U\+I\+Player}!figure\+\_\+\+Laby.\+m@{figure\+\_\+\+Laby.\+m}}
@@ -313,9 +366,35 @@ The dynamics of movement is defined by this foncion $ out(t) = \frac{\frac{om+1}
 \subsubsection{\texorpdfstring{update\+U\+I\+Walls()}{updateUIWalls()}}
 {\footnotesize\ttfamily function update\+U\+I\+Walls (\begin{DoxyParamCaption}\item[{in}]{walls\+UI,  }\item[{in}]{vert\+Walls,  }\item[{in}]{horiz\+Walls }\end{DoxyParamCaption})}
 
+
+
+Update graphicals elements for the walls. 
+
+This function, with the output of the wrapper, update displayed part and hided part of the walls. 
+\begin{DoxyParams}{Parameters}
+{\em walls\+UI} & handle to the matrixs of graphicals elements for walls. \\
+\hline
+{\em vert\+Walls} & Corresponding part of output of wrapper for verticals walls.. \\
+\hline
+{\em horiz\+Walls} & Corresponding part of output of wrapper for horizontals walls. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{figure___laby_8m_a1d96d5c1168a9db6b7530ed1e117697d}\label{figure___laby_8m_a1d96d5c1168a9db6b7530ed1e117697d}} 
 \index{figure\+\_\+\+Laby.\+m@{figure\+\_\+\+Laby.\+m}!update\+U\+I\+Walls\+Around@{update\+U\+I\+Walls\+Around}}
 \index{update\+U\+I\+Walls\+Around@{update\+U\+I\+Walls\+Around}!figure\+\_\+\+Laby.\+m@{figure\+\_\+\+Laby.\+m}}
 \subsubsection{\texorpdfstring{update\+U\+I\+Walls\+Around()}{updateUIWallsAround()}}
 {\footnotesize\ttfamily function update\+U\+I\+Walls\+Around (\begin{DoxyParamCaption}\item[{in}]{handles,  }\item[{in}]{str\+Element,  }\item[{in}]{walls\+Around }\end{DoxyParamCaption})}
 
+
+
+Update graphical elements for walls around pacman. 
+
+This function, with the output of the wrapper, update color of gray squares that represents walls presence around the pacman. 
+\begin{DoxyParams}{Parameters}
+{\em str\+Element} & common part of the name of the handle to the graphical object for walls around pacman. \\
+\hline
+{\em walls\+Around} & Value of the corresponding part of output of wrapper. \\
+\hline
+{\em handles} & structure with handles and user data (see G\+U\+I\+D\+A\+TA) \\
+\hline
+\end{DoxyParams}

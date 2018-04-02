@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.11.13)  2 APR 2018 12:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.11.13)  2 APR 2018 14:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1630,11 +1630,11 @@ Chapter 5.
 (./_create_pitures_and_video__textured_8m.tex) (./figure___laby_8m.tex [33
 
 ]
+[34]
 Underfull \hbox (badness 10000) in paragraph at lines 55--56
 
  []
 
-[34]
 <img_fig_lab.png, id=1291, 452.04884pt x 384.4764pt>
 File: img_fig_lab.png Graphic file (type png)
 <use img_fig_lab.png>
@@ -1651,7 +1651,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 80--81
 
  []
 
-[35 <./img_fig_lab.png>]
+[35 <./img_fig_lab.png>] [36]
 Underfull \hbox (badness 10000) detected at line 86
 [][][]
  []
@@ -1666,37 +1666,53 @@ Underfull \hbox (badness 10000) detected at line 124
 [][][]
  []
 
-[36]
+[37]
 Underfull \hbox (badness 10000) detected at line 142
 [][][]
  []
 
-[37]
+[38]
 Underfull \hbox (badness 10000) detected at line 185
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--211
+Underfull \hbox (badness 10000) detected at line 203
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 221
+[][][]
+ []
+
+[39]
+Underfull \hbox (badness 10000) in paragraph at lines 234--235
 
  []
 
 File: img_fig_lab.png Graphic file (type png)
 <use img_fig_lab.png>
-Package pdftex.def Info: img_fig_lab.png  used on input line 213. on input line
- 213.
+Package pdftex.def Info: img_fig_lab.png  used on input line 237. on input line
+ 237.
 Package pdftex.def Info: Requested size: 284.52756pt x 242.00433pt on input lin
-e 213.
-[38] [39] [40]
-<obj_dynamic.png, id=1339, 562.1pt x 421.575pt>
+e 237.
+[40] [41]
+File: img_fig_lab.png Graphic file (type png)
+<use img_fig_lab.png>
+Package pdftex.def Info: img_fig_lab.png  used on input line 328. on input line
+ 328.
+Package pdftex.def Info: Requested size: 227.62204pt x 193.59291pt on input lin
+e 328.
+<obj_dynamic.png, id=1346, 562.1pt x 421.575pt>
 File: obj_dynamic.png Graphic file (type png)
 <use obj_dynamic.png>
-Package pdftex.def Info: obj_dynamic.png  used on input line 298. on input line
- 298.
+Package pdftex.def Info: obj_dynamic.png  used on input line 351. on input line
+ 351.
 Package pdftex.def Info: Requested size: 227.62204pt x 170.71764pt on input lin
-e 298.
-) (./main_8m.tex) (./_model_laby_8m.tex [41 <./obj_dynamic.png>]) (./_model_pac
-man_8m.tex) (./_model_s_e_d_8m.tex) (./_model_walls_8m.tex
+e 351.
+ [42] [43 <./obj_dynamic.png>]) (./main_8m.tex) (./_model_laby_8m.tex) (./_mode
+l_pacman_8m.tex) (./_model_s_e_d_8m.tex) (./_model_walls_8m.tex
 Underfull \hbox (badness 10000) in paragraph at lines 12--18
 
  []
@@ -1706,20 +1722,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--18
 
  []
 
-) (./set_color_8m.tex [42]) (./_simulation_8m.tex) (./_stop_condition_8m.tex)
-(./visupacman_8m.tex) (./visupacman2_8m.tex) (./walls_border_8m.tex)
-(./_wrapper_8m.tex [43]) [44] (./refman.ind [45
+[44]) (./set_color_8m.tex) (./_simulation_8m.tex) (./_stop_condition_8m.tex)
+(./visupacman_8m.tex) (./visupacman2_8m.tex) (./walls_border_8m.tex [45])
+(./_wrapper_8m.tex) [46] (./refman.ind [47
 
 
 
-] [46])
+] [48])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 181.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 181.
  (./refman.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 181.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 181.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 7EBB70324AA2F8C5D1D669DC5C428E9F;25320.
+(rerunfilecheck)             Checksum: D249A879C6B5FA9F76B1E11A27627525;25320.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1730,10 +1746,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 181.
  ) 
 Here is how much of TeX's memory you used:
- 15540 strings out of 492990
- 226957 string characters out of 6135004
- 318492 words of memory out of 5000000
- 18429 multiletter control sequences out of 15000+600000
+ 15556 strings out of 492990
+ 227096 string characters out of 6135004
+ 318640 words of memory out of 5000000
+ 18435 multiletter control sequences out of 15000+600000
  67401 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  53i,16n,92p,945b,630s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1752,10 +1768,10 @@ xmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
 /helvetic/uhvb8ac.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/u
 hvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (54 pages, 345450 bytes).
+Output written on refman.pdf (56 pages, 346065 bytes).
 PDF statistics:
- 1684 PDF objects out of 1728 (max. 8388607)
- 1558 compressed objects within 16 object streams
- 358 named destinations out of 1000 (max. 500000)
+ 1704 PDF objects out of 1728 (max. 8388607)
+ 1576 compressed objects within 16 object streams
+ 368 named destinations out of 1000 (max. 500000)
  1119 words of extra memory for PDF output out of 10000 (max. 10000000)
 
