@@ -56,7 +56,6 @@ function [A] = ParrallelComposition(A1, A2)
 	else
 		for i = 1:length(A1.state)
 			for j = 1:length(A2.state)
-				%TODO TEST
 				% A.state(j + (i-1)*length(A2.state)).Name = A1.state(i).Name * A2.state(j).Name;
 				A.state(j + (i-1)*length(A2.state)).Initial = A1.state(i).Initial * A2.state(j).Initial;
 				A.state(j + (i-1)*length(A2.state)).Marked = A1.state(i).Marked * A2.state(j).Marked;

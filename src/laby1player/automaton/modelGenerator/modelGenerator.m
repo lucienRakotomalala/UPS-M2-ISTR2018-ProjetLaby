@@ -1,9 +1,11 @@
 clear 
 %% Main script for launch the generation
 %% 1. Initial parameters
- wallsV =  [1 0 1 0; 1 1 0 1; 0 0 0 0;0 1 1 1; 1 0 0 0]; %  dimension can change
- wallsH = [0 0 0 1 0; 0 1 0 1 0;0 1 0 1 0;0 1 0 0 1];%[0 0 1 0; 0 0 0 1; 1 1 0 0];%  dimension can change
- pacman= [2,1]; % static dimension
+ wallsV = [1 0 1 0; 1 1 0 1; 0 0 0 0;0 1 1 1; 1 0 0 0]; %  dimension can change
+ wallsH = [0 0 0 1 0; 0 1 0 0 0;0 1 0 1 0;0 1 0 0 1];%[0 0 1 0; 0 0 0 1; 1 1 0 0];%  dimension can change
+%Let the init position in 1 beacause we found a huge bug if it something
+%else...
+ pacman= [1,1]; % static dimension
  escape = [5 5]; % static dimension
  sched = {'p','w'};% p for player and w for walls
 

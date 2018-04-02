@@ -2,12 +2,12 @@
 clear all
 %%   Generation of a laby scenario 1
 %
-addpath('modelGenerator', 'data')
+addpath('modelGenerator', 'optimalCommand')
 modelGenerator
 % Creation of a struct of the process of Laby
 ProcessAutomata = struct('lab',AutomateGraph,   ...
                          'walls',AutomateGraph, ...
-                         'sche',AutomateGraph);     % J'en ai oublié 1 !!!
+                         'sche',AutomateGraph);   
 %% Take Information
 % 1 lab
     % get transitons information
@@ -56,7 +56,7 @@ ProcessAutomata = struct('lab',AutomateGraph,   ...
     ProcessAutomata.walls = ProcessAutomata.walls.structAutomata2vectorAutomata;
     ProcessAutomata.sche = ProcessAutomata.sche.structAutomata2vectorAutomata;
     ProcessAutomata.lab = ProcessAutomata.lab.structAutomata2vectorAutomata;
-	ProcessAutomata.escape = ProcessAutomata.escape.structAutomata2vectorAutomata;	% TODO Test
+	ProcessAutomata.escape = ProcessAutomata.escape.structAutomata2vectorAutomata;	
     
     
 %% Product Parrallel
@@ -73,14 +73,36 @@ ProcessAutomata = struct('lab',AutomateGraph,   ...
 %% Accessibiliy 
     ProcessAutomata.composed = ProcessAutomata.composed.accessibilityAutomate;
     
-%% Objective add    
-tic
-    Objective = AutomateGraph();
-    Objective = Objective.FSM2Automata('commandPacmanSimple.fsm');
-    Objective = Objective.structAutomata2vectorAutomata;
-    toc
+%% Command add
+ok=0;
+while(~ok)
+disp('Choisissez la composition parallèle que vous souhaitez effectuée :')
+disp('Attention au format que vous envoyer (états nommés par des chiffres et transitions communes exact au procédé ou sinon elle seront considérés comme indépendantes.)')
+disp('1 : La commande avec priorité')
+disp('2 : La commande avec mémoire (3x3 max sinon c est trop grand)')
+disp('3 : L objectif "Atteindre la sortie"')
+disp('4 : L objectif "Rester bloqué"')
+choix = input('');
+if(choix<=4 && choix>=0)
+    ok=1;
+end
+end
+Objective = AutomateGraph();
+if choix == 1
     
-    
+    Objective = Objective.FSM2Automata('commandPacmanPriority.fsm');
+else if choix == 2
+        Objective = Objective.FSM2Automata('commandPacmanMemory.fsm');
+    else if choix == 3
+            Objective = Objective.FSM2Automata('objectiveEscape.fsm');
+        else if choix ==4
+                Objective = Objective.FSM2Automata('objectiveTrapped.fsm');
+            end
+        end
+    end
+end
+Objective = Objective.structAutomata2vectorAutomata;
+
 %% Product parallel with objectives
     Command = ParrallelComposition(Objective, ProcessAutomata.composed);
     %%recherche
@@ -88,14 +110,22 @@ tic
     
 %% 
     finalState = find([Command.state.Marked]);
+    s=[];
     if ~isempty(finalState)
         for i = 1:length(finalState) 
             [l,c]= Command.PathResearche(1,finalState(i));
             % From Optimal Command
             disp(sprintf('For the initial state %d and the final state %d :' , find([Command.state.Initial],1)  ,finalState(i)))
-            disp(strcat('  - the fatest command is :',strcat(sprintf(' %s ',strjoin([Command.vector(c).Name])))))
-            disp(sprintf('\n'))
+            word = [Command.vector(c).Name];
+           for(k=1:length(word))
+            if(strcmp(word(k),'R') == 1 || strcmp(word(k),'D') == 1 || strcmp(word(k),'U') == 1 || strcmp(word(k),'L') == 1) 
+                %disp(sprintf('%s ',strjoin(word(k))))
+                s=[s strjoin(word(k))];
+            end
+           end
+        disp(sprintf('%s',s))
         end
+                     disp(sprintf('\n'))
     else
         disp('No way out of your labyrinth')
     end

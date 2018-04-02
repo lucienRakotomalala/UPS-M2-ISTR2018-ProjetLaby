@@ -1,0 +1,26 @@
+5
+
+1	0	5
+R	1	c	o
+L	1	c	o
+D	1	c	o
+U	1	c	o
+nL	2	c	o
+
+2	0	4
+nD	3	c	o
+D	1	c	o
+R	1	c	o
+U	1	c	o
+
+3	0	3
+nR	4	c	o
+U	1	c	o
+R	1	c	o
+
+4	0	2
+nU	5	c	o
+R	1	c	o
+
+5	1	0
+

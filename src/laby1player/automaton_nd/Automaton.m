@@ -88,61 +88,77 @@ classdef Automaton
         
         %%%%%% Recherche Sequence %%%%%%%%%
         
-        function [path, tree] = PathResearche(obj, initialState, studiedState)
+        function [path, seq] = PathResearche(obj, initialState, studiedState)
+            %equivalence to the state of the treillis
             initialState=obj.Etats2Ensemble( initialState );
             studiedState=obj.Etats2Ensemble( studiedState );
             s=[];
             t=[];
+            sequence=[];
+            %We build the vector s and t for the graph
             for ligne = 1:size(obj.Fct,1)
                 for colonne = 1:size(obj.Fct,2)
                     s_from = colonne;
                     t_out =obj.Fct(ligne,colonne);
                     if(t_out ~= s_from)
-                        if(isempty(s)) %teste si existe deja pour prmier cas
-                            s = [s colonne];
-                            t = [t obj.Fct(ligne,colonne)];  
-                        else
-                            s_exist = find(s == s_from);
-                             t_exist = find(t == t_out);
-                            if(~isempty(s_exist) && ~isempty(find(t == t_out)))
-                                
-                                if (isempty(intersect(s_exist,t_exist)))
-                                    s = [s s_from];
-                                    t = [t t_out];
-                                end
-                            else
-                                s = [s s_from];
-                                t = [t t_out];
-                            end
-                        end
+                        s = [s s_from];
+                        t = [t t_out];
+                        sequence = [sequence ligne];
                     end
                 end
             end
+            %we sort them to only keep one transition form a state to
+            %another state
+            st=[s' t' sequence'];
+            st=sortrows(st,1);
+            size(st)
+            %duplicates are not saved
+            new_s=[];
+            new_t=[];
+            new_sequence=[];
             
-            G = digraph(s,t);
-           % figure(2)
+            for k=1:size(st,1)-1
+                if(st(k,1)==st(k+1,1) && st(k,2)==st(k+1,2))
+                else
+                    new_s = [new_s st(k,1)];
+                    new_t = [new_t st(k,2)];
+                    new_sequence = [new_sequence st(k,3)];
+                end
+                %test for the last value
+                lastindice=size(st,1);
+                
+                if (st(lastindice,1) == st(lastindice-1,1) && st(lastindice,2)~=st(lastindice-1,2))
+                else
+                    new_s = [new_s st(lastindice,1)];
+                    new_t = [new_t st(lastindice,2)];
+                    new_sequence = [new_sequence st(lastindice,3)];
+                end
+            end
+            %graph is calculated
+            G = digraph(new_s,new_t);
             %plot(G)
+            
+            %shortestpath is found with Bellaman-Ford algorithm
             path = shortestpath(G,initialState,studiedState,'Method','positive');
             
-            cnt=1;
-            for indice = 1 : length(path)-1
-                s_path = path(indice);
-                n_path = path(indice+1);
-                
-                for tr = 1:size(obj.Fct,1)
-                    if (obj.Fct(tr,s_path) == n_path)
-                        tree(cnt) = tr;
-                        cnt = cnt+1;
+            %To remind which transition were taken
+            seq=[];
+            for l=1:(length(path)-1)
+                for m=1:length(new_s)
+                    if (path(l)==new_s(m) && path(l+1)==new_t(m))
+                        seq = [seq new_sequence(m)];
                     end
                 end
             end
         end
         
         
+        
+        
         %%%%%%% Accessibilitée %%%%%%%%%%%%
-        function [path, tree, existingPath]=AutomateAccessible(obj, initialState, studiedState)
+        function [path, sequence, existingPath]=AutomateAccessible(obj, initialState, studiedState)
             %Depuis un unique etat issu du labyrinthe
-            [path, tree] = PathResearche(obj, initialState, studiedState);
+            [path, sequence] = PathResearche(obj, initialState, studiedState);
             existingPath = (~isempty(path)); %(si qqch dans path, renvoie0)
         end
         

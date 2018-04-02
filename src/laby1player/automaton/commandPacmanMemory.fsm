@@ -1,0 +1,666 @@
+167
+
+1	1	2
+R	2	c	o
+nR	40	c	o
+
+10	1	2
+R	8	c	o
+nR	11	c	o
+
+100	1	2
+D	1	c	o
+nD	104	c	o
+
+101	1	2
+R	83	c	o
+nR	102	c	o
+
+102	1	2
+D	83	c	o
+nD	107	c	o
+
+103	1	2
+R	82	c	o
+nR	105	c	o
+
+104	1	2
+R	100	c	o
+nR	106	c	o
+
+105	1	2
+nL	39	c	o
+L	82	c	o
+
+106	1	2
+L	100	c	o
+nL	108	c	o
+
+107	1	2
+L	83	c	o
+nL	39	c	o
+
+108	1	2
+U	100	c	o
+nU	39	c	o
+
+109	1	2
+R	110	c	o
+nR	111	c	o
+
+11	1	2
+U	8	c	o
+nU	39	c	o
+
+110	1	2
+D	1	c	o
+nD	116	c	o
+
+111	1	2
+nD	113	c	o
+D	112	c	o
+
+112	1	2
+R	1	c	o
+nR	114	c	o
+
+113	1	2
+nL	115	c	o
+L	109	c	o
+
+114	1	2
+D	112	c	o
+nD	119	c	o
+
+115	1	2
+nU	39	c	o
+U	109	c	o
+
+116	1	2
+nR	117	c	o
+R	110	c	o
+
+117	1	2
+L	110	c	o
+nL	118	c	o
+
+118	1	2
+U	110	c	o
+nU	39	c	o
+
+119	1	2
+L	112	c	o
+nL	120	c	o
+
+12	1	2
+D	1	c	o
+nD	13	c	o
+
+120	1	2
+U	112	c	o
+nU	39	c	o
+
+121	1	2
+D	122	c	o
+nD	137	c	o
+
+122	1	2
+L	1	c	o
+nL	139	c	o
+
+123	1	2
+D	124	c	o
+nD	126	c	o
+
+124	1	2
+R	125	c	o
+nR	127	c	o
+
+125	1	2
+L	1	c	o
+nL	136	c	o
+
+126	1	2
+L	150	c	o
+nL	135	c	o
+
+127	1	2
+L	128	c	o
+nL	130	c	o
+
+128	1	2
+R	1	c	o
+nR	131	c	o
+
+129	1	0
+
+13	1	2
+nR	14	c	o
+D	12	c	o
+
+130	1	2
+D	127	c	o
+nD	132	c	o
+
+131	1	2
+D	128	c	o
+nD	133	c	o
+
+132	1	2
+U	127	c	o
+nU	39	c	o
+
+133	1	2
+L	128	c	o
+nL	134	c	o
+
+134	1	2
+U	128	c	o
+nU	39	c	o
+
+135	1	2
+U	162	c	o
+nU	39	c	o
+
+136	1	2
+R	125	c	o
+nR	148	c	o
+
+137	1	2
+L	138	c	o
+nL	146	c	o
+
+138	1	2
+D	1	c	o
+nD	143	c	o
+
+139	1	2
+R	122	c	o
+nR	140	c	o
+
+14	1	2
+nL	15	c	o
+L	12	c	o
+
+140	1	2
+D	122	c	o
+nD	141	c	o
+
+141	1	2
+nL	142	c	o
+L	122	c	o
+
+142	1	2
+U	122	c	o
+nU	39	c	o
+
+143	1	2
+R	138	c	o
+nR	144	c	o
+
+144	1	2
+L	138	c	o
+nL	145	c	o
+
+145	1	2
+nU	39	c	o
+U	138	c	o
+
+146	1	2
+R	121	c	o
+nR	147	c	o
+
+147	1	2
+U	121	c	o
+nU	39	c	o
+
+148	1	2
+D	125	c	o
+nD	149	c	o
+
+149	1	2
+U	125	c	o
+nU	39	c	o
+
+15	1	2
+nU	39	c	o
+U	12	c	o
+
+150	1	2
+R	151	c	o
+nR	152	c	o
+
+151	1	2
+D	1	c	o
+nD	160	c	o
+
+152	1	2
+D	153	c	o
+nD	154	c	o
+
+153	1	2
+R	1	c	o
+nR	155	c	o
+
+154	1	2
+nL	156	c	o
+L	152	c	o
+
+155	1	2
+D	153	c	o
+nD	157	c	o
+
+156	1	2
+U	152	c	o
+nU	39	c	o
+
+157	1	2
+L	153	c	o
+nL	163	c	o
+
+158	1	2
+U	151	c	o
+nU	39	c	o
+
+159	1	2
+L	151	c	o
+nL	158	c	o
+
+16	1	2
+L	1	c	o
+nL	17	c	o
+
+160	1	2
+R	151	c	o
+nR	159	c	o
+
+17	1	2
+nR	18	c	o
+R	16	c	o
+
+18	1	2
+nD	19	c	o
+D	16	c	o
+
+19	1	2
+nU	39	c	o
+U	16	c	o
+
+2	1	2
+D	3	c	o
+nD	5	c	o
+
+20	1	2
+nD	21	c	o
+D	24	c	o
+
+21	1	2
+nU	22	c	o
+U	28	c	o
+
+161	1	2
+nU	39	c	o
+U	162	c	o
+
+22	1	2
+nR	23	c	o
+R	20	c	o
+
+162	1	2
+R	121	c	o
+nR	123	c	o
+
+23	1	2
+nL	39	c	o
+L	20	c	o
+
+24	1	2
+nU	25	c	o
+U	1	c	o
+
+25	1	2
+nR	26	c	o
+R	24	c	o
+
+163	1	2
+nU	39	c	o
+U	153	c	o
+
+26	1	2
+nD	27	c	o
+D	24	c	o
+
+27	1	2
+nL	39	c	o
+L	24	c	o
+
+28	1	2
+nD	29	c	o
+D	1	c	o
+
+29	1	2
+nR	30	c	o
+R	28	c	o
+
+3	1	2
+L	4	c	o
+nL	32	c	o
+
+30	1	2
+nL	31	c	o
+L	28	c	o
+
+31	1	2
+nU	39	c	o
+U	28	c	o
+
+32	1	2
+nU	33	c	o
+U	35	c	o
+
+33	1	2
+nR	34	c	o
+R	3	c	o
+
+34	1	2
+nD	39	c	o
+D	3	c	o
+
+35	1	2
+nL	36	c	o
+L	1	c	o
+
+36	1	2
+nR	37	c	o
+R	35	c	o
+
+37	1	2
+nD	38	c	o
+D	35	c	o
+
+38	1	2
+nU	39	c	o
+U	35	c	o
+
+39	1	0
+
+164	1	2
+nR	165	c	o
+R	4	c	o
+
+165	1	2
+nD	166	c	o
+D	4	c	o
+
+166	1	2
+nL	39	c	o
+L	4	c	o
+
+4	1	2
+U	1	c	o
+nU	164	c	o
+
+40	1	2
+D	41	c	o
+nD	80	c	o
+
+41	1	2
+R	42	c	o
+nR	44	c	o
+
+42	1	2
+L	43	c	o
+nL	59	c	o
+
+43	1	2
+U	1	c	o
+nU	61	c	o
+
+44	1	2
+L	45	c	o
+nL	47	c	o
+
+45	1	2
+R	46	c	o
+nR	48	c	o
+
+46	1	2
+nU	53	c	o
+U	1	c	o
+
+47	1	2
+nU	50	c	o
+U	70	c	o
+
+48	1	2
+nL	51	c	o
+U	49	c	o
+
+49	1	2
+nR	52	c	o
+R	1	c	o
+
+5	1	2
+nL	6	c	o
+L	20	c	o
+
+50	1	2
+D	41	c	o
+nD	39	c	o
+
+51	1	2
+nD	54	c	o
+D	45	c	o
+
+52	1	2
+nD	55	c	o
+D	49	c	o
+
+53	1	2
+nR	56	c	o
+R	46	c	o
+
+54	1	2
+nL	39	c	o
+L	45	c	o
+
+55	1	2
+nL	57	c	o
+L	49	c	o
+
+56	1	2
+nD	58	c	o
+D	46	c	o
+
+57	1	2
+nU	39	c	o
+U	49	c	o
+
+58	1	2
+L	46	c	o
+nL	39	c	o
+
+59	1	2
+nU	62	c	o
+U	60	c	o
+
+6	1	2
+nU	7	c	o
+U	8	c	o
+
+60	1	2
+nL	63	c	o
+L	1	c	o
+
+61	1	2
+nR	66	c	o
+R	43	c	o
+
+62	1	2
+nR	64	c	o
+R	42	c	o
+
+63	1	2
+nR	65	c	o
+R	60	c	o
+
+64	1	2
+nD	39	c	o
+D	42	c	o
+
+65	1	2
+nD	67	c	o
+D	60	c	o
+
+66	1	2
+nD	68	c	o
+D	43	c	o
+
+67	1	2
+U	60	c	o
+nU	39	c	o
+
+68	1	2
+L	43	c	o
+nL	39	c	o
+
+69	1	2
+nL	73	c	o
+L	1	c	o
+
+7	1	2
+nR	39	c	o
+R	2	c	o
+
+70	1	2
+R	69	c	o
+nR	72	c	o
+
+71	1	2
+nR	75	c	o
+R	1	c	o
+
+72	1	2
+nL	76	c	o
+L	71	c	o
+
+73	1	2
+nR	74	c	o
+R	69	c	o
+
+74	1	2
+nD	78	c	o
+D	69	c	o
+
+75	1	2
+nD	167	c	o
+D	71	c	o
+
+76	1	2
+nD	77	c	o
+D	72	c	o
+
+77	1	2
+nU	39	c	o
+U	72	c	o
+
+167	1	2
+nL	79	c	o
+L	71	c	o
+
+78	1	2
+nU	39	c	o
+U	69	c	o
+
+79	1	2
+nU	39	c	o
+U	71	c	o
+
+8	1	2
+D	16	c	o
+nD	9	c	o
+
+80	1	2
+L	81	c	o
+nL	161	c	o
+
+81	1	2
+R	82	c	o
+nR	84	c	o
+
+82	1	2
+D	83	c	o
+nD	99	c	o
+
+83	1	2
+U	1	c	o
+nU	101	c	o
+
+84	1	2
+D	85	c	o
+nD	88	c	o
+
+85	1	2
+R	86	c	o
+nR	89	c	o
+
+86	1	2
+nU	87	c	o
+U	1	c	o
+
+87	1	2
+R	86	c	o
+nD	91	c	o
+
+88	1	2
+U	109	c	o
+nU	93	c	o
+
+89	1	2
+U	90	c	o
+nU	94	c	o
+
+9	1	2
+L	12	c	o
+nL	10	c	o
+
+90	1	2
+R	1	c	o
+nR	95	c	o
+
+91	1	2
+D	86	c	o
+nD	92	c	o
+
+92	1	2
+U	86	c	o
+nU	39	c	o
+
+93	1	2
+L	81	c	o
+nL	39	c	o
+
+94	1	2
+nD	96	c	o
+D	89	c	o
+
+95	1	2
+D	90	c	o
+nD	97	c	o
+
+96	1	2
+nL	39	c	o
+L	89	c	o
+
+97	1	2
+nL	98	c	o
+L	90	c	o
+
+98	1	2
+nU	39	c	o
+U	90	c	o
+
+99	1	2
+U	100	c	o
+nU	103	c	o
+

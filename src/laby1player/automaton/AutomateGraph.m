@@ -33,7 +33,7 @@ classdef AutomateGraph % Claire a choisi le titre
             if ~exist(nameFileFSM,'file')
                 error('Name of file FSM is invalid')
             end
-            [st, tr] = getStateTransitionFSM(nameFileFSM, 0, 0);
+            [st, tr] = getStateTransitionFSM(nameFileFSM);
             
             if ~isa(st, 'struct')
                 error('The object do not dispose a state struct. Problem in transposition of FSM File');
@@ -154,31 +154,39 @@ classdef AutomateGraph % Claire a choisi le titre
         %donné
         
         function [path, tree_new] = PathResearche(obj, initialState, studiedState)
+            %cf help graph (available until Matlab R2015b)
+            %s contains the present state and t the next state
+            %So we have a transition from s(i) to t(i)
+            %we build these both vectors
+            %there isn't the notion of transition in matlab so we only save
+            %one way from s(i) to t(i) and we don't save the stable
+            %transition (useless)
             s=[];
             t=[];
             tree = [];
             for c = 1:size(obj.vector,2)
                 tr_buff = obj.vector(c).value;
-                tic
+                 
                 for ligne = 1:size(tr_buff,1)
                     s_from = ligne;
                     t_out = tr_buff(ligne);
                     if(t_out ~= s_from && t_out ~=0 ) %teste si pas tr stable et tr existante
                         s = [s s_from];
                         t = [t t_out];
-                       tree = [tree c];
+                       tree = [tree c]; %save the transition for going from s to t
                     end
-                end
-                toc
-                    
+                end   
             end
             
        
-            G = digraph(s,t);
-            plot(G)
+            G = digraph(s,t); %create the graph, automaton are directed graph
+            %plot(G)
+            %find the shortest way with the Bellman Ford algorithm
             path = shortestpath(G,initialState,studiedState,'Method','positive');
             
             cnt=1;
+            %tree_new is used to find which transition was used because
+            %path gives the states way
             for indice = 1 : length(path)-1
                 s_path = path(indice);
                 t_path = path(indice+1);

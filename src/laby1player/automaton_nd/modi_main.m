@@ -1,7 +1,8 @@
 % TER=>Script d'exécution
-% Johanne Bakalara, Alexandre Armengaud, Lionel Mery, David Tocaven
+% Johanne Bakalara, Alexandre Armengaud, Lionel Mery, David Tocaven,
+% Ibrahim Atto, Claire Paya, Lucien Rakotomalala
 % Encadré par Monsieur Sylvain Durola
-% Université Paul Sabatier - EEA - M1 ISTR-RODECO - TER
+% Université Paul Sabatier - EEA - M2 ISTR
 
 % R-A-Z
 clear
@@ -28,9 +29,10 @@ nb_case=taille_x*taille_y;                % Largeur des matrices de transitions
 
 %% Choix (lecture depuis le terminal) des états initiaux, finaux et ceux dont on veut étudier l'accéssibilité et la coaccessibilité
 Etats_Initiaux=input(['Entrer l'' ensemble d''états initiaux compris entre 1 et ' blanks(1) num2str(nb_case) blanks(1) '  :  ']);
-%Etats_Finaux=input(['Entrer l'' ensemble d''états finaux compris entre 1 et ' blanks(1) num2str(nb_case) blanks(1) '  :  ']);
-% supprime Etat=input(['Entrer l'' ensemble d''états finaux compris entre 1 et ' blanks(1) num2str(nb_case) blanks(1) ' dont vous voulez tester l accessibilite et la coaccessibilite :  ']);
+Etat=input(['Entrer l'' état de sortie compris entre 1 et ' blanks(1) num2str(nb_case) blanks(1) '  :  ']);
+
 Etats_Finaux=nb_case;
+
 %% Création d'un objet de type labyrinthe
 lab = Labyrinthe(Matrice_Verticale,Matrice_Horizontale,Etats_Initiaux,Etats_Finaux);
 [ H, B, G, D ] = lab.Pas_a_pas();
@@ -55,7 +57,24 @@ A = Automaton({H,B,G,D},{'H','B','G','D'});
 %boucle pour chaque etat etudier
 %AllPaths=cell(nb_case,1);
 %for Etat= 1:nb_case
-Etat=5;
-[Accessible, Tree, SequenceAc]=A.AutomateAccessible(Etats_Initiaux,Etat); % paramètres :(obj,Etat_final)
+path=[];
+[Accessible, Sequence, SequenceAc]=A.AutomateAccessible(Etats_Initiaux,Etat); % paramètres :(obj,Etat_final)
+ for(k=1:length(Sequence))
+            if(Sequence(k) == 1)
+                s = 'Haut ';
+            else if (Sequence(k) == 2)
+                    s = 'Bas ';
+                else if (Sequence(k) == 3)
+                    s = 'Gauche ';
+                     else if (Sequence(k) == 4)
+                    s = 'Droite ';
+                         end
+                    end
+                end
+            end
+            path=[path s];
+           end
+disp(sprintf('%s',path))
 %AllPaths{Etat}=Tree;
+%Tree
 %end

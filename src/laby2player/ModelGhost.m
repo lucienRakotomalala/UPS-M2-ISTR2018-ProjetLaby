@@ -45,30 +45,30 @@ classdef ModelGhost < ModelSED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 %%%% COMMANDE 1 %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%             if(in_view(1)==1) %pacman up ?
-%                 nextState(2)=1; 
-%                 
-%             elseif(in_view(2)==1) %pacman down?
-%                 nextState(4)=1; 
-%                 
-%             elseif(in_view(3)==1)  %pacman left ?
-%                 nextState(1)=1; 
-%                 
-%             elseif(in_view(4)==1) %pacman right ?
-%                 nextState(3)=1;
-%                 
-%             elseif(in(4)==0) %right ?
-%                 nextState(3)=1 ;
-%                 
-%             elseif(in(2)==0) %down ?
-%                 nextState(4)=1; 
-%                 
-%             elseif(in(1)==0) %up ?
-%                 nextState(2)=1 ;
-%                 
-%             elseif(in(3)==0) %left ?
-%                 nextState(1)=1;
-%             end
+            if(in_view(1)==1) %pacman up ?
+                nextState(2)=1; 
+                
+            elseif(in_view(2)==1) %pacman down?
+                nextState(4)=1; 
+                
+            elseif(in_view(3)==1)  %pacman left ?
+                nextState(1)=1; 
+                
+            elseif(in_view(4)==1) %pacman right ?
+                nextState(3)=1;
+                
+            elseif(in(4)==0) %right ?
+                nextState(3)=1 ;
+                
+            elseif(in(2)==0) %down ?
+                nextState(4)=1; 
+                
+            elseif(in(1)==0) %up ?
+                nextState(2)=1 ;
+                
+            elseif(in(3)==0) %left ?
+                nextState(1)=1;
+            end
 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 %%%% COMMANDE 2 %%%%
