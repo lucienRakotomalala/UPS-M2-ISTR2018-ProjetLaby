@@ -1,21 +1,5 @@
 \begin{theindex}
 
-  \item {Automaton\+Scheduling\+Creation.\+m}
-    \subitem {function}, \hyperpage{50}
-  \item {Automaton\+Struture\+Laby\+Creation}
-    \subitem {Automaton\+Struture\+Laby\+Creation.\+m}, \hyperpage{50}
-    \subitem {Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m}, 
-		\hyperpage{52}
-  \item {Automaton\+Struture\+Laby\+Creation.\+m}
-    \subitem {Automaton\+Struture\+Laby\+Creation}, \hyperpage{50}
-  \item {Automaton\+Walls\+Contraints\+Creation}
-    \subitem {Automaton\+Walls\+Contraints\+Creation.\+m}, 
-		\hyperpage{51}
-  \item {Automaton\+Walls\+Contraints\+Creation.\+m}
-    \subitem {Automaton\+Walls\+Contraints\+Creation}, \hyperpage{51}
-
-  \indexspace
-
   \item {command\+Ghost}
     \subitem {Wrapper}, \hyperpage{43}
   \item {command\+Pacman}
@@ -85,10 +69,6 @@
     \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{47}
   \item {figure\+\_\+\+Laby\+\_\+\+Output\+Fcn}
     \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{47}
-  \item {function}
-    \subitem {Automaton\+Scheduling\+Creation.\+m}, \hyperpage{50}
-    \subitem {Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m}, 
-		\hyperpage{52}
 
   \indexspace
 
@@ -100,10 +80,6 @@
     \subitem {Model\+S\+ED}, \hyperpage{29}
     \subitem {Model\+Walls}, \hyperpage{33}
     \subitem {Stop\+Condition}, \hyperpage{39}
-  \item {generer\+\_\+lab}
-    \subitem {generer\+\_\+lab.\+m}, \hyperpage{51}
-  \item {generer\+\_\+lab.\+m}
-    \subitem {generer\+\_\+lab}, \hyperpage{51}
   \item {get\+\_\+out}
     \subitem {Wrapper}, \hyperpage{42}
   \item {get\+\_\+stop}
@@ -170,20 +146,6 @@
     \subitem {size\+Tab}, \hyperpage{9}
     \subitem {Up}, \hyperpage{10}
   \item {Model\+Command.\+m}, \hyperpage{50}
-  \item {Model\+Generator/\+Automaton\+Scheduling\+Creation.\+m}, 
-		\hyperpage{50}
-  \item {Model\+Generator/\+Automaton\+Struture\+Laby\+Creation.\+m}, 
-		\hyperpage{50}
-  \item {Model\+Generator/\+Automaton\+Walls\+Contraints\+Creation.\+m}, 
-		\hyperpage{51}
-  \item {Model\+Generator/\+Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m}, 
-		\hyperpage{51}
-  \item {Model\+Generator/\+Save\+D\+E\+S\+U\+M\+A\+File.\+m}, 
-		\hyperpage{53}
-  \item {Model\+Generator/generer\+\_\+lab.\+m}, \hyperpage{51}
-  \item {Model\+Generator/model\+Generator.\+m}, \hyperpage{51}
-  \item {Model\+Generator/write\+States.\+m}, \hyperpage{53}
-  \item {Model\+Generator/write\+Transitions.\+m}, \hyperpage{53}
   \item {Model\+Ghost}, \hyperpage{10}
     \subitem {f}, \hyperpage{12}, \hyperpage{14}
     \subitem {g}, \hyperpage{14}
@@ -191,7 +153,7 @@
     \subitem {m}, \hyperpage{15}
     \subitem {Model\+Ghost}, \hyperpage{12}
     \subitem {present\+State}, \hyperpage{15}
-  \item {Model\+Ghost.\+m}, \hyperpage{54}
+  \item {Model\+Ghost.\+m}, \hyperpage{50}
   \item {Model\+Laby}, \hyperpage{16}
     \subitem {f}, \hyperpage{18}
     \subitem {g}, \hyperpage{18}
@@ -207,7 +169,7 @@
     \subitem {walls\+V\+Between\+One}, \hyperpage{21}
   \item {model\+Laby}
     \subitem {Wrapper}, \hyperpage{44}
-  \item {Model\+Laby.\+m}, \hyperpage{54}
+  \item {Model\+Laby.\+m}, \hyperpage{50}
   \item {Model\+Pacman}, \hyperpage{22}
     \subitem {f}, \hyperpage{24}
     \subitem {g}, \hyperpage{26}
@@ -217,8 +179,8 @@
     \subitem {memory}, \hyperpage{27}
     \subitem {Model\+Pacman}, \hyperpage{24}
     \subitem {present\+State}, \hyperpage{27}
-  \item {Model\+Pacman.\+m}, \hyperpage{54}
-  \item {Model\+S\+E\+D.\+m}, \hyperpage{54}
+  \item {Model\+Pacman.\+m}, \hyperpage{50}
+  \item {Model\+S\+E\+D.\+m}, \hyperpage{50}
   \item {Model\+S\+ED}, \hyperpage{28}
     \subitem {f}, \hyperpage{29}
     \subitem {g}, \hyperpage{29}
@@ -234,7 +196,7 @@
     \subitem {Model\+Walls}, \hyperpage{32}
     \subitem {present\+State}, \hyperpage{35}
     \subitem {val}, \hyperpage{36}
-  \item {Model\+Walls.\+m}, \hyperpage{54}
+  \item {Model\+Walls.\+m}, \hyperpage{51}
 
   \indexspace
 
@@ -247,12 +209,6 @@
 
   \item {pacman\+Bit}
     \subitem {Wrapper}, \hyperpage{44}
-  \item {Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m}
-    \subitem {Automaton\+Struture\+Laby\+Creation}, \hyperpage{52}
-    \subitem {function}, \hyperpage{52}
-    \subitem {Save\+D\+E\+S\+U\+M\+A\+File}, \hyperpage{52}
-    \subitem {write\+States}, \hyperpage{52}
-    \subitem {write\+Transitions}, \hyperpage{52}
   \item {present\+State}
     \subitem {Model\+Command}, \hyperpage{9}
     \subitem {Model\+Ghost}, \hyperpage{15}
@@ -275,18 +231,12 @@
     \subitem {Model\+Laby}, \hyperpage{19}
   \item {same\+Y\+\_\+position}
     \subitem {Model\+Laby}, \hyperpage{20}
-  \item {Save\+D\+E\+S\+U\+M\+A\+File}
-    \subitem {Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m}, 
-		\hyperpage{52}
-    \subitem {Save\+D\+E\+S\+U\+M\+A\+File.\+m}, \hyperpage{53}
-  \item {Save\+D\+E\+S\+U\+M\+A\+File.\+m}
-    \subitem {Save\+D\+E\+S\+U\+M\+A\+File}, \hyperpage{53}
   \item {set\+Color}
-    \subitem {set\+Color.\+m}, \hyperpage{55}
-  \item {set\+Color.\+m}, \hyperpage{55}
-    \subitem {set\+Color}, \hyperpage{55}
-  \item {Simulation.\+m}, \hyperpage{55}
-  \item {Simulation2\+\_\+allpossiblewalls.\+m}, \hyperpage{55}
+    \subitem {set\+Color.\+m}, \hyperpage{51}
+  \item {set\+Color.\+m}, \hyperpage{51}
+    \subitem {set\+Color}, \hyperpage{51}
+  \item {Simulation.\+m}, \hyperpage{51}
+  \item {Simulation2\+\_\+allpossiblewalls.\+m}, \hyperpage{51}
   \item {size\+Tab}
     \subitem {Model\+Command}, \hyperpage{9}
   \item {stop}
@@ -300,7 +250,7 @@
     \subitem {Stop\+Condition}, \hyperpage{38}
   \item {stop\+Condition}
     \subitem {Wrapper}, \hyperpage{44}
-  \item {Stop\+Condition.\+m}, \hyperpage{55}
+  \item {Stop\+Condition.\+m}, \hyperpage{51}
 
   \indexspace
 
@@ -333,62 +283,17 @@
 
   \item {val}
     \subitem {Model\+Walls}, \hyperpage{36}
-  \item {validation/\+Validation 2/\+Test1/validation2.\+m}, 
-		\hyperpage{55}
-  \item {validation/\+Validation 2/\+Test10/validation2.\+m}, 
-		\hyperpage{55}
-  \item {validation/\+Validation 2/\+Test11/validation2.\+m}, 
-		\hyperpage{55}
-  \item {validation/\+Validation 2/\+Test12/validation2.\+m}, 
-		\hyperpage{55}
-  \item {validation/\+Validation 2/\+Test13/validation2.\+m}, 
-		\hyperpage{55}
-  \item {validation/\+Validation 2/\+Test14/validation2.\+m}, 
-		\hyperpage{56}
-  \item {validation/\+Validation 2/\+Test15/validation2.\+m}, 
-		\hyperpage{56}
-  \item {validation/\+Validation 2/\+Test16/validation2.\+m}, 
-		\hyperpage{56}
-  \item {validation/\+Validation 2/\+Test17/validation2.\+m}, 
-		\hyperpage{56}
-  \item {validation/\+Validation 2/\+Test2/validation2.\+m}, 
-		\hyperpage{56}
-  \item {validation/\+Validation 2/\+Test3/validation2.\+m}, 
-		\hyperpage{56}
-  \item {validation/\+Validation 2/\+Test4/validation2.\+m}, 
-		\hyperpage{56}
-  \item {validation/\+Validation 2/\+Test5/validation2.\+m}, 
-		\hyperpage{56}
-  \item {validation/\+Validation 2/\+Test6/validation2.\+m}, 
-		\hyperpage{56}
-  \item {validation/\+Validation 2/\+Test7/validation2.\+m}, 
-		\hyperpage{56}
-  \item {validation/\+Validation 2/\+Test8/validation2.\+m}, 
-		\hyperpage{56}
-  \item {validation/\+Validation 2/\+Test9/validation2.\+m}, 
-		\hyperpage{56}
-  \item {validation/\+Validation 3/\+Test1/verification3.\+m}, 
-		\hyperpage{56}
-  \item {validation/\+Validation 3/verification3.\+m}, \hyperpage{56}
-  \item {validation/\+Validation 4/\+Test1/test.\+m}, \hyperpage{56}
-  \item {validation/\+Validation 4/\+Test1/validation4.\+m}, 
-		\hyperpage{56}
-  \item {validation/\+Validation 4/test.\+m}, \hyperpage{56}
-  \item {validation/\+Validation 4/validation4.\+m}, \hyperpage{57}
-  \item {validation/\+Validation 7/validation7.\+m}, \hyperpage{57}
-  \item {validation/\+Validation 8/\+Test1/validation8.\+m}, 
-		\hyperpage{57}
-  \item {visupacman.\+m}, \hyperpage{57}
-  \item {visupacman2.\+m}, \hyperpage{57}
+  \item {visupacman.\+m}, \hyperpage{51}
+  \item {visupacman2.\+m}, \hyperpage{51}
 
   \indexspace
 
   \item {walls\+Bit}
     \subitem {Wrapper}, \hyperpage{44}
   \item {walls\+Border}
-    \subitem {walls\+Border.\+m}, \hyperpage{57}
-  \item {walls\+Border.\+m}, \hyperpage{57}
-    \subitem {walls\+Border}, \hyperpage{57}
+    \subitem {walls\+Border.\+m}, \hyperpage{52}
+  \item {walls\+Border.\+m}, \hyperpage{51}
+    \subitem {walls\+Border}, \hyperpage{52}
   \item {walls\+H\+Between}
     \subitem {Model\+Laby}, \hyperpage{20}
   \item {walls\+H\+Between\+One}
@@ -418,18 +323,6 @@
     \subitem {walls\+Bit}, \hyperpage{44}
     \subitem {who\+Play}, \hyperpage{44}
     \subitem {Wrapper}, \hyperpage{42}
-  \item {Wrapper.\+m}, \hyperpage{57}
-  \item {write\+States}
-    \subitem {Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m}, 
-		\hyperpage{52}
-    \subitem {write\+States.\+m}, \hyperpage{53}
-  \item {write\+States.\+m}
-    \subitem {write\+States}, \hyperpage{53}
-  \item {write\+Transitions}
-    \subitem {Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m}, 
-		\hyperpage{52}
-    \subitem {write\+Transitions.\+m}, \hyperpage{54}
-  \item {write\+Transitions.\+m}
-    \subitem {write\+Transitions}, \hyperpage{54}
+  \item {Wrapper.\+m}, \hyperpage{52}
 
 \end{theindex}

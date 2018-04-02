@@ -209,78 +209,20 @@
 \indexentry{main.\+m@{main.\+m}|hyperpage}{50}
 \indexentry{matrix\+All\+Possible.\+m@{matrix\+All\+Possible.\+m}|hyperpage}{50}
 \indexentry{Model\+Command.\+m@{Model\+Command.\+m}|hyperpage}{50}
-\indexentry{Model\+Generator/\+Automaton\+Scheduling\+Creation.\+m@{Model\+Generator/\+Automaton\+Scheduling\+Creation.\+m}|hyperpage}{50}
-\indexentry{Automaton\+Scheduling\+Creation.\+m@{Automaton\+Scheduling\+Creation.\+m}!function@{function}|hyperpage}{50}
-\indexentry{function@{function}!Automaton\+Scheduling\+Creation.\+m@{Automaton\+Scheduling\+Creation.\+m}|hyperpage}{50}
-\indexentry{Model\+Generator/\+Automaton\+Struture\+Laby\+Creation.\+m@{Model\+Generator/\+Automaton\+Struture\+Laby\+Creation.\+m}|hyperpage}{50}
-\indexentry{Automaton\+Struture\+Laby\+Creation.\+m@{Automaton\+Struture\+Laby\+Creation.\+m}!Automaton\+Struture\+Laby\+Creation@{Automaton\+Struture\+Laby\+Creation}|hyperpage}{50}
-\indexentry{Automaton\+Struture\+Laby\+Creation@{Automaton\+Struture\+Laby\+Creation}!Automaton\+Struture\+Laby\+Creation.\+m@{Automaton\+Struture\+Laby\+Creation.\+m}|hyperpage}{50}
-\indexentry{Model\+Generator/\+Automaton\+Walls\+Contraints\+Creation.\+m@{Model\+Generator/\+Automaton\+Walls\+Contraints\+Creation.\+m}|hyperpage}{51}
-\indexentry{Automaton\+Walls\+Contraints\+Creation.\+m@{Automaton\+Walls\+Contraints\+Creation.\+m}!Automaton\+Walls\+Contraints\+Creation@{Automaton\+Walls\+Contraints\+Creation}|hyperpage}{51}
-\indexentry{Automaton\+Walls\+Contraints\+Creation@{Automaton\+Walls\+Contraints\+Creation}!Automaton\+Walls\+Contraints\+Creation.\+m@{Automaton\+Walls\+Contraints\+Creation.\+m}|hyperpage}{51}
-\indexentry{Model\+Generator/generer\+\_\+lab.\+m@{Model\+Generator/generer\+\_\+lab.\+m}|hyperpage}{51}
-\indexentry{generer\+\_\+lab.\+m@{generer\+\_\+lab.\+m}!generer\+\_\+lab@{generer\+\_\+lab}|hyperpage}{51}
-\indexentry{generer\+\_\+lab@{generer\+\_\+lab}!generer\+\_\+lab.\+m@{generer\+\_\+lab.\+m}|hyperpage}{51}
-\indexentry{Model\+Generator/model\+Generator.\+m@{Model\+Generator/model\+Generator.\+m}|hyperpage}{51}
-\indexentry{Model\+Generator/\+Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m@{Model\+Generator/\+Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m}|hyperpage}{51}
-\indexentry{Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m@{Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m}!Automaton\+Struture\+Laby\+Creation@{Automaton\+Struture\+Laby\+Creation}|hyperpage}{52}
-\indexentry{Automaton\+Struture\+Laby\+Creation@{Automaton\+Struture\+Laby\+Creation}!Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m@{Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m}|hyperpage}{52}
-\indexentry{Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m@{Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m}!function@{function}|hyperpage}{52}
-\indexentry{function@{function}!Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m@{Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m}|hyperpage}{52}
-\indexentry{Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m@{Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m}!Save\+D\+E\+S\+U\+M\+A\+File@{Save\+D\+E\+S\+U\+M\+A\+File}|hyperpage}{52}
-\indexentry{Save\+D\+E\+S\+U\+M\+A\+File@{Save\+D\+E\+S\+U\+M\+A\+File}!Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m@{Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m}|hyperpage}{52}
-\indexentry{Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m@{Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m}!write\+States@{write\+States}|hyperpage}{52}
-\indexentry{write\+States@{write\+States}!Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m@{Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m}|hyperpage}{52}
-\indexentry{Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m@{Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m}!write\+Transitions@{write\+Transitions}|hyperpage}{52}
-\indexentry{write\+Transitions@{write\+Transitions}!Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m@{Plan\+\_\+desuma\+Functions\+\_\+2\+Players.\+m}|hyperpage}{52}
-\indexentry{Model\+Generator/\+Save\+D\+E\+S\+U\+M\+A\+File.\+m@{Model\+Generator/\+Save\+D\+E\+S\+U\+M\+A\+File.\+m}|hyperpage}{53}
-\indexentry{Save\+D\+E\+S\+U\+M\+A\+File.\+m@{Save\+D\+E\+S\+U\+M\+A\+File.\+m}!Save\+D\+E\+S\+U\+M\+A\+File@{Save\+D\+E\+S\+U\+M\+A\+File}|hyperpage}{53}
-\indexentry{Save\+D\+E\+S\+U\+M\+A\+File@{Save\+D\+E\+S\+U\+M\+A\+File}!Save\+D\+E\+S\+U\+M\+A\+File.\+m@{Save\+D\+E\+S\+U\+M\+A\+File.\+m}|hyperpage}{53}
-\indexentry{Model\+Generator/write\+States.\+m@{Model\+Generator/write\+States.\+m}|hyperpage}{53}
-\indexentry{write\+States.\+m@{write\+States.\+m}!write\+States@{write\+States}|hyperpage}{53}
-\indexentry{write\+States@{write\+States}!write\+States.\+m@{write\+States.\+m}|hyperpage}{53}
-\indexentry{Model\+Generator/write\+Transitions.\+m@{Model\+Generator/write\+Transitions.\+m}|hyperpage}{53}
-\indexentry{write\+Transitions.\+m@{write\+Transitions.\+m}!write\+Transitions@{write\+Transitions}|hyperpage}{54}
-\indexentry{write\+Transitions@{write\+Transitions}!write\+Transitions.\+m@{write\+Transitions.\+m}|hyperpage}{54}
-\indexentry{Model\+Ghost.\+m@{Model\+Ghost.\+m}|hyperpage}{54}
-\indexentry{Model\+Laby.\+m@{Model\+Laby.\+m}|hyperpage}{54}
-\indexentry{Model\+Pacman.\+m@{Model\+Pacman.\+m}|hyperpage}{54}
-\indexentry{Model\+S\+E\+D.\+m@{Model\+S\+E\+D.\+m}|hyperpage}{54}
-\indexentry{Model\+Walls.\+m@{Model\+Walls.\+m}|hyperpage}{54}
-\indexentry{set\+Color.\+m@{set\+Color.\+m}|hyperpage}{55}
-\indexentry{set\+Color.\+m@{set\+Color.\+m}!set\+Color@{set\+Color}|hyperpage}{55}
-\indexentry{set\+Color@{set\+Color}!set\+Color.\+m@{set\+Color.\+m}|hyperpage}{55}
-\indexentry{Simulation.\+m@{Simulation.\+m}|hyperpage}{55}
-\indexentry{Simulation2\+\_\+allpossiblewalls.\+m@{Simulation2\+\_\+allpossiblewalls.\+m}|hyperpage}{55}
-\indexentry{Stop\+Condition.\+m@{Stop\+Condition.\+m}|hyperpage}{55}
-\indexentry{validation/\+Validation 2/\+Test1/validation2.\+m@{validation/\+Validation 2/\+Test1/validation2.\+m}|hyperpage}{55}
-\indexentry{validation/\+Validation 2/\+Test10/validation2.\+m@{validation/\+Validation 2/\+Test10/validation2.\+m}|hyperpage}{55}
-\indexentry{validation/\+Validation 2/\+Test11/validation2.\+m@{validation/\+Validation 2/\+Test11/validation2.\+m}|hyperpage}{55}
-\indexentry{validation/\+Validation 2/\+Test12/validation2.\+m@{validation/\+Validation 2/\+Test12/validation2.\+m}|hyperpage}{55}
-\indexentry{validation/\+Validation 2/\+Test13/validation2.\+m@{validation/\+Validation 2/\+Test13/validation2.\+m}|hyperpage}{55}
-\indexentry{validation/\+Validation 2/\+Test14/validation2.\+m@{validation/\+Validation 2/\+Test14/validation2.\+m}|hyperpage}{56}
-\indexentry{validation/\+Validation 2/\+Test15/validation2.\+m@{validation/\+Validation 2/\+Test15/validation2.\+m}|hyperpage}{56}
-\indexentry{validation/\+Validation 2/\+Test16/validation2.\+m@{validation/\+Validation 2/\+Test16/validation2.\+m}|hyperpage}{56}
-\indexentry{validation/\+Validation 2/\+Test17/validation2.\+m@{validation/\+Validation 2/\+Test17/validation2.\+m}|hyperpage}{56}
-\indexentry{validation/\+Validation 2/\+Test2/validation2.\+m@{validation/\+Validation 2/\+Test2/validation2.\+m}|hyperpage}{56}
-\indexentry{validation/\+Validation 2/\+Test3/validation2.\+m@{validation/\+Validation 2/\+Test3/validation2.\+m}|hyperpage}{56}
-\indexentry{validation/\+Validation 2/\+Test4/validation2.\+m@{validation/\+Validation 2/\+Test4/validation2.\+m}|hyperpage}{56}
-\indexentry{validation/\+Validation 2/\+Test5/validation2.\+m@{validation/\+Validation 2/\+Test5/validation2.\+m}|hyperpage}{56}
-\indexentry{validation/\+Validation 2/\+Test6/validation2.\+m@{validation/\+Validation 2/\+Test6/validation2.\+m}|hyperpage}{56}
-\indexentry{validation/\+Validation 2/\+Test7/validation2.\+m@{validation/\+Validation 2/\+Test7/validation2.\+m}|hyperpage}{56}
-\indexentry{validation/\+Validation 2/\+Test8/validation2.\+m@{validation/\+Validation 2/\+Test8/validation2.\+m}|hyperpage}{56}
-\indexentry{validation/\+Validation 2/\+Test9/validation2.\+m@{validation/\+Validation 2/\+Test9/validation2.\+m}|hyperpage}{56}
-\indexentry{validation/\+Validation 3/\+Test1/verification3.\+m@{validation/\+Validation 3/\+Test1/verification3.\+m}|hyperpage}{56}
-\indexentry{validation/\+Validation 3/verification3.\+m@{validation/\+Validation 3/verification3.\+m}|hyperpage}{56}
-\indexentry{validation/\+Validation 4/test.\+m@{validation/\+Validation 4/test.\+m}|hyperpage}{56}
-\indexentry{validation/\+Validation 4/\+Test1/test.\+m@{validation/\+Validation 4/\+Test1/test.\+m}|hyperpage}{56}
-\indexentry{validation/\+Validation 4/\+Test1/validation4.\+m@{validation/\+Validation 4/\+Test1/validation4.\+m}|hyperpage}{56}
-\indexentry{validation/\+Validation 4/validation4.\+m@{validation/\+Validation 4/validation4.\+m}|hyperpage}{57}
-\indexentry{validation/\+Validation 7/validation7.\+m@{validation/\+Validation 7/validation7.\+m}|hyperpage}{57}
-\indexentry{validation/\+Validation 8/\+Test1/validation8.\+m@{validation/\+Validation 8/\+Test1/validation8.\+m}|hyperpage}{57}
-\indexentry{visupacman.\+m@{visupacman.\+m}|hyperpage}{57}
-\indexentry{visupacman2.\+m@{visupacman2.\+m}|hyperpage}{57}
-\indexentry{walls\+Border.\+m@{walls\+Border.\+m}|hyperpage}{57}
-\indexentry{walls\+Border.\+m@{walls\+Border.\+m}!walls\+Border@{walls\+Border}|hyperpage}{57}
-\indexentry{walls\+Border@{walls\+Border}!walls\+Border.\+m@{walls\+Border.\+m}|hyperpage}{57}
-\indexentry{Wrapper.\+m@{Wrapper.\+m}|hyperpage}{57}
+\indexentry{Model\+Ghost.\+m@{Model\+Ghost.\+m}|hyperpage}{50}
+\indexentry{Model\+Laby.\+m@{Model\+Laby.\+m}|hyperpage}{50}
+\indexentry{Model\+Pacman.\+m@{Model\+Pacman.\+m}|hyperpage}{50}
+\indexentry{Model\+S\+E\+D.\+m@{Model\+S\+E\+D.\+m}|hyperpage}{50}
+\indexentry{Model\+Walls.\+m@{Model\+Walls.\+m}|hyperpage}{51}
+\indexentry{set\+Color.\+m@{set\+Color.\+m}|hyperpage}{51}
+\indexentry{set\+Color.\+m@{set\+Color.\+m}!set\+Color@{set\+Color}|hyperpage}{51}
+\indexentry{set\+Color@{set\+Color}!set\+Color.\+m@{set\+Color.\+m}|hyperpage}{51}
+\indexentry{Simulation.\+m@{Simulation.\+m}|hyperpage}{51}
+\indexentry{Simulation2\+\_\+allpossiblewalls.\+m@{Simulation2\+\_\+allpossiblewalls.\+m}|hyperpage}{51}
+\indexentry{Stop\+Condition.\+m@{Stop\+Condition.\+m}|hyperpage}{51}
+\indexentry{visupacman.\+m@{visupacman.\+m}|hyperpage}{51}
+\indexentry{visupacman2.\+m@{visupacman2.\+m}|hyperpage}{51}
+\indexentry{walls\+Border.\+m@{walls\+Border.\+m}|hyperpage}{51}
+\indexentry{walls\+Border.\+m@{walls\+Border.\+m}!walls\+Border@{walls\+Border}|hyperpage}{52}
+\indexentry{walls\+Border@{walls\+Border}!walls\+Border.\+m@{walls\+Border.\+m}|hyperpage}{52}
+\indexentry{Wrapper.\+m@{Wrapper.\+m}|hyperpage}{52}
