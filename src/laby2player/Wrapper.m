@@ -1,32 +1,61 @@
+%> @file Wrapper.m 
+
+%> @brief Connects all models to the display function. 
+
+%>   Contain the connection between the different elements and contain
+%>   all the models (walls, labyrinth, Pacman, Ghost, escape)
 classdef Wrapper
-    %WRAPPER Global organization of the projet 
+    %WRAPPER Connects all models to the display function.
     %   Contain the connection between the differents elements and contain
     %   all the models (walls, labyrinth, ghost, pacman, escape)
     
-    properties
-        wallsBit        % Boolean connection for the walls.
-        pacmanBit      % Boolean connection for the pacman.
-        ghostBit     % Boolean connection for the ghost.
-        
-        modelLaby     % contain the instance of the model of labyrinth 
+    properties        
+		%> Boolean connection for the walls.
+        wallsBit       
+		%> Boolean connection for the Pacman.
+        pacmanBit      
+        %> Boolean connection for the ghost.
+		ghostBit     
+		
+		%> contain the instance of the model of labyrinth.
+        modelLaby 
+		%> contain the instance of wall's command. 
         commandWalls
-        commandGhost
-        commandPacman
-        stopCondition
+        %> contain the instance of Pacman's command. 
+		commandPacman
+        %> contain the instance shutdown condition. 
+		stopCondition
         
-        in           % A integer vector who contain the state of input, 
-                    % incremented by the callback or some action.
+		%> A integer vector who contain the state of input, 
+        %> incremented by the callback or some action.
+        in           
         
-        out         % A cell who contain the state of output, 
-                    % incremented by the callback or some action.
+		%> A cell who contain the state of output, 
+        %> incremented by the callback or some action.
+        out
+
+		%> A cell that contains the output of the stop conditions instance.
+        %> incremented by the callback or some action.
         stop
-        whoPlay     % 0 = walls ; 1 = pacman ; 2 = ghost
+		%> A increment integer that permit to know which object to play 
+		%> 0 = walls ; 1 = Pacman.
+        whoPlay
     end
     
     methods
-        % --- Constructor of the class               
+% ======================================================================   
+%> @brief Class constructor of Instance of StopCondition Class.
+%> @param inSize Integer containing the size of the state of inputs.
+%> @param outSize Integer containing the size of the state of Outputs.
+%> @param initLaby Structure containing every fields need to initialize the labyrinth Model.
+%> @param initWalls Structure containing every fields need to initialize the Walls Model.
+%> @param initPac Structure containing every fields need to initialize the Pacman Model.
+%> @param initGhost Structure containing every fields need to initialize the Ghost Model.
+%> @param initStop Structure containing every fields need to initialize the Stop Model.
+%> @return instance of the Wrapper class.
+% ======================================================================                  
         function obj = Wrapper(inSize, outSize, initLaby, initWalls, initPac, initGhost, initStop)
-          %%
+			% --- Constructor of the class   
             %% OBjects (modelLaby, pacman, walls, ghost, stop) 
            obj.modelLaby      = ModelLaby(initLaby.wallsV_i,initLaby.wallsH_i,initLaby.pacman_i,initLaby.ghost_i,initLaby.escape_i,initLaby.caught_i); % model of labyrinth
            obj.commandWalls   = ModelWalls(initWalls.wallsCommand_i);
@@ -63,10 +92,16 @@ classdef Wrapper
            obj.ghostBit = 0;
         end
         
-        
-        % --- Update the connection bit for connect automatic mode for
-        % pacman, ghost and/or the walls.
+% ======================================================================   
+%> @brief  Update the connection bit for connect automatic mode for Pacman and/or the walls.
+%> @param obj The instance of Wrapper.
+%> @param indBit Integer pointing the element to be connected : '1' for walls, '2' for ghost and '3' for Pacman.
+%> @param value Boolean indicating if the element is connected (True) or not.    
+%> @return instance of the Wrapper class.
+% ====================================================================== 
         function obj = updateConnexion(obj,indBit,value)
+		% --- Update the connection bit for connect automatic mode for
+        % pacman, ghost and/or the walls.
             switch indBit
                 case 1
                         obj.wallsBit  = value;
@@ -78,9 +113,13 @@ classdef Wrapper
                     error('Wrong connexion index.s');
             end
         end
-        
-        %--- init the project
+% ======================================================================   
+%> @brief Allows to completely reset the labyrinth.
+%> @param obj The instance of Wrapper.  
+%> @return instance of the Wrapper class.
+% ======================================================================         
         function obj = init(obj)
+			%--- init the project
             %fprintf('Reset wrapper\n')
             % reset laby, commands and stop
            obj.modelLaby.m(0,1);
@@ -103,8 +142,20 @@ classdef Wrapper
            
         end
         
-        % --- Ordonate the global execution.
+% ======================================================================   
+%> @brief Ordinate the global execution of Models. 
+%> @param obj The instance of Wrapper.  
+%> @return instance of the Wrapper class.
+
+%> In a first case, it checks which models is connected via the interface. 
+%> If a model is connected, we execute the 'fmg' structure of the model, 
+%> else, we are waiting that a player push the desired button to move the labyrinth.\n
+%>\n 
+%> Here a little graphic about the scheduling of the call of each model :  walls > Laby > pacman > laby > ghost > laby \n 
+%> Every call of 'laby' implies a call of Stop Condition.
+% ======================================================================         
         function obj = orderer(obj, vectIn)
+			% --- Ordonate the global execution.
             % This function manage all the evolution    
             % input reading
             obj.in=vectIn;
@@ -175,9 +226,20 @@ classdef Wrapper
             end    
             % murs > Laby > pacman > Laby > ghost > laby 
         end
+% ======================================================================   
+%> @brief Return the current State of shutdown condition. 
+%> @param obj The instance of Wrapper.  
+%> @return instance of the Stop class.
+% ======================================================================
         function stp= get_stop(obj)
             stp = obj.stop;
         end
+		
+% ======================================================================   
+%> @brief Return the current State of output cell.
+%> @param obj The instance of Wrapper.  
+%> @return Output cell.
+% ======================================================================
         function output= get_out(obj)
             output = obj.out;
         end

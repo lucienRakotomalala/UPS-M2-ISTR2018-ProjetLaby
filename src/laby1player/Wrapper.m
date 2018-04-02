@@ -1,11 +1,11 @@
 %> @file Wrapper.m 
 
-%> @brief WRAPPER Global organization of the project 
+%> @brief Connects all models to the display function. 
 
 %>   Contain the connection between the different elements and contain
 %>   all the models (walls, labyrinth, Pacman, escape)
 classdef Wrapper
-    %WRAPPER Global organization of the project 
+    %WRAPPER Connects all models to the display function.
     %   Contain the connection between the different elements and contain
     %   all the models (walls, labyrinth, Pacman, escape)
     
@@ -35,8 +35,8 @@ classdef Wrapper
 		%> A cell that contains the output of the stop conditions instance.
         %> incremented by the callback or some action.
         stop
-		%> A increment integer that permit to know which object to play
-		%> 0 = walls ; 1 = Pacman ;
+		%> A increment integer that permit to know which object to play 
+		%> 0 = walls ; 1 = Pacman.
         whoPlay     
     end
     
@@ -67,6 +67,15 @@ classdef Wrapper
             %% Output definition
            obj.out = cell(1,outSize); %  set size of output cell
 
+%            obj.out{1} = zeros(1,2); % pacman [x y]
+%            obj.out{2} = zeros(1,2); % ghost  [x y]
+%            obj.out{3} = zeros(size(obj.modelLaby.presentState.wallsV)); %  Vertical Walls
+%            obj.out{4} = zeros(size(obj.modelLaby.presentState.wallsH)); %  Horizontal Walls
+%            obj.out{5} = 0 ;         % caught
+%            obj.out{6} = 0 ;         % escape
+%            obj.out{7} = zeros(1,4); % Walls around pacman [Up Down Left Right]
+%            obj.out{8} = zeros(1,4); % Walls around ghost  [Up Down Left Right]
+%            obj.out{9} = zeros(1,4); % Ghost sees pacman   [Up Down Left Right]
            obj.out=obj.modelLaby.g();
            obj.stop= obj.stopCondition.g();
            
@@ -134,7 +143,7 @@ classdef Wrapper
 %> If a model is connected, we execute the 'fmg' structure of the model, 
 %> else, we are waiting that a player push the desired button to move the labyrinth.\n
 %>\n 
-%> Here a little graphic about the scheduling of the call of each model :  murs > Laby > pacman > laby \n 
+%> Here a little graphic about the scheduling of the call of each model :  walls > Laby > pacman > laby \n 
 %> Every call of 'laby' implies a call of Stop Condition.
 % ====================================================================== 
         function obj = orderer(obj, vectIn)
