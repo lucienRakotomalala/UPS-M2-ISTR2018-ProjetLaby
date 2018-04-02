@@ -1,31 +1,29 @@
 \begin{theindex}
 
-  \item {command\+Ghost}
-    \subitem {Wrapper}, \hyperpage{43}
   \item {command\+Pacman}
-    \subitem {Wrapper}, \hyperpage{43}
+    \subitem {Wrapper}, \hyperpage{45}
   \item {command\+Walls}
-    \subitem {Wrapper}, \hyperpage{43}
+    \subitem {Wrapper}, \hyperpage{45}
   \item {connect\+\_\+\+Callback}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{47}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{49}
   \item {Create\+Pitures\+And\+Video}
-    \subitem {Create\+Pitures\+And\+Video.\+m}, \hyperpage{45}
-  \item {Create\+Pitures\+And\+Video.\+m}, \hyperpage{45}
-    \subitem {Create\+Pitures\+And\+Video}, \hyperpage{45}
+    \subitem {Create\+Pitures\+And\+Video.\+m}, \hyperpage{47}
+  \item {Create\+Pitures\+And\+Video.\+m}, \hyperpage{47}
+    \subitem {Create\+Pitures\+And\+Video}, \hyperpage{47}
   \item {Create\+Pitures\+And\+Video\+\_\+textured}
     \subitem {Create\+Pitures\+And\+Video\+\_\+textured.\+m}, 
-		\hyperpage{45}
-  \item {Create\+Pitures\+And\+Video\+\_\+textured.\+m}, \hyperpage{45}
+		\hyperpage{47}
+  \item {Create\+Pitures\+And\+Video\+\_\+textured.\+m}, \hyperpage{47}
     \subitem {Create\+Pitures\+And\+Video\+\_\+textured}, 
-		\hyperpage{45}
+		\hyperpage{47}
   \item {create\+U\+I\+Escape}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{47}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{49}
   \item {create\+U\+I\+Ghost}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{49}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{51}
   \item {create\+U\+I\+Pacman}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{49}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{51}
   \item {create\+U\+I\+Walls}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{49}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{51}
 
   \indexspace
 
@@ -43,32 +41,32 @@
     \subitem {Model\+Walls}, \hyperpage{33}
     \subitem {Stop\+Condition}, \hyperpage{38, 39}
   \item {figure\+\_\+\+Laby}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{50}
-  \item {figure\+\_\+\+Laby.\+m}, \hyperpage{46}
-    \subitem {connect\+\_\+\+Callback}, \hyperpage{47}
-    \subitem {create\+U\+I\+Escape}, \hyperpage{47}
-    \subitem {create\+U\+I\+Ghost}, \hyperpage{49}
-    \subitem {create\+U\+I\+Pacman}, \hyperpage{49}
-    \subitem {create\+U\+I\+Walls}, \hyperpage{49}
-    \subitem {figure\+\_\+\+Laby}, \hyperpage{50}
-    \subitem {figure\+\_\+\+Laby\+\_\+\+Opening\+Fcn}, \hyperpage{50}
-    \subitem {figure\+\_\+\+Laby\+\_\+\+Output\+Fcn}, \hyperpage{51}
-    \subitem {is\+One}, \hyperpage{51}
-    \subitem {reset\+U\+I\+Connection}, \hyperpage{52}
-    \subitem {ui\+\_\+\+Callback}, \hyperpage{52}
-    \subitem {update\+Presence\+Detector\+Display}, \hyperpage{53}
-    \subitem {update\+U\+I\+Active\+Cammand}, \hyperpage{54}
-    \subitem {update\+U\+I\+Button}, \hyperpage{54}
-    \subitem {update\+U\+I\+Caught}, \hyperpage{54}
-    \subitem {update\+U\+I\+Escape}, \hyperpage{55}
-    \subitem {update\+U\+I\+Player}, \hyperpage{56}
-    \subitem {update\+U\+I\+Walls}, \hyperpage{57}
-    \subitem {update\+U\+I\+Walls\+Around}, \hyperpage{57}
-    \subitem {update\+UI}, \hyperpage{53}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{52}
+  \item {figure\+\_\+\+Laby.\+m}, \hyperpage{48}
+    \subitem {connect\+\_\+\+Callback}, \hyperpage{49}
+    \subitem {create\+U\+I\+Escape}, \hyperpage{49}
+    \subitem {create\+U\+I\+Ghost}, \hyperpage{51}
+    \subitem {create\+U\+I\+Pacman}, \hyperpage{51}
+    \subitem {create\+U\+I\+Walls}, \hyperpage{51}
+    \subitem {figure\+\_\+\+Laby}, \hyperpage{52}
+    \subitem {figure\+\_\+\+Laby\+\_\+\+Opening\+Fcn}, \hyperpage{52}
+    \subitem {figure\+\_\+\+Laby\+\_\+\+Output\+Fcn}, \hyperpage{53}
+    \subitem {is\+One}, \hyperpage{53}
+    \subitem {reset\+U\+I\+Connection}, \hyperpage{54}
+    \subitem {ui\+\_\+\+Callback}, \hyperpage{54}
+    \subitem {update\+Presence\+Detector\+Display}, \hyperpage{55}
+    \subitem {update\+U\+I\+Active\+Cammand}, \hyperpage{56}
+    \subitem {update\+U\+I\+Button}, \hyperpage{56}
+    \subitem {update\+U\+I\+Caught}, \hyperpage{56}
+    \subitem {update\+U\+I\+Escape}, \hyperpage{57}
+    \subitem {update\+U\+I\+Player}, \hyperpage{58}
+    \subitem {update\+U\+I\+Walls}, \hyperpage{59}
+    \subitem {update\+U\+I\+Walls\+Around}, \hyperpage{59}
+    \subitem {update\+UI}, \hyperpage{55}
   \item {figure\+\_\+\+Laby\+\_\+\+Opening\+Fcn}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{50}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{52}
   \item {figure\+\_\+\+Laby\+\_\+\+Output\+Fcn}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{51}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{53}
 
   \indexspace
 
@@ -81,11 +79,11 @@
     \subitem {Model\+Walls}, \hyperpage{33}
     \subitem {Stop\+Condition}, \hyperpage{39}
   \item {get\+\_\+out}
-    \subitem {Wrapper}, \hyperpage{42}
-  \item {get\+\_\+stop}
-    \subitem {Wrapper}, \hyperpage{42}
-  \item {ghost\+Bit}
     \subitem {Wrapper}, \hyperpage{43}
+  \item {get\+\_\+stop}
+    \subitem {Wrapper}, \hyperpage{43}
+  \item {ghost\+Bit}
+    \subitem {Wrapper}, \hyperpage{45}
 
   \indexspace
 
@@ -97,9 +95,9 @@
     \subitem {Model\+Pacman}, \hyperpage{27}
     \subitem {Model\+Walls}, \hyperpage{35}
   \item {in}
-    \subitem {Wrapper}, \hyperpage{44}
+    \subitem {Wrapper}, \hyperpage{45}
   \item {init}
-    \subitem {Wrapper}, \hyperpage{42}
+    \subitem {Wrapper}, \hyperpage{44}
   \item {initial\+State}
     \subitem {Model\+Ghost}, \hyperpage{15}
     \subitem {Model\+Laby}, \hyperpage{21}
@@ -108,7 +106,7 @@
     \subitem {Model\+Walls}, \hyperpage{35}
     \subitem {Stop\+Condition}, \hyperpage{40}
   \item {is\+One}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{51}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{53}
 
   \indexspace
 
@@ -130,8 +128,8 @@
     \subitem {Model\+S\+ED}, \hyperpage{30}
     \subitem {Model\+Walls}, \hyperpage{35}
     \subitem {Stop\+Condition}, \hyperpage{40}
-  \item {main.\+m}, \hyperpage{57}
-  \item {matrix\+All\+Possible.\+m}, \hyperpage{58}
+  \item {main.\+m}, \hyperpage{59}
+  \item {matrix\+All\+Possible.\+m}, \hyperpage{60}
   \item {memory}
     \subitem {Model\+Pacman}, \hyperpage{27}
   \item {Model\+Command}, \hyperpage{8}
@@ -145,7 +143,7 @@
     \subitem {Right}, \hyperpage{9}
     \subitem {size\+Tab}, \hyperpage{9}
     \subitem {Up}, \hyperpage{10}
-  \item {Model\+Command.\+m}, \hyperpage{58}
+  \item {Model\+Command.\+m}, \hyperpage{60}
   \item {Model\+Ghost}, \hyperpage{10}
     \subitem {f}, \hyperpage{12}, \hyperpage{14}
     \subitem {g}, \hyperpage{14}
@@ -153,7 +151,7 @@
     \subitem {m}, \hyperpage{15}
     \subitem {Model\+Ghost}, \hyperpage{12}
     \subitem {present\+State}, \hyperpage{15}
-  \item {Model\+Ghost.\+m}, \hyperpage{58}
+  \item {Model\+Ghost.\+m}, \hyperpage{60}
   \item {Model\+Laby}, \hyperpage{16}
     \subitem {f}, \hyperpage{18}
     \subitem {g}, \hyperpage{18}
@@ -168,8 +166,8 @@
     \subitem {walls\+V\+Between}, \hyperpage{21}
     \subitem {walls\+V\+Between\+One}, \hyperpage{21}
   \item {model\+Laby}
-    \subitem {Wrapper}, \hyperpage{44}
-  \item {Model\+Laby.\+m}, \hyperpage{58}
+    \subitem {Wrapper}, \hyperpage{45}
+  \item {Model\+Laby.\+m}, \hyperpage{60}
   \item {Model\+Pacman}, \hyperpage{22}
     \subitem {f}, \hyperpage{24}
     \subitem {g}, \hyperpage{26}
@@ -179,8 +177,8 @@
     \subitem {memory}, \hyperpage{27}
     \subitem {Model\+Pacman}, \hyperpage{24}
     \subitem {present\+State}, \hyperpage{27}
-  \item {Model\+Pacman.\+m}, \hyperpage{58}
-  \item {Model\+S\+E\+D.\+m}, \hyperpage{58}
+  \item {Model\+Pacman.\+m}, \hyperpage{60}
+  \item {Model\+S\+E\+D.\+m}, \hyperpage{60}
   \item {Model\+S\+ED}, \hyperpage{28}
     \subitem {f}, \hyperpage{29}
     \subitem {g}, \hyperpage{29}
@@ -196,19 +194,19 @@
     \subitem {Model\+Walls}, \hyperpage{32}
     \subitem {present\+State}, \hyperpage{35}
     \subitem {val}, \hyperpage{36}
-  \item {Model\+Walls.\+m}, \hyperpage{58}
+  \item {Model\+Walls.\+m}, \hyperpage{60}
 
   \indexspace
 
   \item {orderer}
-    \subitem {Wrapper}, \hyperpage{43}
-  \item {out}
     \subitem {Wrapper}, \hyperpage{44}
+  \item {out}
+    \subitem {Wrapper}, \hyperpage{46}
 
   \indexspace
 
   \item {pacman\+Bit}
-    \subitem {Wrapper}, \hyperpage{44}
+    \subitem {Wrapper}, \hyperpage{46}
   \item {present\+State}
     \subitem {Model\+Command}, \hyperpage{9}
     \subitem {Model\+Ghost}, \hyperpage{15}
@@ -221,7 +219,7 @@
   \indexspace
 
   \item {reset\+U\+I\+Connection}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{52}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{54}
   \item {Right}
     \subitem {Model\+Command}, \hyperpage{9}
 
@@ -232,15 +230,15 @@
   \item {same\+Y\+\_\+position}
     \subitem {Model\+Laby}, \hyperpage{20}
   \item {set\+Color}
-    \subitem {set\+Color.\+m}, \hyperpage{59}
-  \item {set\+Color.\+m}, \hyperpage{59}
-    \subitem {set\+Color}, \hyperpage{59}
-  \item {Simulation.\+m}, \hyperpage{59}
-  \item {Simulation2\+\_\+allpossiblewalls.\+m}, \hyperpage{59}
+    \subitem {set\+Color.\+m}, \hyperpage{61}
+  \item {set\+Color.\+m}, \hyperpage{61}
+    \subitem {set\+Color}, \hyperpage{61}
+  \item {Simulation.\+m}, \hyperpage{61}
+  \item {Simulation2\+\_\+allpossiblewalls.\+m}, \hyperpage{61}
   \item {size\+Tab}
     \subitem {Model\+Command}, \hyperpage{9}
   \item {stop}
-    \subitem {Wrapper}, \hyperpage{44}
+    \subitem {Wrapper}, \hyperpage{46}
   \item {Stop\+Condition}, \hyperpage{36}
     \subitem {f}, \hyperpage{38, 39}
     \subitem {g}, \hyperpage{39}
@@ -249,51 +247,51 @@
     \subitem {present\+State}, \hyperpage{40}
     \subitem {Stop\+Condition}, \hyperpage{38}
   \item {stop\+Condition}
-    \subitem {Wrapper}, \hyperpage{44}
-  \item {Stop\+Condition.\+m}, \hyperpage{59}
+    \subitem {Wrapper}, \hyperpage{46}
+  \item {Stop\+Condition.\+m}, \hyperpage{61}
 
   \indexspace
 
   \item {ui\+\_\+\+Callback}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{52}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{54}
   \item {Up}
     \subitem {Model\+Command}, \hyperpage{10}
   \item {update\+Connexion}
-    \subitem {Wrapper}, \hyperpage{43}
+    \subitem {Wrapper}, \hyperpage{44}
   \item {update\+Presence\+Detector\+Display}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{53}
-  \item {update\+U\+I\+Active\+Cammand}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{54}
-  \item {update\+U\+I\+Button}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{54}
-  \item {update\+U\+I\+Caught}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{54}
-  \item {update\+U\+I\+Escape}
     \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{55}
-  \item {update\+U\+I\+Player}
+  \item {update\+U\+I\+Active\+Cammand}
     \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{56}
+  \item {update\+U\+I\+Button}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{56}
+  \item {update\+U\+I\+Caught}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{56}
+  \item {update\+U\+I\+Escape}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{57}
+  \item {update\+U\+I\+Player}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{58}
   \item {update\+U\+I\+Walls}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{57}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{59}
   \item {update\+U\+I\+Walls\+Around}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{57}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{59}
   \item {update\+UI}
-    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{53}
+    \subitem {figure\+\_\+\+Laby.\+m}, \hyperpage{55}
 
   \indexspace
 
   \item {val}
     \subitem {Model\+Walls}, \hyperpage{36}
-  \item {visupacman.\+m}, \hyperpage{59}
-  \item {visupacman2.\+m}, \hyperpage{59}
+  \item {visupacman.\+m}, \hyperpage{61}
+  \item {visupacman2.\+m}, \hyperpage{61}
 
   \indexspace
 
   \item {walls\+Bit}
-    \subitem {Wrapper}, \hyperpage{44}
+    \subitem {Wrapper}, \hyperpage{46}
   \item {walls\+Border}
-    \subitem {walls\+Border.\+m}, \hyperpage{60}
-  \item {walls\+Border.\+m}, \hyperpage{59}
-    \subitem {walls\+Border}, \hyperpage{60}
+    \subitem {walls\+Border.\+m}, \hyperpage{62}
+  \item {walls\+Border.\+m}, \hyperpage{61}
+    \subitem {walls\+Border}, \hyperpage{62}
   \item {walls\+H\+Between}
     \subitem {Model\+Laby}, \hyperpage{20}
   \item {walls\+H\+Between\+One}
@@ -303,26 +301,25 @@
   \item {walls\+V\+Between\+One}
     \subitem {Model\+Laby}, \hyperpage{21}
   \item {who\+Play}
-    \subitem {Wrapper}, \hyperpage{44}
+    \subitem {Wrapper}, \hyperpage{46}
   \item {Wrapper}, \hyperpage{41}
-    \subitem {command\+Ghost}, \hyperpage{43}
-    \subitem {command\+Pacman}, \hyperpage{43}
-    \subitem {command\+Walls}, \hyperpage{43}
-    \subitem {get\+\_\+out}, \hyperpage{42}
-    \subitem {get\+\_\+stop}, \hyperpage{42}
-    \subitem {ghost\+Bit}, \hyperpage{43}
-    \subitem {in}, \hyperpage{44}
-    \subitem {init}, \hyperpage{42}
-    \subitem {model\+Laby}, \hyperpage{44}
-    \subitem {orderer}, \hyperpage{43}
-    \subitem {out}, \hyperpage{44}
-    \subitem {pacman\+Bit}, \hyperpage{44}
-    \subitem {stop}, \hyperpage{44}
-    \subitem {stop\+Condition}, \hyperpage{44}
-    \subitem {update\+Connexion}, \hyperpage{43}
-    \subitem {walls\+Bit}, \hyperpage{44}
-    \subitem {who\+Play}, \hyperpage{44}
+    \subitem {command\+Pacman}, \hyperpage{45}
+    \subitem {command\+Walls}, \hyperpage{45}
+    \subitem {get\+\_\+out}, \hyperpage{43}
+    \subitem {get\+\_\+stop}, \hyperpage{43}
+    \subitem {ghost\+Bit}, \hyperpage{45}
+    \subitem {in}, \hyperpage{45}
+    \subitem {init}, \hyperpage{44}
+    \subitem {model\+Laby}, \hyperpage{45}
+    \subitem {orderer}, \hyperpage{44}
+    \subitem {out}, \hyperpage{46}
+    \subitem {pacman\+Bit}, \hyperpage{46}
+    \subitem {stop}, \hyperpage{46}
+    \subitem {stop\+Condition}, \hyperpage{46}
+    \subitem {update\+Connexion}, \hyperpage{44}
+    \subitem {walls\+Bit}, \hyperpage{46}
+    \subitem {who\+Play}, \hyperpage{46}
     \subitem {Wrapper}, \hyperpage{42}
-  \item {Wrapper.\+m}, \hyperpage{60}
+  \item {Wrapper.\+m}, \hyperpage{63}
 
 \end{theindex}

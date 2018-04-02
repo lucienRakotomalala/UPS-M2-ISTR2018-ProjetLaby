@@ -2,7 +2,7 @@
 \label{class_wrapper}\index{Wrapper@{Wrapper}}
 
 
-W\+R\+A\+P\+P\+ER Global organization of the project.  
+Connects all models to the display function.  
 
 
 
@@ -51,11 +51,11 @@ Property \hyperlink{class_wrapper_a8fcb5c64317d463be34f501200a2f49a}{out}
 Property \hyperlink{class_wrapper_ab453e11b3a41f7ef03be604bb5182e76}{stop}
 \begin{DoxyCompactList}\small\item\em A cell that contains the output of the stop conditions instance. \end{DoxyCompactList}\item 
 Property \hyperlink{class_wrapper_a19e8c1d68257003eba8e5a47c8302113}{who\+Play}
-\begin{DoxyCompactList}\small\item\em A increment integer that permit to know which object to play 0 = walls ; 1 = Pacman ;. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A increment integer that permit to know which object to play 0 = walls ; 1 = Pacman. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-W\+R\+A\+P\+P\+ER Global organization of the project. 
+Connects all models to the display function. 
 
 Contain the connection between the different elements and contain all the models (walls, labyrinth, Pacman, escape) 
 
@@ -163,7 +163,7 @@ Ordinate the global execution of Models.
 \begin{DoxyReturn}{Returns}
 instance of the \hyperlink{class_wrapper}{Wrapper} class. In a first case, it checks which models is connected via the interface. If a model is connected, we execute the \textquotesingle{}fmg\textquotesingle{} structure of the model, else, we are waiting that a player push the desired button to move the labyrinth.~\newline
 ~\newline
- Here a little graphic about the scheduling of the call of each model \+: murs $>$ Laby $>$ pacman $>$ laby ~\newline
+ Here a little graphic about the scheduling of the call of each model \+: walls $>$ Laby $>$ pacman $>$ laby ~\newline
  Every call of \textquotesingle{}laby\textquotesingle{} implies a call of Stop Condition. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_wrapper_aa41b9b215897635f48e1c8a4eaca7640}\label{class_wrapper_aa41b9b215897635f48e1c8a4eaca7640}} 
@@ -289,7 +289,7 @@ Boolean connection for the walls.
 
 
 
-A increment integer that permit to know which object to play 0 = walls ; 1 = Pacman ;. 
+A increment integer that permit to know which object to play 0 = walls ; 1 = Pacman. 
 
 
 
