@@ -38,7 +38,7 @@ classdef StopCondition  < ModelSED
 % ======================================================================   
 %> @brief Class constructor of Instance of StopCondition Class.
 %> @param initCondition Structure for the InitialState. It have to contain : 'escape', 'caught', 'pacman', 'ghost and 'numberOfPossibleCaught'
-%> @return instance of the ModelLaby class.
+%> @return instance of the StopCondition class.
 % ====================================================================== 
         function obj = StopCondition(initCondition)
             obj.initialState = initCondition;
