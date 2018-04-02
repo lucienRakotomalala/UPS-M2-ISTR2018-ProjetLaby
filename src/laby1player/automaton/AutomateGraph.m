@@ -1,26 +1,41 @@
 classdef AutomateGraph % Claire a choisi le titre
-    %UNTITLED2 Summary of this class goes here
-    %   Detailed explanation goes here
-    
+    %AutomateGraph This class is used to define a deterministic automaton in this part of the project.
+    %   It contains in these properties what allows to define an automaton. 
+	%   It allows with these methods to perform operations on an automaton. 
+    %	
+	%	To get all the features of this class, we advise you to download (free) DESUMA at the following address : <a href="matlab: 
+	%	web('http://vhosts.eecs.umich.edu/umdes//projects/lib/download_access/submit_desuma.html')">DESUMA Web site</a>
+	%
+	%	
     properties
-        state       % Struct of all States of the automata
-                    % Particuliar Type :
+        state       % Structure of all States of the automata
+                    % Particular Type :
                     % Each state contains :   -Name 
                     %                         -Initial : 1 if it's the Only
                     %                         One Initial State, 0 if not
-                    %                         -Marked  : 1 if it the state
+                    %                         -Marked  : 1 if the state
                     %                         is marked
-        transition  % Struct of all Transitions of the automata
-                    % Particuliar Type :
+        transition  % Structure of all Transitions of the automata
+                    % Particular Type :
                     % Each transition contains :  
                     %                         -Name 
                     %                         -StateIn : the state number
                     %                         of the source State
                     %                         -StateOut : the state number
                     %                         of the destination State
-        matrixTrans
-        langage
-        vector
+        matrixTrans % Structure of all transitions with a matrix representation.
+					% Particular Type :
+                    % Each matrixTrans contains :  
+                    %                         -Name 
+                    %                         -matrice : contain the matrix size (N,N)
+					%								N = number of state
+        langage		% 
+        vector		% Structure of all transitions with a vector representation.
+					% Particular Type :
+                    % Each matrixTrans contains :  
+                    %                         -Name 
+                    %                         -value : contain the vector size (N)
+					%								N = number of state
     end
     
     methods
@@ -30,6 +45,17 @@ classdef AutomateGraph % Claire a choisi le titre
         end
         %% Method FSM2Automata
         function obj = FSM2Automata(obj, nameFileFSM)
+			% FSM2Automata is a function that allows to transform a DESUMA automaton (UMDES) 
+			%	to an object of the class AutomateGraph.
+			%
+			%	Example : 
+			%	A = AutomateGraph();
+			%	A = A.FSM2Automata('myAutomate.fsm');
+			%		'A' is a automate with states and transition properties completed.
+			%
+			%	See also : AUTOMATEGRAPH, EXPORT2DESUMA
+			
+			%% Shielding
             if ~exist(nameFileFSM,'file')
                 error('Name of file FSM is invalid')
             end
@@ -41,6 +67,8 @@ classdef AutomateGraph % Claire a choisi le titre
             if ~isa(tr, 'struct')
                 error('The object do not dispose a transition struct. Problem in transposition of FSM File');
             end
+			
+			%% Recuperation
             for i = 1:length(st)
                if isa(st(i).Name ,'cell')
                    if ~isnan(str2double(st(i).Name{:}))
@@ -69,12 +97,16 @@ classdef AutomateGraph % Claire a choisi le titre
        
         %% Method vector2matrices
         function obj = vector2matrices(obj)
+			% vector2matrices is a function that transpose transition function from vector to matrix.
+			% It keep the name of event. The matrix representation is not deleted after this function.
+			%
+			%	See also : MATRICES2VECTOR
+			%% Shielding
             if ~isa(obj.vector, 'struct')
                 error('Inout object must have a struct in "vector" parameters')
             end
             
             for i = 1:length(obj.vector)
-                
                 % Association of Names   
                 obj.matrixTrans(end+1).Name = obj.vector(i).Name;    
                 obj.matrixTrans(end).matrice = zeros(length(obj.vector(i).value), length(obj.vector(i).value));
@@ -84,13 +116,12 @@ classdef AutomateGraph % Claire a choisi le titre
                 end
             end
         end
+		
+		
+		
         %% Method addWord2langage
         function obj = addWord2Langage(obj, word)
-%             for i = 1:length(obj.langage)
-%                 if strcmp(obj.langage, word)
-%                    error('This word (char) is already in the automata"s langage') 
-%                 end
-%             end
+			% addWord2Langage is a simple function to put in the language's vector the word give in input.
             obj.langage{end+1} = {word};
             obj.langage = [obj.langage{:}];
         end
@@ -99,41 +130,31 @@ classdef AutomateGraph % Claire a choisi le titre
         function obj = adaptTourLangage(obj)
             obj.langage = [obj.langage{:}];
         end
-        %% Method structAutomata2vectorAutomata 
-        % Return the object with an update of langage, matrix and vector of
-        % the automata object.
-        %       Input   : Object with Transitions and States
-        %       Ouput   : Object with new Matrix, Vectors and Langage
-        %       according to States and Transitions
+		
+		
         function obj = structAutomata2vectorAutomata (obj)
-            
-            %% Set the langage
+			%% Method structAutomata2vectorAutomata 
+			% Return the object with an update of langage, matrix and vector of
+			% the automata object.
+			%       Input   : Object with Transitions and States
+			%       Ouput   : Object with new Matrix, Vectors and Langage
+			%       according to States and Transitions
+        
+            %% Set language
             obj = obj.addWord2Langage(obj.transition(1).Name);
             for i = 1:length(obj.transition)            
-%                 isAlreadyAWord = 0;
-%                 for j = 1:size(obj.langage, 1);
-%                     isAlreadyAWord = isAlreadyAWord + strcmp(obj.transition(i).Name, obj.langage{j});
-%                 end
-%                 if ~isAlreadyAWord
-%                     obj = obj.addWord2Langage(obj.transition(i).Name);
-%                 end
                 if isempty(find(ismember(obj.transition(i).Name, obj.langage)==1))
                     obj = obj.addWord2Langage(obj.transition(i).Name);
                 end
             end
-            % Adapt it !
-            %obj = obj.adaptTourLangage();
-            %% Set matrices
+			
+			%% Set matrices
             for i = 1 :length(obj.langage)
                 obj.matrixTrans(i).matrice = zeros(length(obj.state),length(obj.state));
                 obj.matrixTrans(i).Name = obj.langage(i);
                 for j = 1:length(obj.transition)
                     if strcmp(obj.matrixTrans(i).Name ,obj.transition(j).Name)
-                        %if obj.transition(j).StateIn ~=
-                        %obj.transition(j).StateOut % we keep stable
-                        %transition
                             obj.matrixTrans(i).matrice(obj.transition(j).StateIn, obj.transition(j).StateOut) = 1;
-                       % end
                     end
                 end
             end
@@ -141,8 +162,15 @@ classdef AutomateGraph % Claire a choisi le titre
             % Conversing to vector
             obj.matrices2vector();
         end
+		
+		
+		
         %% Set Vectors
         function obj = matrices2vector(obj)
+			% matrices2vector is a function that transpose transition function from vector to matrix.
+			% It keep the name of event. The matrix representation is not deleted after this function.
+			%
+			% See also : VECTOR2MATRICES
             for i = 1:length(obj.langage)
                obj.vector(i).Name  = obj.langage(i);
                % Assignement of a value for each row
@@ -154,6 +182,13 @@ classdef AutomateGraph % Claire a choisi le titre
         %donné
         
         function [path, tree_new] = PathResearche(obj, initialState, studiedState)
+			% PathResearche is a function that allows to determine the paths from one state to another.
+			%	Input 	: 	InitialState 	is the number of witch state you want to start.
+			%				stuiedState 	is the number of witch state you want to arrive.
+			%	Output 	:	path 			is a vector containing a list of states covered. 
+			%				tree_new		is a vector containing the numbers of the transitions encountered.
+			%
+			% 
             s=[];
             t=[];
             tree = [];
@@ -192,7 +227,15 @@ classdef AutomateGraph % Claire a choisi le titre
             end
         end
         %% 
+		
+		
+		
+		
         function obj = vector2structAutomata(obj)
+			% vector2structAutomata is a function that transpose transition function from vector to structure transition.
+			% 
+			%
+			% See also : VECTOR2MATRICES, MATRICES2VECTOR.
             obj.transition = [];
             %obj.matrices2vector();
             for i = 1:length(obj.vector)
@@ -207,7 +250,8 @@ classdef AutomateGraph % Claire a choisi le titre
         
         %% Export To Desuma file (txt)
         function obj = export2DESUMA(obj, file)
-            % You have to put aautomata with vector and state struct IN.
+			% export2DESUMA is a function that export the current instance of AutomateGraph to a text file. This text file can be read by DESUMA.
+            % You have to put automata with vector and state struct IN.
             obj = obj.vector2structAutomata;
             dataTransition = struct2cell(obj.transition);
             dataTransition = permute(dataTransition,[3 1 2]); 
@@ -231,10 +275,11 @@ classdef AutomateGraph % Claire a choisi le titre
         
         %% 
         function obj = accessibilityAutomate(obj)
-            % It's easy to do it in a Automate represente by vectors.
+            % It's easy to do it in a Automate represented by vectors.
             if ~isa(obj.vector, 'struct')
                 obj = obj.vector2matrices;
             end
+			% Initial state is one here. Change it !!
             allVector = [obj.vector.value];
             accessibleState = 1; % Initial state
             i = 1;
