@@ -53,7 +53,6 @@ classdef Wrapper
 % ======================================================================
         function obj = Wrapper(inSize, outSize, initLaby, initWalls, initPac, initStop)
 			% --- Constructor of the class
-            OBjects (modelLaby, pacman, walls, ghost, stop) 
 			obj.modelLaby      = ModelLaby(initLaby.wallsV_i,initLaby.wallsH_i,initLaby.pacman_i,initLaby.escape_i); % model of labyrinth
             obj.commandWalls   = ModelWalls(initWalls.wallsCommand_i);
             obj.commandPacman  = ModelPacman(initPac.pacmanCommand_i);

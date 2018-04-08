@@ -113,7 +113,7 @@ function figure_Laby_OpeningFcn(hObject, eventdata, handles, varargin)
     stopInit.escape = 0;
     stopInit.pacman = 0;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    handles.wrapper = Wrapper(11, 9, labyInit, wallsInit, pacmanInit, stopInit);
+        handles.wrapper = Wrapper(11, 9, labyInit, wallsInit, pacmanInit, stopInit);
     handles = createUIWalls(handles);
   % TODELETE  handles = createUIGhost(handles);
     handles = createUIPacman(handles);
