@@ -1,4 +1,4 @@
-
+%% This is a non-executable file use for think about functions design.
 
 
 function str = writeStates(prefix,nbrOfStates,initialIndice,markedStatesIndices)

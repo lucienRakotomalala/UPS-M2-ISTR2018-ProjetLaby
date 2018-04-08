@@ -1,4 +1,14 @@
 function [ H, B, D, G ] = generer_lab(Matrice_Horizontale, Matrice_Verticale )
+% GENERER_LAB Generate, with the two walls matrixs, four matrix for every
+% possibles move in any direction (up, down, left and right).
+% Inputs : 
+%           Matrice_Horizontale : Horizontal wall matrix.
+%           Matrice_Verticale   : Vertical wall matrix.
+% Outputs : 
+%           H : Matrix of the up event. 
+%           B : Matrix of the down event.
+%           D : Matrix of the right event.
+%           G : Matrix of the left event.
 
 %Initialisation
 [MV_ligne,MV_colonne] = size(Matrice_Verticale);

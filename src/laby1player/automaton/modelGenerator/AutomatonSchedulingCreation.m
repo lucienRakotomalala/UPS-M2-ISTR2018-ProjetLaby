@@ -1,26 +1,28 @@
 function [initialIndice,markedStatesIndices,transitionsDatas, numberOfStates]...
 = AutomatonSchedulingCreation (scheduling,structureLabyDatas,firstMove)
-% Inputs
-    % Scheduling : cell  = {x_1,...,x_i,...,x_n}      x_i : char = the i-th
-                                                    % move.
-                                                    % = 'p' : player
-                                                    % = 'w' : walls
-    % StrutureLabyDatas  : cell  = {O,D,Tr;.,.,.;}       One line : 1
-                                                % transition of the
-                                                % labyrinth
-                                          % O  = origin state 
-                                          % D  = destination state
-                                          % Tr = event name
-    % firstMove : char =   [x]         % = 'p' the player begin
-                                       % = 'w' the walls begin
-% Output
-    % initialIndice : int  = [x]         x = indice of the initial state
-    % markedStatesIndices : int = [.,.,...] indice of the marked states   
-    % transitionsDatas : cell  = {O,D,Tr;.,.,.;}       One line : 1 transition
-                                          % O  = origin state 
-                                          % D  = destination state
-                                          % Tr = event name
-    % numberOfStates   : int  = [x]         x  = number of states of the
+% AUTOMATONSCHEDULINGCREATION Creates the automaton that defines the scheduling of the labyrinth.
+% Inputs :
+%       Scheduling : cell  = {x_1,...,x_i,...,x_n}  x_i : char = the i-th
+%                                                                  move.
+%                                                        = 'p' : player
+%                                                        = 'w' : walls
+%       StrutureLabyDatas  : cell  = {O,D,Tr;.,.,.;} One line : 1
+%                                                    transition of the
+%                                                    labyrinth.
+%                                       O  = origin state 
+%                                       D  = destination state
+%                                       Tr = event name
+%       firstMove : char =   [x]  
+%                                  = 'p' the player begin
+%                                  = 'w' the walls begin
+% Outputs :
+%       initialIndice : int  = [x]         x = indice of the initial state
+%       markedStatesIndices : int = [.,.,...] indice of the marked states   
+%       transitionsDatas : cell  = {O,D,Tr;.,.,.;}       One line : 1 transition
+%                                       O  = origin state 
+%                                       D  = destination state
+%                                       Tr = event name
+%       numberOfStates   : int  = [x]         x  = number of states of the
                                             % automaton    
 numberOfStates= max(size(scheduling));
 numberOfLabyStates = structureLabyDatas{end,2};
