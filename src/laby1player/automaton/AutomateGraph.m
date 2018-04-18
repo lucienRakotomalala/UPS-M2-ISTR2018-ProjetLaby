@@ -188,7 +188,7 @@ classdef AutomateGraph % Claire a choisi le titre
 			%	Output 	:	path 			is a vector containing a list of states covered. 
 			%				tree_new		is a vector containing the numbers of the transitions encountered.
 			%
-			% 
+			% Example : You can find one in the main script.
             s=[];
             t=[];
             tree = [];
@@ -234,7 +234,7 @@ classdef AutomateGraph % Claire a choisi le titre
         function obj = vector2structAutomata(obj)
 			% vector2structAutomata is a function that transpose transition function from vector to structure transition.
 			% 
-			%
+			%	
 			% See also : VECTOR2MATRICES, MATRICES2VECTOR.
             obj.transition = [];
             %obj.matrices2vector();
@@ -252,6 +252,11 @@ classdef AutomateGraph % Claire a choisi le titre
         function obj = export2DESUMA(obj, file)
 			% export2DESUMA is a function that export the current instance of AutomateGraph to a text file. This text file can be read by DESUMA.
             % You have to put automata with vector and state struct IN.
+			%
+			%
+			%	Example : 
+			%		A = AutomateGraph();		% Create a Empty Automate
+			%		A.export2DESUMA('myAutomate.txt');
             obj = obj.vector2structAutomata;
             dataTransition = struct2cell(obj.transition);
             dataTransition = permute(dataTransition,[3 1 2]); 
@@ -274,7 +279,13 @@ classdef AutomateGraph % Claire a choisi le titre
         end
         
         %% 
-        function obj = accessibilityAutomate(obj)
+        function obj = sortStateAutomate(obj)
+			%	accessibilityAutomate is a function that can be used to sort inaccessible states of a Automate.
+			%	It returns an instance of AUTOMATEGRAPH witch only has transition vector of accessible state.
+			%	It deletes every states that are not accessible from the Initial state.
+			%    Warning : the initial state is always n°1. Change it if it is not the case of your automata.
+		
+		
             % It's easy to do it in a Automate represented by vectors.
             if ~isa(obj.vector, 'struct')
                 obj = obj.vector2matrices;

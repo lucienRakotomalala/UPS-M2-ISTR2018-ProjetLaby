@@ -71,7 +71,7 @@ ProcessAutomata = struct('lab',AutomateGraph,   ...
 %%  Add escape option
    % ProcessAutomata.composed = ParrallelComposition(ProcessAutomata.composed, ProcessAutomata.escape);
 %% Accessibiliy 
-    ProcessAutomata.composed = ProcessAutomata.composed.accessibilityAutomate;
+    ProcessAutomata.composed = ProcessAutomata.composed.sortStateAutomate;
     
 %% Objective add    
 tic
@@ -84,7 +84,7 @@ tic
 %% Product parallel with objectives
     Command = ParrallelComposition(Objective, ProcessAutomata.composed);
     %%recherche
-    Command = Command.accessibilityAutomate;
+    Command = Command.sortStateAutomate;
     
 %% 
     finalState = find([Command.state.Marked]);
