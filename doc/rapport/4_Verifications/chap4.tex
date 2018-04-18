@@ -62,12 +62,12 @@ Comme vu précédemment, la fonction \emph{CreatePituresAndVideo\_textured} util
 
  \section{Vérification Logicielle}
 Les vérifications que nous avons effectuer son fait a partir du master daté du 30/01/2018. Si vous teste certaine validation maintenant elle ne fonctionnera plus vraiment en vu des modifications effectuer au cours du projet. 
-\subsubsection{La case de sortie ne bouge pas}
+\subsection{La case de sortie ne bouge pas}
 Nous allons vérifier que la case de notre sortie du labyrinthe ne change pas de position pendant l'utilisation. Pour cela nous devons faire une analyse structurelle de notre code et une analyse de tous les cas possibles de notre case sortie. Pour faire l'analyse structurelle de notre code nous avons cherché tous les endroits du code où l'emplacement de la case sortie change. Notre analyse nous a donnée le document suivant:\\
 \image{15cm}{4_Verifications/case_sortie.pdf}{Table des recherches de modification de l’emplacement de la case}
 Nous avons aussi testé tous les cas possibles d'emplacement de notre sortie sur un labyrinthe 5x5 sans changé les murs. De ce test nous n'avons pas observé de problème.
 
-\subsubsection{Fantôme et Pacman jamais sur la même case}
+\subsection{Fantôme et Pacman jamais sur la même case}
 Pour tester que le fantôme et le Pacman ne sont jamais sur la même case nous avons fait un test "de pire cas possible" (on met des situations où on pense pourvoir faire apparaître ce bug s'il existe) sur différents labyrinthes. Pour cela nous avons placé plusieurs conditions initiales différentes, les tests sont faits avec un nombre de murs différents et plusieurs positions du fantôme et de Pacman différente. Pour nous retrouver dans les différentes situations nous avons fait le fichier excel suivant:\\
 
 
@@ -79,25 +79,25 @@ Nous avons trouvé un bug lors de cette situation initiale : si les deux objets 
 Les différents oracles que nous avons fait se trouvent dans le dossier validation2 qui se trouve dans le répertoire laby2player/validation.\\
 
 
-\subsubsection{Les murs sont infranchissables}
+\subsection{Les murs sont infranchissables}
 Pour ce test nous nous somme placés dans deux situation différentes, l'une avec les murs qui ne bougent pas et l'autre avec les murs qui bougent. On a des situations initiale de murs différentes. Les différentes situations initiales sont récapitulées dans le fichier excel suivant:\\
 \image{18cm}{4_Verifications/murs_infranchissables.pdf}{Résultats pour les murs sont infranchissables}
 Pour vérifier que nos murs sont bien infranchissables dans notre oracle nous avons vérifié qu'à chaque déplacement du pacman ou du fantôme il n'y a pas de murs. On peut retrouver nos oracles dans le dossier validation3 dans le répertoire laby2player/validation.\\
 
 
-\subsubsection{Les murs bougent dans la direction choisie}
+\subsection{Les murs bougent dans la direction choisie}
 Pour tester les murs qui bougent dans la direction choisie on s'est placé dans plusieurs situation différentes. Pour une situation donnée il faut obtenir les murs après un cycle. Quand on a les murs que l'on a obtenus et les murs que l'on a initialement on les compare.\\
 On peut retrouver nos oracles dans le dossier validation4 dans répertoire laby2player/validation.\\
  
 
-\subsubsection{Le programme s’arrête quand le pacman est sur la sortie}
+\subsection{Le programme s’arrête quand le pacman est sur la sortie}
 Pour faire ce test nous avons utilisé plusieurs situations initiales différentes. Nous avons aussi dû faire ce test sur l'interface 1 joueur. On fait les situations suivantes :\\
 \image{18cm}{4_Verifications/pacman_sortie.pdf}{Résultats pour "Le programme s’arrête quand le pacman est sur la sortie"}
 %
 On peut retrouver nos oracles dans le dossier validation7 dans le répertoire laby2player/validation.\\
 
 
-\subsubsection{Le fantôme peut manger pacman}
+\subsection{Le fantôme peut manger pacman}
 Pour faire ces tests nous avons fait plusieurs situations initiales différentes :\\
 \image{18cm}{4_Verifications/ghost_mange_pacman.pdf}{Exel des situations initiales}
 Notre oracle va regarder si quand notre fantôme est à coté de notre pacman on a bien une incrémentation de notre compteur $caught$. Mais rapidement on s'est rendu compte qu'il y a un problème dans notre implémentation : quand les murs vont bouger alors que le fantôme et à coté du pacman le compteur s'incrémente. Il s'incrémente donc 2 fois : Une fois quand il se retrouvent à côté et une autre fois quand les murs se déplacent. Nous n'avons pas réussi encore a réglé ce problème. On peut retrouver nos oracles dans le dossier validation8 dans répertoire laby2player/validation.\\
@@ -122,7 +122,7 @@ Enfin le script principal utilise les structures développées dans le paragraph
 
 %%%% Fin des modifs -Lucien - Bisou :-)
 
-\subsubsection{Description des modèles}
+\subsubsection{Description des modèles}\label{sub:descriptionDesModeles}
 Tous les modèles créés par ces fonctions sont enregistrés sous format texte compatible avec $Desuma$ (\emph{SaveDesumaFile}). Par la suite on a importé ces fichiers dans $Desuma$ qui a créé les automates ($lab$, $walls$, $scheduling$) et dont nous nous sommes servi pour effectuer le produit parallèle entre les automates. Pour faire tourner ce code il faut allez dans répertoire modelGenerator et lancée le programme modelGenerator.m ce répertoire ce trouve dans src/laby1player/automaton.
 
 Quand les modèles sont devenus trop lourds, nous avons chercher à implémenter le produit parallèle en \emph{Matlab} (voir plus de détail ci-dessous \ref{subsec:parallele}).
@@ -175,7 +175,7 @@ Sur chaque état on a les informations sur les murs autour et les déplacements 
 
 
 % Modif du paragraphe précédent Lucien
-Après avoir fait les 3 modélisations nous faisons le produit parallèle pour obtenir le procédé de notre labyrinthe avec toutes les dynamiques possibles. Nous obtenons un procédé avec des numéros pour chaque déplacement : l'utilisation de ces numéros est nécessaire pour que les transitions ne soit pas confondu lors du calcul du produit parallèle. Cependant, ces numéros deviennent maintenant un problème, il faut donc faire un raffinement qui servira à enlever chaque numéro. Pour cela il faut enregistrer le fichier $Desuma$ de notre procédé sous forme $fsm$ (Fichier $\leftarrow $ Export $\leftarrow $ DMES File (J'AI PAS DESUMA SOUS LA MAIN, A VERIFIER)). Puis utiliser le programme \emph{rafineAutomaton.m} qui se trouve dans le répertoire \emph{src/laby1player/automaton/optimalCommand}.
+Après avoir fait les 3 modélisations nous faisons le produit parallèle pour obtenir le procédé de notre labyrinthe avec toutes les dynamiques possibles. Nous obtenons un procédé avec des numéros pour chaque déplacement : l'utilisation de ces numéros est nécessaire pour que les transitions ne soit pas confondu lors du calcul du produit parallèle. Cependant, ces numéros deviennent maintenant un problème, il faut donc faire un raffinement qui servira à enlever chaque numéro. Pour cela il faut enregistrer le fichier $Desuma$ de notre procédé sous forme $fsm$ (Fichier $\rightarrow $ Export $\rightarrow $ To UMDMES .fsm. Puis utiliser le programme \emph{rafineAutomaton.m} qui se trouve dans le répertoire \emph{src/laby1player/automaton/optimalCommand}.
 
 
 Quand le procédé est construit, nous pouvons faire un produit parallèle avec notre commande pour Pacman. Nous obtenons ainsi l'ensemble des états qui sont atteignables par cette commande dans le labyrinthe étudié.
@@ -186,25 +186,29 @@ Nous sommes arrivés rapidement à la conclusion que la commande mémoire n'éta
 
 Mais rapidement nous avons eu des problèmes avec le logiciel $Desuma$ dû au nombre important de transitions et d'états ainsi qu'à cause de la redondance de l'exercice (Ouvrir des fichiers, Copier - Coller, exporter...). Nous avons donc décidé de passer par $Matlab$ pour faire notre produit parallèle et automatiser entièrement ce qui vient d'être décrit dans cette partie (\ref{subsec:parallele}). Cependant, nous avons créer un sript dans un premier temps qui permet d'utiliser l'automate généré dans cette subsection pour en déterminer le(s) chemins (s'il existent) qui mène le Pacman vers la sortie. % ... -- Review Lucien
 Ce sujet sera l'objet  de notre prochain sous-section.
-\subsection{Déterminer l'ensemble des chemins} % Need a Fucking better title !! TODO
+\subsection{Déterminer l'ensemble des chemins}\label{sub:ensembleDesChemins}% Need a Fucking better title !! TODO
 % Un chemin pour aller vers le far Ouest
 % L'autre pour aller à l'OuNERA
 % L'autre pour aller vers Madrid
 \begin{center}
 L'ensemble des scripts décrit ici sont disponibles dans \emph{src/laby1player/automaton/optimalCommand}.
 \end{center}
+
 Dans le cas où l'automate obtenu après la composition parralèle possède toujours 1 (ou plusieurs) état(s) marqué(s), nous avons souhaité été capable de déterminé, de manière générique, quels était les séquence amenant à ces états marqués depuis l'état initial. Pour cela, nous avons fait appel à une librairie \emph{Matlab} : \emph{graph}. Cet ensemble de fonction utilise des algorithmes issus de la résolution de Bellman-Ford pour calculer, à partir d'un graph, l'ensemble des chemins possibles, en les clasant du plus court au plus long.
 
 Pour adapter cette fonction à notre automate, nous avons été obligé de transposer l'automate en un graph. C'est l'objet de la fonction \emph{optimalCommand} disponible dans le fichier \emph{.m} qui porte son nom. Cette fonction prend en entrée l'ensemble des matrices de transition qui permettent de décrire les transitions de l'automate, l'état de départ et l'état d'arrivé de l'algorithme. Elle associe un poid équivalent à chaque transition et supprime les transitions stables (elles ne sont pas acceptées par l'algorithme). La fonction affiche ensuite tout les chemins qui ont été trouvé par l'algorithme, du plus court au plus long. 
 
-Pour permettre son utilisation directe avec l'automate calculé via \emph{DESUMA} dans RFERENCE ICI  LULU !!!, nous avons crée un script principal \emph{main}. ce programme va récupérer les données depuis un fichier \emph{DESUMA}, en extraire les matrices de transitions pour les envoyer ensuite vers \emph{optimalCommand}. 
+Pour permettre son utilisation directe avec l'automate calculé via \emph{DESUMA} dans \ref{sub:descriptionDesModeles}, nous avons crée un script principal \emph{main}. ce programme va récupérer les données depuis un fichier \emph{DESUMA}, en extraire les matrices de transitions pour les envoyer ensuite vers \emph{optimalCommand}. 
 
 
 \paragraph*{Remarque} Pour l'utiliser avec un procédé, vous devez modifier le nom appelé dans la ligne 17. Veuillez faire attention aux noms utilisé aux transitions dans l'automate que vous appelé : ils doievent avoir le même nom que dans la liste instancié à l ligne 16.
 
-\subsection{Produit parallèle avec Matlab}
+\subsection{Automatisation de la composition parallèle avec Matlab}
 \label{subsec:parallele}
-Par soucis de simplification, nous avons choisi d'effectuer le calcul du produit parallèle avec $Matlab$. Il nous a donc été nécessaire de créer un ensemble de classe et fonction pour pouvoir jouir de cette possibilité. Pour cela, nous avons développé l'algorithme de la manière suivante :
+Par soucis de simplification, nous avons choisi d'effectuer le calcul du produit parallèle avec $Matlab$. Il nous a donc été nécessaire de créer un ensemble de classe et fonction pour pouvoir jouir de cette possibilité. Nous allons vous les présenter dans cette sous-section. Dans un premier temps, nous allons vous expliquer comment nous avons mis en œuvre le calcul du produit parallèle. Ensuite, nous expliquerons la classe \emph{AutomateGraph}, classe qui modélise un automate et le retranscrit en \emph{Matlab}. Enfin, nous vous présenterons le script général qui permet de lancer toute l'exécution. 
+
+\paragraph*{Produit Parallèle}
+La composition parallèle est un outil très utilisé dans la théorie des automates. Nous l'utilisions dans un premier temps avec le logiciel \emph{DESUMA} mais nous souhaitons maintenant automatiser ce calcul. Pour cela, nous avons développé l'algorithme de la manière suivante :
 Soit un premier automate $ A1$  avec un langage $L_{A1}$  et un ensemble de matrice de transition : $M_{A1}$.
 Soit un second automate $A2$  avec un langage $L_{A2}$  et un ensemble de matrice de transition : $M_{A2}$.\\
 Nous avons l'automate $A$ qui est le produit parallèle de $A1$ et de $A2$  qui s'écrit :
@@ -226,17 +230,17 @@ M_{A} = 1\!\!1 \otimes M_{A2}
 \end{equation}
 La fonction $Matlab$ développée est disponible dans src/laby1player/automaton/ParrallelComposition.m. 
 
-
-\paragraph*{Utilisation avec un script complet}
-Pour pouvoir exécuter la vérification d'un objectif avec $Matlab$, vous pouvez utiliser le script $MainLaby.m$, disponible dans src/laby1player/automaton/. Ce script va automatiquement généré un procédé grâce aux scripts utilisés dans le début de cette section et lancé depuis ModelGenerator.m. (Si vous souhaitez modifier le labyrinthe, veuillez-vous référer à la documentation du code source) Une fois les modèles obtenus, il les enregistre sous forme d'un objet appartenant à la classe $AutomateGraph$. Le script effectue ensuite automatiquement un produit parallèle pour obtenir le modèle de procédé complet. 
-
-Il vous demande ensuite de choisir avec quel objectif vous voulez composez le modèle de commande. Le script s'occupe ensuite d'établir ce modèle avec un dernier produit parallèle.  
-
-
 \paragraph*{Classe Automate déterministe : AutomateGraph}\label{parag:AutomateGraph}
 L'objectif de cette classe $Matlab$ est de permettre une utilisation des outils développés pour la validation formelle du labyrinthe. Elle est composé de 4 attributs sous forme de structure : "state", "transition", "matrixTrans", "langage" et "vector", les détails de chaque attributs est disponible dans le code source de la classe (fichier AutomateGraph.m dans le dossier : src/laby\_1\_player/automaton). Chaque objet $AutomateGraph$ peut accéder à une liste de méthodes qui vont permettre en autre de modifier son langage, d'effectuer des passages entre des description différente, tel que la transformation d'une description vectorielle à matricielle, ou encore d'une description Etats/Transition vers une description en matrice.
 
 
 Il existe aussi des méthodes plus complexes : la méthode \underline{PathResearche} est une fonction qui va permettre de trouver l'ensemble des chemins menant d'un état de départ à un état d'arrivé. -Donc, pour obtenir le langage marqué, il suffit de placé l'état initial et l'état marqué respectivement) Une dernière méthode \underline{sortStateAutomate} permet d’éliminer les états inaccessible de l'automate, en parcourant chaque transition. De plus ample explication sont disponibles dans le fichier présenté au début de ce paragraphe.  
+
+
+
+\paragraph*{Utilisation avec un script complet}
+Pour pouvoir exécuter la vérification d'un objectif avec $Matlab$, vous pouvez utiliser le script $MainLaby.m$, disponible dans src/laby1player/automaton/. Ce script va automatiquement généré un procédé grâce aux scripts utilisés dans le début de cette section et lancé depuis ModelGenerator.m. (Si vous souhaitez modifier le labyrinthe, veuillez-vous référer à la documentation du code source) Une fois les modèles obtenus, il les enregistre sous forme d'un objet appartenant à la classe $AutomateGraph$. Le script effectue ensuite automatiquement un produit parallèle pour obtenir le modèle de procédé complet. 
+
+Il vous demande ensuite de choisir avec quel objectif vous voulez composez le modèle de commande. Le script s'occupe ensuite d'établir ce modèle avec un dernier produit parallèle.  
 
 

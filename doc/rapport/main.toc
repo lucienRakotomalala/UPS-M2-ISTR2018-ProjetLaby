@@ -27,18 +27,18 @@
 \contentsline {subsection}{\numberline {3.1.1}Script de Visualisation}{9}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}Fonction de g\IeC {\'e}n\IeC {\'e}ration d'images et de vid\IeC {\'e}o}{9}{subsection.3.1.2}
 \contentsline {section}{\numberline {3.2}V\IeC {\'e}rification Logicielle}{10}{section.3.2}
-\contentsline {subsubsection}{\numberline {3.2.0.1}La case de sortie ne bouge pas}{11}{subsubsection.3.2.0.1}
-\contentsline {subsubsection}{\numberline {3.2.0.2}Fant\IeC {\^o}me et Pacman jamais sur la m\IeC {\^e}me case}{11}{subsubsection.3.2.0.2}
-\contentsline {subsubsection}{\numberline {3.2.0.3}Les murs sont infranchissables}{12}{subsubsection.3.2.0.3}
-\contentsline {subsubsection}{\numberline {3.2.0.4}Les murs bougent dans la direction choisie}{12}{subsubsection.3.2.0.4}
-\contentsline {subsubsection}{\numberline {3.2.0.5}Le programme s\IeC {\textquoteright }arr\IeC {\^e}te quand le pacman est sur la sortie}{13}{subsubsection.3.2.0.5}
-\contentsline {subsubsection}{\numberline {3.2.0.6}Le fant\IeC {\^o}me peut manger pacman}{13}{subsubsection.3.2.0.6}
+\contentsline {subsection}{\numberline {3.2.1}La case de sortie ne bouge pas}{10}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Fant\IeC {\^o}me et Pacman jamais sur la m\IeC {\^e}me case}{11}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Les murs sont infranchissables}{12}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Les murs bougent dans la direction choisie}{12}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Le programme s\IeC {\textquoteright }arr\IeC {\^e}te quand le pacman est sur la sortie}{12}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}Le fant\IeC {\^o}me peut manger pacman}{13}{subsection.3.2.6}
 \contentsline {section}{\numberline {3.3}Validation formelle}{13}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}G\IeC {\'e}n\IeC {\'e}ration des mod\IeC {\`e}les}{14}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.1}G\IeC {\'e}n\IeC {\'e}ration des mod\IeC {\`e}les}{13}{subsection.3.3.1}
 \contentsline {subsubsection}{\numberline {3.3.1.1}Description des scripts}{14}{subsubsection.3.3.1.1}
 \contentsline {subsubsection}{\numberline {3.3.1.2}Description des mod\IeC {\`e}les}{14}{subsubsection.3.3.1.2}
 \contentsline {subsection}{\numberline {3.3.2}D\IeC {\'e}terminer l'ensemble des chemins}{16}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Produit parall\IeC {\`e}le avec Matlab}{17}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.3}Automatisation de la composition parall\IeC {\`e}le avec Matlab}{17}{subsection.3.3.3}
 \contentsline {chapter}{\numberline {4}Les sc\IeC {\'e}narios}{18}{chapter.4}
 \contentsline {section}{\numberline {4.1}Sc\IeC {\'e}nario 1 - Trouver la commande \IeC {\`a} partir d'un objectif}{18}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}objectif 1 : Atteindre la sortie}{18}{subsection.4.1.1}
@@ -52,7 +52,7 @@
 \contentsline {section}{\numberline {5.1}Organisation du code}{21}{section.5.1}
 \contentsline {section}{\numberline {5.2}Comment lancer l'interface ?}{21}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}Comment changer la figure ?}{21}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Comment changer l'ordonnancement ?}{22}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.2}Comment changer l'ordonnancement ?}{21}{subsection.5.2.2}
 \contentsline {subsection}{\numberline {5.2.3}Comment changer la commande des objets ?}{22}{subsection.5.2.3}
 \contentsline {section}{\numberline {5.3}Comment lancer les validations logicielles ?}{22}{section.5.3}
 \contentsline {section}{\numberline {5.4}Comment lancer la validation formelle ?}{22}{section.5.4}
