@@ -1,0 +1,58 @@
+\chapter{Le petite guide d'utilisation}
+
+\section{Organisation du code}
+A l'ouverture du dossier principal on trouve quatre sous dossiers :
+
+\begin{itemize}
+\item Doc : contenant la documentation rattachée au projet (rapport, état de l'art et la doc générale )
+\item Src : contenant le code
+\item UML : contenant l'UML du code (voir le READ ME)
+\end{itemize}
+\image{15cm}{6_Code/GUIDE}{Arborescence du dépôt}
+
+\section{Comment lancer l'interface ?}
+Il y a deux interfaces : celle à 1 objet et celle à 2 objets.\\
+Pour lancer celle à 2 objets, on ouvre le dossier \emph{Laby2players} et on lance le fichier \emph{main}. Pour tout ce qui se rapporte à son utilisation, se référer au chapitre 1 - Interface \ref{chap1}\\
+Pour lancer l'interface à 1 joueur, on ouvre le dossier \emph{laby1player} et on lance le fichier \emph{main}. Pour tout ce qui se rapporte à son utilisation, se référer au chapitre 1 - Interface \ref{chap1}.
+
+\subsection{Comment changer la figure ?}
+La figure est modifiable avec \emph{figure\_laby.fig} mais implique beaucoup de changements au niveau de \emph{figureLaby;m}, du \emph{Wrapper} et du code en règle général. Se référer au chapitre 1 \ref{chap1} pour le fonctionnement global du code.
+
+\subsection{Comment changer l'ordonnancement ?}
+Il est possible de changer l'ordonnancement depuis le \emph{Wrapper} (valable pour les deux interfaces). Comme précédemment, se référer au chapitre 1 \ref{chap1}
+
+\subsection{Comment changer la commande des objets ?}
+Il est possible d'implémenter ses propres commandes pour pacman, ghost ou les murs dans leur fonction respective : ModelPacman, ModelGhost, ModelWalls qu'on trouve dans les deux dossiers \emph{Laby1player} et \emph{Laby2players}. Se référer au chapitre 2 sur les commandes pour l'explication de l'implémentation \ref{commandes}.
+
+\section{Comment lancer les validations logicielles ?}
+Les validations ont été faites pour l'interface à 2 joueurs. On ouvre le dossier  \emph{Laby2players}, puis le dossier de validation. Chaque dossier de validation contient l'oracle à faire tourner sur la première version du code.\\
+Le code affiche en ligne de commande s'il y a un problème ou non. Pour cette partie une seconde interface a été créée, une vidéo de tous les coups ou des 100 premiers coups est générée automatiquement dans le but de pouvoir observer visuellement certains cas particuliers. Cette vidéo est enregistrée dans le dossier \emph{data}. La fonction vidéo existe également pour la version à 1 objet. Dans les deux cas on lance le fichier \emph{simulation}. Se référer au chapitre 3 - Vérification et Validation pour plus de détails \ref{verif}.
+
+%ajouter quelle version
+
+\section{Comment lancer la validation formelle ?}
+La validation formelle a été réalisée pour un joueur. On va donc dans le dossier \emph{Laby1player} puis on ouvre le dossier \emph{automaton} duquel on lance le \emph{main}. De là un menu s'affiche dans lequel on choisit la commande à valider.\\
+Le code renvoie s'il existe des séquences et si oui lesquelles pour atteindre l'état marqué. La saisie du labyrinthe étudié se fait dans le dossier \emph{modelGenerator}, dans le fichier \emph{modelGenerator.m}. Attention la position initiale est toujours fixée à la case 1. Se référer au chapitre 3 pour plus de détails \ref{verif}.
+
+\subsection{Comment générer le procédé indépendamment ?}
+Le modèle de procédé est calculé directement en fonction du labyrinthe donné dans le dossier \emph{modelGenerator} dans le fichier \emph{modelGenerator.m}. Si vous souhaitez le générer indépendamment, il faut aller dans le dossier \emph{modelGenerator} et lancer le fichier \emph{modelGenerator.m} puis le raffiner avec la fonction \emph{rafineAutomaton.m}. Se référer au chapitre 3 pour plus de détails \ref{verif}.
+
+\subsection{Comment valider ma propre commande ?}
+Si vous créez votre propre commande, il faut la créer sous Desuma et l'enregistrer sous le format \emph{.fsm} et l'enregistrer dans le dossier \emph{automaton}. Attention le langage doit être en accord avec le langage connu du procédé et lors de la saisie sous Desuma les états doivent être nommés avec des numéros (par exemple : 1 et non e1 ou état1). Pour plus de détails se référer au chapitre2 - Les commandes \ref{commandes}.\\
+Une fois la commande enregistrée lancer le \emph{main} normalement et suivez les indications du menu.
+\image{15cm}{6_Code/automaton}{Exécution du produit parallèle pour la vérification et le scénario 1}
+
+
+\section{Comment lancer le scénario 1 ?}
+Le scénario 1 est prévu pour 1 objet, on se place dans le dossier \emph{laby1player} puis on ouvre le dossier \emph{automaton} duquel on lance le fichier \emph{main}. C'est le même code que précédemment sauf qu'on utilise le produit parallèle pour trouver une commande pour un objectif et non pour valider une commande. Du menu qui s'affiche on choisit l'objectif à atteindre.\\
+Le code renvoie s'il existe une séquence et si oui, la plus optimale pour atteindre l'objectif.
+
+\subsection{Comment tester mon propre objectif ?}
+Même démarche que pour \textit{Comment valider ma propre commande ?}.
+
+\section{Comment lancer le scénario 2 ?}
+Le scénario 2 est prévu pour 1 objet, on se place dans le dossier \emph{laby1player} puis on ouvre le dossier \emph{automaton\_nd} duquel on lance le fichier \emph{main}. Un menu s'affiche pour choisir l'ensemble d'états initiaux et l'état marqué.\\
+Le code renvoie la séquence pour atteindre l'état marqué. Voir le chapitre 4 - Les scénarios pour plus de détails \ref{sce}.
+
+\section{Comment lancer le scénario 3 ?}
+Il ne fonctionne pas encore mais la génération automatique de modèle a commencé à être codé dans le sous dossier \emph{ModelGenerator} de \emph{Laby2players}.

@@ -1,0 +1,11 @@
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+
+
+% Ceci est l'introduction, elle doit décrire le contexte
+Ce projet se concentre sur la modélisation et l'analyse d'un système à événement discret composé d'un labyrinthe cartésien dynamique et de deux objets se déplaçant à l'intérieur. Certaines hypothèses de travail ont été établies, notamment le choix d'utiliser le formalisme de modélisation des automates finis, ainsi qu'une approche ensembliste et non stochastique.\\
+Nous avons mis en \oe uvre notre projet sous Matlab car notre étude théorique nous a amené à une modélisation largement basée sur des matrices et sur des tableaux et que Matlab étant un langage de haut niveau que nous connaissons était le plus adapté à cette application. Nous avons choisi une conception orientée objet et avons implémenté une interface interactive et des outils d'analyse basés sur la modélisation du labyrinthe avec des automates déterministes et non déterministes.\\
+Pour commencer, nous avons réalisé une interface permettant de jouer en mode automatique, semi-automatique ou manuelle dans laquelle on trouve des commandes pour le fonctionnement en mode auto des murs et objets.\\
+Par la suite, nous avons fait des vérifications : une logicielle pour tester le coeur du code et une validation formelle pour analyser si les commandes produites précédemment pouvaient toujours amener un objet à la sortie. Pour se faire nous avons étudié le labyrinthe composé d'un unique objet.\\
+Nous avons ensuite mis en place 3 scénarios dont le but n'était plus de vérifier les commandes mais d'en créer. Pour le scénario 1, l'objectif était d'atteindre la sortie ou d'aller dans un état bloquant. Pour le scénario 2, le but était de trouver la sortie sans connaître la position initiale de l'objet dans le labyrinthe. Pour le scénario 3 le but était de faire les mêmes vérifications et recherche de commande que pour un objet mais en ajoutant les contraintes amenées par la présence d'un deuxième objet.
+

@@ -1,0 +1,130 @@
+%%=================================================%%
+%%						MAIN  
+%%=================================================%%
+
+
+\documentclass[a4paper]{report}
+
+%====================== PACKAGES ======================
+\usepackage{multirow}
+\usepackage{bbold}
+\usepackage{dsfont}
+\usepackage[french]{babel}		% Pour avoir le document en français
+\usepackage[utf8x]{inputenc}	% Encodage du document
+\usepackage{float}				% Pour gérer les positionnement d'images
+\usepackage{amsmath,,amssymb}
+\usepackage{mathrsfs}			% Pour les lettres calligraphiques équation
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{url}				% Pour faire des hyperliens vers le web
+\usepackage{color}
+% pour les informations sur un document compilé en PDF et les liens externes / internes
+\usepackage{hyperref}			% Pour faire des hyperliens
+\usepackage{array}				% Pour faire des tableaux
+\usepackage{tabularx}
+% pour utiliser 		% floatbarrier
+%\usepackage{placeins}
+%\usepackage{floatrow}
+
+\usepackage{stmaryrd}
+\usepackage{abstract}			% Modifier la mise en page de l'abstract
+\usepackage[T1]{fontenc}		% Police et mise en page (marges) du document
+
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{pdfpages}			% pour inclures des pdf comme des images
+\usepackage{subfig}				% Pour les galerie d'images
+\usepackage{listings}			% pour inclure du code dans le doc
+\usepackage{soul}				% Pour surligner
+\usepackage{enumitem}
+\sethlcolor{grisclair}
+\definecolor{darkgreen}{RGB}{0,100,0}
+
+
+
+
+%====================== INFORMATION ET REGLES ======================
+
+%rajouter les numérotation pour les \paragraphe et \subparagraphe
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\hypersetup{							% Information sur le document
+pdfauthor = {Johanne Bakalara, Lionel Merry, Alexandre , David Tocaven},				% Auteurs
+pdftitle = {Rapport TIR M1 ISTR },		% Titre du document
+pdfsubject = {Modélisation, Analyse et Simulation des S.E.D non déterministes.},		% Sujet
+pdfkeywords = {Automate, indéterministe,état discret, événement discret, SED, MEF, ambigus },				% Mots-clefs
+pdfstartview={FitH}}					% ajuste la page à la largueur de l'écran
+%pdfcreator = {MikTeX},% Logiciel qui a crée le document
+%pdfproducer = {}} % Société avec produit le logiciel
+ 
+\newcounter{cpt1}						% Compteur pour les n° de ligne dans les prog de l'annexe1
+\newcommand\increm{\arabic{cpt1}\addtocounter{cpt1}{1}}
+%======================== DEBUT DU DOCUMENT ========================
+
+\begin{document}
+
+%régler l'espacement entre les lignes
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+%insertion image rapide
+\newcommand{\image}[3]{\begin{center}
+      \includegraphics[width = #1]{#2}
+      \captionof{figure}{#3}
+      \vspace{0.5cm}
+\end{center}}
+
+\newcommand{\imagegd}[6]{\begin{figure}[!ht]
+\begin{minipage}{.48\textwidth}
+\centering
+\vfill%
+\includegraphics[width = #1]{#2}
+\caption{#3}\vfill%
+\end{minipage}\hfill%
+\begin{minipage}{.48\textwidth}
+\centering
+\vfill%
+\includegraphics[width = #4]{#5}
+\caption{#6}\vfill%
+\end{minipage}
+\end{figure}}
+
+%page de garde
+\input{./Page_de_garde/page_de_garde.tex}
+
+%page blanche
+\newpage
+~
+\tableofcontents
+\thispagestyle{empty}
+\setcounter{page}{0}
+%ne pas numéroter le sommaire
+
+
+%espacement entre les lignes d'un tableau
+\renewcommand{\arraystretch}{1.5}
+
+%====================== INCLUSION DES PARTIES ======================
+%
+%~
+\thispagestyle{empty}
+%recommencer la numérotation des pages à "1"
+\setcounter{page}{0}
+
+\input{./0_Introduction/introduction.tex}	% 0.Introduction      
+
+\input{./1_Interface_2_joueurs/chap1.tex} % 1.Interface 2 joueurs
+
+%\input{./2_Interface_1_joueur/chap2.tex} % 2.Interface 1 joueur
+
+\input{./3_Commandes/chap3.tex} % 3.Commandes
+
+\input{./4_Verifications/chap4.tex} % 4.Vérifications
+
+\input{./5_Scenarios/chap5.tex} % 5.Analyse
+
+\input{./6_Code/chap6.tex} % 6.Code
+
+\input{./7_Conclusion/Conclusion.tex}
+
+\input{./8_Annexes/annexes.tex}
+
+\end{document}

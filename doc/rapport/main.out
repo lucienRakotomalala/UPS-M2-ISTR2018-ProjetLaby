@@ -1,0 +1,64 @@
+\BOOKMARK [0][-]{chapter*.2}{Introduction}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Interface 2 joueurs}{}% 2
+\BOOKMARK [1][-]{section.1.1}{Les r\350gles du jeu}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{L'interface}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.3}{Description des mod\350les}{chapter.1}% 5
+\BOOKMARK [2][-]{subsection.1.3.1}{ModelSED}{section.1.3}% 6
+\BOOKMARK [2][-]{subsection.1.3.2}{ModelLaby}{section.1.3}% 7
+\BOOKMARK [2][-]{subsection.1.3.3}{StopCondition}{section.1.3}% 8
+\BOOKMARK [1][-]{section.1.4}{Description du "Wrapper"}{chapter.1}% 9
+\BOOKMARK [2][-]{subsection.1.4.1}{Attributs du Wrapper}{section.1.4}% 10
+\BOOKMARK [2][-]{subsection.1.4.2}{Mise \340 jour des connexions}{section.1.4}% 11
+\BOOKMARK [2][-]{subsection.1.4.3}{Initialisation du labyrinthe}{section.1.4}% 12
+\BOOKMARK [2][-]{subsection.1.4.4}{Ordonnancement des mod\350les}{section.1.4}% 13
+\BOOKMARK [0][-]{chapter.2}{Commandes}{}% 14
+\BOOKMARK [1][-]{section.2.1}{Commandes de pacman}{chapter.2}% 15
+\BOOKMARK [2][-]{subsection.2.1.1}{Avec priorit\351}{section.2.1}% 16
+\BOOKMARK [2][-]{subsection.2.1.2}{Avec m\351moire}{section.2.1}% 17
+\BOOKMARK [1][-]{section.2.2}{Commandes de ghost}{chapter.2}% 18
+\BOOKMARK [2][-]{subsection.2.2.1}{Ghost voit Pacman}{section.2.2}% 19
+\BOOKMARK [2][-]{subsection.2.2.2}{Ghost ne reste pas bloqu\351}{section.2.2}% 20
+\BOOKMARK [1][-]{section.2.3}{Commandes des murs}{chapter.2}% 21
+\BOOKMARK [2][-]{subsection.2.3.1}{Altern\351e}{section.2.3}% 22
+\BOOKMARK [2][-]{subsection.2.3.2}{Une fois sur deux}{section.2.3}% 23
+\BOOKMARK [0][-]{chapter.3}{V\351rifications et validations}{}% 24
+\BOOKMARK [1][-]{section.3.1}{Programme de simulation et repr\351sentation graphique}{chapter.3}% 25
+\BOOKMARK [2][-]{subsection.3.1.1}{Script de Visualisation}{section.3.1}% 26
+\BOOKMARK [2][-]{subsection.3.1.2}{Fonction de g\351n\351ration d'images et de vid\351o}{section.3.1}% 27
+\BOOKMARK [1][-]{section.3.2}{V\351rification Logicielle}{chapter.3}% 28
+\BOOKMARK [2][-]{subsubsection.3.2.0.1}{La case de sortie ne bouge pas}{section.3.2}% 29
+\BOOKMARK [3][-]{subsubsection.3.2.0.2}{Fant\364me et Pacman jamais sur la m\352me case}{subsubsection.3.2.0.1}% 30
+\BOOKMARK [3][-]{subsubsection.3.2.0.3}{Les murs sont infranchissables}{subsubsection.3.2.0.1}% 31
+\BOOKMARK [3][-]{subsubsection.3.2.0.4}{Les murs bougent dans la direction choisie}{subsubsection.3.2.0.1}% 32
+\BOOKMARK [3][-]{subsubsection.3.2.0.5}{Le programme s\220arr\352te quand le pacman est sur la sortie}{subsubsection.3.2.0.1}% 33
+\BOOKMARK [3][-]{subsubsection.3.2.0.6}{Le fant\364me peut manger pacman}{subsubsection.3.2.0.1}% 34
+\BOOKMARK [1][-]{section.3.3}{Validation formelle}{chapter.3}% 35
+\BOOKMARK [2][-]{subsection.3.3.1}{G\351n\351ration des mod\350les}{section.3.3}% 36
+\BOOKMARK [3][-]{subsubsection.3.3.1.1}{Description des scripts}{subsection.3.3.1}% 37
+\BOOKMARK [3][-]{subsubsection.3.3.1.2}{Description des mod\350les}{subsection.3.3.1}% 38
+\BOOKMARK [2][-]{subsection.3.3.2}{D\351terminer l'ensemble des chemins}{section.3.3}% 39
+\BOOKMARK [2][-]{subsection.3.3.3}{Produit parall\350le avec Matlab}{section.3.3}% 40
+\BOOKMARK [0][-]{chapter.4}{Les sc\351narios}{}% 41
+\BOOKMARK [1][-]{section.4.1}{Sc\351nario 1 - Trouver la commande \340 partir d'un objectif}{chapter.4}% 42
+\BOOKMARK [2][-]{subsection.4.1.1}{objectif 1 : Atteindre la sortie}{section.4.1}% 43
+\BOOKMARK [2][-]{subsection.4.1.2}{objectif 2 : Arriver dans un \351tat bloquant}{section.4.1}% 44
+\BOOKMARK [1][-]{section.4.2}{Sc\351nario 2 - Trouver une commande dans un contexte non d\351terministe}{chapter.4}% 45
+\BOOKMARK [1][-]{section.4.3}{Sc\351nario 3- Trouver des commandes optimales pour le mod\350le avec les 2 objets}{chapter.4}% 46
+\BOOKMARK [2][-]{subsection.4.3.1}{Objectif 1: Le pacman arrive sur Escape en moins de coup possible}{section.4.3}% 47
+\BOOKMARK [2][-]{subsection.4.3.2}{Objectif 2: Le pacman se fait tout le temps attraper par ghost}{section.4.3}% 48
+\BOOKMARK [2][-]{subsection.4.3.3}{Objectif 3: Le pacman ou ghost se retrouve bloquer entre 4 murs}{section.4.3}% 49
+\BOOKMARK [0][-]{chapter.5}{Le petite guide d'utilisation}{}% 50
+\BOOKMARK [1][-]{section.5.1}{Organisation du code}{chapter.5}% 51
+\BOOKMARK [1][-]{section.5.2}{Comment lancer l'interface ?}{chapter.5}% 52
+\BOOKMARK [2][-]{subsection.5.2.1}{Comment changer la figure ?}{section.5.2}% 53
+\BOOKMARK [2][-]{subsection.5.2.2}{Comment changer l'ordonnancement ?}{section.5.2}% 54
+\BOOKMARK [2][-]{subsection.5.2.3}{Comment changer la commande des objets ?}{section.5.2}% 55
+\BOOKMARK [1][-]{section.5.3}{Comment lancer les validations logicielles ?}{chapter.5}% 56
+\BOOKMARK [1][-]{section.5.4}{Comment lancer la validation formelle ?}{chapter.5}% 57
+\BOOKMARK [2][-]{subsection.5.4.1}{Comment g\351n\351rer le proc\351d\351 ind\351pendamment ?}{section.5.4}% 58
+\BOOKMARK [2][-]{subsection.5.4.2}{Comment valider ma propre commande ?}{section.5.4}% 59
+\BOOKMARK [1][-]{section.5.5}{Comment lancer le sc\351nario 1 ?}{chapter.5}% 60
+\BOOKMARK [2][-]{subsection.5.5.1}{Comment tester mon propre objectif ?}{section.5.5}% 61
+\BOOKMARK [1][-]{section.5.6}{Comment lancer le sc\351nario 2 ?}{chapter.5}% 62
+\BOOKMARK [1][-]{section.5.7}{Comment lancer le sc\351nario 3 ?}{chapter.5}% 63
+\BOOKMARK [0][-]{chapter.6}{Conclusions}{}% 64

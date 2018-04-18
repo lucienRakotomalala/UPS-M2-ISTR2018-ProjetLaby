@@ -1,0 +1,32 @@
+\chapter{Commandes} \label{sec:commandes}
+
+Dans un premier temps nous avons créé des commandes intuitives que nous avons implémentées dans les classes dédiées ($ModelPacman$, $ModelGhost$ et $ModelWalls$). Les commandes intuitives sont détaillées ci-après. Dans la suite du projet nous en avons créé de nouvelles plus performantes, qui remplaceront celles-ci.
+
+\section{Commandes de pacman} \label{sec:commandePacman}
+%Intuitives: 
+\subsection{Avec priorité}
+Cette commande vérifie si elle peut aller à droite (pas de mur) sinon en bas, sinon à gauche, sinon en haut :\\
+\image{7cm}{3_Commandes/commande_pacman_simple}{Commande simple de Pacman}
+\subsection{Avec mémoire}
+Cette commande garde en mémoire un vecteur à 4 entrées. L'entrée 1 passe à 1 si on a fait droite, l'entrée 2 à 1 si on a fait bas, l'entrée 3 à 1 si on a fait gauche, l'entrée 4 à 1 si on a fait haut. Une fois qu'on a testé les quatre possibilités, le vecteur est remis à 0.\\
+Sa représentation complète sous forme automate est très conséquente (environ 120 états), vous la trouverez dans le code dans le dossier $laby\_1\_player\_automaton$, en voici une partie pour donner une idée :
+\image{11cm}{3_Commandes/commande_pacman_memory}{Commande Memory de Pacman}
+
+\section{Commandes de ghost}\label{sec:commandeGhost}
+\subsection{Ghost voit Pacman}
+Avec cette commande si ghost voit pacman dans son couloir (aucune séparation par des murs) il va dans sa direction. S'il ne le voit pas il fonctionne avec une priorité (haut, bas, gauche, droite).
+\subsection{Ghost ne reste pas bloqué}
+Cette commande respecte les mêmes conditions que précédemment mais prend aussi en compte qu'il ne peut pas aller sur une case dans laquelle il pourra se retrouver bloqué au prochain tour. S'il ne voit pas ghost ou que si là ou il le voit il peut se retrouver bloqué, il suit la même règle de priorité que précédemment, toujours en évitant la case bloquante.\\
+\\
+Ces commandes n'ont pas été modélisées, car il faut les adapter au procédé complet avec deux objets.
+
+\section{Commandes des murs}\label{sec:commandeMurs}
+Les murs verticaux peuvent seulement se déplacer vers le bas et les murs horizontaux vers la droite.
+\subsection{Alternée}
+Les murs horizontaux se déplacent à leur tour, puis les murs verticaux au tour d'après. Ils alternent donc à chaque tour de jeu.
+\image{5cm}{3_Commandes/commande_murs.png}{Commande des murs alternée}
+\subsection{Une fois sur deux}
+Les murs ne se déplacent qu'une fois sur deux et de façon alterné comme précédemment. Attention cette commande n'est pas compatible avec la commande de "ghost ne reste pas bloqué". En effet, ghost n'a pas accès aux informations du labyrinthe, il connait juste la situation initiale et leur commande, il calcule donc la prochaine position des murs (il ne la lit pas!). Cette commande de ghost a été conçue pour fonctionner avec la première commande de mur.
+
+\image{5cm}{3_Commandes/commande_murs.png}{Commande des murs une fois sur deux}
+

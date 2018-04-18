@@ -1,0 +1,57 @@
+\chapter{Les scénarios} \label{sec:sce}
+
+Cette partie a été traitée lors du dernier bloc de projet. Elle consiste à créer de nouvelle commandes plus efficace que celles créées de façon intuitive  (mémoire et priority).\\
+Pour se faire nous avons commencé par générer automatiquement le modèle complet du labyrinthe pour 1 objet duquel nous avons cherché à trouver une commande atteindre un objectif. Dans un second temps nous avons intégré une notion de non déterminisme porté par l'état initial puis nous avons essayé de trouver des commandes pour atteindre un objectif dans un labyrinthe contenant les 2 objets.
+
+
+\section{Scénario 1 - Trouver la commande à partir d'un objectif}
+\subsection{objectif 1 : Atteindre la sortie}
+Nous composons le modèle avec l'objectif et nous obtenons un automate contenant toutes les séquences respectant l'objectif.\\
+La composition parallèle se fait automatiquement en lançant le programme $main_laby$ dans laby1player/automaton. Si vous souhaitez tester des objectifs différents il faut ajouter le modèle en .fsm et le rajouter à la suite de choix dans $main\_laby$.
+Cette partie du code renvoie toutes les séquences les plus courtes amenant à chaque état marqué. S'il n'existe pas de chemin, un message s'affiche.
+
+\imagegd{0.5\textwidth}{5_Scenarios/objectif_1}{Exemple pour un labyrinthe 5x5}{0.5\textwidth}{5_Scenarios/Composition_parallele_objectif1}{Exemple pour un labyrinthe 5x5}
+
+
+\subsection{objectif 2 : Arriver dans un état bloquant}
+On peut appliquer la même démarche que précédemment pour n'importe quel objectif, on s'est donc amusé à chercher à bloquer pacman. Comme précédemment on peut voir s'il peut se retrouver bloqué ou non.
+
+\imagegd{0.5\textwidth}{5_Scenarios/obj_caught}{Exemple pour un labyrinthe 5x5}{0.5\textwidth}{5_Scenarios/Composition_parallele_objectif2}{Exemple pour un labyrinthe 5x5}
+
+
+\section{Scénario 2 - Trouver une commande dans un contexte non déterministe}
+Pour ce scénario, nous avons réutilisé les connaissances acquises lors du projet de M1. Dans ce projet nous avions étudié les automates non déterministes et avions notamment codé la génération de Treillis (voir le rapport de M1 pour la construction et le concept de Treillis). Pour ce projet nous avons décidé de réutilisé la classe Automate que nous avions créées ainsi que la génération de Treillis. On le trouve dans le dossier $automate\_nd$. \\
+Le principe de ce scénario consiste à trouver la sortie sans connaître la position initiale exacte de l'objet. Le code renvoie une séquence avec laquelle nous sommes sûres d'arriver à la sortie. Nous avons appliqué cela avec les conditions suivantes :
+\begin{itemize}
+\item On peut prendre une transition qui amène dans le même état
+\item Les murs sont statiques
+\end{itemize}
+
+En lançant le main, on obtient la séquence accessible pour un automate non déterministe. Attention dès qu'on dépasse la taille d'un labyrinthe $4$x$4$, le temps de calcul devient très long. Pour une question de rapidité, on a déjà généré le treillis pour le labyrinthe $5$x$5$ et on l'a conservé dans le dossier en format $.mat$. Le treillis est toujours créé au complet donc on peut utiliser ce treillis pour n'importe quel ensemble d'état initial si on veut réutiliser ce labyrinthe $5$x$5$.
+\image{5cm}{5_Scenarios/Simu_1}{Labyrinthe $5$x$5$ testé}
+
+\section{Scénario 3- Trouver des commandes optimales pour le modèle avec les 2 objets}
+Pour ce scénario on est parti sur le même principe que celui des précédent scénarios avec un unique objet. Du fait que l’on se retrouve avec 2 objets dans ce cas de figure on arrive à un niveau de complexité plus élevé pour la génération automatique du modèle, car on se retrouve avec 2 labyrinthes distincts pour chacun des objets avec la contrainte qu'ils ne puissent pas être sur la même case. Le but c’est d’essayer de trouver comme dans les autres cas, des commandes optimales pour différents objectifs telles que:
+\subsection{Objectif 1: Le pacman arrive sur Escape en moins de coup possible}
+Cette démarche est identique à celle avec un seul objet présenté dans le premier scénario.
+\subsection{Objectif 2: Le pacman se fait tout le temps attraper par ghost}
+\image{5cm}{5_Scenarios/obj_caught}{Pacman se fait attraper par ghost}
+\subsection{Objectif 3: Le pacman ou ghost se retrouve bloquer entre 4 murs}
+Pour ce cas de figure il faut élaborer exactement la même commande que pour celui avec un objet.
+\\
+On a pas encore développer ces objectifs car on est toujours sur la phase de génération automatique du modèle avec 2 objets.
+%Trouver commande optimale pour objectif donnée (trois scénarios)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
