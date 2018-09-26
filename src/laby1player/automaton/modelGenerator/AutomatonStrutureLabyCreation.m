@@ -1,23 +1,24 @@
 function [initialIndice,markedStatesIndices,transitionsDatas, numberOfStates] = AutomatonStrutureLabyCreation (labySize,playerPosition,escapePosition)
-%% Automaton of labyrinth struture creation :
-% Inputs
-    % labySize        : int  = [x]         x  = dimension of the labyrinth
-    % playerPosition        : int  = [x,y]         x  = horizontal position
-                                                 % y  = vertical position
-                                                 % of the player
-    % escapePosition        : int  = [x,y]         x  = horizontal position
-                                                 % y  = vertical position
-                                                 % of the escape
-% Output
-    % initialIndice : int  = [x]         x = indice of the initial state                                             
-                                        % string to create states by 
-    % markedStatesIndices : int = [.,.,...] indice of the marked states   
-    % transitionsDatas : cell  = {O,D,Tr;.,.,.;}       One line : 1 transition
-                                          % O  = origin state 
-                                          % D  = destination state
-                                          % Tr = event name
-    % numberOfStates   : int  = [x]         x  = number of states of the
-                                            % automaton  
+%AUTOMATONSTRUCTURELABY Creates the automaton that defines the structure of the labyrinth, the initial position of the pacman and the location of the output.
+% Inputs :
+%       labySize        : int  = [x]         x  = Dimension of the labyrinth
+%       playerPosition  : int  = [x,y]       x  = Horizontal position
+%                                            y  = Vertical position
+%                                                 of the player.
+%       escapePosition  : int  = [x,y]       x  = Horizontal position.
+%                                            y  = Vertical position
+%                                            of the escape.
+% Outputs :
+%       initialIndice    : int  = [x]        x = Indice of the initial
+%                                                state.
+%       markedStatesIndices : int = [.,.,...]  Indice of the marked states   
+%       transitionsDatas : cell  = {O,D,Tr;.,.,.;}  One line : 1 transition
+%                                                   O  = origin state 
+%                                                   D  = destination state
+%                                                   Tr = event name
+%       numberOfStates   : int  = [x]         x  = Number of states of the
+%                                                  automaton.
+
 % number Of States
 numberOfStates = labySize^2;
 %initial Indice

@@ -1,0 +1,7 @@
+<map id="handle" name="handle">
+<area shape="rect" id="node2" href="$class_model_s_e_d.html" title="Abstract Class who contain the structure of a &quot;fmg&quot; implementation. " alt="" coords="187,80,272,107"/>
+<area shape="rect" id="node3" href="$class_model_laby.html" title="Class which contains the &quot;fmg&quot; structure of the labyrinth for 1 player. " alt="" coords="5,155,91,181"/>
+<area shape="rect" id="node4" href="$class_model_pacman.html" title="Contain ghost Pacman control. " alt="" coords="115,155,221,181"/>
+<area shape="rect" id="node5" href="$class_model_walls.html" title="Contain wall movement command. " alt="" coords="245,155,336,181"/>
+<area shape="rect" id="node6" href="$class_stop_condition.html" title="Class used to manage shutdown conditions. " alt="" coords="360,155,464,181"/>
+</map>

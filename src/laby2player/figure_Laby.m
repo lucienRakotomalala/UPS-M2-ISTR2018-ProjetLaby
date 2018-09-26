@@ -1,3 +1,17 @@
+%> @filename figure_Laby.m
+
+% ================================================================
+%> @brief Script linked to the graphical interface whitch contain all the graphical functions.
+%> This file contain also the instance of Wrapper class. All the handles of
+%> graphical elements and instance of class are stored into the "handles" structure.
+
+
+
+% ================================================================
+%> @brief function call when figure_Laby si open. It's initialize the UI.
+%> @param varargin Several inputs.
+%> @return varargout Several Outputs.
+% ================================================================
 function varargout = figure_Laby(varargin)
 % FIGURE_LABY MATLAB code for figure_Laby.fig
 %      FIGURE_LABY, by itself, creates a new FIGURE_LABY or raises the existing
@@ -45,6 +59,15 @@ function varargout = figure_Laby(varargin)
 end
 
 % --- Executes just before figure_Laby is made visible.
+% ================================================================
+%> @brief initialization function.
+%> It's where is initialize the parameters of the labyrinth and all the commands
+%> in the section "INITIAL PARAMETERS OF THE LABYRINTH  AND THE COMMANDS".
+%> @param hObject    handle to figure
+%> @param eventdata  reserved - to be defined in a future version of MATLAB
+%> @param handles    structure with handles and user data (see GUIDATA)
+%> @param varargin   command line arguments to figure_Laby (see VARARGIN)
+% ================================================================
 function figure_Laby_OpeningFcn(hObject, eventdata, handles, varargin)
 % This function has no output args, see OutputFcn.
 % hObject    handle to figure
@@ -64,35 +87,50 @@ function figure_Laby_OpeningFcn(hObject, eventdata, handles, varargin)
     guidata(hObject, handles);
     % creation of the differents elements (wrapper, ghost, pacman, walls,
     % escape)
-
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INITIAL PARAMETERS OF THE LABYRINTH  AND THE COMMANDS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Initial laby state
-    labyInit.wallsV_i =   [1 0 1 0; 0 0 0 1; 0 0 0 0;0 1 1 1; 1 0 0 0]; %  dimension can change
-                       
-    labyInit.wallsH_i =   [0 0 0 1 0; 0 1 0 1 0;0 1 0 1 0;0 1 0 0 1]; %  dimension can change
-                       
-    labyInit.pacman_i = [1,	2]; % static dimension
-    labyInit.ghost_i  = [2,2]; % static dimension
-    labyInit.escape_i = {[5 5], 0}; % static dimension
-    labyInit.caught_i = 0; % static dimension
 
-    % initial value of walls command
-    wallsInit.wallsCommand_i = 0; % dimension can change
-    % =0 : begin with right move 
-    % =1 : begin with up move 
+    % Verticals walls   (dimension can change)
+    labyInit.wallsV_i =[1 0 1 0; 1 1 0 1; 0 0 0 0;0 1 1 1; 1 0 0 0]; %laby 5x5
+    % labyInit.wallsV_i =[1 1;0 1; 0 0];%laby 3x3
+    %labyInit.wallsV_i = [1 0 0;1 0 0;0 0 1; 0 1 0];%laby 4x4 %  dimension can change
+    %labyInit.wallsV_i =[1 0 0 0 0 0; 1 0 0 0 0 0; 1 1 1 0 1 0; 0 0 0 0 1 1; 0 0 0 0 0 0; 1 0 0 1 0 1;1 0 0 0 0 0]; %laby 7x7
 
-    % initial value of pacman command
-    pacmanInit.pacmanCommand_i= zeros(1,4);% dimension can change
+    % Horizontals walls  (dimension can change)
+    labyInit.wallsH_i=[0 0 0 1 0; 0 1 0 1 0;0 1 0 1 0;0 1 0 0 1];%laby 5x5
+    %labyInit.wallsH_i =  [1 0 0; 1 0 0]; %laby 3x3
+    %labyInit.wallsH_i =  [0 0 1 0;  1 0 0 0; 0 1 0 1];%laby 4x4
+    %labyInit.wallsH_i=   [0 0 0 0 0 1 1; 0 0 1 0 0 1 1;0 1 0 0 0 0 0;0 0 0 0 0 1 0;0 1 1 1 0 0 1;0 0 1 1 0 1 0];%laby 7x7
+    % Pacman position (static dimension)
+    labyInit.pacman_i = [2,	1];
+    % Ghost position (static dimension)
+    labyInit.ghost_i  = [4,1];
+    % Escape position (static dimension)
+    labyInit.escape_i = {[5 5], 0};
 
-    % initial value of pacman command
-    ghostInit.ghostCommand_i= zeros(1,5);% dimension can change
-    
+    % Initial number of times pacman is caught (static dimension)
+    labyInit.caught_i = 0;
+
+    %%%%%%%%% commands
+
+    % Initial value of walls command
+    wallsInit.wallsCommand_i = 0;
+    % =0 : begin with right move
+    % =1 : begin with up move
+
+    % Initial value of pacman command (if command change, dimension can change, else not)
+    pacmanInit.pacmanCommand_i= zeros(1,5);
+
+    % initial value of ghost command (if command change, dimension can change, else not)
+    ghostInit.ghostCommand_i= zeros(1,5);
+
     % initial value of stop
     stopInit.escape = 0;
     stopInit.caught = 0;
     stopInit.pacman = 0;
     stopInit.ghost  = 0;
     stopInit.numberOfPossibleCaught=3;
-    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     handles.wrapper = Wrapper(11, 9, labyInit, wallsInit, pacmanInit, ghostInit, stopInit);
     handles = createUIWalls(handles);
     handles = createUIGhost(handles);
@@ -105,6 +143,13 @@ function figure_Laby_OpeningFcn(hObject, eventdata, handles, varargin)
 end
 
 % --- Outputs from this function are returned to the command line.
+% ================================================================
+%> @brief Automatic generated function by GUI
+%> @param hObject    handle to figure
+%> @param eventdata  reserved - to be defined in a future version of MATLAB
+%> @param handles    structure with handles and user data (see GUIDATA)
+%> @return varargout  cell array for returning output args (see VARARGOUT);
+% ================================================================
 function varargout = figure_Laby_OutputFcn(hObject, eventdata, handles)
 % varargout  cell array for returning output args (see VARARGOUT);
 % hObject    handle to figure
@@ -119,6 +164,16 @@ end
 %%          Callbacks
 
 %-- Callback for all the action's buttons
+% ===============================================================
+%> @brief Callback for all the action's buttons (see detailed explications).
+%> in the following image, buttons marked with a black arrow lanch this Callback. \n
+%> \image html img_fig_lab.png "button's type of GUI"
+%> \image latex img_fig_lab.png "button's type of GUI" width=10cm
+%> This callback lanch orderer method of Wrapper class, which allows the simulation to evolve.
+%> @param hObject    handle to actived button
+%> @param eventdata  reserved - to be defined in a future version of MATLAB
+%> @param handles    structure with handles and user data (see GUIDATA)
+% ===============================================================
 function ui_Callback(hObject, eventdata, handles)
 %{
         hObject.UserData  can take value
@@ -149,10 +204,20 @@ function ui_Callback(hObject, eventdata, handles)
     end
     updateUI(handles, handles.wrapper.get_out());
     guidata(hObject,handles)
-    %faire une fonction qui utilise stop pour arrete le laby
 end
 
 % --- Callback for all connection
+% ===============================================================
+%> @brief Callback for all the connection's buttons (see detailed explications).
+%> in the following image, buttons marked with a red arrow lanch this Callback. \n
+%> \image html img_fig_lab.png "button's type of GUI"
+%> \image latex img_fig_lab.png "button's type of GUI" width=8cm
+%> This callback lanch updateConnexion method of Wrapper class, which modify
+%> what command are automatic.
+%> @param hObject    handle to actived button
+%> @param eventdata  reserved - to be defined in a future version of MATLAB
+%> @param handles    structure with handles and user data (see GUIDATA)
+% ===============================================================
 function connect_Callback(hObject, eventdata, handles)
 %{
         hObject.UserData :
@@ -166,16 +231,16 @@ function connect_Callback(hObject, eventdata, handles)
     switch hObject.UserData
         case 100
             connection = 'wallsPanel';
-        case 101 
+        case 101
             connection = 'ghostPanel';
-        case 102 
+        case 102
             connection = 'pacmanPanel';
     end
 
     set(handles.(connection),'Visible',isOne(~hObject.Value));
     if(handles.wrapper.wallsBit || handles.wrapper.pacmanBit || handles.wrapper.ghostBit) %% mod to || si gestion de commande partielle
         set(handles.step,'Visible','on');
-    else 
+    else
         set(handles.step,'Visible','off');
     end
     guidata(hObject,handles);
@@ -184,7 +249,14 @@ end
 
 %%          Creation of Pacman Ghost, Walls and the Escape
 
-% --- Create a graphical element for ghost
+% --- Create a graphical element for pacman
+% ===============================================================
+%> @brief Creation of the graphical object "pacman".
+%> The pacman is created by using the patch function and store into the handle
+%> in 'pacman'.
+%> @param handles    structure with handles and user data (see GUIDATA)
+%> @return h the updated structure with handles and user data (see GUIDATA)
+% ===============================================================
 function h = createUIPacman(handles)
     hold on;
     h = handles;
@@ -203,7 +275,13 @@ function h = createUIPacman(handles)
     hold off;
 end
 
-% --- Create a graphical element for pacman
+% --- Create a graphical element for ghost
+% ===============================================================
+%> @brief Creation of the graphical object "Ghost".
+%> The ghost is created by using the patch function and store into the handle in 'ghost'.
+%> @param handles    structure with handles and user data (see GUIDATA)
+%> @return h the updated structure with handles and user data (see GUIDATA)
+% ===============================================================
 function h = createUIGhost(handles)
     nbPts = 32; % Definition of object
     %%%%%
@@ -239,13 +317,24 @@ function h = createUIGhost(handles)
 end
 
 % --- Create a graphical element for walls
+% ===============================================================
+%> @brief Creation of the graphical objects "walls".
+%> The walls are created as two line elmenents matrix. They are stored into
+%> handles in 'walls'. \n
+%> The first matrix is for the verticals walls and named 'horizontals' and the
+%> second called 'verticals' for the verticals walls.\n
+%> All possible walls are created and it is by making them visible or invisible
+%> that they appear or disappear.
+%> @param handles    structure with handles and user data (see GUIDATA)
+%> @return h the updated structure with handles and user data (see GUIDATA)
+% ===============================================================
 function h = createUIWalls(handles)
     h=handles;
     h.walls.size =  max(size(h.wrapper.modelLaby.presentState.wallsV));
 
     hold on;
     axes(h.axes1);
-    % grid 
+    % grid
     tickValuesX = 0:1:h.walls.size ;
     tickValuesY = 0:1:h.walls.size ;
     set(gca,'XTick',tickValuesX);
@@ -279,6 +368,13 @@ function h = createUIWalls(handles)
 end
 
 % --- Create a graphical element for the escape
+% ===============================================================
+%> @brief Creation of the graphical objects "escape".
+%> The escape is created whit a rectangle and and text box. It's stored into
+%> handles in 'escape'. \n
+%> @param handles    structure with handles and user data (see GUIDATA)
+%> @return h the updated structure with handles and user data (see GUIDATA)
+% ===============================================================
 function h = createUIEscape(handles)
     hold on;
     assignin('base','handles',handles);
@@ -287,7 +383,7 @@ function h = createUIEscape(handles)
 
     % set(h.Escape,'BackgroundColor',[.8 .8 .8]);
     % set(h.Escape,'String','Escaped Pacman :');
-     h.escape.position = h.wrapper.modelLaby.presentState.escape{1}; % need to take the good one into h.wrapper.modelLaby. ... 
+     h.escape.position = h.wrapper.modelLaby.presentState.escape{1}; % need to take the good one into h.wrapper.modelLaby. ...
      y = h.walls.size - h.escape.position(2)+1;
      assignin('base','rec',[ y-.8 ,  h.escape.position(2)-1+.2 , .6 , .6 ]);
 
@@ -302,16 +398,23 @@ function h = createUIEscape(handles)
 end
 % ===============================================================
 
-%%          Update UI 
+%%          Update UI
 
 
 % --- Update all UI elements
+% ===============================================================
+%> @brief This function update all graphicals element who can change.
+%> With the input called 'out', this function lanch all the functions who update
+%> a specific graphical element.
+%> @param handles Structure with handles and user data (see GUIDATA)
+%> @param out Cell who contain all informations needed from the wrapper for update the graphical interface.
+% ===============================================================
 function updateUI(handles,out)
-    
+
     updateUIPlayer( handles,'pacman', out{1});      %(1,2)
     updateUIPlayer( handles,'ghost', out{2});
     updateUIWalls( handles.walls , out{3},out{4});           %(3,4)
-    % 
+    %
     updateUIActiveCammand(handles);
     updateUIButton(handles);
     %
@@ -325,22 +428,30 @@ end
 
 % --- Update visibility of command panel for only see the possibles
 % commands on the good time
+% ===============================================================
+%> @brief Update visibility of control panel, connection and step button.
+%> This function show or hide the control's panels and the connection's buttons
+%> according whit who will move. It also show step button if a command is connected. \n
+%> Example : if is pacman time to move and command is not connected, this
+%> function hide walls and step element and show pacman one's.
+%> @param handles    structure with handles and user data (see GUIDATA)
+% ===============================================================
 function updateUIActiveCammand(handles)
 %% the plan !
-% if XX commanded && him time to play 
+% if XX commanded && him time to play
     % show him panel
- % else 
+ % else
     % unshow him panel
  % end
- 
-    %% pacman 
+
+    %% pacman
 
     if(handles.wrapper.whoPlay == 1 )% si a son tour
      set(handles.connectPacman,'Visible','on');
-     if(handles.wrapper.pacmanBit == 1) % si connecté
+     if(handles.wrapper.pacmanBit == 1) % si connectï¿½
          set(handles.pacmanPanel,'Visible','off');
          set(handles.step,'Visible','on');
-     else % si pas connecté
+     else % si pas connectï¿½
          set(handles.pacmanPanel,'Visible','on');
          set(handles.step,'Visible','off');
      end
@@ -349,29 +460,29 @@ function updateUIActiveCammand(handles)
      set(handles.pacmanPanel,'Visible','off');
     end
 
-    %% ghost 
+    %% ghost
 
     if(handles.wrapper.whoPlay == 2 )% si a son tour
      set(handles.connectGhost,'Visible','on');
-     if(handles.wrapper.ghostBit == 1) % si connecté
+     if(handles.wrapper.ghostBit == 1) % si connectï¿½
          set(handles.ghostPanel,'Visible','off');
          set(handles.step,'Visible','on');
-     else % si pas connecté
+     else % si pas connectï¿½
          set(handles.ghostPanel,'Visible','on');
          set(handles.step,'Visible','off');
      end
     else
      set(handles.connectGhost,'Visible','off');
      set(handles.ghostPanel,'Visible','off');
-    end 
+    end
 
     %% walls
     if(handles.wrapper.whoPlay == 0 )% si a son tour
      set(handles.connectWalls,'Visible','on');
-     if(handles.wrapper.wallsBit == 1) % si connecté
+     if(handles.wrapper.wallsBit == 1) % si connectï¿½
          set(handles.wallsPanel,'Visible','off');
          set(handles.step,'Visible','on');
-     else % si pas connecté
+     else % si pas connectï¿½
          set(handles.wallsPanel,'Visible','on');
          set(handles.step,'Visible','off');
      end
@@ -384,30 +495,47 @@ end
 
 % --- Update visibility of moving command button in function of possibles
 % moves
+% ===============================================================
+%> @brief Show the needed moving buttons.
+%> This function show the direction's buttons allows by the output informations
+%> of modelLaby and hide the others one.
+%> @param handles    structure with handles and user data (see GUIDATA)
+% ===============================================================
 function updateUIButton(handles)
     player = {'pacman','ghost'};
     possibleMoves = cell(2,4);
-    for j = 1:max(size(possibleMoves,1)) 
+    for j = 1:max(size(possibleMoves,1))
         possibleMoves(j,:)=cell(strcat(player(j),{'Up','Down','Left','Right'},'But'));
     end
 
-    for j = 1:max(size(possibleMoves,1)) 
-        for i = 1:max(size(possibleMoves,2)) 
+    for j = 1:max(size(possibleMoves,1))
+        for i = 1:max(size(possibleMoves,2))
             set(handles.(possibleMoves{j,i}) ,'Visible',isOne(~handles.wrapper.out{6+j}(i)));
         end
     end
 end
 
 % --- Update graphical place of a player (ghost or pacman).
+% ===============================================================
+%> @brief Update graphical place of a player ( pacman or ghost).
+%> This function, with the actual position (present in the handles) and the new
+%> one as a input, move object. \n
+%> The dynamics of movement is defined by this foncion
+%> \f$ out(t) = \frac{\frac{om+1}{om*e^{cv*t}+1}-1}{om} \f$
+%> for \f$ t \in [0,1]\f$, \f$ om = 72.89105\f$ and \f$ cv = -11.27357 \f$.
+%> \image html obj_dynamic.png "Dynamics of movement"
+%> \image latex obj_dynamic.png "Dynamics of movement" width=8cm
+%> @param strPlayer String contain the exact name of the object to move. ('pacman' or 'ghost')
+%> @param position new position of the object. format : [x y]
+%> @param handles    structure with handles and user data (see GUIDATA)
+% ===============================================================
 function updateUIPlayer( handles,strPlayer, position)
-%smooth movement !! see visupacman,section :'Smooth movement for parman and
-%ghost'
     nMvs = 20;
     Xpts = get(handles.(strPlayer),'XData');
     initXpos = Xpts(1)+.5;
 
     Ypts = get(handles.(strPlayer),'YData');
-    initYpos =  Ypts(1) + .5; 
+    initYpos =  Ypts(1) + .5;
     %
     if( (position(1)-initXpos)~=0  || (handles.walls.size - position(2)+1- initYpos)~=0 )
         t = linspace(0,1,nMvs);
@@ -426,6 +554,18 @@ end
 
 
 % ----Update graphical element for caught.
+% ===============================================================
+%> @brief Update graphical static text block about how many times ghost caught pacman.
+%> This function, with the output of the wrapper, show caughtInt into the
+%> block where is write "Pacman caught : ".\n
+%> In the green box in the following image :
+%> \image html img_fig_lab.png "graphicals elements"
+%> \image latex img_fig_lab.png "graphicals elements" width=8cm
+%> If the pacman is caught enough times for stop the simulation, the background color become red. \n
+%> @param elementToSet handle to the graphical object for caught status.
+%> @param caughtInt How many times ghost caught pacman, from the  output of the wrapper.
+%> @param stp Actual stop state. From the wrapper class.
+% ===============================================================
 function updateUICaught(elementToSet,caughtInt,stp)
     clr = [.8 .8 .8];
     strD = '';
@@ -440,6 +580,16 @@ function updateUICaught(elementToSet,caughtInt,stp)
 end
 
 % ----Update graphical element for escape.
+% ===============================================================
+%> @brief Update graphical static text block about escape status.
+%> This function, with the output of the wrapper, show 'Yes' in the static text
+%> block where is write "Espcaped Pacman : " if the pacman is on the escape case. \n
+%> In the green box in the following image.
+%> \image html img_fig_lab.png "graphicals elements"
+%> \image latex img_fig_lab.png "graphicals elements" width=8cm
+%> @param elementToSet handle to the graphical object for escape status.
+%> @param boolState Value of the escape output of wrapper. (1 if pacman is escaped, else 0.)
+% ===============================================================
 function updateUIEscape(elementToSet,boolState)
     clr = [.8 .8 .8];
     strD = get(elementToSet,'UserData');
@@ -453,7 +603,15 @@ end
 
 % --- Update up down left and right walls around a element (pacman, ghost,
 % ghost sees pacman).
-function updateUIWallsAround(handles,strElement,wallsAround) %(7,8,9)    
+% ===============================================================
+%> @brief Update graphical elements for walls around pacman, ghost or ghost sees pacman.
+%> This function, with the output of the wrapper and a handle to the graphical element, update color of
+%> gray squares that represents walls presence around the pacman, the ghost or when the ghost sees pacman.
+%> @param strElement common part of the name of the handle to the graphical object for walls around pacman.
+%> @param wallsAround Value of the corresponding part of output of wrapper.
+%> @param handles    structure with handles and user data (see GUIDATA)
+% ===============================================================
+function updateUIWallsAround(handles,strElement,wallsAround) %(7,8,9)
     updatePresenceDetectorDisplay(handles.( strcat(strElement,'Up'))   , wallsAround(1));
     updatePresenceDetectorDisplay(handles.( strcat(strElement,'Down')) , wallsAround(2));
     updatePresenceDetectorDisplay(handles.( strcat(strElement,'Left')) , wallsAround(3));
@@ -461,6 +619,13 @@ function updateUIWallsAround(handles,strElement,wallsAround) %(7,8,9)
 end
 
 % --- Update graphicals elements for the walls.
+% ===============================================================
+%> @brief Update graphicals elements for the walls.
+%> This function, with the output of the wrapper, update displayed part and hided part of the walls.
+%> @param wallsUI handle to the matrixs of graphicals elements for walls.
+%> @param vertWalls Corresponding part of output of wrapper for verticals walls..
+%> @param horizWalls Corresponding part of output of wrapper for horizontals walls.
+% ===============================================================
 function updateUIWalls( wallsUI , vertWalls,horizWalls)
     for h = 1:wallsUI.size-1
         for k = 1:wallsUI.size
@@ -471,6 +636,11 @@ function updateUIWalls( wallsUI , vertWalls,horizWalls)
 end
 
 % --- Convert 1 in 'on' and 0 in 'off'.
+% ===============================================================
+%> @brief Return the string 'on' if the input is 1 else, return the string 'off'.
+%> @param boolCond integer to convert
+%> @return strOnOff Returned string. Can be worth "on" or "off".
+% ===============================================================
 function strOnOff = isOne(boolCond)
     strOnOff = 'off';
     if (boolCond == 1)
@@ -478,8 +648,15 @@ function strOnOff = isOne(boolCond)
     end
 end
 
-% --- Change the background color of the UI Element according to the state 
+% --- Change the background color of the UI Element according to the state
 % of the binary condition.
+% ===============================================================
+%> @brief Change the background color of the graphical Element according to the state of the binary condition..
+%> This function, with a boolean condition (integer) and a handle to a graphical element update the background color. \n
+%> If the Boolean value is 1, the background color turns blue, otherwise it will be gray.
+%> @param elementToSet handle to the graphical element.
+%> @param boolCondition input boolean condition store in a integer.
+% ===============================================================
 function updatePresenceDetectorDisplay(elementToSet,boolCondition)
     if(boolCondition > 0)
         set(elementToSet,'BackgroundColor','b');
@@ -488,7 +665,13 @@ function updatePresenceDetectorDisplay(elementToSet,boolCondition)
     end
 end
 
-% --- Reset all connections 
+% --- Reset all connections
+% ===============================================================
+%> @brief Reset all commands connections to unconnected.
+%> This function reset wrapper's property and graphical element to unconnected state.
+%> @param handles    structure with handles and user data (see GUIDATA)
+%> @return h the updated structure with handles and user data (see GUIDATA)
+% ===============================================================
 function h = resetUIConnection(handles)
     h = handles;
     % Show all actions panel (ghost, pacman, walls).
@@ -509,4 +692,3 @@ function h = resetUIConnection(handles)
     h.wrapper.pacmanBit = 0;
     h.wrapper.ghostBit  = 0;
 end
-    

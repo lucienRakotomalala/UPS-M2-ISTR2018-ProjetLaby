@@ -1,0 +1,290 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Simulation</title><meta name="generator" content="MATLAB 8.5"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-04-02"><meta name="DC.source" content="Simulation.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">Script to launch the labyrinth simulation.</a></li><li><a href="#2">%%%%%%%%%%%%%%%%%%%% PARAMETERS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</a></li><li><a href="#6">Initial laby state</a></li><li><a href="#11">Commands</a></li><li><a href="#15">%%%%%%%%%%%%%%%%%%%%%%%%% MAIN SCRIPT %%%%%%%%%%%%%%%%%%%%%%%%%%%%</a></li><li><a href="#23">log message (terminal)</a></li><li><a href="#24">Create picture for each iteration and Video in file data</a></li></ul></div><h2>Script to launch the labyrinth simulation.<a name="1"></a></h2><p>This script allows you to run a complete simulation of the labyrinth without graphical interface and with picture and video generation.</p><p>It stops according to the stop conditions that are entered in the script.</p><pre class="codeinput"><span class="comment">% for a clean workspace, not obligatory</span>
+clear
+close <span class="string">all</span>
+</pre><h2>%%%%%%%%%%%%%%%%%%%% PARAMETERS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%<a name="2"></a></h2><p>Number of iterations. (static dimension)</p><pre class="codeinput">n= 100;
+</pre><p>states of laby (static dimension) where all the out{} genereted will be stored.</p><pre class="codeinput">labyState=cell(n,9);
+etat =0; <span class="comment">% static dimension</span>
+etatS=0; <span class="comment">% static dimension</span>
+</pre><p>Initialization Of labyrinth Select if there is an escape or no</p><pre class="codeinput">noEscape = 0;
+</pre><h2>Initial laby state<a name="6"></a></h2><p>Structure containing all element to initialize the labyrinth. It is described as follows :</p><div><ul><li>"walls.V_i" for Vertical Walls,</li><li>"walls.H_i" for Horizontal Walls,</li><li>"pacman_i" for Pacman Initial position and</li><li>"ghost_i" for ghost Initial Position. (Dimensions can change)</li></ul></div><pre class="codeinput"> labyInit.wallsV_i =   [1 0 1 0;
+                        1 1 0 1;
+                        0 0 0 0;
+                        0 1 1 1;
+                        1 0 0 0];<span class="comment">%  dimension can change</span>
+
+ labyInit.wallsH_i =   [0 0 0 1 0;
+                        0 1 0 1 0;
+                        0 1 0 1 0;
+                        0 1 0 0 1]; <span class="comment">%  dimension can change</span>
+<span class="comment">%</span>
+<span class="comment">%  labyInit.wallsV_i =   [1 1;</span>
+<span class="comment">%              0 1;</span>
+<span class="comment">%              0 0]; %  dimension can change</span>
+<span class="comment">%  labyInit.wallsH_i = [1 0 0;</span>
+<span class="comment">%                             1 0 0];  %  d</span>
+</pre><p>size of lab (static dimension)</p><pre class="codeinput"> Ms = max(size(labyInit.wallsH_i));
+</pre><p>Pacman position (static dimension)</p><pre class="codeinput"> labyInit.pacman_i = [2,	1];
+</pre><p>Escape position (static dimension)</p><pre class="codeinput"> labyInit.escape_i = {[5 5], 0};
+</pre><h2>Commands<a name="11"></a></h2><p>Initial value of walls command</p><p>=0 : begin with right move</p><p>=1 : begin with up move</p><pre class="codeinput">wallsInit.wallsCommand_i = 0;
+</pre><p>Initial value of pacman command</p><pre class="codeinput"><span class="comment">%(if command change, dimension can change, else not)</span>
+<span class="comment">%</span>
+pacmanInit.pacmanCommand_i= zeros(1,5);
+</pre><p>initial value of stop</p><pre class="codeinput">stopInit.escape = 0;
+stopInit.pacman = 0;
+</pre><h2>%%%%%%%%%%%%%%%%%%%%%%%%% MAIN SCRIPT %%%%%%%%%%%%%%%%%%%%%%%%%%%%<a name="15"></a></h2><p>For count iteration of loop</p><pre class="codeinput"> i = 1 ;
+</pre><p>For break condition</p><pre class="codeinput"> SimulationStopped = 0;
+</pre><p>Creation of needed class</p><pre class="codeinput"> wrapper = Wrapper(11, 9, labyInit, wallsInit, pacmanInit, stopInit);
+</pre><p>Connection of all the commands</p><pre class="codeinput"> wrapper=wrapper.updateConnexion(1,1); <span class="comment">% walls</span>
+ wrapper=wrapper.updateConnexion(3,1); <span class="comment">% pacman</span>
+</pre><p>Empty in vector for the simulation</p><pre class="codeinput"> in = zeros(1,11);
+</pre><p>The first 'step' is the labyrinth at the begining</p><pre class="codeinput"> labyState(1,:)=wrapper.get_out();
+ i=i+1;
+</pre><p>The loop will run until i&gt;n or one stop condition stop the simulation</p><pre class="codeinput"><span class="keyword">while</span> (i&lt;=n &amp;&amp; ~SimulationStopped)
+    wrapper = wrapper.orderer(in);
+    labyState(i,:)= wrapper.get_out();
+    stop=wrapper.get_stop();
+    <span class="comment">%%%%%%%%%%%%%% stop condition %%%%%%%%%%%%%%%%%%%%%%%</span>
+     <span class="keyword">if</span> (sum(stop)~=0)
+         SimulationStopped = 1;
+     <span class="keyword">end</span>
+     i = i + 1;
+     <span class="comment">%pause</span>
+    <span class="comment">%%%%%%%%%%%%%%%%%%</span>
+<span class="keyword">end</span>
+</pre><h2>log message (terminal)<a name="23"></a></h2><pre class="codeinput">fprintf(<span class="string">'End of simulation :\n'</span>);
+<span class="keyword">if</span>(i&gt;n) <span class="comment">% sim finish</span>
+    fprintf(<span class="string">'\t The simulation was not stopped (%d steps)\n'</span>,n);
+<span class="keyword">else</span> <span class="comment">%sim break</span>
+    fprintf(<span class="string">'\t the simulation have been stopped at the %d step on %d\n'</span>,i,n);
+    <span class="keyword">if</span>(stop(1))
+        fprintf(<span class="string">'\t&gt;Pacman escaped\n'</span>);
+    <span class="keyword">end</span>
+    <span class="keyword">if</span>(stop(3))
+        fprintf(<span class="string">'\t&gt;Pacman trapped\n'</span>);
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+    n = i-1; <span class="comment">% new number of iteration;</span>
+</pre><pre class="codeoutput">End of simulation :
+	 the simulation have been stopped at the 23 step on 100
+	&gt;Pacman trapped
+</pre><h2>Create picture for each iteration and Video in file data<a name="24"></a></h2><pre class="codeinput">CreatePituresAndVideo_textured(n,  labyInit.escape_i, labyState);
+</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2015a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Script to launch the labyrinth simulation.
+% This script allows you to run a complete simulation of the labyrinth 
+% without graphical interface and with picture and video generation. 
+%
+% It stops according to the stop conditions that are entered in the script.
+
+% for a clean workspace, not obligatory
+clear
+close all
+%% %%%%%%%%%%%%%%%%%%%% PARAMETERS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+% Number of iterations. (static dimension)
+%
+n= 100; 
+%%
+% states of laby (static dimension)
+% where all the out{} genereted will be stored.
+labyState=cell(n,9);
+etat =0; % static dimension
+etatS=0; % static dimension
+
+%% 
+% Initialization Of labyrinth
+% Select if there is an escape or no 
+%
+noEscape = 0; 
+
+%% Initial laby state
+% Structure containing all element to initialize the labyrinth. 
+% It is described as follows :
+%%
+% * "walls.V_i" for Vertical Walls, 
+% * "walls.H_i" for Horizontal Walls, 
+% * "pacman_i" for Pacman Initial position and 
+% * "ghost_i" for ghost Initial Position. 
+% (Dimensions can change)
+ labyInit.wallsV_i =   [1 0 1 0;
+                        1 1 0 1; 
+                        0 0 0 0;
+                        0 1 1 1; 
+                        1 0 0 0];%  dimension can change
+                    
+ labyInit.wallsH_i =   [0 0 0 1 0;
+                        0 1 0 1 0;
+                        0 1 0 1 0;
+                        0 1 0 0 1]; %  dimension can change
+%    
+%  labyInit.wallsV_i =   [1 1;
+%              0 1; 
+%              0 0]; %  dimension can change
+%  labyInit.wallsH_i = [1 0 0; 
+%                             1 0 0];  %  d
+
+%% 
+% size of lab (static dimension)
+%
+ Ms = max(size(labyInit.wallsH_i)); 
+%%
+% Pacman position (static dimension)
+%
+ labyInit.pacman_i = [2,	1];
+%%
+% Escape position (static dimension)
+%
+ labyInit.escape_i = {[5 5], 0};
+
+%% Commands
+%%
+% Initial value of walls command
+%
+% =0 : begin with right move
+%
+% =1 : begin with up move
+%
+wallsInit.wallsCommand_i = 0;
+
+%%
+% Initial value of pacman command 
+%(if command change, dimension can change, else not)
+%
+pacmanInit.pacmanCommand_i= zeros(1,5);
+%%
+% initial value of stop
+%
+stopInit.escape = 0;
+stopInit.pacman = 0;
+%% %%%%%%%%%%%%%%%%%%%%%%%%% MAIN SCRIPT %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+% For count iteration of loop
+%
+ i = 1 ;     
+%%
+% For break condition
+ SimulationStopped = 0; 
+%%
+% Creation of needed class
+%
+ wrapper = Wrapper(11, 9, labyInit, wallsInit, pacmanInit, stopInit);
+ 
+%% 
+% Connection of all the commands
+%
+ wrapper=wrapper.updateConnexion(1,1); % walls
+ wrapper=wrapper.updateConnexion(3,1); % pacman
+%%
+% Empty in vector for the simulation
+%
+ in = zeros(1,11);
+%%
+% The first 'step' is the labyrinth at the begining
+%
+ labyState(1,:)=wrapper.get_out();
+ i=i+1;
+
+%%
+% The loop will run until i>n or one stop condition stop the simulation
+%
+while (i<=n && ~SimulationStopped)
+    wrapper = wrapper.orderer(in);
+    labyState(i,:)= wrapper.get_out();
+    stop=wrapper.get_stop();
+    %%%%%%%%%%%%%% stop condition %%%%%%%%%%%%%%%%%%%%%%%    
+     if (sum(stop)~=0)
+         SimulationStopped = 1;
+     end
+     i = i + 1;
+     %pause
+    %%%%%%%%%%%%%%%%%%    
+end
+%% log message (terminal)
+
+fprintf('End of simulation :\n');
+if(i>n) % sim finish
+    fprintf('\t The simulation was not stopped (%d steps)\n',n);
+else %sim break
+    fprintf('\t the simulation have been stopped at the %d step on %d\n',i,n);
+    if(stop(1))
+        fprintf('\t>Pacman escaped\n');
+    end
+    if(stop(3))
+        fprintf('\t>Pacman trapped\n');
+    end
+end
+    n = i-1; % new number of iteration;
+%% Create picture for each iteration and Video in file data
+
+CreatePituresAndVideo_textured(n,  labyInit.escape_i, labyState);
+
+##### SOURCE END #####
+--></body></html>
